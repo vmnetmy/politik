@@ -6,9 +6,10 @@ import { Icon } from "../components/ui/Icon";
 import { NotFound } from "../components/ui/NotFound";
 import { PageTitle } from "../components/ui/PageTitle";
 import { SearchCombobox } from "../components/ui/SearchCombobox";
+import { ParliamentGeography } from "./GeographyPages";
 import { currentAlliance, currentParty, currentStatus } from "../dataChanges";
-import { ELECTION_BASE, PARLIAMENT_BASE, STATE_BASE, WINNERS_BASE } from "../routes";
-import type { ElectionData, ScoresheetIndex, Seat, SeatingData } from "../types";
+import { ELECTION_BASE, PARLIAMENT_BASE, STATE_BASE, WINNERS_BASE, stateParliamentPath } from "../routes";
+import type { ConstituencyRegistry, ElectionData, GeographyData, ScoresheetIndex, Seat, SeatingData } from "../types";
 import { allianceColor, buildStateSummaries, formatCompact, formatNumber, formatPct, normalise, shortAlliance, toSlug } from "../utils";
 
 const ScoresheetDetail = lazy(() => import("../components/scoresheet/ScoresheetDetail").then((module) => ({ default: module.ScoresheetDetail })));
@@ -149,12 +150,12 @@ export function WinnersPage({ data }: { data: ElectionData }) {
   );
 }
 
-function SeatCard({ seat, data }: { seat: Seat; data: ElectionData }) {
+function SeatCard({ seat, data, nested = false }: { seat: Seat; data: ElectionData; nested?: boolean }) {
   const alliance = currentAlliance(seat);
   const party = currentParty(seat);
   const changed = seat.current?.isChanged;
   return (
-    <Link className="seat-card" to={`${PARLIAMENT_BASE}/${toSlug(seat.name)}`}>
+    <Link className="seat-card" to={nested ? stateParliamentPath(toSlug(seat.state), toSlug(seat.name)) : `${PARLIAMENT_BASE}/${toSlug(seat.name)}`}>
       <div className="seat-card-top"><span>{seat.state}</span><span>{seat.code}</span></div><h3>{seat.name}</h3>
       <div className="winner-line"><span className="party-dot" style={{ background: allianceColor(alliance, data.alliances) }}/><div><span>WAKIL RAKYAT</span><strong>{seat.winner.name}</strong></div>{changed && <b className="changed-badge">DIKEMAS KINI</b>}</div>
       <div className="seat-card-stats"><div><span>KEDUDUKAN SEMASA</span><strong className="identity-pair">{currentStatus(seat) === "vacant" ? "KOSONG" : <><PartyLogo name={party}/><AllianceLogo name={alliance} data={data}/></>}</strong></div><div><span>MAJORITI PRU-15</span><strong>{formatNumber(seat.marginVotes)}</strong></div><div><span>TURNOUT</span><strong>{formatPct(seat.turnoutPct)}</strong></div></div>
@@ -175,7 +176,7 @@ export function StatePage({ data }: { data: ElectionData }) {
       <PageTitle title={state}/>
       <section className="route-hero state-route-hero"><div className="breadcrumbs"><Link to={STATE_BASE}>Semua negeri</Link><span>/</span><strong>{state}</strong></div><span className="overline">KEPUTUSAN MENGIKUT NEGERI</span><h1>{state}</h1><p>{seats.length} kerusi Parlimen · {formatNumber(summary.turnout)} undi direkodkan</p><div className="route-stat-row"><div><span>KERUSI</span><strong>{seats.length}</strong></div><div><span>KELUAR MENGUNDI</span><strong>{formatPct(summary.turnoutPct)}</strong></div><div><span>PENDAHULU</span><strong><AllianceLogo name={leading[0]} data={data}/></strong></div><div><span>KERUSI PENDAHULU</span><strong>{leading[1]}</strong></div></div></section>
       <section className="state-detail-grid"><SeatComposition seats={seats} data={data} title={`Agihan kerusi ${state}`}/><article className="panel state-context"><span className="eyebrow">RINGKASAN NEGERI</span><h2>{formatCompact(summary.registered)}</h2><p>pemilih berdaftar</p><div><span>Jumlah keluar mengundi</span><strong>{formatNumber(summary.turnout)}</strong></div><div><span>Purata calon / kerusi</span><strong>{(seats.reduce((n,s)=>n+s.candidateCount,0)/seats.length).toFixed(1)}</strong></div><Link to={PARLIAMENT_BASE}>Terokai semua Parlimen <Icon name="arrow" size={16}/></Link></article></section>
-      <section className="explorer-section"><div className="explorer-heading"><div><span className="eyebrow">PARLIMEN DI {state}</span><h2>{seats.length} kerusi untuk diterokai</h2></div><div className="result-count"><strong>{seats.length}</strong><span>KERUSI</span></div></div><div className="seat-grid route-seat-grid">{seats.map((seat) => <SeatCard key={seat.code} seat={seat} data={data}/>)}</div></section>
+      <section className="explorer-section"><div className="explorer-heading"><div><span className="eyebrow">PARLIMEN DI {state}</span><h2>{seats.length} kerusi untuk diterokai</h2></div><div className="result-count"><strong>{seats.length}</strong><span>KERUSI</span></div></div><div className="seat-grid route-seat-grid">{seats.map((seat) => <SeatCard key={seat.code} seat={seat} data={data} nested/>)}</div></section>
     </>
   );
 }
@@ -204,9 +205,9 @@ export function ParliamentIndexPage({ data, seating, search, setSearch }: { data
   );
 }
 
-export function ParliamentPage({ data, scoresheetIndex }: { data: ElectionData; scoresheetIndex: ScoresheetIndex }) {
-  const { parliamentName = "" } = useParams();
-  const seat = data.seats.find((item) => toSlug(item.name) === parliamentName);
+export function ParliamentPage({ data, scoresheetIndex, geography, constituencies }: { data: ElectionData; scoresheetIndex: ScoresheetIndex; geography: GeographyData; constituencies: ConstituencyRegistry }) {
+  const { parliamentName = "", stateName } = useParams();
+  const seat = data.seats.find((item) => toSlug(item.name) === parliamentName && (!stateName || toSlug(item.state) === stateName));
   if (!seat) return <NotFound label="Parlimen"/>;
   const index = data.seats.findIndex((item) => item.code === seat.code);
   const previous = data.seats[index - 1];
@@ -223,6 +224,7 @@ export function ParliamentPage({ data, scoresheetIndex }: { data: ElectionData; 
         <article className="panel candidate-detail"><div className="section-heading"><div><span className="eyebrow">KEPUTUSAN PENUH</span><h2>Semua calon</h2></div><span className="route-count">{formatNumber(seat.turnout)} undi</span></div><div className="candidate-list">{seat.candidates.map((candidate, candidateIndex) => <div className={`candidate-row ${candidateIndex === 0 ? "is-winner" : ""}`} key={`${candidateIndex}-${candidate.name}`}><div className="candidate-rank">{String(candidateIndex + 1).padStart(2,"0")}</div><div className="candidate-copy"><div className="candidate-name-line"><strong>{candidate.name}</strong><span>{formatNumber(candidate.votes)}</span></div><div className="candidate-meta"><span className="candidate-identities"><AllianceLogo name={candidate.alliance} data={data}/><PartyLogo name={candidate.party}/></span><span>{formatPct(candidate.share, 2)}</span></div><div className="result-track"><span style={{ width: `${candidate.share * 100}%`, background: allianceColor(candidate.alliance, data.alliances) }}/></div></div></div>)}</div></article>
         <aside className="detail-sidebar"><section className={`current-status-card status-${status}`}><div><span>KEDUDUKAN SEMASA</span><strong>{status === "vacant" ? "Kerusi kosong" : <span className="identity-pair"><PartyLogo name={activeParty} size="md"/><AllianceLogo name={activeAlliance} data={data} size="md"/></span>}</strong></div>{currentRecord ? <><small>Berkuat kuasa {currentRecord.effectiveDate}</small><p>{currentRecord.reason}</p>{currentRecord.sourceUrl && <a href={currentRecord.sourceUrl} target="_blank" rel="noreferrer">Lihat sumber ↗</a>}</> : <p>Tiada perubahan keahlian direkodkan sejak PRU-15.</p>}</section><section className="winner-card" style={{ "--winner": allianceColor(seat.winner.alliance, data.alliances) } as React.CSSProperties}><div className="winner-label"><span>KEPUTUSAN PRU-15</span><AlliancePill name={seat.winner.alliance} data={data}/></div><h3>{seat.winner.name}</h3><div className="historical-party"><span>PARTI SEMASA PRU-15</span><PartyLogo name={seat.winner.party} size="md"/></div><div className="winner-stats"><div><strong>{formatNumber(seat.winner.votes)}</strong><span>undi</span></div><div><strong>{formatPct(seat.winner.share, 2)}</strong><span>bahagian undi</span></div><div><strong>{formatNumber(seat.marginVotes)}</strong><span>majoriti</span></div></div></section><div className="detail-facts"><div><span>Pemilih berdaftar</span><strong>{formatNumber(seat.registered)}</strong></div><div><span>Keluar mengundi</span><strong>{formatPct(seat.turnoutPct)}</strong></div><div><span>Calon bertanding</span><strong>{seat.candidateCount}</strong></div><div><span>Jantina</span><strong>{seat.winner.gender}</strong></div><div><span>Bangsa</span><strong>{seat.winner.ethnicity}</strong></div></div></aside>
       </section>
+      <ParliamentGeography seat={seat} geography={geography} constituencies={constituencies}/>
       <Suspense fallback={<section className="scoresheet-loading"><span/><p>Memuatkan modul helaian mata…</p></section>}><ScoresheetDetail seat={seat} data={data} indexEntry={scoresheetIndex.seats.find((item) => item.parliamentCode === seat.code)}/></Suspense>
       <nav className="adjacent-seats" aria-label="Kerusi bersebelahan">{previous ? <Link to={`${PARLIAMENT_BASE}/${toSlug(previous.name)}`}><span>← SEBELUMNYA</span><strong>{previous.code} {previous.name}</strong></Link> : <i/>}{next && <Link to={`${PARLIAMENT_BASE}/${toSlug(next.name)}`}><span>SETERUSNYA →</span><strong>{next.code} {next.name}</strong></Link>}</nav>
     </>

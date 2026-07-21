@@ -10,11 +10,12 @@ import {
   useLocation,
   useNavigate,
 } from "react-router-dom";
-import type { AffiliationEvent, AllianceCatalogItem, CandidateChange, DataChange, ElectionData, PartyCatalogItem, ScoresheetIndex, SeatingData } from "./types";
+import type { AffiliationEvent, AllianceCatalogItem, CandidateChange, ConstituencyRegistry, DataChange, ElectionData, GeographyData, PartyCatalogItem, PollingPlacesData, ScoresheetIndex, SeatingData } from "./types";
 import { Icon } from "./components/ui/Icon";
 import { NotFound } from "./components/ui/NotFound";
 import { Badge } from "./components/ui/primitives";
 import { ElectionPage, OverviewPage, ParliamentIndexPage, ParliamentPage, StatePage, WinnersPage } from "./pages/PublicPages";
+import { DunPage, LocalityPage, PdmPage } from "./pages/GeographyPages";
 import { SettingsAffiliationPage, SettingsAlliancePage, SettingsCandidatePage, SettingsDataPage, SettingsPartyPage } from "./pages/SettingsPages";
 import { ELECTION_BASE, PARLIAMENT_BASE, STATE_BASE, VOTER_AGE_BASE, WINNERS_BASE } from "./routes";
 import {
@@ -94,8 +95,8 @@ function Shell({ data, search, setSearch, changeCount, candidateChangeCount }: {
       <aside className="sidebar">
         <Link className="brand" to={ELECTION_BASE}><Mark/><div><strong>Nadi Rakyat</strong><span>Data pilihan raya</span></div></Link>
         <nav aria-label="Navigasi utama">
-          <NavLink to={STATE_BASE} end className={() => location.pathname === STATE_BASE || (location.pathname.startsWith(`${STATE_BASE}/`) && !location.pathname.startsWith(PARLIAMENT_BASE)) ? "active" : ""}><Icon name="grid"/><span>Negeri</span></NavLink>
-          <NavLink to={PARLIAMENT_BASE}><Icon name="seat"/><span>Parlimen</span></NavLink>
+          <NavLink to={STATE_BASE} end className={() => location.pathname === STATE_BASE || new RegExp(`^${STATE_BASE}/[^/]+$`).test(location.pathname) ? "active" : ""}><Icon name="grid"/><span>Negeri</span></NavLink>
+          <NavLink to={PARLIAMENT_BASE} className={() => location.pathname === PARLIAMENT_BASE || location.pathname.includes("/parlimen/") ? "active" : ""}><Icon name="seat"/><span>Parlimen</span></NavLink>
           <NavLink to={WINNERS_BASE}><Icon name="people"/><span>Pemenang</span></NavLink>
           <NavLink to={VOTER_AGE_BASE}><Icon name="chart"/><span>Pengundi</span></NavLink>
           <NavLink to={ELECTION_BASE} end><Icon name="vote"/><span>PRU</span></NavLink>
@@ -124,6 +125,9 @@ export default function App() {
   const [data, setData] = useState<ElectionData | null>(null);
   const [seating, setSeating] = useState<SeatingData | null>(null);
   const [scoresheetIndex, setScoresheetIndex] = useState<ScoresheetIndex | null>(null);
+  const [geography, setGeography] = useState<GeographyData | null>(null);
+  const [constituencies, setConstituencies] = useState<ConstituencyRegistry | null>(null);
+  const [pollingPlaces, setPollingPlaces] = useState<PollingPlacesData | null>(null);
   const [changes, setChanges] = useState<DataChange[]>([]);
   const [affiliations, setAffiliations] = useState<AffiliationEvent[]>([]);
   const [candidateChanges, setCandidateChanges] = useState<CandidateChange[]>([]);
@@ -145,10 +149,16 @@ export default function App() {
       fetch("/data/parties.json").then((response) => response.ok ? response.json() : { parties: [] }),
       fetch("/data/alliances.json").then((response) => response.ok ? response.json() : { alliances: [] }),
       fetch("/data/scoresheets/index.json").then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); }),
-    ]).then(([election, seatingBaseline, baseline, affiliationBaseline, candidateBaseline, partyBaseline, allianceBaseline, scoresheetBaseline]) => {
+      fetch("/data/geography.json").then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); }),
+      fetch("/data/constituencies.json").then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); }),
+      fetch("/data/polling-places.json").then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); }),
+    ]).then(([election, seatingBaseline, baseline, affiliationBaseline, candidateBaseline, partyBaseline, allianceBaseline, scoresheetBaseline, geographyBaseline, constituencyBaseline, pollingPlacesBaseline]) => {
       setData(election);
       setSeating(seatingBaseline);
       setScoresheetIndex(scoresheetBaseline);
+      setGeography(geographyBaseline);
+      setConstituencies(constituencyBaseline);
+      setPollingPlaces(pollingPlacesBaseline);
       try {
         const local = localStorage.getItem(LOCAL_CHANGES_KEY);
         setChanges(local ? parseChangeFile(JSON.parse(local)) : parseChangeFile(baseline));
@@ -211,7 +221,7 @@ export default function App() {
     return { ...data, alliances, seats };
   }, [data, changes, affiliations, candidateChanges, partyCatalog, allianceCatalog, changesLoaded, affiliationsLoaded, candidateChangesLoaded, catalogsLoaded]);
   if (error) return <ErrorScreen message={error}/>;
-  if (!managedData || !seating || !scoresheetIndex) return <LoadingScreen/>;
+  if (!managedData || !seating || !scoresheetIndex || !geography || !constituencies || !pollingPlaces) return <LoadingScreen/>;
   const changedSeatCount = managedData.seats.filter((seat) => seat.current?.isChanged).length;
   const todayDate = new Date().toISOString().slice(0, 10);
   const changedCandidateCount = new Set(candidateChanges.filter((change) => change.effectiveDate <= todayDate).map((change) => `${change.seatCode}:${change.candidateIndex}`)).size;
@@ -226,8 +236,14 @@ export default function App() {
           <Route path={VOTER_AGE_BASE} element={<Suspense fallback={<div className="route-loading">Memuatkan statistik umur…</div>}><VoterAgePage/></Suspense>}/>
           <Route path={STATE_BASE} element={<OverviewPage data={managedData}/>}/>
           <Route path={PARLIAMENT_BASE} element={<ParliamentIndexPage data={managedData} seating={seating} search={search} setSearch={setSearch}/>}/>
-          <Route path={`${PARLIAMENT_BASE}/:parliamentName`} element={<ParliamentPage data={managedData} scoresheetIndex={scoresheetIndex}/>}/>
+          <Route path={`${PARLIAMENT_BASE}/:parliamentName`} element={<ParliamentPage data={managedData} scoresheetIndex={scoresheetIndex} geography={geography} constituencies={constituencies}/>}/>
           <Route path={`${STATE_BASE}/:stateName`} element={<StatePage data={managedData}/>}/>
+          <Route path={`${STATE_BASE}/:stateName/parlimen/:parliamentName`} element={<ParliamentPage data={managedData} scoresheetIndex={scoresheetIndex} geography={geography} constituencies={constituencies}/>}/>
+          <Route path={`${STATE_BASE}/:stateName/parlimen/:parliamentName/dun/:dunName`} element={<DunPage data={managedData} geography={geography} constituencies={constituencies} pollingPlaces={pollingPlaces}/>}/>
+          <Route path={`${STATE_BASE}/:stateName/parlimen/:parliamentName/dun/:dunName/pdm/:pdmName`} element={<PdmPage data={managedData} geography={geography} constituencies={constituencies} pollingPlaces={pollingPlaces}/>}/>
+          <Route path={`${STATE_BASE}/:stateName/parlimen/:parliamentName/dun/:dunName/pdm/:pdmName/lokaliti/:localityName`} element={<LocalityPage data={managedData} geography={geography} constituencies={constituencies} pollingPlaces={pollingPlaces}/>}/>
+          <Route path={`${STATE_BASE}/:stateName/parlimen/:parliamentName/pdm/:pdmName`} element={<PdmPage data={managedData} geography={geography} constituencies={constituencies} pollingPlaces={pollingPlaces}/>}/>
+          <Route path={`${STATE_BASE}/:stateName/parlimen/:parliamentName/pdm/:pdmName/lokaliti/:localityName`} element={<LocalityPage data={managedData} geography={geography} constituencies={constituencies} pollingPlaces={pollingPlaces}/>}/>
           <Route path="/settings/data" element={<SettingsDataPage data={managedData} changes={changes} setChanges={setChanges}/>}/>
           <Route path="/settings/data/keahlian" element={<SettingsAffiliationPage data={managedData} affiliations={affiliations} setAffiliations={setAffiliations} partyCatalog={partyCatalog} allianceCatalog={allianceCatalog}/>}/>
           <Route path="/settings/data/calon" element={<SettingsCandidatePage data={managedData} candidateChanges={candidateChanges} setCandidateChanges={setCandidateChanges} partyCatalog={partyCatalog} allianceCatalog={allianceCatalog}/>}/>

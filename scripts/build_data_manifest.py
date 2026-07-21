@@ -22,6 +22,7 @@ DATA_FILES = {
     "constituencies.json": "duns",
     "voter-age.json": "dunRecords",
     "polling-places.json": "pollingDistricts",
+    "geography.json": "pdms",
     "scoresheets/index.json": "seats",
 }
 

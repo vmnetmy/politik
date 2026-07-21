@@ -52,6 +52,11 @@
       "bytes": 1139281,
       "records": 2274
     },
+    "geography.json": {
+      "sha256": "6fc2f2f3cf8f364b5137d429034b6f3e9eec04c2cd1d213b71236d436cc9c7ce",
+      "bytes": 3527749,
+      "records": 7748
+    },
     "scoresheets/index.json": {
       "sha256": "d87015674f5ea1ffaa2403b1350b8b2885365deaebe5b7d120d3dc1aa9c2d3c4",
       "bytes": 22387,

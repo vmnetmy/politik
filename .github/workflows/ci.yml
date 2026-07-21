@@ -61,6 +61,9 @@ jobs:
       - name: Validate scoresheet extraction
         run: npm run data:scoresheets:check
 
+      - name: Validate SPR geography extraction
+        run: npm run data:geography:check
+
       - name: Validate published data integrity manifest
         run: npm run data:manifest:check
 

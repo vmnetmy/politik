@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["version", "metadata", "pdms", "localities"],
+  "properties": {
+    "version": { "const": 1 },
+    "metadata": {
+      "type": "object",
+      "required": ["snapshotYear", "stateCount", "parliamentCount", "dunCount", "pdmCount", "scoresheetPdmCount", "localityCount", "localityCoverage"],
+      "properties": {
+        "snapshotYear": { "const": 2022 },
+        "stateCount": { "const": 16 },
+        "parliamentCount": { "const": 222 },
+        "dunCount": { "const": 600 },
+        "pdmCount": { "const": 7748 },
+        "scoresheetPdmCount": { "type": "integer", "minimum": 0 },
+        "localityCount": { "type": "integer", "minimum": 0 },
+        "localityCoverage": { "enum": ["partial", "complete"] }
+      }
+    },
+    "pdms": {
+      "type": "array",
+      "minItems": 7748,
+      "maxItems": 7748,
+      "items": {
+        "type": "object",
+        "required": ["id", "code", "name", "slug", "stateId", "parliamentCode", "dunId", "registeredVoters", "voterCategories", "ageGroups", "gender", "hasScoresheet", "pollingCentreIds", "localityIds"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^P\\.\\d{3}:\\d{3}/\\d{2}/\\d{2}$" },
+          "code": { "type": "string", "pattern": "^\\d{3}/\\d{2}/\\d{2}$" },
+          "name": { "type": "string", "minLength": 1 },
+          "slug": { "type": "string", "minLength": 1 },
+          "stateId": { "type": "string", "minLength": 1 },
+          "parliamentCode": { "type": "string", "pattern": "^P\\.\\d{3}$" },
+          "dunId": { "type": ["string", "null"], "pattern": "^P\\.\\d{3}:N\\.\\d{2}$" },
+          "registeredVoters": { "type": "integer", "minimum": 0 },
+          "voterCategories": { "$ref": "#/$defs/nonNegativeMap" },
+          "ageGroups": { "$ref": "#/$defs/nonNegativeMap" },
+          "gender": { "$ref": "#/$defs/nonNegativeMap" },
+          "hasScoresheet": { "type": "boolean" },
+          "pollingCentreIds": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+          "localityIds": { "type": "array", "items": { "type": "string" }, "uniqueItems": true }
+        }
+      }
+    },
+    "localities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "code", "name", "slug", "pdmId", "stateId", "parliamentCode", "dunId", "sourceUrl", "sourceLabel", "publishedAt"],
+        "properties": {
+          "id": { "type": "string" }, "code": { "type": "string" }, "name": { "type": "string", "minLength": 1 }, "slug": { "type": "string", "minLength": 1 },
+          "pdmId": { "type": "string" }, "stateId": { "type": "string" }, "parliamentCode": { "type": "string" }, "dunId": { "type": "string" },
+          "sourceUrl": { "type": "string", "pattern": "^https://sprinfo\\.spr\\.gov\\.my/" }, "sourceLabel": { "type": "string" }, "publishedAt": { "type": "string", "format": "date" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "nonNegativeMap": { "type": "object", "additionalProperties": { "type": "integer", "minimum": 0 } }
+  }
+}

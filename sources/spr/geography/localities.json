@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "metadata": {
+    "description": "Transkripsi lokaliti daripada dokumen DPT awam SPR. Setiap kumpulan mengekalkan URL dan tarikh sumbernya; liputan adalah separa dan tidak dianggarkan.",
+    "retrievedAt": "2026-07-22"
+  },
+  "sources": [
+    {
+      "url": "https://sprinfo.spr.gov.my/spr/DPT/6Jun/KELANTAN/P028.pdf",
+      "sourceLabel": "DPT Jun 2025",
+      "publishedAt": "2025-07-15",
+      "parliamentCode": "P.028",
+      "dunCode": "N.30",
+      "pdmCode": "028/30/09",
+      "localities": [
+        { "code": "001", "name": "ALOR PASIR" },
+        { "code": "002", "name": "KG KELUBI" },
+        { "code": "003", "name": "JERAT SEMATA" },
+        { "code": "004", "name": "CHENGAL BATU" },
+        { "code": "005", "name": "QUARTERS HOSPITAL" },
+        { "code": "006", "name": "TAMAN FIRDAUS" }
+      ]
+    },
+    {
+      "url": "https://sprinfo.spr.gov.my/spr/DPT/9September/KELANTAN/P028.pdf",
+      "sourceLabel": "DPT September 2025",
+      "publishedAt": "2025-11-03",
+      "parliamentCode": "P.028",
+      "dunCode": "N.30",
+      "pdmCode": "028/30/04",
+      "localities": [
+        { "code": "001", "name": "PADANG PAK AMAT" },
+        { "code": "002", "name": "PADANG KEDONDONG LIMBONGAN" },
+        { "code": "003", "name": "BUKIT JENEREH" },
+        { "code": "004", "name": "BATU SEBUTIR" },
+        { "code": "005", "name": "TAMAN SRI DERASA" },
+        { "code": "006", "name": "TAMAN DESA BERINGIN" },
+        { "code": "007", "name": "TAMAN SHUHADAH" }
+      ]
+    }
+  ]
+}

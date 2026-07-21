@@ -20,6 +20,7 @@ Election data remains versioned JSON until multi-user editing or scheduled publi
 3. Use `candidate-changes.json` only for evidenced PRU-15 source corrections. Use `affiliations.json` for post-election party changes.
 4. Run `npm run data:seating` only when the official seating PDF changes.
 5. Run `npm run data:scoresheets` when any SPR 760 PDF changes. The extractor treats every available scoresheet as final and overwrites the corresponding aggregate result in `election.json`.
+6. Run `npm run data:geography` when the archived SPR Open Data hierarchy or sourced DPT locality records change.
 6. Run `npm run data:manifest` after any published data change.
 7. Open a draft pull request and complete the source/effective-date checklist.
 8. Obtain editorial and engineering approval. Required CI and browser checks must pass.
@@ -30,6 +31,8 @@ Election data remains versioned JSON until multi-user editing or scheduled publi
 `public/data/manifest.json` records SHA-256, byte size and record count for every published data file. CI rejects stale manifests. Rollback is performed by reverting the data pull request, regenerating the manifest and publishing a new reviewed commit; deployed files are never edited in place.
 
 Raw SPR 760 PDFs are retained under `sources/pru15/scoresheets/` and tracked by a separate source manifest. The public bundle receives only normalized JSON. For covered seats, scoresheet totals are authoritative and replace the aggregate election record automatically. Partial coverage is explicit in `scoresheets/index.json`; a missing source never becomes an empty or inferred result.
+
+SPR Open Data snapshots used for the reusable geography hierarchy are retained under `sources/spr/geography/`. PDM identities come from the 2022 electoral roll snapshot and are validated against the current official Senarai BPR tuple set. Locality coverage is a separately dated DPT overlay: every record must cite an official `sprinfo.spr.gov.my` PDF, and missing locality coverage must remain missing rather than inferred.
 
 ## Future CMS requirements
 

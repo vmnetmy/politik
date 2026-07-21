@@ -101,6 +101,17 @@ npm run data:voter-age
 npm run data:voter-age:check
 ```
 
+## Hierarki kawasan SPR
+
+Penerokaan kawasan kini menggunakan satu rantaian identiti guna semula: `negeri → Parlimen → DUN → PDM → lokaliti`. `public/data/geography.json` menjana 7,748 PDM daripada snapshot Daftar Pemilih Induk 2022 dan menghubungkannya kepada 222 Parlimen serta 600 DUN dalam `constituencies.json`. Wilayah Persekutuan yang tiada DUN bergerak terus daripada Parlimen kepada PDM; aplikasi tidak mencipta DUN rekaan.
+
+Pusat mengundi dan keputusan PDM dipaut melalui kod PDM yang sama dalam scoresheet. Lokaliti hanya diterbitkan apabila dokumen DPT rasmi SPR telah diarkibkan. Oleh sebab sumber DPT boleh bertarikh selepas PRU-15, setiap lokaliti membawa URL dan tarikh sumbernya sendiri dan tidak digunakan untuk mengubah keputusan sejarah.
+
+```bash
+npm run data:geography
+npm run data:geography:check
+```
+
 Pemeriksaan ini turut dijalankan dalam `.github/workflows/ci.yml` untuk setiap pull request dan perubahan pada `main`.
 
 ## Bina untuk produksi

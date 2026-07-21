@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "retrievedAt": "2026-07-22",
+  "sources": [
+    {
+      "id": "dpi-2022",
+      "url": "https://opendata.spr.gov.my/data/daftar-pemilih-induk-2012-2025.json",
+      "upstreamSha256": "dc67382148fc9f155184c9f35463fc6f820c40375bad03e72bb2fbf6f3bdf8ef",
+      "archivedFile": "dpi-2022.json",
+      "filter": "TAHUN = 2022"
+    },
+    {
+      "id": "senarai-bpr",
+      "url": "https://opendata.spr.gov.my/data/senarai-bpr.json",
+      "upstreamSha256": "5caa4a0e942982f2a340cfcbad446a9d0f5cb55d253b250ab498023aa5a99533",
+      "archivedFile": "senarai-bpr.json"
+    }
+  ]
+}
