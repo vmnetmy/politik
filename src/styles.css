@@ -102,10 +102,13 @@ button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-v
 .identity-mark img { width: 100%; height: 100%; display: block; object-fit: cover; }
 .identity-mark-sm.party-mark { width: 66px; height: 34px; }
 .identity-mark-sm.alliance-mark { width: 60px; height: 34px; }
+.identity-mark-sm.ticket-mark { width: 66px; height: 34px; }
 .identity-mark-md.party-mark { width: 90px; height: 46px; }
 .identity-mark-md.alliance-mark { width: 82px; height: 46px; }
+.identity-mark-md.ticket-mark { width: 90px; height: 46px; }
 .identity-mark-lg.party-mark { width: 140px; height: 72px; }
 .identity-mark-lg.alliance-mark { width: 128px; height: 72px; }
+.identity-mark-lg.ticket-mark { width: 140px; height: 72px; }
 .identity-mark-fallback { gap: 6px; padding: 0 8px; color: var(--ink); background: #edf0eb; font: 750 11px/1 var(--sans, Inter, sans-serif); letter-spacing: .04em; white-space: nowrap; }
 .identity-mark-fallback i { width: 7px; height: 7px; flex: 0 0 7px; background: var(--identity-color, #78837d); border-radius: 50%; }
 .composition-row .identity-mark { justify-self: start; }
@@ -622,6 +625,54 @@ footer { position: relative; display: flex; align-items: center; gap: 28px; marg
 .result-track { height: 3px; margin-top: 8px; overflow: hidden; background: #e0e0d9; }
 .result-track span { display: block; height: 100%; min-width: 1px; }
 
+.prn-index-hero { background: linear-gradient(118deg, #103e33 0%, #103e33 67%, #174d40 67%); }
+.prn-event-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 15px; margin-top: 25px; }
+.prn-event-card { min-width: 0; display: flex; flex-direction: column; padding: 25px; color: var(--ink); background: var(--paper); border: 1px solid var(--line); text-decoration: none; transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+.prn-event-card:hover { transform: translateY(-2px); border-color: #9dafa6; box-shadow: 0 10px 27px rgba(23,48,39,.075); }
+.prn-card-top, .prn-dun-code { display: flex; align-items: center; justify-content: space-between; gap: 12px; color: #738079; font-size: 10px; font-weight: 750; letter-spacing: .07em; }
+.prn-card-top b { padding: 5px 8px; color: #3d6356; background: #e6eee8; font-size: 9px; }
+.prn-event-card h2 { min-height: 55px; margin: 17px 0 20px; font: 600 34px/1 var(--serif); letter-spacing: -.035em; }
+.prn-card-leader { display: grid; grid-template-columns: 5px minmax(0, 1fr) auto; align-items: center; gap: 13px; padding: 17px 0; border-top: 1px solid #e2e2da; border-bottom: 1px solid #e2e2da; }
+.prn-card-leader > span { width: 5px; height: 100%; min-height: 43px; }
+.prn-card-leader > div { display: grid; justify-items: start; gap: 6px; }
+.prn-card-leader small, .prn-card-meta small, .prn-dun-winner small, .prn-dun-stats small { color: #738079; font-size: 9px; font-weight: 750; letter-spacing: .07em; }
+.prn-card-leader > strong { font: 600 28px/1 var(--serif); }
+.prn-card-leader > strong small { font: 600 12px/1 var(--sans); }
+.prn-card-meta { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; padding-top: 17px; }
+.prn-card-meta span { display: grid; gap: 5px; }
+.prn-card-meta strong { font-size: 14px; }
+.prn-event-card .open-seat { margin-top: auto; padding-top: 20px; }
+.prn-source-note { margin-top: 25px; }
+.prn-state-hero { background: linear-gradient(110deg, #103e33 0%, #103e33 74%, #184c40 74%); }
+.prn-state-hero .ticket-mark { background: white; }
+.prn-composition { margin-top: 22px; padding: clamp(23px, 3vw, 34px); }
+.prn-composition-bar { height: 19px; display: flex; gap: 2px; margin: 29px 0 23px; background: #dedfd8; }
+.prn-composition-bar span { min-width: 2px; }
+.prn-composition-list { display: flex; flex-wrap: wrap; gap: 10px 24px; }
+.prn-composition-list > div { display: grid; grid-template-columns: auto auto auto; align-items: center; gap: 9px; }
+.prn-composition-list strong { font: 600 21px/1 var(--serif); }
+.prn-composition-list > div > span:last-child { color: #758079; font-size: 9px; font-weight: 750; letter-spacing: .07em; }
+.prn-filter-bar { align-items: end; }
+.prn-filter-bar > .search-combobox { width: min(300px, 100%); }
+.prn-dun-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 22px; }
+.prn-dun-card { min-width: 0; display: flex; flex-direction: column; padding: 21px; color: var(--ink); background: var(--paper); border: 1px solid var(--line); text-decoration: none; transition: border-color .18s ease, transform .18s ease; }
+.prn-dun-card:hover { border-color: #9dafa6; transform: translateY(-2px); }
+.prn-dun-card h3 { min-height: 48px; margin: 13px 0 16px; font: 600 25px/1 var(--serif); letter-spacing: -.025em; }
+.prn-dun-winner { min-height: 55px; display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 11px; padding: 13px 0; border-top: 1px solid #e2e2da; }
+.prn-dun-winner > div { display: grid; gap: 5px; }
+.prn-dun-winner strong { overflow: hidden; font-size: 11px; text-overflow: ellipsis; white-space: nowrap; }
+.prn-dun-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; padding: 13px 0; border-top: 1px solid #e2e2da; border-bottom: 1px solid #e2e2da; }
+.prn-dun-stats span { min-width: 0; display: grid; gap: 5px; }
+.prn-dun-stats strong { font-size: 13px; }
+.prn-dun-card .open-seat { margin-top: auto; padding-top: 15px; }
+.prn-dun-hero { background: linear-gradient(115deg, #103e33, #174d40); }
+.prn-result-layout { margin-top: 22px; }
+.prn-winner-card { border-top: 4px solid var(--winner); }
+.prn-geography-link { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 19px 20px; color: white; background: var(--green); text-decoration: none; }
+.prn-geography-link div { display: grid; gap: 5px; }
+.prn-geography-link span { color: #a9c0b6; font-size: 9px; font-weight: 750; letter-spacing: .08em; }
+.prn-geography-link strong { font-size: 12px; }
+
 .age-route-hero { background: linear-gradient(115deg, #113f33 0%, #113f33 68%, #174d3f 68%); }
 .age-route-hero .route-stat-row { max-width: 800px; }
 .age-filter-panel { display: grid; grid-template-columns: minmax(230px, .7fr) minmax(0, 1.5fr); gap: 32px; align-items: end; margin-bottom: 18px; padding: 27px 30px; }
@@ -684,6 +735,7 @@ footer { position: relative; display: flex; align-items: center; gap: 28px; marg
   .composition-list { grid-template-columns: 1fr; }
   .composition-row:nth-child(n+5) { display: none; }
   .seat-grid { grid-template-columns: repeat(2, 1fr); }
+  .prn-event-grid, .prn-dun-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .geography-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .age-filter-panel { grid-template-columns: 1fr; }
   .age-dashboard-grid { grid-template-columns: 1fr; }
@@ -694,7 +746,7 @@ footer { position: relative; display: flex; align-items: center; gap: 28px; marg
 @media (max-width: 820px) {
   .sidebar { inset: auto 0 0; width: auto; height: 64px; flex-direction: row; padding: 6px 14px max(6px, env(safe-area-inset-bottom)); border-top: 1px solid rgba(255,255,255,.1); border-right: 0; }
   .sidebar .brand, .sidebar-source, .sidebar-foot { display: none; }
-  .sidebar nav { width: 100%; display: grid; grid-template-columns: repeat(6, 1fr); }
+  .sidebar nav { width: 100%; display: grid; grid-template-columns: repeat(7, 1fr); }
   .sidebar nav a { display: grid; justify-items: center; gap: 2px; padding: 6px; font-size: 10px; }
   .sidebar nav a::before { inset: auto auto -6px; width: 24px; height: 3px; border-radius: 3px 3px 0 0; }
   .sidebar nav span { display: block; }
@@ -789,6 +841,11 @@ footer { position: relative; display: flex; align-items: center; gap: 28px; marg
   .seating-legend { gap: 7px 10px; }
   .seating-selection-detail h3 { font-size: 27px; }
   .seat-grid { grid-template-columns: 1fr; }
+  .prn-event-grid, .prn-dun-grid { grid-template-columns: 1fr; }
+  .prn-event-card h2 { min-height: 0; }
+  .prn-composition-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .prn-composition-list > div { grid-template-columns: auto auto; }
+  .prn-composition-list > div > span:last-child { display: none; }
   .geography-summary { grid-template-columns: 1fr; }
   .geography-summary article { border-right: 0; border-bottom: 1px solid var(--line); }
   .geography-summary article:last-child { border-bottom: 0; }

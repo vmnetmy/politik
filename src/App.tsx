@@ -17,7 +17,7 @@ import { Badge } from "./components/ui/primitives";
 import { ElectionPage, OverviewPage, ParliamentIndexPage, ParliamentPage, StatePage, WinnersPage } from "./pages/PublicPages";
 import { DunPage, LocalityPage, PdmPage } from "./pages/GeographyPages";
 import { SettingsAffiliationPage, SettingsAlliancePage, SettingsCandidatePage, SettingsDataPage, SettingsPartyPage } from "./pages/SettingsPages";
-import { ELECTION_BASE, PARLIAMENT_BASE, STATE_BASE, VOTER_AGE_BASE, WINNERS_BASE } from "./routes";
+import { ELECTION_BASE, PARLIAMENT_BASE, PRN_BASE, STATE_BASE, VOTER_AGE_BASE, WINNERS_BASE } from "./routes";
 import {
   applyAffiliationEvents,
   applyCandidateChanges,
@@ -39,6 +39,9 @@ import {
 import { normalise } from "./utils";
 
 const VoterAgePage = lazy(() => import("./pages/VoterAgePage").then((module) => ({ default: module.VoterAgePage })));
+const StateElectionIndexPage = lazy(() => import("./pages/StateElectionPages").then((module) => ({ default: module.StateElectionIndexPage })));
+const StateElectionPage = lazy(() => import("./pages/StateElectionPages").then((module) => ({ default: module.StateElectionPage })));
+const StateDunResultPage = lazy(() => import("./pages/StateElectionPages").then((module) => ({ default: module.StateDunResultPage })));
 
 function mergeById<T extends { id: string }>(baseline: T[], local: T[]) {
   const merged = new Map(baseline.map((item) => [item.id, item]));
@@ -99,6 +102,7 @@ function Shell({ data, search, setSearch, changeCount, candidateChangeCount }: {
           <NavLink to={PARLIAMENT_BASE} className={() => location.pathname === PARLIAMENT_BASE || location.pathname.includes("/parlimen/") ? "active" : ""}><Icon name="seat"/><span>Parlimen</span></NavLink>
           <NavLink to={WINNERS_BASE}><Icon name="people"/><span>Pemenang</span></NavLink>
           <NavLink to={VOTER_AGE_BASE}><Icon name="chart"/><span>Pengundi</span></NavLink>
+          <NavLink to={PRN_BASE}><Icon name="vote"/><span>PRN</span></NavLink>
           <NavLink to={ELECTION_BASE} end><Icon name="vote"/><span>PRU</span></NavLink>
           <NavLink to="/settings/data"><Icon name="database"/><span>Data</span>{changeCount + candidateChangeCount > 0 && <b className="nav-count">{changeCount + candidateChangeCount}</b>}</NavLink>
         </nav>
@@ -234,6 +238,11 @@ export default function App() {
           <Route path={ELECTION_BASE} element={<ElectionPage data={managedData}/>}/>
           <Route path={WINNERS_BASE} element={<WinnersPage data={managedData}/>}/>
           <Route path={VOTER_AGE_BASE} element={<Suspense fallback={<div className="route-loading">Memuatkan statistik umur…</div>}><VoterAgePage/></Suspense>}/>
+          <Route path={PRN_BASE} element={<Suspense fallback={<div className="route-loading">Memuatkan pilihan raya negeri…</div>}><StateElectionIndexPage/></Suspense>}/>
+          <Route path={`${PRN_BASE}/:stateName`} element={<Suspense fallback={<div className="route-loading">Memuatkan pilihan raya negeri…</div>}><StateElectionPage/></Suspense>}/>
+          <Route path={`${PRN_BASE}/:stateName/:year`} element={<Suspense fallback={<div className="route-loading">Memuatkan pilihan raya negeri…</div>}><StateElectionPage/></Suspense>}/>
+          <Route path={`${PRN_BASE}/:stateName/:year/dun`} element={<Suspense fallback={<div className="route-loading">Memuatkan keputusan DUN…</div>}><StateElectionPage/></Suspense>}/>
+          <Route path={`${PRN_BASE}/:stateName/:year/dun/:dunName`} element={<Suspense fallback={<div className="route-loading">Memuatkan keputusan DUN…</div>}><StateDunResultPage/></Suspense>}/>
           <Route path={STATE_BASE} element={<OverviewPage data={managedData}/>}/>
           <Route path={PARLIAMENT_BASE} element={<ParliamentIndexPage data={managedData} seating={seating} search={search} setSearch={setSearch}/>}/>
           <Route path={`${PARLIAMENT_BASE}/:parliamentName`} element={<ParliamentPage data={managedData} scoresheetIndex={scoresheetIndex} geography={geography} constituencies={constituencies}/>}/>

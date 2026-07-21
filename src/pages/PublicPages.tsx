@@ -8,7 +8,7 @@ import { PageTitle } from "../components/ui/PageTitle";
 import { SearchCombobox } from "../components/ui/SearchCombobox";
 import { ParliamentGeography } from "./GeographyPages";
 import { currentAlliance, currentParty, currentStatus } from "../dataChanges";
-import { ELECTION_BASE, PARLIAMENT_BASE, STATE_BASE, WINNERS_BASE, stateParliamentPath } from "../routes";
+import { ELECTION_BASE, PARLIAMENT_BASE, PRN_BASE, STATE_BASE, WINNERS_BASE, stateParliamentPath } from "../routes";
 import type { ConstituencyRegistry, ElectionData, GeographyData, ScoresheetIndex, Seat, SeatingData } from "../types";
 import { allianceColor, buildStateSummaries, formatCompact, formatNumber, formatPct, normalise, shortAlliance, toSlug } from "../utils";
 
@@ -175,7 +175,7 @@ export function StatePage({ data }: { data: ElectionData }) {
     <>
       <PageTitle title={state}/>
       <section className="route-hero state-route-hero"><div className="breadcrumbs"><Link to={STATE_BASE}>Semua negeri</Link><span>/</span><strong>{state}</strong></div><span className="overline">KEPUTUSAN MENGIKUT NEGERI</span><h1>{state}</h1><p>{seats.length} kerusi Parlimen · {formatNumber(summary.turnout)} undi direkodkan</p><div className="route-stat-row"><div><span>KERUSI</span><strong>{seats.length}</strong></div><div><span>KELUAR MENGUNDI</span><strong>{formatPct(summary.turnoutPct)}</strong></div><div><span>PENDAHULU</span><strong><AllianceLogo name={leading[0]} data={data}/></strong></div><div><span>KERUSI PENDAHULU</span><strong>{leading[1]}</strong></div></div></section>
-      <section className="state-detail-grid"><SeatComposition seats={seats} data={data} title={`Agihan kerusi ${state}`}/><article className="panel state-context"><span className="eyebrow">RINGKASAN NEGERI</span><h2>{formatCompact(summary.registered)}</h2><p>pemilih berdaftar</p><div><span>Jumlah keluar mengundi</span><strong>{formatNumber(summary.turnout)}</strong></div><div><span>Purata calon / kerusi</span><strong>{(seats.reduce((n,s)=>n+s.candidateCount,0)/seats.length).toFixed(1)}</strong></div><Link to={PARLIAMENT_BASE}>Terokai semua Parlimen <Icon name="arrow" size={16}/></Link></article></section>
+      <section className="state-detail-grid"><SeatComposition seats={seats} data={data} title={`Agihan kerusi ${state}`}/><article className="panel state-context"><span className="eyebrow">RINGKASAN NEGERI</span><h2>{formatCompact(summary.registered)}</h2><p>pemilih berdaftar</p><div><span>Jumlah keluar mengundi</span><strong>{formatNumber(summary.turnout)}</strong></div><div><span>Purata calon / kerusi</span><strong>{(seats.reduce((n,s)=>n+s.candidateCount,0)/seats.length).toFixed(1)}</strong></div>{!state.startsWith("W.P") && <Link to={`${PRN_BASE}/${toSlug(state)}`}>Buka keputusan PRN <Icon name="vote" size={16}/></Link>}<Link to={PARLIAMENT_BASE}>Terokai semua Parlimen <Icon name="arrow" size={16}/></Link></article></section>
       <section className="explorer-section"><div className="explorer-heading"><div><span className="eyebrow">PARLIMEN DI {state}</span><h2>{seats.length} kerusi untuk diterokai</h2></div><div className="result-count"><strong>{seats.length}</strong><span>KERUSI</span></div></div><div className="seat-grid route-seat-grid">{seats.map((seat) => <SeatCard key={seat.code} seat={seat} data={data} nested/>)}</div></section>
     </>
   );

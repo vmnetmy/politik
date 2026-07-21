@@ -57,6 +57,11 @@
       "bytes": 3527749,
       "records": 7748
     },
+    "state-elections.json": {
+      "sha256": "0566f26ad569d49d09882c1a3953880092b691d9f7e48175736e1fde1a56b3c5",
+      "bytes": 786448,
+      "records": 600
+    },
     "scoresheets/index.json": {
       "sha256": "d87015674f5ea1ffaa2403b1350b8b2885365deaebe5b7d120d3dc1aa9c2d3c4",
       "bytes": 22387,

@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "retrievedAt": "2026-07-22",
+  "references": [
+    {
+      "id": "johor-negeri-sembilan-2026-schedule",
+      "url": "https://spr.gov.my/wp-content/uploads/2026/06/KM-BIL-18_2026-MESYUARAT-KHAS-PRU-DEWAN-NEGERI-JOHOR-NEGERI-SEMBILAN-KE-16-1.pdf",
+      "sha256": "38a99c1e685f690830a59692922959590b4a26376e9c5e90c6adfb7eb417ea3a",
+      "archivedFile": "johor-negeri-sembilan-2026-schedule.pdf"
+    }
+  ],
+  "sources": [
+    {
+      "id": "keputusan-pru-dun",
+      "url": "https://opendata.spr.gov.my/data/keputusan-pru-dun.json",
+      "sha256": "7d035d331e239a695ec99827ce74cb20830eca28464b91bf14779cf9cd8241fb",
+      "archivedFile": "keputusan-pru-dun.json"
+    },
+    {
+      "id": "keputusan-pru",
+      "url": "https://opendata.spr.gov.my/data/keputusan-pru.json",
+      "sha256": "886fd3235da1a331a0ce8356a4f592b4cec25b4348f5379420b7e8982c49a91d",
+      "archivedFile": "keputusan-pru.json"
+    },
+    {
+      "id": "keputusan-prk",
+      "url": "https://opendata.spr.gov.my/data/keputusan-prk.json",
+      "sha256": "685b224b42a8e0c2210075e9c368e40ef9e417c6611632bf20d1bd795201497b",
+      "archivedFile": "keputusan-prk.json"
+    },
+    {
+      "id": "list-dppr",
+      "url": "https://opendata.spr.gov.my/data/list-dppr.json",
+      "sha256": "6441c51f7a0b8695e7eba7edceddaf93d6f6c2fa2a374e5910a941cc1273083e",
+      "archivedFile": "list-dppr.json"
+    },
+    {
+      "id": "mysemak-johor-2026",
+      "url": "https://mysemak.spr.gov.my/semakan/keputusan",
+      "sha256": "28e85d5a2b1af4133b848373463bb4681c84911cb8cdafa74e1586341463f19f",
+      "archivedFile": "mysemak-johor-2026.json"
+    }
+  ]
+}

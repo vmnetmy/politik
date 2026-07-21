@@ -16,7 +16,7 @@ class DataManifestTests(unittest.TestCase):
 
     def test_manifest_has_sha256_for_every_governed_file(self):
         value = build(ROOT / "public/data")
-        self.assertEqual(len(value["files"]), 68)
+        self.assertEqual(len(value["files"]), 69)
         for item in value["files"].values():
             self.assertEqual(len(item["sha256"]), 64)
             self.assertGreater(item["bytes"], 0)

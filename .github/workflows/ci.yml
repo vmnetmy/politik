@@ -64,6 +64,9 @@ jobs:
       - name: Validate SPR geography extraction
         run: npm run data:geography:check
 
+      - name: Validate SPR state-election extraction
+        run: npm run data:state-elections:check
+
       - name: Validate published data integrity manifest
         run: npm run data:manifest:check
 

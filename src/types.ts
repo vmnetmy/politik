@@ -144,6 +144,7 @@ export type { SeatingData, SeatingPosition } from "./data/types/seating";
 export type { PollingCentre, PollingDistrict, PollingPlacesData, ScoresheetCandidateColumn, ScoresheetIndex, ScoresheetIndexEntry, ScoresheetResult, ScoresheetRow, ScoresheetSection } from "./data/types/scoresheet";
 export type { AgeBand, AgeCounts, AgeRecord, ConstituencyRegistry, ConstituencyState, DunReference, ParliamentReference, VoterAgeData } from "./data/types/voterAge";
 export type { GeographyData, GeographyLocality, GeographyPdm } from "./data/types/geography";
+export type { StateElectionCandidate, StateElectionContest, StateElectionData, StateElectionEvent } from "./data/types/stateElection";
 
 export type StateSummary = {
   state: string;

@@ -22,6 +22,9 @@ Buka alamat yang dipaparkan oleh Vite (biasanya `http://localhost:5173`).
 - `/pru/15/negeri/{stateName}` — analisis negeri, contohnya `/pru/15/negeri/pulau-pinang`
 - `/pru/15/negeri/parlimen` — pelan tempat duduk interaktif dan direktori semua kerusi Parlimen
 - `/pru/15/negeri/parlimen/{parliamentName}` — keputusan penuh, contohnya `/pru/15/negeri/parlimen/padang-besar`
+- `/prn` — direktori pilihan raya negeri terkini yang telah selesai bagi semua 13 negeri
+- `/prn/{stateName}/{year}` — komposisi Dewan dan keputusan semua DUN bagi satu acara, contohnya `/prn/johor/2026`
+- `/prn/{stateName}/{year}/dun/{dunName}` — keputusan calon penuh satu DUN, contohnya `/prn/johor/2026/dun/buloh-kasap`
 - `/settings/data` — urus status kerusi Parlimen selepas PRU-15
 - `/settings/data/keahlian` — urus parti dan gabungan semasa wakil rakyat secara bertarikh kuat kuasa
 - `/settings/data/calon` — urus pembetulan metadata calon tanpa mengubah angka undi
@@ -111,6 +114,22 @@ Pusat mengundi dan keputusan PDM dipaut melalui kod PDM yang sama dalam scoreshe
 npm run data:geography
 npm run data:geography:check
 ```
+
+## Pilihan raya negeri
+
+Laluan `/prn` menerbitkan keputusan Dewan Undangan Negeri sebagai acara pilihan raya yang berasingan daripada PRU Parlimen. Dataset `public/data/state-elections.json` merangkumi acara terkini yang telah selesai bagi kesemua 13 negeri, 600 kerusi DUN dan 2,233 rekod calon. Laluan awam menggunakan bentuk `/prn/{negeri}/{tahun}/dun/{nama-dun}`.
+
+Pengekstrak menggabungkan sumber rasmi SPR: keputusan Data Terbuka bagi PRU DUN berasingan, keputusan DUN Perlis/Perak/Pahang yang berlangsung serentak dengan PRU-15, keputusan tertangguh N.42 Tioman, serta keputusan akhir Johor ke-16 daripada MySPR Semak. Johor 2026 mempunyai 56 DUN dan 172 calon dengan komposisi BN 48 / PH 8. Negeri Sembilan kekal pada keputusan lengkap 2023 sehingga pilihan raya 1 Ogos 2026 selesai dan keputusan rasminya tersedia.
+
+Jumlah 2,727,926 pemilih Johor datang daripada kenyataan rasmi jadual pilihan raya SPR. MySPR Semak belum menerbitkan jumlah pemilih, undi ditolak atau turnout bagi setiap DUN dalam respons keputusan semasa; nilai itu kekal `null` dan dipaparkan sebagai `—`, bukan dianggarkan daripada undi sah. Semua kod serta nama DUN merujuk `constituencies.json`; komponen tidak menghardkod identiti kawasan.
+
+```bash
+npm run data:state-elections:fetch-johor
+npm run data:state-elections
+npm run data:state-elections:check
+```
+
+Perintah fetch mengarkibkan respons rasmi MySPR secara deterministik. Gunakan pilihan `--insecure` secara manual hanya jika trust store tempatan gagal mengesahkan sijil SPR; CI dan penerbitan biasa mesti mengekalkan pengesahan TLS.
 
 Pemeriksaan ini turut dijalankan dalam `.github/workflows/ci.yml` untuk setiap pull request dan perubahan pada `main`.
 

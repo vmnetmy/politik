@@ -21,10 +21,11 @@ Election data remains versioned JSON until multi-user editing or scheduled publi
 4. Run `npm run data:seating` only when the official seating PDF changes.
 5. Run `npm run data:scoresheets` when any SPR 760 PDF changes. The extractor treats every available scoresheet as final and overwrites the corresponding aggregate result in `election.json`.
 6. Run `npm run data:geography` when the archived SPR Open Data hierarchy or sourced DPT locality records change.
-6. Run `npm run data:manifest` after any published data change.
-7. Open a draft pull request and complete the source/effective-date checklist.
-8. Obtain editorial and engineering approval. Required CI and browser checks must pass.
-9. Merge to `main`; the governed deployment workflow publishes the validated revision.
+7. Run `npm run data:state-elections` after refreshing any archived official SPR state-result dataset.
+8. Run `npm run data:manifest` after any published data change.
+9. Open a draft pull request and complete the source/effective-date checklist.
+10. Obtain editorial and engineering approval. Required CI and browser checks must pass.
+11. Merge to `main`; the governed deployment workflow publishes the validated revision.
 
 ## Integrity and rollback
 
@@ -33,6 +34,8 @@ Election data remains versioned JSON until multi-user editing or scheduled publi
 Raw SPR 760 PDFs are retained under `sources/pru15/scoresheets/` and tracked by a separate source manifest. The public bundle receives only normalized JSON. For covered seats, scoresheet totals are authoritative and replace the aggregate election record automatically. Partial coverage is explicit in `scoresheets/index.json`; a missing source never becomes an empty or inferred result.
 
 SPR Open Data snapshots used for the reusable geography hierarchy are retained under `sources/spr/geography/`. PDM identities come from the 2022 electoral roll snapshot and are validated against the current official Senarai BPR tuple set. Locality coverage is a separately dated DPT overlay: every record must cite an official `sprinfo.spr.gov.my` PDF, and missing locality coverage must remain missing rather than inferred.
+
+Official state-election snapshots are retained under `sources/spr/state-elections/`. This includes SPR Open Data, archived MySPR Semak responses and the official Johor/Negeri Sembilan 2026 schedule statement. The generated publication represents the latest completed assembly for all 13 states: Johor uses its final 11 July 2026 result, while Negeri Sembilan remains on 2023 until its scheduled 1 August 2026 election is completed. The extractor requires every one of the 600 reusable DUN identities exactly once, derives winners and majorities from candidate votes, and records—not hides—any conflicting aggregate field in the upstream source. Fields absent from MySPR are published as `null`, never as an inferred zero or turnout estimate.
 
 ## Future CMS requirements
 
