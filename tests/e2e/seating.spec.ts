@@ -69,3 +69,18 @@ test("full-result actions retain the compact type scale", async ({ page }) => {
   const winnerActionSize = await page.locator(".winner-directory-link").first().evaluate((element) => Number.parseFloat(getComputedStyle(element).fontSize));
   expect(winnerActionSize).toBe(12);
 });
+
+test("filter comboboxes retain their compact type scale", async ({ page }) => {
+  await page.goto("/pru/15/pemenang");
+  const bangsa = page.getByRole("combobox", { name: "BANGSA" });
+  const inputSize = await bangsa.evaluate((element) => Number.parseFloat(getComputedStyle(element).fontSize));
+  const labelSize = await page.locator(".filter-combobox > label").first().evaluate((element) => Number.parseFloat(getComputedStyle(element).fontSize));
+  expect(inputSize).toBe(11);
+  expect(labelSize).toBe(10);
+
+  await bangsa.focus();
+  const optionSize = await page.locator(".combobox-option span").first().evaluate((element) => Number.parseFloat(getComputedStyle(element).fontSize));
+  const selectedSize = await page.locator(".combobox-option b").evaluate((element) => Number.parseFloat(getComputedStyle(element).fontSize));
+  expect(optionSize).toBe(11);
+  expect(selectedSize).toBe(9);
+});

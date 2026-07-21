@@ -22,6 +22,10 @@
   --sidebar-text-nav: 0.8125rem;
   --sidebar-text-brand: 1rem;
   --text-compact-action: 0.75rem;
+  --combobox-text-status: 0.5625rem;
+  --combobox-text-label: 0.625rem;
+  --combobox-text-option: 0.6875rem;
+  --combobox-text-input: 0.75rem;
 
   --color-ink: #18222b;
   --color-muted: #68727a;
