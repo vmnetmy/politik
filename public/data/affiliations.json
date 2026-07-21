@@ -3,6 +3,20 @@
   "description": "Effective-dated current party memberships for PRU-15 elected representatives. PRU-15 result identities remain immutable.",
   "affiliations": [
     {
+      "id": "rafizi-p100-bersama-2026-05-17",
+      "personId": "pru15:P.100:winner",
+      "seatCode": "P.100",
+      "effectiveDate": "2026-05-17",
+      "status": "party",
+      "partyId": "party-parti-bersama-malaysia",
+      "partyName": "PARTI BERSAMA MALAYSIA",
+      "allianceId": null,
+      "allianceName": "LAIN-LAIN / BEBAS",
+      "reason": "Keluar PKR dan mengambil alih kepimpinan Parti Bersama Malaysia sebagai wadah politik baharu.",
+      "sourceUrl": "https://www.malaymail.com/news/malaysia/2026/05/17/rafizi-ramli-and-nik-nazmi-quit-pkr-will-vacate-pandan-and-setiawangsa-seats/220312",
+      "createdAt": "2026-05-17T17:37:00.000+08:00"
+    },
+    {
       "id": "hamzah-p056-independent-2026-02-13",
       "personId": "pru15:P.056:winner",
       "seatCode": "P.056",

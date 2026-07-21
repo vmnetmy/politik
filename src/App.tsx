@@ -60,12 +60,22 @@ function mergeReferenceCatalog<T extends { id: string; sourceName: string; name:
   return merged;
 }
 
-function removeMisfiledHamzahMembership(changes: CandidateChange[]) {
+function removeMisfiledMembershipChanges(changes: CandidateChange[]) {
   return changes.filter((change) => !(
-    change.seatCode === "P.056"
-    && change.candidateIndex === 0
-    && change.effectiveDate >= "2026-02-13"
-    && normalise(change.party) !== normalise("PARTI PRIBUMI BERSATU MALAYSIA (BERSATU)")
+    (
+      change.seatCode === "P.056"
+      && change.candidateIndex === 0
+      && change.effectiveDate >= "2026-02-13"
+      && normalise(change.party) !== normalise("PARTI PRIBUMI BERSATU MALAYSIA (BERSATU)")
+    )
+    || (
+      change.seatCode === "P.100"
+      && change.candidateIndex === 0
+      && (
+        normalise(change.party) === normalise("PARTI BERSAMA MALAYSIA")
+        || normalise(change.alliance) === normalise("LAIN-LAIN / BEBAS")
+      )
+    )
   ));
 }
 
@@ -179,9 +189,9 @@ export default function App() {
       }
       try {
         const local = localStorage.getItem(LOCAL_CANDIDATE_CHANGES_KEY);
-        setCandidateChanges(removeMisfiledHamzahMembership(local ? parseCandidateChangeFile(JSON.parse(local)) : parseCandidateChangeFile(candidateBaseline)));
+        setCandidateChanges(removeMisfiledMembershipChanges(local ? parseCandidateChangeFile(JSON.parse(local)) : parseCandidateChangeFile(candidateBaseline)));
       } catch {
-        setCandidateChanges(removeMisfiledHamzahMembership(parseCandidateChangeFile(candidateBaseline)));
+        setCandidateChanges(removeMisfiledMembershipChanges(parseCandidateChangeFile(candidateBaseline)));
       }
       try {
         const local = localStorage.getItem(LOCAL_PARTY_CATALOG_KEY);

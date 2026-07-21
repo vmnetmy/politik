@@ -31,6 +31,18 @@ describe("effective-dated affiliations", () => {
     expect(seat!.winner.party).toBe("PARTI PRIBUMI BERSATU MALAYSIA (BERSATU)");
     expect(seat!.winner.alliance).toBe("PERIKATAN NASIONAL (PN)");
   });
+
+  it.each([
+    ["2026-05-16", "PARTI KEADILAN RAKYAT (PKR)", "PAKATAN HARAPAN (PH)"],
+    ["2026-05-17", "PARTI BERSAMA MALAYSIA", "LAIN-LAIN / BEBAS"],
+  ])("resolves Rafizi's membership on %s without rewriting PRU-15", (date, party, alliance) => {
+    const seat = applyAffiliationEvents(data.seats, events, parties, alliances, date).find((item) => item.code === "P.100");
+    expect(seat).toBeDefined();
+    expect(currentParty(seat!)).toBe(party);
+    expect(currentAlliance(seat!)).toBe(alliance);
+    expect(seat!.winner.party).toBe("PARTI KEADILAN RAKYAT (PKR)");
+    expect(seat!.winner.alliance).toBe("PAKATAN HARAPAN (PH)");
+  });
 });
 
 describe("party identity catalogue", () => {
