@@ -1,0 +1,1336 @@
+{
+  "version": 1,
+  "sourceFile": "SeatingDR.pdf",
+  "sourceUpdatedAt": "2026-07-13",
+  "viewBox": {
+    "width": 1190,
+    "height": 842
+  },
+  "mappedSeatCount": 220,
+  "unmappedSeatCodes": [
+    "P.100",
+    "P.118"
+  ],
+  "positions": [
+    {
+      "seatCode": "P.001",
+      "sourceConstituency": "PADANG BESAR",
+      "x": 308.5,
+      "y": 338.2
+    },
+    {
+      "seatCode": "P.002",
+      "sourceConstituency": "KANGAR",
+      "x": 301.5,
+      "y": 369.2
+    },
+    {
+      "seatCode": "P.003",
+      "sourceConstituency": "ARAU",
+      "x": 442.5,
+      "y": 562.87
+    },
+    {
+      "seatCode": "P.004",
+      "sourceConstituency": "LANGKAWI",
+      "x": 407.5,
+      "y": 406.87
+    },
+    {
+      "seatCode": "P.005",
+      "sourceConstituency": "JERLUN",
+      "x": 294.5,
+      "y": 429.2
+    },
+    {
+      "seatCode": "P.006",
+      "sourceConstituency": "KUBANG PASU",
+      "x": 300.5,
+      "y": 696.87
+    },
+    {
+      "seatCode": "P.007",
+      "sourceConstituency": "PADANG TERAP",
+      "x": 248.5,
+      "y": 565.2
+    },
+    {
+      "seatCode": "P.008",
+      "sourceConstituency": "POKOK SENA",
+      "x": 395.5,
+      "y": 629.87
+    },
+    {
+      "seatCode": "P.009",
+      "sourceConstituency": "ALOR SETAR",
+      "x": 442.5,
+      "y": 526.04
+    },
+    {
+      "seatCode": "P.010",
+      "sourceConstituency": "KUALA KEDAH",
+      "x": 249.5,
+      "y": 630.87
+    },
+    {
+      "seatCode": "P.011",
+      "sourceConstituency": "PENDANG",
+      "x": 347.5,
+      "y": 769.2
+    },
+    {
+      "seatCode": "P.012",
+      "sourceConstituency": "JERAI",
+      "x": 299.5,
+      "y": 734.2
+    },
+    {
+      "seatCode": "P.013",
+      "sourceConstituency": "SIK",
+      "x": 300.5,
+      "y": 801.87
+    },
+    {
+      "seatCode": "P.014",
+      "sourceConstituency": "MERBOK",
+      "x": 360.5,
+      "y": 365.2
+    },
+    {
+      "seatCode": "P.015",
+      "sourceConstituency": "SUNGAI PETANI",
+      "x": 884.5,
+      "y": 666.2
+    },
+    {
+      "seatCode": "P.016",
+      "sourceConstituency": "BALING",
+      "x": 249.5,
+      "y": 667.2
+    },
+    {
+      "seatCode": "P.017",
+      "sourceConstituency": "PADANG SERAI",
+      "x": 377.5,
+      "y": 335.2
+    },
+    {
+      "seatCode": "P.018",
+      "sourceConstituency": "KULIM BANDAR BAHARU",
+      "x": 248.5,
+      "y": 530.2
+    },
+    {
+      "seatCode": "P.019",
+      "sourceConstituency": "TUMPAT",
+      "x": 347.5,
+      "y": 527.87
+    },
+    {
+      "seatCode": "P.020",
+      "sourceConstituency": "PENGKALAN CHEPA",
+      "x": 395.5,
+      "y": 562.37
+    },
+    {
+      "seatCode": "P.021",
+      "sourceConstituency": "KOTA BHARU",
+      "x": 396.5,
+      "y": 801.87
+    },
+    {
+      "seatCode": "P.022",
+      "sourceConstituency": "PASIR MAS",
+      "x": 299.5,
+      "y": 769.2
+    },
+    {
+      "seatCode": "P.023",
+      "sourceConstituency": "RANTAU PANJANG",
+      "x": 395.5,
+      "y": 527.37
+    },
+    {
+      "seatCode": "P.024",
+      "sourceConstituency": "KUBANG KERIAN",
+      "x": 443.5,
+      "y": 696.04
+    },
+    {
+      "seatCode": "P.025",
+      "sourceConstituency": "BACHOK",
+      "x": 395.5,
+      "y": 731.87
+    },
+    {
+      "seatCode": "P.026",
+      "sourceConstituency": "KETEREH",
+      "x": 348.5,
+      "y": 599.2
+    },
+    {
+      "seatCode": "P.027",
+      "sourceConstituency": "TANAH MERAH",
+      "x": 348.5,
+      "y": 801.87
+    },
+    {
+      "seatCode": "P.028",
+      "sourceConstituency": "PASIR PUTEH",
+      "x": 347.5,
+      "y": 730.04
+    },
+    {
+      "seatCode": "P.029",
+      "sourceConstituency": "MACHANG",
+      "x": 396.5,
+      "y": 663.87
+    },
+    {
+      "seatCode": "P.030",
+      "sourceConstituency": "JELI",
+      "x": 310.5,
+      "y": 182.2
+    },
+    {
+      "seatCode": "P.031",
+      "sourceConstituency": "KUALA KRAI",
+      "x": 348.5,
+      "y": 663.87
+    },
+    {
+      "seatCode": "P.032",
+      "sourceConstituency": "GUA MUSANG",
+      "x": 282.5,
+      "y": 210.2
+    },
+    {
+      "seatCode": "P.033",
+      "sourceConstituency": "BESUT",
+      "x": 347.5,
+      "y": 562.87
+    },
+    {
+      "seatCode": "P.034",
+      "sourceConstituency": "SETIU",
+      "x": 344.5,
+      "y": 457.87
+    },
+    {
+      "seatCode": "P.035",
+      "sourceConstituency": "KUALA NERUS",
+      "x": 299.5,
+      "y": 530.2
+    },
+    {
+      "seatCode": "P.036",
+      "sourceConstituency": "KUALA TERENGGANU",
+      "x": 347.5,
+      "y": 697.04
+    },
+    {
+      "seatCode": "P.037",
+      "sourceConstituency": "MARANG",
+      "x": 442.5,
+      "y": 732.87
+    },
+    {
+      "seatCode": "P.038",
+      "sourceConstituency": "HULU TERENGGANU",
+      "x": 395.5,
+      "y": 699.2
+    },
+    {
+      "seatCode": "P.039",
+      "sourceConstituency": "DUNGUN",
+      "x": 396.5,
+      "y": 448.87
+    },
+    {
+      "seatCode": "P.040",
+      "sourceConstituency": "KEMAMAN",
+      "x": 442.5,
+      "y": 767.87
+    },
+    {
+      "seatCode": "P.041",
+      "sourceConstituency": "KEPALA BATAS",
+      "x": 291.5,
+      "y": 491.2
+    },
+    {
+      "seatCode": "P.042",
+      "sourceConstituency": "TASEK GELUGOR",
+      "x": 347.5,
+      "y": 628.04
+    },
+    {
+      "seatCode": "P.043",
+      "sourceConstituency": "BAGAN",
+      "x": 567.5,
+      "y": 327.2
+    },
+    {
+      "seatCode": "P.044",
+      "sourceConstituency": "PERMATANG PAUH",
+      "x": 300.5,
+      "y": 664.04
+    },
+    {
+      "seatCode": "P.045",
+      "sourceConstituency": "BUKIT MERTAJAM",
+      "x": 834.5,
+      "y": 630.87
+    },
+    {
+      "seatCode": "P.046",
+      "sourceConstituency": "BATU KAWAN",
+      "x": 677.5,
+      "y": 238.2
+    },
+    {
+      "seatCode": "P.047",
+      "sourceConstituency": "NIBONG TEBAL",
+      "x": 787.5,
+      "y": 565.2
+    },
+    {
+      "seatCode": "P.048",
+      "sourceConstituency": "BUKIT BENDERA",
+      "x": 853.5,
+      "y": 155.2
+    },
+    {
+      "seatCode": "P.049",
+      "sourceConstituency": "TANJONG",
+      "x": 727.5,
+      "y": 489.53
+    },
+    {
+      "seatCode": "P.050",
+      "sourceConstituency": "JELUTONG",
+      "x": 862.5,
+      "y": 41.87
+    },
+    {
+      "seatCode": "P.051",
+      "sourceConstituency": "BUKIT GELUGOR",
+      "x": 588.5,
+      "y": 230.87
+    },
+    {
+      "seatCode": "P.052",
+      "sourceConstituency": "BAYAN BARU",
+      "x": 740.5,
+      "y": 374.53
+    },
+    {
+      "seatCode": "P.053",
+      "sourceConstituency": "BALIK PULAU",
+      "x": 754.5,
+      "y": 135.87
+    },
+    {
+      "seatCode": "P.054",
+      "sourceConstituency": "GERIK",
+      "x": 249.5,
+      "y": 599.2
+    },
+    {
+      "seatCode": "P.055",
+      "sourceConstituency": "LENGGONG",
+      "x": 938.5,
+      "y": 664.87
+    },
+    {
+      "seatCode": "P.056",
+      "sourceConstituency": "LARUT",
+      "x": 443.5,
+      "y": 802.87
+    },
+    {
+      "seatCode": "P.057",
+      "sourceConstituency": "PARIT BUNTAR",
+      "x": 300.5,
+      "y": 630.87
+    },
+    {
+      "seatCode": "P.058",
+      "sourceConstituency": "BAGAN SERAI",
+      "x": 443.5,
+      "y": 633.2
+    },
+    {
+      "seatCode": "P.059",
+      "sourceConstituency": "BUKIT GANTANG",
+      "x": 259.5,
+      "y": 265.04
+    },
+    {
+      "seatCode": "P.060",
+      "sourceConstituency": "TAIPING",
+      "x": 762.5,
+      "y": 409.2
+    },
+    {
+      "seatCode": "P.061",
+      "sourceConstituency": "PADANG RENGAS",
+      "x": 291.5,
+      "y": 456.87
+    },
+    {
+      "seatCode": "P.062",
+      "sourceConstituency": "SUNGAI SIPUT",
+      "x": 409.5,
+      "y": 88.2
+    },
+    {
+      "seatCode": "P.063",
+      "sourceConstituency": "TAMBUN",
+      "x": 739.5,
+      "y": 804.2
+    },
+    {
+      "seatCode": "P.064",
+      "sourceConstituency": "IPOH TIMOR",
+      "x": 897.5,
+      "y": 134.2
+    },
+    {
+      "seatCode": "P.065",
+      "sourceConstituency": "IPOH BARAT",
+      "x": 773.5,
+      "y": 487.2
+    },
+    {
+      "seatCode": "P.066",
+      "sourceConstituency": "BATU GAJAH",
+      "x": 501.5,
+      "y": 238.2
+    },
+    {
+      "seatCode": "P.067",
+      "sourceConstituency": "KUALA KANGSAR",
+      "x": 248.5,
+      "y": 294.04
+    },
+    {
+      "seatCode": "P.068",
+      "sourceConstituency": "BERUAS",
+      "x": 494.5,
+      "y": 80.2
+    },
+    {
+      "seatCode": "P.069",
+      "sourceConstituency": "PARIT",
+      "x": 237.5,
+      "y": 439.87
+    },
+    {
+      "seatCode": "P.070",
+      "sourceConstituency": "KAMPAR",
+      "x": 886.5,
+      "y": 211.2
+    },
+    {
+      "seatCode": "P.071",
+      "sourceConstituency": "GOPENG",
+      "x": 877.5,
+      "y": 459.2
+    },
+    {
+      "seatCode": "P.072",
+      "sourceConstituency": "TAPAH",
+      "x": 539.5,
+      "y": 282.2
+    },
+    {
+      "seatCode": "P.073",
+      "sourceConstituency": "PASIR SALAK",
+      "x": 238.5,
+      "y": 354.87
+    },
+    {
+      "seatCode": "P.074",
+      "sourceConstituency": "LUMUT",
+      "x": 236.5,
+      "y": 467.87
+    },
+    {
+      "seatCode": "P.075",
+      "sourceConstituency": "BAGAN DATUK",
+      "x": 740.5,
+      "y": 766.87
+    },
+    {
+      "seatCode": "P.076",
+      "sourceConstituency": "TELUK INTAN",
+      "x": 740.5,
+      "y": 633.2
+    },
+    {
+      "seatCode": "P.077",
+      "sourceConstituency": "TANJONG MALIM",
+      "x": 786.5,
+      "y": 766.87
+    },
+    {
+      "seatCode": "P.078",
+      "sourceConstituency": "CAMERON HIGHLANDS",
+      "x": 999.5,
+      "y": 733.37
+    },
+    {
+      "seatCode": "P.079",
+      "sourceConstituency": "LIPIS",
+      "x": 938.5,
+      "y": 697.87
+    },
+    {
+      "seatCode": "P.080",
+      "sourceConstituency": "RAUB",
+      "x": 875.5,
+      "y": 432.53
+    },
+    {
+      "seatCode": "P.081",
+      "sourceConstituency": "JERANTUT",
+      "x": 248.5,
+      "y": 732.87
+    },
+    {
+      "seatCode": "P.082",
+      "sourceConstituency": "INDERA MAHKOTA",
+      "x": 443.5,
+      "y": 595.04
+    },
+    {
+      "seatCode": "P.083",
+      "sourceConstituency": "KUANTAN",
+      "x": 237.5,
+      "y": 386.2
+    },
+    {
+      "seatCode": "P.084",
+      "sourceConstituency": "PAYA BESAR",
+      "x": 686.5,
+      "y": 383.87
+    },
+    {
+      "seatCode": "P.085",
+      "sourceConstituency": "PEKAN",
+      "x": 497.5,
+      "y": 30.87
+    },
+    {
+      "seatCode": "P.086",
+      "sourceConstituency": "MARAN",
+      "x": 396.5,
+      "y": 484.87
+    },
+    {
+      "seatCode": "P.087",
+      "sourceConstituency": "KUALA KRAU",
+      "x": 249.5,
+      "y": 805.2
+    },
+    {
+      "seatCode": "P.088",
+      "sourceConstituency": "TEMERLOH",
+      "x": 237.5,
+      "y": 494.87
+    },
+    {
+      "seatCode": "P.089",
+      "sourceConstituency": "BENTONG",
+      "x": 864.5,
+      "y": 180.87
+    },
+    {
+      "seatCode": "P.090",
+      "sourceConstituency": "BERA",
+      "x": 612.5,
+      "y": 327.2
+    },
+    {
+      "seatCode": "P.091",
+      "sourceConstituency": "ROMPIN",
+      "x": 296.5,
+      "y": 396.87
+    },
+    {
+      "seatCode": "P.092",
+      "sourceConstituency": "SABAK BERNAM",
+      "x": 237.5,
+      "y": 414.2
+    },
+    {
+      "seatCode": "P.093",
+      "sourceConstituency": "SUNGAI BESAR",
+      "x": 395.5,
+      "y": 598.2
+    },
+    {
+      "seatCode": "P.094",
+      "sourceConstituency": "HULU SELANGOR",
+      "x": 248.5,
+      "y": 766.04
+    },
+    {
+      "seatCode": "P.095",
+      "sourceConstituency": "TANJONG KARANG",
+      "x": 271.5,
+      "y": 238.37
+    },
+    {
+      "seatCode": "P.096",
+      "sourceConstituency": "KUALA SELANGOR",
+      "x": 833.5,
+      "y": 697.37
+    },
+    {
+      "seatCode": "P.097",
+      "sourceConstituency": "SELAYANG",
+      "x": 540.5,
+      "y": 78.2
+    },
+    {
+      "seatCode": "P.098",
+      "sourceConstituency": "GOMBAK",
+      "x": 459.5,
+      "y": 242.87
+    },
+    {
+      "seatCode": "P.099",
+      "sourceConstituency": "AMPANG",
+      "x": 803.5,
+      "y": 218.87
+    },
+    {
+      "seatCode": "P.101",
+      "sourceConstituency": "HULU LANGAT",
+      "x": 955.5,
+      "y": 219.2
+    },
+    {
+      "seatCode": "P.102",
+      "sourceConstituency": "BANGI",
+      "x": 827.5,
+      "y": 251.2
+    },
+    {
+      "seatCode": "P.103",
+      "sourceConstituency": "PUCHONG",
+      "x": 427.5,
+      "y": 205.53
+    },
+    {
+      "seatCode": "P.104",
+      "sourceConstituency": "SUBANG",
+      "x": 674.5,
+      "y": 134.53
+    },
+    {
+      "seatCode": "P.105",
+      "sourceConstituency": "PETALING JAYA",
+      "x": 851.5,
+      "y": 309.2
+    },
+    {
+      "seatCode": "P.106",
+      "sourceConstituency": "DAMANSARA",
+      "x": 834.5,
+      "y": 735.2
+    },
+    {
+      "seatCode": "P.107",
+      "sourceConstituency": "SUNGAI BULOH",
+      "x": 885.5,
+      "y": 766.87
+    },
+    {
+      "seatCode": "P.108",
+      "sourceConstituency": "SHAH ALAM",
+      "x": 933.5,
+      "y": 469.2
+    },
+    {
+      "seatCode": "P.109",
+      "sourceConstituency": "KAPAR",
+      "x": 345.5,
+      "y": 491.2
+    },
+    {
+      "seatCode": "P.110",
+      "sourceConstituency": "KLANG",
+      "x": 839.5,
+      "y": 280.2
+    },
+    {
+      "seatCode": "P.111",
+      "sourceConstituency": "KOTA RAJA",
+      "x": 739.5,
+      "y": 663.87
+    },
+    {
+      "seatCode": "P.112",
+      "sourceConstituency": "KUALA LANGAT",
+      "x": 300.5,
+      "y": 599.2
+    },
+    {
+      "seatCode": "P.113",
+      "sourceConstituency": "SEPANG",
+      "x": 938.5,
+      "y": 527.87
+    },
+    {
+      "seatCode": "P.114",
+      "sourceConstituency": "KEPONG",
+      "x": 364.5,
+      "y": 96.53
+    },
+    {
+      "seatCode": "P.115",
+      "sourceConstituency": "BATU",
+      "x": 542.5,
+      "y": 29.87
+    },
+    {
+      "seatCode": "P.116",
+      "sourceConstituency": "WANGSA MAJU",
+      "x": 878.5,
+      "y": 491.2
+    },
+    {
+      "seatCode": "P.117",
+      "sourceConstituency": "SEGAMBUT",
+      "x": 834.5,
+      "y": 769.2
+    },
+    {
+      "seatCode": "P.119",
+      "sourceConstituency": "TITIWANGSA",
+      "x": 786.5,
+      "y": 633.2
+    },
+    {
+      "seatCode": "P.120",
+      "sourceConstituency": "BUKIT BINTANG",
+      "x": 677.5,
+      "y": 189.2
+    },
+    {
+      "seatCode": "P.121",
+      "sourceConstituency": "LEMBAH PANTAI",
+      "x": 786.5,
+      "y": 696.87
+    },
+    {
+      "seatCode": "P.122",
+      "sourceConstituency": "SEPUTEH",
+      "x": 493.5,
+      "y": 295.2
+    },
+    {
+      "seatCode": "P.123",
+      "sourceConstituency": "CHERAS",
+      "x": 591.5,
+      "y": 187.53
+    },
+    {
+      "seatCode": "P.124",
+      "sourceConstituency": "BANDAR TUN RAZAK",
+      "x": 653.5,
+      "y": 336.37
+    },
+    {
+      "seatCode": "P.125",
+      "sourceConstituency": "PUTRAJAYA",
+      "x": 456.5,
+      "y": 437.53
+    },
+    {
+      "seatCode": "P.126",
+      "sourceConstituency": "JELEBU",
+      "x": 634.5,
+      "y": 184.87
+    },
+    {
+      "seatCode": "P.127",
+      "sourceConstituency": "JEMPOL",
+      "x": 925.5,
+      "y": 325.87
+    },
+    {
+      "seatCode": "P.128",
+      "sourceConstituency": "SEREMBAN",
+      "x": 740.5,
+      "y": 699.2
+    },
+    {
+      "seatCode": "P.129",
+      "sourceConstituency": "KUALA PILAH",
+      "x": 931.5,
+      "y": 357.2
+    },
+    {
+      "seatCode": "P.130",
+      "sourceConstituency": "RASAH",
+      "x": 589.5,
+      "y": 33.2
+    },
+    {
+      "seatCode": "P.131",
+      "sourceConstituency": "REMBAU",
+      "x": 739.5,
+      "y": 596.87
+    },
+    {
+      "seatCode": "P.132",
+      "sourceConstituency": "PORT DICKSON",
+      "x": 633.5,
+      "y": 233.87
+    },
+    {
+      "seatCode": "P.133",
+      "sourceConstituency": "TAMPIN",
+      "x": 932.5,
+      "y": 386.2
+    },
+    {
+      "seatCode": "P.134",
+      "sourceConstituency": "MASJID TANAH",
+      "x": 395.5,
+      "y": 765.04
+    },
+    {
+      "seatCode": "P.135",
+      "sourceConstituency": "ALOR GAJAH",
+      "x": 938.5,
+      "y": 735.2
+    },
+    {
+      "seatCode": "P.136",
+      "sourceConstituency": "TANGGA BATU",
+      "x": 350.5,
+      "y": 397.2
+    },
+    {
+      "seatCode": "P.137",
+      "sourceConstituency": "HANG TUAH JAYA",
+      "x": 713.5,
+      "y": 432.87
+    },
+    {
+      "seatCode": "P.138",
+      "sourceConstituency": "KOTA MELAKA",
+      "x": 726.5,
+      "y": 35.2
+    },
+    {
+      "seatCode": "P.139",
+      "sourceConstituency": "JASIN",
+      "x": 299.5,
+      "y": 565.2
+    },
+    {
+      "seatCode": "P.140",
+      "sourceConstituency": "SEGAMAT",
+      "x": 824.5,
+      "y": 491.2
+    },
+    {
+      "seatCode": "P.141",
+      "sourceConstituency": "SEKIJANG",
+      "x": 758.5,
+      "y": 192.87
+    },
+    {
+      "seatCode": "P.142",
+      "sourceConstituency": "LABIS",
+      "x": 681.5,
+      "y": 33.2
+    },
+    {
+      "seatCode": "P.143",
+      "sourceConstituency": "PAGOH",
+      "x": 441.5,
+      "y": 484.87
+    },
+    {
+      "seatCode": "P.144",
+      "sourceConstituency": "LEDANG",
+      "x": 825.5,
+      "y": 457.87
+    },
+    {
+      "seatCode": "P.145",
+      "sourceConstituency": "BAKRI",
+      "x": 932.5,
+      "y": 413.2
+    },
+    {
+      "seatCode": "P.146",
+      "sourceConstituency": "MUAR",
+      "x": 372.5,
+      "y": 218.87
+    },
+    {
+      "seatCode": "P.147",
+      "sourceConstituency": "PARIT SULONG",
+      "x": 834.5,
+      "y": 530.2
+    },
+    {
+      "seatCode": "P.148",
+      "sourceConstituency": "AYER HITAM",
+      "x": 681.5,
+      "y": 296.2
+    },
+    {
+      "seatCode": "P.149",
+      "sourceConstituency": "SRI GADING",
+      "x": 771.5,
+      "y": 33.87
+    },
+    {
+      "seatCode": "P.150",
+      "sourceConstituency": "BATU PAHAT",
+      "x": 966.5,
+      "y": 248.2
+    },
+    {
+      "seatCode": "P.151",
+      "sourceConstituency": "SIMPANG RENGGAM",
+      "x": 681.5,
+      "y": 78.37
+    },
+    {
+      "seatCode": "P.152",
+      "sourceConstituency": "KLUANG",
+      "x": 422.5,
+      "y": 139.2
+    },
+    {
+      "seatCode": "P.153",
+      "sourceConstituency": "SEMBRONG",
+      "x": 636.5,
+      "y": 279.87
+    },
+    {
+      "seatCode": "P.154",
+      "sourceConstituency": "MERSING",
+      "x": 249.5,
+      "y": 696.04
+    },
+    {
+      "seatCode": "P.155",
+      "sourceConstituency": "TENGGARA",
+      "x": 932.5,
+      "y": 494.87
+    },
+    {
+      "seatCode": "P.156",
+      "sourceConstituency": "KOTA TINGGI",
+      "x": 740.5,
+      "y": 527.87
+    },
+    {
+      "seatCode": "P.157",
+      "sourceConstituency": "PENGERANG",
+      "x": 833.5,
+      "y": 804.2
+    },
+    {
+      "seatCode": "P.158",
+      "sourceConstituency": "TEBRAU",
+      "x": 939.5,
+      "y": 190.2
+    },
+    {
+      "seatCode": "P.159",
+      "sourceConstituency": "PASIR GUDANG",
+      "x": 714.5,
+      "y": 134.2
+    },
+    {
+      "seatCode": "P.160",
+      "sourceConstituency": "JOHOR BAHRU",
+      "x": 833.5,
+      "y": 663.87
+    },
+    {
+      "seatCode": "P.161",
+      "sourceConstituency": "PULAI",
+      "x": 817.5,
+      "y": 38.2
+    },
+    {
+      "seatCode": "P.162",
+      "sourceConstituency": "ISKANDAR PUTERI",
+      "x": 938.5,
+      "y": 630.87
+    },
+    {
+      "seatCode": "P.163",
+      "sourceConstituency": "KULAI",
+      "x": 998.5,
+      "y": 599.2
+    },
+    {
+      "seatCode": "P.164",
+      "sourceConstituency": "PONTIAN",
+      "x": 884.5,
+      "y": 630.87
+    },
+    {
+      "seatCode": "P.165",
+      "sourceConstituency": "TANJUNG PIAI",
+      "x": 632.5,
+      "y": 130.2
+    },
+    {
+      "seatCode": "P.166",
+      "sourceConstituency": "LABUAN",
+      "x": 325.5,
+      "y": 152.87
+    },
+    {
+      "seatCode": "P.167",
+      "sourceConstituency": "KUDAT",
+      "x": 408.5,
+      "y": 37.2
+    },
+    {
+      "seatCode": "P.168",
+      "sourceConstituency": "KOTA MARUDU",
+      "x": 317.5,
+      "y": 44.2
+    },
+    {
+      "seatCode": "P.169",
+      "sourceConstituency": "KOTA BELUD",
+      "x": 795.5,
+      "y": 142.2
+    },
+    {
+      "seatCode": "P.170",
+      "sourceConstituency": "TUARAN",
+      "x": 717.5,
+      "y": 189.87
+    },
+    {
+      "seatCode": "P.171",
+      "sourceConstituency": "SEPANGGAR",
+      "x": 885.5,
+      "y": 731.87
+    },
+    {
+      "seatCode": "P.172",
+      "sourceConstituency": "KOTA KINABALU",
+      "x": 938.5,
+      "y": 770.2
+    },
+    {
+      "seatCode": "P.173",
+      "sourceConstituency": "PUTATAN",
+      "x": 861.5,
+      "y": 335.87
+    },
+    {
+      "seatCode": "P.174",
+      "sourceConstituency": "PENAMPANG",
+      "x": 508.5,
+      "y": 189.2
+    },
+    {
+      "seatCode": "P.175",
+      "sourceConstituency": "PAPAR",
+      "x": 786.5,
+      "y": 599.2
+    },
+    {
+      "seatCode": "P.176",
+      "sourceConstituency": "KIMANIS",
+      "x": 998.5,
+      "y": 667.2
+    },
+    {
+      "seatCode": "P.177",
+      "sourceConstituency": "BEAUFORT",
+      "x": 815.5,
+      "y": 91.87
+    },
+    {
+      "seatCode": "P.178",
+      "sourceConstituency": "SIPITANG",
+      "x": 868.5,
+      "y": 369.2
+    },
+    {
+      "seatCode": "P.179",
+      "sourceConstituency": "RANAU",
+      "x": 588.5,
+      "y": 76.2
+    },
+    {
+      "seatCode": "P.180",
+      "sourceConstituency": "KENINGAU",
+      "x": 547.5,
+      "y": 127.04
+    },
+    {
+      "seatCode": "P.181",
+      "sourceConstituency": "TENOM",
+      "x": 453.5,
+      "y": 35.2
+    },
+    {
+      "seatCode": "P.182",
+      "sourceConstituency": "PENSIANGAN",
+      "x": 833.5,
+      "y": 599.2
+    },
+    {
+      "seatCode": "P.183",
+      "sourceConstituency": "BELURAN",
+      "x": 443.5,
+      "y": 667.2
+    },
+    {
+      "seatCode": "P.184",
+      "sourceConstituency": "LIBARAN",
+      "x": 921.5,
+      "y": 298.2
+    },
+    {
+      "seatCode": "P.185",
+      "sourceConstituency": "BATU SAPI",
+      "x": 998.5,
+      "y": 630.87
+    },
+    {
+      "seatCode": "P.186",
+      "sourceConstituency": "SANDAKAN",
+      "x": 385.5,
+      "y": 142.2
+    },
+    {
+      "seatCode": "P.187",
+      "sourceConstituency": "KINABATANGAN",
+      "x": 932.5,
+      "y": 439.87
+    },
+    {
+      "seatCode": "P.188",
+      "sourceConstituency": "LAHAD DATU",
+      "x": 938.5,
+      "y": 596.87
+    },
+    {
+      "seatCode": "P.189",
+      "sourceConstituency": "SEMPORNA",
+      "x": 525.5,
+      "y": 336.04
+    },
+    {
+      "seatCode": "P.190",
+      "sourceConstituency": "TAWAU",
+      "x": 809.5,
+      "y": 367.53
+    },
+    {
+      "seatCode": "P.191",
+      "sourceConstituency": "KALABAKAN",
+      "x": 873.5,
+      "y": 396.04
+    },
+    {
+      "seatCode": "P.192",
+      "sourceConstituency": "MAS GADING",
+      "x": 821.5,
+      "y": 432.53
+    },
+    {
+      "seatCode": "P.193",
+      "sourceConstituency": "SANTUBONG",
+      "x": 786.5,
+      "y": 530.2
+    },
+    {
+      "seatCode": "P.194",
+      "sourceConstituency": "PETRAJAYA",
+      "x": 740.5,
+      "y": 732.87
+    },
+    {
+      "seatCode": "P.195",
+      "sourceConstituency": "BANDAR KUCHING",
+      "x": 588.5,
+      "y": 131.2
+    },
+    {
+      "seatCode": "P.196",
+      "sourceConstituency": "STAMPIN",
+      "x": 549.5,
+      "y": 187.2
+    },
+    {
+      "seatCode": "P.197",
+      "sourceConstituency": "KOTA SAMARAHAN",
+      "x": 885.5,
+      "y": 563.37
+    },
+    {
+      "seatCode": "P.198",
+      "sourceConstituency": "PUNCAK BORNEO",
+      "x": 505.5,
+      "y": 129.87
+    },
+    {
+      "seatCode": "P.199",
+      "sourceConstituency": "SERIAN",
+      "x": 588.5,
+      "y": 276.87
+    },
+    {
+      "seatCode": "P.200",
+      "sourceConstituency": "BATANG SADONG",
+      "x": 362.5,
+      "y": 36.87
+    },
+    {
+      "seatCode": "P.201",
+      "sourceConstituency": "BATANG LUPAR",
+      "x": 916.5,
+      "y": 159.87
+    },
+    {
+      "seatCode": "P.202",
+      "sourceConstituency": "SRI AMAN",
+      "x": 468.5,
+      "y": 193.2
+    },
+    {
+      "seatCode": "P.203",
+      "sourceConstituency": "LUBOK ANTU",
+      "x": 911.5,
+      "y": 269.2
+    },
+    {
+      "seatCode": "P.204",
+      "sourceConstituency": "BETONG",
+      "x": 898.5,
+      "y": 237.87
+    },
+    {
+      "seatCode": "P.205",
+      "sourceConstituency": "SARATOK",
+      "x": 483.5,
+      "y": 387.2
+    },
+    {
+      "seatCode": "P.206",
+      "sourceConstituency": "TANJONG MANIS",
+      "x": 770.5,
+      "y": 85.87
+    },
+    {
+      "seatCode": "P.207",
+      "sourceConstituency": "IGAN",
+      "x": 636.5,
+      "y": 32.2
+    },
+    {
+      "seatCode": "P.208",
+      "sourceConstituency": "SARIKEI",
+      "x": 939.5,
+      "y": 565.2
+    },
+    {
+      "seatCode": "P.209",
+      "sourceConstituency": "JULAU",
+      "x": 464.5,
+      "y": 132.87
+    },
+    {
+      "seatCode": "P.210",
+      "sourceConstituency": "KANOWIT",
+      "x": 786.5,
+      "y": 666.2
+    },
+    {
+      "seatCode": "P.211",
+      "sourceConstituency": "LANANG",
+      "x": 998.5,
+      "y": 700.2
+    },
+    {
+      "seatCode": "P.212",
+      "sourceConstituency": "SIBU",
+      "x": 635.5,
+      "y": 78.2
+    },
+    {
+      "seatCode": "P.213",
+      "sourceConstituency": "MUKAH",
+      "x": 885.5,
+      "y": 527.87
+    },
+    {
+      "seatCode": "P.214",
+      "sourceConstituency": "SELANGAU",
+      "x": 887.5,
+      "y": 106.2
+    },
+    {
+      "seatCode": "P.215",
+      "sourceConstituency": "KAPIT",
+      "x": 741.5,
+      "y": 562.87
+    },
+    {
+      "seatCode": "P.216",
+      "sourceConstituency": "HULU RAJANG",
+      "x": 717.5,
+      "y": 335.87
+    },
+    {
+      "seatCode": "P.217",
+      "sourceConstituency": "BINTULU",
+      "x": 884.5,
+      "y": 804.2
+    },
+    {
+      "seatCode": "P.218",
+      "sourceConstituency": "SIBUTI",
+      "x": 772.5,
+      "y": 450.2
+    },
+    {
+      "seatCode": "P.219",
+      "sourceConstituency": "MIRI",
+      "x": 818.5,
+      "y": 397.2
+    },
+    {
+      "seatCode": "P.220",
+      "sourceConstituency": "BARAM",
+      "x": 451.5,
+      "y": 85.53
+    },
+    {
+      "seatCode": "P.221",
+      "sourceConstituency": "LIMBANG",
+      "x": 884.5,
+      "y": 596.87
+    },
+    {
+      "seatCode": "P.222",
+      "sourceConstituency": "LAWAS",
+      "x": 725.5,
+      "y": 83.2
+    }
+  ]
+}

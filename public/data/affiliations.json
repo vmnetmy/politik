@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "description": "Effective-dated current party memberships for PRU-15 elected representatives. PRU-15 result identities remain immutable.",
+  "affiliations": [
+    {
+      "id": "hamzah-p056-independent-2026-02-13",
+      "personId": "pru15:P.056:winner",
+      "seatCode": "P.056",
+      "effectiveDate": "2026-02-13",
+      "status": "independent",
+      "partyId": null,
+      "partyName": "BEBAS",
+      "allianceId": null,
+      "allianceName": "LAIN-LAIN / BEBAS",
+      "reason": "Keahlian Bersatu dipecat berkuat kuasa serta-merta; kedudukan menjadi Ahli Parlimen Bebas.",
+      "sourceUrl": "https://www.bernama.com/bm/news.php?id=2523705",
+      "createdAt": "2026-02-13T19:48:00.000+08:00"
+    },
+    {
+      "id": "hamzah-p056-wawasan-2026-06-13",
+      "personId": "pru15:P.056:winner",
+      "seatCode": "P.056",
+      "effectiveDate": "2026-06-13",
+      "status": "party",
+      "partyId": "party-parti-wawasan-negara",
+      "partyName": "PARTI WAWASAN NEGARA",
+      "allianceId": null,
+      "allianceName": "LAIN-LAIN / BEBAS",
+      "reason": "Mengumumkan Parti Wawasan Negara sebagai wadah politik baharu gerakan Reset.",
+      "sourceUrl": "https://www.malaymail.com/amp/news/malaysia/2026/06/13/hamzah-zainudin-gives-reset-a-new-political-home-with-parti-wawasan-negara/223648",
+      "createdAt": "2026-06-13T16:36:00.000+08:00"
+    },
+    {
+      "id": "hamzah-p056-wawasan-pn-2026-07-06",
+      "personId": "pru15:P.056:winner",
+      "seatCode": "P.056",
+      "effectiveDate": "2026-07-06",
+      "status": "party",
+      "partyId": "party-parti-wawasan-negara",
+      "partyName": "PARTI WAWASAN NEGARA",
+      "allianceId": "alliance-perikatan-nasional-pn",
+      "allianceName": "PERIKATAN NASIONAL (PN)",
+      "reason": "Parti Wawasan Negara menjadi parti komponen rasmi Perikatan Nasional berkuat kuasa pada tarikh kelulusan pertukaran nama oleh RoS.",
+      "sourceUrl": "https://www.freemalaysiatoday.com/category/nation/2026/07/14/wawasan-officially-a-pn-component-party",
+      "createdAt": "2026-07-14T20:37:00.000+08:00"
+    }
+  ]
+}
