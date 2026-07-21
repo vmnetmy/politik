@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://nadirakyat.my/schemas/scoresheet.schema.json",
+  "$id": "https://politik.my/schemas/scoresheet.schema.json",
   "title": "PRU-15 constituency scoresheet",
   "type": "object",
   "required": ["version", "metadata", "parliamentCode", "registeredVoters", "candidateColumns", "rows", "totals"],

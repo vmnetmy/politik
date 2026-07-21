@@ -84,7 +84,7 @@ function ErrorScreen({ message }: { message: string }) {
 function DataFooter({ data }: { data: ElectionData }) {
   return (
     <footer>
-      <div className="footer-brand"><Mark/><div><strong>Nadi Rakyat</strong><span>Data untuk demokrasi yang lebih jelas.</span></div></div>
+      <div className="footer-brand"><Mark/><div><strong>Politik.my</strong><span>Data untuk demokrasi yang lebih jelas.</span></div></div>
       <div className="footer-data"><Icon name="database" size={18}/><div><span>SUMBER</span><strong>{data.metadata.sourceFile}</strong></div></div>
     </footer>
   );
@@ -96,7 +96,7 @@ function Shell({ data, search, setSearch, changeCount, candidateChangeCount }: {
   return (
     <div className="app-shell">
       <aside className="sidebar">
-        <Link className="brand" to={ELECTION_BASE}><Mark/><div><strong>Nadi Rakyat</strong><span>Data pilihan raya</span></div></Link>
+        <Link className="brand" to={ELECTION_BASE}><Mark/><div><strong>Politik.my</strong><span>Data pilihan raya</span></div></Link>
         <nav aria-label="Navigasi utama">
           <NavLink to={STATE_BASE} end className={() => location.pathname === STATE_BASE || new RegExp(`^${STATE_BASE}/[^/]+$`).test(location.pathname) ? "active" : ""}><Icon name="grid"/><span>Negeri</span></NavLink>
           <NavLink to={PARLIAMENT_BASE} className={() => location.pathname === PARLIAMENT_BASE || location.pathname.includes("/parlimen/") ? "active" : ""}><Icon name="seat"/><span>Parlimen</span></NavLink>
@@ -111,7 +111,7 @@ function Shell({ data, search, setSearch, changeCount, candidateChangeCount }: {
       </aside>
       <main className="main-content">
         <header className="topbar">
-          <Link className="mobile-brand" to={ELECTION_BASE}><Mark/><strong>Nadi Rakyat</strong></Link>
+          <Link className="mobile-brand" to={ELECTION_BASE}><Mark/><strong>Politik.my</strong></Link>
           <label className="global-search">
             <Icon name="search" size={18}/>
             <input value={search} onFocus={() => location.pathname !== PARLIAMENT_BASE && navigate(PARLIAMENT_BASE)} onChange={(event) => setSearch(event.target.value)} placeholder="Cari kerusi, calon atau parti…"/>

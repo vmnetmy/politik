@@ -1,4 +1,4 @@
-# Nadi Rakyat — Dashboard PRU-15
+# Politik.my — Dashboard PRU-15
 
 Dashboard interaktif keputusan Pilihan Raya Umum Malaysia ke-15, dibina daripada `DATA & STATISTIK PRU-15.numbers` dalam repositori ini.
 
