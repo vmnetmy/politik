@@ -8,12 +8,16 @@
     "version": { "const": 1 },
     "metadata": {
       "type": "object",
-      "required": ["title", "sourceFile", "sourceSha256", "sourcePages", "printDate"],
+      "required": ["title", "sourceType", "sourceFile", "sourceSha256", "sourcePages", "printDate"],
       "properties": {
         "title": { "type": "string" },
+        "sourceType": { "enum": ["spr-760", "electiondata-my"] },
         "sourceFile": { "type": "string" },
         "sourceSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
-        "sourcePages": { "type": "integer", "minimum": 1 },
+        "sourcePages": { "type": "integer", "minimum": 0 },
+        "sourceUrl": { "type": "string", "format": "uri" },
+        "sourceStatsUrl": { "type": "string", "format": "uri" },
+        "licence": { "type": "string" },
         "printDate": { "type": "string", "format": "date" }
       },
       "additionalProperties": false

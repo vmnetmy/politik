@@ -9,7 +9,7 @@ import { SearchCombobox } from "../components/ui/SearchCombobox";
 import { ParliamentGeography } from "./GeographyPages";
 import { currentAlliance, currentParty, currentStatus } from "../dataChanges";
 import { ELECTION_BASE, PARLIAMENT_BASE, PRN_BASE, STATE_BASE, WINNERS_BASE, stateParliamentPath } from "../routes";
-import type { ConstituencyRegistry, ElectionData, GeographyData, ScoresheetIndex, Seat, SeatingData } from "../types";
+import type { ConstituencyRegistry, ElectionData, GeographyData, PollingPlacesData, ScoresheetIndex, Seat, SeatingData } from "../types";
 import { allianceColor, buildStateSummaries, formatCompact, formatNumber, formatPct, normalise, shortAlliance, toSlug } from "../utils";
 
 const ScoresheetDetail = lazy(() => import("../components/scoresheet/ScoresheetDetail").then((module) => ({ default: module.ScoresheetDetail })));
@@ -205,7 +205,7 @@ export function ParliamentIndexPage({ data, seating, search, setSearch }: { data
   );
 }
 
-export function ParliamentPage({ data, scoresheetIndex, geography, constituencies }: { data: ElectionData; scoresheetIndex: ScoresheetIndex; geography: GeographyData; constituencies: ConstituencyRegistry }) {
+export function ParliamentPage({ data, scoresheetIndex, geography, constituencies, pollingPlaces }: { data: ElectionData; scoresheetIndex: ScoresheetIndex; geography: GeographyData; constituencies: ConstituencyRegistry; pollingPlaces: PollingPlacesData }) {
   const { parliamentName = "", stateName } = useParams();
   const seat = data.seats.find((item) => toSlug(item.name) === parliamentName && (!stateName || toSlug(item.state) === stateName));
   if (!seat) return <NotFound label="Parlimen"/>;
@@ -225,7 +225,7 @@ export function ParliamentPage({ data, scoresheetIndex, geography, constituencie
         <aside className="detail-sidebar"><section className={`current-status-card status-${status}`}><div><span>KEDUDUKAN SEMASA</span><strong>{status === "vacant" ? "Kerusi kosong" : <span className="identity-pair"><PartyLogo name={activeParty} size="md"/><AllianceLogo name={activeAlliance} data={data} size="md"/></span>}</strong></div>{currentRecord ? <><small>Berkuat kuasa {currentRecord.effectiveDate}</small><p>{currentRecord.reason}</p>{currentRecord.sourceUrl && <a href={currentRecord.sourceUrl} target="_blank" rel="noreferrer">Lihat sumber ↗</a>}</> : <p>Tiada perubahan keahlian direkodkan sejak PRU-15.</p>}</section><section className="winner-card" style={{ "--winner": allianceColor(seat.winner.alliance, data.alliances) } as React.CSSProperties}><div className="winner-label"><span>KEPUTUSAN PRU-15</span><AlliancePill name={seat.winner.alliance} data={data}/></div><h3>{seat.winner.name}</h3><div className="historical-party"><span>PARTI SEMASA PRU-15</span><PartyLogo name={seat.winner.party} size="md"/></div><div className="winner-stats"><div><strong>{formatNumber(seat.winner.votes)}</strong><span>undi</span></div><div><strong>{formatPct(seat.winner.share, 2)}</strong><span>bahagian undi</span></div><div><strong>{formatNumber(seat.marginVotes)}</strong><span>majoriti</span></div></div></section><div className="detail-facts"><div><span>Pemilih berdaftar</span><strong>{formatNumber(seat.registered)}</strong></div><div><span>Keluar mengundi</span><strong>{formatPct(seat.turnoutPct)}</strong></div><div><span>Calon bertanding</span><strong>{seat.candidateCount}</strong></div><div><span>Jantina</span><strong>{seat.winner.gender}</strong></div><div><span>Bangsa</span><strong>{seat.winner.ethnicity}</strong></div></div></aside>
       </section>
       <ParliamentGeography seat={seat} geography={geography} constituencies={constituencies}/>
-      <Suspense fallback={<section className="scoresheet-loading"><span/><p>Memuatkan modul helaian mata…</p></section>}><ScoresheetDetail seat={seat} data={data} indexEntry={scoresheetIndex.seats.find((item) => item.parliamentCode === seat.code)}/></Suspense>
+      <Suspense fallback={<section className="scoresheet-loading"><span/><p>Memuatkan modul helaian mata…</p></section>}><ScoresheetDetail seat={seat} data={data} indexEntry={scoresheetIndex.seats.find((item) => item.parliamentCode === seat.code)} pollingPlaces={pollingPlaces}/></Suspense>
       <nav className="adjacent-seats" aria-label="Kerusi bersebelahan">{previous ? <Link to={`${PARLIAMENT_BASE}/${toSlug(previous.name)}`}><span>← SEBELUMNYA</span><strong>{previous.code} {previous.name}</strong></Link> : <i/>}{next && <Link to={`${PARLIAMENT_BASE}/${toSlug(next.name)}`}><span>SETERUSNYA →</span><strong>{next.code} {next.name}</strong></Link>}</nav>
     </>
   );

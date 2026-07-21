@@ -245,9 +245,9 @@ export default function App() {
           <Route path={`${PRN_BASE}/:assemblyNumber/:stateName/dun/:dunName`} element={<Suspense fallback={<div className="route-loading">Memuatkan keputusan DUN…</div>}><StateDunResultPage/></Suspense>}/>
           <Route path={STATE_BASE} element={<OverviewPage data={managedData}/>}/>
           <Route path={PARLIAMENT_BASE} element={<ParliamentIndexPage data={managedData} seating={seating} search={search} setSearch={setSearch}/>}/>
-          <Route path={`${PARLIAMENT_BASE}/:parliamentName`} element={<ParliamentPage data={managedData} scoresheetIndex={scoresheetIndex} geography={geography} constituencies={constituencies}/>}/>
+          <Route path={`${PARLIAMENT_BASE}/:parliamentName`} element={<ParliamentPage data={managedData} scoresheetIndex={scoresheetIndex} geography={geography} constituencies={constituencies} pollingPlaces={pollingPlaces}/>}/>
           <Route path={`${STATE_BASE}/:stateName`} element={<StatePage data={managedData}/>}/>
-          <Route path={`${STATE_BASE}/:stateName/parlimen/:parliamentName`} element={<ParliamentPage data={managedData} scoresheetIndex={scoresheetIndex} geography={geography} constituencies={constituencies}/>}/>
+          <Route path={`${STATE_BASE}/:stateName/parlimen/:parliamentName`} element={<ParliamentPage data={managedData} scoresheetIndex={scoresheetIndex} geography={geography} constituencies={constituencies} pollingPlaces={pollingPlaces}/>}/>
           <Route path={`${STATE_BASE}/:stateName/parlimen/:parliamentName/dun/:dunName`} element={<DunPage data={managedData} geography={geography} constituencies={constituencies} pollingPlaces={pollingPlaces}/>}/>
           <Route path={`${STATE_BASE}/:stateName/parlimen/:parliamentName/dun/:dunName/pdm/:pdmName`} element={<PdmPage data={managedData} geography={geography} constituencies={constituencies} pollingPlaces={pollingPlaces}/>}/>
           <Route path={`${STATE_BASE}/:stateName/parlimen/:parliamentName/dun/:dunName/pdm/:pdmName/lokaliti/:localityName`} element={<LocalityPage data={managedData} geography={geography} constituencies={constituencies} pollingPlaces={pollingPlaces}/>}/>

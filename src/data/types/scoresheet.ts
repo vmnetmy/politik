@@ -25,9 +25,13 @@ export type ScoresheetResult = {
   version: number;
   metadata: {
     title: string;
+    sourceType: "spr-760" | "electiondata-my";
     sourceFile: string;
     sourceSha256: string;
     sourcePages: number;
+    sourceUrl?: string;
+    sourceStatsUrl?: string;
+    licence?: string;
     printDate: string;
   };
   parliamentCode: string;
@@ -50,11 +54,13 @@ export type ScoresheetIndexEntry = {
   state: string;
   sourceFile: string;
   sourceSha256: string;
+  sourceType: "spr-760" | "electiondata-my";
+  sourceUrl?: string;
   pages: number;
   rowCount: number;
   pollingDistrictCount: number;
   pollingCentreCount: number;
-  status: "authoritative";
+  status: "authoritative" | "supplementary";
 };
 
 export type ScoresheetIndex = {
@@ -64,6 +70,10 @@ export type ScoresheetIndex = {
     electionDate: string;
     printDate: string;
     sourceCount: number;
+    officialScoresheetCount: number;
+    supplementaryDatasetCount: number;
+    authoritativeSeats: number;
+    supplementarySeats: number;
     coveredSeats: number;
     totalSeats: number;
     coveragePct: number;

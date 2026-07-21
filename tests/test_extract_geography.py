@@ -26,7 +26,7 @@ class GeographyExtractionTests(unittest.TestCase):
 
     def test_scoresheet_and_locality_joins_are_stable(self):
         by_id = {item["id"]: item for item in self.value["pdms"]}
-        self.assertEqual(self.value["metadata"]["scoresheetPdmCount"], 2124)
+        self.assertEqual(self.value["metadata"]["scoresheetPdmCount"], 7747)
         self.assertTrue(by_id["P.028:028/30/04"]["hasScoresheet"])
         self.assertEqual(len(by_id["P.028:028/30/04"]["localityIds"]), 7)
         self.assertEqual(len(by_id["P.028:028/30/09"]["localityIds"]), 6)

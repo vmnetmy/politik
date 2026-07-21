@@ -571,6 +571,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-v
 .scoresheet-table-wrap td:first-child small { max-width: 430px; margin-top: 3px; overflow: hidden; color: #7a8580; text-overflow: ellipsis; white-space: nowrap; }
 .scoresheet-provenance { margin-top: 18px; }
 .scoresheet-provenance p { overflow-wrap: anywhere; }
+.scoresheet-provenance a { color: inherit; font-weight: 750; text-decoration-thickness: 1px; text-underline-offset: 2px; }
 .scoresheet-loading, .scoresheet-unavailable { min-height: 95px; display: flex; align-items: center; gap: 13px; margin-top: 22px; padding: 23px 27px; color: #5f6d78; background: #e9ecee; border: 1px solid #d6dce0; }
 .scoresheet-loading { justify-content: center; }
 .scoresheet-loading > span { width: 18px; height: 18px; border: 2px solid #b5c2ba; border-top-color: var(--green); border-radius: 50%; animation: spin .8s linear infinite; }
