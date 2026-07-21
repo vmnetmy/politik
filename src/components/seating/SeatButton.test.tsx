@@ -23,7 +23,7 @@ describe("SeatButton", () => {
     const user = userEvent.setup();
     const onNavigate = vi.fn();
     const onSelect = vi.fn();
-    render(<SeatButton seat={seat} position={{ seatCode: "P.056", sourceConstituency: "LARUT", sourceX: 100, sourceY: 100, x: 100, y: 100, section: "curved" }} viewBox={{ width: 1190, height: 842 }} alliance="PN" color="#186a58" status="active" selected visible onSelect={onSelect} onHover={() => undefined} onNavigate={onNavigate}/>);
+    render(<SeatButton seat={seat} position={{ seatCode: "P.056", physicalCode: "G1", sourceConstituency: "LARUT", sourceX: 100, sourceY: 100, x: 100, y: 100, section: "curved" }} viewBox={{ width: 1190, height: 842 }} alliance="PN" color="#186a58" status="active" selected visible onSelect={onSelect} onHover={() => undefined} onNavigate={onNavigate}/>);
     const button = screen.getByRole("button", { name: /P\.056 LARUT/ });
     expect(button).toHaveAttribute("tabindex", "0");
     await user.click(button);
@@ -33,7 +33,7 @@ describe("SeatButton", () => {
   });
 
   it("keeps a vacant seat visible as an interactive marker", () => {
-    render(<SeatButton seat={seat} position={{ seatCode: "P.056", sourceConstituency: "LARUT", sourceX: 100, sourceY: 100, x: 100, y: 100, section: "curved" }} viewBox={{ width: 1190, height: 842 }} alliance="BEBAS" color="#8b938f" status="vacant" selected={false} visible onSelect={() => undefined} onHover={() => undefined} onNavigate={() => undefined}/>);
+    render(<SeatButton seat={seat} position={{ seatCode: "P.056", physicalCode: "G1", sourceConstituency: "LARUT", sourceX: 100, sourceY: 100, x: 100, y: 100, section: "curved" }} viewBox={{ width: 1190, height: 842 }} alliance="BEBAS" color="#8b938f" status="vacant" selected={false} visible onSelect={() => undefined} onHover={() => undefined} onNavigate={() => undefined}/>);
     expect(screen.getByRole("button", { name: /P\.056 LARUT/ })).toHaveClass("status-vacant");
   });
 });

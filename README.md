@@ -46,7 +46,9 @@ Paparan identiti menggunakan imej dalam folder `Parties/` dan `Gabungan/`. Nama 
 
 ## Pelan tempat duduk Dewan Rakyat
 
-Kedudukan pada visual interaktif dijana daripada `SeatingDR.pdf`, bertarikh 13 Julai 2026, dan disimpan dalam `public/data/seating.json`. Koordinat asal PDF dikekalkan sebagai `sourceX/sourceY` untuk membuktikan padanan kawasan dan wakil. Koordinat paparan `x/y` diseragamkan kepada dua grid lurus 5 × 10 yang simetri serta enam lengkok sepusat dengan 30 kedudukan setiap lengkok. Sebanyak 60 kedudukan fizikal tanpa wakil dipaparkan sebagai penanda kosong dan tidak diberikan identiti rekaan.
+Kedudukan pada visual interaktif dijana daripada `SeatingDR.pdf`, bertarikh 13 Julai 2026, dan disimpan dalam `public/data/seating.json`. Koordinat asal PDF dikekalkan sebagai `sourceX/sourceY` untuk membuktikan padanan kawasan dan wakil. Koordinat paparan `x/y` diseragamkan kepada dua grid lurus 5 × 10 yang simetri serta enam lengkok sepusat dengan 30 kedudukan setiap lengkok.
+
+Kesemua 280 kod tempat duduk fizikal (`A1-A28`, `B1-B22`, `C1-C60`, `D1-D60`, `E1-E60`, `F1-F22` dan `G1-G28`) dipaparkan sebagai kad segi empat tepat. Sebanyak 220 kad dipadankan dengan kawasan dan wakil daripada PDF, manakala 60 kad tanpa wakil kekal kelihatan dengan kodnya dan tidak diberikan identiti rekaan. Pada skrin kecil, pelan boleh ditatal secara mendatar supaya kod tidak dikecilkan sehingga sukar dibaca.
 
 Sebanyak 220 kerusi mempunyai label kawasan dalam PDF. `P.100 Pandan` dan `P.118 Setiawangsa` tidak berlabel dalam sumber dan dipaparkan sebagai rekod tanpa koordinat, tanpa mereka-reka lokasi.
 
@@ -63,7 +65,7 @@ python3 -m pip install -r requirements.txt
 npm run data:seating
 ```
 
-Pengekstrak membaca lapisan teks JasperReports dalam PDF, memadankan nama kawasan dengan 222 rekod pilihan raya, mengesahkan koordinat berada dalam `1190 × 842`, dan mensyaratkan gabungan kerusi dipetakan serta tidak dipetakan meliputi kesemua 222 kerusi tepat sekali. Kegagalan atau perubahan senyap pada format PDF menyebabkan proses tamat dengan ralat.
+Pengekstrak membaca lapisan teks JasperReports dalam PDF, memadankan nama kawasan dengan 222 rekod pilihan raya, mengesahkan koordinat berada dalam `1190 × 842`, dan mensyaratkan gabungan kerusi dipetakan serta tidak dipetakan meliputi kesemua 222 kerusi tepat sekali. Cap jari SHA-256 PDF turut dikunci kerana pemetaan kod fizikal A1-G28 datang daripada lapisan raster sumber; PDF baharu perlu disemak sebelum koordinat dan kod dijana semula. Kegagalan atau perubahan senyap pada format PDF menyebabkan proses tamat dengan ralat.
 
 Untuk memastikan fail yang diterbitkan masih sepadan tepat dengan PDF:
 

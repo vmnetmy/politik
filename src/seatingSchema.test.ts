@@ -9,6 +9,7 @@ describe("seating schema", () => {
     expect(validate(seating), JSON.stringify(validate.errors, null, 2)).toBe(true);
     expect(seating.positions.length + seating.unmappedSeatCodes.length).toBe(222);
     expect(seating.emptyPositions).toHaveLength(60);
+    expect(new Set([...seating.positions, ...seating.emptyPositions].map((position) => position.physicalCode)).size).toBe(280);
     expect(new Set(seating.positions.filter((position) => position.section === "straight-left").map((position) => position.x)).size).toBe(5);
     expect(new Set(seating.positions.filter((position) => position.section === "straight-left").map((position) => position.y)).size).toBe(10);
   });

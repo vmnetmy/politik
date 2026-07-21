@@ -20,7 +20,7 @@ export function SeatingDetail({ data, seat, position }: { data: ElectionData; se
     animate={{ opacity: 1, x: 0 }}
     exit={{ opacity: 0, x: -12 }}
   >
-    <div className="seating-selection-top"><span>{seat.state}</span><strong>{seat.code}</strong></div>
+    <div className="seating-selection-top"><span>{seat.state} · {position?.physicalCode ?? "TIADA KOD"}</span><strong>{seat.code}</strong></div>
     <h3>{seat.name}</h3><p>{seat.winner.name}</p>
     <div className="seating-identity-row"><span>PRU-15</span><strong><PartyLogo name={seat.winner.party}/><AllianceLogo name={seat.winner.alliance} data={data}/></strong></div>
     <div className="seating-identity-row is-current"><span>SEMASA</span><strong>{currentStatus(seat) === "vacant" ? "KERUSI KOSONG" : <><PartyLogo name={activeParty}/><AllianceLogo name={activeAlliance} data={data}/></>}</strong></div>

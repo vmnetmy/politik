@@ -9,6 +9,7 @@ the seat-card centres in the 1190 x 842 source coordinate system.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import math
 import re
@@ -23,14 +24,12 @@ import pdfplumber
 
 
 EXPECTED_SEAT_COUNT = 222
+EXPECTED_PDF_SHA256 = "8dd8188341dafa69493b316d7247ee64c32e8f7be3353da98796b518d4a068f4"
 DEFAULT_UNMAPPED = {"P.100", "P.118"}
 STRAIGHT_ROWS = 10
 STRAIGHT_COLUMNS = 5
 CURVED_RINGS = 6
 CURVED_SLOTS_PER_RING = 30
-CURVED_SOURCE_MAX_Y = 480
-LEFT_SOURCE_MAX_X = 520
-RIGHT_SOURCE_MIN_X = 670
 PDF_NAME_ALIASES = {
     "P.064": "IPOH TIMOR",
     "P.157": "PENGERANG",
@@ -218,55 +217,126 @@ def curved_targets() -> list[tuple[float, float]]:
     return targets
 
 
-def regularize_positions(positions: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
-    sections = {
-        "straight-left": [position for position in positions if float(position["x"]) < LEFT_SOURCE_MAX_X and float(position["y"]) >= CURVED_SOURCE_MAX_Y],
-        "straight-right": [position for position in positions if float(position["x"]) > RIGHT_SOURCE_MIN_X and float(position["y"]) >= CURVED_SOURCE_MAX_Y],
-    }
-    straight_codes = {str(position["seatCode"]) for section in sections.values() for position in section}
-    sections["curved"] = [position for position in positions if str(position["seatCode"]) not in straight_codes]
-    expected_counts = {"straight-left": 50, "straight-right": 50, "curved": 120}
-    actual_counts = {name: len(section) for name, section in sections.items()}
-    if actual_counts != expected_counts:
-        raise SeatingExtractionError(f"Unexpected PDF seating sections: expected {expected_counts}, found {actual_counts}.")
+def source_seating_slots() -> list[dict[str, Any]]:
+    """Return the 280 coded physical locations visible in the PDF raster layer."""
+    slots: dict[str, tuple[float, float]] = {}
+    left_x = [443, 396, 348, 300, 249]
+    right_x = [740, 787, 834, 885, 939]
 
+    for group, x in enumerate(left_x):
+        for offset, y in enumerate([634, 600, 566, 530], 1):
+            slots[f"F{group * 4 + offset}"] = (x, y)
+        for offset, y in enumerate([805, 770, 735, 700, 668], 1):
+            slots[f"G{group * 5 + offset}"] = (x, y)
+    slots.update({"F21": (199, 634), "F22": (199, 600), "G26": (198, 735), "G27": (199, 700), "G28": (199, 668)})
+
+    for group, x in enumerate(right_x):
+        for offset, y in enumerate([634, 600, 566, 530], 1):
+            slots[f"B{group * 4 + offset}"] = (x, y)
+        for offset, y in enumerate([805, 770, 735, 700, 668], 1):
+            slots[f"A{group * 5 + offset}"] = (x, y)
+    slots.update({"B21": (999, 634), "B22": (999, 600), "A26": (999, 735), "A27": (999, 700), "A28": (999, 668)})
+
+    d_rows = [
+        (range(60, 47, -1), [(317, 45), (362, 40), (408, 37), (453, 35), (498, 33), (543, 32), (589, 33), (637, 32), (682, 33), (726, 35), (771, 37), (817, 40), (862, 45)]),
+        (range(47, 36, -1), [(365, 95), (410, 88), (451, 83), (494, 80), (541, 79), (589, 76), (636, 79), (682, 80), (725, 83), (770, 88), (816, 95)]),
+        (range(36, 25, -1), [(385, 140), (423, 139), (465, 135), (506, 132), (547, 131), (589, 131), (632, 131), (674, 132), (715, 135), (755, 139), (796, 143)]),
+        (range(25, 16, -1), [(427, 203), (468, 193), (508, 189), (549, 188), (591, 186), (634, 188), (678, 189), (718, 193), (758, 195)]),
+        (range(16, 9, -1), [(459, 246), (502, 239), (545, 236), (588, 234), (634, 236), (677, 239), (720, 246)]),
+        (range(9, 4, -1), [(494, 296), (540, 283), (588, 279), (637, 283), (682, 296)]),
+        (range(4, 0, -1), [(526, 338), (568, 328), (612, 328), (654, 336)]),
+    ]
+    for numbers, points in d_rows:
+        for number, point in zip(numbers, points):
+            slots[f"D{number}"] = point
+
+    c_runs = {
+        **{f"C{number}": point for number, point in zip(range(1, 9), [(728, 488), (714, 436), (687, 388), (773, 488), (773, 451), (763, 410), (740, 373), (718, 338)])},
+        **{f"C{number}": point for number, point in zip(range(9, 17), [(825, 489), (825, 458), (823, 426), (819, 398), (809, 363), (793, 336), (781, 301), (766, 273)])},
+        **{f"C{number}": point for number, point in zip(range(17, 27), [(879, 492), (878, 457), (875, 427), (874, 400), (869, 369), (861, 339), (851, 309), (840, 279), (828, 248), (804, 221)])},
+        **{f"C{number}": point for number, point in zip(range(27, 40), [(933, 498), (934, 470), (933, 441), (933, 413), (933, 384), (932, 357), (926, 327), (922, 296), (911, 269), (899, 240), (887, 209), (865, 183), (854, 156)])},
+        **{f"C{number}": point for number, point in zip(range(40, 53), [(992, 493), (991, 463), (988, 434), (987, 404), (987, 339), (979, 309), (975, 278), (967, 248), (956, 218), (940, 189), (916, 160), (898, 135), (887, 105)])},
+        **{f"C{number}": point for number, point in zip(range(53, 61), [(1044, 340), (1043, 311), (1041, 280), (1038, 247), (1027, 219), (977, 127), (956, 96), (932, 64)])},
+    }
+    slots.update(c_runs)
+    slots.update({f"E{code[1:]}": (1170 - x, y) for code, (x, y) in c_runs.items()})
+
+    expected = {"A": 28, "B": 22, "C": 60, "D": 60, "E": 60, "F": 22, "G": 28}
+    if len(slots) != sum(expected.values()) or any(sum(code.startswith(letter) for code in slots) != count for letter, count in expected.items()):
+        raise SeatingExtractionError("The PDF physical-seat code map must contain A1-G28 exactly once.")
+    return [
+        {
+            "physicalCode": code,
+            "x": float(x),
+            "y": float(y),
+            "section": "straight-left" if code[0] in {"F", "G"} else "straight-right" if code[0] in {"A", "B"} else "curved",
+        }
+        for code, (x, y) in sorted(slots.items(), key=lambda item: (item[0][0], int(item[0][1:])))
+    ]
+
+
+def regularize_positions(positions: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    source_slots = source_seating_slots()
     target_sets = {
         "straight-left": straight_targets("left"),
         "straight-right": straight_targets("right"),
         "curved": curved_targets(),
     }
-    regularized: list[dict[str, Any]] = []
-    curved_occupied_targets: set[int] = set()
-    for section_name, section_positions in sections.items():
-        ordered = sorted(section_positions, key=lambda position: (float(position["y"]), float(position["x"]), str(position["seatCode"])))
-        targets = target_sets[section_name]
-        assignment = minimum_cost_assignment(ordered, targets)
+    display_by_code: dict[str, tuple[float, float]] = {}
+    for section_name, targets in target_sets.items():
+        section_slots = [slot for slot in source_slots if slot["section"] == section_name]
+        assignment = minimum_cost_assignment(section_slots, targets)
         for source_index, target_index in assignment.items():
-            source = ordered[source_index]
-            target_x, target_y = targets[target_index]
-            regularized.append({
-                **source,
-                "sourceX": source["x"],
-                "sourceY": source["y"],
-                "x": target_x,
-                "y": target_y,
-                "section": section_name,
-            })
-            if section_name == "curved":
-                curved_occupied_targets.add(target_index)
+            display_by_code[str(section_slots[source_index]["physicalCode"])] = targets[target_index]
 
-    empty_positions = [
-        {"id": f"EMPTY-{index + 1:03d}", "x": x, "y": y, "section": "curved"}
-        for index, (target_index, (x, y)) in enumerate(
-            (item for item in enumerate(target_sets["curved"]) if item[0] not in curved_occupied_targets)
-        )
-    ]
-    regularized.sort(key=lambda position: int(str(position["seatCode"]).split(".")[1]))
+    ordered_positions = sorted(positions, key=lambda position: int(str(position["seatCode"]).split(".")[1]))
+    source_targets = [(float(slot["x"]), float(slot["y"])) for slot in source_slots]
+    seat_assignment = minimum_cost_assignment(ordered_positions, source_targets)
+    used_physical_codes: set[str] = set()
+    regularized: list[dict[str, Any]] = []
+    for position_index, slot_index in seat_assignment.items():
+        position = ordered_positions[position_index]
+        slot = source_slots[slot_index]
+        distance = math.hypot(float(position["x"]) - float(slot["x"]), float(position["y"]) - float(slot["y"]))
+        if distance > 12:
+            raise SeatingExtractionError(f"{position['seatCode']} is {distance:.2f} points from its nearest coded PDF seat {slot['physicalCode']}.")
+        physical_code = str(slot["physicalCode"])
+        target_x, target_y = display_by_code[physical_code]
+        used_physical_codes.add(physical_code)
+        regularized.append({
+            **position,
+            "physicalCode": physical_code,
+            "sourceX": position["x"],
+            "sourceY": position["y"],
+            "x": target_x,
+            "y": target_y,
+            "section": slot["section"],
+        })
+
+    empty_positions = []
+    for slot in source_slots:
+        physical_code = str(slot["physicalCode"])
+        if physical_code in used_physical_codes:
+            continue
+        target_x, target_y = display_by_code[physical_code]
+        empty_positions.append({
+            "id": f"EMPTY-{physical_code}",
+            "physicalCode": physical_code,
+            "sourceX": slot["x"],
+            "sourceY": slot["y"],
+            "x": target_x,
+            "y": target_y,
+            "section": slot["section"],
+        })
     return regularized, empty_positions
 
 
 def extract(pdf_path: Path, election_path: Path, allowed_unmapped: set[str]) -> dict[str, Any]:
     seats = load_election(election_path)
+    with pdf_path.open("rb") as source:
+        pdf_sha256 = hashlib.file_digest(source, "sha256").hexdigest()
+    if pdf_sha256 != EXPECTED_PDF_SHA256:
+        raise SeatingExtractionError("SeatingDR.pdf changed; review the physical A1-G28 code map before regenerating seating.json.")
     try:
         with pdfplumber.open(pdf_path) as pdf:
             if len(pdf.pages) != 1:
@@ -324,12 +394,13 @@ def extract(pdf_path: Path, election_path: Path, allowed_unmapped: set[str]) -> 
     positions, empty_positions = regularize_positions(positions)
     validate_positions(positions, missing, view_box, seats)
     return {
-        "version": 2,
+        "version": 3,
         "sourceFile": pdf_path.name,
+        "sourceSha256": pdf_sha256,
         "sourceUpdatedAt": updated_at,
         "viewBox": view_box,
         "layout": {
-            "strategy": "concentric-v1",
+            "strategy": "concentric-rect-v2",
             "straightRows": STRAIGHT_ROWS,
             "straightColumns": STRAIGHT_COLUMNS,
             "curvedRings": CURVED_RINGS,

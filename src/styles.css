@@ -294,20 +294,19 @@ button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-v
 .seating-plan-controls button:hover { color: var(--ink); background: rgba(255,255,255,.55); }
 .seating-plan-controls button.is-active { color: white; background: var(--green); }
 .seating-plan-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(250px, 300px); gap: 22px; align-items: start; }
-.seating-map-wrap { min-width: 0; }
-.seating-map { position: relative; aspect-ratio: 1190 / 842; overflow: hidden; background: #f3f2ec; border: 1px solid #deded5; }
+.seating-map-wrap { min-width: 0; overflow-x: auto; }
+.seating-map { position: relative; min-width: 1000px; aspect-ratio: 1190 / 842; overflow: hidden; background: #f3f2ec; border: 1px solid #deded5; }
 .seating-chamber { position: absolute; inset: 0; width: 100%; height: 100%; }
 .seating-chamber path, .seating-chamber rect { fill: none; stroke: #c7cbc3; stroke-width: 1.4; vector-effect: non-scaling-stroke; }
 .seating-chamber text { fill: #98a19c; font: 700 10px sans-serif; text-anchor: middle; letter-spacing: .08em; }
-.seating-dot { position: absolute; z-index: 2; width: 24px; height: 24px; padding: 0; translate: -50% -50%; background: transparent; border: 0; border-radius: 50%; touch-action: manipulation; }
-.seating-dot-visual { position: absolute; left: 50%; top: 50%; width: clamp(8px, .82vw, 12px); height: clamp(8px, .82vw, 12px); translate: -50% -50%; background: var(--seat-color); border: 1.5px solid rgba(255,255,255,.92); border-radius: 50%; box-shadow: 0 1px 4px rgba(16,44,35,.22); pointer-events: none; }
-.seating-empty-position { position: absolute; z-index: 1; width: 24px; height: 24px; translate: -50% -50%; pointer-events: none; }
-.seating-empty-position i { position: absolute; left: 50%; top: 50%; width: clamp(8px, .82vw, 12px); height: clamp(8px, .82vw, 12px); translate: -50% -50%; background: transparent; border: 1.5px solid #aeb5b0; border-radius: 50%; box-shadow: inset 0 0 0 2px rgba(255,255,255,.55); }
-.seating-dot.status-vacant .seating-dot-visual { border-radius: 1px; background: #8b938f; rotate: 45deg; }
-.seating-dot.status-suspended .seating-dot-visual { border-radius: 2px; }
+.seating-dot { position: absolute; z-index: 2; width: 30px; height: 24px; padding: 0; translate: -50% -50%; color: var(--ink); background: transparent; border: 0; border-radius: 4px; touch-action: manipulation; }
+.seating-code { position: absolute; inset: 3px; display: grid; place-items: center; color: #1f3029; background: color-mix(in srgb, var(--seat-color) 12%, #fbfaf6); border: 1.5px solid var(--seat-color); border-radius: 3px; box-shadow: inset 0 -3px var(--seat-color), 0 1px 3px rgba(16,44,35,.16); font: 800 7px/1 var(--sans); letter-spacing: -.02em; pointer-events: none; }
+.seating-empty-position { position: absolute; z-index: 1; width: 30px; height: 24px; translate: -50% -50%; pointer-events: none; }
+.seating-empty-position > span { position: absolute; inset: 3px; display: grid; place-items: center; color: #828c87; background: rgba(255,255,255,.48); border: 1px dashed #9da7a1; border-radius: 3px; font: 750 7px/1 var(--sans); }
+.seating-dot.status-vacant .seating-code { color: #68736d; background: #eceeea; border-style: dashed; border-color: #7f8984; box-shadow: inset 0 -3px #8b938f; }
+.seating-dot.status-suspended .seating-code { background: #f1eee4; border-style: double; }
 .seating-dot:focus-visible { z-index: 5; outline: 3px solid #172d26; outline-offset: 3px; }
-.seating-dot > span { position: absolute; inset: 1px; border: 2px solid #162e25; border-radius: 50%; }
-.seating-dot.status-vacant > span { border-radius: 3px; }
+.seating-selection-outline { position: absolute; inset: -2px; border: 2px solid #162e25; border-radius: 5px; box-shadow: 0 0 0 2px rgba(255,255,255,.9); pointer-events: none; }
 .seating-hover-label { position: absolute; z-index: 8; min-width: 145px; max-width: 210px; display: grid; gap: 3px; padding: 9px 11px; translate: -50% -120%; color: white; background: #163f33; box-shadow: 0 8px 20px rgba(17,47,38,.2); pointer-events: none; }
 .seating-hover-label strong { font-size: 11px; line-height: 1.25; }
 .seating-hover-label span { color: #c6d6cf; font-size: 11px; line-height: 1.25; }
@@ -315,7 +314,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-v
 .seating-legend > span:not(.seating-legend-label) { display: inline-flex; align-items: center; gap: 5px; }
 .seating-legend > span > i { width: 7px; height: 7px; border-radius: 50%; }
 .seating-legend .seating-empty-legend { color: #7b8580; font-size: 10px; font-weight: 700; letter-spacing: .04em; }
-.seating-legend .seating-empty-legend > i { background: transparent; border: 1px solid #9aa39e; }
+.seating-legend .seating-empty-legend > i { width: 12px; background: transparent; border: 1px dashed #9aa39e; border-radius: 2px; }
 .seating-legend-label { color: #69756e; font-size: 11px; font-weight: 750; letter-spacing: .06em; }
 .seating-selection-detail { min-height: 100%; padding: 24px; color: white; background: var(--green); border-top: 4px solid var(--lime); }
 .seating-selection-top { display: flex; align-items: center; justify-content: space-between; gap: 15px; color: #b8cbc3; font-size: 11px; font-weight: 750; letter-spacing: .07em; text-transform: uppercase; }
@@ -642,8 +641,7 @@ footer summary { display: flex; align-items: center; gap: 6px; color: #566a61; c
   .winner-directory-grid { grid-template-columns: 1fr; }
   .winner-directory-heading { min-height: 0; }
   .seating-plan-panel { padding: 22px 16px; }
-  .seating-map { min-height: 270px; aspect-ratio: 1 / .82; }
-  .seating-dot-visual { width: 9px; height: 9px; }
+  .seating-map { width: 1000px; min-height: 707px; aspect-ratio: 1190 / 842; }
   .seating-hover-label { display: none; }
   .seating-legend { gap: 7px 10px; }
   .seating-selection-detail h3 { font-size: 27px; }

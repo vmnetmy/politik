@@ -25,9 +25,9 @@ export function SeatButton({ seat, position, viewBox, alliance, color, status, s
 
   return <motion.button
     id={`seat-marker-${seat.code.replace(".", "-")}`}
-    className={`seating-dot ${selected ? "is-selected" : ""} status-${status}`}
+    className={`seating-dot seating-card ${selected ? "is-selected" : ""} status-${status}`}
     style={{ left: `${(position.x / viewBox.width) * 100}%`, top: `${(position.y / viewBox.height) * 100}%`, "--seat-color": color } as CSSProperties}
-    aria-label={`${seat.code} ${seat.name}, ${seat.winner.name}, ${alliance}`}
+    aria-label={`${position.physicalCode}, ${seat.code} ${seat.name}, ${seat.winner.name}, ${alliance}`}
     aria-pressed={selected}
     aria-controls="seating-selection-detail"
     tabIndex={selected ? 0 : -1}
@@ -40,5 +40,5 @@ export function SeatButton({ seat, position, viewBox, alliance, color, status, s
     onBlur={() => onHover(false)}
     onKeyDown={handleKeyDown}
     onClick={onSelect}
-  ><i className="seating-dot-visual" aria-hidden="true"/>{selected && <motion.span layoutId="seating-selection-ring"/>}</motion.button>;
+  ><span className="seating-code">{position.physicalCode}</span>{selected && <motion.span className="seating-selection-outline" layoutId="seating-selection-ring"/>}</motion.button>;
 }

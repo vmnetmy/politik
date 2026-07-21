@@ -8,6 +8,8 @@ test("seating map exposes historical and current identity layers", async ({ page
   await expect(map).toBeVisible();
   await expect(map.getByRole("button")).toHaveCount(220);
   await expect(map.locator(".seating-empty-position")).toHaveCount(60);
+  await expect(map.getByRole("button", { name: /^G1, P\.056 LARUT/ })).toBeVisible();
+  await expect(map.locator(".seating-empty-position").first()).toContainText(/^[A-G]\d{1,2}$/);
   await page.getByRole("button", { name: "PRU-15", exact: true }).click();
   await expect(page.getByText("GABUNGAN PRU-15", { exact: true })).toBeVisible();
   await mkdir("visual-current", { recursive: true });
