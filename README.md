@@ -50,6 +50,8 @@ Kedudukan pada visual interaktif dijana daripada `SeatingDR.pdf` dan `SeatingDR.
 
 Kesemua 280 kod tempat duduk fizikal (`A1-A28`, `B1-B22`, `C1-C60`, `D1-D60`, `E1-E60`, `F1-F22` dan `G1-G28`) dipaparkan sebagai kad segi empat tepat. Sebanyak 220 kad dipadankan dengan kawasan dan wakil daripada PDF, manakala 60 kad tanpa wakil kekal kelihatan dengan kodnya dan tidak diberikan identiti rekaan. Pada skrin kecil, pelan boleh ditatal secara mendatar supaya kod tidak dikecilkan sehingga sukar dibaca.
 
+Kanvas mengekalkan nisbah sumber `1190 × 842` dan saiz kad menyesuaikan diri mengikut lebar yang tersedia tanpa mengecilkan sasaran interaksi di bawah 24px. Panel butiran disusun di bawah kanvas pada viewport sederhana, manakala petunjuk gabungan berada di luar kawasan tatal supaya boleh membalut secara bebas pada semua saiz skrin.
+
 Sebanyak 220 kerusi mempunyai label kawasan dalam PDF. `P.100 Pandan` dan `P.118 Setiawangsa` tidak berlabel dalam sumber dan dipaparkan sebagai rekod tanpa koordinat, tanpa mereka-reka lokasi.
 
 Visual boleh bertukar antara identiti PRU-15 dengan kedudukan semasa, menggunakan data keahlian bertarikh kuat kuasa yang sama seperti seluruh dashboard. Interaksi pemilihan, penapisan dan peralihan susun atur menggunakan Motion for React melalui import `motion/react`.

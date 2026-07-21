@@ -33,3 +33,22 @@ test("mobile seat hit areas remain at least 24 pixels", async ({ page }, testInf
   expect(box?.width).toBeGreaterThanOrEqual(24);
   expect(box?.height).toBeGreaterThanOrEqual(24);
 });
+
+test("legend is independent from the responsive seating canvas", async ({ page }, testInfo) => {
+  await page.goto("/pru/15/negeri/parlimen");
+  const visual = page.locator(".seating-visual");
+  const scroller = visual.locator(".seating-map-wrap");
+  const legend = visual.locator(":scope > .seating-legend");
+  await expect(legend).toHaveCount(1);
+  await expect(scroller.locator(".seating-legend")).toHaveCount(0);
+
+  const dimensions = await scroller.evaluate((element) => ({ clientWidth: element.clientWidth, scrollWidth: element.scrollWidth }));
+  if (testInfo.project.name === "mobile-chromium") {
+    expect(dimensions.scrollWidth).toBeGreaterThan(dimensions.clientWidth);
+  } else {
+    expect(dimensions.scrollWidth).toBeLessThanOrEqual(dimensions.clientWidth + 1);
+  }
+  const legendBox = await legend.boundingBox();
+  const visualBox = await visual.boundingBox();
+  expect(legendBox?.width).toBeLessThanOrEqual((visualBox?.width ?? 0) + 1);
+});
