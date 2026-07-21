@@ -1,0 +1,33 @@
+:root {
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #17251f;
+  background: #f4f3ed;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+  --font-sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-serif: Iowan Old Style, Baskerville, Georgia, serif;
+  --text-xs: 0.6875rem;
+  --text-sm: 0.8125rem;
+  --text-md: 0.875rem;
+  --text-lg: 1rem;
+
+  --color-ink: #17251f;
+  --color-muted: #66726c;
+  --color-paper: #fbfaf6;
+  --color-line: #dddcd3;
+  --color-green: #123c32;
+  --color-green-2: #1b5949;
+  --color-lime: #c9f17b;
+
+  /* Backwards-compatible aliases while components migrate to semantic tokens. */
+  --ink: var(--color-ink);
+  --muted: var(--color-muted);
+  --paper: var(--color-paper);
+  --line: var(--color-line);
+  --green: var(--color-green);
+  --green-2: var(--color-green-2);
+  --lime: var(--color-lime);
+  --sans: var(--font-sans);
+  --serif: var(--font-serif);
+}

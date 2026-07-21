@@ -1,5 +1,4 @@
 import { useEffect, useId, useMemo, useRef, useState } from "react";
-import { AnimatePresence, MotionConfig, motion } from "motion/react";
 import {
   BrowserRouter,
   Link,
@@ -12,7 +11,11 @@ import {
   useNavigate,
   useParams,
 } from "react-router-dom";
-import type { AffiliationEvent, AffiliationStatus, AllianceCatalogItem, Candidate, CandidateChange, DataChange, ElectionData, PartyCatalogItem, Seat, SeatingData, SeatingPosition, SeatStatus } from "./types";
+import type { AffiliationEvent, AffiliationStatus, AllianceCatalogItem, Candidate, CandidateChange, DataChange, ElectionData, PartyCatalogItem, Seat, SeatingData, SeatStatus } from "./types";
+import { AllianceLogo, AlliancePill, PartyLogo } from "./components/identity";
+import { ParliamentSeatingPlan } from "./components/seating/ParliamentSeatingPlan";
+import { Icon } from "./components/ui/Icon";
+import { ELECTION_BASE, PARLIAMENT_BASE, STATE_BASE, WINNERS_BASE } from "./routes";
 import {
   applyAffiliationEvents,
   applyCandidateChanges,
@@ -50,13 +53,6 @@ import {
   toSlug,
 } from "./utils";
 
-type IconName = "grid" | "seat" | "people" | "chart" | "search" | "arrow" | "chevron" | "database" | "info" | "vote";
-
-const ELECTION_BASE = "/pru/15";
-const WINNERS_BASE = `${ELECTION_BASE}/pemenang`;
-const STATE_BASE = `${ELECTION_BASE}/negeri`;
-const PARLIAMENT_BASE = `${STATE_BASE}/parlimen`;
-
 function mergeById<T extends { id: string }>(baseline: T[], local: T[]) {
   const merged = new Map(baseline.map((item) => [item.id, item]));
   local.forEach((item) => merged.set(item.id, item));
@@ -83,109 +79,8 @@ function removeMisfiledHamzahMembership(changes: CandidateChange[]) {
   ));
 }
 
-const allianceImageModules = import.meta.glob("../Gabungan/*.png", { eager: true, query: "?url", import: "default" }) as Record<string, string>;
-const partyImageModules = import.meta.glob("../Parties/*.png", { eager: true, query: "?url", import: "default" }) as Record<string, string>;
-const allianceImage = (filename: string) => allianceImageModules[`../Gabungan/${filename}`];
-const partyImage = (filename: string) => partyImageModules[`../Parties/${filename}`];
-
-const ALLIANCE_IMAGES: Record<string, string | undefined> = {
-  PH: allianceImage("01-pakatan-harapan.png"),
-  PN: allianceImage("02-perikatan-nasional.png"),
-  BN: allianceImage("03-barisan-nasional.png"),
-  PEJUANG: allianceImage("04-gerakan-tanah-air-gta.png"),
-  PUTRA: allianceImage("04-gerakan-tanah-air-gta.png"),
-  GTA: allianceImage("04-gerakan-tanah-air-gta.png"),
-  "LAIN-LAIN": allianceImage("05-bebas.png"),
-  BEBAS: allianceImage("05-bebas.png"),
-};
-
-const PARTY_IMAGES: Record<string, string | undefined> = {
-  UMNO: partyImage("01-umno.png"),
-  PAS: partyImage("02-pas.png"),
-  PKR: partyImage("03-pkr.png"),
-  DAP: partyImage("04-dap.png"),
-  AMANAH: partyImage("05-amanah.png"),
-  BERSATU: partyImage("06-bersatu.png"),
-  PEJUANG: partyImage("07-pejuang.png"),
-  WARISAN: partyImage("08-warisan.png"),
-  MUDA: partyImage("09-muda.png"),
-  GERAKAN: partyImage("10-gerakan.png"),
-  MCA: partyImage("11-mca.png"),
-  MIC: partyImage("12-mic.png"),
-  PBM: partyImage("13-parti-bangsa-malaysia-pbm.png"),
-  PRM: partyImage("14-parti-rakyat-malaysia-prm.png"),
-  PCM: partyImage("15-parti-cinta-malaysia-pcm.png"),
-  PBS: partyImage("16-parti-bersatu-sabah-pbs.png"),
-  STARSABAH: partyImage("17-star-sabah.png"),
-  STAR: partyImage("17-star-sabah.png"),
-  SAPP: partyImage("18-sapp.png"),
-  PBB: partyImage("19-parti-pesaka-bumiputera-bersatu-pbb.png"),
-  SUPP: partyImage("20-sarawak-united-peoples-party-supp.png"),
-  PBK: partyImage("21-parti-bumi-kenyalang-pbk.png"),
-  KDM: partyImage("23-parti-kesejahteraan-demokratik-masyarakat-kdm.png"),
-  PSB: partyImage("24-parti-sarawak-bersatu-psb.png"),
-  PWN: partyImage("25-parti-wawasan-negara.png"),
-  "PARTI WAWASAN NEGARA": partyImage("25-parti-wawasan-negara.png"),
-  BEBAS: allianceImage("05-bebas.png"),
-};
-
-type IdentityMarkSize = "sm" | "md" | "lg";
-
-function identityCode(name: string, explicitShortName?: string) {
-  const inferred = explicitShortName || name.match(/\(([^)]+)\)\s*$/)?.[1] || name;
-  const upper = inferred.trim().toUpperCase();
-  if (upper === "PAS-DHPP") return "PAS";
-  if (upper === "BERSATU-BERSEKUTU") return "BERSATU";
-  if (upper === "KERUSI KOSONG") return "KOSONG";
-  return upper;
-}
-
-function compactIdentityLabel(code: string) {
-  if (code.length <= 12) return code;
-  return code.split(/[^A-Z0-9]+/).filter(Boolean).map((word) => word[0]).join("").slice(0, 8) || code.slice(0, 8);
-}
-
-function Icon({ name, size = 20 }: { name: IconName; size?: number }) {
-  const common = { width: size, height: size, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 1.8, strokeLinecap: "round" as const, strokeLinejoin: "round" as const, "aria-hidden": true };
-  const paths: Record<IconName, React.ReactNode> = {
-    grid: <><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></>,
-    seat: <><path d="M7 11V5a2 2 0 0 1 4 0v6"/><path d="M13 11V7a2 2 0 0 1 4 0v5"/><path d="M5 11h14v4a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4z"/><path d="M8 19v2m8-2v2"/></>,
-    people: <><circle cx="9" cy="8" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="9" r="2.2"/><path d="M16 14.5a4.5 4.5 0 0 1 4.5 4.5"/></>,
-    chart: <><path d="M4 20V10"/><path d="M10 20V4"/><path d="M16 20v-7"/><path d="M22 20H2"/></>,
-    search: <><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></>,
-    arrow: <><path d="M5 12h14"/><path d="m14 7 5 5-5 5"/></>,
-    chevron: <path d="m8 10 4 4 4-4"/>,
-    database: <><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></>,
-    info: <><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 8h.01"/></>,
-    vote: <><path d="M7 3h10l2 8H5z"/><path d="M4 11h16v10H4z"/><path d="m9 7 2 2 4-4"/></>,
-  };
-  return <svg {...common}>{paths[name]}</svg>;
-}
-
 function Mark() {
   return <div className="brand-mark" aria-hidden="true"><span/><span/><span/><i/></div>;
-}
-
-function AllianceLogo({ name, data, size = "sm", className = "" }: { name: string; data: ElectionData; size?: IdentityMarkSize; className?: string }) {
-  const shortName = shortAlliance(name, data.alliances);
-  const src = ALLIANCE_IMAGES[identityCode(name, shortName)];
-  const classes = `identity-mark alliance-mark identity-mark-${size} ${className}`.trim();
-  return src
-    ? <span className={classes} title={name}><img src={src} alt={name} decoding="async"/></span>
-    : <span className={`${classes} identity-mark-fallback`} title={name} style={{ "--identity-color": allianceColor(name, data.alliances) } as React.CSSProperties}><i/>{shortName}</span>;
-}
-
-function PartyLogo({ name, shortName, size = "sm", className = "" }: { name: string; shortName?: string; size?: IdentityMarkSize; className?: string }) {
-  const code = identityCode(name, shortName);
-  const src = PARTY_IMAGES[code];
-  const classes = `identity-mark party-mark identity-mark-${size} ${className}`.trim();
-  return src
-    ? <span className={classes} title={name}><img src={src} alt={name} loading="lazy" decoding="async"/></span>
-    : <span className={`${classes} identity-mark-fallback`} title={name}>{compactIdentityLabel(code)}</span>;
-}
-
-function AlliancePill({ name, data }: { name: string; data: ElectionData }) {
-  return <AllianceLogo name={name} data={data} className="alliance-pill"/>;
 }
 
 function PageTitle({ title }: { title: string }) {
@@ -507,82 +402,6 @@ function StatePage({ data }: { data: ElectionData }) {
       <section className="state-detail-grid"><SeatComposition seats={seats} data={data} title={`Agihan kerusi ${state}`}/><article className="panel state-context"><span className="eyebrow">RINGKASAN NEGERI</span><h2>{formatCompact(summary.registered)}</h2><p>pemilih berdaftar</p><div><span>Jumlah keluar mengundi</span><strong>{formatNumber(summary.turnout)}</strong></div><div><span>Purata calon / kerusi</span><strong>{(seats.reduce((n,s)=>n+s.candidateCount,0)/seats.length).toFixed(1)}</strong></div><Link to={PARLIAMENT_BASE}>Terokai semua Parlimen <Icon name="arrow" size={16}/></Link></article></section>
       <section className="explorer-section"><div className="explorer-heading"><div><span className="eyebrow">PARLIMEN DI {state}</span><h2>{seats.length} kerusi untuk diterokai</h2></div><div className="result-count"><strong>{seats.length}</strong><span>KERUSI</span></div></div><div className="seat-grid route-seat-grid">{seats.map((seat) => <SeatCard key={seat.code} seat={seat} data={data}/>)}</div></section>
     </>
-  );
-}
-
-type SeatingView = "current" | "election";
-
-function ParliamentSeatingPlan({ data, seating, search, stateFilter, allianceFilter }: {
-  data: ElectionData;
-  seating: SeatingData;
-  search: string;
-  stateFilter: string;
-  allianceFilter: string;
-}) {
-  const [view, setView] = useState<SeatingView>("current");
-  const [selectedCode, setSelectedCode] = useState(seating.positions[0]?.seatCode ?? "");
-  const [hoveredCode, setHoveredCode] = useState<string | null>(null);
-  const seatByCode = useMemo(() => new Map(data.seats.map((seat) => [seat.code, seat])), [data]);
-  const positionByCode = useMemo(() => new Map(seating.positions.map((position) => [position.seatCode, position])), [seating]);
-  const selectedSeat = seatByCode.get(selectedCode) ?? data.seats[0];
-  const hoveredSeat = hoveredCode ? seatByCode.get(hoveredCode) : undefined;
-  const hoveredPosition = hoveredCode ? positionByCode.get(hoveredCode) : undefined;
-  const identityAlliance = (seat: Seat) => view === "current" ? currentAlliance(seat) : seat.winner.alliance;
-  const normalisedQuery = normalise(search.trim());
-  const matchesFilters = (seat: Seat) => (stateFilter === "SEMUA NEGERI" || seat.state === stateFilter)
-    && (allianceFilter === "SEMUA GABUNGAN" || currentAlliance(seat) === allianceFilter)
-    && (!normalisedQuery || [seat.code, seat.name, seat.state, seat.winner.name, seat.winner.party, currentParty(seat)].some((value) => normalise(value).includes(normalisedQuery)));
-  const alliances = [...new Set(seating.positions.map((position) => seatByCode.get(position.seatCode)).filter((seat): seat is Seat => Boolean(seat)).map(identityAlliance))].sort();
-  const unmappedSeats = seating.unmappedSeatCodes.map((code) => seatByCode.get(code)).filter((seat): seat is Seat => Boolean(seat));
-  const activeParty = selectedSeat ? currentParty(selectedSeat) : "";
-  const activeAlliance = selectedSeat ? currentAlliance(selectedSeat) : "";
-  const selectedPosition = selectedSeat ? positionByCode.get(selectedSeat.code) : undefined;
-
-  return (
-    <MotionConfig reducedMotion="user" transition={{ type: "spring", stiffness: 380, damping: 32 }}>
-      <section className="panel seating-plan-panel" aria-labelledby="seating-plan-title">
-        <div className="seating-plan-heading"><div><span className="eyebrow">PELAN TEMPAT DUDUK DEWAN RAKYAT</span><h2 id="seating-plan-title">Kedudukan dalam dewan</h2><p>Disusun semula daripada pelan rasmi bertarikh 13 Julai 2026. Pilih satu titik untuk melihat wakil dan keputusan PRU-15.</p></div><div className="seating-plan-controls" aria-label="Lapisan identiti"><button className={view === "current" ? "is-active" : ""} aria-pressed={view === "current"} onClick={() => setView("current")}>Semasa</button><button className={view === "election" ? "is-active" : ""} aria-pressed={view === "election"} onClick={() => setView("election")}>PRU-15</button></div></div>
-        <div className="seating-plan-layout">
-          <div className="seating-map-wrap">
-            <div className="seating-map" role="group" aria-label={`Pelan ${seating.mappedSeatCount} kerusi Parlimen yang dipetakan daripada PDF`}>
-              <svg className="seating-chamber" viewBox={`0 0 ${seating.viewBox.width} ${seating.viewBox.height}`} aria-hidden="true">
-                <path d="M130 770V545C72 472 66 318 116 192C163 75 265 28 395 28H795C925 28 1027 75 1074 192C1124 318 1118 472 1060 545V770"/>
-                <path d="M130 545H488L540 430H650L702 545H1060M488 545V780M702 545V780M540 430L404 226M650 430L786 226"/>
-                <rect x="552" y="635" width="86" height="38" rx="8"/>
-                <rect x="532" y="690" width="126" height="44" rx="8"/>
-                <text x="595" y="660">BENTARA</text><text x="595" y="718">SPEAKER</text>
-              </svg>
-              {seating.positions.map((position: SeatingPosition) => {
-                const seat = seatByCode.get(position.seatCode);
-                if (!seat) return null;
-                const selected = seat.code === selectedCode;
-                const visible = matchesFilters(seat);
-                const status = currentStatus(seat);
-                return <motion.button
-                  key={seat.code}
-                  className={`seating-dot ${selected ? "is-selected" : ""} status-${status}`}
-                  style={{ left: `${(position.x / seating.viewBox.width) * 100}%`, top: `${(position.y / seating.viewBox.height) * 100}%`, "--seat-color": allianceColor(identityAlliance(seat), data.alliances) } as React.CSSProperties}
-                  aria-label={`${seat.code} ${seat.name}, ${seat.winner.name}, ${identityAlliance(seat)}`}
-                  aria-pressed={selected}
-                  animate={{ opacity: visible ? 1 : 0.12, scale: selected ? 1.35 : 1 }}
-                  whileHover={{ scale: 1.7 }}
-                  whileFocus={{ scale: 1.7 }}
-                  onMouseEnter={() => setHoveredCode(seat.code)}
-                  onMouseLeave={() => setHoveredCode(null)}
-                  onFocus={() => setHoveredCode(seat.code)}
-                  onBlur={() => setHoveredCode(null)}
-                  onClick={() => setSelectedCode(seat.code)}
-                >{selected && <motion.span layoutId="seating-selection-ring"/>}</motion.button>;
-              })}
-              <AnimatePresence initial={false}>{hoveredSeat && hoveredPosition && <motion.div className="seating-hover-label" key={hoveredSeat.code} initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 4 }} style={{ left: `${(hoveredPosition.x / seating.viewBox.width) * 100}%`, top: `${(hoveredPosition.y / seating.viewBox.height) * 100}%` }}><strong>{hoveredSeat.code} {hoveredSeat.name}</strong><span>{hoveredSeat.winner.name}</span></motion.div>}</AnimatePresence>
-            </div>
-            <div className="seating-legend"><span className="seating-legend-label">{view === "current" ? "GABUNGAN SEMASA" : "GABUNGAN PRU-15"}</span>{alliances.map((alliance) => <span key={alliance}><i style={{ background: allianceColor(alliance, data.alliances) }}/><AllianceLogo name={alliance} data={data}/></span>)}</div>
-          </div>
-          {selectedSeat && <AnimatePresence mode="wait" initial={false}><motion.article className="seating-selection-detail" key={selectedSeat.code} initial={{ opacity: 0, x: 12 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -12 }}><div className="seating-selection-top"><span>{selectedSeat.state}</span><strong>{selectedSeat.code}</strong></div><h3>{selectedSeat.name}</h3><p>{selectedSeat.winner.name}</p><div className="seating-identity-row"><span>PRU-15</span><strong><PartyLogo name={selectedSeat.winner.party}/><AllianceLogo name={selectedSeat.winner.alliance} data={data}/></strong></div><div className="seating-identity-row is-current"><span>SEMASA</span><strong>{currentStatus(selectedSeat) === "vacant" ? "KERUSI KOSONG" : <><PartyLogo name={activeParty}/><AllianceLogo name={activeAlliance} data={data}/></>}</strong></div><dl><div><dt>Majoriti PRU-15</dt><dd>{formatNumber(selectedSeat.marginVotes)}</dd></div><div><dt>Bahagian undi</dt><dd>{formatPct(selectedSeat.winner.share, 2)}</dd></div><div><dt>Status kerusi</dt><dd>{currentStatus(selectedSeat) === "active" ? "Aktif" : currentStatus(selectedSeat) === "vacant" ? "Kosong" : "Digantung"}</dd></div><div><dt>Pemetaan PDF</dt><dd>{selectedPosition?.sourceConstituency ?? "Tiada label"}</dd></div></dl><Link to={`${PARLIAMENT_BASE}/${toSlug(selectedSeat.name)}`}>Lihat keputusan penuh <Icon name="arrow" size={16}/></Link></motion.article></AnimatePresence>}
-        </div>
-        {unmappedSeats.length > 0 && <div className="seating-source-note"><Icon name="info" size={17}/><div><strong>{seating.mappedSeatCount} daripada {data.seats.length} kerusi mempunyai label kedudukan dalam PDF.</strong><span>{unmappedSeats.map((seat, index) => <span key={seat.code}>{index > 0 && " · "}<button onClick={() => setSelectedCode(seat.code)}>{seat.code} {seat.name}</button></span>)} tidak berlabel dalam sumber, tetapi maklumat PRU-15 masih boleh dipilih di sini.</span></div></div>}
-      </section>
-    </MotionConfig>
   );
 }
 

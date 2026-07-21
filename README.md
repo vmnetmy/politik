@@ -48,6 +48,27 @@ Kedudukan pada visual interaktif dijana daripada `SeatingDR.pdf`, bertarikh 13 J
 
 Visual boleh bertukar antara identiti PRU-15 dengan kedudukan semasa, menggunakan data keahlian bertarikh kuat kuasa yang sama seperti seluruh dashboard. Interaksi pemilihan, penapisan dan peralihan susun atur menggunakan Motion for React melalui import `motion/react`.
 
+Komponen pelan telah diasingkan dalam `src/components/seating/`, komponen identiti dalam `src/components/identity/`, logik keadaan dalam `src/data/hooks/useParliament.ts`, dan kontrak data dalam `src/data/types/seating.ts`. Penanda menggunakan satu hentian Tab dengan navigasi kekunci anak panah supaya pengguna papan kekunci tidak perlu melalui 220 kawalan satu demi satu.
+
+### Jana dan sahkan koordinat PDF
+
+Pasang kebergantungan Python, kemudian jana semula `seating.json`:
+
+```bash
+python3 -m pip install -r requirements.txt
+npm run data:seating
+```
+
+Pengekstrak membaca lapisan teks JasperReports dalam PDF, memadankan nama kawasan dengan 222 rekod pilihan raya, mengesahkan koordinat berada dalam `1190 × 842`, dan mensyaratkan gabungan kerusi dipetakan serta tidak dipetakan meliputi kesemua 222 kerusi tepat sekali. Kegagalan atau perubahan senyap pada format PDF menyebabkan proses tamat dengan ralat.
+
+Untuk memastikan fail yang diterbitkan masih sepadan tepat dengan PDF:
+
+```bash
+npm run data:seating:check
+```
+
+Pemeriksaan ini turut dijalankan dalam `.github/workflows/ci.yml` untuk setiap pull request dan perubahan pada `main`.
+
 ## Bina untuk produksi
 
 ```bash

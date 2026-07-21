@@ -2,6 +2,8 @@ node_modules/
 dist/
 .DS_Store
 *.log
+__pycache__/
+*.py[cod]
 *.tsbuildinfo
 vite.config.js
 vite.config.d.ts

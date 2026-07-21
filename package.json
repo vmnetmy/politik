@@ -6,9 +6,12 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "data:seating": "python3 scripts/extract_seating.py",
+    "data:seating:check": "python3 scripts/extract_seating.py --check"
   },
   "dependencies": {
+    "@fontsource/inter": "^5.3.0",
     "chart.js": "^4.5.1",
     "motion": "^12.42.2",
     "react": "19.2.7",
