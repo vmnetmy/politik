@@ -22,3 +22,22 @@ test("scoresheet totals are the published historical result", async ({ page }) =
   await expect(page.locator(".candidate-detail").getByText("81,175 undi", { exact: true })).toBeVisible();
   await expect(page.getByText("SUMBER RASMI", { exact: true })).toBeVisible();
 });
+
+test("operational typography stays readable at 100% zoom", async ({ page }) => {
+  await page.goto("/pru/15/negeri/parlimen/jerai");
+  await expect(page.getByRole("heading", { name: "Keputusan mengikut saluran" })).toBeVisible();
+  const selectors = [
+    ".sidebar nav a",
+    ".global-search input",
+    ".breadcrumbs",
+    ".candidate-meta",
+    ".geography-card-code",
+    ".scoresheet-section-filter button",
+    ".scoresheet-table-wrap th",
+    ".scoresheet-table-wrap td",
+  ];
+  for (const selector of selectors) {
+    const size = await page.locator(selector).first().evaluate((element) => Number.parseFloat(getComputedStyle(element).fontSize));
+    expect(size, selector).toBeGreaterThanOrEqual(12);
+  }
+});

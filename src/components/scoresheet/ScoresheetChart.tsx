@@ -29,10 +29,10 @@ export function ScoresheetChart({ result, data }: { result: ScoresheetResult; da
         responsive: true,
         maintainAspectRatio: false,
         interaction: { mode: "index", intersect: false },
-        plugins: { legend: { position: "bottom", labels: { boxWidth: 10, boxHeight: 10, font: { size: 10 } } } },
+        plugins: { legend: { position: "bottom", labels: { boxWidth: 12, boxHeight: 12, font: { size: 13 } } } },
         scales: {
-          x: { stacked: false, grid: { display: false }, ticks: { font: { size: 10 } } },
-          y: { beginAtZero: true, ticks: { font: { size: 10 } }, grid: { color: "rgba(20,55,44,.08)" } },
+          x: { stacked: false, grid: { display: false }, ticks: { font: { size: 13 } } },
+          y: { beginAtZero: true, ticks: { font: { size: 13 } }, grid: { color: "rgba(20,55,44,.08)" } },
         },
       },
     });

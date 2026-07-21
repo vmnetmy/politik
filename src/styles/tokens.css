@@ -7,10 +7,14 @@
 
   --font-sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-serif: Iowan Old Style, Baskerville, Georgia, serif;
-  --text-xs: 0.6875rem;
-  --text-sm: 0.8125rem;
-  --text-md: 0.875rem;
+  /* Minimum readable type scale at 100% browser zoom. */
+  --text-2xs: 0.75rem;
+  --text-xs: 0.8125rem;
+  --text-sm: 0.875rem;
+  --text-md: 0.9375rem;
   --text-lg: 1rem;
+  --text-reading: 1.0625rem;
+  --text-xl: 1.125rem;
 
   --color-ink: #18222b;
   --color-muted: #68727a;

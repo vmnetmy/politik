@@ -46,7 +46,7 @@ export function AgeDistributionChart({ bands, counts, label }: { bands: AgeBand[
           x: {
             grid: { display: false },
             border: { display: false },
-            ticks: { color: "#65736c", font: { family: "Inter", size: 11, weight: 600 } },
+            ticks: { color: "#65736c", font: { family: "Inter", size: 14, weight: 600 } },
           },
           y: {
             beginAtZero: true,
@@ -54,6 +54,7 @@ export function AgeDistributionChart({ bands, counts, label }: { bands: AgeBand[
             grid: { color: "rgba(83, 99, 91, .14)" },
             ticks: {
               color: "#7b8580",
+              font: { family: "Inter", size: 13, weight: 500 },
               callback: (value) => new Intl.NumberFormat("ms-MY", { notation: "compact", maximumFractionDigits: 1 }).format(Number(value)),
             },
           },
