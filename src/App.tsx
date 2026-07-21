@@ -10,12 +10,12 @@ import {
   useLocation,
   useNavigate,
 } from "react-router-dom";
-import type { AffiliationEvent, AllianceCatalogItem, CandidateChange, DataChange, ElectionData, PartyCatalogItem, ReconciliationData, ScoresheetIndex, SeatingData } from "./types";
+import type { AffiliationEvent, AllianceCatalogItem, CandidateChange, DataChange, ElectionData, PartyCatalogItem, ScoresheetIndex, SeatingData } from "./types";
 import { Icon } from "./components/ui/Icon";
 import { NotFound } from "./components/ui/NotFound";
 import { Badge } from "./components/ui/primitives";
 import { ElectionPage, OverviewPage, ParliamentIndexPage, ParliamentPage, StatePage, WinnersPage } from "./pages/PublicPages";
-import { SettingsAffiliationPage, SettingsAlliancePage, SettingsCandidatePage, SettingsDataPage, SettingsPartyPage, SettingsResultsPage } from "./pages/SettingsPages";
+import { SettingsAffiliationPage, SettingsAlliancePage, SettingsCandidatePage, SettingsDataPage, SettingsPartyPage } from "./pages/SettingsPages";
 import { ELECTION_BASE, PARLIAMENT_BASE, STATE_BASE, VOTER_AGE_BASE, WINNERS_BASE } from "./routes";
 import {
   applyAffiliationEvents,
@@ -36,7 +36,6 @@ import {
   parsePartyCatalogFile,
 } from "./dataChanges";
 import { normalise } from "./utils";
-import { applyApprovedReconciliation, LOCAL_RESULT_RECONCILIATION_KEY, mergeReconciliation, parseReconciliationFile } from "./resultReconciliation";
 
 const VoterAgePage = lazy(() => import("./pages/VoterAgePage").then((module) => ({ default: module.VoterAgePage })));
 
@@ -87,7 +86,7 @@ function DataFooter({ data }: { data: ElectionData }) {
   );
 }
 
-function Shell({ data, search, setSearch, changeCount, candidateChangeCount, resultChangeCount }: { data: ElectionData; search: string; setSearch: (value: string) => void; changeCount: number; candidateChangeCount: number; resultChangeCount: number }) {
+function Shell({ data, search, setSearch, changeCount, candidateChangeCount }: { data: ElectionData; search: string; setSearch: (value: string) => void; changeCount: number; candidateChangeCount: number }) {
   const location = useLocation();
   const navigate = useNavigate();
   return (
@@ -100,7 +99,7 @@ function Shell({ data, search, setSearch, changeCount, candidateChangeCount, res
           <NavLink to={WINNERS_BASE}><Icon name="people"/><span>Pemenang</span></NavLink>
           <NavLink to={VOTER_AGE_BASE}><Icon name="chart"/><span>Pengundi</span></NavLink>
           <NavLink to={ELECTION_BASE} end><Icon name="vote"/><span>PRU</span></NavLink>
-          <NavLink to="/settings/data"><Icon name="database"/><span>Data</span>{changeCount + candidateChangeCount + resultChangeCount > 0 && <b className="nav-count">{changeCount + candidateChangeCount + resultChangeCount}</b>}</NavLink>
+          <NavLink to="/settings/data"><Icon name="database"/><span>Data</span>{changeCount + candidateChangeCount > 0 && <b className="nav-count">{changeCount + candidateChangeCount}</b>}</NavLink>
         </nav>
         <div className="sidebar-source"><Icon name="database" size={18}/><div><span>Sumber data</span><strong>{data.metadata.sourceFile}</strong></div></div>
         <div className="sidebar-foot"><span>PRU-15</span><span>19 NOV 2022</span></div>
@@ -113,7 +112,7 @@ function Shell({ data, search, setSearch, changeCount, candidateChangeCount, res
             <input value={search} onFocus={() => location.pathname !== PARLIAMENT_BASE && navigate(PARLIAMENT_BASE)} onChange={(event) => setSearch(event.target.value)} placeholder="Cari kerusi, calon atau parti…"/>
             {search && <button onClick={() => setSearch("")} aria-label="Kosongkan carian">×</button>}
           </label>
-          <Badge className="dataset-badge"><i/><span>{resultChangeCount ? `${resultChangeCount} KEPUTUSAN DILULUSKAN` : changeCount ? `${changeCount} KERUSI DIKEMAS KINI` : candidateChangeCount ? `${candidateChangeCount} CALON DIKEMAS KINI` : "DATA ASAL"}</span></Badge>
+          <Badge className="dataset-badge"><i/><span>{changeCount ? `${changeCount} KERUSI DIKEMAS KINI` : candidateChangeCount ? `${candidateChangeCount} CALON DIKEMAS KINI` : "DATA ASAL"}</span></Badge>
         </header>
         <div className="page-wrap"><Outlet/><DataFooter data={data}/></div>
       </main>
@@ -125,7 +124,6 @@ export default function App() {
   const [data, setData] = useState<ElectionData | null>(null);
   const [seating, setSeating] = useState<SeatingData | null>(null);
   const [scoresheetIndex, setScoresheetIndex] = useState<ScoresheetIndex | null>(null);
-  const [reconciliation, setReconciliation] = useState<ReconciliationData | null>(null);
   const [changes, setChanges] = useState<DataChange[]>([]);
   const [affiliations, setAffiliations] = useState<AffiliationEvent[]>([]);
   const [candidateChanges, setCandidateChanges] = useState<CandidateChange[]>([]);
@@ -135,7 +133,6 @@ export default function App() {
   const [affiliationsLoaded, setAffiliationsLoaded] = useState(false);
   const [candidateChangesLoaded, setCandidateChangesLoaded] = useState(false);
   const [catalogsLoaded, setCatalogsLoaded] = useState(false);
-  const [reconciliationLoaded, setReconciliationLoaded] = useState(false);
   const [error, setError] = useState("");
   const [search, setSearch] = useState("");
   useEffect(() => {
@@ -148,8 +145,7 @@ export default function App() {
       fetch("/data/parties.json").then((response) => response.ok ? response.json() : { parties: [] }),
       fetch("/data/alliances.json").then((response) => response.ok ? response.json() : { alliances: [] }),
       fetch("/data/scoresheets/index.json").then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); }),
-      fetch("/data/result-reconciliation.json").then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); }),
-    ]).then(([election, seatingBaseline, baseline, affiliationBaseline, candidateBaseline, partyBaseline, allianceBaseline, scoresheetBaseline, reconciliationBaseline]) => {
+    ]).then(([election, seatingBaseline, baseline, affiliationBaseline, candidateBaseline, partyBaseline, allianceBaseline, scoresheetBaseline]) => {
       setData(election);
       setSeating(seatingBaseline);
       setScoresheetIndex(scoresheetBaseline);
@@ -187,18 +183,10 @@ export default function App() {
       } catch {
         setAllianceCatalog(buildDefaultAllianceCatalog(election));
       }
-      try {
-        const parsedBaseline = parseReconciliationFile(reconciliationBaseline);
-        const local = localStorage.getItem(LOCAL_RESULT_RECONCILIATION_KEY);
-        setReconciliation(mergeReconciliation(parsedBaseline, local ? parseReconciliationFile(JSON.parse(local)) : undefined));
-      } catch {
-        setReconciliation(parseReconciliationFile(reconciliationBaseline));
-      }
       setChangesLoaded(true);
       setAffiliationsLoaded(true);
       setCandidateChangesLoaded(true);
       setCatalogsLoaded(true);
-      setReconciliationLoaded(true);
     }).catch((reason) => setError(reason instanceof Error ? reason.message : "Ralat tidak diketahui"));
   }, []);
   useEffect(() => { if (changesLoaded) localStorage.setItem(LOCAL_CHANGES_KEY, JSON.stringify({ version: 1, changes })); }, [changes, changesLoaded]);
@@ -206,14 +194,13 @@ export default function App() {
   useEffect(() => { if (candidateChangesLoaded) localStorage.setItem(LOCAL_CANDIDATE_CHANGES_KEY, JSON.stringify({ version: 1, candidateChanges })); }, [candidateChanges, candidateChangesLoaded]);
   useEffect(() => { if (catalogsLoaded) localStorage.setItem(LOCAL_PARTY_CATALOG_KEY, JSON.stringify({ version: 1, parties: partyCatalog })); }, [partyCatalog, catalogsLoaded]);
   useEffect(() => { if (catalogsLoaded) localStorage.setItem(LOCAL_ALLIANCE_CATALOG_KEY, JSON.stringify({ version: 1, alliances: allianceCatalog })); }, [allianceCatalog, catalogsLoaded]);
-  useEffect(() => { if (reconciliationLoaded && reconciliation) localStorage.setItem(LOCAL_RESULT_RECONCILIATION_KEY, JSON.stringify(reconciliation)); }, [reconciliation, reconciliationLoaded]);
   const managedData = useMemo(() => {
-    if (!data || !reconciliation || !changesLoaded || !affiliationsLoaded || !candidateChangesLoaded || !catalogsLoaded || !reconciliationLoaded) return null;
+    if (!data || !changesLoaded || !affiliationsLoaded || !candidateChangesLoaded || !catalogsLoaded) return null;
     const alliances = [...data.alliances, ...allianceCatalog.map(({ name, shortName, color }) => ({ name, shortName, color }))]
       .filter((alliance, index, items) => items.findIndex((item) => item.name === alliance.name) === index);
     const seats = applyReferenceCatalog(
       applyAffiliationEvents(
-        applyDataChanges(applyCandidateChanges(applyApprovedReconciliation(data.seats, reconciliation.conflicts), candidateChanges), changes),
+        applyDataChanges(applyCandidateChanges(data.seats, candidateChanges), changes),
         affiliations,
         partyCatalog,
         allianceCatalog,
@@ -222,18 +209,17 @@ export default function App() {
       allianceCatalog,
     );
     return { ...data, alliances, seats };
-  }, [data, reconciliation, changes, affiliations, candidateChanges, partyCatalog, allianceCatalog, changesLoaded, affiliationsLoaded, candidateChangesLoaded, catalogsLoaded, reconciliationLoaded]);
+  }, [data, changes, affiliations, candidateChanges, partyCatalog, allianceCatalog, changesLoaded, affiliationsLoaded, candidateChangesLoaded, catalogsLoaded]);
   if (error) return <ErrorScreen message={error}/>;
-  if (!managedData || !seating || !scoresheetIndex || !reconciliation) return <LoadingScreen/>;
+  if (!managedData || !seating || !scoresheetIndex) return <LoadingScreen/>;
   const changedSeatCount = managedData.seats.filter((seat) => seat.current?.isChanged).length;
   const todayDate = new Date().toISOString().slice(0, 10);
   const changedCandidateCount = new Set(candidateChanges.filter((change) => change.effectiveDate <= todayDate).map((change) => `${change.seatCode}:${change.candidateIndex}`)).size;
-  const changedResultCount = reconciliation.conflicts.filter((conflict) => conflict.decision === "approved").length;
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Navigate to={ELECTION_BASE} replace/>}/>
-        <Route element={<Shell data={managedData} search={search} setSearch={setSearch} changeCount={changedSeatCount} candidateChangeCount={changedCandidateCount} resultChangeCount={changedResultCount}/> }>
+        <Route element={<Shell data={managedData} search={search} setSearch={setSearch} changeCount={changedSeatCount} candidateChangeCount={changedCandidateCount}/> }>
           <Route path="/pru" element={<Navigate to={ELECTION_BASE} replace/>}/>
           <Route path={ELECTION_BASE} element={<ElectionPage data={managedData}/>}/>
           <Route path={WINNERS_BASE} element={<WinnersPage data={managedData}/>}/>
@@ -247,7 +233,6 @@ export default function App() {
           <Route path="/settings/data/calon" element={<SettingsCandidatePage data={managedData} candidateChanges={candidateChanges} setCandidateChanges={setCandidateChanges} partyCatalog={partyCatalog} allianceCatalog={allianceCatalog}/>}/>
           <Route path="/settings/data/parti" element={<SettingsPartyPage data={managedData} partyCatalog={partyCatalog} setPartyCatalog={setPartyCatalog} allianceCatalog={allianceCatalog}/>}/>
           <Route path="/settings/data/gabungan" element={<SettingsAlliancePage data={managedData} allianceCatalog={allianceCatalog} setAllianceCatalog={setAllianceCatalog}/>}/>
-          <Route path="/settings/data/keputusan" element={<SettingsResultsPage reconciliation={reconciliation} setReconciliation={setReconciliation}/>}/>
           <Route path="*" element={<NotFound/>}/>
         </Route>
       </Routes>

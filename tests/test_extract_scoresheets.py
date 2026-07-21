@@ -10,10 +10,9 @@ ROOT = Path(__file__).resolve().parents[1]
 class ScoresheetExtractionTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.source_manifest, cls.index, cls.places, cls.reconciliation, cls.results = build_artifacts(
+        cls.source_manifest, cls.index, cls.places, cls.results, cls.election = build_artifacts(
             ROOT / "sources/pru15/scoresheets",
             ROOT / "public/data/election.json",
-            ROOT / "public/data/result-reconciliation.json",
         )
 
     def test_archive_coverage_and_totals(self):
@@ -42,12 +41,16 @@ class ScoresheetExtractionTests(unittest.TestCase):
                     row["validVotes"] + row["rejectedVotes"] + row["unreturnedVotes"],
                 )
 
-    def test_known_conflicts_are_governed(self):
-        self.assertEqual(
-            [item["parliamentCode"] for item in self.reconciliation["conflicts"]],
-            ["P.028", "P.062", "P.072", "P.087", "P.101", "P.128", "P.175"],
-        )
-        self.assertTrue(all(item["decision"] in {"pending", "approved", "rejected"} for item in self.reconciliation["conflicts"]))
+    def test_scoresheets_are_the_authoritative_aggregate_source(self):
+        seats = {seat["code"]: seat for seat in self.election["seats"]}
+        self.assertTrue(all(item["status"] == "authoritative" for item in self.index["seats"]))
+        for code, result in self.results.items():
+            seat = seats[code]
+            self.assertEqual(seat["turnout"], result["totals"]["validVotes"])
+            self.assertEqual(
+                {candidate["id"]: candidate["votes"] for candidate in seat["candidates"]},
+                result["totals"]["candidateVotes"],
+            )
 
 
 if __name__ == "__main__":

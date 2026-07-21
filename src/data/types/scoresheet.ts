@@ -4,7 +4,6 @@ export type ScoresheetCandidateColumn = {
   candidateId: string;
   candidateName: string;
   column: number;
-  projectVotes: number;
   scoresheetVotes: number;
 };
 
@@ -55,8 +54,7 @@ export type ScoresheetIndexEntry = {
   rowCount: number;
   pollingDistrictCount: number;
   pollingCentreCount: number;
-  status: "matched" | "conflict";
-  validVoteDelta: number;
+  status: "authoritative";
 };
 
 export type ScoresheetIndex = {
@@ -108,33 +106,4 @@ export type PollingPlacesData = {
   };
   pollingDistricts: PollingDistrict[];
   pollingCentres: PollingCentre[];
-};
-
-export type ReconciliationDecision = "pending" | "approved" | "rejected";
-
-export type ReconciliationConflict = {
-  id: string;
-  parliamentCode: string;
-  parliamentName: string;
-  state: string;
-  decision: ReconciliationDecision;
-  projectValidVotes: number;
-  scoresheetValidVotes: number;
-  validVoteDelta: number;
-  candidates: Array<{
-    candidateId: string;
-    candidateName: string;
-    projectVotes: number;
-    scoresheetVotes: number;
-    delta: number;
-  }>;
-  sourceFile: string;
-  sourceSha256: string;
-  reviewedAt?: string;
-};
-
-export type ReconciliationData = {
-  version: number;
-  sourceGeneratedAt: string;
-  conflicts: ReconciliationConflict[];
 };

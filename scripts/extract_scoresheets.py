@@ -23,7 +23,6 @@ class ScoresheetExtractionError(ValueError):
 
 
 PRINT_DATE = "2022-11-19"
-SOURCE_GENERATED_AT = "2022-11-19T00:00:00+08:00"
 DISTRICT_CODE = re.compile(r"\b\d{3}/\d{2}/\d{2}\b")
 
 
@@ -181,7 +180,6 @@ def assign_candidates(
                 "candidateId": candidate["id"],
                 "candidateName": candidate["name"],
                 "column": column + 1,
-                "projectVotes": candidate["votes"],
                 "scoresheetVotes": source_votes[column],
             }
         )
@@ -508,19 +506,43 @@ def extract_pdf(path: Path, seat: dict[str, Any], source_root: Path) -> dict[str
     return {"result": result, "districts": districts, "centres": centres, "bytes": path.stat().st_size}
 
 
-def load_decisions(path: Path) -> dict[str, dict[str, Any]]:
-    if not path.exists():
-        return {}
-    try:
-        value = json.loads(path.read_text(encoding="utf-8"))
-        return {item["id"]: item for item in value.get("conflicts", [])}
-    except (OSError, KeyError, TypeError, json.JSONDecodeError):
-        return {}
+def apply_authoritative_results(election: dict[str, Any], extracted: dict[str, dict[str, Any]]) -> None:
+    """Replace covered aggregate results with the final values from SPR 760."""
+    seats = {seat["code"]: seat for seat in election["seats"]}
+    for code, item in extracted.items():
+        seat = seats[code]
+        result = item["result"]
+        source_votes = result["totals"]["candidateVotes"]
+        turnout = result["totals"]["validVotes"]
+        previous_winner = seat["winner"]
+        candidates = []
+        for candidate in seat["candidates"]:
+            votes = source_votes[candidate["id"]]
+            candidates.append(
+                {
+                    **candidate,
+                    "votes": votes,
+                    "share": round(votes / turnout, 6) if turnout else 0,
+                }
+            )
+        candidates.sort(key=lambda candidate: candidate["votes"], reverse=True)
+        winner_candidate = candidates[0]
+        runner_up = candidates[1] if len(candidates) > 1 else None
+        seat["turnout"] = turnout
+        seat["turnoutPct"] = round(turnout / seat["registered"], 6) if seat["registered"] else 0
+        seat["candidates"] = candidates
+        seat["winner"] = {
+            **winner_candidate,
+            "gender": previous_winner["gender"] if winner_candidate["id"] == previous_winner["id"] else "TIDAK DINYATAKAN",
+            "ethnicity": previous_winner["ethnicity"] if winner_candidate["id"] == previous_winner["id"] else "TIDAK DINYATAKAN",
+        }
+        seat["marginVotes"] = winner_candidate["votes"] - (runner_up["votes"] if runner_up else 0)
+        seat["marginShare"] = round(winner_candidate["share"] - (runner_up["share"] if runner_up else 0), 6)
 
 
 def build_artifacts(
-    source_root: Path, election_path: Path, reconciliation_path: Path
-) -> tuple[dict[str, Any], dict[str, Any], dict[str, Any], dict[str, Any], dict[str, dict[str, Any]]]:
+    source_root: Path, election_path: Path
+) -> tuple[dict[str, Any], dict[str, Any], dict[str, Any], dict[str, dict[str, Any]], dict[str, Any]]:
     election = json.loads(election_path.read_text(encoding="utf-8"))
     seats = {seat["code"]: seat for seat in election["seats"]}
     files = sorted(source_root.rglob("*.pdf"))
@@ -562,27 +584,11 @@ def build_artifacts(
             }
         )
 
-    decisions = load_decisions(reconciliation_path)
+    apply_authoritative_results(election, extracted)
     index_entries = []
-    conflicts = []
     for code in sorted(extracted, key=lambda value: int(value.split(".")[1])):
         seat = seats[code]
         result = extracted[code]["result"]
-        candidate_differences = []
-        for column in result["candidateColumns"]:
-            delta = column["scoresheetVotes"] - column["projectVotes"]
-            if delta:
-                candidate_differences.append(
-                    {
-                        "candidateId": column["candidateId"],
-                        "candidateName": column["candidateName"],
-                        "projectVotes": column["projectVotes"],
-                        "scoresheetVotes": column["scoresheetVotes"],
-                        "delta": delta,
-                    }
-                )
-        valid_delta = result["totals"]["validVotes"] - seat["turnout"]
-        status = "conflict" if candidate_differences else "matched"
         seat_districts = [item for item in all_districts.values() if item["parliamentCode"] == code]
         seat_centres = [item for item in all_centres.values() if item["parliamentCode"] == code]
         index_entries.append(
@@ -596,32 +602,9 @@ def build_artifacts(
                 "rowCount": len(result["rows"]),
                 "pollingDistrictCount": len(seat_districts),
                 "pollingCentreCount": len(seat_centres),
-                "status": status,
-                "validVoteDelta": valid_delta,
+                "status": "authoritative",
             }
         )
-        if candidate_differences:
-            conflict_id = f"pru15-scoresheet-{code.lower().replace('.', '')}"
-            prior = decisions.get(conflict_id, {})
-            decision = prior.get("decision", "pending")
-            if decision not in {"pending", "approved", "rejected"}:
-                decision = "pending"
-            conflict = {
-                "id": conflict_id,
-                "parliamentCode": code,
-                "parliamentName": seat["name"],
-                "state": seat["state"],
-                "decision": decision,
-                "projectValidVotes": seat["turnout"],
-                "scoresheetValidVotes": result["totals"]["validVotes"],
-                "validVoteDelta": valid_delta,
-                "candidates": candidate_differences,
-                "sourceFile": result["metadata"]["sourceFile"],
-                "sourceSha256": result["metadata"]["sourceSha256"],
-            }
-            if decision != "pending" and prior.get("sourceSha256") == conflict["sourceSha256"]:
-                conflict["reviewedAt"] = prior.get("reviewedAt", SOURCE_GENERATED_AT)
-            conflicts.append(conflict)
 
     totals = {
         field: sum(item["result"]["totals"][field] for item in extracted.values())
@@ -653,11 +636,6 @@ def build_artifacts(
         "pollingDistricts": sorted(all_districts.values(), key=lambda item: item["id"]),
         "pollingCentres": sorted(all_centres.values(), key=lambda item: item["id"]),
     }
-    reconciliation = {
-        "version": 1,
-        "sourceGeneratedAt": SOURCE_GENERATED_AT,
-        "conflicts": conflicts,
-    }
     source_manifest = {
         "version": 1,
         "algorithm": "sha256",
@@ -665,7 +643,7 @@ def build_artifacts(
         "files": source_files,
     }
     results = {code: item["result"] for code, item in extracted.items()}
-    return source_manifest, index, polling_places, reconciliation, results
+    return source_manifest, index, polling_places, results, election
 
 
 def write_or_check(path: Path, content: str, check: bool) -> None:
@@ -683,7 +661,6 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--election", type=Path, default=Path("public/data/election.json"))
     parser.add_argument("--output-directory", type=Path, default=Path("public/data/scoresheets"))
     parser.add_argument("--polling-places-output", type=Path, default=Path("public/data/polling-places.json"))
-    parser.add_argument("--reconciliation-output", type=Path, default=Path("public/data/result-reconciliation.json"))
     parser.add_argument("--check", action="store_true")
     return parser.parse_args()
 
@@ -691,14 +668,14 @@ def parse_args() -> argparse.Namespace:
 def main() -> int:
     args = parse_args()
     try:
-        source_manifest, index, polling_places, reconciliation, results = build_artifacts(
-            args.source_root, args.election, args.reconciliation_output
+        source_manifest, index, polling_places, results, election = build_artifacts(
+            args.source_root, args.election
         )
         outputs = [
+            (args.election, serialise(election, compact=True)),
             (args.source_root / "manifest.json", serialise(source_manifest)),
             (args.output_directory / "index.json", serialise(index)),
             (args.polling_places_output, serialise(polling_places)),
-            (args.reconciliation_output, serialise(reconciliation)),
         ]
         outputs.extend(
             (args.output_directory / f"{code}.json", serialise(result, compact=True))
@@ -714,7 +691,7 @@ def main() -> int:
         action = "Validated" if args.check else "Wrote"
         print(
             f"{action} {len(results)} scoresheets, {index['metadata']['totalRows']} polling streams, "
-            f"{index['metadata']['pollingDistrictCount']} districts and {len(reconciliation['conflicts'])} conflicts."
+            f"{index['metadata']['pollingDistrictCount']} districts; covered aggregate results are authoritative."
         )
         return 0
     except (OSError, json.JSONDecodeError, ScoresheetExtractionError) as exc:

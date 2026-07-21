@@ -30,8 +30,7 @@
       "rowCount": 139,
       "pollingDistrictCount": 34,
       "pollingCentreCount": 34,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.004",
@@ -43,8 +42,7 @@
       "rowCount": 117,
       "pollingDistrictCount": 29,
       "pollingCentreCount": 29,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.005",
@@ -56,8 +54,7 @@
       "rowCount": 128,
       "pollingDistrictCount": 37,
       "pollingCentreCount": 37,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.006",
@@ -69,8 +66,7 @@
       "rowCount": 200,
       "pollingDistrictCount": 47,
       "pollingCentreCount": 47,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.007",
@@ -82,8 +78,7 @@
       "rowCount": 114,
       "pollingDistrictCount": 33,
       "pollingCentreCount": 33,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.009",
@@ -95,8 +90,7 @@
       "rowCount": 202,
       "pollingDistrictCount": 54,
       "pollingCentreCount": 54,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.010",
@@ -108,8 +102,7 @@
       "rowCount": 242,
       "pollingDistrictCount": 55,
       "pollingCentreCount": 55,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.015",
@@ -121,8 +114,7 @@
       "rowCount": 296,
       "pollingDistrictCount": 52,
       "pollingCentreCount": 52,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.020",
@@ -134,8 +126,7 @@
       "rowCount": 184,
       "pollingDistrictCount": 35,
       "pollingCentreCount": 35,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.024",
@@ -147,8 +138,7 @@
       "rowCount": 197,
       "pollingDistrictCount": 42,
       "pollingCentreCount": 42,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.028",
@@ -160,8 +150,7 @@
       "rowCount": 203,
       "pollingDistrictCount": 52,
       "pollingCentreCount": 52,
-      "status": "conflict",
-      "validVoteDelta": 197
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.031",
@@ -173,8 +162,7 @@
       "rowCount": 166,
       "pollingDistrictCount": 47,
       "pollingCentreCount": 47,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.033",
@@ -186,8 +174,7 @@
       "rowCount": 199,
       "pollingDistrictCount": 49,
       "pollingCentreCount": 50,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.034",
@@ -199,8 +186,7 @@
       "rowCount": 197,
       "pollingDistrictCount": 52,
       "pollingCentreCount": 52,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.039",
@@ -212,8 +198,7 @@
       "rowCount": 207,
       "pollingDistrictCount": 53,
       "pollingCentreCount": 53,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.053",
@@ -225,8 +210,7 @@
       "rowCount": 141,
       "pollingDistrictCount": 25,
       "pollingCentreCount": 25,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.058",
@@ -238,8 +222,7 @@
       "rowCount": 158,
       "pollingDistrictCount": 48,
       "pollingCentreCount": 48,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.059",
@@ -251,8 +234,7 @@
       "rowCount": 179,
       "pollingDistrictCount": 40,
       "pollingCentreCount": 40,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.062",
@@ -264,8 +246,7 @@
       "rowCount": 143,
       "pollingDistrictCount": 40,
       "pollingCentreCount": 40,
-      "status": "conflict",
-      "validVoteDelta": -153
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.067",
@@ -277,8 +258,7 @@
       "rowCount": 95,
       "pollingDistrictCount": 28,
       "pollingCentreCount": 28,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.069",
@@ -290,8 +270,7 @@
       "rowCount": 109,
       "pollingDistrictCount": 39,
       "pollingCentreCount": 39,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.072",
@@ -303,8 +282,7 @@
       "rowCount": 130,
       "pollingDistrictCount": 40,
       "pollingCentreCount": 40,
-      "status": "conflict",
-      "validVoteDelta": 141
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.074",
@@ -316,8 +294,7 @@
       "rowCount": 172,
       "pollingDistrictCount": 29,
       "pollingCentreCount": 29,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.076",
@@ -329,8 +306,7 @@
       "rowCount": 164,
       "pollingDistrictCount": 38,
       "pollingCentreCount": 38,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.079",
@@ -342,8 +318,7 @@
       "rowCount": 101,
       "pollingDistrictCount": 45,
       "pollingCentreCount": 45,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.080",
@@ -355,8 +330,7 @@
       "rowCount": 139,
       "pollingDistrictCount": 42,
       "pollingCentreCount": 42,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.084",
@@ -368,8 +342,7 @@
       "rowCount": 140,
       "pollingDistrictCount": 27,
       "pollingCentreCount": 27,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.085",
@@ -381,8 +354,7 @@
       "rowCount": 211,
       "pollingDistrictCount": 61,
       "pollingCentreCount": 61,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.087",
@@ -394,8 +366,7 @@
       "rowCount": 119,
       "pollingDistrictCount": 37,
       "pollingCentreCount": 37,
-      "status": "conflict",
-      "validVoteDelta": -10
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.094",
@@ -407,8 +378,7 @@
       "rowCount": 271,
       "pollingDistrictCount": 53,
       "pollingCentreCount": 53,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.096",
@@ -420,8 +390,7 @@
       "rowCount": 182,
       "pollingDistrictCount": 40,
       "pollingCentreCount": 40,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.099",
@@ -433,8 +402,7 @@
       "rowCount": 225,
       "pollingDistrictCount": 38,
       "pollingCentreCount": 38,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.101",
@@ -446,8 +414,7 @@
       "rowCount": 281,
       "pollingDistrictCount": 44,
       "pollingCentreCount": 44,
-      "status": "conflict",
-      "validVoteDelta": -2
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.107",
@@ -459,8 +426,7 @@
       "rowCount": 252,
       "pollingDistrictCount": 31,
       "pollingCentreCount": 31,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.108",
@@ -472,8 +438,7 @@
       "rowCount": 278,
       "pollingDistrictCount": 42,
       "pollingCentreCount": 42,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.113",
@@ -485,8 +450,7 @@
       "rowCount": 288,
       "pollingDistrictCount": 54,
       "pollingCentreCount": 54,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.115",
@@ -498,8 +462,7 @@
       "rowCount": 195,
       "pollingDistrictCount": 25,
       "pollingCentreCount": 25,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.118",
@@ -511,8 +474,7 @@
       "rowCount": 164,
       "pollingDistrictCount": 19,
       "pollingCentreCount": 19,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.119",
@@ -524,8 +486,7 @@
       "rowCount": 141,
       "pollingDistrictCount": 22,
       "pollingCentreCount": 22,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.128",
@@ -537,8 +498,7 @@
       "rowCount": 287,
       "pollingDistrictCount": 45,
       "pollingCentreCount": 45,
-      "status": "conflict",
-      "validVoteDelta": 5
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.131",
@@ -550,8 +510,7 @@
       "rowCount": 241,
       "pollingDistrictCount": 56,
       "pollingCentreCount": 57,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.137",
@@ -563,8 +522,7 @@
       "rowCount": 208,
       "pollingDistrictCount": 36,
       "pollingCentreCount": 36,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.144",
@@ -576,8 +534,7 @@
       "rowCount": 189,
       "pollingDistrictCount": 52,
       "pollingCentreCount": 52,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.149",
@@ -589,8 +546,7 @@
       "rowCount": 150,
       "pollingDistrictCount": 32,
       "pollingCentreCount": 32,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.150",
@@ -602,8 +558,7 @@
       "rowCount": 242,
       "pollingDistrictCount": 47,
       "pollingCentreCount": 47,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.154",
@@ -615,8 +570,7 @@
       "rowCount": 139,
       "pollingDistrictCount": 46,
       "pollingCentreCount": 46,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.160",
@@ -628,8 +582,7 @@
       "rowCount": 249,
       "pollingDistrictCount": 42,
       "pollingCentreCount": 42,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.167",
@@ -641,8 +594,7 @@
       "rowCount": 163,
       "pollingDistrictCount": 51,
       "pollingCentreCount": 51,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.168",
@@ -654,8 +606,7 @@
       "rowCount": 174,
       "pollingDistrictCount": 58,
       "pollingCentreCount": 58,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.171",
@@ -667,8 +618,7 @@
       "rowCount": 195,
       "pollingDistrictCount": 29,
       "pollingCentreCount": 29,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.175",
@@ -680,8 +630,7 @@
       "rowCount": 117,
       "pollingDistrictCount": 23,
       "pollingCentreCount": 23,
-      "status": "conflict",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.179",
@@ -693,8 +642,7 @@
       "rowCount": 150,
       "pollingDistrictCount": 53,
       "pollingCentreCount": 53,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.182",
@@ -706,8 +654,7 @@
       "rowCount": 117,
       "pollingDistrictCount": 37,
       "pollingCentreCount": 37,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.183",
@@ -719,8 +666,7 @@
       "rowCount": 115,
       "pollingDistrictCount": 38,
       "pollingCentreCount": 38,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.190",
@@ -732,8 +678,7 @@
       "rowCount": 161,
       "pollingDistrictCount": 26,
       "pollingCentreCount": 26,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     },
     {
       "parliamentCode": "P.191",
@@ -745,8 +690,7 @@
       "rowCount": 170,
       "pollingDistrictCount": 25,
       "pollingCentreCount": 25,
-      "status": "matched",
-      "validVoteDelta": 0
+      "status": "authoritative"
     }
   ]
 }

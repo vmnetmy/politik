@@ -25,12 +25,11 @@
       "minItems": 2,
       "items": {
         "type": "object",
-        "required": ["candidateId", "candidateName", "column", "projectVotes", "scoresheetVotes"],
+        "required": ["candidateId", "candidateName", "column", "scoresheetVotes"],
         "properties": {
           "candidateId": { "type": "string" },
           "candidateName": { "type": "string" },
           "column": { "type": "integer", "minimum": 1 },
-          "projectVotes": { "type": "integer", "minimum": 0 },
           "scoresheetVotes": { "type": "integer", "minimum": 0 }
         },
         "additionalProperties": false

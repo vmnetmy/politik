@@ -22,7 +22,6 @@ DATA_FILES = {
     "constituencies.json": "duns",
     "voter-age.json": "dunRecords",
     "polling-places.json": "pollingDistricts",
-    "result-reconciliation.json": "conflicts",
     "scoresheets/index.json": "seats",
 }
 

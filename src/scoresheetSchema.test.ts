@@ -17,7 +17,7 @@ describe("scoresheet data", () => {
 
   it("publishes complete partial-coverage metadata", () => {
     expect(index.metadata).toMatchObject({ sourceCount: 56, coveredSeats: 56, totalSeats: 222, totalRows: 10136, printedPollingDistrictCount: 2255, syntheticPollingDistrictCount: 19 });
-    expect(index.seats.filter((item) => item.status === "conflict")).toHaveLength(7);
+    expect(index.seats.every((item) => item.status === "authoritative")).toBe(true);
     expect(places.pollingDistricts).toHaveLength(2274);
   });
 

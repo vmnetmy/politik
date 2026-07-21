@@ -27,7 +27,6 @@ Buka alamat yang dipaparkan oleh Vite (biasanya `http://localhost:5173`).
 - `/settings/data/calon` — urus pembetulan metadata calon tanpa mengubah angka undi
 - `/settings/data/parti` — urus katalog parti, gabungan lalai dan status aktif
 - `/settings/data/gabungan` — urus katalog gabungan, singkatan dan warna dashboard
-- `/settings/data/keputusan` — semak dan lulus/tolak perbezaan antara agregat projek dengan helaian mata SPR
 
 Nama negeri dan Parlimen menggunakan slug URL huruf kecil yang dipisahkan dengan tanda sempang. Untuk deployment statik, hos perlu menghalakan URL yang tidak sepadan dengan fail kembali ke `index.html` supaya pautan terus berfungsi.
 
@@ -53,7 +52,7 @@ Data diterbitkan secara malas melalui `public/data/scoresheets/P.XXX.json`. Hala
 
 Setiap baris mesti memenuhi `A = B + C + D`: kertas dalam peti sama dengan undi sah calon, undi ditolak dan kertas tidak dikembalikan. Jumlah baris turut mesti sama dengan baris `JUMLAH` dalam PDF. Nama calon dipetakan kepada ID stabil, bukan kedudukan dalam array.
 
-Tujuh perbezaan sumber direkodkan dalam `public/data/result-reconciliation.json`. Tiada nilai ditimpa secara senyap. Gunakan `/settings/data/keputusan` untuk meluluskan atau menolak setiap perbezaan; kelulusan mengira semula undi calon, bahagian undi, turnout dan majoriti secara atomik.
+Helaian mata SPR 760 ialah sumber muktamad bagi 56 kerusi yang diliputi. Setiap penjanaan menggantikan terus jumlah undi calon, undi sah, bahagian undi, turnout, pemenang dan majoriti dalam `public/data/election.json`. Tiada langkah semakan manual atau lapisan rekonsiliasi; `npm run data:scoresheets:check` memastikan agregat yang diterbitkan sentiasa sama dengan jumlah dalam PDF.
 
 ```bash
 npm run data:scoresheets

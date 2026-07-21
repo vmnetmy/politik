@@ -141,7 +141,7 @@ export type ElectionData = {
 };
 
 export type { SeatingData, SeatingPosition } from "./data/types/seating";
-export type { PollingCentre, PollingDistrict, PollingPlacesData, ReconciliationConflict, ReconciliationData, ReconciliationDecision, ScoresheetCandidateColumn, ScoresheetIndex, ScoresheetIndexEntry, ScoresheetResult, ScoresheetRow, ScoresheetSection } from "./data/types/scoresheet";
+export type { PollingCentre, PollingDistrict, PollingPlacesData, ScoresheetCandidateColumn, ScoresheetIndex, ScoresheetIndexEntry, ScoresheetResult, ScoresheetRow, ScoresheetSection } from "./data/types/scoresheet";
 export type { AgeBand, AgeCounts, AgeRecord, ConstituencyRegistry, ConstituencyState, DunReference, ParliamentReference, VoterAgeData } from "./data/types/voterAge";
 
 export type StateSummary = {
