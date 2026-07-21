@@ -46,7 +46,9 @@ Paparan identiti menggunakan imej dalam folder `Parties/` dan `Gabungan/`. Nama 
 
 ## Pelan tempat duduk Dewan Rakyat
 
-Kedudukan pada visual interaktif dijana daripada `SeatingDR.pdf`, bertarikh 13 Julai 2026, dan disimpan sebagai koordinat ternormal dalam `public/data/seating.json`. Sebanyak 220 kerusi mempunyai label kedudukan dalam PDF. `P.100 Pandan` dan `P.118 Setiawangsa` tidak berlabel dalam sumber dan dipaparkan sebagai rekod tanpa koordinat, tanpa mereka-reka lokasi.
+Kedudukan pada visual interaktif dijana daripada `SeatingDR.pdf`, bertarikh 13 Julai 2026, dan disimpan dalam `public/data/seating.json`. Koordinat asal PDF dikekalkan sebagai `sourceX/sourceY` untuk membuktikan padanan kawasan dan wakil. Koordinat paparan `x/y` diseragamkan kepada dua grid lurus 5 × 10 yang simetri serta enam lengkok sepusat dengan 30 kedudukan setiap lengkok. Sebanyak 60 kedudukan fizikal tanpa wakil dipaparkan sebagai penanda kosong dan tidak diberikan identiti rekaan.
+
+Sebanyak 220 kerusi mempunyai label kawasan dalam PDF. `P.100 Pandan` dan `P.118 Setiawangsa` tidak berlabel dalam sumber dan dipaparkan sebagai rekod tanpa koordinat, tanpa mereka-reka lokasi.
 
 Visual boleh bertukar antara identiti PRU-15 dengan kedudukan semasa, menggunakan data keahlian bertarikh kuat kuasa yang sama seperti seluruh dashboard. Interaksi pemilihan, penapisan dan peralihan susun atur menggunakan Motion for React melalui import `motion/react`.
 

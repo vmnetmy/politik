@@ -7,6 +7,7 @@ test("seating map exposes historical and current identity layers", async ({ page
   const map = page.getByRole("group", { name: /220 kerusi Parlimen/ });
   await expect(map).toBeVisible();
   await expect(map.getByRole("button")).toHaveCount(220);
+  await expect(map.locator(".seating-empty-position")).toHaveCount(60);
   await page.getByRole("button", { name: "PRU-15", exact: true }).click();
   await expect(page.getByText("GABUNGAN PRU-15", { exact: true })).toBeVisible();
   await mkdir("visual-current", { recursive: true });

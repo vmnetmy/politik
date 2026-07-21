@@ -4,9 +4,9 @@
   "title": "Dewan Rakyat seating artifact",
   "type": "object",
   "additionalProperties": false,
-  "required": ["version", "sourceFile", "sourceUpdatedAt", "viewBox", "mappedSeatCount", "unmappedSeatCodes", "positions"],
+  "required": ["version", "sourceFile", "sourceUpdatedAt", "viewBox", "layout", "mappedSeatCount", "unmappedSeatCodes", "positions", "emptyPositions"],
   "properties": {
-    "version": { "const": 1 },
+    "version": { "const": 2 },
     "sourceFile": { "type": "string", "minLength": 1 },
     "sourceUpdatedAt": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
     "viewBox": {
@@ -16,6 +16,18 @@
       "properties": {
         "width": { "type": "integer", "minimum": 1 },
         "height": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "layout": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["strategy", "straightRows", "straightColumns", "curvedRings", "curvedSlotsPerRing"],
+      "properties": {
+        "strategy": { "const": "concentric-v1" },
+        "straightRows": { "const": 10 },
+        "straightColumns": { "const": 5 },
+        "curvedRings": { "const": 6 },
+        "curvedSlotsPerRing": { "const": 30 }
       }
     },
     "mappedSeatCount": { "type": "integer", "minimum": 0, "maximum": 222 },
@@ -30,12 +42,31 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["seatCode", "sourceConstituency", "x", "y"],
+        "required": ["seatCode", "sourceConstituency", "sourceX", "sourceY", "x", "y", "section"],
         "properties": {
           "seatCode": { "type": "string", "pattern": "^P\\.\\d{3}$" },
           "sourceConstituency": { "type": "string", "minLength": 1 },
+          "sourceX": { "type": "number", "minimum": 0, "maximum": 1190 },
+          "sourceY": { "type": "number", "minimum": 0, "maximum": 842 },
           "x": { "type": "number", "minimum": 0 },
-          "y": { "type": "number", "minimum": 0 }
+          "y": { "type": "number", "minimum": 0 },
+          "section": { "enum": ["straight-left", "straight-right", "curved"] }
+        }
+      }
+    },
+    "emptyPositions": {
+      "type": "array",
+      "minItems": 60,
+      "maxItems": 60,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "x", "y", "section"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^EMPTY-\\d{3}$" },
+          "x": { "type": "number", "minimum": 0 },
+          "y": { "type": "number", "minimum": 0 },
+          "section": { "const": "curved" }
         }
       }
     }

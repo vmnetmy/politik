@@ -37,7 +37,7 @@ export function ParliamentSeatingPlan({ data, seating, search, stateFilter, alli
         />
         {parliament.selectedSeat && <AnimatePresence mode="wait" initial={false}><SeatingDetail data={data} seat={parliament.selectedSeat} position={selectedPosition}/></AnimatePresence>}
       </div>
-      {parliament.unmappedSeats.length > 0 && <div className="seating-source-note"><Icon name="info" size={17}/><div><strong>{seating.mappedSeatCount} daripada {data.seats.length} kerusi mempunyai label kedudukan dalam PDF.</strong><span>{parliament.unmappedSeats.map((seat, index) => <span key={seat.code}>{index > 0 && " · "}<button onClick={() => parliament.setSelectedCode(seat.code)}>{seat.code} {seat.name}</button></span>)} tidak berlabel dalam sumber, tetapi maklumat PRU-15 masih boleh dipilih di sini.</span></div></div>}
+      {parliament.unmappedSeats.length > 0 && <div className="seating-source-note"><Icon name="info" size={17}/><div><strong>{seating.mappedSeatCount} daripada {data.seats.length} kerusi mempunyai label kedudukan dalam PDF; {seating.emptyPositions.length} kedudukan fizikal kosong turut ditunjukkan.</strong><span>{parliament.unmappedSeats.map((seat, index) => <span key={seat.code}>{index > 0 && " · "}<button onClick={() => parliament.setSelectedCode(seat.code)}>{seat.code} {seat.name}</button></span>)} tidak berlabel dalam sumber, tetapi maklumat PRU-15 masih boleh dipilih di sini. Koordinat paparan diseragamkan tanpa mengubah padanan nama daripada PDF.</span></div></div>}
     </section>
   </MotionConfig>;
 }

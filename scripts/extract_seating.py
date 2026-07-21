@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import re
 import sys
 import unicodedata
@@ -23,6 +24,13 @@ import pdfplumber
 
 EXPECTED_SEAT_COUNT = 222
 DEFAULT_UNMAPPED = {"P.100", "P.118"}
+STRAIGHT_ROWS = 10
+STRAIGHT_COLUMNS = 5
+CURVED_RINGS = 6
+CURVED_SLOTS_PER_RING = 30
+CURVED_SOURCE_MAX_Y = 480
+LEFT_SOURCE_MAX_X = 520
+RIGHT_SOURCE_MIN_X = 670
 PDF_NAME_ALIASES = {
     "P.064": "IPOH TIMOR",
     "P.157": "PENGERANG",
@@ -127,6 +135,136 @@ def source_date(metadata: dict[str, Any] | None, pdf_path: Path) -> str:
     return datetime.fromtimestamp(pdf_path.stat().st_mtime).date().isoformat()
 
 
+def minimum_cost_assignment(
+    positions: list[dict[str, Any]],
+    targets: list[tuple[float, float]],
+) -> dict[int, int]:
+    """Assign every source point to a unique target with minimum total movement."""
+    if len(positions) > len(targets):
+        raise SeatingExtractionError("Regularization has fewer target slots than source positions.")
+    row_count = len(positions)
+    column_count = len(targets)
+    potential_rows = [0.0] * (row_count + 1)
+    potential_columns = [0.0] * (column_count + 1)
+    matched_row = [0] * (column_count + 1)
+    previous_column = [0] * (column_count + 1)
+
+    for row in range(1, row_count + 1):
+        matched_row[0] = row
+        column = 0
+        minimum = [float("inf")] * (column_count + 1)
+        used = [False] * (column_count + 1)
+        while True:
+            used[column] = True
+            current_row = matched_row[column]
+            delta = float("inf")
+            next_column = 0
+            source = positions[current_row - 1]
+            for candidate_column in range(1, column_count + 1):
+                if used[candidate_column]:
+                    continue
+                target_x, target_y = targets[candidate_column - 1]
+                cost = (float(source["x"]) - target_x) ** 2 + (float(source["y"]) - target_y) ** 2
+                reduced = cost - potential_rows[current_row] - potential_columns[candidate_column]
+                if reduced < minimum[candidate_column]:
+                    minimum[candidate_column] = reduced
+                    previous_column[candidate_column] = column
+                if minimum[candidate_column] < delta:
+                    delta = minimum[candidate_column]
+                    next_column = candidate_column
+            for candidate_column in range(column_count + 1):
+                if used[candidate_column]:
+                    potential_rows[matched_row[candidate_column]] += delta
+                    potential_columns[candidate_column] -= delta
+                else:
+                    minimum[candidate_column] -= delta
+            column = next_column
+            if matched_row[column] == 0:
+                break
+        while True:
+            prior = previous_column[column]
+            matched_row[column] = matched_row[prior]
+            column = prior
+            if column == 0:
+                break
+
+    return {
+        matched_row[column] - 1: column - 1
+        for column in range(1, column_count + 1)
+        if matched_row[column] != 0
+    }
+
+
+def straight_targets(side: str) -> list[tuple[float, float]]:
+    left_x = [190 + column * 60 for column in range(STRAIGHT_COLUMNS)]
+    x_values = left_x if side == "left" else [1190 - value for value in reversed(left_x)]
+    y_values = [505 + row * 30 for row in range(STRAIGHT_ROWS)]
+    return [(float(x), float(y)) for y in y_values for x in x_values]
+
+
+def curved_targets() -> list[tuple[float, float]]:
+    targets: list[tuple[float, float]] = []
+    start_angle = 0.14
+    angle_span = math.pi - start_angle * 2
+    for ring in range(CURVED_RINGS):
+        radius_x = 285 + ring * 44
+        radius_y = 235 + ring * 48
+        for slot in range(CURVED_SLOTS_PER_RING):
+            angle = start_angle + angle_span * slot / (CURVED_SLOTS_PER_RING - 1)
+            targets.append((
+                round(595 + radius_x * math.cos(angle), 2),
+                round(520 - radius_y * math.sin(angle), 2),
+            ))
+    return targets
+
+
+def regularize_positions(positions: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    sections = {
+        "straight-left": [position for position in positions if float(position["x"]) < LEFT_SOURCE_MAX_X and float(position["y"]) >= CURVED_SOURCE_MAX_Y],
+        "straight-right": [position for position in positions if float(position["x"]) > RIGHT_SOURCE_MIN_X and float(position["y"]) >= CURVED_SOURCE_MAX_Y],
+    }
+    straight_codes = {str(position["seatCode"]) for section in sections.values() for position in section}
+    sections["curved"] = [position for position in positions if str(position["seatCode"]) not in straight_codes]
+    expected_counts = {"straight-left": 50, "straight-right": 50, "curved": 120}
+    actual_counts = {name: len(section) for name, section in sections.items()}
+    if actual_counts != expected_counts:
+        raise SeatingExtractionError(f"Unexpected PDF seating sections: expected {expected_counts}, found {actual_counts}.")
+
+    target_sets = {
+        "straight-left": straight_targets("left"),
+        "straight-right": straight_targets("right"),
+        "curved": curved_targets(),
+    }
+    regularized: list[dict[str, Any]] = []
+    curved_occupied_targets: set[int] = set()
+    for section_name, section_positions in sections.items():
+        ordered = sorted(section_positions, key=lambda position: (float(position["y"]), float(position["x"]), str(position["seatCode"])))
+        targets = target_sets[section_name]
+        assignment = minimum_cost_assignment(ordered, targets)
+        for source_index, target_index in assignment.items():
+            source = ordered[source_index]
+            target_x, target_y = targets[target_index]
+            regularized.append({
+                **source,
+                "sourceX": source["x"],
+                "sourceY": source["y"],
+                "x": target_x,
+                "y": target_y,
+                "section": section_name,
+            })
+            if section_name == "curved":
+                curved_occupied_targets.add(target_index)
+
+    empty_positions = [
+        {"id": f"EMPTY-{index + 1:03d}", "x": x, "y": y, "section": "curved"}
+        for index, (target_index, (x, y)) in enumerate(
+            (item for item in enumerate(target_sets["curved"]) if item[0] not in curved_occupied_targets)
+        )
+    ]
+    regularized.sort(key=lambda position: int(str(position["seatCode"]).split(".")[1]))
+    return regularized, empty_positions
+
+
 def extract(pdf_path: Path, election_path: Path, allowed_unmapped: set[str]) -> dict[str, Any]:
     seats = load_election(election_path)
     try:
@@ -183,16 +321,24 @@ def extract(pdf_path: Path, election_path: Path, allowed_unmapped: set[str]) -> 
             "Unexpected unmapped seats. "
             f"Expected {sorted(allowed_unmapped)}, extracted {sorted(missing_set)}."
         )
-    positions.sort(key=lambda position: int(str(position["seatCode"]).split(".")[1]))
+    positions, empty_positions = regularize_positions(positions)
     validate_positions(positions, missing, view_box, seats)
     return {
-        "version": 1,
+        "version": 2,
         "sourceFile": pdf_path.name,
         "sourceUpdatedAt": updated_at,
         "viewBox": view_box,
+        "layout": {
+            "strategy": "concentric-v1",
+            "straightRows": STRAIGHT_ROWS,
+            "straightColumns": STRAIGHT_COLUMNS,
+            "curvedRings": CURVED_RINGS,
+            "curvedSlotsPerRing": CURVED_SLOTS_PER_RING,
+        },
         "mappedSeatCount": len(positions),
         "unmappedSeatCodes": sorted(missing, key=lambda code: int(code.split(".")[1])),
         "positions": positions,
+        "emptyPositions": empty_positions,
     }
 
 
@@ -206,7 +352,9 @@ def validate_positions(positions: list[dict[str, Any]], missing: list[str], view
         raise SeatingExtractionError("Mapped and explicitly unmapped seats must cover all 222 election seats exactly once.")
     for position in positions:
         if not 0 <= float(position["x"]) <= view_box["width"] or not 0 <= float(position["y"]) <= view_box["height"]:
-            raise SeatingExtractionError(f"{position['seatCode']} is outside the PDF coordinate bounds.")
+            raise SeatingExtractionError(f"{position['seatCode']} is outside the regularized view bounds.")
+        if not 0 <= float(position["sourceX"]) <= view_box["width"] or not 0 <= float(position["sourceY"]) <= view_box["height"]:
+            raise SeatingExtractionError(f"{position['seatCode']} has source coordinates outside the PDF bounds.")
         if not str(position["sourceConstituency"]).strip():
             raise SeatingExtractionError(f"{position['seatCode']} has an empty source constituency.")
 

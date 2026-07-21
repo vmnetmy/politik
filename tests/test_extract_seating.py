@@ -20,6 +20,19 @@ class SeatingExtractionTests(unittest.TestCase):
         self.assertEqual(len(codes), 222)
         self.assertEqual(len(set(codes)), 222)
 
+    def test_regularized_geometry_preserves_pdf_coordinates(self):
+        extracted = extract(ROOT / "SeatingDR.pdf", ROOT / "public/data/election.json", DEFAULT_UNMAPPED)
+        self.assertEqual(extracted["version"], 2)
+        self.assertEqual(len(extracted["emptyPositions"]), 60)
+        self.assertEqual({position["section"] for position in extracted["positions"]}, {"straight-left", "straight-right", "curved"})
+        self.assertTrue(all("sourceX" in position and "sourceY" in position for position in extracted["positions"]))
+
+        left = {(position["x"], position["y"]) for position in extracted["positions"] if position["section"] == "straight-left"}
+        right = {(position["x"], position["y"]) for position in extracted["positions"] if position["section"] == "straight-right"}
+        self.assertEqual({(1190 - x, y) for x, y in left}, right)
+        self.assertEqual(len({x for x, _ in left}), 5)
+        self.assertEqual(len({y for _, y in left}), 10)
+
     def test_name_normalisation_is_stable(self):
         self.assertEqual(normalise("P.056 - Larut"), "P056LARUT")
 
