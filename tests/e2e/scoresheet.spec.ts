@@ -13,7 +13,8 @@ test("Parliament without SPR 760 uses the labelled CC0 fallback", async ({ page 
   await expect(page.getByRole("heading", { name: "Keputusan mengikut saluran" })).toBeVisible();
   await expect(page.getByText("119 saluran", { exact: false })).toBeVisible();
   await expect(page.getByText("DATA TERBUKA · CC0", { exact: true })).toBeVisible();
-  await expect(page.getByRole("link", { name: "Katalog undi calon ↗" })).toHaveAttribute("href", "https://electiondata.my/data-catalogue/saluran-ballots-ge15/");
+  await expect(page.getByText(/ElectionData\.MY/i)).toHaveCount(0);
+  await expect(page.locator('a[href*="electiondata.my"]')).toHaveCount(0);
 });
 
 test("scoresheet totals are the published historical result", async ({ page }) => {

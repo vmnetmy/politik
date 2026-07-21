@@ -1,22 +1,18 @@
 {
   "version": 1,
   "algorithm": "sha256",
-  "publisher": "ElectionData.MY",
+  "publisher": "Arkib data saluran terbuka PRU-15",
   "licence": "CC0-1.0",
   "accessedAt": "2026-07-22",
   "files": [
     {
       "path": "ge15_ballots.parquet",
-      "url": "https://lake.electiondata.my/results_saluran/ge15_ballots.parquet",
-      "catalogueUrl": "https://electiondata.my/data-catalogue/saluran-ballots-ge15/",
       "sha256": "0d2b4dee8a376720eae480015755a6d0bda0d49f8c1a87668a164010d82febe1",
       "bytes": 1287550,
       "rows": 173848
     },
     {
       "path": "ge15_stats.parquet",
-      "url": "https://lake.electiondata.my/results_saluran/ge15_stats.parquet",
-      "catalogueUrl": "https://electiondata.my/data-catalogue/saluran-stats-ge15/",
       "sha256": "931afbb258e7729e3b3d771e48cb43a7d4718c1fc7529a11349781afa529c5f0",
       "bytes": 741565,
       "rows": 39537

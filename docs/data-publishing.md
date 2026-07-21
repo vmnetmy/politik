@@ -19,7 +19,7 @@ Election data remains versioned JSON until multi-user editing or scheduled publi
 2. Enter changes in `/settings/data`, export JSON and replace only the corresponding file under `public/data`.
 3. Use `candidate-changes.json` only for evidenced PRU-15 source corrections. Use `affiliations.json` for post-election party changes.
 4. Run `npm run data:seating` only when the official seating PDF changes.
-5. Run `npm run data:scoresheets` when an SPR 760 PDF or archived ElectionData.MY Parquet snapshot changes. SPR 760 remains authoritative where present; ElectionData.MY fills only seats without a PDF.
+5. Run `npm run data:scoresheets` when an SPR 760 PDF or archived supplementary Parquet snapshot changes. SPR 760 remains authoritative where present; supplementary open data fills only seats without a PDF.
 6. Run `npm run data:geography` when the archived SPR Open Data hierarchy or sourced DPT locality records change.
 7. Run `npm run data:state-elections` after refreshing any archived official SPR state-result dataset.
 8. Run `npm run data:manifest` after any published data change.
@@ -31,7 +31,7 @@ Election data remains versioned JSON until multi-user editing or scheduled publi
 
 `public/data/manifest.json` records SHA-256, byte size and record count for every published data file. CI rejects stale manifests. Rollback is performed by reverting the data pull request, regenerating the manifest and publishing a new reviewed commit; deployed files are never edited in place.
 
-Raw SPR 760 PDFs are retained under `sources/pru15/scoresheets/`; the ElectionData.MY ballot and statistics snapshots are retained under `sources/electiondata-my/pru15/`. Both source tiers have SHA-256 manifests, while the public bundle receives only normalized JSON. Scoresheet totals are authoritative for their 56 seats. The 166 remaining seats use the CC0 snapshots as an explicit supplementary tier, yielding complete 222-seat saluran coverage without allowing the supplementary source to overwrite an available SPR 760 record.
+Raw SPR 760 PDFs are retained under `sources/pru15/scoresheets/`; the supplementary ballot and statistics snapshots are retained under `sources/electiondata-my/pru15/`. Both source tiers have SHA-256 manifests, while the public bundle receives only normalized JSON. Scoresheet totals are authoritative for their 56 seats. The 166 remaining seats use the CC0 snapshots as an explicit supplementary tier, yielding complete 222-seat saluran coverage without allowing the supplementary source to overwrite an available SPR 760 record.
 
 SPR Open Data snapshots used for the reusable geography hierarchy are retained under `sources/spr/geography/`. PDM identities come from the 2022 electoral roll snapshot and are validated against the current official Senarai BPR tuple set. Locality coverage is a separately dated DPT overlay: every record must cite an official `sprinfo.spr.gov.my` PDF, and missing locality coverage must remain missing rather than inferred.
 

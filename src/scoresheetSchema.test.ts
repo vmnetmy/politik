@@ -31,7 +31,7 @@ describe("scoresheet data", () => {
     });
   });
 
-  it("balances every ElectionData.MY fallback stream", () => {
+  it("balances every supplementary open-data stream", () => {
     padangBesar.rows.forEach((row) => {
       expect(Object.values(row.candidateVotes).reduce((sum, value) => sum + value, 0)).toBe(row.validVotes);
       expect(row.validVotes + row.rejectedVotes + row.unreturnedVotes).toBe(row.ballotsInBox);

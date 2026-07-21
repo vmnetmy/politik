@@ -38,10 +38,6 @@ else:
     )
 
 
-BALLOTS_URL = "https://lake.electiondata.my/results_saluran/ge15_ballots.parquet"
-STATS_URL = "https://lake.electiondata.my/results_saluran/ge15_stats.parquet"
-CATALOGUE_URL = "https://electiondata.my/data-catalogue/saluran-ballots-ge15/"
-STATS_CATALOGUE_URL = "https://electiondata.my/data-catalogue/saluran-stats-ge15/"
 LICENCE = "CC0-1.0"
 DM_PATTERN = re.compile(r"^(\d{3}/\d{2}/(?:\d{2}|UP))\s*(.*)$")
 
@@ -90,7 +86,7 @@ def build_electiondata_results(
     stats_path = source_root / "ge15_stats.parquet"
     for path in (ballots_path, stats_path):
         if not path.exists():
-            raise ScoresheetExtractionError(f"Missing ElectionData.MY source {path}.")
+            raise ScoresheetExtractionError(f"Missing supplementary open-data source {path}.")
 
     connection = duckdb.connect()
     ballot_totals = query_dicts(
@@ -147,7 +143,7 @@ def build_electiondata_results(
 
     for code in sorted(stats_by_seat, key=lambda value: int(value.split(".")[1])):
         if code not in seats:
-            raise ScoresheetExtractionError(f"ElectionData.MY contains unknown seat {code}.")
+            raise ScoresheetExtractionError(f"Supplementary open data contains unknown seat {code}.")
         source_columns = totals_by_seat[code]
         candidate_columns = assign_candidates(
             [item["name_on_ballot"] for item in source_columns],
@@ -256,8 +252,6 @@ def build_electiondata_results(
                 "sourceFile": "ge15_ballots.parquet + ge15_stats.parquet",
                 "sourceSha256": source_hash,
                 "sourcePages": 0,
-                "sourceUrl": CATALOGUE_URL,
-                "sourceStatsUrl": STATS_CATALOGUE_URL,
                 "licence": LICENCE,
                 "printDate": next(iter(election_dates)),
             },
@@ -273,28 +267,24 @@ def build_electiondata_results(
         missing = sorted(expected - set(results))
         extra = sorted(set(results) - expected)
         raise ScoresheetExtractionError(
-            f"ElectionData.MY fallback coverage mismatch; missing={missing}, extra={extra}."
+            f"Supplementary open-data coverage mismatch; missing={missing}, extra={extra}."
         )
 
     manifest = {
         "version": 1,
         "algorithm": "sha256",
-        "publisher": "ElectionData.MY",
+        "publisher": "Arkib data saluran terbuka PRU-15",
         "licence": LICENCE,
         "accessedAt": "2026-07-22",
         "files": [
             {
                 "path": ballots_path.name,
-                "url": BALLOTS_URL,
-                "catalogueUrl": CATALOGUE_URL,
                 "sha256": sha256(ballots_path),
                 "bytes": ballots_path.stat().st_size,
                 "rows": 173848,
             },
             {
                 "path": stats_path.name,
-                "url": STATS_URL,
-                "catalogueUrl": STATS_CATALOGUE_URL,
                 "sha256": sha256(stats_path),
                 "bytes": stats_path.stat().st_size,
                 "rows": 39537,
@@ -348,7 +338,6 @@ def build_all(
                 "sourceType": "electiondata-my",
                 "sourceFile": result["metadata"]["sourceFile"],
                 "sourceSha256": result["metadata"]["sourceSha256"],
-                "sourceUrl": CATALOGUE_URL,
                 "pages": 0,
                 "rowCount": len(result["rows"]),
                 "pollingDistrictCount": sum(
@@ -437,7 +426,7 @@ def main() -> int:
         action = "Validated" if args.check else "Wrote"
         print(
             f"{action} {len(results)} seats: {index['metadata']['authoritativeSeats']} SPR 760 and "
-            f"{index['metadata']['supplementarySeats']} ElectionData.MY fallbacks; "
+            f"{index['metadata']['supplementarySeats']} supplementary open-data seats; "
             f"{index['metadata']['totalRows']} polling streams."
         )
         return 0

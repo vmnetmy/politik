@@ -49,13 +49,13 @@ Paparan identiti menggunakan imej dalam folder `Parties/` dan `Gabungan/`. Nama 
 
 ## Helaian mata mengikut saluran
 
-Arkib `sources/pru15/scoresheets/` mengandungi 56 PDF SPR 760. Baki 166 kerusi dilengkapkan menggunakan pasangan dataset undi calon dan statistik saluran ElectionData.MY yang diarkibkan sebagai Parquet dalam `sources/electiondata-my/pru15/`. Kesemua 58 fail sumber dijejaki menggunakan SHA-256; dataset ElectionData.MY turut merekodkan URL katalog, URL muat turun, tarikh akses dan lesen CC0.
+Arkib `sources/pru15/scoresheets/` mengandungi 56 PDF SPR 760. Baki 166 kerusi dilengkapkan menggunakan pasangan dataset undi calon dan statistik saluran terbuka yang diarkibkan sebagai Parquet dalam `sources/electiondata-my/pru15/`. Kesemua 58 fail sumber dijejaki menggunakan SHA-256; dataset tambahan turut merekodkan tarikh akses dan lesen CC0.
 
 Data terperinci kini meliputi kesemua 222 Parlimen dan diterbitkan secara malas melalui `public/data/scoresheets/P.XXX.json`. Halaman Parlimen hanya memuatkan fail kerusi yang sedang dilihat serta geografi guna semula dalam `public/data/polling-places.json`. Antara muka melabelkan dengan jelas 56 kerusi `SUMBER RASMI` dan 166 kerusi `DATA TERBUKA · CC0`.
 
 Setiap baris mesti memenuhi `A = B + C + D`: kertas dalam peti sama dengan undi sah calon, undi ditolak dan kertas tidak dikembalikan. Jumlah baris turut mesti sama dengan baris `JUMLAH` dalam PDF. Nama calon dipetakan kepada ID stabil, bukan kedudukan dalam array.
 
-Keutamaan sumber ditentukan mengikut kerusi: helaian mata SPR 760 sentiasa muktamad bagi 56 kerusi yang mempunyai PDF, manakala ElectionData.MY hanya digunakan bagi 166 kerusi tanpa PDF. Setiap penjanaan menggantikan terus jumlah undi calon, undi sah, bahagian undi, turnout, pemenang dan majoriti dalam `public/data/election.json` daripada sumber terperinci yang berkenaan. `npm run data:scoresheets:check` memastikan 222 fail terbitan, agregat, imbangan kertas undi dan manifest sumber sentiasa sepadan.
+Keutamaan sumber ditentukan mengikut kerusi: helaian mata SPR 760 sentiasa muktamad bagi 56 kerusi yang mempunyai PDF, manakala dataset saluran terbuka hanya digunakan bagi 166 kerusi tanpa PDF. Setiap penjanaan menggantikan terus jumlah undi calon, undi sah, bahagian undi, turnout, pemenang dan majoriti dalam `public/data/election.json` daripada sumber terperinci yang berkenaan. `npm run data:scoresheets:check` memastikan 222 fail terbitan, agregat, imbangan kertas undi dan manifest sumber sentiasa sepadan.
 
 ```bash
 npm run data:scoresheets
