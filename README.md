@@ -2,6 +2,8 @@
 
 Dashboard interaktif keputusan Pilihan Raya Umum Malaysia ke-15, dibina daripada `DATA & STATISTIK PRU-15.numbers` dalam repositori ini.
 
+Panduan operasi produksi terdapat dalam [`docs/release-operations.md`](docs/release-operations.md), manakala peranan, kelulusan dan integriti penerbitan data diterangkan dalam [`docs/data-publishing.md`](docs/data-publishing.md).
+
 ## Jalankan secara tempatan
 
 ```bash
@@ -75,6 +77,19 @@ Pemeriksaan ini turut dijalankan dalam `.github/workflows/ci.yml` untuk setiap p
 npm run build
 npm run preview
 ```
+
+## Pemeriksaan kualiti
+
+```bash
+npm run lint
+npm run test
+npm run test:python
+npm run data:seating:check
+npm run data:manifest:check
+npm run build
+```
+
+`npm run test:e2e` dan `npm run lighthouse` memerlukan Chromium. Pipeline GitHub memasang pelayar tersebut, menguji paparan desktop dan mudah alih, membandingkan tangkapan skrin dengan baseline `main`, dan menguatkuasakan bajet Lighthouse. Jalankan `npm run data:manifest` selepas mengubah mana-mana fail data yang diterbitkan.
 
 ## Pipeline data
 

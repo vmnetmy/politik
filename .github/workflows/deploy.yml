@@ -1,0 +1,64 @@
+name: Deploy governed release
+
+on:
+  workflow_run:
+    workflows: [Production CI Pipeline]
+    types: [completed]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-${{ github.event.workflow_run.head_branch }}
+  cancel-in-progress: true
+
+jobs:
+  vercel:
+    if: github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+    steps:
+      - name: Check deployment credentials
+        id: credentials
+        run: |
+          if [ -n "$VERCEL_TOKEN" ] && [ -n "$VERCEL_ORG_ID" ] && [ -n "$VERCEL_PROJECT_ID" ]; then
+            echo "available=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "available=false" >> "$GITHUB_OUTPUT"
+            echo "Vercel deployment skipped: repository secrets are not configured." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Check out validated revision
+        if: steps.credentials.outputs.available == 'true'
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+
+      - name: Set up Node.js
+        if: steps.credentials.outputs.available == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        if: steps.credentials.outputs.available == 'true'
+        run: npm ci
+
+      - name: Pull Vercel environment
+        if: steps.credentials.outputs.available == 'true'
+        run: npx vercel@56.4.1 pull --yes --environment=${{ github.event.workflow_run.head_branch == 'main' && 'production' || 'preview' }} --token="$VERCEL_TOKEN"
+
+      - name: Build deployment
+        if: steps.credentials.outputs.available == 'true'
+        run: npx vercel@56.4.1 build ${{ github.event.workflow_run.head_branch == 'main' && '--prod' || '' }} --token="$VERCEL_TOKEN"
+
+      - name: Publish deployment
+        if: steps.credentials.outputs.available == 'true'
+        run: |
+          DEPLOYMENT_URL=$(npx vercel@56.4.1 deploy --prebuilt ${{ github.event.workflow_run.head_branch == 'main' && '--prod' || '' }} --token="$VERCEL_TOKEN")
+          echo "Deployment: $DEPLOYMENT_URL" >> "$GITHUB_STEP_SUMMARY"

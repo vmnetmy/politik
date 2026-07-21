@@ -1,0 +1,14 @@
+# Temporary single-owner enforcement. Replace with editorial and engineering
+# teams when the repository is transferred to a GitHub organisation.
+* @vmnetmy
+
+# Election facts, affiliations and source-derived coordinates require editorial review.
+/public/data/ @vmnetmy
+/SeatingDR.pdf @vmnetmy
+/DATA\ &\ STATISTIK\ PRU-15.numbers @vmnetmy
+
+# Runtime, security, deployment and data tooling require engineering review.
+/src/ @vmnetmy
+/scripts/ @vmnetmy
+/.github/ @vmnetmy
+/vercel.json @vmnetmy

@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "algorithm": "sha256",
+  "files": {
+    "election.json": {
+      "sha256": "944b045f33ca55e76ca259f3e578157e1760c7b84c4cfadf638e50f26de2e6cc",
+      "bytes": 214593,
+      "records": 222
+    },
+    "seating.json": {
+      "sha256": "e0b4110e7a07aa020f805d9b6f95a47ce98eb52d5677e0acbdc634fcc0bf329e",
+      "bytes": 25801,
+      "records": 220
+    },
+    "changes.json": {
+      "sha256": "adef739a5544ca9090a9be5da0111999cbd6d7954f30030a390e90cee844baac",
+      "bytes": 130,
+      "records": 0
+    },
+    "affiliations.json": {
+      "sha256": "0c5c98933813fcaf08b1ec075fddfe95213a420058de078b23821a39b00d9e54",
+      "bytes": 2093,
+      "records": 3
+    },
+    "candidate-changes.json": {
+      "sha256": "6054258ed8806fb3a8162f1eff60d4094122676a520e46d25d8b996094c89642",
+      "bytes": 45,
+      "records": 0
+    },
+    "parties.json": {
+      "sha256": "8fcd969da59baf632f1bc871716cb125b9f8f761162dc4b49e351738757f9c7a",
+      "bytes": 36,
+      "records": 0
+    },
+    "alliances.json": {
+      "sha256": "2b368c8e74863803c7601978c1646297b9fc81e210bb50165f41be434a10d1b1",
+      "bytes": 38,
+      "records": 0
+    }
+  }
+}

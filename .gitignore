@@ -1,5 +1,11 @@
 node_modules/
 dist/
+playwright-report/
+test-results/
+visual-current/
+visual-baseline/
+visual-diff/
+lighthouse-report.json
 .DS_Store
 *.log
 __pycache__/

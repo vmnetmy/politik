@@ -7,8 +7,17 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
+    "lint": "oxlint src api scripts/*.mjs vite.config.ts vitest.config.ts playwright.config.ts --deny-warnings",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:python": "python3 -m unittest discover -s tests -p 'test_*.py'",
+    "test:e2e": "playwright test",
+    "test:visual": "node scripts/compare_visuals.mjs",
+    "lighthouse": "node scripts/run_lighthouse.mjs",
     "data:seating": "python3 scripts/extract_seating.py",
-    "data:seating:check": "python3 scripts/extract_seating.py --check"
+    "data:seating:check": "python3 scripts/extract_seating.py --check",
+    "data:manifest": "python3 scripts/build_data_manifest.py",
+    "data:manifest:check": "python3 scripts/build_data_manifest.py --check"
   },
   "dependencies": {
     "@fontsource/inter": "^5.3.0",
@@ -16,13 +25,27 @@
     "motion": "^12.42.2",
     "react": "19.2.7",
     "react-dom": "19.2.7",
-    "react-router-dom": "7.18.1"
+    "react-router-dom": "7.18.1",
+    "web-vitals": "^5.3.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@testing-library/jest-dom": "^7.0.0",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/pngjs": "^6.0.5",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
     "@vitejs/plugin-react": "6.0.3",
+    "ajv": "^8.20.0",
+    "axe-core": "^4.12.1",
+    "jsdom": "^27.0.1",
+    "lighthouse": "^13.4.1",
+    "oxlint": "^1.74.0",
+    "pixelmatch": "^7.2.0",
+    "pngjs": "^7.0.0",
     "typescript": "7.0.2",
-    "vite": "8.1.5"
+    "vite": "8.1.5",
+    "vitest": "^3.2.7"
   }
 }
