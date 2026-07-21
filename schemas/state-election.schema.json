@@ -6,9 +6,10 @@
     "version": { "const": 1 },
     "metadata": {
       "type": "object",
-      "required": ["eventCount", "stateCount", "contestCount", "candidateCount", "coverage", "issues"],
+      "required": ["sourceCitations", "eventCount", "stateCount", "contestCount", "candidateCount", "coverage", "issues"],
       "properties": {
         "eventCount": { "const": 13 }, "stateCount": { "const": 13 }, "contestCount": { "const": 600 },
+        "sourceCitations": { "type": "array", "items": { "type": "string", "minLength": 1 } },
         "candidateCount": { "type": "integer", "minimum": 600 }, "coverage": { "const": "latest-complete" },
         "issues": { "type": "array" }
       }
@@ -35,7 +36,7 @@
           "registeredVoters": { "type": ["integer", "null"], "minimum": 1 }, "turnoutVotes": { "type": ["integer", "null"], "minimum": 1 }, "turnoutPct": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
           "validVotes": { "type": "integer", "minimum": 1 }, "rejectedVotes": { "type": ["integer", "null"], "minimum": 0 }, "unreturnedVotes": { "type": ["integer", "null"], "minimum": 0 },
           "majorityVotes": { "type": "integer", "minimum": 0 }, "sourceMajorityVotes": { "type": "integer", "minimum": 0 }, "winnerCandidateId": { "type": "string" },
-          "sourceDataset": { "enum": ["keputusan-pru-dun", "keputusan-pru", "keputusan-prk", "mysemak-johor-2026"] },
+          "sourceDataset": { "enum": ["keputusan-pru-dun", "keputusan-pru", "keputusan-prk", "mysemak-johor-2026", "pub-246-johor-2026"] },
           "candidates": {
             "type": "array", "minItems": 1,
             "items": {

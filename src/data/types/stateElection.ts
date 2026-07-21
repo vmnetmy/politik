@@ -25,7 +25,7 @@ export type StateElectionContest = {
   majorityVotes: number;
   sourceMajorityVotes: number;
   winnerCandidateId: string;
-  sourceDataset: "keputusan-pru-dun" | "keputusan-pru" | "keputusan-prk" | "mysemak-johor-2026";
+  sourceDataset: "keputusan-pru-dun" | "keputusan-pru" | "keputusan-prk" | "mysemak-johor-2026" | "pub-246-johor-2026";
   candidates: StateElectionCandidate[];
 };
 
@@ -50,6 +50,7 @@ export type StateElectionData = {
     title: string;
     retrievedAt: string;
     sourceUrls: string[];
+    sourceCitations: string[];
     sourceSha256: Record<string, string>;
     eventCount: number;
     stateCount: number;

@@ -4,7 +4,7 @@
   "events": [
     { "id": "prn-melaka-2021", "stateId": "melaka", "stateName": "MELAKA", "year": 2021, "assemblyNumber": 15, "electionDate": "2021-11-20", "dataset": "keputusan-pru-dun" },
     { "id": "prn-sarawak-2021", "stateId": "sarawak", "stateName": "SARAWAK", "year": 2021, "assemblyNumber": 12, "electionDate": "2021-12-18", "dataset": "keputusan-pru-dun" },
-    { "id": "prn-johor-2026", "stateId": "johor", "stateName": "JOHOR", "year": 2026, "assemblyNumber": 16, "electionDate": "2026-07-11", "dataset": "mysemak-johor-2026", "registeredVoters": 2727926, "registeredVotersReference": "johor-negeri-sembilan-2026-schedule" },
+    { "id": "prn-johor-2026", "stateId": "johor", "stateName": "JOHOR", "year": 2026, "assemblyNumber": 16, "electionDate": "2026-07-11", "dataset": "pub-246-johor-2026" },
     { "id": "prn-pahang-2022", "stateId": "pahang", "stateName": "PAHANG", "year": 2022, "assemblyNumber": 15, "electionDate": "2022-11-19", "dataset": "keputusan-pru", "supplementDuns": [{ "dataset": "keputusan-prk", "dunCode": "N.42", "electionDate": "2022-12-07" }] },
     { "id": "prn-perak-2022", "stateId": "perak", "stateName": "PERAK", "year": 2022, "assemblyNumber": 15, "electionDate": "2022-11-19", "dataset": "keputusan-pru" },
     { "id": "prn-perlis-2022", "stateId": "perlis", "stateName": "PERLIS", "year": 2022, "assemblyNumber": 15, "electionDate": "2022-11-19", "dataset": "keputusan-pru" },

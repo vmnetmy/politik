@@ -3,6 +3,12 @@
   "retrievedAt": "2026-07-22",
   "references": [
     {
+      "id": "pub-246-2026",
+      "citation": "P.U. (B) 246, Warta Kerajaan Persekutuan, 20 Julai 2026",
+      "sha256": "4481d13ad99bd4a879de0b3e2a8b1dd6b06ae20317d435c5d4b98577e648a25a",
+      "archivedFile": "pub-246-2026.pdf"
+    },
+    {
       "id": "johor-negeri-sembilan-2026-schedule",
       "url": "https://spr.gov.my/wp-content/uploads/2026/06/KM-BIL-18_2026-MESYUARAT-KHAS-PRU-DEWAN-NEGERI-JOHOR-NEGERI-SEMBILAN-KE-16-1.pdf",
       "sha256": "38a99c1e685f690830a59692922959590b4a26376e9c5e90c6adfb7eb417ea3a",
@@ -39,6 +45,12 @@
       "url": "https://mysemak.spr.gov.my/semakan/keputusan",
       "sha256": "28e85d5a2b1af4133b848373463bb4681c84911cb8cdafa74e1586341463f19f",
       "archivedFile": "mysemak-johor-2026.json"
+    },
+    {
+      "id": "pub-246-johor-2026",
+      "citation": "P.U. (B) 246, Warta Kerajaan Persekutuan, 20 Julai 2026",
+      "sha256": "f95ac64e54358f8cb45999a80484540912e88b0fa5e6c1828f39ba8663ce0b57",
+      "archivedFile": "pub-246-johor-2026.json"
     }
   ]
 }

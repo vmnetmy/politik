@@ -23,7 +23,9 @@ class StateElectionExtractionTests(unittest.TestCase):
         self.assertEqual(events["prn-sarawak-2021"]["seatCounts"], {"GPS": 76, "PSB": 4, "DAP": 2})
         self.assertEqual(events["prn-sabah-2025"]["contestIds"].__len__(), 73)
         self.assertEqual(events["prn-johor-2026"]["seatCounts"], {"BN": 48, "PH": 8})
-        self.assertIsNone(events["prn-johor-2026"]["turnoutPct"])
+        self.assertEqual(events["prn-johor-2026"]["registeredVoters"], 2727926)
+        self.assertEqual(events["prn-johor-2026"]["turnoutVotes"], 1897668)
+        self.assertAlmostEqual(events["prn-johor-2026"]["turnoutPct"], 0.6956449698415573)
 
     def test_published_output_is_reproducible(self):
         self.assertEqual(compact(self.value), (ROOT / "public/data/state-elections.json").read_text(encoding="utf-8"))

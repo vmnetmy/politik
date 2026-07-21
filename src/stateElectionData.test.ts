@@ -33,11 +33,21 @@ describe("official state-election data", () => {
       electionDate: "2026-07-11",
       assemblyNumber: 16,
       registeredVoters: 2727926,
-      turnoutPct: null,
+      turnoutVotes: 1897668,
+      turnoutPct: 0.6956449698415573,
       seatCounts: { BN: 48, PH: 8 },
     });
     expect(johor?.contestIds).toHaveLength(56);
+    expect(results.metadata.sourceCitations).toContain("P.U. (B) 246, Warta Kerajaan Persekutuan, 20 Julai 2026");
     const johorContests = results.contests.filter((item) => item.eventId === johor?.id);
     expect(johorContests.flatMap((item) => item.candidates)).toHaveLength(172);
+    expect(johorContests.find((item) => item.dunId.endsWith(":N.01"))).toMatchObject({
+      sourceDataset: "pub-246-johor-2026",
+      registeredVoters: 28973,
+      turnoutVotes: 19771,
+      rejectedVotes: 228,
+      unreturnedVotes: 35,
+      turnoutPct: 0.6823999999999999,
+    });
   });
 });

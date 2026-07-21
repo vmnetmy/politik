@@ -240,9 +240,9 @@ export default function App() {
           <Route path={VOTER_AGE_BASE} element={<Suspense fallback={<div className="route-loading">Memuatkan statistik umur…</div>}><VoterAgePage/></Suspense>}/>
           <Route path={PRN_BASE} element={<Suspense fallback={<div className="route-loading">Memuatkan pilihan raya negeri…</div>}><StateElectionIndexPage/></Suspense>}/>
           <Route path={`${PRN_BASE}/:stateName`} element={<Suspense fallback={<div className="route-loading">Memuatkan pilihan raya negeri…</div>}><StateElectionPage/></Suspense>}/>
-          <Route path={`${PRN_BASE}/:stateName/:year`} element={<Suspense fallback={<div className="route-loading">Memuatkan pilihan raya negeri…</div>}><StateElectionPage/></Suspense>}/>
-          <Route path={`${PRN_BASE}/:stateName/:year/dun`} element={<Suspense fallback={<div className="route-loading">Memuatkan keputusan DUN…</div>}><StateElectionPage/></Suspense>}/>
-          <Route path={`${PRN_BASE}/:stateName/:year/dun/:dunName`} element={<Suspense fallback={<div className="route-loading">Memuatkan keputusan DUN…</div>}><StateDunResultPage/></Suspense>}/>
+          <Route path={`${PRN_BASE}/:assemblyNumber/:stateName`} element={<Suspense fallback={<div className="route-loading">Memuatkan pilihan raya negeri…</div>}><StateElectionPage/></Suspense>}/>
+          <Route path={`${PRN_BASE}/:assemblyNumber/:stateName/dun`} element={<Suspense fallback={<div className="route-loading">Memuatkan keputusan DUN…</div>}><StateElectionPage/></Suspense>}/>
+          <Route path={`${PRN_BASE}/:assemblyNumber/:stateName/dun/:dunName`} element={<Suspense fallback={<div className="route-loading">Memuatkan keputusan DUN…</div>}><StateDunResultPage/></Suspense>}/>
           <Route path={STATE_BASE} element={<OverviewPage data={managedData}/>}/>
           <Route path={PARLIAMENT_BASE} element={<ParliamentIndexPage data={managedData} seating={seating} search={search} setSearch={setSearch}/>}/>
           <Route path={`${PARLIAMENT_BASE}/:parliamentName`} element={<ParliamentPage data={managedData} scoresheetIndex={scoresheetIndex} geography={geography} constituencies={constituencies}/>}/>

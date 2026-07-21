@@ -23,8 +23,8 @@ Buka alamat yang dipaparkan oleh Vite (biasanya `http://localhost:5173`).
 - `/pru/15/negeri/parlimen` — pelan tempat duduk interaktif dan direktori semua kerusi Parlimen
 - `/pru/15/negeri/parlimen/{parliamentName}` — keputusan penuh, contohnya `/pru/15/negeri/parlimen/padang-besar`
 - `/prn` — direktori pilihan raya negeri terkini yang telah selesai bagi semua 13 negeri
-- `/prn/{stateName}/{year}` — komposisi Dewan dan keputusan semua DUN bagi satu acara, contohnya `/prn/johor/2026`
-- `/prn/{stateName}/{year}/dun/{dunName}` — keputusan calon penuh satu DUN, contohnya `/prn/johor/2026/dun/buloh-kasap`
+- `/prn/{assemblyNumber}/{stateName}/` — komposisi Dewan dan keputusan semua DUN bagi satu acara, contohnya `/prn/16/johor/`
+- `/prn/{assemblyNumber}/{stateName}/dun/{dunName}` — keputusan calon penuh satu DUN, contohnya `/prn/16/johor/dun/buloh-kasap`
 - `/settings/data` — urus status kerusi Parlimen selepas PRU-15
 - `/settings/data/keahlian` — urus parti dan gabungan semasa wakil rakyat secara bertarikh kuat kuasa
 - `/settings/data/calon` — urus pembetulan metadata calon tanpa mengubah angka undi
@@ -119,12 +119,13 @@ npm run data:geography:check
 
 Laluan `/prn` menerbitkan keputusan Dewan Undangan Negeri sebagai acara pilihan raya yang berasingan daripada PRU Parlimen. Dataset `public/data/state-elections.json` merangkumi acara terkini yang telah selesai bagi kesemua 13 negeri, 600 kerusi DUN dan 2,233 rekod calon. Laluan awam menggunakan bentuk `/prn/{negeri}/{tahun}/dun/{nama-dun}`.
 
-Pengekstrak menggabungkan sumber rasmi SPR: keputusan Data Terbuka bagi PRU DUN berasingan, keputusan DUN Perlis/Perak/Pahang yang berlangsung serentak dengan PRU-15, keputusan tertangguh N.42 Tioman, serta keputusan akhir Johor ke-16 daripada MySPR Semak. Johor 2026 mempunyai 56 DUN dan 172 calon dengan komposisi BN 48 / PH 8. Negeri Sembilan kekal pada keputusan lengkap 2023 sehingga pilihan raya 1 Ogos 2026 selesai dan keputusan rasminya tersedia.
+Pengekstrak menggabungkan sumber rasmi SPR: keputusan Data Terbuka bagi PRU DUN berasingan, keputusan DUN Perlis/Perak/Pahang yang berlangsung serentak dengan PRU-15, keputusan tertangguh N.42 Tioman, serta Warta Kerajaan Persekutuan P.U. (B) 246 bagi Johor ke-16. Johor 2026 mempunyai 56 DUN dan 172 calon dengan komposisi BN 48 / PH 8. Negeri Sembilan kekal pada keputusan lengkap 2023 sehingga pilihan raya 1 Ogos 2026 selesai dan keputusan rasminya tersedia.
 
-Jumlah 2,727,926 pemilih Johor datang daripada kenyataan rasmi jadual pilihan raya SPR. MySPR Semak belum menerbitkan jumlah pemilih, undi ditolak atau turnout bagi setiap DUN dalam respons keputusan semasa; nilai itu kekal `null` dan dipaparkan sebagai `—`, bukan dianggarkan daripada undi sah. Semua kod serta nama DUN merujuk `constituencies.json`; komponen tidak menghardkod identiti kawasan.
+Warta P.U. (B) 246 menyediakan semua 56 Borang 16: 2,727,926 pemilih, 1,897,668 kertas undi dikeluarkan, 1,874,918 undi sah, 20,655 undi ditolak dan 2,095 kertas tidak dikembalikan. Turnout negeri dikira terus sebagai `B/A`, iaitu 69.56%. Pengekstrak mengesahkan bagi setiap DUN bahawa `B = undi sah + undi ditolak + tidak dikembalikan`, majoriti sepadan dengan dua calon teratas dan pemenang sepadan dengan Jadual Pertama. Semua kod serta nama DUN merujuk `constituencies.json`; komponen tidak menghardkod identiti kawasan.
 
 ```bash
 npm run data:state-elections:fetch-johor
+npm run data:state-elections:gazette
 npm run data:state-elections
 npm run data:state-elections:check
 ```

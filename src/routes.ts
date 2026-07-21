@@ -5,12 +5,12 @@ export const PARLIAMENT_BASE = `${STATE_BASE}/parlimen`;
 export const VOTER_AGE_BASE = `${ELECTION_BASE}/pengundi/umur`;
 export const PRN_BASE = "/prn";
 
-export function stateElectionPath(stateSlug: string, year: number | string) {
-  return `${PRN_BASE}/${stateSlug}/${year}`;
+export function stateElectionPath(stateSlug: string, assemblyNumber: number | string) {
+  return `${PRN_BASE}/${assemblyNumber}/${stateSlug}/`;
 }
 
-export function stateDunResultPath(stateSlug: string, year: number | string, dunSlug: string) {
-  return `${stateElectionPath(stateSlug, year)}/dun/${dunSlug}`;
+export function stateDunResultPath(stateSlug: string, assemblyNumber: number | string, dunSlug: string) {
+  return `${stateElectionPath(stateSlug, assemblyNumber)}dun/${dunSlug}`;
 }
 
 export function stateParliamentPath(stateSlug: string, parliamentSlug: string) {

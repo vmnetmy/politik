@@ -58,8 +58,8 @@
       "records": 7748
     },
     "state-elections.json": {
-      "sha256": "0566f26ad569d49d09882c1a3953880092b691d9f7e48175736e1fde1a56b3c5",
-      "bytes": 786448,
+      "sha256": "6746bcea4c8896ea4ab2a4a7ef94380435f6337de94099df01363b79a8a5fe49",
+      "bytes": 782933,
       "records": 600
     },
     "scoresheets/index.json": {

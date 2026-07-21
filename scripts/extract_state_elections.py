@@ -80,6 +80,24 @@ def area_name(value: str, pattern: re.Pattern[str]) -> str:
 
 
 def dataset_rows(dataset: str, sources: dict[str, list[dict[str, Any]]], event: dict[str, Any]) -> list[dict[str, Any]]:
+    if dataset == "pub-246-johor-2026":
+        rows = []
+        for contest in sources[dataset]["results"]:
+            for candidate in contest["candidates"]:
+                rows.append(
+                    {
+                        "TAHUN PILIHAN RAYA": event["year"], "NEGERI": event["stateName"],
+                        "PARLIMEN": "", "DEWAN UNDANGAN NEGERI": f"{contest['dunCode']} {contest['dunName']}",
+                        "NAMA ATAS KERTAS UNDI": candidate["name"], "NAMA PARTI BERTANDING": candidate["party"],
+                        "SINGKATAN NAMA PARTI BERTANDING": candidate["party"], "BILANGAN UNDI": candidate["votes"],
+                        "StatusCalon": "MENANG" if candidate["status"] == "winner" else "KALAH",
+                        "MAJORITI": contest["majorityVotes"], "UNDI TAK KEMBALI": contest["unreturnedVotes"],
+                        "UNDI DITOLAK": contest["rejectedVotes"], "PERATUS UNDI": f"{contest['turnoutPct'] * 100:.2f}%",
+                        "JumlahPemilih": contest["registeredVoters"], "_ballotsIssued": contest["ballotsIssued"],
+                        "_dataset": dataset, "_electionDate": event["electionDate"],
+                    }
+                )
+        return rows
     if dataset.startswith("mysemak-"):
         rows = []
         for item in sources[dataset]["results"]:
@@ -158,8 +176,15 @@ def build(source_directory: Path, constituencies_path: Path) -> dict[str, Any]:
             )
         grouped: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
         for row in rows:
-            parliament_code = code(row["PARLIMEN"], PARLIAMENT_CODE, "Parliament")
-            grouped[(parliament_code, dun_code(row["DEWAN UNDANGAN NEGERI"]))].append(row)
+            state_dun_code = dun_code(row["DEWAN UNDANGAN NEGERI"])
+            if row.get("PARLIMEN"):
+                parliament_code = code(row["PARLIMEN"], PARLIAMENT_CODE, "Parliament")
+            else:
+                matches = [item for item in constituencies["duns"] if item["stateId"] == state["id"] and item["code"] == state_dun_code]
+                if len(matches) != 1:
+                    raise StateElectionExtractionError(f"Cannot resolve reusable Parliament identity for {state['id']} {state_dun_code}.")
+                parliament_code = matches[0]["parliamentCode"]
+            grouped[(parliament_code, state_dun_code)].append(row)
 
         event_contests: list[dict[str, Any]] = []
         for (parliament_code, state_dun_code), candidate_rows in sorted(grouped.items()):
@@ -214,7 +239,8 @@ def build(source_directory: Path, constituencies_path: Path) -> dict[str, Any]:
             rejected = source_value(candidate_rows, "UNDI DITOLAK", integer) if has_polling_totals else None
             unreturned = source_value(candidate_rows, "UNDI TAK KEMBALI", integer) if has_polling_totals else None
             official_turnout_pct = source_value(candidate_rows, "PERATUS UNDI", percentage) if has_polling_totals else 0
-            turnout_votes = valid_votes + rejected if rejected is not None else None
+            official_ballots_issued = source_value(candidate_rows, "_ballotsIssued", integer)
+            turnout_votes = official_ballots_issued or (valid_votes + rejected if rejected is not None else None)
             event_contests.append(
                 {
                     "id": contest_id,
@@ -273,7 +299,8 @@ def build(source_directory: Path, constituencies_path: Path) -> dict[str, Any]:
         "metadata": {
             "title": "Keputusan pilihan raya negeri terkini",
             "retrievedAt": source_metadata["retrievedAt"],
-            "sourceUrls": [item["url"] for item in tracked_sources if item["id"] != "list-dppr"],
+            "sourceUrls": [item["url"] for item in tracked_sources if item.get("url") and item["id"] != "list-dppr"],
+            "sourceCitations": list(dict.fromkeys(item["citation"] for item in tracked_sources if item.get("citation"))),
             "sourceSha256": {item["id"]: item["sha256"] for item in tracked_sources},
             "eventCount": len(events),
             "stateCount": len({item["stateId"] for item in events}),
