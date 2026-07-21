@@ -288,7 +288,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-v
 .winner-directory-stats strong { overflow: hidden; font: 600 18px/1 var(--serif); text-overflow: ellipsis; }
 .winner-directory-meta { display: flex; flex-wrap: wrap; gap: 8px 18px; padding-top: 16px; color: #748079; font-size: var(--text-md); }
 .winner-directory-meta strong { margin-left: 5px; color: var(--ink); font-size: var(--text-lg); }
-.winner-directory-link { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 20px; color: #416d5d; font-size: var(--text-md); font-weight: 750; letter-spacing: .05em; text-transform: uppercase; }
+.winner-directory-link { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 20px; color: #416d5d; font-size: var(--text-compact-action); font-weight: 750; letter-spacing: .05em; text-transform: uppercase; }
 .seating-plan-panel { margin-bottom: 18px; padding: clamp(24px, 3.4vw, 42px); overflow: hidden; }
 .seating-plan-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 24px; }
 .seating-plan-heading h2 { margin: 7px 0 6px; font: 600 clamp(28px, 3vw, 42px)/1 var(--serif); letter-spacing: -.035em; }
@@ -333,7 +333,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-v
 .seating-selection-detail dl div { min-width: 0; display: grid; gap: 5px; padding: 12px; border-right: 1px solid rgba(255,255,255,.13); border-bottom: 1px solid rgba(255,255,255,.13); }
 .seating-selection-detail dt { color: #aebbc6; font-size: var(--text-sm); }
 .seating-selection-detail dd { overflow: hidden; margin: 0; font-size: var(--text-lg); font-weight: 750; text-overflow: ellipsis; }
-.seating-selection-detail > a { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 16px; color: var(--lime); border-top: 1px solid rgba(255,255,255,.13); font-size: var(--text-md); font-weight: 750; text-decoration: none; text-transform: uppercase; }
+.seating-selection-detail > a { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 16px; color: var(--lime); border-top: 1px solid rgba(255,255,255,.13); font-size: var(--text-compact-action); font-weight: 750; text-decoration: none; text-transform: uppercase; }
 .seating-source-note { display: flex; align-items: flex-start; gap: 12px; margin-top: 20px; padding: 14px 16px; color: #53616d; background: #e9edf0; border: 1px solid #d3dbe1; }
 .seating-source-note > div { display: grid; gap: 4px; }
 .seating-source-note strong { color: var(--ink); font-size: var(--text-md); }

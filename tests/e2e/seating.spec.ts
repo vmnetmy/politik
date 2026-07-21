@@ -59,3 +59,13 @@ test("desktop keeps the selection panel beside the chamber", async ({ page }, te
   expect(detail?.x).toBeGreaterThan((chamber?.x ?? 0) + (chamber?.width ?? 0));
   expect(Math.abs((detail?.y ?? 0) - (chamber?.y ?? 0))).toBeLessThanOrEqual(1);
 });
+
+test("full-result actions retain the compact type scale", async ({ page }) => {
+  await page.goto("/pru/15/negeri/parlimen");
+  const seatingActionSize = await page.locator(".seating-selection-detail > a").evaluate((element) => Number.parseFloat(getComputedStyle(element).fontSize));
+  expect(seatingActionSize).toBe(12);
+
+  await page.goto("/pru/15/pemenang");
+  const winnerActionSize = await page.locator(".winner-directory-link").first().evaluate((element) => Number.parseFloat(getComputedStyle(element).fontSize));
+  expect(winnerActionSize).toBe(12);
+});
