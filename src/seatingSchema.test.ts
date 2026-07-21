@@ -10,7 +10,9 @@ describe("seating schema", () => {
     expect(seating.positions.length + seating.unmappedSeatCodes.length).toBe(222);
     expect(seating.emptyPositions).toHaveLength(60);
     expect(new Set([...seating.positions, ...seating.emptyPositions].map((position) => position.physicalCode)).size).toBe(280);
-    expect(new Set(seating.positions.filter((position) => position.section === "straight-left").map((position) => position.x)).size).toBe(5);
-    expect(new Set(seating.positions.filter((position) => position.section === "straight-left").map((position) => position.y)).size).toBe(10);
+    expect(seating.layout.strategy).toBe("svg-source-rect-v3");
+    expect(seating.layout.physicalSeatCount).toBe(280);
+    expect(seating.positions.find((position) => position.seatCode === "P.056")).toMatchObject({ physicalCode: "G1", x: 443, y: 805 });
+    expect(seating.positions.find((position) => position.seatCode === "P.173")).toMatchObject({ physicalCode: "C22", x: 861, y: 339 });
   });
 });

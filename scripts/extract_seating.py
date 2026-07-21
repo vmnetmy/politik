@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Extract and validate Dewan Rakyat seating coordinates from SeatingDR.pdf.
+"""Extract and validate Dewan Rakyat seating data from the official sources.
 
-The source is a JasperReports PDF containing one rendered page plus a text layer.
-Constituency labels use 4pt Helvetica Bold. Their label centres map directly to
-the seat-card centres in the 1190 x 842 source coordinate system.
+The PDF text layer supplies constituency labels and representative matching. The
+SVG supplies the authoritative A1-G28 physical-seat geometry in its 1190 x 842
+coordinate system. Display coordinates are never reflowed or regularized.
 """
 
 from __future__ import annotations
@@ -15,6 +15,7 @@ import math
 import re
 import sys
 import unicodedata
+import xml.etree.ElementTree as ET
 from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
@@ -25,11 +26,9 @@ import pdfplumber
 
 EXPECTED_SEAT_COUNT = 222
 EXPECTED_PDF_SHA256 = "8dd8188341dafa69493b316d7247ee64c32e8f7be3353da98796b518d4a068f4"
+EXPECTED_SVG_SHA256 = "9e3a21a3e420ef42805928b168f3b45e42389efa04350908228e4504c7427fe0"
+EXPECTED_RASTER_SHA256 = "6cb79023896ab27ebe2e0d80f81387cf7ba88d7ddb56bf7eaa1f1a73e9ce0690"
 DEFAULT_UNMAPPED = {"P.100", "P.118"}
-STRAIGHT_ROWS = 10
-STRAIGHT_COLUMNS = 5
-CURVED_RINGS = 6
-CURVED_SLOTS_PER_RING = 30
 PDF_NAME_ALIASES = {
     "P.064": "IPOH TIMOR",
     "P.157": "PENGERANG",
@@ -140,7 +139,7 @@ def minimum_cost_assignment(
 ) -> dict[int, int]:
     """Assign every source point to a unique target with minimum total movement."""
     if len(positions) > len(targets):
-        raise SeatingExtractionError("Regularization has fewer target slots than source positions.")
+        raise SeatingExtractionError("The physical source has fewer coded slots than constituency labels.")
     row_count = len(positions)
     column_count = len(targets)
     potential_rows = [0.0] * (row_count + 1)
@@ -194,31 +193,8 @@ def minimum_cost_assignment(
     }
 
 
-def straight_targets(side: str) -> list[tuple[float, float]]:
-    left_x = [190 + column * 60 for column in range(STRAIGHT_COLUMNS)]
-    x_values = left_x if side == "left" else [1190 - value for value in reversed(left_x)]
-    y_values = [505 + row * 30 for row in range(STRAIGHT_ROWS)]
-    return [(float(x), float(y)) for y in y_values for x in x_values]
-
-
-def curved_targets() -> list[tuple[float, float]]:
-    targets: list[tuple[float, float]] = []
-    start_angle = 0.14
-    angle_span = math.pi - start_angle * 2
-    for ring in range(CURVED_RINGS):
-        radius_x = 285 + ring * 44
-        radius_y = 235 + ring * 48
-        for slot in range(CURVED_SLOTS_PER_RING):
-            angle = start_angle + angle_span * slot / (CURVED_SLOTS_PER_RING - 1)
-            targets.append((
-                round(595 + radius_x * math.cos(angle), 2),
-                round(520 - radius_y * math.sin(angle), 2),
-            ))
-    return targets
-
-
 def source_seating_slots() -> list[dict[str, Any]]:
-    """Return the 280 coded physical locations visible in the PDF raster layer."""
+    """Return the 280 coded physical locations visible in SeatingDR.svg."""
     slots: dict[str, tuple[float, float]] = {}
     left_x = [443, 396, 348, 300, 249]
     right_x = [740, 787, 834, 885, 939]
@@ -275,25 +251,14 @@ def source_seating_slots() -> list[dict[str, Any]]:
     ]
 
 
-def regularize_positions(positions: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+def map_source_positions(positions: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """Attach each PDF constituency to its exact coded SVG seat position."""
     source_slots = source_seating_slots()
-    target_sets = {
-        "straight-left": straight_targets("left"),
-        "straight-right": straight_targets("right"),
-        "curved": curved_targets(),
-    }
-    display_by_code: dict[str, tuple[float, float]] = {}
-    for section_name, targets in target_sets.items():
-        section_slots = [slot for slot in source_slots if slot["section"] == section_name]
-        assignment = minimum_cost_assignment(section_slots, targets)
-        for source_index, target_index in assignment.items():
-            display_by_code[str(section_slots[source_index]["physicalCode"])] = targets[target_index]
-
     ordered_positions = sorted(positions, key=lambda position: int(str(position["seatCode"]).split(".")[1]))
     source_targets = [(float(slot["x"]), float(slot["y"])) for slot in source_slots]
     seat_assignment = minimum_cost_assignment(ordered_positions, source_targets)
     used_physical_codes: set[str] = set()
-    regularized: list[dict[str, Any]] = []
+    mapped: list[dict[str, Any]] = []
     for position_index, slot_index in seat_assignment.items():
         position = ordered_positions[position_index]
         slot = source_slots[slot_index]
@@ -301,15 +266,14 @@ def regularize_positions(positions: list[dict[str, Any]]) -> tuple[list[dict[str
         if distance > 12:
             raise SeatingExtractionError(f"{position['seatCode']} is {distance:.2f} points from its nearest coded PDF seat {slot['physicalCode']}.")
         physical_code = str(slot["physicalCode"])
-        target_x, target_y = display_by_code[physical_code]
         used_physical_codes.add(physical_code)
-        regularized.append({
+        mapped.append({
             **position,
             "physicalCode": physical_code,
             "sourceX": position["x"],
             "sourceY": position["y"],
-            "x": target_x,
-            "y": target_y,
+            "x": slot["x"],
+            "y": slot["y"],
             "section": slot["section"],
         })
 
@@ -318,20 +282,53 @@ def regularize_positions(positions: list[dict[str, Any]]) -> tuple[list[dict[str
         physical_code = str(slot["physicalCode"])
         if physical_code in used_physical_codes:
             continue
-        target_x, target_y = display_by_code[physical_code]
         empty_positions.append({
             "id": f"EMPTY-{physical_code}",
             "physicalCode": physical_code,
             "sourceX": slot["x"],
             "sourceY": slot["y"],
-            "x": target_x,
-            "y": target_y,
+            "x": slot["x"],
+            "y": slot["y"],
             "section": slot["section"],
         })
-    return regularized, empty_positions
+    return mapped, empty_positions
 
 
-def extract(pdf_path: Path, election_path: Path, allowed_unmapped: set[str]) -> dict[str, Any]:
+def validate_geometry_sources(svg_path: Path, raster_path: Path) -> tuple[str, str]:
+    """Lock the SVG canvas and embedded raster used to derive coded coordinates."""
+    try:
+        svg_sha256 = hashlib.sha256(svg_path.read_bytes()).hexdigest()
+        raster_sha256 = hashlib.sha256(raster_path.read_bytes()).hexdigest()
+    except OSError as exc:
+        raise SeatingExtractionError(f"Cannot read seating geometry source: {exc}") from exc
+    if svg_sha256 != EXPECTED_SVG_SHA256:
+        raise SeatingExtractionError("SeatingDR.svg changed; review the A1-G28 coordinate map before regenerating seating.json.")
+    if raster_sha256 != EXPECTED_RASTER_SHA256:
+        raise SeatingExtractionError("SeatingDR-1.png changed; review the A1-G28 coordinate map before regenerating seating.json.")
+
+    try:
+        root = ET.parse(svg_path).getroot()
+    except ET.ParseError as exc:
+        raise SeatingExtractionError(f"Cannot parse SeatingDR.svg: {exc}") from exc
+    if root.get("viewBox") != "0 0 1190 842":
+        raise SeatingExtractionError(f"Unexpected SeatingDR.svg viewBox: {root.get('viewBox')!r}.")
+    image = root.find(".//{http://www.w3.org/2000/svg}image")
+    href = image.get("{http://www.w3.org/1999/xlink}href") if image is not None else None
+    if image is None or href != raster_path.name or image.get("transform") != "translate(12 9) scale(.146)":
+        raise SeatingExtractionError("SeatingDR.svg no longer references the expected raster geometry.")
+    return svg_sha256, raster_sha256
+
+
+def extract(
+    pdf_path: Path,
+    election_path: Path,
+    allowed_unmapped: set[str],
+    svg_path: Path | None = None,
+    raster_path: Path | None = None,
+) -> dict[str, Any]:
+    svg_path = svg_path or pdf_path.with_name("SeatingDR.svg")
+    raster_path = raster_path or pdf_path.with_name("SeatingDR-1.png")
+    svg_sha256, raster_sha256 = validate_geometry_sources(svg_path, raster_path)
     seats = load_election(election_path)
     with pdf_path.open("rb") as source:
         pdf_sha256 = hashlib.file_digest(source, "sha256").hexdigest()
@@ -391,20 +388,21 @@ def extract(pdf_path: Path, election_path: Path, allowed_unmapped: set[str]) -> 
             "Unexpected unmapped seats. "
             f"Expected {sorted(allowed_unmapped)}, extracted {sorted(missing_set)}."
         )
-    positions, empty_positions = regularize_positions(positions)
+    positions, empty_positions = map_source_positions(positions)
     validate_positions(positions, missing, view_box, seats)
     return {
-        "version": 3,
+        "version": 4,
         "sourceFile": pdf_path.name,
         "sourceSha256": pdf_sha256,
         "sourceUpdatedAt": updated_at,
         "viewBox": view_box,
         "layout": {
-            "strategy": "concentric-rect-v2",
-            "straightRows": STRAIGHT_ROWS,
-            "straightColumns": STRAIGHT_COLUMNS,
-            "curvedRings": CURVED_RINGS,
-            "curvedSlotsPerRing": CURVED_SLOTS_PER_RING,
+            "strategy": "svg-source-rect-v3",
+            "geometryFile": svg_path.name,
+            "geometrySha256": svg_sha256,
+            "rasterFile": raster_path.name,
+            "rasterSha256": raster_sha256,
+            "physicalSeatCount": len(positions) + len(empty_positions),
         },
         "mappedSeatCount": len(positions),
         "unmappedSeatCodes": sorted(missing, key=lambda code: int(code.split(".")[1])),
@@ -423,7 +421,7 @@ def validate_positions(positions: list[dict[str, Any]], missing: list[str], view
         raise SeatingExtractionError("Mapped and explicitly unmapped seats must cover all 222 election seats exactly once.")
     for position in positions:
         if not 0 <= float(position["x"]) <= view_box["width"] or not 0 <= float(position["y"]) <= view_box["height"]:
-            raise SeatingExtractionError(f"{position['seatCode']} is outside the regularized view bounds.")
+            raise SeatingExtractionError(f"{position['seatCode']} is outside the SVG view bounds.")
         if not 0 <= float(position["sourceX"]) <= view_box["width"] or not 0 <= float(position["sourceY"]) <= view_box["height"]:
             raise SeatingExtractionError(f"{position['seatCode']} has source coordinates outside the PDF bounds.")
         if not str(position["sourceConstituency"]).strip():
@@ -435,8 +433,10 @@ def serialise(value: dict[str, Any]) -> str:
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Extract and validate Parliament seat positions from SeatingDR.pdf.")
+    parser = argparse.ArgumentParser(description="Extract and validate Parliament seat data from SeatingDR.pdf and SeatingDR.svg.")
     parser.add_argument("pdf", nargs="?", type=Path, default=Path("SeatingDR.pdf"))
+    parser.add_argument("--geometry", type=Path, default=Path("SeatingDR.svg"))
+    parser.add_argument("--geometry-raster", type=Path, default=Path("SeatingDR-1.png"))
     parser.add_argument("--election", type=Path, default=Path("public/data/election.json"))
     parser.add_argument("--output", type=Path, default=Path("public/data/seating.json"))
     parser.add_argument("--allow-unmapped", default=",".join(sorted(DEFAULT_UNMAPPED)), help="Comma-separated seat codes expected to have no PDF label.")
@@ -448,7 +448,7 @@ def main() -> int:
     args = parse_args()
     allowed_unmapped = {code.strip() for code in args.allow_unmapped.split(",") if code.strip()}
     try:
-        value = extract(args.pdf, args.election, allowed_unmapped)
+        value = extract(args.pdf, args.election, allowed_unmapped, args.geometry, args.geometry_raster)
         rendered = serialise(value)
         if args.check:
             current = args.output.read_text(encoding="utf-8")

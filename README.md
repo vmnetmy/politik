@@ -46,7 +46,7 @@ Paparan identiti menggunakan imej dalam folder `Parties/` dan `Gabungan/`. Nama 
 
 ## Pelan tempat duduk Dewan Rakyat
 
-Kedudukan pada visual interaktif dijana daripada `SeatingDR.pdf`, bertarikh 13 Julai 2026, dan disimpan dalam `public/data/seating.json`. Koordinat asal PDF dikekalkan sebagai `sourceX/sourceY` untuk membuktikan padanan kawasan dan wakil. Koordinat paparan `x/y` diseragamkan kepada dua grid lurus 5 × 10 yang simetri serta enam lengkok sepusat dengan 30 kedudukan setiap lengkok.
+Kedudukan pada visual interaktif dijana daripada `SeatingDR.pdf` dan `SeatingDR.svg`, bertarikh 13 Julai 2026, lalu disimpan dalam `public/data/seating.json`. Lapisan teks PDF memadankan kawasan dan wakil, manakala kod serta geometri fizikal A1-G28 mengikuti sistem koordinat asal `1190 × 842` dalam SVG. Koordinat paparan `x/y` tidak disusun semula kepada grid atau lengkok baharu; setiap kad kekal pada kedudukan sumbernya yang tepat. `sourceX/sourceY` mengekalkan titik padanan kawasan daripada PDF untuk jejak audit.
 
 Kesemua 280 kod tempat duduk fizikal (`A1-A28`, `B1-B22`, `C1-C60`, `D1-D60`, `E1-E60`, `F1-F22` dan `G1-G28`) dipaparkan sebagai kad segi empat tepat. Sebanyak 220 kad dipadankan dengan kawasan dan wakil daripada PDF, manakala 60 kad tanpa wakil kekal kelihatan dengan kodnya dan tidak diberikan identiti rekaan. Pada skrin kecil, pelan boleh ditatal secara mendatar supaya kod tidak dikecilkan sehingga sukar dibaca.
 
@@ -56,7 +56,7 @@ Visual boleh bertukar antara identiti PRU-15 dengan kedudukan semasa, menggunaka
 
 Komponen pelan telah diasingkan dalam `src/components/seating/`, komponen identiti dalam `src/components/identity/`, logik keadaan dalam `src/data/hooks/useParliament.ts`, dan kontrak data dalam `src/data/types/seating.ts`. Penanda menggunakan satu hentian Tab dengan navigasi kekunci anak panah supaya pengguna papan kekunci tidak perlu melalui 220 kawalan satu demi satu.
 
-### Jana dan sahkan koordinat PDF
+### Jana dan sahkan koordinat sumber
 
 Pasang kebergantungan Python, kemudian jana semula `seating.json`:
 
@@ -65,9 +65,9 @@ python3 -m pip install -r requirements.txt
 npm run data:seating
 ```
 
-Pengekstrak membaca lapisan teks JasperReports dalam PDF, memadankan nama kawasan dengan 222 rekod pilihan raya, mengesahkan koordinat berada dalam `1190 × 842`, dan mensyaratkan gabungan kerusi dipetakan serta tidak dipetakan meliputi kesemua 222 kerusi tepat sekali. Cap jari SHA-256 PDF turut dikunci kerana pemetaan kod fizikal A1-G28 datang daripada lapisan raster sumber; PDF baharu perlu disemak sebelum koordinat dan kod dijana semula. Kegagalan atau perubahan senyap pada format PDF menyebabkan proses tamat dengan ralat.
+Pengekstrak membaca lapisan teks JasperReports dalam PDF, memadankan nama kawasan dengan 222 rekod pilihan raya, mengesahkan koordinat berada dalam `1190 × 842`, dan mensyaratkan gabungan kerusi dipetakan serta tidak dipetakan meliputi kesemua 222 kerusi tepat sekali. Cap jari SHA-256 bagi PDF, SVG dan raster `SeatingDR-1.png` dikunci kerana ketiga-tiganya membentuk sumber pemetaan rasmi. Sebarang perubahan sumber perlu disemak sebelum koordinat dan kod dijana semula; perubahan senyap menyebabkan proses tamat dengan ralat.
 
-Untuk memastikan fail yang diterbitkan masih sepadan tepat dengan PDF:
+Untuk memastikan fail yang diterbitkan masih sepadan tepat dengan semua sumber:
 
 ```bash
 npm run data:seating:check

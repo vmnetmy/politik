@@ -6,7 +6,7 @@
   "additionalProperties": false,
   "required": ["version", "sourceFile", "sourceSha256", "sourceUpdatedAt", "viewBox", "layout", "mappedSeatCount", "unmappedSeatCodes", "positions", "emptyPositions"],
   "properties": {
-    "version": { "const": 3 },
+    "version": { "const": 4 },
     "sourceFile": { "type": "string", "minLength": 1 },
     "sourceSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
     "sourceUpdatedAt": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
@@ -22,13 +22,14 @@
     "layout": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["strategy", "straightRows", "straightColumns", "curvedRings", "curvedSlotsPerRing"],
+      "required": ["strategy", "geometryFile", "geometrySha256", "rasterFile", "rasterSha256", "physicalSeatCount"],
       "properties": {
-        "strategy": { "const": "concentric-rect-v2" },
-        "straightRows": { "const": 10 },
-        "straightColumns": { "const": 5 },
-        "curvedRings": { "const": 6 },
-        "curvedSlotsPerRing": { "const": 30 }
+        "strategy": { "const": "svg-source-rect-v3" },
+        "geometryFile": { "const": "SeatingDR.svg" },
+        "geometrySha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "rasterFile": { "const": "SeatingDR-1.png" },
+        "rasterSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "physicalSeatCount": { "const": 280 }
       }
     },
     "mappedSeatCount": { "type": "integer", "minimum": 0, "maximum": 222 },
@@ -50,8 +51,8 @@
           "sourceConstituency": { "type": "string", "minLength": 1 },
           "sourceX": { "type": "number", "minimum": 0, "maximum": 1190 },
           "sourceY": { "type": "number", "minimum": 0, "maximum": 842 },
-          "x": { "type": "number", "minimum": 0 },
-          "y": { "type": "number", "minimum": 0 },
+          "x": { "type": "number", "minimum": 0, "maximum": 1190 },
+          "y": { "type": "number", "minimum": 0, "maximum": 842 },
           "section": { "enum": ["straight-left", "straight-right", "curved"] }
         }
       }
@@ -69,8 +70,8 @@
           "physicalCode": { "type": "string", "pattern": "^[A-G](?:[1-9]|[1-5][0-9]|60)$" },
           "sourceX": { "type": "number", "minimum": 0, "maximum": 1190 },
           "sourceY": { "type": "number", "minimum": 0, "maximum": 842 },
-          "x": { "type": "number", "minimum": 0 },
-          "y": { "type": "number", "minimum": 0 },
+          "x": { "type": "number", "minimum": 0, "maximum": 1190 },
+          "y": { "type": "number", "minimum": 0, "maximum": 842 },
           "section": { "enum": ["straight-left", "straight-right", "curved"] }
         }
       }

@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "sourceFile": "SeatingDR.pdf",
   "sourceSha256": "8dd8188341dafa69493b316d7247ee64c32e8f7be3353da98796b518d4a068f4",
   "sourceUpdatedAt": "2026-07-13",
@@ -8,11 +8,12 @@
     "height": 842
   },
   "layout": {
-    "strategy": "concentric-rect-v2",
-    "straightRows": 10,
-    "straightColumns": 5,
-    "curvedRings": 6,
-    "curvedSlotsPerRing": 30
+    "strategy": "svg-source-rect-v3",
+    "geometryFile": "SeatingDR.svg",
+    "geometrySha256": "9e3a21a3e420ef42805928b168f3b45e42389efa04350908228e4504c7427fe0",
+    "rasterFile": "SeatingDR-1.png",
+    "rasterSha256": "6cb79023896ab27ebe2e0d80f81387cf7ba88d7ddb56bf7eaa1f1a73e9ce0690",
+    "physicalSeatCount": 280
   },
   "mappedSeatCount": 220,
   "unmappedSeatCodes": [
@@ -23,8 +24,8 @@
     {
       "seatCode": "P.063",
       "sourceConstituency": "TAMBUN",
-      "x": 760.0,
-      "y": 775.0,
+      "x": 740.0,
+      "y": 805.0,
       "physicalCode": "A1",
       "sourceX": 739.5,
       "sourceY": 804.2,
@@ -33,8 +34,8 @@
     {
       "seatCode": "P.075",
       "sourceConstituency": "BAGAN DATUK",
-      "x": 760.0,
-      "y": 745.0,
+      "x": 740.0,
+      "y": 770.0,
       "physicalCode": "A2",
       "sourceX": 740.5,
       "sourceY": 766.87,
@@ -43,8 +44,8 @@
     {
       "seatCode": "P.194",
       "sourceConstituency": "PETRAJAYA",
-      "x": 760.0,
-      "y": 715.0,
+      "x": 740.0,
+      "y": 735.0,
       "physicalCode": "A3",
       "sourceX": 740.5,
       "sourceY": 732.87,
@@ -53,8 +54,8 @@
     {
       "seatCode": "P.128",
       "sourceConstituency": "SEREMBAN",
-      "x": 760.0,
-      "y": 685.0,
+      "x": 740.0,
+      "y": 700.0,
       "physicalCode": "A4",
       "sourceX": 740.5,
       "sourceY": 699.2,
@@ -63,8 +64,8 @@
     {
       "seatCode": "P.111",
       "sourceConstituency": "KOTA RAJA",
-      "x": 760.0,
-      "y": 655.0,
+      "x": 740.0,
+      "y": 668.0,
       "physicalCode": "A5",
       "sourceX": 739.5,
       "sourceY": 663.87,
@@ -73,8 +74,8 @@
     {
       "seatCode": "P.077",
       "sourceConstituency": "TANJONG MALIM",
-      "x": 820.0,
-      "y": 745.0,
+      "x": 787.0,
+      "y": 770.0,
       "physicalCode": "A7",
       "sourceX": 786.5,
       "sourceY": 766.87,
@@ -83,8 +84,8 @@
     {
       "seatCode": "P.121",
       "sourceConstituency": "LEMBAH PANTAI",
-      "x": 820.0,
-      "y": 655.0,
+      "x": 787.0,
+      "y": 700.0,
       "physicalCode": "A9",
       "sourceX": 786.5,
       "sourceY": 696.87,
@@ -93,8 +94,8 @@
     {
       "seatCode": "P.210",
       "sourceConstituency": "KANOWIT",
-      "x": 760.0,
-      "y": 625.0,
+      "x": 787.0,
+      "y": 668.0,
       "physicalCode": "A10",
       "sourceX": 786.5,
       "sourceY": 666.2,
@@ -103,8 +104,8 @@
     {
       "seatCode": "P.157",
       "sourceConstituency": "PENGERANG",
-      "x": 880.0,
-      "y": 775.0,
+      "x": 834.0,
+      "y": 805.0,
       "physicalCode": "A11",
       "sourceX": 833.5,
       "sourceY": 804.2,
@@ -113,8 +114,8 @@
     {
       "seatCode": "P.117",
       "sourceConstituency": "SEGAMBUT",
-      "x": 880.0,
-      "y": 745.0,
+      "x": 834.0,
+      "y": 770.0,
       "physicalCode": "A12",
       "sourceX": 834.5,
       "sourceY": 769.2,
@@ -123,8 +124,8 @@
     {
       "seatCode": "P.106",
       "sourceConstituency": "DAMANSARA",
-      "x": 880.0,
-      "y": 715.0,
+      "x": 834.0,
+      "y": 735.0,
       "physicalCode": "A13",
       "sourceX": 834.5,
       "sourceY": 735.2,
@@ -133,8 +134,8 @@
     {
       "seatCode": "P.096",
       "sourceConstituency": "KUALA SELANGOR",
-      "x": 820.0,
-      "y": 685.0,
+      "x": 834.0,
+      "y": 700.0,
       "physicalCode": "A14",
       "sourceX": 833.5,
       "sourceY": 697.37,
@@ -143,8 +144,8 @@
     {
       "seatCode": "P.160",
       "sourceConstituency": "JOHOR BAHRU",
-      "x": 820.0,
-      "y": 625.0,
+      "x": 834.0,
+      "y": 668.0,
       "physicalCode": "A15",
       "sourceX": 833.5,
       "sourceY": 663.87,
@@ -153,8 +154,8 @@
     {
       "seatCode": "P.217",
       "sourceConstituency": "BINTULU",
-      "x": 940.0,
-      "y": 775.0,
+      "x": 885.0,
+      "y": 805.0,
       "physicalCode": "A16",
       "sourceX": 884.5,
       "sourceY": 804.2,
@@ -163,8 +164,8 @@
     {
       "seatCode": "P.107",
       "sourceConstituency": "SUNGAI BULOH",
-      "x": 940.0,
-      "y": 745.0,
+      "x": 885.0,
+      "y": 770.0,
       "physicalCode": "A17",
       "sourceX": 885.5,
       "sourceY": 766.87,
@@ -173,8 +174,8 @@
     {
       "seatCode": "P.171",
       "sourceConstituency": "SEPANGGAR",
-      "x": 880.0,
-      "y": 685.0,
+      "x": 885.0,
+      "y": 735.0,
       "physicalCode": "A18",
       "sourceX": 885.5,
       "sourceY": 731.87,
@@ -183,8 +184,8 @@
     {
       "seatCode": "P.015",
       "sourceConstituency": "SUNGAI PETANI",
-      "x": 940.0,
-      "y": 625.0,
+      "x": 885.0,
+      "y": 668.0,
       "physicalCode": "A20",
       "sourceX": 884.5,
       "sourceY": 666.2,
@@ -193,8 +194,8 @@
     {
       "seatCode": "P.172",
       "sourceConstituency": "KOTA KINABALU",
-      "x": 1000.0,
-      "y": 745.0,
+      "x": 939.0,
+      "y": 770.0,
       "physicalCode": "A22",
       "sourceX": 938.5,
       "sourceY": 770.2,
@@ -203,8 +204,8 @@
     {
       "seatCode": "P.135",
       "sourceConstituency": "ALOR GAJAH",
-      "x": 940.0,
-      "y": 715.0,
+      "x": 939.0,
+      "y": 735.0,
       "physicalCode": "A23",
       "sourceX": 938.5,
       "sourceY": 735.2,
@@ -213,8 +214,8 @@
     {
       "seatCode": "P.079",
       "sourceConstituency": "LIPIS",
-      "x": 940.0,
-      "y": 685.0,
+      "x": 939.0,
+      "y": 700.0,
       "physicalCode": "A24",
       "sourceX": 938.5,
       "sourceY": 697.87,
@@ -223,8 +224,8 @@
     {
       "seatCode": "P.055",
       "sourceConstituency": "LENGGONG",
-      "x": 940.0,
-      "y": 655.0,
+      "x": 939.0,
+      "y": 668.0,
       "physicalCode": "A25",
       "sourceX": 938.5,
       "sourceY": 664.87,
@@ -233,8 +234,8 @@
     {
       "seatCode": "P.078",
       "sourceConstituency": "CAMERON HIGHLANDS",
-      "x": 1000.0,
-      "y": 715.0,
+      "x": 999.0,
+      "y": 735.0,
       "physicalCode": "A26",
       "sourceX": 999.5,
       "sourceY": 733.37,
@@ -243,8 +244,8 @@
     {
       "seatCode": "P.211",
       "sourceConstituency": "LANANG",
-      "x": 1000.0,
-      "y": 685.0,
+      "x": 999.0,
+      "y": 700.0,
       "physicalCode": "A27",
       "sourceX": 998.5,
       "sourceY": 700.2,
@@ -253,8 +254,8 @@
     {
       "seatCode": "P.176",
       "sourceConstituency": "KIMANIS",
-      "x": 1000.0,
-      "y": 655.0,
+      "x": 999.0,
+      "y": 668.0,
       "physicalCode": "A28",
       "sourceX": 998.5,
       "sourceY": 667.2,
@@ -263,8 +264,8 @@
     {
       "seatCode": "P.076",
       "sourceConstituency": "TELUK INTAN",
-      "x": 760.0,
-      "y": 595.0,
+      "x": 740.0,
+      "y": 634.0,
       "physicalCode": "B1",
       "sourceX": 740.5,
       "sourceY": 633.2,
@@ -273,8 +274,8 @@
     {
       "seatCode": "P.131",
       "sourceConstituency": "REMBAU",
-      "x": 760.0,
-      "y": 565.0,
+      "x": 740.0,
+      "y": 600.0,
       "physicalCode": "B2",
       "sourceX": 739.5,
       "sourceY": 596.87,
@@ -283,8 +284,8 @@
     {
       "seatCode": "P.215",
       "sourceConstituency": "KAPIT",
-      "x": 760.0,
-      "y": 535.0,
+      "x": 740.0,
+      "y": 566.0,
       "physicalCode": "B3",
       "sourceX": 741.5,
       "sourceY": 562.87,
@@ -293,8 +294,8 @@
     {
       "seatCode": "P.156",
       "sourceConstituency": "KOTA TINGGI",
-      "x": 760.0,
-      "y": 505.0,
+      "x": 740.0,
+      "y": 530.0,
       "physicalCode": "B4",
       "sourceX": 740.5,
       "sourceY": 527.87,
@@ -303,8 +304,8 @@
     {
       "seatCode": "P.119",
       "sourceConstituency": "TITIWANGSA",
-      "x": 820.0,
-      "y": 595.0,
+      "x": 787.0,
+      "y": 634.0,
       "physicalCode": "B5",
       "sourceX": 786.5,
       "sourceY": 633.2,
@@ -313,8 +314,8 @@
     {
       "seatCode": "P.175",
       "sourceConstituency": "PAPAR",
-      "x": 820.0,
-      "y": 565.0,
+      "x": 787.0,
+      "y": 600.0,
       "physicalCode": "B6",
       "sourceX": 786.5,
       "sourceY": 599.2,
@@ -323,8 +324,8 @@
     {
       "seatCode": "P.047",
       "sourceConstituency": "NIBONG TEBAL",
-      "x": 820.0,
-      "y": 535.0,
+      "x": 787.0,
+      "y": 566.0,
       "physicalCode": "B7",
       "sourceX": 787.5,
       "sourceY": 565.2,
@@ -333,8 +334,8 @@
     {
       "seatCode": "P.193",
       "sourceConstituency": "SANTUBONG",
-      "x": 820.0,
-      "y": 505.0,
+      "x": 787.0,
+      "y": 530.0,
       "physicalCode": "B8",
       "sourceX": 786.5,
       "sourceY": 530.2,
@@ -343,8 +344,8 @@
     {
       "seatCode": "P.045",
       "sourceConstituency": "BUKIT MERTAJAM",
-      "x": 880.0,
-      "y": 625.0,
+      "x": 834.0,
+      "y": 634.0,
       "physicalCode": "B9",
       "sourceX": 834.5,
       "sourceY": 630.87,
@@ -353,8 +354,8 @@
     {
       "seatCode": "P.182",
       "sourceConstituency": "PENSIANGAN",
-      "x": 880.0,
-      "y": 565.0,
+      "x": 834.0,
+      "y": 600.0,
       "physicalCode": "B10",
       "sourceX": 833.5,
       "sourceY": 599.2,
@@ -363,8 +364,8 @@
     {
       "seatCode": "P.147",
       "sourceConstituency": "PARIT SULONG",
-      "x": 880.0,
-      "y": 505.0,
+      "x": 834.0,
+      "y": 530.0,
       "physicalCode": "B12",
       "sourceX": 834.5,
       "sourceY": 530.2,
@@ -373,8 +374,8 @@
     {
       "seatCode": "P.164",
       "sourceConstituency": "PONTIAN",
-      "x": 880.0,
-      "y": 595.0,
+      "x": 885.0,
+      "y": 634.0,
       "physicalCode": "B13",
       "sourceX": 884.5,
       "sourceY": 630.87,
@@ -383,8 +384,8 @@
     {
       "seatCode": "P.221",
       "sourceConstituency": "LIMBANG",
-      "x": 940.0,
-      "y": 595.0,
+      "x": 885.0,
+      "y": 600.0,
       "physicalCode": "B14",
       "sourceX": 884.5,
       "sourceY": 596.87,
@@ -393,8 +394,8 @@
     {
       "seatCode": "P.197",
       "sourceConstituency": "KOTA SAMARAHAN",
-      "x": 940.0,
-      "y": 535.0,
+      "x": 885.0,
+      "y": 566.0,
       "physicalCode": "B15",
       "sourceX": 885.5,
       "sourceY": 563.37,
@@ -403,8 +404,8 @@
     {
       "seatCode": "P.213",
       "sourceConstituency": "MUKAH",
-      "x": 940.0,
-      "y": 505.0,
+      "x": 885.0,
+      "y": 530.0,
       "physicalCode": "B16",
       "sourceX": 885.5,
       "sourceY": 527.87,
@@ -413,8 +414,8 @@
     {
       "seatCode": "P.162",
       "sourceConstituency": "ISKANDAR PUTERI",
-      "x": 1000.0,
-      "y": 625.0,
+      "x": 939.0,
+      "y": 634.0,
       "physicalCode": "B17",
       "sourceX": 938.5,
       "sourceY": 630.87,
@@ -423,8 +424,8 @@
     {
       "seatCode": "P.188",
       "sourceConstituency": "LAHAD DATU",
-      "x": 940.0,
-      "y": 565.0,
+      "x": 939.0,
+      "y": 600.0,
       "physicalCode": "B18",
       "sourceX": 938.5,
       "sourceY": 596.87,
@@ -433,8 +434,8 @@
     {
       "seatCode": "P.208",
       "sourceConstituency": "SARIKEI",
-      "x": 1000.0,
-      "y": 535.0,
+      "x": 939.0,
+      "y": 566.0,
       "physicalCode": "B19",
       "sourceX": 939.5,
       "sourceY": 565.2,
@@ -443,8 +444,8 @@
     {
       "seatCode": "P.113",
       "sourceConstituency": "SEPANG",
-      "x": 1000.0,
-      "y": 505.0,
+      "x": 939.0,
+      "y": 530.0,
       "physicalCode": "B20",
       "sourceX": 938.5,
       "sourceY": 527.87,
@@ -453,8 +454,8 @@
     {
       "seatCode": "P.185",
       "sourceConstituency": "BATU SAPI",
-      "x": 1000.0,
-      "y": 595.0,
+      "x": 999.0,
+      "y": 634.0,
       "physicalCode": "B21",
       "sourceX": 998.5,
       "sourceY": 630.87,
@@ -463,8 +464,8 @@
     {
       "seatCode": "P.163",
       "sourceConstituency": "KULAI",
-      "x": 1000.0,
-      "y": 565.0,
+      "x": 999.0,
+      "y": 600.0,
       "physicalCode": "B22",
       "sourceX": 998.5,
       "sourceY": 599.2,
@@ -473,8 +474,8 @@
     {
       "seatCode": "P.049",
       "sourceConstituency": "TANJONG",
-      "x": 853.33,
-      "y": 420.75,
+      "x": 728.0,
+      "y": 488.0,
       "physicalCode": "C1",
       "sourceX": 727.5,
       "sourceY": 489.53,
@@ -483,8 +484,8 @@
     {
       "seatCode": "P.137",
       "sourceConstituency": "HANG TUAH JAYA",
-      "x": 787.19,
-      "y": 346.47,
+      "x": 714.0,
+      "y": 436.0,
       "physicalCode": "C2",
       "sourceX": 713.5,
       "sourceY": 432.87,
@@ -493,8 +494,8 @@
     {
       "seatCode": "P.084",
       "sourceConstituency": "PAYA BESAR",
-      "x": 717.43,
-      "y": 307.79,
+      "x": 687.0,
+      "y": 388.0,
       "physicalCode": "C3",
       "sourceX": 686.5,
       "sourceY": 383.87,
@@ -503,8 +504,8 @@
     {
       "seatCode": "P.065",
       "sourceConstituency": "IPOH BARAT",
-      "x": 871.92,
-      "y": 464.44,
+      "x": 773.0,
+      "y": 488.0,
       "physicalCode": "C4",
       "sourceX": 773.5,
       "sourceY": 487.2,
@@ -513,8 +514,8 @@
     {
       "seatCode": "P.218",
       "sourceConstituency": "SIBUTI",
-      "x": 824.72,
-      "y": 380.91,
+      "x": 773.0,
+      "y": 451.0,
       "physicalCode": "C5",
       "sourceX": 772.5,
       "sourceY": 450.2,
@@ -523,8 +524,8 @@
     {
       "seatCode": "P.060",
       "sourceConstituency": "TAIPING",
-      "x": 806.98,
-      "y": 362.93,
+      "x": 763.0,
+      "y": 410.0,
       "physicalCode": "C6",
       "sourceX": 762.5,
       "sourceY": 409.2,
@@ -533,8 +534,8 @@
     {
       "seatCode": "P.052",
       "sourceConstituency": "BAYAN BARU",
-      "x": 765.52,
-      "y": 331.7,
+      "x": 740.0,
+      "y": 373.0,
       "physicalCode": "C7",
       "sourceX": 740.5,
       "sourceY": 374.53,
@@ -543,8 +544,8 @@
     {
       "seatCode": "P.216",
       "sourceConstituency": "HULU RAJANG",
-      "x": 742.19,
-      "y": 318.77,
+      "x": 718.0,
+      "y": 338.0,
       "physicalCode": "C8",
       "sourceX": 717.5,
       "sourceY": 335.87,
@@ -553,8 +554,8 @@
     {
       "seatCode": "P.140",
       "sourceConstituency": "SEGAMAT",
-      "x": 877.21,
-      "y": 487.21,
+      "x": 825.0,
+      "y": 489.0,
       "physicalCode": "C9",
       "sourceX": 824.5,
       "sourceY": 491.2,
@@ -563,8 +564,8 @@
     {
       "seatCode": "P.144",
       "sourceConstituency": "LEDANG",
-      "x": 863.94,
-      "y": 442.22,
+      "x": 825.0,
+      "y": 458.0,
       "physicalCode": "C10",
       "sourceX": 825.5,
       "sourceY": 457.87,
@@ -573,8 +574,8 @@
     {
       "seatCode": "P.192",
       "sourceConstituency": "MAS GADING",
-      "x": 840.22,
-      "y": 400.25,
+      "x": 823.0,
+      "y": 426.0,
       "physicalCode": "C11",
       "sourceX": 821.5,
       "sourceY": 432.53,
@@ -583,8 +584,8 @@
     {
       "seatCode": "P.219",
       "sourceConstituency": "MIRI",
-      "x": 860.18,
-      "y": 352.5,
+      "x": 819.0,
+      "y": 398.0,
       "physicalCode": "C12",
       "sourceX": 818.5,
       "sourceY": 397.2,
@@ -593,8 +594,8 @@
     {
       "seatCode": "P.190",
       "sourceConstituency": "TAWAU",
-      "x": 839.71,
-      "y": 330.84,
+      "x": 809.0,
+      "y": 363.0,
       "physicalCode": "C13",
       "sourceX": 809.5,
       "sourceY": 367.53,
@@ -603,8 +604,8 @@
     {
       "seatCode": "P.116",
       "sourceConstituency": "WANGSA MAJU",
-      "x": 920.78,
-      "y": 480.51,
+      "x": 879.0,
+      "y": 492.0,
       "physicalCode": "C17",
       "sourceX": 878.5,
       "sourceY": 491.2,
@@ -613,8 +614,8 @@
     {
       "seatCode": "P.071",
       "sourceConstituency": "GOPENG",
-      "x": 914.67,
-      "y": 453.09,
+      "x": 878.0,
+      "y": 457.0,
       "physicalCode": "C18",
       "sourceX": 877.5,
       "sourceY": 459.2,
@@ -623,8 +624,8 @@
     {
       "seatCode": "P.080",
       "sourceConstituency": "RAUB",
-      "x": 905.46,
-      "y": 426.33,
+      "x": 875.0,
+      "y": 427.0,
       "physicalCode": "C19",
       "sourceX": 875.5,
       "sourceY": 432.53,
@@ -633,8 +634,8 @@
     {
       "seatCode": "P.191",
       "sourceConstituency": "KALABAKAN",
-      "x": 893.22,
-      "y": 400.48,
+      "x": 874.0,
+      "y": 400.0,
       "physicalCode": "C20",
       "sourceX": 873.5,
       "sourceY": 396.04,
@@ -643,8 +644,8 @@
     {
       "seatCode": "P.178",
       "sourceConstituency": "SIPITANG",
-      "x": 878.08,
-      "y": 375.79,
+      "x": 869.0,
+      "y": 369.0,
       "physicalCode": "C21",
       "sourceX": 868.5,
       "sourceY": 369.2,
@@ -653,8 +654,8 @@
     {
       "seatCode": "P.173",
       "sourceConstituency": "PUTATAN",
-      "x": 895.65,
-      "y": 324.09,
+      "x": 861.0,
+      "y": 339.0,
       "physicalCode": "C22",
       "sourceX": 861.5,
       "sourceY": 335.87,
@@ -663,8 +664,8 @@
     {
       "seatCode": "P.105",
       "sourceConstituency": "PETALING JAYA",
-      "x": 872.44,
-      "y": 298.76,
+      "x": 851.0,
+      "y": 309.0,
       "physicalCode": "C23",
       "sourceX": 851.5,
       "sourceY": 309.2,
@@ -673,8 +674,8 @@
     {
       "seatCode": "P.110",
       "sourceConstituency": "KLANG",
-      "x": 846.53,
-      "y": 275.58,
+      "x": 840.0,
+      "y": 279.0,
       "physicalCode": "C24",
       "sourceX": 839.5,
       "sourceY": 280.2,
@@ -683,8 +684,8 @@
     {
       "seatCode": "P.102",
       "sourceConstituency": "BANGI",
-      "x": 818.17,
-      "y": 254.78,
+      "x": 828.0,
+      "y": 248.0,
       "physicalCode": "C25",
       "sourceX": 827.5,
       "sourceY": 251.2,
@@ -693,8 +694,8 @@
     {
       "seatCode": "P.099",
       "sourceConstituency": "AMPANG",
-      "x": 787.64,
-      "y": 236.56,
+      "x": 804.0,
+      "y": 221.0,
       "physicalCode": "C26",
       "sourceX": 803.5,
       "sourceY": 218.87,
@@ -703,8 +704,8 @@
     {
       "seatCode": "P.155",
       "sourceConstituency": "TENGGARA",
-      "x": 964.35,
-      "y": 473.81,
+      "x": 933.0,
+      "y": 498.0,
       "physicalCode": "C27",
       "sourceX": 932.5,
       "sourceY": 494.87,
@@ -713,8 +714,8 @@
     {
       "seatCode": "P.108",
       "sourceConstituency": "SHAH ALAM",
-      "x": 1007.92,
-      "y": 467.11,
+      "x": 934.0,
+      "y": 470.0,
       "physicalCode": "C28",
       "sourceX": 933.5,
       "sourceY": 469.2,
@@ -723,8 +724,8 @@
     {
       "seatCode": "P.187",
       "sourceConstituency": "KINABATANGAN",
-      "x": 957.43,
-      "y": 441.75,
+      "x": 933.0,
+      "y": 441.0,
       "physicalCode": "C29",
       "sourceX": 932.5,
       "sourceY": 439.87,
@@ -733,8 +734,8 @@
     {
       "seatCode": "P.145",
       "sourceConstituency": "BAKRI",
-      "x": 946.98,
-      "y": 410.44,
+      "x": 933.0,
+      "y": 413.0,
       "physicalCode": "C30",
       "sourceX": 932.5,
       "sourceY": 413.2,
@@ -743,8 +744,8 @@
     {
       "seatCode": "P.133",
       "sourceConstituency": "TAMPIN",
-      "x": 988.5,
-      "y": 394.56,
+      "x": 933.0,
+      "y": 384.0,
       "physicalCode": "C31",
       "sourceX": 932.5,
       "sourceY": 386.2,
@@ -753,8 +754,8 @@
     {
       "seatCode": "P.129",
       "sourceConstituency": "KUALA PILAH",
-      "x": 933.1,
-      "y": 380.21,
+      "x": 932.0,
+      "y": 357.0,
       "physicalCode": "C32",
       "sourceX": 931.5,
       "sourceY": 357.2,
@@ -763,8 +764,8 @@
     {
       "seatCode": "P.127",
       "sourceConstituency": "JEMPOL",
-      "x": 915.94,
-      "y": 351.33,
+      "x": 926.0,
+      "y": 327.0,
       "physicalCode": "C33",
       "sourceX": 925.5,
       "sourceY": 325.87,
@@ -773,8 +774,8 @@
     {
       "seatCode": "P.184",
       "sourceConstituency": "LIBARAN",
-      "x": 953.8,
-      "y": 326.87,
+      "x": 922.0,
+      "y": 296.0,
       "physicalCode": "C34",
       "sourceX": 921.5,
       "sourceY": 298.2,
@@ -783,8 +784,8 @@
     {
       "seatCode": "P.203",
       "sourceConstituency": "LUBOK ANTU",
-      "x": 931.12,
-      "y": 295.68,
+      "x": 911.0,
+      "y": 269.0,
       "physicalCode": "C35",
       "sourceX": 911.5,
       "sourceY": 269.2,
@@ -793,8 +794,8 @@
     {
       "seatCode": "P.204",
       "sourceConstituency": "BETONG",
-      "x": 905.17,
-      "y": 266.68,
+      "x": 899.0,
+      "y": 240.0,
       "physicalCode": "C36",
       "sourceX": 898.5,
       "sourceY": 237.87,
@@ -803,8 +804,8 @@
     {
       "seatCode": "P.070",
       "sourceConstituency": "KAMPAR",
-      "x": 876.2,
-      "y": 240.14,
+      "x": 887.0,
+      "y": 209.0,
       "physicalCode": "C37",
       "sourceX": 886.5,
       "sourceY": 211.2,
@@ -813,8 +814,8 @@
     {
       "seatCode": "P.089",
       "sourceConstituency": "BENTONG",
-      "x": 844.5,
-      "y": 216.32,
+      "x": 865.0,
+      "y": 183.0,
       "physicalCode": "C38",
       "sourceX": 864.5,
       "sourceY": 180.87,
@@ -823,8 +824,8 @@
     {
       "seatCode": "P.048",
       "sourceConstituency": "BUKIT BENDERA",
-      "x": 810.37,
-      "y": 195.46,
+      "x": 854.0,
+      "y": 156.0,
       "physicalCode": "C39",
       "sourceX": 853.5,
       "sourceY": 155.2,
@@ -833,8 +834,8 @@
     {
       "seatCode": "P.150",
       "sourceConstituency": "BATU PAHAT",
-      "x": 991.65,
-      "y": 302.41,
+      "x": 967.0,
+      "y": 248.0,
       "physicalCode": "C47",
       "sourceX": 966.5,
       "sourceY": 248.2,
@@ -843,8 +844,8 @@
     {
       "seatCode": "P.101",
       "sourceConstituency": "HULU LANGAT",
-      "x": 966.58,
-      "y": 267.27,
+      "x": 956.0,
+      "y": 218.0,
       "physicalCode": "C48",
       "sourceX": 955.5,
       "sourceY": 219.2,
@@ -853,8 +854,8 @@
     {
       "seatCode": "P.158",
       "sourceConstituency": "TEBRAU",
-      "x": 937.89,
-      "y": 234.59,
+      "x": 940.0,
+      "y": 189.0,
       "physicalCode": "C49",
       "sourceX": 939.5,
       "sourceY": 190.2,
@@ -863,8 +864,8 @@
     {
       "seatCode": "P.201",
       "sourceConstituency": "BATANG LUPAR",
-      "x": 905.87,
-      "y": 204.69,
+      "x": 916.0,
+      "y": 160.0,
       "physicalCode": "C50",
       "sourceX": 916.5,
       "sourceY": 159.87,
@@ -873,8 +874,8 @@
     {
       "seatCode": "P.064",
       "sourceConstituency": "IPOH TIMOR",
-      "x": 870.82,
-      "y": 177.86,
+      "x": 898.0,
+      "y": 135.0,
       "physicalCode": "C51",
       "sourceX": 897.5,
       "sourceY": 134.2,
@@ -883,8 +884,8 @@
     {
       "seatCode": "P.214",
       "sourceConstituency": "SELANGAU",
-      "x": 833.09,
-      "y": 154.36,
+      "x": 887.0,
+      "y": 105.0,
       "physicalCode": "C52",
       "sourceX": 887.5,
       "sourceY": 106.2,
@@ -893,8 +894,8 @@
     {
       "seatCode": "P.124",
       "sourceConstituency": "BANDAR TUN RAZAK",
-      "x": 691.48,
-      "y": 298.88,
+      "x": 654.0,
+      "y": 336.0,
       "physicalCode": "D1",
       "sourceX": 653.5,
       "sourceY": 336.37,
@@ -903,8 +904,8 @@
     {
       "seatCode": "P.090",
       "sourceConstituency": "BERA",
-      "x": 637.03,
-      "y": 287.57,
+      "x": 612.0,
+      "y": 328.0,
       "physicalCode": "D2",
       "sourceX": 612.5,
       "sourceY": 327.2,
@@ -913,8 +914,8 @@
     {
       "seatCode": "P.043",
       "sourceConstituency": "BAGAN",
-      "x": 580.94,
-      "y": 285.29,
+      "x": 568.0,
+      "y": 328.0,
       "physicalCode": "D3",
       "sourceX": 567.5,
       "sourceY": 327.2,
@@ -923,8 +924,8 @@
     {
       "seatCode": "P.189",
       "sourceConstituency": "SEMPORNA",
-      "x": 525.4,
-      "y": 292.11,
+      "x": 526.0,
+      "y": 338.0,
       "physicalCode": "D4",
       "sourceX": 525.5,
       "sourceY": 336.04,
@@ -933,8 +934,8 @@
     {
       "seatCode": "P.148",
       "sourceConstituency": "AYER HITAM",
-      "x": 706.38,
-      "y": 253.71,
+      "x": 682.0,
+      "y": 296.0,
       "physicalCode": "D5",
       "sourceX": 681.5,
       "sourceY": 296.2,
@@ -943,8 +944,8 @@
     {
       "seatCode": "P.153",
       "sourceConstituency": "SEMBRONG",
-      "x": 664.6,
-      "y": 292.11,
+      "x": 637.0,
+      "y": 283.0,
       "physicalCode": "D6",
       "sourceX": 636.5,
       "sourceY": 279.87,
@@ -953,8 +954,8 @@
     {
       "seatCode": "P.199",
       "sourceConstituency": "SERIAN",
-      "x": 609.06,
-      "y": 285.29,
+      "x": 588.0,
+      "y": 279.0,
       "physicalCode": "D7",
       "sourceX": 588.5,
       "sourceY": 276.87,
@@ -963,8 +964,8 @@
     {
       "seatCode": "P.072",
       "sourceConstituency": "TAPAH",
-      "x": 552.97,
-      "y": 287.57,
+      "x": 540.0,
+      "y": 283.0,
       "physicalCode": "D8",
       "sourceX": 539.5,
       "sourceY": 282.2,
@@ -973,8 +974,8 @@
     {
       "seatCode": "P.122",
       "sourceConstituency": "SEPUTEH",
-      "x": 498.52,
-      "y": 298.88,
+      "x": 494.0,
+      "y": 296.0,
       "physicalCode": "D9",
       "sourceX": 493.5,
       "sourceY": 295.2,
@@ -983,8 +984,8 @@
     {
       "seatCode": "P.046",
       "sourceConstituency": "BATU KAWAN",
-      "x": 675.34,
-      "y": 245.57,
+      "x": 677.0,
+      "y": 239.0,
       "physicalCode": "D11",
       "sourceX": 677.5,
       "sourceY": 238.2,
@@ -993,8 +994,8 @@
     {
       "seatCode": "P.132",
       "sourceConstituency": "PORT DICKSON",
-      "x": 643.52,
-      "y": 240.09,
+      "x": 634.0,
+      "y": 236.0,
       "physicalCode": "D12",
       "sourceX": 633.5,
       "sourceY": 233.87,
@@ -1003,8 +1004,8 @@
     {
       "seatCode": "P.051",
       "sourceConstituency": "BUKIT GELUGOR",
-      "x": 578.77,
-      "y": 237.34,
+      "x": 588.0,
+      "y": 234.0,
       "physicalCode": "D13",
       "sourceX": 588.5,
       "sourceY": 230.87,
@@ -1013,8 +1014,8 @@
     {
       "seatCode": "P.066",
       "sourceConstituency": "BATU GAJAH",
-      "x": 483.62,
-      "y": 253.71,
+      "x": 502.0,
+      "y": 239.0,
       "physicalCode": "D15",
       "sourceX": 501.5,
       "sourceY": 238.2,
@@ -1023,8 +1024,8 @@
     {
       "seatCode": "P.098",
       "sourceConstituency": "GOMBAK",
-      "x": 453.66,
-      "y": 264.44,
+      "x": 459.0,
+      "y": 246.0,
       "physicalCode": "D16",
       "sourceX": 459.5,
       "sourceY": 242.87,
@@ -1033,8 +1034,8 @@
     {
       "seatCode": "P.141",
       "sourceConstituency": "SEKIJANG",
-      "x": 755.24,
-      "y": 221.1,
+      "x": 758.0,
+      "y": 195.0,
       "physicalCode": "D17",
       "sourceX": 758.5,
       "sourceY": 192.87,
@@ -1043,8 +1044,8 @@
     {
       "seatCode": "P.170",
       "sourceConstituency": "TUARAN",
-      "x": 721.28,
-      "y": 208.54,
+      "x": 718.0,
+      "y": 193.0,
       "physicalCode": "D18",
       "sourceX": 717.5,
       "sourceY": 189.87,
@@ -1053,8 +1054,8 @@
     {
       "seatCode": "P.120",
       "sourceConstituency": "BUKIT BINTANG",
-      "x": 686.08,
-      "y": 199.02,
+      "x": 678.0,
+      "y": 189.0,
       "physicalCode": "D19",
       "sourceX": 677.5,
       "sourceY": 189.2,
@@ -1063,8 +1064,8 @@
     {
       "seatCode": "P.126",
       "sourceConstituency": "JELEBU",
-      "x": 650.01,
-      "y": 192.62,
+      "x": 634.0,
+      "y": 188.0,
       "physicalCode": "D20",
       "sourceX": 634.5,
       "sourceY": 184.87,
@@ -1073,8 +1074,8 @@
     {
       "seatCode": "P.123",
       "sourceConstituency": "CHERAS",
-      "x": 611.23,
-      "y": 237.34,
+      "x": 591.0,
+      "y": 186.0,
       "physicalCode": "D21",
       "sourceX": 591.5,
       "sourceY": 187.53,
@@ -1083,8 +1084,8 @@
     {
       "seatCode": "P.196",
       "sourceConstituency": "STAMPIN",
-      "x": 539.99,
-      "y": 192.62,
+      "x": 549.0,
+      "y": 188.0,
       "physicalCode": "D22",
       "sourceX": 549.5,
       "sourceY": 187.2,
@@ -1093,8 +1094,8 @@
     {
       "seatCode": "P.174",
       "sourceConstituency": "PENAMPANG",
-      "x": 514.66,
-      "y": 245.57,
+      "x": 508.0,
+      "y": 189.0,
       "physicalCode": "D23",
       "sourceX": 508.5,
       "sourceY": 189.2,
@@ -1103,8 +1104,8 @@
     {
       "seatCode": "P.202",
       "sourceConstituency": "SRI AMAN",
-      "x": 468.72,
-      "y": 208.54,
+      "x": 468.0,
+      "y": 193.0,
       "physicalCode": "D24",
       "sourceX": 468.5,
       "sourceY": 193.2,
@@ -1113,8 +1114,8 @@
     {
       "seatCode": "P.103",
       "sourceConstituency": "PUCHONG",
-      "x": 434.76,
-      "y": 221.1,
+      "x": 427.0,
+      "y": 203.0,
       "physicalCode": "D25",
       "sourceX": 427.5,
       "sourceY": 205.53,
@@ -1123,8 +1124,8 @@
     {
       "seatCode": "P.169",
       "sourceConstituency": "KOTA BELUD",
-      "x": 774.14,
-      "y": 177.75,
+      "x": 796.0,
+      "y": 143.0,
       "physicalCode": "D26",
       "sourceX": 795.5,
       "sourceY": 142.2,
@@ -1133,8 +1134,8 @@
     {
       "seatCode": "P.053",
       "sourceConstituency": "BALIK PULAU",
-      "x": 736.17,
-      "y": 163.38,
+      "x": 755.0,
+      "y": 139.0,
       "physicalCode": "D27",
       "sourceX": 754.5,
       "sourceY": 135.87,
@@ -1143,8 +1144,8 @@
     {
       "seatCode": "P.159",
       "sourceConstituency": "PASIR GUDANG",
-      "x": 696.83,
-      "y": 152.47,
+      "x": 715.0,
+      "y": 135.0,
       "physicalCode": "D28",
       "sourceX": 714.5,
       "sourceY": 134.2,
@@ -1153,8 +1154,8 @@
     {
       "seatCode": "P.104",
       "sourceConstituency": "SUBANG",
-      "x": 656.5,
-      "y": 145.14,
+      "x": 674.0,
+      "y": 132.0,
       "physicalCode": "D29",
       "sourceX": 674.5,
       "sourceY": 134.53,
@@ -1163,8 +1164,8 @@
     {
       "seatCode": "P.165",
       "sourceConstituency": "TANJUNG PIAI",
-      "x": 613.4,
-      "y": 189.4,
+      "x": 632.0,
+      "y": 131.0,
       "physicalCode": "D30",
       "sourceX": 632.5,
       "sourceY": 130.2,
@@ -1173,8 +1174,8 @@
     {
       "seatCode": "P.195",
       "sourceConstituency": "BANDAR KUCHING",
-      "x": 576.6,
-      "y": 189.4,
+      "x": 589.0,
+      "y": 131.0,
       "physicalCode": "D31",
       "sourceX": 588.5,
       "sourceY": 131.2,
@@ -1183,8 +1184,8 @@
     {
       "seatCode": "P.180",
       "sourceConstituency": "KENINGAU",
-      "x": 574.43,
-      "y": 141.46,
+      "x": 547.0,
+      "y": 131.0,
       "physicalCode": "D32",
       "sourceX": 547.5,
       "sourceY": 127.04,
@@ -1193,8 +1194,8 @@
     {
       "seatCode": "P.198",
       "sourceConstituency": "PUNCAK BORNEO",
-      "x": 503.92,
-      "y": 199.02,
+      "x": 506.0,
+      "y": 132.0,
       "physicalCode": "D33",
       "sourceX": 505.5,
       "sourceY": 129.87,
@@ -1203,8 +1204,8 @@
     {
       "seatCode": "P.209",
       "sourceConstituency": "JULAU",
-      "x": 493.17,
-      "y": 152.47,
+      "x": 465.0,
+      "y": 135.0,
       "physicalCode": "D34",
       "sourceX": 464.5,
       "sourceY": 132.87,
@@ -1213,8 +1214,8 @@
     {
       "seatCode": "P.152",
       "sourceConstituency": "KLUANG",
-      "x": 453.83,
-      "y": 163.38,
+      "x": 423.0,
+      "y": 139.0,
       "physicalCode": "D35",
       "sourceX": 422.5,
       "sourceY": 139.2,
@@ -1223,8 +1224,8 @@
     {
       "seatCode": "P.186",
       "sourceConstituency": "SANDAKAN",
-      "x": 415.86,
-      "y": 177.75,
+      "x": 385.0,
+      "y": 140.0,
       "physicalCode": "D36",
       "sourceX": 385.5,
       "sourceY": 142.2,
@@ -1233,8 +1234,8 @@
     {
       "seatCode": "P.177",
       "sourceConstituency": "BEAUFORT",
-      "x": 793.04,
-      "y": 134.41,
+      "x": 816.0,
+      "y": 95.0,
       "physicalCode": "D37",
       "sourceX": 815.5,
       "sourceY": 91.87,
@@ -1243,8 +1244,8 @@
     {
       "seatCode": "P.206",
       "sourceConstituency": "TANJONG MANIS",
-      "x": 751.07,
-      "y": 118.21,
+      "x": 770.0,
+      "y": 88.0,
       "physicalCode": "D38",
       "sourceX": 770.5,
       "sourceY": 85.87,
@@ -1253,8 +1254,8 @@
     {
       "seatCode": "P.222",
       "sourceConstituency": "LAWAS",
-      "x": 707.57,
-      "y": 105.93,
+      "x": 725.0,
+      "y": 83.0,
       "physicalCode": "D39",
       "sourceX": 725.5,
       "sourceY": 83.2,
@@ -1263,8 +1264,8 @@
     {
       "seatCode": "P.151",
       "sourceConstituency": "SIMPANG RENGGAM",
-      "x": 662.99,
-      "y": 97.67,
+      "x": 682.0,
+      "y": 80.0,
       "physicalCode": "D40",
       "sourceX": 681.5,
       "sourceY": 78.37,
@@ -1273,8 +1274,8 @@
     {
       "seatCode": "P.212",
       "sourceConstituency": "SIBU",
-      "x": 615.57,
-      "y": 141.46,
+      "x": 636.0,
+      "y": 79.0,
       "physicalCode": "D41",
       "sourceX": 635.5,
       "sourceY": 78.2,
@@ -1283,8 +1284,8 @@
     {
       "seatCode": "P.179",
       "sourceConstituency": "RANAU",
-      "x": 617.74,
-      "y": 93.52,
+      "x": 589.0,
+      "y": 76.0,
       "physicalCode": "D42",
       "sourceX": 588.5,
       "sourceY": 76.2,
@@ -1293,8 +1294,8 @@
     {
       "seatCode": "P.097",
       "sourceConstituency": "SELAYANG",
-      "x": 533.5,
-      "y": 145.14,
+      "x": 541.0,
+      "y": 79.0,
       "physicalCode": "D43",
       "sourceX": 540.5,
       "sourceY": 78.2,
@@ -1303,8 +1304,8 @@
     {
       "seatCode": "P.068",
       "sourceConstituency": "BERUAS",
-      "x": 527.01,
-      "y": 97.67,
+      "x": 494.0,
+      "y": 80.0,
       "physicalCode": "D44",
       "sourceX": 494.5,
       "sourceY": 80.2,
@@ -1313,8 +1314,8 @@
     {
       "seatCode": "P.220",
       "sourceConstituency": "BARAM",
-      "x": 482.43,
-      "y": 105.93,
+      "x": 451.0,
+      "y": 83.0,
       "physicalCode": "D45",
       "sourceX": 451.5,
       "sourceY": 85.53,
@@ -1323,8 +1324,8 @@
     {
       "seatCode": "P.062",
       "sourceConstituency": "SUNGAI SIPUT",
-      "x": 438.93,
-      "y": 118.21,
+      "x": 410.0,
+      "y": 88.0,
       "physicalCode": "D46",
       "sourceX": 409.5,
       "sourceY": 88.2,
@@ -1333,8 +1334,8 @@
     {
       "seatCode": "P.114",
       "sourceConstituency": "KEPONG",
-      "x": 396.96,
-      "y": 134.41,
+      "x": 365.0,
+      "y": 95.0,
       "physicalCode": "D47",
       "sourceX": 364.5,
       "sourceY": 96.53,
@@ -1343,8 +1344,8 @@
     {
       "seatCode": "P.050",
       "sourceConstituency": "JELUTONG",
-      "x": 855.81,
-      "y": 113.25,
+      "x": 862.0,
+      "y": 45.0,
       "physicalCode": "D48",
       "sourceX": 862.5,
       "sourceY": 41.87,
@@ -1353,8 +1354,8 @@
     {
       "seatCode": "P.161",
       "sourceConstituency": "PULAI",
-      "x": 811.94,
-      "y": 91.06,
+      "x": 817.0,
+      "y": 40.0,
       "physicalCode": "D49",
       "sourceX": 817.5,
       "sourceY": 38.2,
@@ -1363,8 +1364,8 @@
     {
       "seatCode": "P.149",
       "sourceConstituency": "SRI GADING",
-      "x": 765.96,
-      "y": 73.05,
+      "x": 771.0,
+      "y": 37.0,
       "physicalCode": "D50",
       "sourceX": 771.5,
       "sourceY": 33.87,
@@ -1373,8 +1374,8 @@
     {
       "seatCode": "P.138",
       "sourceConstituency": "KOTA MELAKA",
-      "x": 718.32,
-      "y": 59.38,
+      "x": 726.0,
+      "y": 35.0,
       "physicalCode": "D51",
       "sourceX": 726.5,
       "sourceY": 35.2,
@@ -1383,8 +1384,8 @@
     {
       "seatCode": "P.142",
       "sourceConstituency": "LABIS",
-      "x": 669.47,
-      "y": 50.19,
+      "x": 682.0,
+      "y": 33.0,
       "physicalCode": "D52",
       "sourceX": 681.5,
       "sourceY": 33.2,
@@ -1393,8 +1394,8 @@
     {
       "seatCode": "P.207",
       "sourceConstituency": "IGAN",
-      "x": 619.91,
-      "y": 45.58,
+      "x": 637.0,
+      "y": 32.0,
       "physicalCode": "D53",
       "sourceX": 636.5,
       "sourceY": 32.2,
@@ -1403,8 +1404,8 @@
     {
       "seatCode": "P.130",
       "sourceConstituency": "RASAH",
-      "x": 572.26,
-      "y": 93.52,
+      "x": 589.0,
+      "y": 33.0,
       "physicalCode": "D54",
       "sourceX": 589.5,
       "sourceY": 33.2,
@@ -1413,8 +1414,8 @@
     {
       "seatCode": "P.115",
       "sourceConstituency": "BATU",
-      "x": 570.09,
-      "y": 45.58,
+      "x": 543.0,
+      "y": 32.0,
       "physicalCode": "D55",
       "sourceX": 542.5,
       "sourceY": 29.87,
@@ -1423,8 +1424,8 @@
     {
       "seatCode": "P.085",
       "sourceConstituency": "PEKAN",
-      "x": 520.53,
-      "y": 50.19,
+      "x": 498.0,
+      "y": 33.0,
       "physicalCode": "D56",
       "sourceX": 497.5,
       "sourceY": 30.87,
@@ -1433,8 +1434,8 @@
     {
       "seatCode": "P.181",
       "sourceConstituency": "TENOM",
-      "x": 471.68,
-      "y": 59.38,
+      "x": 453.0,
+      "y": 35.0,
       "physicalCode": "D57",
       "sourceX": 453.5,
       "sourceY": 35.2,
@@ -1443,8 +1444,8 @@
     {
       "seatCode": "P.167",
       "sourceConstituency": "KUDAT",
-      "x": 424.04,
-      "y": 73.05,
+      "x": 408.0,
+      "y": 37.0,
       "physicalCode": "D58",
       "sourceX": 408.5,
       "sourceY": 37.2,
@@ -1453,8 +1454,8 @@
     {
       "seatCode": "P.200",
       "sourceConstituency": "BATANG SADONG",
-      "x": 378.06,
-      "y": 91.06,
+      "x": 362.0,
+      "y": 40.0,
       "physicalCode": "D59",
       "sourceX": 362.5,
       "sourceY": 36.87,
@@ -1463,8 +1464,8 @@
     {
       "seatCode": "P.168",
       "sourceConstituency": "KOTA MARUDU",
-      "x": 334.19,
-      "y": 113.25,
+      "x": 317.0,
+      "y": 45.0,
       "physicalCode": "D60",
       "sourceX": 317.5,
       "sourceY": 44.2,
@@ -1473,8 +1474,8 @@
     {
       "seatCode": "P.143",
       "sourceConstituency": "PAGOH",
-      "x": 336.67,
-      "y": 420.75,
+      "x": 442.0,
+      "y": 488.0,
       "physicalCode": "E1",
       "sourceX": 441.5,
       "sourceY": 484.87,
@@ -1483,8 +1484,8 @@
     {
       "seatCode": "P.125",
       "sourceConstituency": "PUTRAJAYA",
-      "x": 402.81,
-      "y": 346.47,
+      "x": 456.0,
+      "y": 436.0,
       "physicalCode": "E2",
       "sourceX": 456.5,
       "sourceY": 437.53,
@@ -1493,8 +1494,8 @@
     {
       "seatCode": "P.205",
       "sourceConstituency": "SARATOK",
-      "x": 472.57,
-      "y": 307.79,
+      "x": 483.0,
+      "y": 388.0,
       "physicalCode": "E3",
       "sourceX": 483.5,
       "sourceY": 387.2,
@@ -1503,8 +1504,8 @@
     {
       "seatCode": "P.086",
       "sourceConstituency": "MARAN",
-      "x": 318.08,
-      "y": 464.44,
+      "x": 397.0,
+      "y": 488.0,
       "physicalCode": "E4",
       "sourceX": 396.5,
       "sourceY": 484.87,
@@ -1513,8 +1514,8 @@
     {
       "seatCode": "P.039",
       "sourceConstituency": "DUNGUN",
-      "x": 365.28,
-      "y": 380.91,
+      "x": 397.0,
+      "y": 451.0,
       "physicalCode": "E5",
       "sourceX": 396.5,
       "sourceY": 448.87,
@@ -1523,8 +1524,8 @@
     {
       "seatCode": "P.004",
       "sourceConstituency": "LANGKAWI",
-      "x": 383.02,
-      "y": 362.93,
+      "x": 407.0,
+      "y": 410.0,
       "physicalCode": "E6",
       "sourceX": 407.5,
       "sourceY": 406.87,
@@ -1533,8 +1534,8 @@
     {
       "seatCode": "P.109",
       "sourceConstituency": "KAPAR",
-      "x": 312.79,
-      "y": 487.21,
+      "x": 345.0,
+      "y": 489.0,
       "physicalCode": "E9",
       "sourceX": 345.5,
       "sourceY": 491.2,
@@ -1543,8 +1544,8 @@
     {
       "seatCode": "P.034",
       "sourceConstituency": "SETIU",
-      "x": 326.06,
-      "y": 442.22,
+      "x": 345.0,
+      "y": 458.0,
       "physicalCode": "E10",
       "sourceX": 344.5,
       "sourceY": 457.87,
@@ -1553,8 +1554,8 @@
     {
       "seatCode": "P.136",
       "sourceConstituency": "TANGGA BATU",
-      "x": 329.82,
-      "y": 352.5,
+      "x": 351.0,
+      "y": 398.0,
       "physicalCode": "E12",
       "sourceX": 350.5,
       "sourceY": 397.2,
@@ -1563,8 +1564,8 @@
     {
       "seatCode": "P.014",
       "sourceConstituency": "MERBOK",
-      "x": 350.29,
-      "y": 330.84,
+      "x": 361.0,
+      "y": 363.0,
       "physicalCode": "E13",
       "sourceX": 360.5,
       "sourceY": 365.2,
@@ -1573,8 +1574,8 @@
     {
       "seatCode": "P.017",
       "sourceConstituency": "PADANG SERAI",
-      "x": 373.14,
-      "y": 311.03,
+      "x": 377.0,
+      "y": 336.0,
       "physicalCode": "E14",
       "sourceX": 377.5,
       "sourceY": 335.2,
@@ -1583,8 +1584,8 @@
     {
       "seatCode": "P.041",
       "sourceConstituency": "KEPALA BATAS",
-      "x": 269.22,
-      "y": 480.51,
+      "x": 291.0,
+      "y": 492.0,
       "physicalCode": "E17",
       "sourceX": 291.5,
       "sourceY": 491.2,
@@ -1593,8 +1594,8 @@
     {
       "seatCode": "P.061",
       "sourceConstituency": "PADANG RENGAS",
-      "x": 275.33,
-      "y": 453.09,
+      "x": 292.0,
+      "y": 457.0,
       "physicalCode": "E18",
       "sourceX": 291.5,
       "sourceY": 456.87,
@@ -1603,8 +1604,8 @@
     {
       "seatCode": "P.005",
       "sourceConstituency": "JERLUN",
-      "x": 284.54,
-      "y": 426.33,
+      "x": 295.0,
+      "y": 427.0,
       "physicalCode": "E19",
       "sourceX": 294.5,
       "sourceY": 429.2,
@@ -1613,8 +1614,8 @@
     {
       "seatCode": "P.091",
       "sourceConstituency": "ROMPIN",
-      "x": 296.78,
-      "y": 400.48,
+      "x": 296.0,
+      "y": 400.0,
       "physicalCode": "E20",
       "sourceX": 296.5,
       "sourceY": 396.87,
@@ -1623,8 +1624,8 @@
     {
       "seatCode": "P.002",
       "sourceConstituency": "KANGAR",
-      "x": 311.92,
-      "y": 375.79,
+      "x": 301.0,
+      "y": 369.0,
       "physicalCode": "E21",
       "sourceX": 301.5,
       "sourceY": 369.2,
@@ -1633,8 +1634,8 @@
     {
       "seatCode": "P.001",
       "sourceConstituency": "PADANG BESAR",
-      "x": 294.35,
-      "y": 324.09,
+      "x": 309.0,
+      "y": 339.0,
       "physicalCode": "E22",
       "sourceX": 308.5,
       "sourceY": 338.2,
@@ -1643,8 +1644,8 @@
     {
       "seatCode": "P.146",
       "sourceConstituency": "MUAR",
-      "x": 402.36,
-      "y": 236.56,
+      "x": 366.0,
+      "y": 221.0,
       "physicalCode": "E26",
       "sourceX": 372.5,
       "sourceY": 218.87,
@@ -1653,8 +1654,8 @@
     {
       "seatCode": "P.088",
       "sourceConstituency": "TEMERLOH",
-      "x": 225.65,
-      "y": 473.81,
+      "x": 237.0,
+      "y": 498.0,
       "physicalCode": "E27",
       "sourceX": 237.5,
       "sourceY": 494.87,
@@ -1663,8 +1664,8 @@
     {
       "seatCode": "P.074",
       "sourceConstituency": "LUMUT",
-      "x": 182.08,
-      "y": 467.11,
+      "x": 236.0,
+      "y": 470.0,
       "physicalCode": "E28",
       "sourceX": 236.5,
       "sourceY": 467.87,
@@ -1673,8 +1674,8 @@
     {
       "seatCode": "P.069",
       "sourceConstituency": "PARIT",
-      "x": 232.57,
-      "y": 441.75,
+      "x": 237.0,
+      "y": 441.0,
       "physicalCode": "E29",
       "sourceX": 237.5,
       "sourceY": 439.87,
@@ -1683,8 +1684,8 @@
     {
       "seatCode": "P.092",
       "sourceConstituency": "SABAK BERNAM",
-      "x": 243.02,
-      "y": 410.44,
+      "x": 237.0,
+      "y": 413.0,
       "physicalCode": "E30",
       "sourceX": 237.5,
       "sourceY": 414.2,
@@ -1693,8 +1694,8 @@
     {
       "seatCode": "P.083",
       "sourceConstituency": "KUANTAN",
-      "x": 201.5,
-      "y": 394.56,
+      "x": 237.0,
+      "y": 384.0,
       "physicalCode": "E31",
       "sourceX": 237.5,
       "sourceY": 386.2,
@@ -1703,8 +1704,8 @@
     {
       "seatCode": "P.073",
       "sourceConstituency": "PASIR SALAK",
-      "x": 256.9,
-      "y": 380.21,
+      "x": 238.0,
+      "y": 357.0,
       "physicalCode": "E32",
       "sourceX": 238.5,
       "sourceY": 354.87,
@@ -1713,8 +1714,8 @@
     {
       "seatCode": "P.067",
       "sourceConstituency": "KUALA KANGSAR",
-      "x": 236.2,
-      "y": 326.87,
+      "x": 248.0,
+      "y": 296.0,
       "physicalCode": "E34",
       "sourceX": 248.5,
       "sourceY": 294.04,
@@ -1723,8 +1724,8 @@
     {
       "seatCode": "P.059",
       "sourceConstituency": "BUKIT GANTANG",
-      "x": 258.88,
-      "y": 295.68,
+      "x": 259.0,
+      "y": 269.0,
       "physicalCode": "E35",
       "sourceX": 259.5,
       "sourceY": 265.04,
@@ -1733,8 +1734,8 @@
     {
       "seatCode": "P.095",
       "sourceConstituency": "TANJONG KARANG",
-      "x": 284.83,
-      "y": 266.68,
+      "x": 271.0,
+      "y": 240.0,
       "physicalCode": "E36",
       "sourceX": 271.5,
       "sourceY": 238.37,
@@ -1743,8 +1744,8 @@
     {
       "seatCode": "P.032",
       "sourceConstituency": "GUA MUSANG",
-      "x": 313.8,
-      "y": 240.14,
+      "x": 283.0,
+      "y": 209.0,
       "physicalCode": "E37",
       "sourceX": 282.5,
       "sourceY": 210.2,
@@ -1753,8 +1754,8 @@
     {
       "seatCode": "P.030",
       "sourceConstituency": "JELI",
-      "x": 345.5,
-      "y": 216.32,
+      "x": 305.0,
+      "y": 183.0,
       "physicalCode": "E38",
       "sourceX": 310.5,
       "sourceY": 182.2,
@@ -1763,8 +1764,8 @@
     {
       "seatCode": "P.166",
       "sourceConstituency": "LABUAN",
-      "x": 379.63,
-      "y": 195.46,
+      "x": 316.0,
+      "y": 156.0,
       "physicalCode": "E39",
       "sourceX": 325.5,
       "sourceY": 152.87,
@@ -1773,8 +1774,8 @@
     {
       "seatCode": "P.058",
       "sourceConstituency": "BAGAN SERAI",
-      "x": 430.0,
-      "y": 625.0,
+      "x": 443.0,
+      "y": 634.0,
       "physicalCode": "F1",
       "sourceX": 443.5,
       "sourceY": 633.2,
@@ -1783,8 +1784,8 @@
     {
       "seatCode": "P.082",
       "sourceConstituency": "INDERA MAHKOTA",
-      "x": 430.0,
-      "y": 595.0,
+      "x": 443.0,
+      "y": 600.0,
       "physicalCode": "F2",
       "sourceX": 443.5,
       "sourceY": 595.04,
@@ -1793,8 +1794,8 @@
     {
       "seatCode": "P.003",
       "sourceConstituency": "ARAU",
-      "x": 430.0,
-      "y": 535.0,
+      "x": 443.0,
+      "y": 566.0,
       "physicalCode": "F3",
       "sourceX": 442.5,
       "sourceY": 562.87,
@@ -1803,8 +1804,8 @@
     {
       "seatCode": "P.009",
       "sourceConstituency": "ALOR SETAR",
-      "x": 430.0,
-      "y": 505.0,
+      "x": 443.0,
+      "y": 530.0,
       "physicalCode": "F4",
       "sourceX": 442.5,
       "sourceY": 526.04,
@@ -1813,8 +1814,8 @@
     {
       "seatCode": "P.008",
       "sourceConstituency": "POKOK SENA",
-      "x": 370.0,
-      "y": 625.0,
+      "x": 396.0,
+      "y": 634.0,
       "physicalCode": "F5",
       "sourceX": 395.5,
       "sourceY": 629.87,
@@ -1823,8 +1824,8 @@
     {
       "seatCode": "P.093",
       "sourceConstituency": "SUNGAI BESAR",
-      "x": 430.0,
-      "y": 565.0,
+      "x": 396.0,
+      "y": 600.0,
       "physicalCode": "F6",
       "sourceX": 395.5,
       "sourceY": 598.2,
@@ -1833,8 +1834,8 @@
     {
       "seatCode": "P.020",
       "sourceConstituency": "PENGKALAN CHEPA",
-      "x": 370.0,
-      "y": 535.0,
+      "x": 396.0,
+      "y": 566.0,
       "physicalCode": "F7",
       "sourceX": 395.5,
       "sourceY": 562.37,
@@ -1843,8 +1844,8 @@
     {
       "seatCode": "P.023",
       "sourceConstituency": "RANTAU PANJANG",
-      "x": 370.0,
-      "y": 505.0,
+      "x": 396.0,
+      "y": 530.0,
       "physicalCode": "F8",
       "sourceX": 395.5,
       "sourceY": 527.37,
@@ -1853,8 +1854,8 @@
     {
       "seatCode": "P.042",
       "sourceConstituency": "TASEK GELUGOR",
-      "x": 370.0,
-      "y": 595.0,
+      "x": 348.0,
+      "y": 634.0,
       "physicalCode": "F9",
       "sourceX": 347.5,
       "sourceY": 628.04,
@@ -1863,8 +1864,8 @@
     {
       "seatCode": "P.026",
       "sourceConstituency": "KETEREH",
-      "x": 370.0,
-      "y": 565.0,
+      "x": 348.0,
+      "y": 600.0,
       "physicalCode": "F10",
       "sourceX": 348.5,
       "sourceY": 599.2,
@@ -1873,8 +1874,8 @@
     {
       "seatCode": "P.033",
       "sourceConstituency": "BESUT",
-      "x": 310.0,
-      "y": 535.0,
+      "x": 348.0,
+      "y": 566.0,
       "physicalCode": "F11",
       "sourceX": 347.5,
       "sourceY": 562.87,
@@ -1883,8 +1884,8 @@
     {
       "seatCode": "P.019",
       "sourceConstituency": "TUMPAT",
-      "x": 310.0,
-      "y": 505.0,
+      "x": 348.0,
+      "y": 530.0,
       "physicalCode": "F12",
       "sourceX": 347.5,
       "sourceY": 527.87,
@@ -1893,8 +1894,8 @@
     {
       "seatCode": "P.057",
       "sourceConstituency": "PARIT BUNTAR",
-      "x": 310.0,
-      "y": 595.0,
+      "x": 300.0,
+      "y": 634.0,
       "physicalCode": "F13",
       "sourceX": 300.5,
       "sourceY": 630.87,
@@ -1903,8 +1904,8 @@
     {
       "seatCode": "P.112",
       "sourceConstituency": "KUALA LANGAT",
-      "x": 310.0,
-      "y": 565.0,
+      "x": 300.0,
+      "y": 600.0,
       "physicalCode": "F14",
       "sourceX": 300.5,
       "sourceY": 599.2,
@@ -1913,8 +1914,8 @@
     {
       "seatCode": "P.139",
       "sourceConstituency": "JASIN",
-      "x": 250.0,
-      "y": 535.0,
+      "x": 300.0,
+      "y": 566.0,
       "physicalCode": "F15",
       "sourceX": 299.5,
       "sourceY": 565.2,
@@ -1923,8 +1924,8 @@
     {
       "seatCode": "P.035",
       "sourceConstituency": "KUALA NERUS",
-      "x": 250.0,
-      "y": 505.0,
+      "x": 300.0,
+      "y": 530.0,
       "physicalCode": "F16",
       "sourceX": 299.5,
       "sourceY": 530.2,
@@ -1933,8 +1934,8 @@
     {
       "seatCode": "P.010",
       "sourceConstituency": "KUALA KEDAH",
-      "x": 250.0,
-      "y": 595.0,
+      "x": 249.0,
+      "y": 634.0,
       "physicalCode": "F17",
       "sourceX": 249.5,
       "sourceY": 630.87,
@@ -1943,8 +1944,8 @@
     {
       "seatCode": "P.054",
       "sourceConstituency": "GERIK",
-      "x": 250.0,
-      "y": 565.0,
+      "x": 249.0,
+      "y": 600.0,
       "physicalCode": "F18",
       "sourceX": 249.5,
       "sourceY": 599.2,
@@ -1953,8 +1954,8 @@
     {
       "seatCode": "P.007",
       "sourceConstituency": "PADANG TERAP",
-      "x": 190.0,
-      "y": 535.0,
+      "x": 249.0,
+      "y": 566.0,
       "physicalCode": "F19",
       "sourceX": 248.5,
       "sourceY": 565.2,
@@ -1963,8 +1964,8 @@
     {
       "seatCode": "P.018",
       "sourceConstituency": "KULIM BANDAR BAHARU",
-      "x": 190.0,
-      "y": 505.0,
+      "x": 249.0,
+      "y": 530.0,
       "physicalCode": "F20",
       "sourceX": 248.5,
       "sourceY": 530.2,
@@ -1973,8 +1974,8 @@
     {
       "seatCode": "P.056",
       "sourceConstituency": "LARUT",
-      "x": 430.0,
-      "y": 775.0,
+      "x": 443.0,
+      "y": 805.0,
       "physicalCode": "G1",
       "sourceX": 443.5,
       "sourceY": 802.87,
@@ -1983,8 +1984,8 @@
     {
       "seatCode": "P.040",
       "sourceConstituency": "KEMAMAN",
-      "x": 430.0,
-      "y": 745.0,
+      "x": 443.0,
+      "y": 770.0,
       "physicalCode": "G2",
       "sourceX": 442.5,
       "sourceY": 767.87,
@@ -1993,8 +1994,8 @@
     {
       "seatCode": "P.037",
       "sourceConstituency": "MARANG",
-      "x": 430.0,
-      "y": 715.0,
+      "x": 443.0,
+      "y": 735.0,
       "physicalCode": "G3",
       "sourceX": 442.5,
       "sourceY": 732.87,
@@ -2003,8 +2004,8 @@
     {
       "seatCode": "P.024",
       "sourceConstituency": "KUBANG KERIAN",
-      "x": 430.0,
-      "y": 685.0,
+      "x": 443.0,
+      "y": 700.0,
       "physicalCode": "G4",
       "sourceX": 443.5,
       "sourceY": 696.04,
@@ -2013,8 +2014,8 @@
     {
       "seatCode": "P.183",
       "sourceConstituency": "BELURAN",
-      "x": 430.0,
-      "y": 655.0,
+      "x": 443.0,
+      "y": 668.0,
       "physicalCode": "G5",
       "sourceX": 443.5,
       "sourceY": 667.2,
@@ -2023,8 +2024,8 @@
     {
       "seatCode": "P.021",
       "sourceConstituency": "KOTA BHARU",
-      "x": 370.0,
-      "y": 775.0,
+      "x": 396.0,
+      "y": 805.0,
       "physicalCode": "G6",
       "sourceX": 396.5,
       "sourceY": 801.87,
@@ -2033,8 +2034,8 @@
     {
       "seatCode": "P.134",
       "sourceConstituency": "MASJID TANAH",
-      "x": 370.0,
-      "y": 745.0,
+      "x": 396.0,
+      "y": 770.0,
       "physicalCode": "G7",
       "sourceX": 395.5,
       "sourceY": 765.04,
@@ -2043,8 +2044,8 @@
     {
       "seatCode": "P.025",
       "sourceConstituency": "BACHOK",
-      "x": 370.0,
-      "y": 715.0,
+      "x": 396.0,
+      "y": 735.0,
       "physicalCode": "G8",
       "sourceX": 395.5,
       "sourceY": 731.87,
@@ -2053,8 +2054,8 @@
     {
       "seatCode": "P.038",
       "sourceConstituency": "HULU TERENGGANU",
-      "x": 370.0,
-      "y": 685.0,
+      "x": 396.0,
+      "y": 700.0,
       "physicalCode": "G9",
       "sourceX": 395.5,
       "sourceY": 699.2,
@@ -2063,8 +2064,8 @@
     {
       "seatCode": "P.029",
       "sourceConstituency": "MACHANG",
-      "x": 370.0,
-      "y": 655.0,
+      "x": 396.0,
+      "y": 668.0,
       "physicalCode": "G10",
       "sourceX": 396.5,
       "sourceY": 663.87,
@@ -2073,8 +2074,8 @@
     {
       "seatCode": "P.027",
       "sourceConstituency": "TANAH MERAH",
-      "x": 310.0,
-      "y": 775.0,
+      "x": 348.0,
+      "y": 805.0,
       "physicalCode": "G11",
       "sourceX": 348.5,
       "sourceY": 801.87,
@@ -2083,8 +2084,8 @@
     {
       "seatCode": "P.011",
       "sourceConstituency": "PENDANG",
-      "x": 310.0,
-      "y": 745.0,
+      "x": 348.0,
+      "y": 770.0,
       "physicalCode": "G12",
       "sourceX": 347.5,
       "sourceY": 769.2,
@@ -2093,8 +2094,8 @@
     {
       "seatCode": "P.028",
       "sourceConstituency": "PASIR PUTEH",
-      "x": 310.0,
-      "y": 715.0,
+      "x": 348.0,
+      "y": 735.0,
       "physicalCode": "G13",
       "sourceX": 347.5,
       "sourceY": 730.04,
@@ -2103,8 +2104,8 @@
     {
       "seatCode": "P.036",
       "sourceConstituency": "KUALA TERENGGANU",
-      "x": 310.0,
-      "y": 685.0,
+      "x": 348.0,
+      "y": 700.0,
       "physicalCode": "G14",
       "sourceX": 347.5,
       "sourceY": 697.04,
@@ -2113,8 +2114,8 @@
     {
       "seatCode": "P.031",
       "sourceConstituency": "KUALA KRAI",
-      "x": 310.0,
-      "y": 655.0,
+      "x": 348.0,
+      "y": 668.0,
       "physicalCode": "G15",
       "sourceX": 348.5,
       "sourceY": 663.87,
@@ -2123,8 +2124,8 @@
     {
       "seatCode": "P.013",
       "sourceConstituency": "SIK",
-      "x": 250.0,
-      "y": 775.0,
+      "x": 300.0,
+      "y": 805.0,
       "physicalCode": "G16",
       "sourceX": 300.5,
       "sourceY": 801.87,
@@ -2133,8 +2134,8 @@
     {
       "seatCode": "P.022",
       "sourceConstituency": "PASIR MAS",
-      "x": 250.0,
-      "y": 745.0,
+      "x": 300.0,
+      "y": 770.0,
       "physicalCode": "G17",
       "sourceX": 299.5,
       "sourceY": 769.2,
@@ -2143,8 +2144,8 @@
     {
       "seatCode": "P.012",
       "sourceConstituency": "JERAI",
-      "x": 250.0,
-      "y": 715.0,
+      "x": 300.0,
+      "y": 735.0,
       "physicalCode": "G18",
       "sourceX": 299.5,
       "sourceY": 734.2,
@@ -2153,8 +2154,8 @@
     {
       "seatCode": "P.006",
       "sourceConstituency": "KUBANG PASU",
-      "x": 250.0,
-      "y": 685.0,
+      "x": 300.0,
+      "y": 700.0,
       "physicalCode": "G19",
       "sourceX": 300.5,
       "sourceY": 696.87,
@@ -2163,8 +2164,8 @@
     {
       "seatCode": "P.044",
       "sourceConstituency": "PERMATANG PAUH",
-      "x": 310.0,
-      "y": 625.0,
+      "x": 300.0,
+      "y": 668.0,
       "physicalCode": "G20",
       "sourceX": 300.5,
       "sourceY": 664.04,
@@ -2173,8 +2174,8 @@
     {
       "seatCode": "P.087",
       "sourceConstituency": "KUALA KRAU",
-      "x": 190.0,
-      "y": 775.0,
+      "x": 249.0,
+      "y": 805.0,
       "physicalCode": "G21",
       "sourceX": 249.5,
       "sourceY": 805.2,
@@ -2183,8 +2184,8 @@
     {
       "seatCode": "P.094",
       "sourceConstituency": "HULU SELANGOR",
-      "x": 190.0,
-      "y": 745.0,
+      "x": 249.0,
+      "y": 770.0,
       "physicalCode": "G22",
       "sourceX": 248.5,
       "sourceY": 766.04,
@@ -2193,8 +2194,8 @@
     {
       "seatCode": "P.081",
       "sourceConstituency": "JERANTUT",
-      "x": 190.0,
-      "y": 715.0,
+      "x": 249.0,
+      "y": 735.0,
       "physicalCode": "G23",
       "sourceX": 248.5,
       "sourceY": 732.87,
@@ -2203,8 +2204,8 @@
     {
       "seatCode": "P.154",
       "sourceConstituency": "MERSING",
-      "x": 250.0,
-      "y": 655.0,
+      "x": 249.0,
+      "y": 700.0,
       "physicalCode": "G24",
       "sourceX": 249.5,
       "sourceY": 696.04,
@@ -2213,8 +2214,8 @@
     {
       "seatCode": "P.016",
       "sourceConstituency": "BALING",
-      "x": 250.0,
-      "y": 625.0,
+      "x": 249.0,
+      "y": 668.0,
       "physicalCode": "G25",
       "sourceX": 249.5,
       "sourceY": 667.2,
@@ -2227,8 +2228,8 @@
       "physicalCode": "A6",
       "sourceX": 787.0,
       "sourceY": 805.0,
-      "x": 820.0,
-      "y": 775.0,
+      "x": 787.0,
+      "y": 805.0,
       "section": "straight-right"
     },
     {
@@ -2236,8 +2237,8 @@
       "physicalCode": "A8",
       "sourceX": 787.0,
       "sourceY": 735.0,
-      "x": 820.0,
-      "y": 715.0,
+      "x": 787.0,
+      "y": 735.0,
       "section": "straight-right"
     },
     {
@@ -2245,8 +2246,8 @@
       "physicalCode": "A19",
       "sourceX": 885.0,
       "sourceY": 700.0,
-      "x": 880.0,
-      "y": 655.0,
+      "x": 885.0,
+      "y": 700.0,
       "section": "straight-right"
     },
     {
@@ -2254,8 +2255,8 @@
       "physicalCode": "A21",
       "sourceX": 939.0,
       "sourceY": 805.0,
-      "x": 1000.0,
-      "y": 775.0,
+      "x": 939.0,
+      "y": 805.0,
       "section": "straight-right"
     },
     {
@@ -2263,8 +2264,8 @@
       "physicalCode": "B11",
       "sourceX": 834.0,
       "sourceY": 566.0,
-      "x": 880.0,
-      "y": 535.0,
+      "x": 834.0,
+      "y": 566.0,
       "section": "straight-right"
     },
     {
@@ -2272,8 +2273,8 @@
       "physicalCode": "C14",
       "sourceX": 793.0,
       "sourceY": 336.0,
-      "x": 816.86,
-      "y": 311.03,
+      "x": 793.0,
+      "y": 336.0,
       "section": "curved"
     },
     {
@@ -2281,8 +2282,8 @@
       "physicalCode": "C15",
       "sourceX": 781.0,
       "sourceY": 301.0,
-      "x": 791.84,
-      "y": 293.24,
+      "x": 781.0,
+      "y": 301.0,
       "section": "curved"
     },
     {
@@ -2290,8 +2291,8 @@
       "physicalCode": "C16",
       "sourceX": 766.0,
       "sourceY": 273.0,
-      "x": 764.92,
-      "y": 277.66,
+      "x": 766.0,
+      "y": 273.0,
       "section": "curved"
     },
     {
@@ -2299,8 +2300,8 @@
       "physicalCode": "C40",
       "sourceX": 992.0,
       "sourceY": 493.0,
-      "x": 1051.49,
-      "y": 460.42,
+      "x": 992.0,
+      "y": 493.0,
       "section": "curved"
     },
     {
@@ -2308,8 +2309,8 @@
       "physicalCode": "C41",
       "sourceX": 991.0,
       "sourceY": 463.0,
-      "x": 1095.06,
-      "y": 453.72,
+      "x": 991.0,
+      "y": 463.0,
       "section": "curved"
     },
     {
@@ -2317,8 +2318,8 @@
       "physicalCode": "C42",
       "sourceX": 988.0,
       "sourceY": 434.0,
-      "x": 1000.18,
-      "y": 430.4,
+      "x": 988.0,
+      "y": 434.0,
       "section": "curved"
     },
     {
@@ -2326,8 +2327,8 @@
       "physicalCode": "C43",
       "sourceX": 987.0,
       "sourceY": 404.0,
-      "x": 1042.93,
-      "y": 419.05,
+      "x": 987.0,
+      "y": 404.0,
       "section": "curved"
     },
     {
@@ -2335,8 +2336,8 @@
       "physicalCode": "C44",
       "sourceX": 987.0,
       "sourceY": 339.0,
-      "x": 1030.02,
-      "y": 378.67,
+      "x": 987.0,
+      "y": 339.0,
       "section": "curved"
     },
     {
@@ -2344,8 +2345,8 @@
       "physicalCode": "C45",
       "sourceX": 979.0,
       "sourceY": 309.0,
-      "x": 972.98,
-      "y": 359.93,
+      "x": 979.0,
+      "y": 309.0,
       "section": "curved"
     },
     {
@@ -2353,8 +2354,8 @@
       "physicalCode": "C46",
       "sourceX": 975.0,
       "sourceY": 278.0,
-      "x": 1012.87,
-      "y": 339.66,
+      "x": 975.0,
+      "y": 278.0,
       "section": "curved"
     },
     {
@@ -2362,8 +2363,8 @@
       "physicalCode": "C53",
       "sourceX": 1044.0,
       "sourceY": 340.0,
-      "x": 1085.68,
-      "y": 407.7,
+      "x": 1044.0,
+      "y": 340.0,
       "section": "curved"
     },
     {
@@ -2371,8 +2372,8 @@
       "physicalCode": "C54",
       "sourceX": 1043.0,
       "sourceY": 311.0,
-      "x": 1071.54,
-      "y": 362.78,
+      "x": 1043.0,
+      "y": 311.0,
       "section": "curved"
     },
     {
@@ -2380,8 +2381,8 @@
       "physicalCode": "C55",
       "sourceX": 1041.0,
       "sourceY": 280.0,
-      "x": 1052.75,
-      "y": 319.39,
+      "x": 1041.0,
+      "y": 280.0,
       "section": "curved"
     },
     {
@@ -2389,8 +2390,8 @@
       "physicalCode": "C56",
       "sourceX": 1038.0,
       "sourceY": 247.0,
-      "x": 1029.51,
-      "y": 277.95,
+      "x": 1038.0,
+      "y": 247.0,
       "section": "curved"
     },
     {
@@ -2398,8 +2399,8 @@
       "physicalCode": "C57",
       "sourceX": 1027.0,
       "sourceY": 219.0,
-      "x": 1002.05,
-      "y": 238.86,
+      "x": 1027.0,
+      "y": 219.0,
       "section": "curved"
     },
     {
@@ -2407,8 +2408,8 @@
       "physicalCode": "C58",
       "sourceX": 977.0,
       "sourceY": 127.0,
-      "x": 970.62,
-      "y": 202.51,
+      "x": 977.0,
+      "y": 127.0,
       "section": "curved"
     },
     {
@@ -2416,8 +2417,8 @@
       "physicalCode": "C59",
       "sourceX": 956.0,
       "sourceY": 96.0,
-      "x": 935.54,
-      "y": 169.25,
+      "x": 956.0,
+      "y": 96.0,
       "section": "curved"
     },
     {
@@ -2425,8 +2426,8 @@
       "physicalCode": "C60",
       "sourceX": 932.0,
       "sourceY": 64.0,
-      "x": 897.15,
-      "y": 139.4,
+      "x": 932.0,
+      "y": 64.0,
       "section": "curved"
     },
     {
@@ -2434,8 +2435,8 @@
       "physicalCode": "D10",
       "sourceX": 720.0,
       "sourceY": 246.0,
-      "x": 736.34,
-      "y": 264.44,
+      "x": 720.0,
+      "y": 246.0,
       "section": "curved"
     },
     {
@@ -2443,8 +2444,8 @@
       "physicalCode": "D14",
       "sourceX": 545.0,
       "sourceY": 236.0,
-      "x": 546.48,
-      "y": 240.09,
+      "x": 545.0,
+      "y": 236.0,
       "section": "curved"
     },
     {
@@ -2452,8 +2453,8 @@
       "physicalCode": "E7",
       "sourceX": 430.0,
       "sourceY": 373.0,
-      "x": 424.48,
-      "y": 331.7,
+      "x": 430.0,
+      "y": 373.0,
       "section": "curved"
     },
     {
@@ -2461,8 +2462,8 @@
       "physicalCode": "E8",
       "sourceX": 452.0,
       "sourceY": 338.0,
-      "x": 447.81,
-      "y": 318.77,
+      "x": 452.0,
+      "y": 338.0,
       "section": "curved"
     },
     {
@@ -2470,8 +2471,8 @@
       "physicalCode": "E11",
       "sourceX": 347.0,
       "sourceY": 426.0,
-      "x": 349.78,
-      "y": 400.25,
+      "x": 347.0,
+      "y": 426.0,
       "section": "curved"
     },
     {
@@ -2479,8 +2480,8 @@
       "physicalCode": "E15",
       "sourceX": 389.0,
       "sourceY": 301.0,
-      "x": 398.16,
-      "y": 293.24,
+      "x": 389.0,
+      "y": 301.0,
       "section": "curved"
     },
     {
@@ -2488,8 +2489,8 @@
       "physicalCode": "E16",
       "sourceX": 404.0,
       "sourceY": 273.0,
-      "x": 425.08,
-      "y": 277.66,
+      "x": 404.0,
+      "y": 273.0,
       "section": "curved"
     },
     {
@@ -2497,8 +2498,8 @@
       "physicalCode": "E23",
       "sourceX": 319.0,
       "sourceY": 309.0,
-      "x": 317.56,
-      "y": 298.76,
+      "x": 319.0,
+      "y": 309.0,
       "section": "curved"
     },
     {
@@ -2506,8 +2507,8 @@
       "physicalCode": "E24",
       "sourceX": 330.0,
       "sourceY": 279.0,
-      "x": 343.47,
-      "y": 275.58,
+      "x": 330.0,
+      "y": 279.0,
       "section": "curved"
     },
     {
@@ -2515,8 +2516,8 @@
       "physicalCode": "E25",
       "sourceX": 342.0,
       "sourceY": 248.0,
-      "x": 371.83,
-      "y": 254.78,
+      "x": 342.0,
+      "y": 248.0,
       "section": "curved"
     },
     {
@@ -2524,8 +2525,8 @@
       "physicalCode": "E33",
       "sourceX": 244.0,
       "sourceY": 327.0,
-      "x": 274.06,
-      "y": 351.33,
+      "x": 244.0,
+      "y": 327.0,
       "section": "curved"
     },
     {
@@ -2533,8 +2534,8 @@
       "physicalCode": "E40",
       "sourceX": 178.0,
       "sourceY": 493.0,
-      "x": 138.51,
-      "y": 460.42,
+      "x": 178.0,
+      "y": 493.0,
       "section": "curved"
     },
     {
@@ -2542,8 +2543,8 @@
       "physicalCode": "E41",
       "sourceX": 179.0,
       "sourceY": 463.0,
-      "x": 94.94,
-      "y": 453.72,
+      "x": 179.0,
+      "y": 463.0,
       "section": "curved"
     },
     {
@@ -2551,8 +2552,8 @@
       "physicalCode": "E42",
       "sourceX": 182.0,
       "sourceY": 434.0,
-      "x": 189.82,
-      "y": 430.4,
+      "x": 182.0,
+      "y": 434.0,
       "section": "curved"
     },
     {
@@ -2560,8 +2561,8 @@
       "physicalCode": "E43",
       "sourceX": 183.0,
       "sourceY": 404.0,
-      "x": 147.07,
-      "y": 419.05,
+      "x": 183.0,
+      "y": 404.0,
       "section": "curved"
     },
     {
@@ -2569,8 +2570,8 @@
       "physicalCode": "E44",
       "sourceX": 183.0,
       "sourceY": 339.0,
-      "x": 159.98,
-      "y": 378.67,
+      "x": 183.0,
+      "y": 339.0,
       "section": "curved"
     },
     {
@@ -2578,8 +2579,8 @@
       "physicalCode": "E45",
       "sourceX": 191.0,
       "sourceY": 309.0,
-      "x": 217.02,
-      "y": 359.93,
+      "x": 191.0,
+      "y": 309.0,
       "section": "curved"
     },
     {
@@ -2587,8 +2588,8 @@
       "physicalCode": "E46",
       "sourceX": 195.0,
       "sourceY": 278.0,
-      "x": 177.13,
-      "y": 339.66,
+      "x": 195.0,
+      "y": 278.0,
       "section": "curved"
     },
     {
@@ -2596,8 +2597,8 @@
       "physicalCode": "E47",
       "sourceX": 203.0,
       "sourceY": 248.0,
-      "x": 198.35,
-      "y": 302.41,
+      "x": 203.0,
+      "y": 248.0,
       "section": "curved"
     },
     {
@@ -2605,8 +2606,8 @@
       "physicalCode": "E48",
       "sourceX": 214.0,
       "sourceY": 218.0,
-      "x": 223.42,
-      "y": 267.27,
+      "x": 214.0,
+      "y": 218.0,
       "section": "curved"
     },
     {
@@ -2614,8 +2615,8 @@
       "physicalCode": "E49",
       "sourceX": 230.0,
       "sourceY": 189.0,
-      "x": 252.11,
-      "y": 234.59,
+      "x": 230.0,
+      "y": 189.0,
       "section": "curved"
     },
     {
@@ -2623,8 +2624,8 @@
       "physicalCode": "E50",
       "sourceX": 254.0,
       "sourceY": 160.0,
-      "x": 284.13,
-      "y": 204.69,
+      "x": 254.0,
+      "y": 160.0,
       "section": "curved"
     },
     {
@@ -2632,8 +2633,8 @@
       "physicalCode": "E51",
       "sourceX": 272.0,
       "sourceY": 135.0,
-      "x": 319.18,
-      "y": 177.86,
+      "x": 272.0,
+      "y": 135.0,
       "section": "curved"
     },
     {
@@ -2641,8 +2642,8 @@
       "physicalCode": "E52",
       "sourceX": 283.0,
       "sourceY": 105.0,
-      "x": 356.91,
-      "y": 154.36,
+      "x": 283.0,
+      "y": 105.0,
       "section": "curved"
     },
     {
@@ -2650,8 +2651,8 @@
       "physicalCode": "E53",
       "sourceX": 126.0,
       "sourceY": 340.0,
-      "x": 104.32,
-      "y": 407.7,
+      "x": 126.0,
+      "y": 340.0,
       "section": "curved"
     },
     {
@@ -2659,8 +2660,8 @@
       "physicalCode": "E54",
       "sourceX": 127.0,
       "sourceY": 311.0,
-      "x": 118.46,
-      "y": 362.78,
+      "x": 127.0,
+      "y": 311.0,
       "section": "curved"
     },
     {
@@ -2668,8 +2669,8 @@
       "physicalCode": "E55",
       "sourceX": 129.0,
       "sourceY": 280.0,
-      "x": 137.25,
-      "y": 319.39,
+      "x": 129.0,
+      "y": 280.0,
       "section": "curved"
     },
     {
@@ -2677,8 +2678,8 @@
       "physicalCode": "E56",
       "sourceX": 132.0,
       "sourceY": 247.0,
-      "x": 160.49,
-      "y": 277.95,
+      "x": 132.0,
+      "y": 247.0,
       "section": "curved"
     },
     {
@@ -2686,8 +2687,8 @@
       "physicalCode": "E57",
       "sourceX": 143.0,
       "sourceY": 219.0,
-      "x": 187.95,
-      "y": 238.86,
+      "x": 143.0,
+      "y": 219.0,
       "section": "curved"
     },
     {
@@ -2695,8 +2696,8 @@
       "physicalCode": "E58",
       "sourceX": 193.0,
       "sourceY": 127.0,
-      "x": 219.38,
-      "y": 202.51,
+      "x": 193.0,
+      "y": 127.0,
       "section": "curved"
     },
     {
@@ -2704,8 +2705,8 @@
       "physicalCode": "E59",
       "sourceX": 214.0,
       "sourceY": 96.0,
-      "x": 254.46,
-      "y": 169.25,
+      "x": 214.0,
+      "y": 96.0,
       "section": "curved"
     },
     {
@@ -2713,8 +2714,8 @@
       "physicalCode": "E60",
       "sourceX": 238.0,
       "sourceY": 64.0,
-      "x": 292.85,
-      "y": 139.4,
+      "x": 238.0,
+      "y": 64.0,
       "section": "curved"
     },
     {
@@ -2722,8 +2723,8 @@
       "physicalCode": "F21",
       "sourceX": 199.0,
       "sourceY": 634.0,
-      "x": 190.0,
-      "y": 595.0,
+      "x": 199.0,
+      "y": 634.0,
       "section": "straight-left"
     },
     {
@@ -2731,8 +2732,8 @@
       "physicalCode": "F22",
       "sourceX": 199.0,
       "sourceY": 600.0,
-      "x": 190.0,
-      "y": 565.0,
+      "x": 199.0,
+      "y": 600.0,
       "section": "straight-left"
     },
     {
@@ -2740,8 +2741,8 @@
       "physicalCode": "G26",
       "sourceX": 198.0,
       "sourceY": 735.0,
-      "x": 190.0,
-      "y": 685.0,
+      "x": 198.0,
+      "y": 735.0,
       "section": "straight-left"
     },
     {
@@ -2749,8 +2750,8 @@
       "physicalCode": "G27",
       "sourceX": 199.0,
       "sourceY": 700.0,
-      "x": 190.0,
-      "y": 655.0,
+      "x": 199.0,
+      "y": 700.0,
       "section": "straight-left"
     },
     {
@@ -2758,8 +2759,8 @@
       "physicalCode": "G28",
       "sourceX": 199.0,
       "sourceY": 668.0,
-      "x": 190.0,
-      "y": 625.0,
+      "x": 199.0,
+      "y": 668.0,
       "section": "straight-left"
     }
   ]

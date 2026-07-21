@@ -26,11 +26,12 @@ export type SeatingData = {
   sourceUpdatedAt: string;
   viewBox: { width: number; height: number };
   layout: {
-    strategy: "concentric-rect-v2";
-    straightRows: number;
-    straightColumns: number;
-    curvedRings: number;
-    curvedSlotsPerRing: number;
+    strategy: "svg-source-rect-v3";
+    geometryFile: "SeatingDR.svg";
+    geometrySha256: string;
+    rasterFile: "SeatingDR-1.png";
+    rasterSha256: string;
+    physicalSeatCount: 280;
   };
   mappedSeatCount: number;
   unmappedSeatCodes: string[];
