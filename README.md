@@ -27,6 +27,7 @@ Buka alamat yang dipaparkan oleh Vite (biasanya `http://localhost:5173`).
 - `/settings/data/calon` — urus pembetulan metadata calon tanpa mengubah angka undi
 - `/settings/data/parti` — urus katalog parti, gabungan lalai dan status aktif
 - `/settings/data/gabungan` — urus katalog gabungan, singkatan dan warna dashboard
+- `/settings/data/keputusan` — semak dan lulus/tolak perbezaan antara agregat projek dengan helaian mata SPR
 
 Nama negeri dan Parlimen menggunakan slug URL huruf kecil yang dipisahkan dengan tanda sempang. Untuk deployment statik, hos perlu menghalakan URL yang tidak sepadan dengan fail kembali ke `index.html` supaya pautan terus berfungsi.
 
@@ -43,6 +44,21 @@ Pembetulan nama, gabungan, parti, jantina dan bangsa diurus secara berasingan da
 Katalog parti dan gabungan disimpan berasingan daripada rekod keputusan. Perubahan nama katalog digunakan untuk identiti semasa, manakala label pada keputusan PRU-15 hanya berubah melalui pembetulan calon yang eksplisit. Eksport katalog daripada halaman masing-masing ke `public/data/parties.json` dan `public/data/alliances.json` untuk deployment.
 
 Paparan identiti menggunakan imej dalam folder `Parties/` dan `Gabungan/`. Nama teks dikekalkan dalam kawalan carian, tapisan dan penyuntingan; identiti tanpa imej padanan menggunakan lencana ringkas sebagai fallback.
+
+## Helaian mata mengikut saluran
+
+Arkib `sources/pru15/scoresheets/` mengandungi 56 PDF SPR 760 yang meliputi 56 daripada 222 kerusi. Sumber tidak diterbitkan terus kepada pelayar; setiap fail dijejaki dalam manifest sumber menggunakan SHA-256. Pengekstrak menjana indeks liputan, 10,136 rekod saluran, 2,255 kod daerah mengundi bercetak, 19 kumpulan undi awal tanpa kod sumber, serta 2,276 pusat mengundi.
+
+Data diterbitkan secara malas melalui `public/data/scoresheets/P.XXX.json`. Halaman Parlimen hanya memuatkan fail kerusi yang sedang dilihat serta geografi guna semula dalam `public/data/polling-places.json`. Kerusi yang belum mempunyai PDF mengekalkan keputusan agregat dan menyatakan bahawa data terperinci belum tersedia.
+
+Setiap baris mesti memenuhi `A = B + C + D`: kertas dalam peti sama dengan undi sah calon, undi ditolak dan kertas tidak dikembalikan. Jumlah baris turut mesti sama dengan baris `JUMLAH` dalam PDF. Nama calon dipetakan kepada ID stabil, bukan kedudukan dalam array.
+
+Tujuh perbezaan sumber direkodkan dalam `public/data/result-reconciliation.json`. Tiada nilai ditimpa secara senyap. Gunakan `/settings/data/keputusan` untuk meluluskan atau menolak setiap perbezaan; kelulusan mengira semula undi calon, bahagian undi, turnout dan majoriti secara atomik.
+
+```bash
+npm run data:scoresheets
+npm run data:scoresheets:check
+```
 
 ## Pelan tempat duduk Dewan Rakyat
 
@@ -102,6 +118,8 @@ npm run lint
 npm run test
 npm run test:python
 npm run data:seating:check
+npm run data:voter-age:check
+npm run data:scoresheets:check
 npm run data:manifest:check
 npm run build
 ```

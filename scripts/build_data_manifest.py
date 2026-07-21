@@ -21,6 +21,9 @@ DATA_FILES = {
     "alliances.json": "alliances",
     "constituencies.json": "duns",
     "voter-age.json": "dunRecords",
+    "polling-places.json": "pollingDistricts",
+    "result-reconciliation.json": "conflicts",
+    "scoresheets/index.json": "seats",
 }
 
 
@@ -34,6 +37,19 @@ def build(data_directory: Path) -> dict[str, Any]:
         if not isinstance(collection, list):
             raise ValueError(f"{filename} must contain a {collection_key} array.")
         files[filename] = {
+            "sha256": hashlib.sha256(raw).hexdigest(),
+            "bytes": len(raw),
+            "records": len(collection),
+        }
+    scoresheet_directory = data_directory / "scoresheets"
+    for path in sorted(scoresheet_directory.glob("P.*.json")):
+        relative = path.relative_to(data_directory).as_posix()
+        raw = path.read_bytes()
+        value = json.loads(raw)
+        collection = value.get("rows", [])
+        if not isinstance(collection, list):
+            raise ValueError(f"{relative} must contain a rows array.")
+        files[relative] = {
             "sha256": hashlib.sha256(raw).hexdigest(),
             "bytes": len(raw),
             "records": len(collection),

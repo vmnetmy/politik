@@ -19,14 +19,18 @@ Election data remains versioned JSON until multi-user editing or scheduled publi
 2. Enter changes in `/settings/data`, export JSON and replace only the corresponding file under `public/data`.
 3. Use `candidate-changes.json` only for evidenced PRU-15 source corrections. Use `affiliations.json` for post-election party changes.
 4. Run `npm run data:seating` only when the official seating PDF changes.
-5. Run `npm run data:manifest` after any published data change.
-6. Open a draft pull request and complete the source/effective-date checklist.
-7. Obtain editorial and engineering approval. Required CI and browser checks must pass.
-8. Merge to `main`; the governed deployment workflow publishes the validated revision.
+5. Use `/settings/data/keputusan` for scoresheet conflicts. Export and replace `result-reconciliation.json`; never edit candidate totals without its source hash and decision.
+6. Run `npm run data:scoresheets` when any SPR 760 PDF changes, then inspect the reconciliation queue.
+7. Run `npm run data:manifest` after any published data change.
+8. Open a draft pull request and complete the source/effective-date checklist.
+9. Obtain editorial and engineering approval. Required CI and browser checks must pass.
+10. Merge to `main`; the governed deployment workflow publishes the validated revision.
 
 ## Integrity and rollback
 
 `public/data/manifest.json` records SHA-256, byte size and record count for every published data file. CI rejects stale manifests. Rollback is performed by reverting the data pull request, regenerating the manifest and publishing a new reviewed commit; deployed files are never edited in place.
+
+Raw SPR 760 PDFs are retained under `sources/pru15/scoresheets/` and tracked by a separate source manifest. The public bundle receives only normalized JSON. Partial coverage is explicit in `scoresheets/index.json`; a missing source never becomes an empty or inferred result.
 
 ## Future CMS requirements
 

@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nadirakyat.my/schemas/scoresheet.schema.json",
+  "title": "PRU-15 constituency scoresheet",
+  "type": "object",
+  "required": ["version", "metadata", "parliamentCode", "registeredVoters", "candidateColumns", "rows", "totals"],
+  "properties": {
+    "version": { "const": 1 },
+    "metadata": {
+      "type": "object",
+      "required": ["title", "sourceFile", "sourceSha256", "sourcePages", "printDate"],
+      "properties": {
+        "title": { "type": "string" },
+        "sourceFile": { "type": "string" },
+        "sourceSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "sourcePages": { "type": "integer", "minimum": 1 },
+        "printDate": { "type": "string", "format": "date" }
+      },
+      "additionalProperties": false
+    },
+    "parliamentCode": { "type": "string", "pattern": "^P\\.\\d{3}$" },
+    "registeredVoters": { "type": "integer", "minimum": 1 },
+    "candidateColumns": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["candidateId", "candidateName", "column", "projectVotes", "scoresheetVotes"],
+        "properties": {
+          "candidateId": { "type": "string" },
+          "candidateName": { "type": "string" },
+          "column": { "type": "integer", "minimum": 1 },
+          "projectVotes": { "type": "integer", "minimum": 0 },
+          "scoresheetVotes": { "type": "integer", "minimum": 0 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "rows": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "section", "sequence", "pollingDistrictId", "pollingCentreId", "streamNumber", "ballotsInBox", "candidateVotes", "validVotes", "rejectedVotes", "unreturnedVotes"],
+        "properties": {
+          "id": { "type": "string" },
+          "section": { "enum": ["postal", "early", "ordinary"] },
+          "sequence": { "type": "integer", "minimum": 1 },
+          "pollingDistrictId": { "type": ["string", "null"] },
+          "pollingCentreId": { "type": ["string", "null"] },
+          "streamNumber": { "type": ["integer", "null"], "minimum": 1 },
+          "ballotsInBox": { "type": "integer", "minimum": 0 },
+          "candidateVotes": { "type": "object", "additionalProperties": { "type": "integer", "minimum": 0 } },
+          "validVotes": { "type": "integer", "minimum": 0 },
+          "rejectedVotes": { "type": "integer", "minimum": 0 },
+          "unreturnedVotes": { "type": "integer", "minimum": 0 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "totals": {
+      "type": "object",
+      "required": ["pollingStreams", "ballotsInBox", "candidateVotes", "validVotes", "rejectedVotes", "unreturnedVotes"],
+      "properties": {
+        "pollingStreams": { "type": "integer", "minimum": 1 },
+        "ballotsInBox": { "type": "integer", "minimum": 0 },
+        "candidateVotes": { "type": "object", "additionalProperties": { "type": "integer", "minimum": 0 } },
+        "validVotes": { "type": "integer", "minimum": 0 },
+        "rejectedVotes": { "type": "integer", "minimum": 0 },
+        "unreturnedVotes": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,399 @@
+{
+  "version": 1,
+  "algorithm": "sha256",
+  "sourceRoot": "sources/pru15/scoresheets",
+  "files": [
+    {
+      "path": "JOHOR/P.144 LEDANG.pdf",
+      "parliamentCode": "P.144",
+      "sha256": "1120d737f95e7d1fc38dc1064886db2bdfffdc4fbaee2c724f174bb3159a310c",
+      "bytes": 220449,
+      "pages": 11
+    },
+    {
+      "path": "JOHOR/P.149 SRI GADING.pdf",
+      "parliamentCode": "P.149",
+      "sha256": "9793d84cb800bb7a988b65fac7c2f627ad7bd77cdd8a64a4e9b4f9c21a492592",
+      "bytes": 172405,
+      "pages": 9
+    },
+    {
+      "path": "JOHOR/P.150 BATU PAHAT.pdf",
+      "parliamentCode": "P.150",
+      "sha256": "535e0198e2e6f9a981e2d95ed961c50b0cccb3aa4e784e6d798c290ce9efc216",
+      "bytes": 240534,
+      "pages": 14
+    },
+    {
+      "path": "JOHOR/P.154 MERSING.pdf",
+      "parliamentCode": "P.154",
+      "sha256": "2083e4bd197f24e76c82b6f6923cf8b655599a0c31f9d2c4d4b528f5c865b6cf",
+      "bytes": 174101,
+      "pages": 8
+    },
+    {
+      "path": "JOHOR/P.160 JOHOR BAHRU.pdf",
+      "parliamentCode": "P.160",
+      "sha256": "72aa12720ef9b3a29a02ac8794a5b3e3cd6dee29438f4d40bc963598d2611a23",
+      "bytes": 231062,
+      "pages": 14
+    },
+    {
+      "path": "KEDAH/P.004 LANGKAWI.pdf",
+      "parliamentCode": "P.004",
+      "sha256": "11b139adb2b9df138bcfac5bb0557f94668e8ab090641eaeb5a9d4b2d098b363",
+      "bytes": 160402,
+      "pages": 7
+    },
+    {
+      "path": "KEDAH/P.005 JERLUN.pdf",
+      "parliamentCode": "P.005",
+      "sha256": "9cb4eb6fff768cda8107378cb20e551d255077bf9fd66027ed41467d5162d85c",
+      "bytes": 159652,
+      "pages": 7
+    },
+    {
+      "path": "KEDAH/P.006 KUBANG PASU.pdf",
+      "parliamentCode": "P.006",
+      "sha256": "3c0a703fa12a2a6026c83d4a2b1b4afc9883d4998dc1822421867c4942ecf1b0",
+      "bytes": 204603,
+      "pages": 11
+    },
+    {
+      "path": "KEDAH/P.007 PADANG TERAP.pdf",
+      "parliamentCode": "P.007",
+      "sha256": "81d4b64f7b7b10df7c819ecf398cdc79b8a689350d00dcb63e893dd2835d8e51",
+      "bytes": 147676,
+      "pages": 6
+    },
+    {
+      "path": "KEDAH/P.009 ALOR SETAR.pdf",
+      "parliamentCode": "P.009",
+      "sha256": "462aa4e438b435cfdc08bfabdfe2d118067b9b1fc75fed04938121b6c3a2b9cc",
+      "bytes": 248182,
+      "pages": 12
+    },
+    {
+      "path": "KEDAH/P.010 KUALA KEDAH.pdf",
+      "parliamentCode": "P.010",
+      "sha256": "664d2d412d0f28bebb50f698aac0babf38161804af051c9721243ef101fd1ccb",
+      "bytes": 245090,
+      "pages": 14
+    },
+    {
+      "path": "KEDAH/P.015 SUNGAI PETANI.pdf",
+      "parliamentCode": "P.015",
+      "sha256": "c27c2a27a1f0eeb3796a98f93e6595fd930108ad47c9c0d1f9d022d387e1b4a1",
+      "bytes": 279214,
+      "pages": 17
+    },
+    {
+      "path": "KELANTAN/P.020 PENGKALAN CHEPA.pdf",
+      "parliamentCode": "P.020",
+      "sha256": "cb235ec0ba732dbac1589d9070f0331a3003dec07a0488caf37c01bfa8bc884d",
+      "bytes": 197541,
+      "pages": 10
+    },
+    {
+      "path": "KELANTAN/P.024 KUBANG KERIAN.pdf",
+      "parliamentCode": "P.024",
+      "sha256": "cff7a0d35c066eb2ec880cc0e37bcdc4cb25f9d467fd93e9bbc44265320e9c8a",
+      "bytes": 198201,
+      "pages": 11
+    },
+    {
+      "path": "KELANTAN/P.028 PASIR PUTEH.pdf",
+      "parliamentCode": "P.028",
+      "sha256": "0f0037ace8488ab8e83551ba7ff0877151b1d9da8234b6844bd61581fc86e601",
+      "bytes": 203500,
+      "pages": 11
+    },
+    {
+      "path": "KELANTAN/P.031 KUALA KRAI.pdf",
+      "parliamentCode": "P.031",
+      "sha256": "04fd5c4209e6f121e391b40b90ecb5ce6a539239b658c6a9ba39d052f603b8e2",
+      "bytes": 180154,
+      "pages": 9
+    },
+    {
+      "path": "MELAKA/P.137 HANG TUAH JAYA.pdf",
+      "parliamentCode": "P.137",
+      "sha256": "6ba896145b144b5ada25b769f308f05e0838cbb0a961692f7174944cae7e393e",
+      "bytes": 207123,
+      "pages": 12
+    },
+    {
+      "path": "NEGERI SEMBILAN/P.128 SEREMBAN.pdf",
+      "parliamentCode": "P.128",
+      "sha256": "ebffd69a7ecb9d2f3b1284abc0606eb02b7ac615ea0c964c59e40001ba03d65a",
+      "bytes": 270201,
+      "pages": 17
+    },
+    {
+      "path": "NEGERI SEMBILAN/P.131 REMBAU.pdf",
+      "parliamentCode": "P.131",
+      "sha256": "f28819e2fbb3b37c9310e53f63aae37c9434184fe56ec6a412c2914c8d8d2ab9",
+      "bytes": 242664,
+      "pages": 14
+    },
+    {
+      "path": "PAHANG/P.079 LIPIS.pdf",
+      "parliamentCode": "P.079",
+      "sha256": "1fd7278d092e3abbed0efa236d43747f4a3a071c3b41f3af11658446d12ba319",
+      "bytes": 146083,
+      "pages": 6
+    },
+    {
+      "path": "PAHANG/P.080 RAUB.pdf",
+      "parliamentCode": "P.080",
+      "sha256": "12a3acd6ce674fb593f34a0fa69f924988284c49dd336aa0c60eccd2a76f3e85",
+      "bytes": 166717,
+      "pages": 8
+    },
+    {
+      "path": "PAHANG/P.084 PAYA BESAR.pdf",
+      "parliamentCode": "P.084",
+      "sha256": "649e66f04478f091ab39becc9bef21a7dfee99e834705d6dd12dda201f7138d2",
+      "bytes": 168154,
+      "pages": 9
+    },
+    {
+      "path": "PAHANG/P.085 PEKAN.pdf",
+      "parliamentCode": "P.085",
+      "sha256": "89349002d8491628e93a7c762e4de395fde7f3f28c9f174eab0f9f42f8fc4f0e",
+      "bytes": 224547,
+      "pages": 12
+    },
+    {
+      "path": "PAHANG/P.087 KUALA KRAU.pdf",
+      "parliamentCode": "P.087",
+      "sha256": "1cffd060e4efa225f9a7264153f2f1e879afa9965e272db90b157bcb36397801",
+      "bytes": 154143,
+      "pages": 7
+    },
+    {
+      "path": "PERAK/P.058 BAGAN SERAI.pdf",
+      "parliamentCode": "P.058",
+      "sha256": "c237897d409be1a84e4f98e243baf933e2835260696fd40332383456165d3a14",
+      "bytes": 180015,
+      "pages": 9
+    },
+    {
+      "path": "PERAK/P.059 BUKIT GANTANG.pdf",
+      "parliamentCode": "P.059",
+      "sha256": "7be868071b4fc81eee07dd1977a7c66dedcd6470586367c633b385a1be90c85b",
+      "bytes": 190254,
+      "pages": 10
+    },
+    {
+      "path": "PERAK/P.062 SUNGAI SIPUT.pdf",
+      "parliamentCode": "P.062",
+      "sha256": "2b83d8f81f58921c9aaee89e592d517616e56eaf364f3ecbffbeaf342819a479",
+      "bytes": 198879,
+      "pages": 9
+    },
+    {
+      "path": "PERAK/P.067 KUALA KANGSAR.pdf",
+      "parliamentCode": "P.067",
+      "sha256": "786dbd6ca2acfca9bc589f58f88e9a373954c7b63c833ec74d5e7773e5632742",
+      "bytes": 136509,
+      "pages": 5
+    },
+    {
+      "path": "PERAK/P.069 PARIT.pdf",
+      "parliamentCode": "P.069",
+      "sha256": "eac2abba01fab643e26dfdd21e6b227f72c5d09a52b1f9b6d1bc3f98c7ba53df",
+      "bytes": 149248,
+      "pages": 6
+    },
+    {
+      "path": "PERAK/P.072 TAPAH.pdf",
+      "parliamentCode": "P.072",
+      "sha256": "a691d29b0d89ed960bd423e6afff2bef3a70edb6f76130fcc174cf0932525d39",
+      "bytes": 181170,
+      "pages": 8
+    },
+    {
+      "path": "PERAK/P.074 LUMUT.pdf",
+      "parliamentCode": "P.074",
+      "sha256": "d453bbdc78017eb68e2788132b416f971b09b5968c5377175a9eed430f875220",
+      "bytes": 193280,
+      "pages": 10
+    },
+    {
+      "path": "PERAK/P.076 TELUK INTAN.pdf",
+      "parliamentCode": "P.076",
+      "sha256": "b8adbb2613ce5075e4f00e30a59a999c3b7de00d122b28bd7bd91811620fdb2f",
+      "bytes": 181861,
+      "pages": 9
+    },
+    {
+      "path": "PERLIS/P.002 KANGAR.pdf",
+      "parliamentCode": "P.002",
+      "sha256": "801e3614bd39ea2176c831ec209461dee76d173528b52852418313de475c46e8",
+      "bytes": 173209,
+      "pages": 8
+    },
+    {
+      "path": "PULAU PINANG/P.053 BALIK PULAU.pdf",
+      "parliamentCode": "P.053",
+      "sha256": "9ad80d3503de8ce0e0ac61cc1a944563ea957b12cf80bee9b6104fac4d27138f",
+      "bytes": 186570,
+      "pages": 9
+    },
+    {
+      "path": "SABAH/P.167 KUDAT.pdf",
+      "parliamentCode": "P.167",
+      "sha256": "fded2c0aa6450748366f2043e8d67522622b69c5a228cb2f293e73df7b596d57",
+      "bytes": 192149,
+      "pages": 10
+    },
+    {
+      "path": "SABAH/P.168 KOTA MARUDU.pdf",
+      "parliamentCode": "P.168",
+      "sha256": "d358d0cb049a004106286f8de8d23f3dddefc8d4f4de3e7fd7dbf6a92e1d61c6",
+      "bytes": 213331,
+      "pages": 10
+    },
+    {
+      "path": "SABAH/P.171 SEPANGGAR.pdf",
+      "parliamentCode": "P.171",
+      "sha256": "d526a9a7f145c7cc3d5d299ea5ddc82832c3d7f0f378766473f81aa39747cc24",
+      "bytes": 207693,
+      "pages": 11
+    },
+    {
+      "path": "SABAH/P.175 PAPAR.pdf",
+      "parliamentCode": "P.175",
+      "sha256": "8381a5ba073071ec551860c14154acddb893012ca2be5f0e04ef3e621ead735e",
+      "bytes": 166645,
+      "pages": 7
+    },
+    {
+      "path": "SABAH/P.179 RANAU.pdf",
+      "parliamentCode": "P.179",
+      "sha256": "da4393dc40a830a0aa110a8a115a6b7f684a26fee1468e9e5e17894c864b3567",
+      "bytes": 180120,
+      "pages": 8
+    },
+    {
+      "path": "SABAH/P.182 PENSIANGAN.pdf",
+      "parliamentCode": "P.182",
+      "sha256": "f5a25397843ec2586cb84db5f5e0ae83a95c576f32fbeecf74ac7ba5a318f766",
+      "bytes": 159794,
+      "pages": 7
+    },
+    {
+      "path": "SABAH/P.183 BELURAN.pdf",
+      "parliamentCode": "P.183",
+      "sha256": "b05649d16c56abc22cd244d9623183d6f22cbd259ed9a208c9558a6578afe13b",
+      "bytes": 160123,
+      "pages": 7
+    },
+    {
+      "path": "SABAH/P.190 TAWAU.pdf",
+      "parliamentCode": "P.190",
+      "sha256": "e9dff6a2591fded55785f8212c4cdb830a2291e59c4da130bc5aecb0555a6ad3",
+      "bytes": 199075,
+      "pages": 10
+    },
+    {
+      "path": "SABAH/P.191 KALABAKAN.pdf",
+      "parliamentCode": "P.191",
+      "sha256": "71074cb2d5dfcad4a8cea932557f16662387a6f6b785397638c44dfc865d4c92",
+      "bytes": 188024,
+      "pages": 9
+    },
+    {
+      "path": "SELANGOR/P.094 HULU SELANGOR.pdf",
+      "parliamentCode": "P.094",
+      "sha256": "1fac62cd47f543406f199f7a99603251144fb43d35c0c466a300b419293820fb",
+      "bytes": 288091,
+      "pages": 17
+    },
+    {
+      "path": "SELANGOR/P.096 KUALA SELANGOR.pdf",
+      "parliamentCode": "P.096",
+      "sha256": "17639eeb40e26c82c4df941f115eb067edbf5a581a343259805b25f4a19f70d8",
+      "bytes": 196341,
+      "pages": 11
+    },
+    {
+      "path": "SELANGOR/P.099 AMPANG.pdf",
+      "parliamentCode": "P.099",
+      "sha256": "537d42ee03de49b71211ebfb503051c62cb452eb1a306e027673b1e00a9c8be6",
+      "bytes": 294569,
+      "pages": 15
+    },
+    {
+      "path": "SELANGOR/P.101 HULU LANGAT.pdf",
+      "parliamentCode": "P.101",
+      "sha256": "72f7b1b2dd2168fd093e3d169adccbff59073c99c7eeac8fe21a50995402e48c",
+      "bytes": 294914,
+      "pages": 18
+    },
+    {
+      "path": "SELANGOR/P.107 SUNGAI BULOH.pdf",
+      "parliamentCode": "P.107",
+      "sha256": "ab65e63a700b8db9aedd83c7d4cd32c0a4a1324851f290d77c4e8764fbf76533",
+      "bytes": 277156,
+      "pages": 15
+    },
+    {
+      "path": "SELANGOR/P.108 SHAH ALAM.pdf",
+      "parliamentCode": "P.108",
+      "sha256": "889280552b54a15ab36a5a643ff23a646267dbaa3c9763d958cc342229536b84",
+      "bytes": 250324,
+      "pages": 16
+    },
+    {
+      "path": "SELANGOR/P.113 SEPANG.pdf",
+      "parliamentCode": "P.113",
+      "sha256": "b8ba3efaaf72f03e2dafadadac95d43b6d8585a96cc7403541e2b87d64af39b2",
+      "bytes": 350836,
+      "pages": 17
+    },
+    {
+      "path": "TERENGGANU/P.033 BESUT.pdf",
+      "parliamentCode": "P.033",
+      "sha256": "174a68b686b2bd057e3e4a6d6a73eb37a8ef3a7713fcf8a159fafb35bc7bca71",
+      "bytes": 201349,
+      "pages": 11
+    },
+    {
+      "path": "TERENGGANU/P.034 SETIU.pdf",
+      "parliamentCode": "P.034",
+      "sha256": "072524293aa4e611b7eb571f6ecfed7723aa6f721a0821ff7651661666444e5c",
+      "bytes": 200354,
+      "pages": 11
+    },
+    {
+      "path": "TERENGGANU/P.039 DUNGUN.pdf",
+      "parliamentCode": "P.039",
+      "sha256": "ff3e95d85b09005d9f0cfc330391e874534b29025b102686b82798558cad5e99",
+      "bytes": 218293,
+      "pages": 12
+    },
+    {
+      "path": "WILAYAH PERSEKUTUAN/P.115 BATU.pdf",
+      "parliamentCode": "P.115",
+      "sha256": "7c15309ab65a05cf1e7e4717c139725e8851dc98a949085070f120f08c0427da",
+      "bytes": 277539,
+      "pages": 13
+    },
+    {
+      "path": "WILAYAH PERSEKUTUAN/P.118 SETIAWANGSA.pdf",
+      "parliamentCode": "P.118",
+      "sha256": "05ccfa0145b39903b191ce9844a610e9a3cda1fe66d0852edc2539300e7a4d14",
+      "bytes": 200521,
+      "pages": 10
+    },
+    {
+      "path": "WILAYAH PERSEKUTUAN/P.119 TITIWANGSA.pdf",
+      "parliamentCode": "P.119",
+      "sha256": "821b0434f8d9e8f59ac9cb8faa010ba4f602333479b66ebf211309a037635534",
+      "bytes": 164537,
+      "pages": 8
+    }
+  ]
+}

@@ -3,8 +3,8 @@
   "algorithm": "sha256",
   "files": {
     "election.json": {
-      "sha256": "81727c82e39ebb421b2c2ee6d99a946e4a535febb9296da3d7ffd023f48ff1c6",
-      "bytes": 214422,
+      "sha256": "d47bb108e5105e308b3f249a18ff908f6242c5c140e6b6382357868c8465e886",
+      "bytes": 250194,
       "records": 222
     },
     "seating.json": {
@@ -46,6 +46,301 @@
       "sha256": "08fd237955fbeb7fbd8c317b2197a0bf73cb0be2f3cd764d2ac8b488cc1db1da",
       "bytes": 247627,
       "records": 600
+    },
+    "polling-places.json": {
+      "sha256": "8efa8ea34c06a98f417327491a6fbb49ef706f0a0c2fd19f44f0d2602a8a67e8",
+      "bytes": 1139281,
+      "records": 2274
+    },
+    "result-reconciliation.json": {
+      "sha256": "b1788e5b11edfb378ecedfdf267953e5bee5338124c1bd4c19f05780e8afffb5",
+      "bytes": 6411,
+      "records": 7
+    },
+    "scoresheets/index.json": {
+      "sha256": "2214ca7e95a8713d7b46436ef4f6d2d0c6d4345fbfa7775b17d25e44f880368d",
+      "bytes": 23580,
+      "records": 56
+    },
+    "scoresheets/P.002.json": {
+      "sha256": "1daf13859fe83e0f1e85bcb0f7f1b9c17b6560e23bd2b3d7f1f363e4f04c7ab4",
+      "bytes": 58254,
+      "records": 139
+    },
+    "scoresheets/P.004.json": {
+      "sha256": "2b78a11f0c6ccccc7635234193beb1fcdae8fc186218d5d0bfdb3adb2e219c35",
+      "bytes": 53093,
+      "records": 117
+    },
+    "scoresheets/P.005.json": {
+      "sha256": "c091a87a3a5efcbe12c913625d81bdbddccadfcbfd92edd673d98347aa409c87",
+      "bytes": 55898,
+      "records": 128
+    },
+    "scoresheets/P.006.json": {
+      "sha256": "902c7aa7fc7aefbcddd1165d34f9d0ac94c738af199f0879035fcf69e60f79da",
+      "bytes": 89553,
+      "records": 200
+    },
+    "scoresheets/P.007.json": {
+      "sha256": "053990dc70afa70f6fc62f39c9104b0a747bb8c1a6fc99527cbbcc0d1cf097ef",
+      "bytes": 47001,
+      "records": 114
+    },
+    "scoresheets/P.009.json": {
+      "sha256": "1a597bfac792c9fbadc952798be68911773743acada816bdf4064ed69f132526",
+      "bytes": 104235,
+      "records": 202
+    },
+    "scoresheets/P.010.json": {
+      "sha256": "d45e3f3a7e54a74490908b29a1e6396af275c054dc71a33c1d068080015933c1",
+      "bytes": 109370,
+      "records": 242
+    },
+    "scoresheets/P.015.json": {
+      "sha256": "f68791eddd526adba699b9992246e84afe33e0bf20742f85fe273c5f039f65f6",
+      "bytes": 140160,
+      "records": 296
+    },
+    "scoresheets/P.020.json": {
+      "sha256": "936b3c2223629128ad2674c49a4e100c6faff904e260ec0069d359233c4291f1",
+      "bytes": 78740,
+      "records": 184
+    },
+    "scoresheets/P.024.json": {
+      "sha256": "7095a46a9a5fc98981aec7294e8148ff4eaaa31e976789574a3f2425384ea196",
+      "bytes": 75137,
+      "records": 197
+    },
+    "scoresheets/P.028.json": {
+      "sha256": "b077fdccf9b551eba849b67ef4ccd62bc2f69715b226d302dac4efab64df2125",
+      "bytes": 81010,
+      "records": 203
+    },
+    "scoresheets/P.031.json": {
+      "sha256": "e1b517e7783fd625aadbd916fad2031b25693cc7c383b27a532913a9c11df6f4",
+      "bytes": 64165,
+      "records": 166
+    },
+    "scoresheets/P.033.json": {
+      "sha256": "7d4e7229da0d060b9c160aaa1c59d0a67d9ee509a6795881bbfe08d3b0e11683",
+      "bytes": 83106,
+      "records": 199
+    },
+    "scoresheets/P.034.json": {
+      "sha256": "73a3d51b043139509b291cff75917a20a041e613fb922dd3202a52e24e9a4953",
+      "bytes": 79675,
+      "records": 197
+    },
+    "scoresheets/P.039.json": {
+      "sha256": "e7b4908a8905eba813de36e3654e92170d17793fb95b632a39416838fa100d29",
+      "bytes": 87795,
+      "records": 207
+    },
+    "scoresheets/P.053.json": {
+      "sha256": "a8f401398bed9a71c0a9716283b84dc82cab8760ef8bb4318e268d365c40881e",
+      "bytes": 71085,
+      "records": 141
+    },
+    "scoresheets/P.058.json": {
+      "sha256": "efd3c3eadef00f0a198603367d09d87970c70dc85df706c6bd8cad1bd21cd9c7",
+      "bytes": 66418,
+      "records": 158
+    },
+    "scoresheets/P.059.json": {
+      "sha256": "ecdf336b27c4c962d7c3621cb7305f565c5793d0e9aa67efaa5fc7c981ed3873",
+      "bytes": 72893,
+      "records": 179
+    },
+    "scoresheets/P.062.json": {
+      "sha256": "a6b3093b81bc5015734a2517466c7278f55c1b758f03a0bd18245de82baf4108",
+      "bytes": 69931,
+      "records": 143
+    },
+    "scoresheets/P.067.json": {
+      "sha256": "1dce4cb07f796672a87642481eb8b3fa9c4618e9ac83777a1b9b70629e7f4522",
+      "bytes": 40905,
+      "records": 95
+    },
+    "scoresheets/P.069.json": {
+      "sha256": "345a13456c7ecfb8c267b418b40a465f194d30deb7582fbdec04afa1907d843f",
+      "bytes": 42815,
+      "records": 109
+    },
+    "scoresheets/P.072.json": {
+      "sha256": "601862548827c241733e1372bd0d4c610287b749b00205e4600ff221146bb6b4",
+      "bytes": 63525,
+      "records": 130
+    },
+    "scoresheets/P.074.json": {
+      "sha256": "39adaa4294a74632197bd669b295431d4d6f007ec59408543c6cbae8b5eb9434",
+      "bytes": 73041,
+      "records": 172
+    },
+    "scoresheets/P.076.json": {
+      "sha256": "17e854fd8a86b4a5201eb59dd18106f9b590d6d61bc964e544ef0cc520d9158e",
+      "bytes": 65695,
+      "records": 164
+    },
+    "scoresheets/P.079.json": {
+      "sha256": "bf550330c71092f0b62fddd3b9ebd1de96da834136d3440a0790a30857b200ef",
+      "bytes": 44088,
+      "records": 101
+    },
+    "scoresheets/P.080.json": {
+      "sha256": "82e5b59589aa26ac264934d75f301507b53c6fda59384ed1292844566dd28dfa",
+      "bytes": 57403,
+      "records": 139
+    },
+    "scoresheets/P.084.json": {
+      "sha256": "4e29f8992b64d65bbaedcdfe4b041bb81bd13fa7da67850da09acc821e99ffa5",
+      "bytes": 57730,
+      "records": 140
+    },
+    "scoresheets/P.085.json": {
+      "sha256": "587eb8297e346ed64eed1cfaa8bcab12889b2c674ac71b3b34d747982d2a7b38",
+      "bytes": 95900,
+      "records": 211
+    },
+    "scoresheets/P.087.json": {
+      "sha256": "240ca0df87a041872a66974ce2355876ed45934f211e42658d54bb30c610b0f5",
+      "bytes": 52367,
+      "records": 119
+    },
+    "scoresheets/P.094.json": {
+      "sha256": "7b5c7ab941c2eb13dfe30dc6b733c35f238ebbbd5119668b8a1542bc0e0545b9",
+      "bytes": 127093,
+      "records": 271
+    },
+    "scoresheets/P.096.json": {
+      "sha256": "9b2344c7ede6ce94abfc52097b67f47abf92dc10b3dbfa4c6d4977692741bba2",
+      "bytes": 75878,
+      "records": 182
+    },
+    "scoresheets/P.099.json": {
+      "sha256": "04651a675af56bad28de9ac7e040574ef790cb75846ecf4fc0ab383c4a663d8d",
+      "bytes": 121123,
+      "records": 225
+    },
+    "scoresheets/P.101.json": {
+      "sha256": "e437e76d79fa8c74e91dcd4a1aee5f9addb81a6ba1dadf9936fd063fa80f3d43",
+      "bytes": 143419,
+      "records": 281
+    },
+    "scoresheets/P.107.json": {
+      "sha256": "909e5c8a09b636157ab3467876beb9af39012a2150ac8ecaac998577f28e700a",
+      "bytes": 122968,
+      "records": 252
+    },
+    "scoresheets/P.108.json": {
+      "sha256": "3904c98b55530e987225693de0d60683d265338d52daba5e8984ef610b99c430",
+      "bytes": 108970,
+      "records": 278
+    },
+    "scoresheets/P.113.json": {
+      "sha256": "49df68ac1cd8270be555cef921b29c04272d7d54218a57007c65d57dbaa7945c",
+      "bytes": 144454,
+      "records": 288
+    },
+    "scoresheets/P.115.json": {
+      "sha256": "f7827bca477766f13f0d656b38552a6abebe3288bb6b1c1bfedb4f659306d156",
+      "bytes": 107421,
+      "records": 195
+    },
+    "scoresheets/P.118.json": {
+      "sha256": "74bbddb4476f8733e5d3d87e16beeb1abd3af1675a8460a575f843976342389a",
+      "bytes": 78390,
+      "records": 164
+    },
+    "scoresheets/P.119.json": {
+      "sha256": "882e4d18f005a252f1b47c8c51f64f3f3852ab85a821f074f618d7d897af3489",
+      "bytes": 59734,
+      "records": 141
+    },
+    "scoresheets/P.128.json": {
+      "sha256": "47d49e410886ff6650e547b7fc8a2a3dd2cfb53a878d9a3c38b5ce854eca44fd",
+      "bytes": 119584,
+      "records": 287
+    },
+    "scoresheets/P.131.json": {
+      "sha256": "02356860f14d3415adb6d810f24cb4423af55dacf0238b946e50e3636bef6515",
+      "bytes": 97472,
+      "records": 241
+    },
+    "scoresheets/P.137.json": {
+      "sha256": "eda525424dad7feb18e07666ebc64875978c6c16ed79cb84ab86f32691c75b7c",
+      "bytes": 84277,
+      "records": 208
+    },
+    "scoresheets/P.144.json": {
+      "sha256": "7e37d6a6f782aec73c41732c0bbbde8eb655ae7393f86cd8195c7aead4dd90f1",
+      "bytes": 82587,
+      "records": 189
+    },
+    "scoresheets/P.149.json": {
+      "sha256": "a9d42fe2015280177b5fdcf0f59a9dba0f58c0f3202c6c1430a40d46f5236916",
+      "bytes": 58526,
+      "records": 150
+    },
+    "scoresheets/P.150.json": {
+      "sha256": "2632bd32bc4240bf7b81a366f4fce7eb9b5b3ce059bb01ec347f303c5d90fe8b",
+      "bytes": 100530,
+      "records": 242
+    },
+    "scoresheets/P.154.json": {
+      "sha256": "f8f16cb51d7b5bc7f5a7f99edc209cabdb9f2e6947b5a061b0937beb376f1446",
+      "bytes": 58242,
+      "records": 139
+    },
+    "scoresheets/P.160.json": {
+      "sha256": "468ef19aeeb6e6ad8ad72fe6cf6c4cb2d16e7d639b4baf2dec6a212ad866173c",
+      "bytes": 92175,
+      "records": 249
+    },
+    "scoresheets/P.167.json": {
+      "sha256": "c6972d84fb3f43965981bec46541c2b89ce5bc467a79e6cb3f589464162713da",
+      "bytes": 68553,
+      "records": 163
+    },
+    "scoresheets/P.168.json": {
+      "sha256": "eae3cdfa21dd0b88ac32c4216d8992a9f0c7cb76d1eb415f167533159d84331e",
+      "bytes": 84607,
+      "records": 174
+    },
+    "scoresheets/P.171.json": {
+      "sha256": "082334e228ab29aa711a66f6ef44e30b539b71d2a40db8cc1221f9dd777bd843",
+      "bytes": 81683,
+      "records": 195
+    },
+    "scoresheets/P.175.json": {
+      "sha256": "7145436f165f86cb7bd81f229f9ec0b04f231a4f75103bd037b52e3bee7acd60",
+      "bytes": 53415,
+      "records": 117
+    },
+    "scoresheets/P.179.json": {
+      "sha256": "926d68de731d4dda806cb48e71ca99d3c6fbc2257f0acab923e0a46d2f580f3a",
+      "bytes": 60816,
+      "records": 150
+    },
+    "scoresheets/P.182.json": {
+      "sha256": "9693c3c082e059280236698e860e690864196bb5b760616dd24617cce4a2f309",
+      "bytes": 51906,
+      "records": 117
+    },
+    "scoresheets/P.183.json": {
+      "sha256": "c2956a0a6493d2432e1eacfe12f7e9c49734ed5cb64d1e4a13b9d87e97094039",
+      "bytes": 48981,
+      "records": 115
+    },
+    "scoresheets/P.190.json": {
+      "sha256": "fcbdd502da2b7bab2bec137bb58a274ce49b783cab9f34f72012f8906cc01166",
+      "bytes": 71627,
+      "records": 161
+    },
+    "scoresheets/P.191.json": {
+      "sha256": "7468f58acade938dcd3c1b39b45d3b18bb84f377de0a769923c1cc9ee816d1ee",
+      "bytes": 75477,
+      "records": 170
     }
   }
 }

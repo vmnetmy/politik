@@ -8,7 +8,9 @@ Usage:
 from __future__ import annotations
 
 import json
+import re
 import sys
+import unicodedata
 from collections import defaultdict
 from pathlib import Path
 
@@ -44,6 +46,12 @@ def alliance_name(value):
 
 def round_fraction(value):
     return round(float(value or 0), 6)
+
+
+def candidate_id(seat_code: str, name: str) -> str:
+    ascii_name = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode("ascii")
+    slug = re.sub(r"[^a-z0-9]+", "-", ascii_name.lower()).strip("-")
+    return f"{seat_code.lower().replace('.', '')}:{slug}"
 
 
 def main() -> None:
@@ -103,6 +111,7 @@ def main() -> None:
         candidates = sorted(
             [
                 {
+                    "id": candidate_id(code, row[3]),
                     "name": row[3],
                     "alliance": alliance_name(row[4]),
                     "party": row[5] or "TIDAK DINYATAKAN",

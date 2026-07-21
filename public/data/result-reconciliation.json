@@ -1,0 +1,209 @@
+{
+  "version": 1,
+  "sourceGeneratedAt": "2022-11-19T00:00:00+08:00",
+  "conflicts": [
+    {
+      "id": "pru15-scoresheet-p028",
+      "parliamentCode": "P.028",
+      "parliamentName": "PASIR PUTEH",
+      "state": "KELANTAN",
+      "decision": "pending",
+      "projectValidVotes": 80978,
+      "scoresheetValidVotes": 81175,
+      "validVoteDelta": 197,
+      "candidates": [
+        {
+          "candidateId": "p028:kapten-wan-marzudi",
+          "candidateName": "KAPTEN WAN MARZUDI",
+          "projectVotes": 349,
+          "scoresheetVotes": 350,
+          "delta": 1
+        },
+        {
+          "candidateId": "p028:datuk-cikgu-awi",
+          "candidateName": "DATUK CIKGU AWI",
+          "projectVotes": 23828,
+          "scoresheetVotes": 23844,
+          "delta": 16
+        },
+        {
+          "candidateId": "p028:ustaz-muhammad-husain",
+          "candidateName": "USTAZ MUHAMMAD HUSAIN",
+          "projectVotes": 3864,
+          "scoresheetVotes": 3873,
+          "delta": 9
+        },
+        {
+          "candidateId": "p028:ustaz-nik-zawawi",
+          "candidateName": "USTAZ NIK ZAWAWI",
+          "projectVotes": 52937,
+          "scoresheetVotes": 53108,
+          "delta": 171
+        }
+      ],
+      "sourceFile": "KELANTAN/P.028 PASIR PUTEH.pdf",
+      "sourceSha256": "0f0037ace8488ab8e83551ba7ff0877151b1d9da8234b6844bd61581fc86e601"
+    },
+    {
+      "id": "pru15-scoresheet-p062",
+      "parliamentCode": "P.062",
+      "parliamentName": "SUNGAI SIPUT",
+      "state": "PERAK",
+      "decision": "pending",
+      "projectValidVotes": 51802,
+      "scoresheetValidVotes": 51649,
+      "validVoteDelta": -153,
+      "candidates": [
+        {
+          "candidateId": "p062:indrani",
+          "candidateName": "INDRANI",
+          "projectVotes": 767,
+          "scoresheetVotes": 614,
+          "delta": -153
+        }
+      ],
+      "sourceFile": "PERAK/P.062 SUNGAI SIPUT.pdf",
+      "sourceSha256": "2b83d8f81f58921c9aaee89e592d517616e56eaf364f3ecbffbeaf342819a479"
+    },
+    {
+      "id": "pru15-scoresheet-p072",
+      "parliamentCode": "P.072",
+      "parliamentName": "TAPAH",
+      "state": "PERAK",
+      "decision": "pending",
+      "projectValidVotes": 44340,
+      "scoresheetValidVotes": 44481,
+      "validVoteDelta": 141,
+      "candidates": [
+        {
+          "candidateId": "p072:mior-haidir",
+          "candidateName": "MIOR HAIDIR",
+          "projectVotes": 194,
+          "scoresheetVotes": 335,
+          "delta": 141
+        }
+      ],
+      "sourceFile": "PERAK/P.072 TAPAH.pdf",
+      "sourceSha256": "a691d29b0d89ed960bd423e6afff2bef3a70edb6f76130fcc174cf0932525d39"
+    },
+    {
+      "id": "pru15-scoresheet-p087",
+      "parliamentCode": "P.087",
+      "parliamentName": "KUALA KRAU",
+      "state": "PAHANG",
+      "decision": "pending",
+      "projectValidVotes": 47753,
+      "scoresheetValidVotes": 47743,
+      "validVoteDelta": -10,
+      "candidates": [
+        {
+          "candidateId": "p087:shahruddin-mohamed-salleh",
+          "candidateName": "SHAHRUDDIN MOHAMED SALLEH",
+          "projectVotes": 174,
+          "scoresheetVotes": 164,
+          "delta": -10
+        }
+      ],
+      "sourceFile": "PAHANG/P.087 KUALA KRAU.pdf",
+      "sourceSha256": "1cffd060e4efa225f9a7264153f2f1e879afa9965e272db90b157bcb36397801"
+    },
+    {
+      "id": "pru15-scoresheet-p101",
+      "parliamentCode": "P.101",
+      "parliamentName": "HULU LANGAT",
+      "state": "SELANGOR",
+      "decision": "pending",
+      "projectValidVotes": 136789,
+      "scoresheetValidVotes": 136787,
+      "validVoteDelta": -2,
+      "candidates": [
+        {
+          "candidateId": "p101:yb-mohd-sany-hamzan",
+          "candidateName": "YB MOHD SANY HAMZAN",
+          "projectVotes": 58382,
+          "scoresheetVotes": 58380,
+          "delta": -2
+        },
+        {
+          "candidateId": "p101:datuk-wira-haji-johan-bin-abd-aziz",
+          "candidateName": "DATUK WIRA HAJI JOHAN BIN ABD AZIZ",
+          "projectVotes": 32570,
+          "scoresheetVotes": 32564,
+          "delta": -6
+        },
+        {
+          "candidateId": "p101:dato-dr-mohd-radzi-abd-latif",
+          "candidateName": "DATO' DR. MOHD RADZI ABD LATIF",
+          "projectVotes": 43486,
+          "scoresheetVotes": 43492,
+          "delta": 6
+        }
+      ],
+      "sourceFile": "SELANGOR/P.101 HULU LANGAT.pdf",
+      "sourceSha256": "72f7b1b2dd2168fd093e3d169adccbff59073c99c7eeac8fe21a50995402e48c"
+    },
+    {
+      "id": "pru15-scoresheet-p128",
+      "parliamentCode": "P.128",
+      "parliamentName": "SEREMBAN",
+      "state": "NEGERI SEMBILAN",
+      "decision": "pending",
+      "projectValidVotes": 123284,
+      "scoresheetValidVotes": 123289,
+      "validVoteDelta": 5,
+      "candidates": [
+        {
+          "candidateId": "p128:loke-siew-fook",
+          "candidateName": "LOKE SIEW FOOK",
+          "projectVotes": 63916,
+          "scoresheetVotes": 63920,
+          "delta": 4
+        },
+        {
+          "candidateId": "p128:haji-fadli-che-me",
+          "candidateName": "HAJI FADLI CHE ME",
+          "projectVotes": 33075,
+          "scoresheetVotes": 33076,
+          "delta": 1
+        }
+      ],
+      "sourceFile": "NEGERI SEMBILAN/P.128 SEREMBAN.pdf",
+      "sourceSha256": "ebffd69a7ecb9d2f3b1284abc0606eb02b7ac615ea0c964c59e40001ba03d65a"
+    },
+    {
+      "id": "pru15-scoresheet-p175",
+      "parliamentCode": "P.175",
+      "parliamentName": "PAPAR",
+      "state": "SABAH",
+      "decision": "pending",
+      "projectValidVotes": 43509,
+      "scoresheetValidVotes": 43509,
+      "validVoteDelta": 0,
+      "candidates": [
+        {
+          "candidateId": "p175:johnny-sitamin",
+          "candidateName": "JOHNNY SITAMIN",
+          "projectVotes": 335,
+          "scoresheetVotes": 277,
+          "delta": -58
+        },
+        {
+          "candidateId": "p175:hj-ahmad-hassan",
+          "candidateName": "HJ. AHMAD HASSAN",
+          "projectVotes": 10396,
+          "scoresheetVotes": 10126,
+          "delta": -270
+        },
+        {
+          "candidateId": "p175:datuk-armizan-bin-mohd-ali",
+          "candidateName": "DATUK ARMIZAN BIN MOHD ALI",
+          "projectVotes": 22620,
+          "scoresheetVotes": 22948,
+          "delta": 328
+        }
+      ],
+      "sourceFile": "SABAH/P.175 PAPAR.pdf",
+      "sourceSha256": "8381a5ba073071ec551860c14154acddb893012ca2be5f0e04ef3e621ead735e"
+    }
+  ]
+}

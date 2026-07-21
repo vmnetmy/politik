@@ -28,6 +28,8 @@ import type {
   DataChange,
   ElectionData,
   PartyCatalogItem,
+  ReconciliationData,
+  ReconciliationDecision,
   Seat,
   SeatStatus,
 } from "../types";
@@ -53,7 +55,56 @@ function SettingsTabs() {
       <NavLink to="/settings/data/calon">Data calon</NavLink>
       <NavLink to="/settings/data/parti">Parti</NavLink>
       <NavLink to="/settings/data/gabungan">Gabungan</NavLink>
+      <NavLink to="/settings/data/keputusan">Keputusan undi</NavLink>
     </nav>
+  );
+}
+
+export function SettingsResultsPage({ reconciliation, setReconciliation }: { reconciliation: ReconciliationData; setReconciliation: React.Dispatch<React.SetStateAction<ReconciliationData | null>> }) {
+  const [filter, setFilter] = useState<"all" | ReconciliationDecision>("all");
+  const [notice, setNotice] = useState("");
+  const counts = reconciliation.conflicts.reduce<Record<ReconciliationDecision, number>>((result, item) => {
+    result[item.decision] += 1;
+    return result;
+  }, { pending: 0, approved: 0, rejected: 0 });
+  const conflicts = reconciliation.conflicts.filter((item) => filter === "all" || item.decision === filter);
+
+  const decide = (id: string, decision: ReconciliationDecision) => {
+    setReconciliation((current) => current ? {
+      ...current,
+      conflicts: current.conflicts.map((item) => item.id === id ? { ...item, decision, reviewedAt: new Date().toISOString() } : item),
+    } : current);
+    setNotice(decision === "approved" ? "Pembetulan diluluskan dan diterapkan pada paparan PRU-15." : decision === "rejected" ? "Perbezaan ditolak; nilai projek dikekalkan." : "Keputusan semakan dikembalikan kepada belum disemak.");
+  };
+
+  const exportReconciliation = () => {
+    const blob = new Blob([JSON.stringify(reconciliation, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const anchor = document.createElement("a");
+    anchor.href = url;
+    anchor.download = `politik-result-reconciliation-${new Date().toISOString().slice(0, 10)}.json`;
+    anchor.click();
+    URL.revokeObjectURL(url);
+  };
+
+  return (
+    <>
+      <PageTitle title="Rekonsiliasi keputusan"/>
+      <SettingsTabs/>
+      <section className="settings-hero result-review-hero"><div><span className="overline">TETAPAN / DATA / KEPUTUSAN</span><h1>Semak sebelum mengganti.</h1><p>Tujuh perbezaan antara helaian mata SPR dan agregat projek memerlukan keputusan editorial. Kelulusan mengemas kini undi, bahagian undi, majoriti dan turnout secara atomik.</p></div><div className="settings-actions"><button onClick={exportReconciliation}>Eksport keputusan</button></div></section>
+      {notice && <div className="settings-notice"><Icon name="database" size={18}/><span>{notice}</span><button onClick={() => setNotice("")}>×</button></div>}
+      <section className="settings-kpis result-review-kpis"><article><span>JUMLAH KONFLIK</span><strong>{reconciliation.conflicts.length}</strong></article><article><span>BELUM DISEMAK</span><strong>{counts.pending}</strong></article><article><span>DILULUSKAN</span><strong>{counts.approved}</strong></article><article><span>DITOLAK</span><strong>{counts.rejected}</strong></article></section>
+      <section className="panel result-review-panel">
+        <div className="section-heading"><div><span className="eyebrow">REKONSILIASI SUMBER</span><h2>Perbezaan undi calon</h2></div><div className="result-review-filter"><button className={filter === "all" ? "active" : ""} onClick={() => setFilter("all")}>Semua</button><button className={filter === "pending" ? "active" : ""} onClick={() => setFilter("pending")}>Belum disemak</button><button className={filter === "approved" ? "active" : ""} onClick={() => setFilter("approved")}>Diluluskan</button><button className={filter === "rejected" ? "active" : ""} onClick={() => setFilter("rejected")}>Ditolak</button></div></div>
+        <div className="result-review-list">{conflicts.map((conflict) => <article key={conflict.id} className={`result-conflict is-${conflict.decision}`}>
+          <header><div><span>{conflict.state} · {conflict.parliamentCode}</span><h3>{conflict.parliamentName}</h3></div><strong>{conflict.decision === "pending" ? "BELUM DISEMAK" : conflict.decision === "approved" ? "DILULUSKAN" : "DITOLAK"}</strong></header>
+          <div className="result-total-comparison"><div><span>PROJEK</span><strong>{formatNumber(conflict.projectValidVotes)}</strong></div><i>→</i><div><span>HELAIAN MATA</span><strong>{formatNumber(conflict.scoresheetValidVotes)}</strong></div><b className={conflict.validVoteDelta >= 0 ? "positive" : "negative"}>{conflict.validVoteDelta >= 0 ? "+" : ""}{formatNumber(conflict.validVoteDelta)}</b></div>
+          <div className="result-candidate-deltas">{conflict.candidates.map((candidate) => <div key={candidate.candidateId}><strong>{candidate.candidateName}</strong><span>{formatNumber(candidate.projectVotes)} → {formatNumber(candidate.scoresheetVotes)}</span><b>{candidate.delta >= 0 ? "+" : ""}{formatNumber(candidate.delta)}</b></div>)}</div>
+          <div className="result-conflict-footer"><div><span>SUMBER</span><strong>{conflict.sourceFile}</strong><code>{conflict.sourceSha256.slice(0, 16)}…</code></div><div className="result-decision-actions"><button onClick={() => decide(conflict.id, "pending")}>Belum disemak</button><button className="reject" onClick={() => decide(conflict.id, "rejected")}>Tolak</button><button className="approve" onClick={() => decide(conflict.id, "approved")}>Luluskan</button></div></div>
+        </article>)}</div>
+      </section>
+      <aside className="storage-note"><Icon name="info" size={19}/><div><strong>Penerbitan keputusan semakan</strong><p>Keputusan disimpan dalam pelayar ini. Eksport fail dan gantikan <code>public/data/result-reconciliation.json</code>, kemudian jana semula manifest untuk menerbitkannya.</p></div></aside>
+    </>
   );
 }
 export function SettingsDataPage({ data, changes, setChanges }: { data: ElectionData; changes: DataChange[]; setChanges: React.Dispatch<React.SetStateAction<DataChange[]>> }) {

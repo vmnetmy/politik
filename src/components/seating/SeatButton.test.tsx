@@ -14,7 +14,7 @@ const seat = {
   candidateCount: 1,
   marginVotes: 0,
   marginShare: 0,
-  winner: { name: "DATO SERI HAMZAH ZAINUDIN", alliance: "PERIKATAN NASIONAL (PN)", party: "BERSATU", votes: 1, share: 1, gender: "LELAKI", ethnicity: "MELAYU" },
+  winner: { id: "p056:dato-seri-hamzah-zainudin", name: "DATO SERI HAMZAH ZAINUDIN", alliance: "PERIKATAN NASIONAL (PN)", party: "BERSATU", votes: 1, share: 1, gender: "LELAKI", ethnicity: "MELAYU" },
   candidates: [],
 } satisfies Seat;
 

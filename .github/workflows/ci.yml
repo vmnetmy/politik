@@ -55,6 +55,12 @@ jobs:
       - name: Validate seating extraction
         run: npm run data:seating:check
 
+      - name: Validate voter-age extraction
+        run: npm run data:voter-age:check
+
+      - name: Validate scoresheet extraction
+        run: npm run data:scoresheets:check
+
       - name: Validate published data integrity manifest
         run: npm run data:manifest:check
 
