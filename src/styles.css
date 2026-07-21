@@ -532,15 +532,6 @@ footer summary { display: flex; align-items: center; gap: 6px; color: #566a61; c
 .result-track { height: 3px; margin-top: 8px; overflow: hidden; background: #e0e0d9; }
 .result-track span { display: block; height: 100%; min-width: 1px; }
 
-@media (max-width: 1500px) {
-  .seating-plan-layout { grid-template-columns: 1fr; }
-  .seating-selection-detail { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(260px, .8fr); gap: 0 24px; }
-  .seating-selection-detail .seating-selection-top, .seating-selection-detail h3, .seating-selection-detail > p, .seating-selection-detail > a { grid-column: 1; }
-  .seating-selection-detail .seating-identity-row, .seating-selection-detail dl { grid-column: 2; }
-  .seating-selection-detail .seating-identity-row:first-of-type { align-self: end; }
-  .seating-selection-detail dl { align-self: start; }
-}
-
 @media (max-width: 1120px) {
   .sidebar { width: 84px; padding-inline: 13px; }
   .brand { justify-content: center; padding-inline: 0; }
@@ -604,6 +595,7 @@ footer summary { display: flex; align-items: center; gap: 6px; color: #566a61; c
   .parliament-hero-line { align-items: flex-start; flex-direction: column; }
   .seating-plan-heading { align-items: stretch; flex-direction: column; }
   .seating-plan-controls { align-self: flex-start; }
+  .seating-plan-layout { grid-template-columns: 1fr; }
   .seating-selection-detail { display: block; }
   .settings-hero { align-items: flex-start; flex-direction: column; }
 }

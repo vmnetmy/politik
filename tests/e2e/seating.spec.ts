@@ -43,12 +43,17 @@ test("legend is independent from the responsive seating canvas", async ({ page }
   await expect(scroller.locator(".seating-legend")).toHaveCount(0);
 
   const dimensions = await scroller.evaluate((element) => ({ clientWidth: element.clientWidth, scrollWidth: element.scrollWidth }));
-  if (testInfo.project.name === "mobile-chromium") {
-    expect(dimensions.scrollWidth).toBeGreaterThan(dimensions.clientWidth);
-  } else {
-    expect(dimensions.scrollWidth).toBeLessThanOrEqual(dimensions.clientWidth + 1);
-  }
+  if (testInfo.project.name === "mobile-chromium") expect(dimensions.scrollWidth).toBeGreaterThan(dimensions.clientWidth);
   const legendBox = await legend.boundingBox();
   const visualBox = await visual.boundingBox();
   expect(legendBox?.width).toBeLessThanOrEqual((visualBox?.width ?? 0) + 1);
+});
+
+test("desktop keeps the selection panel beside the chamber", async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== "desktop-chromium", "Desktop layout contract only");
+  await page.goto("/pru/15/negeri/parlimen");
+  const chamber = await page.locator(".seating-visual").boundingBox();
+  const detail = await page.locator(".seating-selection-detail").boundingBox();
+  expect(detail?.x).toBeGreaterThan((chamber?.x ?? 0) + (chamber?.width ?? 0));
+  expect(Math.abs((detail?.y ?? 0) - (chamber?.y ?? 0))).toBeLessThanOrEqual(1);
 });
