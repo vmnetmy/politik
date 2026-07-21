@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { lazy, Suspense, useEffect, useMemo, useState } from "react";
 import {
   BrowserRouter,
   Link,
@@ -16,7 +16,7 @@ import { NotFound } from "./components/ui/NotFound";
 import { Badge } from "./components/ui/primitives";
 import { ElectionPage, OverviewPage, ParliamentIndexPage, ParliamentPage, StatePage, WinnersPage } from "./pages/PublicPages";
 import { SettingsAffiliationPage, SettingsAlliancePage, SettingsCandidatePage, SettingsDataPage, SettingsPartyPage } from "./pages/SettingsPages";
-import { ELECTION_BASE, PARLIAMENT_BASE, STATE_BASE, WINNERS_BASE } from "./routes";
+import { ELECTION_BASE, PARLIAMENT_BASE, STATE_BASE, VOTER_AGE_BASE, WINNERS_BASE } from "./routes";
 import {
   applyAffiliationEvents,
   applyCandidateChanges,
@@ -36,6 +36,8 @@ import {
   parsePartyCatalogFile,
 } from "./dataChanges";
 import { normalise } from "./utils";
+
+const VoterAgePage = lazy(() => import("./pages/VoterAgePage").then((module) => ({ default: module.VoterAgePage })));
 
 function mergeById<T extends { id: string }>(baseline: T[], local: T[]) {
   const merged = new Map(baseline.map((item) => [item.id, item]));
@@ -96,6 +98,7 @@ function Shell({ data, search, setSearch, changeCount, candidateChangeCount }: {
           <NavLink to={STATE_BASE} end className={() => location.pathname === STATE_BASE || (location.pathname.startsWith(`${STATE_BASE}/`) && !location.pathname.startsWith(PARLIAMENT_BASE)) ? "active" : ""}><Icon name="grid"/><span>Negeri</span></NavLink>
           <NavLink to={PARLIAMENT_BASE}><Icon name="seat"/><span>Parlimen</span></NavLink>
           <NavLink to={WINNERS_BASE}><Icon name="people"/><span>Pemenang</span></NavLink>
+          <NavLink to={VOTER_AGE_BASE}><Icon name="chart"/><span>Pengundi</span></NavLink>
           <NavLink to={ELECTION_BASE} end><Icon name="vote"/><span>PRU</span></NavLink>
           <NavLink to="/settings/data"><Icon name="database"/><span>Data</span>{changeCount + candidateChangeCount > 0 && <b className="nav-count">{changeCount + candidateChangeCount}</b>}</NavLink>
         </nav>
@@ -218,6 +221,7 @@ export default function App() {
           <Route path="/pru" element={<Navigate to={ELECTION_BASE} replace/>}/>
           <Route path={ELECTION_BASE} element={<ElectionPage data={managedData}/>}/>
           <Route path={WINNERS_BASE} element={<WinnersPage data={managedData}/>}/>
+          <Route path={VOTER_AGE_BASE} element={<Suspense fallback={<div className="route-loading">Memuatkan statistik umur…</div>}><VoterAgePage/></Suspense>}/>
           <Route path={STATE_BASE} element={<OverviewPage data={managedData}/>}/>
           <Route path={PARLIAMENT_BASE} element={<ParliamentIndexPage data={managedData} seating={seating} search={search} setSearch={setSearch}/>}/>
           <Route path={`${PARLIAMENT_BASE}/:parliamentName`} element={<ParliamentPage data={managedData}/>}/>

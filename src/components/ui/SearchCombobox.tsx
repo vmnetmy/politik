@@ -19,6 +19,7 @@ export function SearchCombobox({ label, value, options, onChange, placeholder = 
   const listId = `${inputId}-list`;
   const rootRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const suppressNextFocusOpen = useRef(false);
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState(value);
   const [searchTerm, setSearchTerm] = useState("");
@@ -44,7 +45,10 @@ export function SearchCombobox({ label, value, options, onChange, placeholder = 
     setQuery(option);
     setSearchTerm("");
     setOpen(false);
-    inputRef.current?.focus();
+    if (document.activeElement !== inputRef.current) {
+      suppressNextFocusOpen.current = true;
+      inputRef.current?.focus();
+    }
   };
 
   const onKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -82,7 +86,7 @@ export function SearchCombobox({ label, value, options, onChange, placeholder = 
           value={query}
           placeholder={placeholder}
           disabled={disabled}
-          onFocus={(event) => { setOpen(true); setSearchTerm(""); setActiveIndex(Math.max(0, uniqueOptions.indexOf(value))); event.currentTarget.select(); }}
+          onFocus={(event) => { if (suppressNextFocusOpen.current) { suppressNextFocusOpen.current = false; return; } setOpen(true); setSearchTerm(""); setActiveIndex(Math.max(0, uniqueOptions.indexOf(value))); event.currentTarget.select(); }}
           onChange={(event) => { const next = event.target.value; setQuery(next); setSearchTerm(next); setActiveIndex(0); setOpen(true); if (allowCustom) onChange(next); }}
           onKeyDown={onKeyDown}
         />

@@ -75,6 +75,17 @@ Untuk memastikan fail yang diterbitkan masih sepadan tepat dengan semua sumber:
 npm run data:seating:check
 ```
 
+## Statistik umur pengundi
+
+Halaman `/pru/15/pengundi/umur` menggunakan laporan SPR `STATISTIK PRU KE_15 UMUR BY_DUN.pdf`. Identiti kawasan disimpan sekali dalam `public/data/constituencies.json`: 16 negeri atau wilayah, 222 Parlimen dan 600 DUN dengan hubungan induk yang eksplisit. Statistik dalam `public/data/voter-age.json` hanya merujuk `stateId`, `parliamentCode` atau `dunId`, supaya nama dan kod tidak diulang atau dihardkod dalam komponen paparan.
+
+Tiga belas rekod `N.00` bagi Kuala Lumpur, Putrajaya dan Labuan dikekalkan sebagai jumlah peringkat Parlimen dan tidak ditukar menjadi DUN rekaan. Pengekstrak mengesahkan setiap jumlah kumpulan umur, jumlah DUN kepada Parlimen, 222 Parlimen, 600 DUN serta cap jari SHA-256 sumber.
+
+```bash
+npm run data:voter-age
+npm run data:voter-age:check
+```
+
 Pemeriksaan ini turut dijalankan dalam `.github/workflows/ci.yml` untuk setiap pull request dan perubahan pada `main`.
 
 ## Bina untuk produksi

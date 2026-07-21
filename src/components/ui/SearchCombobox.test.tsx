@@ -14,6 +14,18 @@ describe("SearchCombobox", () => {
     await user.type(input, "wawasan");
     await user.keyboard("{ArrowDown}{Enter}");
     expect(onChange).toHaveBeenCalledWith("PARTI WAWASAN NEGARA");
+    expect(input).toHaveAttribute("aria-expanded", "false");
+  });
+
+  it("closes after a pointer selection while returning focus", async () => {
+    const user = userEvent.setup();
+    render(<SearchCombobox label="DUN" value="SEMUA DUN" options={["SEMUA DUN", "N.01 TITI TINGGI"]} onChange={() => undefined} allowCustom={false}/>);
+    const input = screen.getByRole("combobox", { name: "DUN" });
+    await user.click(input);
+    await user.click(screen.getByRole("option", { name: "N.01 TITI TINGGI" }));
+    expect(input).toHaveFocus();
+    expect(input).toHaveAttribute("aria-expanded", "false");
+    expect(screen.queryByRole("listbox")).not.toBeInTheDocument();
   });
 
   it("has no detectable structural accessibility violations", async () => {

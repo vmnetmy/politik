@@ -19,6 +19,8 @@ DATA_FILES = {
     "candidate-changes.json": "candidateChanges",
     "parties.json": "parties",
     "alliances.json": "alliances",
+    "constituencies.json": "duns",
+    "voter-age.json": "dunRecords",
 }
 
 

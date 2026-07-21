@@ -140,6 +140,7 @@ export type ElectionData = {
 };
 
 export type { SeatingData, SeatingPosition } from "./data/types/seating";
+export type { AgeBand, AgeCounts, AgeRecord, ConstituencyRegistry, ConstituencyState, DunReference, ParliamentReference, VoterAgeData } from "./data/types/voterAge";
 
 export type StateSummary = {
   state: string;

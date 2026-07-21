@@ -532,6 +532,50 @@ footer summary { display: flex; align-items: center; gap: 6px; color: #566a61; c
 .result-track { height: 3px; margin-top: 8px; overflow: hidden; background: #e0e0d9; }
 .result-track span { display: block; height: 100%; min-width: 1px; }
 
+.age-route-hero { background: linear-gradient(115deg, #113f33 0%, #113f33 68%, #174d3f 68%); }
+.age-route-hero .route-stat-row { max-width: 800px; }
+.age-filter-panel { display: grid; grid-template-columns: minmax(230px, .7fr) minmax(0, 1.5fr); gap: 32px; align-items: end; margin-bottom: 18px; padding: 27px 30px; }
+.age-filter-panel h2 { margin: 6px 0 7px; font: 600 28px/1 var(--serif); }
+.age-filter-panel p { margin: 0; color: #6e7973; font-size: 12px; line-height: 1.45; }
+.age-filter-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.age-filter-grid .search-combobox { min-width: 0; }
+.age-filter-grid .search-combobox > label { color: #6a7770; }
+.age-kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); margin-bottom: 18px; background: var(--paper); border: 1px solid var(--line); }
+.age-kpi-grid article { min-width: 0; display: grid; gap: 6px; padding: 21px 23px; border-right: 1px solid var(--line); }
+.age-kpi-grid article:last-child { border-right: 0; }
+.age-kpi-grid span { color: #718078; font-size: 10px; font-weight: 750; letter-spacing: .07em; }
+.age-kpi-grid strong { overflow: hidden; font: 600 28px/1 var(--serif); text-overflow: ellipsis; }
+.age-kpi-grid small { color: #75817b; font-size: 10px; }
+.age-dashboard-grid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(270px, .72fr); gap: 18px; margin-bottom: 18px; }
+.age-chart-panel, .age-profile-panel, .age-comparison-panel { padding: 28px 30px; }
+.age-chart-panel .section-heading p { margin: 5px 0 0; color: #748079; font-size: 11px; }
+.age-chart { height: 350px; margin-top: 24px; }
+.age-profile-panel h2 { margin: 7px 0 23px; font: 600 27px/1 var(--serif); }
+.age-profile-list { display: grid; gap: 13px; }
+.age-profile-list > div { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 10px; }
+.age-profile-list > div > div:first-child { grid-column: 1 / -1; display: flex; justify-content: space-between; gap: 12px; font-size: 11px; }
+.age-profile-list strong { color: var(--ink); }
+.age-profile-list small { color: #748079; font-size: 10px; }
+.age-profile-track { height: 5px; overflow: hidden; background: #e1e4dd; }
+.age-profile-track i { display: block; height: 100%; background: var(--green); }
+.age-comparison-panel { margin-bottom: 18px; }
+.age-comparison-table-wrap { overflow-x: auto; }
+.age-comparison-table { width: 100%; margin-top: 19px; border-collapse: collapse; }
+.age-comparison-table th { padding: 10px 12px; color: #738078; border-bottom: 1px solid var(--line); font-size: 10px; letter-spacing: .06em; text-align: left; }
+.age-comparison-table td { padding: 13px 12px; color: #65716b; border-bottom: 1px solid #e5e4dc; font-size: 11px; }
+.age-comparison-table td:first-child { min-width: 190px; }
+.age-comparison-table td:first-child span { display: block; margin-bottom: 3px; color: #75817b; font-size: 9px; font-weight: 750; letter-spacing: .06em; }
+.age-comparison-table td:first-child strong, .age-comparison-table td:nth-child(2) strong { color: var(--ink); }
+.age-band-badge { display: inline-flex; min-width: 48px; justify-content: center; padding: 6px 8px; color: var(--green); background: #e9efea; border: 1px solid #d2ddd5; font-weight: 750; }
+.age-no-dun, .age-loading { display: flex; align-items: flex-start; gap: 13px; padding: 28px 30px; color: #607068; }
+.age-no-dun { margin-top: 20px; background: #edf0eb; }
+.age-no-dun strong { color: var(--ink); }
+.age-no-dun p, .age-loading p { margin: 4px 0 0; font-size: 12px; line-height: 1.5; }
+.age-loading { align-items: center; }
+.age-error h2 { margin: 0; font: 600 25px/1 var(--serif); }
+.age-source-note { margin-bottom: 18px; }
+.route-loading { min-height: 320px; display: grid; place-items: center; color: #69766f; background: var(--paper); border: 1px solid var(--line); font-size: 12px; font-weight: 700; letter-spacing: .04em; }
+
 @media (max-width: 1120px) {
   .sidebar { width: 84px; padding-inline: 13px; }
   .brand { justify-content: center; padding-inline: 0; }
@@ -550,12 +594,15 @@ footer summary { display: flex; align-items: center; gap: 6px; color: #566a61; c
   .composition-list { grid-template-columns: 1fr; }
   .composition-row:nth-child(n+5) { display: none; }
   .seat-grid { grid-template-columns: repeat(2, 1fr); }
+  .age-filter-panel { grid-template-columns: 1fr; }
+  .age-dashboard-grid { grid-template-columns: 1fr; }
+  .age-profile-list { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (max-width: 820px) {
   .sidebar { inset: auto 0 0; width: auto; height: 64px; flex-direction: row; padding: 6px 14px max(6px, env(safe-area-inset-bottom)); border-top: 1px solid rgba(255,255,255,.1); border-right: 0; }
   .sidebar .brand, .sidebar-source, .sidebar-foot { display: none; }
-  .sidebar nav { width: 100%; display: grid; grid-template-columns: repeat(5, 1fr); }
+  .sidebar nav { width: 100%; display: grid; grid-template-columns: repeat(6, 1fr); }
   .sidebar nav a { display: grid; justify-items: center; gap: 2px; padding: 6px; font-size: 10px; }
   .sidebar nav a::before { inset: auto auto -6px; width: 24px; height: 3px; border-radius: 3px 3px 0 0; }
   .sidebar nav span { display: block; }
@@ -582,6 +629,11 @@ footer summary { display: flex; align-items: center; gap: 6px; color: #566a61; c
   .settings-kpis { grid-template-columns: repeat(2, 1fr); }
   .settings-kpis article:nth-child(2) { border-right: 0; }
   .settings-kpis article:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  .age-kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  .age-kpi-grid article:nth-child(2) { border-right: 0; }
+  .age-kpi-grid article:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  .age-filter-grid { grid-template-columns: 1fr; }
+  .age-profile-list { grid-template-columns: repeat(2, 1fr); }
   .composition-list { grid-template-columns: repeat(2, 1fr); }
   .composition-row:nth-child(n) { display: grid; }
   .people-panel { min-height: 350px; }
@@ -654,6 +706,11 @@ footer summary { display: flex; align-items: center; gap: 6px; color: #566a61; c
   .settings-actions button, .settings-actions label, .settings-actions > a { flex: 1; }
   .settings-kpis article { padding: 17px 14px; }
   .settings-kpis strong { font-size: 26px; }
+  .age-kpi-grid article { padding: 17px 14px; }
+  .age-kpi-grid strong { font-size: 23px; }
+  .age-chart-panel, .age-profile-panel, .age-comparison-panel { padding: 22px 17px; }
+  .age-chart { height: 290px; }
+  .age-profile-list { grid-template-columns: 1fr; }
   .settings-seat-list > button { grid-template-columns: minmax(0, 1fr) auto; }
   .settings-seat-list > button > svg { display: none; }
   .settings-tabs { width: 100%; }

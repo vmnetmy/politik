@@ -36,6 +36,16 @@
       "sha256": "2b368c8e74863803c7601978c1646297b9fc81e210bb50165f41be434a10d1b1",
       "bytes": 38,
       "records": 0
+    },
+    "constituencies.json": {
+      "sha256": "b05a6c676500fcf3120ad78b7dd4cc58abe628aa73401c71d7187d2a5dcee766",
+      "bytes": 133281,
+      "records": 600
+    },
+    "voter-age.json": {
+      "sha256": "08fd237955fbeb7fbd8c317b2197a0bf73cb0be2f3cd764d2ac8b488cc1db1da",
+      "bytes": 247627,
+      "records": 600
     }
   }
 }
