@@ -41,6 +41,8 @@ export const PARTY_IMAGES: Record<string, string | undefined> = {
   PSB: partyImage("24-parti-sarawak-bersatu-psb.png"),
   PWN: partyImage("25-parti-wawasan-negara.png"),
   "PARTI WAWASAN NEGARA": partyImage("25-parti-wawasan-negara.png"),
+  BERSAMA: partyImage("26-parti-bersama-malaysia-bersama.png"),
+  "PARTI BERSAMA MALAYSIA": partyImage("26-parti-bersama-malaysia-bersama.png"),
   BEBAS: allianceImage("05-bebas.png"),
 };
 

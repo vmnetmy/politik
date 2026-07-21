@@ -8,6 +8,8 @@ export const LOCAL_ALLIANCE_CATALOG_KEY = "politik:alliance-catalog:v1";
 export const LOCAL_AFFILIATIONS_KEY = "politik:affiliation-events:v1";
 export const INDEPENDENT_ALLIANCE = "LAIN-LAIN / BEBAS";
 export const INDEPENDENT_PARTY = "BEBAS";
+export const BERSAMA_PARTY_NAME = "PARTI BERSAMA MALAYSIA";
+export const BERSAMA_PARTY_SHORT_NAME = "BERSAMA";
 
 export const personIdForSeat = (seatCode: string) => `pru15:${seatCode}:winner`;
 
@@ -15,6 +17,9 @@ const today = () => new Date().toISOString().slice(0, 10);
 const baselineTimestamp = (data: ElectionData) => `${data.metadata.electionDate}T00:00:00.000Z`;
 const catalogId = (prefix: string, name: string) => `${prefix}-${name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "")}`;
 const inferredShortName = (name: string) => name.match(/\(([^)]+)\)\s*$/)?.[1] ?? name;
+const canonicalName = (value: string) => value.trim().toUpperCase().replace(/[^A-Z0-9]+/g, " ").trim();
+const isBersamaParty = (value: string) => canonicalName(value) === BERSAMA_PARTY_NAME;
+const isHistoricalPbmAlias = (value: string) => ["PBM", "PARTI BANGSA MALAYSIA", "PARTI BANGSA MALAYSIA PBM"].includes(canonicalName(value));
 
 export function currentAlliance(seat: Seat) {
   if (seat.current?.status === "vacant") return VACANT_ALLIANCE;
@@ -255,6 +260,17 @@ export function buildDefaultPartyCatalog(data: ElectionData): PartyCatalogItem[]
       createdAt: "2026-06-13T00:00:00.000Z",
       updatedAt: "2026-07-06T00:00:00.000Z",
     },
+    {
+      id: "party-parti-bersama-malaysia",
+      sourceName: BERSAMA_PARTY_NAME,
+      aliases: [BERSAMA_PARTY_SHORT_NAME],
+      name: BERSAMA_PARTY_NAME,
+      shortName: BERSAMA_PARTY_SHORT_NAME,
+      alliance: INDEPENDENT_ALLIANCE,
+      active: true,
+      createdAt: "2026-07-22T00:00:00.000Z",
+      updatedAt: "2026-07-22T00:00:00.000Z",
+    },
   ];
 }
 
@@ -335,6 +351,20 @@ export function parsePartyCatalogFile(value: unknown): PartyCatalogItem[] {
     const record = item as Partial<PartyCatalogItem>;
     if (!record.id || !record.sourceName?.trim() || !record.name?.trim() || !record.shortName?.trim() || !record.alliance?.trim()) throw new Error(`Rekod parti #${index + 1} tidak lengkap.`);
     const createdAt = record.createdAt ?? new Date().toISOString();
-    return { id: record.id, sourceName: record.sourceName.trim(), aliases: Array.isArray(record.aliases) ? record.aliases.filter((alias): alias is string => typeof alias === "string" && Boolean(alias.trim())).map((alias) => alias.trim()) : [], name: record.name.trim(), shortName: record.shortName.trim(), alliance: record.alliance.trim(), active: record.active !== false, createdAt, updatedAt: record.updatedAt ?? createdAt };
+    const sourceName = record.sourceName.trim();
+    const name = record.name.trim();
+    const aliases = Array.isArray(record.aliases) ? record.aliases.filter((alias): alias is string => typeof alias === "string" && Boolean(alias.trim())).map((alias) => alias.trim()) : [];
+    const isBersama = isBersamaParty(name) || isBersamaParty(sourceName);
+    return {
+      id: record.id,
+      sourceName: isBersama ? BERSAMA_PARTY_NAME : sourceName,
+      aliases: isBersama ? [...new Set([...aliases.filter((alias) => !isHistoricalPbmAlias(alias)), BERSAMA_PARTY_SHORT_NAME])] : aliases,
+      name: isBersama ? BERSAMA_PARTY_NAME : name,
+      shortName: isBersama ? BERSAMA_PARTY_SHORT_NAME : record.shortName.trim(),
+      alliance: record.alliance.trim(),
+      active: record.active !== false,
+      createdAt,
+      updatedAt: record.updatedAt ?? createdAt,
+    };
   });
 }

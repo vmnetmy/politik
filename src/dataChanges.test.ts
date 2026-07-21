@@ -8,6 +8,7 @@ import {
   currentAlliance,
   currentParty,
   parseAffiliationFile,
+  parsePartyCatalogFile,
 } from "./dataChanges";
 import type { ElectionData } from "./types";
 
@@ -29,5 +30,30 @@ describe("effective-dated affiliations", () => {
     expect(currentAlliance(seat!)).toBe(alliance);
     expect(seat!.winner.party).toBe("PARTI PRIBUMI BERSATU MALAYSIA (BERSATU)");
     expect(seat!.winner.alliance).toBe("PERIKATAN NASIONAL (PN)");
+  });
+});
+
+describe("party identity catalogue", () => {
+  it("keeps Parti Bersama Malaysia separate from Parti Bangsa Malaysia", () => {
+    const bersama = parties.find((party) => party.name === "PARTI BERSAMA MALAYSIA");
+    const pbm = parties.find((party) => party.name === "PARTI BANGSA MALAYSIA (PBM)");
+    expect(bersama?.shortName).toBe("BERSAMA");
+    expect(pbm?.shortName).toBe("PBM");
+  });
+
+  it("migrates an edited PBM catalogue record to the BERSAMA abbreviation", () => {
+    const [record] = parsePartyCatalogFile({ parties: [{
+      id: "party-local-pbm",
+      sourceName: "PARTI BANGSA MALAYSIA (PBM)",
+      aliases: ["PBM", "PARTI BANGSA MALAYSIA (PBM)"],
+      name: "PARTI BERSAMA MALAYSIA",
+      shortName: "PBM",
+      alliance: "LAIN-LAIN / BEBAS",
+      active: true,
+      createdAt: "2026-07-22T00:00:00.000Z",
+      updatedAt: "2026-07-22T00:00:00.000Z",
+    }] });
+    expect(record).toMatchObject({ sourceName: "PARTI BERSAMA MALAYSIA", name: "PARTI BERSAMA MALAYSIA", shortName: "BERSAMA" });
+    expect(record.aliases).toEqual(["BERSAMA"]);
   });
 });
