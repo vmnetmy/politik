@@ -119,4 +119,6 @@ python3 -m pip install -r requirements.txt
 python3 scripts/extract_data.py /path/to/pru15.xlsx public/data/election.json
 ```
 
-Pengekstrak mengesahkan bahawa output mengandungi 222 kerusi dan 945 calon. Catatan isu sumber disertakan dalam metadata JSON dan dipaparkan melalui “Nota data” pada dashboard.
+Pengekstrak mengesahkan bahawa output mengandungi 222 kerusi dan 945 calon. Pembetulan sumber yang telah disahkan direkodkan secara eksplisit dalam pengekstrak supaya penjanaan semula menghasilkan angka yang sama.
+
+Jumlah pemilih berdaftar P.201 Batang Lupar ditetapkan kepada 43,072 berdasarkan jumlah kawasan yang disahkan; peratus keluar mengundi dikira semula daripada 27,559 undi direkodkan.

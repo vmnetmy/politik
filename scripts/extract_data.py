@@ -26,6 +26,12 @@ ALLIANCES = {
     "LAIN-LAIN / BEBAS": ("LAIN-LAIN", "#7b8580"),
 }
 
+# Source workbook rows disagree for this seat. The SPR age-by-DUN report and
+# the confirmed constituency total both record 43,072 registered voters.
+REGISTERED_VOTER_CORRECTIONS = {
+    "P.201": 43_072,
+}
+
 
 def clean(value):
     return value.strip() if isinstance(value, str) else value
@@ -82,7 +88,7 @@ def main() -> None:
 
         registered_values = sorted({int(row[6]) for row in rows if row[6] is not None})
         turnout_values = sorted({int(row[7]) for row in rows if row[7] is not None})
-        if len(registered_values) > 1 or len(turnout_values) > 1:
+        if (len(registered_values) > 1 or len(turnout_values) > 1) and code not in REGISTERED_VOTER_CORRECTIONS:
             issues.append(
                 {
                     "seat": code,
@@ -111,7 +117,7 @@ def main() -> None:
 
         runner_up = candidates[1] if len(candidates) > 1 else None
         winner = candidates[0]
-        registered = int(source_winner[6] or 0)
+        registered = REGISTERED_VOTER_CORRECTIONS.get(code, int(source_winner[6] or 0))
         turnout = int(source_winner[7] or 0)
         seats.append(
             {
@@ -120,7 +126,7 @@ def main() -> None:
                 "name": rows[0][2],
                 "registered": registered,
                 "turnout": turnout,
-                "turnoutPct": round_fraction(source_winner[10]),
+                "turnoutPct": round_fraction(turnout / registered if registered else 0),
                 "candidateCount": len(candidates),
                 "marginVotes": winner["votes"] - (runner_up["votes"] if runner_up else 0),
                 "marginShare": round_fraction(

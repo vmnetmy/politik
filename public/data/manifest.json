@@ -3,8 +3,8 @@
   "algorithm": "sha256",
   "files": {
     "election.json": {
-      "sha256": "944b045f33ca55e76ca259f3e578157e1760c7b84c4cfadf638e50f26de2e6cc",
-      "bytes": 214593,
+      "sha256": "81727c82e39ebb421b2c2ee6d99a946e4a535febb9296da3d7ffd023f48ff1c6",
+      "bytes": 214422,
       "records": 222
     },
     "seating.json": {

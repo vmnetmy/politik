@@ -82,7 +82,6 @@ function DataFooter({ data }: { data: ElectionData }) {
     <footer>
       <div className="footer-brand"><Mark/><div><strong>Nadi Rakyat</strong><span>Data untuk demokrasi yang lebih jelas.</span></div></div>
       <div className="footer-data"><Icon name="database" size={18}/><div><span>SUMBER</span><strong>{data.metadata.sourceFile}</strong></div></div>
-      <details><summary><Icon name="info" size={17}/> Nota data</summary><div className="data-note-popover"><strong>Catatan kualiti data</strong><p>Semua angka diproses terus daripada fail sumber dalam repositori.</p>{data.metadata.issues.map((issue) => <p key={`${issue.seat}-${issue.field}`}><b>{issue.seat}:</b> {issue.message}</p>)}</div></details>
     </footer>
   );
 }
