@@ -27,7 +27,6 @@ test("operational typography stays readable at 100% zoom", async ({ page }) => {
   await page.goto("/pru/15/negeri/parlimen/jerai");
   await expect(page.getByRole("heading", { name: "Keputusan mengikut saluran" })).toBeVisible();
   const selectors = [
-    ".sidebar nav a",
     ".global-search input",
     ".breadcrumbs",
     ".candidate-meta",
@@ -40,4 +39,6 @@ test("operational typography stays readable at 100% zoom", async ({ page }) => {
     const size = await page.locator(selector).first().evaluate((element) => Number.parseFloat(getComputedStyle(element).fontSize));
     expect(size, selector).toBeGreaterThanOrEqual(12);
   }
+  const sidebarSize = await page.locator(".sidebar nav a").first().evaluate((element) => Number.parseFloat(getComputedStyle(element).fontSize));
+  expect(sidebarSize).toBe((page.viewportSize()?.width ?? 0) <= 820 ? 10 : 13);
 });

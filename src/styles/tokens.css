@@ -16,6 +16,12 @@
   --text-reading: 1.0625rem;
   --text-xl: 1.125rem;
 
+  /* Compact navigation scale retained for the persistent sidebar. */
+  --sidebar-text-meta: 0.625rem;
+  --sidebar-text-secondary: 0.6875rem;
+  --sidebar-text-nav: 0.8125rem;
+  --sidebar-text-brand: 1rem;
+
   --color-ink: #18222b;
   --color-muted: #68727a;
   --color-paper: #fffdf9;
