@@ -73,7 +73,7 @@
     "axe-core": "^4.12.1",
     "jsdom": "^27.0.1",
     "lighthouse": "^13.4.1",
-    "oxlint": "^1.74.0",
+    "oxlint": "^1.75.0",
     "pixelmatch": "^7.2.0",
     "pngjs": "^7.0.0",
     "typescript": "7.0.2",
