@@ -173,7 +173,7 @@ jobs:
 
       - name: Upload browser quality artifacts
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: browser-quality-${{ github.run_id }}
           path: |
@@ -187,7 +187,7 @@ jobs:
 
       - name: Upload responsive visual baseline
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: visual-baseline
           path: visual-current/*.png

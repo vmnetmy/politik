@@ -62,7 +62,7 @@ jobs:
         run: npx playwright test tests/e2e/election-atlas.spec.ts tests/e2e/atlas-acceptance.spec.ts
 
       - name: Upload immutable staging candidate
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: politik-staging-${{ github.sha }}
           path: dist/
