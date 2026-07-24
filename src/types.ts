@@ -1,5 +1,8 @@
 export type Candidate = {
   id: string;
+  electionId: string;
+  candidacyId: string;
+  personId: string;
   name: string;
   alliance: string;
   party: string;
@@ -18,6 +21,8 @@ export type AffiliationStatus = "party" | "independent";
 
 export type AffiliationEvent = {
   id: string;
+  electionId?: string;
+  termId?: string;
   personId: string;
   seatCode: string;
   effectiveDate: string;
@@ -46,6 +51,7 @@ export type CurrentAffiliation = {
 
 export type DataChange = {
   id: string;
+  electionId?: string;
   seatCode: string;
   effectiveDate: string;
   status: SeatStatus;
@@ -58,6 +64,7 @@ export type DataChange = {
 
 export type CandidateChange = {
   id: string;
+  electionId?: string;
   seatCode: string;
   candidateIndex: number;
   effectiveDate: string;
@@ -84,10 +91,15 @@ export type CurrentSeatState = {
 };
 
 export type Seat = {
+  electionId: string;
+  contestId: string;
   code: string;
   state: string;
   name: string;
   registered: number;
+  validVotes?: number;
+  rejectedVotes?: number;
+  unreturnedVotes?: number;
   turnout: number;
   turnoutPct: number;
   candidateCount: number;
@@ -127,6 +139,10 @@ export type PartyCatalogItem = {
 
 export type ElectionData = {
   metadata: {
+    electionId: string;
+    electionNumber: number;
+    termId: string;
+    boundaryVersion: string;
     title: string;
     shortTitle: string;
     electionDate: string;
@@ -143,13 +159,15 @@ export type ElectionData = {
 export type { SeatingData, SeatingPosition } from "./data/types/seating";
 export type { PollingCentre, PollingDistrict, PollingPlacesData, ScoresheetCandidateColumn, ScoresheetIndex, ScoresheetIndexEntry, ScoresheetResult, ScoresheetRow, ScoresheetSection } from "./data/types/scoresheet";
 export type { AgeBand, AgeCounts, AgeRecord, ConstituencyRegistry, ConstituencyState, DunReference, ParliamentReference, VoterAgeData } from "./data/types/voterAge";
+export type { EthnicityCategory, VoterEthnicityData } from "./data/types/voterEthnicity";
 export type { GeographyData, GeographyLocality, GeographyPdm } from "./data/types/geography";
-export type { StateElectionCandidate, StateElectionContest, StateElectionData, StateElectionEvent } from "./data/types/stateElection";
+export type { DunBoundaryData, DunBoundaryFeature, StateElectionCandidate, StateElectionContest, StateElectionData, StateElectionEvent } from "./data/types/stateElection";
 
 export type StateSummary = {
   state: string;
   seats: number;
   registered: number;
+  validVotes: number;
   turnout: number;
   turnoutPct: number;
   leader: string;

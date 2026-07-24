@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import election from "../public/data/election.json";
-import affiliationFile from "../public/data/affiliations.json";
+import election from "../public/data/elections/pru-15/election.json";
+import affiliationFile from "../public/data/elections/pru-15/affiliations.json";
 import {
   applyAffiliationEvents,
   buildDefaultAllianceCatalog,

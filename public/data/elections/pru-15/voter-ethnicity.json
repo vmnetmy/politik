@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "metadata": {
+    "title": "Bangsa pemilih PRU-15",
+    "availability": "taxonomy-only",
+    "aggregateStatus": "not-published",
+    "authority": "Suruhanjaya Pilihan Raya Malaysia",
+    "checkedAt": "2026-07-22",
+    "totalRegistered": 21173638,
+    "sourceDataset": "Daftar Pemilih Induk 2012-2025",
+    "sourceCatalogueUrl": "https://opendata.spr.gov.my/katalog?bahagian=pendaftaran-pemilih",
+    "sourceTaxonomyUrl": "https://myspr.spr.gov.my/spr/pdf/MANUAL%20PENGGUNA%20SISTEM%20ICT%20SPR%20-%20MySPR%20%28PENGGUNA%20AWAM%29%20VER2.1.1.2.pdf",
+    "publishedDimensions": [
+      "negeri",
+      "parlimen",
+      "dun",
+      "jantina",
+      "umur",
+      "jenis pemilih"
+    ]
+  },
+  "categories": [
+    { "id": "melayu", "label": "MELAYU", "sourceLabel": "Melayu" },
+    { "id": "cina", "label": "CINA", "sourceLabel": "Cina" },
+    { "id": "india", "label": "INDIA", "sourceLabel": "India" },
+    { "id": "bumiputra-sabah", "label": "BUMIPUTRA SABAH", "sourceLabel": "Bumiputra Sabah" },
+    { "id": "bumiputra-sarawak", "label": "BUMIPUTRA SARAWAK", "sourceLabel": "Bumiputra Sarawak" },
+    { "id": "iban-sea-dayak", "label": "IBAN / SEA DAYAK", "sourceLabel": "Iban atau Sea Dayak" },
+    { "id": "bidayuh-land-dayak", "label": "BIDAYUH / LAND DAYAK", "sourceLabel": "Bidayuh atau Land Dayak" },
+    { "id": "orang-asli", "label": "ORANG ASLI (SEMENANJUNG)", "sourceLabel": "Orang Asli (Semenanjung)" },
+    { "id": "lain-lain", "label": "LAIN-LAIN", "sourceLabel": "Lain-lain" }
+  ],
+  "records": []
+}

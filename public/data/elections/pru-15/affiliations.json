@@ -1,0 +1,72 @@
+{
+  "version": 2,
+  "description": "Effective-dated current party memberships for PRU-15 elected representatives. PRU-15 result identities remain immutable.",
+  "affiliations": [
+    {
+      "id": "rafizi-p100-bersama-2026-05-17",
+      "personId": "person:rafizi-ramli",
+      "seatCode": "P.100",
+      "effectiveDate": "2026-05-17",
+      "status": "party",
+      "partyId": "party-parti-bersama-malaysia",
+      "partyName": "PARTI BERSAMA MALAYSIA",
+      "allianceId": null,
+      "allianceName": "LAIN-LAIN / BEBAS",
+      "reason": "Keluar PKR dan mengambil alih kepimpinan Parti Bersama Malaysia sebagai wadah politik baharu.",
+      "sourceUrl": "https://www.malaymail.com/news/malaysia/2026/05/17/rafizi-ramli-and-nik-nazmi-quit-pkr-will-vacate-pandan-and-setiawangsa-seats/220312",
+      "createdAt": "2026-05-17T17:37:00.000+08:00",
+      "electionId": "pru-15",
+      "termId": "dr-15"
+    },
+    {
+      "id": "hamzah-p056-independent-2026-02-13",
+      "personId": "person:dato-seri-hamzah-zainudin",
+      "seatCode": "P.056",
+      "effectiveDate": "2026-02-13",
+      "status": "independent",
+      "partyId": null,
+      "partyName": "BEBAS",
+      "allianceId": null,
+      "allianceName": "LAIN-LAIN / BEBAS",
+      "reason": "Keahlian Bersatu dipecat berkuat kuasa serta-merta; kedudukan menjadi Ahli Parlimen Bebas.",
+      "sourceUrl": "https://www.bernama.com/bm/news.php?id=2523705",
+      "createdAt": "2026-02-13T19:48:00.000+08:00",
+      "electionId": "pru-15",
+      "termId": "dr-15"
+    },
+    {
+      "id": "hamzah-p056-wawasan-2026-06-13",
+      "personId": "person:dato-seri-hamzah-zainudin",
+      "seatCode": "P.056",
+      "effectiveDate": "2026-06-13",
+      "status": "party",
+      "partyId": "party-parti-wawasan-negara",
+      "partyName": "PARTI WAWASAN NEGARA",
+      "allianceId": null,
+      "allianceName": "LAIN-LAIN / BEBAS",
+      "reason": "Mengumumkan Parti Wawasan Negara sebagai wadah politik baharu gerakan Reset.",
+      "sourceUrl": "https://www.malaymail.com/amp/news/malaysia/2026/06/13/hamzah-zainudin-gives-reset-a-new-political-home-with-parti-wawasan-negara/223648",
+      "createdAt": "2026-06-13T16:36:00.000+08:00",
+      "electionId": "pru-15",
+      "termId": "dr-15"
+    },
+    {
+      "id": "hamzah-p056-wawasan-pn-2026-07-06",
+      "personId": "person:dato-seri-hamzah-zainudin",
+      "seatCode": "P.056",
+      "effectiveDate": "2026-07-06",
+      "status": "party",
+      "partyId": "party-parti-wawasan-negara",
+      "partyName": "PARTI WAWASAN NEGARA",
+      "allianceId": "alliance-perikatan-nasional-pn",
+      "allianceName": "PERIKATAN NASIONAL (PN)",
+      "reason": "Parti Wawasan Negara menjadi parti komponen rasmi Perikatan Nasional berkuat kuasa pada tarikh kelulusan pertukaran nama oleh RoS.",
+      "sourceUrl": "https://www.freemalaysiatoday.com/category/nation/2026/07/14/wawasan-officially-a-pn-component-party",
+      "createdAt": "2026-07-14T20:37:00.000+08:00",
+      "electionId": "pru-15",
+      "termId": "dr-15"
+    }
+  ],
+  "electionId": "pru-15",
+  "termId": "dr-15"
+}

@@ -6,7 +6,7 @@ test("drills through reusable DUN and PDM identities into a sourced locality", a
   await page.getByRole("link", { name: /N\.30.*LIMBONGAN/s }).click();
   await expect(page.getByRole("heading", { name: "LIMBONGAN", exact: true })).toBeVisible();
   await page.getByRole("link", { name: /028\/30\/04.*PADANG PAK AMAT/s }).click();
-  await expect(page.getByRole("heading", { name: "PADANG PAK AMAT", exact: true })).toBeVisible();
+  await expect(page.locator("h1").getByText("PADANG PAK AMAT", { exact: true })).toBeVisible();
   await expect(page.getByText("KEPUTUSAN SCORESHEET PRU-15", { exact: true })).toBeVisible();
   await page.getByRole("link", { name: /001.*PADANG PAK AMAT/s }).click();
   await expect(page.getByRole("heading", { name: "PADANG PAK AMAT", exact: true })).toBeVisible();

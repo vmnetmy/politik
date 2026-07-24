@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "algorithm": "sha256",
+  "files": {
+    "alliances.json": {
+      "sha256": "2b368c8e74863803c7601978c1646297b9fc81e210bb50165f41be434a10d1b1",
+      "bytes": 38,
+      "records": 0
+    },
+    "parties.json": {
+      "sha256": "8fcd969da59baf632f1bc871716cb125b9f8f761162dc4b49e351738757f9c7a",
+      "bytes": 36,
+      "records": 0
+    },
+    "persons.json": {
+      "sha256": "0490502ed63c36b06f946dc06d5a0fddd24a0bc8211251d4e5739b2f805f4290",
+      "bytes": 273168,
+      "records": 1496
+    },
+    "person-matches.json": {
+      "sha256": "7bbf64c73b5f5604059a840c9028fe2e60c4bb007da65e29fde2e5d847ac8462",
+      "bytes": 157,
+      "records": 0
+    }
+  }
+}

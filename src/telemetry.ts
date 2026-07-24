@@ -1,7 +1,7 @@
-import { onCLS, onFCP, onINP, onLCP, onTTFB, type Metric } from "web-vitals";
+import { onCLS, onFCP, onINP, onLCP, onTTFB, type MetricWithAttribution } from "web-vitals/attribution";
 
 type TelemetryEvent = {
-  kind: "web-vital" | "client-error";
+  kind: "web-vital" | "client-error" | "interaction";
   name: string;
   value?: number;
   rating?: string;
@@ -23,6 +23,16 @@ export function cleanPath(value: string) {
   }
 }
 
+export function recordInteraction(name: string, value?: number) {
+  publish({
+    kind: "interaction",
+    name: name.slice(0, 80),
+    value,
+    path: cleanPath(window.location.href),
+    occurredAt: new Date().toISOString(),
+  });
+}
+
 function publish(event: TelemetryEvent) {
   if (!enabled) return;
   const payload = JSON.stringify(event);
@@ -36,12 +46,22 @@ function publish(event: TelemetryEvent) {
   });
 }
 
-function publishMetric(metric: Metric) {
+function metricAttribution(metric: MetricWithAttribution) {
+  const attribution = metric.attribution as Record<string, unknown>;
+  const target = attribution.target
+    ?? attribution.interactionTarget
+    ?? attribution.largestShiftTarget
+    ?? attribution.navigationEntry;
+  return target ? String(target).slice(0, 300) : undefined;
+}
+
+function publishMetric(metric: MetricWithAttribution) {
   publish({
     kind: "web-vital",
     name: metric.name,
     value: Number(metric.value.toFixed(3)),
     rating: metric.rating,
+    message: metricAttribution(metric),
     path: cleanPath(window.location.href),
     occurredAt: new Date().toISOString(),
   });

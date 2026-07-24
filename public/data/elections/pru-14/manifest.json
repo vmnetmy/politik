@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "algorithm": "sha256",
+  "files": {
+    "election.json": {
+      "sha256": "eceb1a1b992c4541b35aa5802df8323645606128c2e24d36649557b643d25ae8",
+      "bytes": 446400,
+      "records": 222
+    },
+    "changes.json": {
+      "sha256": "35d167fe4d66140411fd2db0113ae75438a8f78b4539c5237b3ce26653ee8d95",
+      "bytes": 156,
+      "records": 0
+    },
+    "affiliations.json": {
+      "sha256": "775f8ed86ffb0e7c763af5d14f8769b56386458c7e0b9deb8cb8ad70e94e38e3",
+      "bytes": 212,
+      "records": 0
+    },
+    "candidate-changes.json": {
+      "sha256": "2893d0cd012dda9f577a2c0b094a6e5ba9037e50aaf728950dfee8ebfadd80e9",
+      "bytes": 71,
+      "records": 0
+    }
+  }
+}

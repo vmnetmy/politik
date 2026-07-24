@@ -10,18 +10,18 @@ ROOT = Path(__file__).resolve().parents[1]
 
 class SeatingExtractionTests(unittest.TestCase):
     def test_extractor_reproduces_published_artifact_exactly(self):
-        extracted = extract(ROOT / "SeatingDR.pdf", ROOT / "public/data/election.json", DEFAULT_UNMAPPED)
-        published = (ROOT / "public/data/seating.json").read_text(encoding="utf-8")
+        extracted = extract(ROOT / "SeatingDR.pdf", ROOT / "public/data/elections/pru-15/election.json", DEFAULT_UNMAPPED)
+        published = (ROOT / "public/data/elections/pru-15/seating.json").read_text(encoding="utf-8")
         self.assertEqual(serialise(extracted), published)
 
     def test_mapped_and_unmapped_cover_all_222_seats(self):
-        extracted = extract(ROOT / "SeatingDR.pdf", ROOT / "public/data/election.json", DEFAULT_UNMAPPED)
+        extracted = extract(ROOT / "SeatingDR.pdf", ROOT / "public/data/elections/pru-15/election.json", DEFAULT_UNMAPPED)
         codes = [position["seatCode"] for position in extracted["positions"]] + extracted["unmappedSeatCodes"]
         self.assertEqual(len(codes), 222)
         self.assertEqual(len(set(codes)), 222)
 
     def test_svg_geometry_preserves_exact_coded_positions(self):
-        extracted = extract(ROOT / "SeatingDR.pdf", ROOT / "public/data/election.json", DEFAULT_UNMAPPED)
+        extracted = extract(ROOT / "SeatingDR.pdf", ROOT / "public/data/elections/pru-15/election.json", DEFAULT_UNMAPPED)
         self.assertEqual(extracted["version"], 4)
         self.assertEqual(extracted["sourceSha256"], "8dd8188341dafa69493b316d7247ee64c32e8f7be3353da98796b518d4a068f4")
         self.assertEqual(extracted["layout"]["strategy"], "svg-source-rect-v3")

@@ -232,9 +232,9 @@ def build(
 def main() -> int:
     parser = argparse.ArgumentParser(description="Build the official SPR geography hierarchy.")
     parser.add_argument("--source-directory", type=Path, default=Path("sources/spr/geography"))
-    parser.add_argument("--constituencies", type=Path, default=Path("public/data/constituencies.json"))
-    parser.add_argument("--polling-places", type=Path, default=Path("public/data/polling-places.json"))
-    parser.add_argument("--output", type=Path, default=Path("public/data/geography.json"))
+    parser.add_argument("--constituencies", type=Path, default=Path("public/data/elections/pru-15/constituencies.json"))
+    parser.add_argument("--polling-places", type=Path, default=Path("public/data/elections/pru-15/polling-places.json"))
+    parser.add_argument("--output", type=Path, default=Path("public/data/elections/pru-15/geography.json"))
     parser.add_argument("--check", action="store_true")
     args = parser.parse_args()
     try:

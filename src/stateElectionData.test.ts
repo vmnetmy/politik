@@ -1,6 +1,6 @@
 import Ajv2020 from "ajv/dist/2020";
 import { describe, expect, it } from "vitest";
-import constituencies from "../public/data/constituencies.json";
+import constituencies from "../public/data/elections/pru-15/constituencies.json";
 import results from "../public/data/state-elections.json";
 import schema from "../schemas/state-election.schema.json";
 
@@ -8,7 +8,20 @@ describe("official state-election data", () => {
   it("validates all latest state assemblies", () => {
     const validate = new Ajv2020({ allErrors: true, formats: { date: true } }).compile(schema);
     expect(validate(results), JSON.stringify(validate.errors, null, 2)).toBe(true);
-    expect(new Set(results.contests.map((item) => item.dunId))).toEqual(new Set(constituencies.duns.map((item) => item.id)));
+    const latestEventIds = new Set(results.events.filter((item) => item.coverage === "latest").map((item) => item.id));
+    const historicalEventIds = new Set(results.events.filter((item) => item.coverage === "historical").map((item) => item.id));
+    const latestContests = results.contests.filter((item) => latestEventIds.has(item.eventId));
+    const historicalContests = results.contests.filter((item) => historicalEventIds.has(item.eventId));
+    expect(latestContests).toHaveLength(600);
+    expect(new Set(latestContests.map((item) => item.dunId))).toEqual(new Set(constituencies.duns.map((item) => item.id)));
+    expect(results.metadata).toMatchObject({
+      eventCount: results.events.length,
+      latestEventCount: latestEventIds.size,
+      historicalEventCount: historicalEventIds.size,
+      contestCount: results.contests.length,
+      historicalContestCount: historicalContests.length,
+      candidateCount: results.contests.reduce((total, contest) => total + contest.candidates.length, 0),
+    });
   });
 
   it("balances candidate votes and identifies exactly one winner", () => {
@@ -48,6 +61,43 @@ describe("official state-election data", () => {
       rejectedVotes: 228,
       unreturnedVotes: 35,
       turnoutPct: 0.6823999999999999,
+    });
+  });
+
+  it("publishes the complete Johor PRN-15 result from SPR Open Data", () => {
+    const johor = results.events.find((item) => item.id === "prn-johor-2022");
+    expect(johor).toMatchObject({
+      electionDate: "2022-03-12",
+      assemblyNumber: 15,
+      coverage: "historical",
+      registeredVoters: 2597742,
+      turnoutVotes: 1417115,
+      seatCounts: { BN: 40, PH: 11, PN: 3, MUDA: 1, PKR: 1 },
+    });
+    expect(johor?.contestIds).toHaveLength(56);
+    const johorContests = results.contests.filter((item) => item.eventId === johor?.id);
+    expect(johorContests.flatMap((item) => item.candidates)).toHaveLength(239);
+    expect(johorContests.find((item) => item.dunId.endsWith(":N.01"))).toMatchObject({
+      registeredVoters: 28481,
+      turnoutVotes: 16188,
+      rejectedVotes: 464,
+      unreturnedVotes: 67,
+      turnoutPct: 0.5710000000000001,
+      majorityVotes: 5377,
+    });
+  });
+
+  it("publishes every PRN-14 contest with its gazetted electorate", () => {
+    const events = results.events.filter((item) => item.assemblyNumber === 14);
+    const eventIds = new Set(events.map((item) => item.id));
+    const contests = results.contests.filter((item) => eventIds.has(item.eventId));
+    expect(events).toHaveLength(11);
+    expect(contests).toHaveLength(445);
+    expect(contests.every((item) => item.registeredVoters && item.registeredVoters > 0)).toBe(true);
+    expect(events.reduce((sum, event) => sum + event.registeredVoters, 0)).toBe(11698872);
+    expect(events.find((item) => item.id === "prn-johor-2018")).toMatchObject({
+      contestIds: expect.arrayContaining([expect.stringContaining("P.140:N.01")]),
+      seatCounts: { PKR: 36, BN: 19, PAS: 1 },
     });
   });
 });

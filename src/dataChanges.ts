@@ -6,12 +6,15 @@ export const LOCAL_CANDIDATE_CHANGES_KEY = "politik:candidate-overrides:v1";
 export const LOCAL_PARTY_CATALOG_KEY = "politik:party-catalog:v1";
 export const LOCAL_ALLIANCE_CATALOG_KEY = "politik:alliance-catalog:v1";
 export const LOCAL_AFFILIATIONS_KEY = "politik:affiliation-events:v1";
+export const scopedChangesKey = (electionId: string) => `politik:${electionId}:data-overrides:v2`;
+export const scopedCandidateChangesKey = (electionId: string) => `politik:${electionId}:candidate-overrides:v2`;
+export const scopedAffiliationsKey = (termId: string) => `politik:${termId}:affiliation-events:v2`;
 export const INDEPENDENT_ALLIANCE = "LAIN-LAIN / BEBAS";
 export const INDEPENDENT_PARTY = "BEBAS";
 export const BERSAMA_PARTY_NAME = "PARTI BERSAMA MALAYSIA";
 export const BERSAMA_PARTY_SHORT_NAME = "BERSAMA";
 
-export const personIdForSeat = (seatCode: string) => `pru15:${seatCode}:winner`;
+export const personIdForSeat = (seatCode: string, electionId = "legacy") => `person:${electionId}:${seatCode}:winner`;
 
 const today = () => new Date().toISOString().slice(0, 10);
 const baselineTimestamp = (data: ElectionData) => `${data.metadata.electionDate}T00:00:00.000Z`;
@@ -35,7 +38,12 @@ export function currentStatus(seat: Seat) {
   return seat.current?.status ?? "active";
 }
 
-export function applyDataChanges(seats: Seat[], changes: DataChange[], asOf = today()): Seat[] {
+export function applyDataChanges(
+  seats: Seat[],
+  changes: DataChange[],
+  asOf = today(),
+  election: { electionDate: string; shortTitle: string } = { electionDate: "", shortTitle: "pilihan raya" },
+): Seat[] {
   const bySeat = new Map<string, DataChange[]>();
   changes
     .filter((change) => change.effectiveDate <= asOf)
@@ -52,8 +60,8 @@ export function applyDataChanges(seats: Seat[], changes: DataChange[], asOf = to
           status: "active",
           alliance: seat.winner.alliance,
           party: seat.winner.party,
-          effectiveDate: "2022-11-19",
-          reason: "Keputusan asal PRU-15",
+          effectiveDate: election.electionDate,
+          reason: `Keputusan asal ${election.shortTitle}`,
           isChanged: false,
         },
       };
@@ -81,14 +89,18 @@ export function applyAffiliationEvents(
   alliances: AllianceCatalogItem[],
   asOf = today(),
 ): Seat[] {
+  const latestByPerson = new Map<string, AffiliationEvent>();
   const latestBySeat = new Map<string, AffiliationEvent>();
   events
     .filter((event) => event.effectiveDate <= asOf)
     .sort((a, b) => a.effectiveDate.localeCompare(b.effectiveDate) || a.createdAt.localeCompare(b.createdAt))
-    .forEach((event) => latestBySeat.set(event.seatCode, event));
+    .forEach((event) => {
+      latestByPerson.set(event.personId, event);
+      latestBySeat.set(event.seatCode, event);
+    });
 
   return seats.map((seat) => {
-    const event = latestBySeat.get(seat.code);
+    const event = latestByPerson.get(seat.winner.personId) ?? latestBySeat.get(seat.code);
     if (!event) return seat;
     const party = event.status === "independent"
       ? INDEPENDENT_PARTY
@@ -100,8 +112,8 @@ export function applyAffiliationEvents(
       status: "active" as const,
       alliance: seat.winner.alliance,
       party: seat.winner.party,
-      effectiveDate: "2022-11-19",
-      reason: "Keputusan asal PRU-15",
+      effectiveDate: "",
+      reason: "Keputusan asal pilihan raya",
       isChanged: false,
     };
     return {
@@ -199,6 +211,8 @@ export function parseAffiliationFile(value: unknown): AffiliationEvent[] {
     }
     return {
       id: event.id,
+      electionId: event.electionId,
+      termId: event.termId,
       personId: event.personId || personIdForSeat(event.seatCode),
       seatCode: event.seatCode,
       effectiveDate: event.effectiveDate,
@@ -285,6 +299,7 @@ export function parseChangeFile(value: unknown): DataChange[] {
     }
     return {
       id: change.id,
+      electionId: change.electionId,
       seatCode: change.seatCode,
       effectiveDate: change.effectiveDate,
       status: change.status as DataChange["status"],
@@ -318,6 +333,7 @@ export function parseCandidateChangeFile(value: unknown): CandidateChange[] {
     }
     return {
       id: change.id,
+      electionId: change.electionId,
       seatCode: change.seatCode,
       candidateIndex: change.candidateIndex as number,
       effectiveDate: change.effectiveDate,

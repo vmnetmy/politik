@@ -1,0 +1,160 @@
+{
+  "version": 1,
+  "metadata": {
+    "title": "PRU-15 official SPR numerical audit",
+    "checkedAt": "2026-07-22T06:28:09Z",
+    "status": "passed-with-declared-source-precedence",
+    "catalogueUrl": "https://opendata.spr.gov.my/katalog",
+    "sourceUrls": {
+      "catalogue": "https://opendata.spr.gov.my/data/_index.json",
+      "results": "https://opendata.spr.gov.my/data/keputusan-pru.json",
+      "byElections": "https://opendata.spr.gov.my/data/keputusan-prk.json",
+      "candidateProfiles": "https://opendata.spr.gov.my/data/maklumat-calon-pr.json",
+      "electoralRoll": "https://opendata.spr.gov.my/data/daftar-pemilih-induk-2012-2025.json",
+      "pollingAdministration": "https://opendata.spr.gov.my/data/bil-pm-ppc-ppru.json"
+    }
+  },
+  "coverage": {
+    "parliamentSeats": 222,
+    "resultCandidateRows": 945,
+    "candidateProfileRows": 945,
+    "electoralRollParliaments": 222,
+    "electoralRollPdmRows": 7748,
+    "pollingAdministration2022Rows": 21
+  },
+  "crosscheckedFields": [
+    "candidate votes",
+    "winner",
+    "majority",
+    "registered voters at election",
+    "valid votes",
+    "rejected votes",
+    "unreturned ballot papers",
+    "ballot papers issued",
+    "turnout percentage"
+  ],
+  "totals": {
+    "officialOpenData": {
+      "registeredVoters": 21173638,
+      "validVotes": 15613980,
+      "rejectedVotes": 160340,
+      "unreturnedVotes": 42987,
+      "ballotsIssued": 15817307
+    },
+    "publishedWithScoresheetPrecedence": {
+      "registeredVoters": 21173638,
+      "validVotes": 15613836,
+      "rejectedVotes": 160333,
+      "unreturnedVotes": 42987,
+      "ballotsIssued": 15817156
+    },
+    "electoralRoll2022Snapshot": {
+      "registeredVoters": 21290400,
+      "note": "A dated electoral-roll series, not the election-day result denominator."
+    },
+    "candidateProfiles": {
+      "gender": {
+        "LELAKI": 814,
+        "PEREMPUAN": 127,
+        "TIDAK DINYATAKAN": 4
+      }
+    }
+  },
+  "declaredSourceDiscrepancies": [
+    {
+      "parliamentCode": "P.028",
+      "field": "aggregate result",
+      "catalogue": {
+        "validVotes": 81319,
+        "rejectedVotes": 1020,
+        "ballotsIssued": 82576,
+        "candidate": "DATUK CIKGU AWI",
+        "candidateVotes": 23988
+      },
+      "published": {
+        "validVotes": 81175,
+        "rejectedVotes": 1013,
+        "ballotsIssued": 82425,
+        "candidate": "DATUK CIKGU AWI",
+        "candidateVotes": 23844
+      },
+      "resolution": "retained-spr-760",
+      "reason": "The official SPR 760 scoresheet dated 19 November 2022 contains the published row-level values and is the declared higher-resolution source.",
+      "differences": {
+        "validVotes": {
+          "published": 81175,
+          "catalogue": 81319
+        },
+        "rejectedVotes": {
+          "published": 1013,
+          "catalogue": 1020
+        },
+        "ballotsIssued": {
+          "published": 82425,
+          "catalogue": 82576
+        },
+        "majorityVotes": {
+          "published": 29264,
+          "catalogue": 29120
+        },
+        "candidateVotes": {
+          "published": [
+            350,
+            3873,
+            23844,
+            53108
+          ],
+          "catalogue": [
+            350,
+            3873,
+            23988,
+            53108
+          ]
+        }
+      }
+    }
+  ],
+  "declaredPercentageDiscrepancies": [
+    {
+      "parliamentCode": "P.025",
+      "field": "PERATUS UNDI",
+      "cataloguePublished": 0.741,
+      "calculatedFromCatalogueBallots": 0.740297,
+      "resolution": "published-exact-ballot-accounting",
+      "reason": "The displayed percentage is not arithmetically consistent with the catalogue ballot totals and registered-voter denominator."
+    },
+    {
+      "parliamentCode": "P.028",
+      "field": "PERATUS UNDI",
+      "cataloguePublished": 0.727,
+      "calculatedFromCatalogueBallots": 0.730309,
+      "resolution": "published-exact-ballot-accounting",
+      "reason": "The displayed percentage is not arithmetically consistent with the catalogue ballot totals and registered-voter denominator."
+    },
+    {
+      "parliamentCode": "P.114",
+      "field": "PERATUS UNDI",
+      "cataloguePublished": 0.772,
+      "calculatedFromCatalogueBallots": 0.77061,
+      "resolution": "published-exact-ballot-accounting",
+      "reason": "The displayed percentage is not arithmetically consistent with the catalogue ballot totals and registered-voter denominator."
+    },
+    {
+      "parliamentCode": "P.119",
+      "field": "PERATUS UNDI",
+      "cataloguePublished": 0.764,
+      "calculatedFromCatalogueBallots": 0.761019,
+      "resolution": "published-exact-ballot-accounting",
+      "reason": "The displayed percentage is not arithmetically consistent with the catalogue ballot totals and registered-voter denominator."
+    },
+    {
+      "parliamentCode": "P.128",
+      "field": "PERATUS UNDI",
+      "cataloguePublished": 0.794,
+      "calculatedFromCatalogueBallots": 0.793219,
+      "resolution": "published-exact-ballot-accounting",
+      "reason": "The displayed percentage is not arithmetically consistent with the catalogue ballot totals and registered-voter denominator."
+    }
+  ],
+  "errors": []
+}

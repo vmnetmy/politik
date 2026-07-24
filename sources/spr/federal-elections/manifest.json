@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "accessedAt": "2026-07-22",
+  "files": {
+    "maklumat-calon-pr.json": {
+      "sha256": "691b023301ffcb6ca412c68d853d002e500e41f3e59b4e7561ba1ff612329e4e",
+      "bytes": 4266178,
+      "sourceUrl": "https://opendata.spr.gov.my/data/maklumat-calon-pr.json"
+    },
+    "../state-elections/keputusan-pru.json": {
+      "sha256": "886fd3235da1a331a0ce8356a4f592b4cec25b4348f5379420b7e8982c49a91d",
+      "bytes": 3449877,
+      "sourceUrl": "https://opendata.spr.gov.my/data/keputusan-pru.json"
+    }
+  }
+}

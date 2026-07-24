@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "accessedAt": "2026-07-22",
+  "licence": "CC0-1.0",
+  "sourceReference": "https://doi.org/10.1038/s41597-025-06502-7",
+  "files": {
+    "headline-stats-federal.csv": {
+      "sha256": "4888bc65ca2e5e039c6d8dedb3332d543a4ce90a11ba36eb93f82b823e0440df",
+      "bytes": 374842
+    },
+    "headline-ballots-federal.csv": {
+      "sha256": "adb4e5589ee7bdb0beb9807c6452088c66c5218a97c25b0c9709cd9b7cec7665",
+      "bytes": 1151309
+    }
+  }
+}

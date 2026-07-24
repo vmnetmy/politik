@@ -273,9 +273,9 @@ def serialise(value: dict[str, Any]) -> str:
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Extract PRU-15 voter age statistics and constituency references.")
     parser.add_argument("pdf", nargs="?", type=Path, default=Path("STATISTIK PRU KE_15 UMUR BY_DUN.pdf"))
-    parser.add_argument("--election", type=Path, default=Path("public/data/election.json"))
-    parser.add_argument("--constituencies-output", type=Path, default=Path("public/data/constituencies.json"))
-    parser.add_argument("--age-output", type=Path, default=Path("public/data/voter-age.json"))
+    parser.add_argument("--election", type=Path, default=Path("public/data/elections/pru-15/election.json"))
+    parser.add_argument("--constituencies-output", type=Path, default=Path("public/data/elections/pru-15/constituencies.json"))
+    parser.add_argument("--age-output", type=Path, default=Path("public/data/elections/pru-15/voter-age.json"))
     parser.add_argument("--check", action="store_true")
     return parser.parse_args()
 

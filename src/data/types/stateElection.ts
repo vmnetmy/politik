@@ -36,6 +36,7 @@ export type StateElectionEvent = {
   name: string;
   year: number;
   assemblyNumber: number;
+  coverage: "latest" | "historical";
   electionDate: string;
   contestIds: string[];
   seatCounts: Record<string, number>;
@@ -53,12 +54,43 @@ export type StateElectionData = {
     sourceCitations: string[];
     sourceSha256: Record<string, string>;
     eventCount: number;
+    latestEventCount: number;
+    historicalEventCount: number;
     stateCount: number;
     contestCount: number;
+    historicalContestCount: number;
     candidateCount: number;
-    coverage: "latest-complete";
+    coverage: "latest-complete-plus-archive";
     issues: Array<{ contestId: string; field: string; sourceValue: number; computedValue: number; message: string }>;
   };
   events: StateElectionEvent[];
   contests: StateElectionContest[];
+};
+
+export type DunBoundaryFeature = {
+  id: string;
+  code: string;
+  name: string;
+  parliamentCode: string;
+  path: string;
+  centroid: [number, number];
+  bounds: [number, number, number, number];
+  areaKm2: number | null;
+};
+
+export type DunBoundaryData = {
+  version: number;
+  metadata: {
+    title: string;
+    stateId: string;
+    boundaryVersion: string;
+    coordinateReference: string;
+    sourceUrl: string;
+    sourceSha256: string;
+    retrievedAt: string;
+    featureCount: number;
+    viewBox: { width: number; height: number };
+    simplificationTolerancePx: number;
+  };
+  features: DunBoundaryFeature[];
 };

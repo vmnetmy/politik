@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import constituencies from "../public/data/constituencies.json";
-import voterAge from "../public/data/voter-age.json";
+import constituencies from "../public/data/elections/pru-15/constituencies.json";
+import voterAge from "../public/data/elections/pru-15/voter-age.json";
 
 describe("voter-age reference data", () => {
   it("keeps identities reusable and statistics normalized", () => {

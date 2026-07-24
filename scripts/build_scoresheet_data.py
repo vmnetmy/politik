@@ -396,9 +396,9 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Build complete PRU-15 saluran data.")
     parser.add_argument("--scoresheet-root", type=Path, default=Path("sources/pru15/scoresheets"))
     parser.add_argument("--electiondata-root", type=Path, default=Path("sources/electiondata-my/pru15"))
-    parser.add_argument("--election", type=Path, default=Path("public/data/election.json"))
-    parser.add_argument("--output-directory", type=Path, default=Path("public/data/scoresheets"))
-    parser.add_argument("--polling-places-output", type=Path, default=Path("public/data/polling-places.json"))
+    parser.add_argument("--election", type=Path, default=Path("public/data/elections/pru-15/election.json"))
+    parser.add_argument("--output-directory", type=Path, default=Path("public/data/elections/pru-15/scoresheets"))
+    parser.add_argument("--polling-places-output", type=Path, default=Path("public/data/elections/pru-15/polling-places.json"))
     parser.add_argument("--check", action="store_true")
     args = parser.parse_args()
     try:

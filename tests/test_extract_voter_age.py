@@ -12,12 +12,12 @@ class VoterAgeExtractionTests(unittest.TestCase):
     def setUpClass(cls):
         cls.constituencies, cls.voter_age = extract(
             ROOT / "STATISTIK PRU KE_15 UMUR BY_DUN.pdf",
-            ROOT / "public/data/election.json",
+            ROOT / "public/data/elections/pru-15/election.json",
         )
 
     def test_extractor_reproduces_published_artifacts(self):
-        self.assertEqual(serialise(self.constituencies), (ROOT / "public/data/constituencies.json").read_text(encoding="utf-8"))
-        self.assertEqual(serialise(self.voter_age), (ROOT / "public/data/voter-age.json").read_text(encoding="utf-8"))
+        self.assertEqual(serialise(self.constituencies), (ROOT / "public/data/elections/pru-15/constituencies.json").read_text(encoding="utf-8"))
+        self.assertEqual(serialise(self.voter_age), (ROOT / "public/data/elections/pru-15/voter-age.json").read_text(encoding="utf-8"))
 
     def test_reusable_constituency_hierarchy_is_complete(self):
         self.assertEqual(len(self.constituencies["states"]), 16)

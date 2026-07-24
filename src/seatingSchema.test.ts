@@ -1,6 +1,6 @@
 import Ajv from "ajv";
 import { describe, expect, it } from "vitest";
-import seating from "../public/data/seating.json";
+import seating from "../public/data/elections/pru-15/seating.json";
 import schema from "../schemas/seating.schema.json";
 
 describe("seating schema", () => {

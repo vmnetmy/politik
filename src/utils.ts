@@ -41,13 +41,17 @@ export function buildStateSummaries(seats: Seat[]): StateSummary[] {
       });
       const [leader, leaderSeats] = Object.entries(seatCounts).sort((a, b) => b[1] - a[1])[0];
       const registered = stateSeats.reduce((sum, seat) => sum + seat.registered, 0);
+      const validVotes = stateSeats.reduce((sum, seat) => sum + (seat.validVotes ?? seat.candidates.reduce((total, candidate) => total + candidate.votes, 0)), 0);
       const turnout = stateSeats.reduce((sum, seat) => sum + seat.turnout, 0);
+      const turnoutEstimate = stateSeats.reduce((sum, seat) => sum + (seat.registered * seat.turnoutPct), 0);
+      const hasBallotAccounting = stateSeats.every((seat) => seat.validVotes !== undefined);
       return {
         state,
         seats: stateSeats.length,
         registered,
+        validVotes,
         turnout,
-        turnoutPct: registered ? turnout / registered : 0,
+        turnoutPct: registered ? (hasBallotAccounting ? turnout : turnoutEstimate) / registered : 0,
         leader,
         leaderSeats,
         seatCounts,

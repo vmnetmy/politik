@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "algorithm": "sha256",
+  "files": {
+    "semenanjung-2018/negeri-sembilan-dun.json": {
+      "sha256": "9669d7863558af58cbf7858924fe002be41ac72ad5b513090292e77aee9b4b8f",
+      "bytes": 102161,
+      "records": 36
+    },
+    "registry.json": {
+      "sha256": "5409f7ec76af481d683d9e016b7b9f10417162a04afbcebba67fe647eb32778a",
+      "bytes": 40341,
+      "records": 7
+    },
+    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/index.json": {
+      "sha256": "1ffb0da9a66730ba3ad4dc98d72fd3a84c7daa55ffe3093240df3e01e930551b",
+      "bytes": 211561,
+      "records": 222
+    },
+    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/perlis.json": {
+      "sha256": "85c025733bf6d9e7a59fcc88566c9c4b8d18bc2f52f02584874bfa13bfd4ad25",
+      "bytes": 33910,
+      "records": 18
+    },
+    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/kedah.json": {
+      "sha256": "4bfaad6a2e61dc5a434f1d2afc0f82ca2f2a7e442d363074858f0daf415862ed",
+      "bytes": 241111,
+      "records": 51
+    },
+    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/kelantan.json": {
+      "sha256": "1eb66de1b579ed90eaee23dce6a58c9a3742c88ea04f55cf9a6e5afb42d36a79",
+      "bytes": 199901,
+      "records": 59
+    },
+    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/terengganu.json": {
+      "sha256": "6f6d3cd61b25d6c2f0b4e807a731acca83beb4988c887b780f2607fb86d77dae",
+      "bytes": 176414,
+      "records": 40
+    },
+    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/pulau-pinang.json": {
+      "sha256": "21417fa78fcbfa75e1c0d76886a6b930090629f07bfd72193b9937be8ec893ef",
+      "bytes": 82378,
+      "records": 53
+    },
+    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/perak.json": {
+      "sha256": "1543b0f04f6be8351c799779ccaf597c118c184e7992b51437a1b83c112ed0ad",
+      "bytes": 313955,
+      "records": 83
+    },
+    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/pahang.json": {
+      "sha256": "04a8d58af77cdab1c92a11e94a946b6a224ba7de4353eadb773835461302fabc",
+      "bytes": 361919,
+      "records": 56
+    },
+    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/selangor.json": {
+      "sha256": "b60afd322eb2ef8228785cf7027fe5c36d622ff981b32ee0b771fc448bcf8aa6",
+      "bytes": 197046,
+      "records": 78
+    },
+    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/wp-kuala-lumpur.json": {
+      "sha256": "bec56b1cac013506cc4394638e3cc68a86f1fed07f7053b679248e82d924414d",
+      "bytes": 15538,
+      "records": 11
+    },
+    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/wp-putrajaya.json": {
+      "sha256": "7394d8cd49e2dcb7dce73d8ae15ce32dcf736880d30a9a80fd2719ee118ab642",
+      "bytes": 2312,
+      "records": 1
+    },
+    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/negeri-sembilan.json": {
+      "sha256": "3c601a2c0c4c4155302f310dd94df118bdd925560aa2e4ef32cf26f47ce711bc",
+      "bytes": 122893,
+      "records": 44
+    },
+    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/melaka.json": {
+      "sha256": "cd799039a8f3cceeab1181c2c289d7e8aee39bc65f676c286ac17fc243fc29a1",
+      "bytes": 77040,
+      "records": 34
+    },
+    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/johor.json": {
+      "sha256": "0759ac4bf7805c7b0a7cdbe05f728080b8c7df561d498f2eb1a065119a051edf",
+      "bytes": 239198,
+      "records": 82
+    },
+    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/wp-labuan.json": {
+      "sha256": "1702f1d4ea757cad0df9f9fb8bbd4cbaa7aa5d0f83996d841f9ac04456661b65",
+      "bytes": 4289,
+      "records": 1
+    },
+    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/sabah.json": {
+      "sha256": "7756e275249c2c5c311148f08e44c74c9b62801d9a7060b0f585674fe31733d9",
+      "bytes": 791657,
+      "records": 98
+    },
+    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/sarawak.json": {
+      "sha256": "d1f5f093e184746aecce9dd1aa7fd67d423eaa861acd2b3f882724c39d923611",
+      "bytes": 970466,
+      "records": 113
+    }
+  }
+}

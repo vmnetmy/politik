@@ -513,7 +513,8 @@ def apply_authoritative_results(election: dict[str, Any], extracted: dict[str, d
         seat = seats[code]
         result = item["result"]
         source_votes = result["totals"]["candidateVotes"]
-        turnout = result["totals"]["validVotes"]
+        valid_votes = result["totals"]["validVotes"]
+        turnout = result["totals"]["ballotsInBox"]
         previous_winner = seat["winner"]
         candidates = []
         for candidate in seat["candidates"]:
@@ -522,13 +523,16 @@ def apply_authoritative_results(election: dict[str, Any], extracted: dict[str, d
                 {
                     **candidate,
                     "votes": votes,
-                    "share": round(votes / turnout, 6) if turnout else 0,
+                    "share": round(votes / valid_votes, 6) if valid_votes else 0,
                 }
             )
         candidates.sort(key=lambda candidate: candidate["votes"], reverse=True)
         winner_candidate = candidates[0]
         runner_up = candidates[1] if len(candidates) > 1 else None
         seat["turnout"] = turnout
+        seat["validVotes"] = valid_votes
+        seat["rejectedVotes"] = result["totals"]["rejectedVotes"]
+        seat["unreturnedVotes"] = result["totals"]["unreturnedVotes"]
         seat["turnoutPct"] = round(turnout / seat["registered"], 6) if seat["registered"] else 0
         seat["candidates"] = candidates
         seat["winner"] = {
@@ -658,9 +662,9 @@ def write_or_check(path: Path, content: str, check: bool) -> None:
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Extract PRU-15 polling-stream scoresheets.")
     parser.add_argument("--source-root", type=Path, default=Path("sources/pru15/scoresheets"))
-    parser.add_argument("--election", type=Path, default=Path("public/data/election.json"))
-    parser.add_argument("--output-directory", type=Path, default=Path("public/data/scoresheets"))
-    parser.add_argument("--polling-places-output", type=Path, default=Path("public/data/polling-places.json"))
+    parser.add_argument("--election", type=Path, default=Path("public/data/elections/pru-15/election.json"))
+    parser.add_argument("--output-directory", type=Path, default=Path("public/data/elections/pru-15/scoresheets"))
+    parser.add_argument("--polling-places-output", type=Path, default=Path("public/data/elections/pru-15/polling-places.json"))
     parser.add_argument("--check", action="store_true")
     return parser.parse_args()
 

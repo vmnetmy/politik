@@ -13,8 +13,8 @@ class GeographyExtractionTests(unittest.TestCase):
     def setUp(self):
         self.value = build(
             ROOT / "sources/spr/geography",
-            ROOT / "public/data/constituencies.json",
-            ROOT / "public/data/polling-places.json",
+            ROOT / "public/data/elections/pru-15/constituencies.json",
+            ROOT / "public/data/elections/pru-15/polling-places.json",
         )
 
     def test_builds_complete_official_hierarchy(self):
@@ -32,7 +32,7 @@ class GeographyExtractionTests(unittest.TestCase):
         self.assertEqual(len(by_id["P.028:028/30/09"]["localityIds"]), 6)
 
     def test_published_file_is_reproducible(self):
-        published = (ROOT / "public/data/geography.json").read_text(encoding="utf-8")
+        published = (ROOT / "public/data/elections/pru-15/geography.json").read_text(encoding="utf-8")
         self.assertEqual(compact(self.value), published)
 
 

@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import Chart from "chart.js/auto";
 import type { ElectionData, ScoresheetResult, ScoresheetSection } from "../../types";
 import { allianceColor } from "../../utils";
+import { chartAnimation, getChartTheme } from "../charts/chartTheme";
 
 const SECTION_LABELS: Record<ScoresheetSection, string> = { postal: "Pos", early: "Awal", ordinary: "Biasa" };
 
@@ -9,6 +10,7 @@ export function ScoresheetChart({ result, data }: { result: ScoresheetResult; da
   const canvasRef = useRef<HTMLCanvasElement>(null);
   useEffect(() => {
     if (!canvasRef.current) return;
+    const theme = getChartTheme();
     const sections: ScoresheetSection[] = ["postal", "early", "ordinary"];
     const candidates = new Map(data.seats.find((seat) => seat.code === result.parliamentCode)?.candidates.map((candidate) => [candidate.id, candidate]) ?? []);
     const chart = new Chart(canvasRef.current, {
@@ -28,11 +30,19 @@ export function ScoresheetChart({ result, data }: { result: ScoresheetResult; da
       options: {
         responsive: true,
         maintainAspectRatio: false,
+        animation: chartAnimation(520),
         interaction: { mode: "index", intersect: false },
-        plugins: { legend: { position: "bottom", labels: { boxWidth: 12, boxHeight: 12, font: { size: 13 } } } },
+        plugins: {
+          legend: { position: "bottom", labels: { boxWidth: 12, boxHeight: 12, color: theme.muted, font: { family: theme.fontFamily, size: 13, weight: 600 } } },
+          tooltip: {
+            backgroundColor: theme.tooltip,
+            titleFont: { family: theme.fontFamily, size: 13, weight: 700 },
+            bodyFont: { family: theme.fontFamily, size: 13, weight: 500 },
+          },
+        },
         scales: {
-          x: { stacked: false, grid: { display: false }, ticks: { font: { size: 13 } } },
-          y: { beginAtZero: true, ticks: { font: { size: 13 } }, grid: { color: "rgba(20,55,44,.08)" } },
+          x: { stacked: false, grid: { display: false }, ticks: { color: theme.muted, font: { family: theme.fontFamily, size: 13, weight: 600 } } },
+          y: { beginAtZero: true, ticks: { color: theme.muted, font: { family: theme.fontFamily, size: 13, weight: 500 } }, grid: { color: theme.grid } },
         },
       },
     });

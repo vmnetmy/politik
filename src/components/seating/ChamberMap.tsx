@@ -60,6 +60,6 @@ export function ChamberMap({ data, seating, view, selectedCode, hoveredSeat, hov
       <AnimatePresence initial={false}>{hoveredSeat && hoveredPosition && <motion.div className="seating-hover-label" key={hoveredSeat.code} initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 4 }} style={{ left: `${(hoveredPosition.x / seating.viewBox.width) * 100}%`, top: `${(hoveredPosition.y / seating.viewBox.height) * 100}%` }}><strong>{hoveredPosition.physicalCode} · {hoveredSeat.code} {hoveredSeat.name}</strong><span>{hoveredSeat.winner.name}</span></motion.div>}</AnimatePresence>
       </div>
     </div>
-    <div className="seating-legend"><span className="seating-legend-label">{view === "current" ? "GABUNGAN SEMASA" : "GABUNGAN PRU-15"}</span>{alliances.map((alliance) => <span key={alliance}><i style={{ background: allianceColor(alliance, data.alliances) }}/><AllianceLogo name={alliance} data={data}/></span>)}<span className="seating-empty-legend"><i/>KOD TANPA WAKIL</span></div>
+    <div className="seating-legend"><span className="seating-legend-label">{view === "current" ? "GABUNGAN SEMASA" : `GABUNGAN ${data.metadata.shortTitle}`}</span>{alliances.map((alliance) => <span key={alliance}><i style={{ background: allianceColor(alliance, data.alliances) }}/><AllianceLogo name={alliance} data={data}/></span>)}<span className="seating-empty-legend"><i/>KOD TANPA WAKIL</span></div>
   </div>;
 }

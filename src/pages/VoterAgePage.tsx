@@ -2,10 +2,13 @@ import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { AgeDistributionChart } from "../components/charts/AgeDistributionChart";
 import { Icon } from "../components/ui/Icon";
+import { AsyncState } from "../components/ui/AsyncState";
 import { PageTitle } from "../components/ui/PageTitle";
 import { SearchCombobox } from "../components/ui/SearchCombobox";
+import { TableShell } from "../components/ui/TableShell";
+import { VoterDimensionNav } from "../components/voters/VoterDimensionNav";
 import type { AgeBand, AgeRecord, ConstituencyRegistry, DunReference, ParliamentReference, VoterAgeData } from "../data/types/voterAge";
-import { ELECTION_BASE } from "../routes";
+import { useElection } from "../ElectionContext";
 import { formatCompact, formatNumber, formatPct } from "../utils";
 
 const ALL_STATES = "SELURUH MALAYSIA";
@@ -28,10 +31,11 @@ function sumBands(record: AgeRecord, bands: AgeBand[]) {
 }
 
 function AgePageLoading() {
-  return <section className="panel age-loading"><span className="pulse-dot"/><p>Memuatkan statistik umur pemilih…</p></section>;
+  return <AsyncState kind="loading" title="Memuatkan statistik umur pemilih" description="Menyusun taburan umur mengikut kawasan…" className="age-loading"/>;
 }
 
 export function VoterAgePage() {
+  const { edition, paths } = useElection();
   const [loaded, setLoaded] = useState<LoadedData | null>(null);
   const [error, setError] = useState("");
   const [stateValue, setStateValue] = useState(ALL_STATES);
@@ -40,10 +44,10 @@ export function VoterAgePage() {
 
   useEffect(() => {
     Promise.all([
-      fetch("/data/constituencies.json").then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); }),
-      fetch("/data/voter-age.json").then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); }),
+      fetch(`${edition.dataPath}/constituencies.json`).then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); }),
+      fetch(`${edition.dataPath}/voter-age.json`).then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); }),
     ]).then(([registry, age]) => setLoaded({ registry, age })).catch((reason) => setError(reason instanceof Error ? reason.message : "Ralat tidak diketahui"));
-  }, []);
+  }, [edition.dataPath]);
 
   const model = useMemo(() => {
     if (!loaded) return null;
@@ -97,7 +101,7 @@ export function VoterAgePage() {
     return { selectedState, selectedParliament, selectedDun, stateParliaments, availableDuns, record, label, context, comparisonTitle, comparisons };
   }, [dunValue, loaded, parliamentValue, stateValue]);
 
-  if (error) return <section className="panel age-loading age-error"><Icon name="info"/><div><h2>Data umur tidak dapat dimuatkan</h2><p>{error}</p></div></section>;
+  if (error) return <AsyncState kind="error" title="Data umur tidak dapat dimuatkan" description={error} className="age-loading age-error"/>;
   if (!loaded || !model) return <AgePageLoading/>;
 
   const { registry, age } = loaded;
@@ -109,14 +113,16 @@ export function VoterAgePage() {
   const dunOptions = [ALL_DUNS, ...model.availableDuns.map(displayDun)];
 
   return <>
-    <PageTitle title="Umur pengundi PRU-15"/>
+    <PageTitle title={`Umur pengundi ${edition.shortTitle}`}/>
     <section className="route-hero age-route-hero">
-      <div className="breadcrumbs"><Link to={ELECTION_BASE}>PRU-15</Link><span>/</span><strong>Pengundi</strong><span>/</span><strong>Umur</strong></div>
+      <div className="breadcrumbs"><Link to={paths.election}>{edition.shortTitle}</Link><span>/</span><strong>Pengundi</strong><span>/</span><strong>Umur</strong></div>
       <span className="overline">DAFTAR PEMILIH · OGOS 2022</span>
-      <h1>Siapa pengundi<br/><em>PRU-15?</em></h1>
+      <h1>Siapa pengundi<br/><em>{edition.shortTitle}?</em></h1>
       <p>Taburan umur pemilih berdaftar mengikut negeri, Parlimen dan DUN, dikemaskini SPR sehingga 9 Oktober 2022.</p>
       <div className="route-stat-row"><div><span>PEMILIH BERDAFTAR</span><strong>{formatCompact(age.national.total)}</strong></div><div><span>PARLIMEN</span><strong>{registry.parliaments.length}</strong></div><div><span>DUN</span><strong>{registry.duns.length}</strong></div><div><span>KUMPULAN UMUR</span><strong>{age.metadata.ageBands.length}</strong></div></div>
     </section>
+
+    <VoterDimensionNav/>
 
     <section className="panel age-filter-panel" aria-label="Pilih kawasan statistik umur">
       <div><span className="eyebrow">PILIH KAWASAN</span><h2>Daripada Malaysia hingga DUN</h2><p>Nama dan kod kawasan datang terus daripada daftar rujukan yang sama.</p></div>
@@ -139,7 +145,7 @@ export function VoterAgePage() {
       <article className="panel age-profile-panel"><span className="eyebrow">PROFIL TERPERINCI</span><h2>Bahagian setiap umur</h2><div className="age-profile-list">{age.metadata.ageBands.map((band) => <div key={band}><div><span>{band === "90+" ? "90 tahun ke atas" : `${band} tahun`}</span><strong>{formatPct(record.counts[band] / record.total)}</strong></div><div className="age-profile-track"><i style={{ width: `${(record.counts[band] / Math.max(...Object.values(record.counts))) * 100}%` }}/></div><small>{formatNumber(record.counts[band])}</small></div>)}</div></article>
     </section>
 
-    <section className="panel age-comparison-panel"><div className="section-heading"><div><span className="eyebrow">PERBANDINGAN KAWASAN</span><h2>{model.comparisonTitle}</h2></div><span className="route-count">{model.comparisons.length} rekod</span></div>{model.comparisons.length ? <div className="age-comparison-table-wrap"><table className="age-comparison-table"><thead><tr><th>KAWASAN</th><th>PEMILIH</th><th>BAWAH 30</th><th>30-59</th><th>60+</th><th>KUMPULAN TERBESAR</th></tr></thead><tbody>{model.comparisons.map((item) => { const younger = sumBands(item.record, ["18-20", "21-29"]); const middle = sumBands(item.record, ["30-39", "40-49", "50-59"]); const older = sumBands(item.record, ["60-69", "70-79", "80-89", "90+"]); const largest = age.metadata.ageBands.reduce((current, band) => item.record.counts[band] > item.record.counts[current] ? band : current, age.metadata.ageBands[0]); return <tr key={item.id}><td><span>{item.code}</span><strong>{item.name}</strong></td><td><strong>{formatNumber(item.record.total)}</strong></td><td>{formatPct(younger / item.record.total)}</td><td>{formatPct(middle / item.record.total)}</td><td>{formatPct(older / item.record.total)}</td><td><span className="age-band-badge">{largest}</span></td></tr>; })}</tbody></table></div> : <div className="age-no-dun"><Icon name="info"/><div><strong>Tiada kawasan DUN</strong><p>Wilayah Persekutuan ini direkodkan pada peringkat Parlimen melalui baris N.00 dalam sumber SPR. Tiada nama DUN direka untuk paparan ini.</p></div></div>}</section>
+    <section className="panel age-comparison-panel"><div className="section-heading"><div><span className="eyebrow">PERBANDINGAN KAWASAN</span><h2>{model.comparisonTitle}</h2></div><span className="route-count">{model.comparisons.length} rekod</span></div>{model.comparisons.length ? <TableShell label="Perbandingan umur pengundi mengikut kawasan" className="age-comparison-table-wrap"><table className="age-comparison-table"><thead><tr><th>KAWASAN</th><th>PEMILIH</th><th>BAWAH 30</th><th>30-59</th><th>60+</th><th>KUMPULAN TERBESAR</th></tr></thead><tbody>{model.comparisons.map((item) => { const younger = sumBands(item.record, ["18-20", "21-29"]); const middle = sumBands(item.record, ["30-39", "40-49", "50-59"]); const older = sumBands(item.record, ["60-69", "70-79", "80-89", "90+"]); const largest = age.metadata.ageBands.reduce((current, band) => item.record.counts[band] > item.record.counts[current] ? band : current, age.metadata.ageBands[0]); return <tr key={item.id}><td><span>{item.code}</span><strong>{item.name}</strong></td><td><strong>{formatNumber(item.record.total)}</strong></td><td>{formatPct(younger / item.record.total)}</td><td>{formatPct(middle / item.record.total)}</td><td>{formatPct(older / item.record.total)}</td><td><span className="age-band-badge">{largest}</span></td></tr>; })}</tbody></table></TableShell> : <div className="age-no-dun"><Icon name="info"/><div><strong>Tiada kawasan DUN</strong><p>Wilayah Persekutuan ini direkodkan pada peringkat Parlimen melalui baris N.00 dalam sumber SPR. Tiada nama DUN direka untuk paparan ini.</p></div></div>}</section>
 
     <section className="seating-source-note age-source-note"><Icon name="database" size={17}/><div><strong>Sumber: {age.metadata.sourceFile}</strong><span>Daftar pemilih sehingga Ogos 2022 · Statistik dikemaskini 9 Oktober 2022 · SHA-256 {age.metadata.sourceSha256.slice(0, 12)}…</span></div></section>
   </>;

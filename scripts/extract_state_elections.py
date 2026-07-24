@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the latest 13 state-election events and all 600 DUN results from SPR Open Data."""
+"""Build current and archived state-election events from official SPR sources."""
 
 from __future__ import annotations
 
@@ -13,6 +13,8 @@ from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
 
+import pdfplumber
+
 
 class StateElectionExtractionError(ValueError):
     pass
@@ -20,7 +22,9 @@ class StateElectionExtractionError(ValueError):
 
 PARLIAMENT_CODE = re.compile(r"P\.\d{3}")
 DUN_CODE = re.compile(r"N\.(\d{1,3})")
-WINNER_STATUSES = {"MNG", "MENANG"}
+ELECTORAL_ROLL_PARLIAMENT = re.compile(r"^P\.(\d{3})\s+(.+?)$")
+ELECTORAL_ROLL_DUN = re.compile(r"^N\.(\d{1,3})\s+(.+?)\s+([\d,]+)\s+RM")
+WINNER_STATUSES = {"MNG", "MENANG", "MTB"}
 
 
 def sha256(path: Path) -> str:
@@ -77,6 +81,32 @@ def dun_code(value: str) -> str:
 
 def area_name(value: str, pattern: re.Pattern[str]) -> str:
     return " ".join(pattern.sub("", value, count=1).split()).upper()
+
+
+def extract_pru14_electors(pdf_path: Path) -> dict[tuple[str, str], dict[str, Any]]:
+    electors: dict[tuple[str, str], dict[str, Any]] = {}
+    current_parliament: str | None = None
+    with pdfplumber.open(pdf_path) as pdf:
+        for page in pdf.pages:
+            for raw_line in (page.extract_text(x_tolerance=2, y_tolerance=2) or "").splitlines():
+                line = " ".join(raw_line.split())
+                parliament_match = ELECTORAL_ROLL_PARLIAMENT.match(line)
+                if parliament_match:
+                    current_parliament = f"P.{parliament_match.group(1)}"
+                    continue
+                dun_match = ELECTORAL_ROLL_DUN.match(line)
+                if not dun_match or not current_parliament or integer(dun_match.group(1)) == 0:
+                    continue
+                key = (current_parliament, f"N.{integer(dun_match.group(1)):02d}")
+                if key in electors:
+                    raise StateElectionExtractionError(f"Duplicate PRU-14 electoral-roll identity {key}.")
+                electors[key] = {
+                    "name": " ".join(dun_match.group(2).split()).upper(),
+                    "registeredVoters": integer(dun_match.group(3)),
+                }
+    if len(electors) != 587:
+        raise StateElectionExtractionError(f"Expected 587 DUN identities in the PRU-14 electoral roll, found {len(electors)}.")
+    return electors
 
 
 def dataset_rows(dataset: str, sources: dict[str, list[dict[str, Any]]], event: dict[str, Any]) -> list[dict[str, Any]]:
@@ -153,6 +183,10 @@ def build(source_directory: Path, constituencies_path: Path) -> dict[str, Any]:
         if sha256(archived_path) != item["sha256"]:
             raise StateElectionExtractionError(f"Archived source hash changed for {item['id']}.")
     sources = {key: json.loads(path.read_text(encoding="utf-8")) for key, path in source_paths.items()}
+    pru14_reference = next((item for item in source_metadata["references"] if item["id"] == "pru14-electoral-roll"), None)
+    if not pru14_reference:
+        raise StateElectionExtractionError("PRU-14 electoral-roll reference is not configured.")
+    pru14_electors = extract_pru14_electors(source_directory / pru14_reference["archivedFile"])
     constituencies = json.loads(constituencies_path.read_text(encoding="utf-8"))
     states = {item["id"]: item for item in constituencies["states"]}
     parliaments = {item["code"]: item for item in constituencies["parliaments"]}
@@ -162,7 +196,21 @@ def build(source_directory: Path, constituencies_path: Path) -> dict[str, Any]:
     contests: list[dict[str, Any]] = []
     data_issues: list[dict[str, Any]] = []
     covered_duns: set[str] = set()
+    historical_contest_count = 0
+    prn14_covered_duns: set[str] = set()
+    prn14_state_ids = {
+        item["stateId"]
+        for item in event_config
+        if item["assemblyNumber"] == 14
+    }
+    expected_prn14_duns = {
+        item["id"]
+        for item in constituencies["duns"]
+        if item["stateId"] in prn14_state_ids
+    }
     for configured_event in event_config:
+        is_latest = configured_event.get("coverage", "latest") == "latest"
+        is_prn14 = configured_event["assemblyNumber"] == 14
         state = states.get(configured_event["stateId"])
         if not state or normalise(state["name"]) != normalise(configured_event["stateName"]):
             raise StateElectionExtractionError(f"Unknown state identity for {configured_event['id']}.")
@@ -195,9 +243,14 @@ def build(source_directory: Path, constituencies_path: Path) -> dict[str, Any]:
             source_dun_name = area_name(candidate_rows[0]["DEWAN UNDANGAN NEGERI"], DUN_CODE)
             if normalise(source_dun_name) != normalise(dun["name"]):
                 raise StateElectionExtractionError(f"DUN name mismatch for {dun['id']}.")
-            if dun["id"] in covered_duns:
+            if is_latest and dun["id"] in covered_duns:
                 raise StateElectionExtractionError(f"DUN appears in more than one latest event: {dun['id']}.")
-            covered_duns.add(dun["id"])
+            if is_latest:
+                covered_duns.add(dun["id"])
+            else:
+                historical_contest_count += 1
+            if is_prn14:
+                prn14_covered_duns.add(dun["id"])
             contest_id = f"{configured_event['id']}:{dun['id']}"
             candidates = []
             for index, row in enumerate(candidate_rows, start=1):
@@ -236,6 +289,16 @@ def build(source_directory: Path, constituencies_path: Path) -> dict[str, Any]:
                 )
             has_polling_totals = not candidate_rows[0]["_dataset"].startswith("mysemak-")
             registered = source_value(candidate_rows, "JumlahPemilih", integer) if has_polling_totals else None
+            if is_prn14:
+                electoral_roll = pru14_electors.get((parliament_code, state_dun_code))
+                if not electoral_roll:
+                    raise StateElectionExtractionError(f"Missing PRU-14 electoral-roll total for {parliament_code} {state_dun_code}.")
+                if normalise(electoral_roll["name"]) != normalise(dun["name"]):
+                    raise StateElectionExtractionError(
+                        f"PRU-14 electoral-roll DUN name mismatch for {dun['id']}: "
+                        f"{electoral_roll['name']!r} != {dun['name']!r}."
+                    )
+                registered = electoral_roll["registeredVoters"]
             rejected = source_value(candidate_rows, "UNDI DITOLAK", integer) if has_polling_totals else None
             unreturned = source_value(candidate_rows, "UNDI TAK KEMBALI", integer) if has_polling_totals else None
             official_turnout_pct = source_value(candidate_rows, "PERATUS UNDI", percentage) if has_polling_totals else 0
@@ -262,6 +325,19 @@ def build(source_directory: Path, constituencies_path: Path) -> dict[str, Any]:
                     "candidates": candidates,
                 }
             )
+        expected_event_duns = {
+            item["id"]
+            for item in constituencies["duns"]
+            if item["stateId"] == state["id"]
+        }
+        event_duns = {item["dunId"] for item in event_contests}
+        if event_duns != expected_event_duns:
+            missing = sorted(expected_event_duns - event_duns)
+            extra = sorted(event_duns - expected_event_duns)
+            raise StateElectionExtractionError(
+                f"{configured_event['id']} does not cover its complete DUN registry; "
+                f"missing={missing}, extra={extra}."
+            )
         seat_counts = Counter(
             next(candidate for candidate in item["candidates"] if candidate["id"] == item["winnerCandidateId"])["shortName"]
             for item in event_contests
@@ -277,6 +353,7 @@ def build(source_directory: Path, constituencies_path: Path) -> dict[str, Any]:
                 "name": f"PRN {state['name'].title()} ke-{configured_event['assemblyNumber']}",
                 "year": configured_event["year"],
                 "assemblyNumber": configured_event["assemblyNumber"],
+                "coverage": "latest" if is_latest else "historical",
                 "electionDate": configured_event["electionDate"],
                 "contestIds": [item["id"] for item in event_contests],
                 "seatCounts": dict(seat_counts.most_common()),
@@ -292,21 +369,36 @@ def build(source_directory: Path, constituencies_path: Path) -> dict[str, Any]:
         missing = sorted(expected_duns - covered_duns)
         extra = sorted(covered_duns - expected_duns)
         raise StateElectionExtractionError(f"Latest state elections do not cover all 600 DUNs; missing={missing}, extra={extra}.")
-    if len(events) != 13 or len(contests) != 600:
-        raise StateElectionExtractionError(f"Expected 13 events and 600 contests, got {len(events)} and {len(contests)}.")
+    if prn14_covered_duns != expected_prn14_duns:
+        missing = sorted(expected_prn14_duns - prn14_covered_duns)
+        extra = sorted(prn14_covered_duns - expected_prn14_duns)
+        raise StateElectionExtractionError(
+            f"PRN-14 archive does not match its configured state coverage; "
+            f"missing={missing}, extra={extra}."
+        )
+    if len(events) != len(event_config):
+        raise StateElectionExtractionError(
+            f"Expected one generated event for each registry entry; "
+            f"configured={len(event_config)}, generated={len(events)}."
+        )
+    latest_event_count = sum(item["coverage"] == "latest" for item in events)
+    historical_event_count = sum(item["coverage"] == "historical" for item in events)
     return {
         "version": 1,
         "metadata": {
-            "title": "Keputusan pilihan raya negeri terkini",
+            "title": "Keputusan pilihan raya negeri semasa dan arkib mengikut nombor Dewan",
             "retrievedAt": source_metadata["retrievedAt"],
             "sourceUrls": [item["url"] for item in tracked_sources if item.get("url") and item["id"] != "list-dppr"],
             "sourceCitations": list(dict.fromkeys(item["citation"] for item in tracked_sources if item.get("citation"))),
             "sourceSha256": {item["id"]: item["sha256"] for item in tracked_sources},
             "eventCount": len(events),
+            "latestEventCount": latest_event_count,
+            "historicalEventCount": historical_event_count,
             "stateCount": len({item["stateId"] for item in events}),
             "contestCount": len(contests),
+            "historicalContestCount": historical_contest_count,
             "candidateCount": sum(len(item["candidates"]) for item in contests),
-            "coverage": "latest-complete",
+            "coverage": "latest-complete-plus-archive",
             "issues": data_issues,
         },
         "events": sorted(events, key=lambda item: (item["electionDate"], item["stateId"]), reverse=True),
@@ -317,7 +409,7 @@ def build(source_directory: Path, constituencies_path: Path) -> dict[str, Any]:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Build the latest official SPR state-election results.")
     parser.add_argument("--source-directory", type=Path, default=Path("sources/spr/state-elections"))
-    parser.add_argument("--constituencies", type=Path, default=Path("public/data/constituencies.json"))
+    parser.add_argument("--constituencies", type=Path, default=Path("public/data/elections/pru-15/constituencies.json"))
     parser.add_argument("--output", type=Path, default=Path("public/data/state-elections.json"))
     parser.add_argument("--check", action="store_true")
     args = parser.parse_args()

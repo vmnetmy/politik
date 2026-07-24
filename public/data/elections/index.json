@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "defaultElectionId": "pru-15",
+  "elections": [
+    {
+      "id": "pru-15",
+      "number": 15,
+      "shortTitle": "PRU-15",
+      "electionDate": "2022-11-19",
+      "termId": "dr-15",
+      "boundaryVersion": "my-sarawak-2015-peninsula-2018-sabah-2019",
+      "isCurrentTerm": true,
+      "path": "elections/pru-15",
+      "capabilities": {
+        "seating": true,
+        "scoresheets": true,
+        "voterRoll": true,
+        "voterAge": true,
+        "voterEthnicity": true,
+        "geography": true
+      }
+    },
+    {
+      "id": "pru-14",
+      "number": 14,
+      "shortTitle": "PRU-14",
+      "electionDate": "2018-05-09",
+      "termId": "dr-14",
+      "boundaryVersion": "my-sarawak-2015-peninsula-2018-sabah-2019",
+      "isCurrentTerm": false,
+      "path": "elections/pru-14",
+      "capabilities": {
+        "seating": false,
+        "scoresheets": false,
+        "voterRoll": true,
+        "voterAge": false,
+        "voterEthnicity": false,
+        "geography": false
+      }
+    }
+  ]
+}

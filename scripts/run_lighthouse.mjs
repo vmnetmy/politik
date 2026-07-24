@@ -3,9 +3,9 @@ import { readFile } from "node:fs/promises";
 import { chromium } from "@playwright/test";
 
 const target = process.env.LIGHTHOUSE_URL ?? "http://127.0.0.1:4173/pru/15/negeri/parlimen";
-const output = "lighthouse-report.json";
+const output = process.env.LIGHTHOUSE_OUTPUT ?? "lighthouse-report.json";
 const command = process.platform === "win32" ? "node_modules/.bin/lighthouse.cmd" : "node_modules/.bin/lighthouse";
-const child = spawn(command, [target, "--quiet", "--output=json", `--output-path=${output}`, "--chrome-flags=--headless=new --no-sandbox"], {
+const child = spawn(command, [target, "--quiet", "--output=json", `--output-path=${output}`, "--chrome-flags=--headless=new --no-sandbox", "--throttling-method=devtools"], {
   stdio: "inherit",
   env: { ...process.env, CHROME_PATH: chromium.executablePath() },
 });
@@ -20,9 +20,9 @@ for (const [category, minimum] of Object.entries(thresholds)) {
   if (score < minimum) failures.push(`${category}: ${score} < ${minimum}`);
 }
 const metrics = {
-  "largest-contentful-paint": 3000,
+  "largest-contentful-paint": target.includes("/peta") ? 2500 : 3000,
   "cumulative-layout-shift": 0.1,
-  "total-blocking-time": 300,
+  "total-blocking-time": target.includes("/peta") ? 200 : 300,
 };
 for (const [audit, maximum] of Object.entries(metrics)) {
   const value = report.audits?.[audit]?.numericValue ?? Number.POSITIVE_INFINITY;

@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { currentAlliance, currentParty } from "../../dataChanges";
+import { useElection } from "../../ElectionContext";
 import type { ElectionData, Seat } from "../../types";
 import type { SeatingData, SeatingPosition, SeatingView } from "../types/seating";
 import { normalise } from "../../utils";
@@ -13,7 +14,8 @@ export function useParliament({ data, seating, search, stateFilter, allianceFilt
   stateFilter: string;
   allianceFilter: string;
 }) {
-  const [view, setView] = useState<SeatingView>("current");
+  const { edition } = useElection();
+  const [view, setView] = useState<SeatingView>(edition.isCurrentTerm ? "current" : "election");
   const [selectedCode, setSelectedCode] = useState(seating.positions[0]?.seatCode ?? "");
   const [hoveredCode, setHoveredCode] = useState<string | null>(null);
   const seatByCode = useMemo(() => new Map(data.seats.map((seat) => [seat.code, seat])), [data]);

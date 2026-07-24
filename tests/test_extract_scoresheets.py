@@ -20,7 +20,7 @@ class ScoresheetExtractionTests(unittest.TestCase):
         ) = build_all(
             ROOT / "sources/pru15/scoresheets",
             ROOT / "sources/electiondata-my/pru15",
-            ROOT / "public/data/election.json",
+            ROOT / "public/data/elections/pru-15/election.json",
         )
 
     def test_archive_coverage_and_totals(self):
@@ -61,7 +61,10 @@ class ScoresheetExtractionTests(unittest.TestCase):
         )
         for code, result in self.results.items():
             seat = seats[code]
-            self.assertEqual(seat["turnout"], result["totals"]["validVotes"])
+            self.assertEqual(seat["turnout"], result["totals"]["ballotsInBox"])
+            self.assertEqual(seat["validVotes"], result["totals"]["validVotes"])
+            self.assertEqual(seat["rejectedVotes"], result["totals"]["rejectedVotes"])
+            self.assertEqual(seat["unreturnedVotes"], result["totals"]["unreturnedVotes"])
             self.assertEqual(
                 {candidate["id"]: candidate["votes"] for candidate in seat["candidates"]},
                 result["totals"]["candidateVotes"],

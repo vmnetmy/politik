@@ -58,14 +58,35 @@ jobs:
       - name: Validate voter-age extraction
         run: npm run data:voter-age:check
 
+      - name: Validate cross-election voter-roll extraction
+        run: npm run data:voter-roll:check
+
       - name: Validate scoresheet extraction
         run: npm run data:scoresheets:check
+
+      - name: Cross-check PRU-15 against official SPR Open Data
+        run: npm run data:spr-pru15:check
 
       - name: Validate SPR geography extraction
         run: npm run data:geography:check
 
+      - name: Validate official election boundaries
+        run: npm run data:boundaries:check
+
+      - name: Validate national election atlas boundaries
+        run: npm run data:atlas:check
+
       - name: Validate SPR state-election extraction
         run: npm run data:state-elections:check
+
+      - name: Validate federal-election extraction
+        run: npm run data:federal-elections:check
+
+      - name: Validate cross-election person registry
+        run: npm run data:persons:check
+
+      - name: Reconcile election aggregates and source records
+        run: npm run data:reconcile:check
 
       - name: Validate published data integrity manifest
         run: npm run data:manifest:check
@@ -140,6 +161,9 @@ jobs:
           for attempt in {1..30}; do
             if curl --fail --silent http://127.0.0.1:4173/pru/15/negeri/parlimen >/dev/null; then
               npm run lighthouse
+              LIGHTHOUSE_URL="http://127.0.0.1:4173/peta?jenis=pru&edisi=15&mod=pemenang" \
+                LIGHTHOUSE_OUTPUT="lighthouse-atlas-report.json" \
+                npm run lighthouse
               exit $?
             fi
             sleep 1
@@ -156,6 +180,7 @@ jobs:
             playwright-report/
             test-results/
             lighthouse-report.json
+            lighthouse-atlas-report.json
             visual-diff/
           if-no-files-found: ignore
           retention-days: 14

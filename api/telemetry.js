@@ -1,11 +1,13 @@
-const EVENT_KINDS = new Set(["web-vital", "client-error"]);
+import { databaseConfigured, sql } from "../server/db.js";
+
+const EVENT_KINDS = new Set(["web-vital", "client-error", "interaction"]);
 const METRIC_NAMES = new Set(["CLS", "FCP", "INP", "LCP", "TTFB"]);
 
 function cleanText(value, maximum) {
   return String(value ?? "").replace(/[\r\n\t]+/g, " ").slice(0, maximum);
 }
 
-export default function handler(request, response) {
+export default async function handler(request, response) {
   response.setHeader("cache-control", "no-store");
   response.setHeader("content-type", "application/json; charset=utf-8");
   if (request.method !== "POST") {
@@ -31,7 +33,7 @@ export default function handler(request, response) {
   if (body.kind === "web-vital" && !METRIC_NAMES.has(body.name)) return response.status(400).json({ error: "invalid_metric" });
   const event = {
     kind: body.kind,
-    name: cleanText(body.name, 50),
+    name: cleanText(body.name, body.kind === "interaction" ? 80 : 50),
     value: typeof body.value === "number" && Number.isFinite(body.value) ? body.value : undefined,
     rating: cleanText(body.rating, 20) || undefined,
     path: cleanText(body.path, 180).startsWith("/") ? cleanText(body.path, 180) : "/",
@@ -39,6 +41,20 @@ export default function handler(request, response) {
     occurredAt: cleanText(body.occurredAt, 40),
     receivedAt: new Date().toISOString(),
   };
-  console.info(JSON.stringify(event));
+  if (databaseConfigured()) {
+    try {
+      await sql()`
+        insert into telemetry_events
+          (kind, name, value, rating, path, message, occurred_at, received_at)
+        values
+          (${event.kind}, ${event.name}, ${event.value ?? null}, ${event.rating ?? null},
+           ${event.path}, ${event.message ?? null}, ${event.occurredAt || event.receivedAt}, ${event.receivedAt})
+      `;
+    } catch (error) {
+      console.error("telemetry_database_write_failed", error);
+    }
+  } else {
+    console.info(JSON.stringify(event));
+  }
   return response.status(204).end();
 }

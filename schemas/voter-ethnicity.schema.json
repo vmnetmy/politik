@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://politik.my/schemas/voter-ethnicity.schema.json",
+  "title": "Official voter ethnicity publication status",
+  "type": "object",
+  "required": ["version", "metadata", "categories", "records"],
+  "additionalProperties": false,
+  "properties": {
+    "version": { "type": "integer", "const": 1 },
+    "metadata": {
+      "type": "object",
+      "required": ["title", "availability", "aggregateStatus", "authority", "checkedAt", "totalRegistered", "sourceDataset", "sourceCatalogueUrl", "sourceTaxonomyUrl", "publishedDimensions"],
+      "additionalProperties": false,
+      "properties": {
+        "title": { "type": "string", "minLength": 1 },
+        "availability": { "const": "taxonomy-only" },
+        "aggregateStatus": { "const": "not-published" },
+        "authority": { "type": "string", "minLength": 1 },
+        "checkedAt": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+        "totalRegistered": { "type": "integer", "minimum": 1 },
+        "sourceDataset": { "type": "string", "minLength": 1 },
+        "sourceCatalogueUrl": { "type": "string", "pattern": "^https://" },
+        "sourceTaxonomyUrl": { "type": "string", "pattern": "^https://" },
+        "publishedDimensions": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 }, "uniqueItems": true }
+      }
+    },
+    "categories": {
+      "type": "array",
+      "minItems": 9,
+      "maxItems": 9,
+      "items": {
+        "type": "object",
+        "required": ["id", "label", "sourceLabel"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "label": { "type": "string", "minLength": 1 },
+          "sourceLabel": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "records": { "type": "array", "maxItems": 0 }
+  }
+}

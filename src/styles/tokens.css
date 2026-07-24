@@ -15,6 +15,9 @@
   --text-lg: 1rem;
   --text-reading: 1.0625rem;
   --text-xl: 1.125rem;
+  --text-title-section: clamp(1.6875rem, 2.3vw, 2.1875rem);
+  --text-title-page: clamp(2.875rem, 5.5vw, 4.75rem);
+  --text-title-settings: clamp(2.5rem, 4.7vw, 4.0625rem);
 
   /* Compact navigation scale retained for the persistent sidebar. */
   --sidebar-text-meta: 0.625rem;
@@ -36,9 +39,57 @@
   --color-hero-2: #29485f;
   --color-accent: #d5a62e;
   --color-accent-soft: #f3e6b8;
+  --color-canvas: #f4f1ea;
+  --color-surface-subtle: #efeee8;
+  --color-surface-muted: #e8e7e0;
+  --color-text-secondary: #52605b;
+  --color-text-tertiary: #5c6963;
+  --color-text-on-dark: #eef2f5;
+  --color-text-on-dark-muted: #bdc8d1;
+  --color-border-strong: #b9b8b0;
+  --color-focus: #d5a62e;
+  --color-info: #435f77;
+  --color-info-surface: #e7edf1;
+  --color-success: #356252;
+  --color-success-surface: #e6eee9;
+  --color-warning: #765a11;
+  --color-warning-surface: #f3ead0;
+  --color-danger: #8f3933;
+  --color-danger-surface: #f7e9e6;
   --color-green: var(--color-hero);
   --color-green-2: var(--color-hero-2);
   --color-lime: var(--color-accent);
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.125rem;
+  --space-6: 1.5rem;
+  --space-7: 1.875rem;
+  --space-8: 2.25rem;
+  --space-9: 3rem;
+
+  --radius-xs: 2px;
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-pill: 999px;
+
+  --shadow-sm: 0 1px 3px rgba(24, 34, 43, .09);
+  --shadow-md: 0 8px 24px rgba(24, 34, 43, .12);
+  --shadow-lg: 0 16px 46px rgba(23, 39, 56, .24);
+
+  --control-height-sm: 40px;
+  --control-height: 44px;
+  --control-height-lg: 48px;
+  --touch-target-min: 24px;
+  --content-gap: 18px;
+  --panel-padding: clamp(1.4375rem, 3vw, 2.125rem);
+
+  --motion-fast: 150ms;
+  --motion-standard: 220ms;
+  --motion-slow: 420ms;
+  --ease-standard: cubic-bezier(.22, 1, .36, 1);
 
   /* Backwards-compatible aliases while components migrate to semantic tokens. */
   --ink: var(--color-ink);

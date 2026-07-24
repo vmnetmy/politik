@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "description": "Term-scoped affiliation events for the 14th Dewan Rakyat. The PRU-14 result snapshot remains immutable.",
+  "affiliations": [],
+  "electionId": "pru-14",
+  "termId": "dr-14"
+}

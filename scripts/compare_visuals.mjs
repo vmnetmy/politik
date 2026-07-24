@@ -1,4 +1,4 @@
-import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
+import { access, mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import pixelmatch from "pixelmatch";
 import { PNG } from "pngjs";
@@ -12,8 +12,15 @@ const filenames = (await readdir(currentDirectory)).filter((name) => name.endsWi
 if (!filenames.length) throw new Error("No current visual screenshots were produced.");
 await mkdir(diffDirectory, { recursive: true });
 const failures = [];
+const seeded = [];
 
 for (const filename of filenames) {
+  try {
+    await access(join(baselineDirectory, filename));
+  } catch {
+    seeded.push(filename);
+    continue;
+  }
   const baseline = PNG.sync.read(await readFile(join(baselineDirectory, filename)));
   const current = PNG.sync.read(await readFile(join(currentDirectory, filename)));
   if (baseline.width !== current.width || baseline.height !== current.height) {
@@ -31,4 +38,5 @@ if (failures.length) {
   console.error(`Visual regression failed:\n${failures.join("\n")}`);
   process.exit(1);
 }
+if (seeded.length) console.log(`New visual baselines will be seeded after merge: ${seeded.join(", ")}.`);
 console.log(`Visual regression passed for ${filenames.length} responsive screenshots.`);

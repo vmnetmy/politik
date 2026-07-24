@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "releaseId": "data-2026-07-23",
+  "status": "passed",
+  "startedAt": "2026-07-23T19:06:15.360507Z",
+  "completedAt": "2026-07-23T19:06:15.437201Z",
+  "summary": {
+    "federal": [
+      {
+        "electionId": "pru-15",
+        "seats": 222,
+        "candidates": 945,
+        "registered": 21173638,
+        "turnout": 15817156,
+        "validVotes": 15613836,
+        "scoresheetMatches": 222,
+        "ballotComponentSeats": 222
+      },
+      {
+        "electionId": "pru-14",
+        "seats": 222,
+        "candidates": 687,
+        "registered": 14940624,
+        "turnout": 12082978,
+        "validVotes": 12082978,
+        "scoresheetMatches": 0,
+        "ballotComponentSeats": 0
+      }
+    ],
+    "state": {
+      "events": 25,
+      "contests": 1101
+    },
+    "issueCounts": {
+      "error": 0,
+      "warning": 0,
+      "info": 0
+    }
+  },
+  "issues": []
+}

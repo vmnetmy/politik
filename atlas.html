@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ms">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#172431" />
+    <meta name="description" content="Atlas interaktif keputusan pilihan raya Malaysia mengikut negeri dan kawasan." />
+    <link rel="preload" href="/fonts/inter-latin-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/inter-latin-800.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/data/boundaries/my-sarawak-2015-peninsula-2018-sabah-2019/atlas/index.json" as="fetch" crossorigin />
+    <link rel="preload" href="/data/elections/pru-15/election.json" as="fetch" crossorigin />
+    <link rel="stylesheet" href="/src/styles/fonts.css" />
+    <link rel="stylesheet" href="/src/styles/tokens.css" />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <style>
+      html{background:#f4f1e9;color:#172431;font-family:Inter,Arial,sans-serif}
+      body{margin:0}#root{min-height:100vh}
+      .atlas-static-heading{position:absolute;z-index:5;top:86px;left:calc(236px + clamp(24px,4.5vw,72px));right:clamp(24px,4.5vw,72px);display:grid;align-items:end;grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);gap:clamp(18px,4vw,62px)}
+      .atlas-static-heading .overline{color:#52605b;font-size:.875rem;font-weight:700;letter-spacing:.14em}
+      .atlas-static-heading h1{margin:12px 0 0;color:#18222b;font-family:Georgia,serif;font-size:clamp(2.7rem,5vw,4.9rem);font-weight:600;letter-spacing:-.045em;line-height:.88}
+      .atlas-static-heading h1 em{color:#29485f;font-weight:400}
+      .atlas-static-heading p{margin:0 0 4px;max-width:520px;color:#52605b;font-size:1.0625rem;line-height:1.65}
+      @media(max-width:820px){.atlas-static-heading{top:76px;left:13px;right:13px;display:block}.atlas-static-heading h1{font-size:clamp(2.55rem,13vw,4rem);margin-bottom:18px}.atlas-static-heading p{font-size:.9375rem}}
+    </style>
+    <title>Atlas Pilihan Raya — Politik.my</title>
+  </head>
+  <body class="atlas-static-document">
+    <section id="atlas-static-intro" class="atlas-static-heading">
+      <div><span class="overline">ATLAS PILIHAN RAYA NASIONAL</span><h1>Mandat Malaysia,<br/><em>kerusi demi kerusi.</em></h1></div>
+      <p>Teroka keputusan PRU dan PRN melalui sempadan rasmi SPR. Pilihan edisi, metrik dan kawasan disimpan terus dalam URL.</p>
+    </section>
+    <div id="root"></div>
+    <script type="module" src="/src/atlas-main.tsx"></script>
+  </body>
+</html>

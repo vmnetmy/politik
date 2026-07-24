@@ -1,7 +1,7 @@
 import Ajv2020 from "ajv/dist/2020";
 import { describe, expect, it } from "vitest";
-import constituencies from "../public/data/constituencies.json";
-import geography from "../public/data/geography.json";
+import constituencies from "../public/data/elections/pru-15/constituencies.json";
+import geography from "../public/data/elections/pru-15/geography.json";
 import schema from "../schemas/geography.schema.json";
 
 describe("SPR geography hierarchy", () => {

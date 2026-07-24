@@ -5,6 +5,8 @@ import { SeatButton } from "./SeatButton";
 import type { Seat } from "../../types";
 
 const seat = {
+  electionId: "pru-15",
+  contestId: "pru-15:P.056",
   code: "P.056",
   state: "PERAK",
   name: "LARUT",
@@ -14,7 +16,7 @@ const seat = {
   candidateCount: 1,
   marginVotes: 0,
   marginShare: 0,
-  winner: { id: "p056:dato-seri-hamzah-zainudin", name: "DATO SERI HAMZAH ZAINUDIN", alliance: "PERIKATAN NASIONAL (PN)", party: "BERSATU", votes: 1, share: 1, gender: "LELAKI", ethnicity: "MELAYU" },
+  winner: { id: "p056:dato-seri-hamzah-zainudin", electionId: "pru-15", candidacyId: "pru-15:P.056:01", personId: "person:dato-seri-hamzah-zainudin", name: "DATO SERI HAMZAH ZAINUDIN", alliance: "PERIKATAN NASIONAL (PN)", party: "BERSATU", votes: 1, share: 1, gender: "LELAKI", ethnicity: "MELAYU" },
   candidates: [],
 } satisfies Seat;
 

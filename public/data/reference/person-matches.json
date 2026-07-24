@@ -1,0 +1,5 @@
+{
+  "version": 1,
+  "description": "Explicit cross-election person matches used only when a normalized name is ambiguous or has changed.",
+  "matches": []
+}

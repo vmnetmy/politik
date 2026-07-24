@@ -1,7 +1,15 @@
 {
   "version": 1,
-  "retrievedAt": "2026-07-22",
+  "retrievedAt": "2026-07-23",
   "references": [
+    {
+      "id": "pru14-electoral-roll",
+      "url": "https://www.spr.gov.my/sites/default/files/HargaDPIST42017_PRU14.pdf",
+      "archiveUrl": "https://web.archive.org/web/20180425183951/http://www.spr.gov.my/sites/default/files/HargaDPIST42017_PRU14.pdf",
+      "citation": "Senarai Harga Daftar Pemilih Untuk Pilihan Raya Umum Ke-14 yang diwartakan pada 10 April 2018, Suruhanjaya Pilihan Raya Malaysia",
+      "sha256": "22d437f1b8e87022ca0afe2fc778d437085e0d498daf846215deb0b6f34f308b",
+      "archivedFile": "HargaDPIST42017_PRU14.pdf"
+    },
     {
       "id": "pub-246-2026",
       "citation": "P.U. (B) 246, Warta Kerajaan Persekutuan, 20 Julai 2026",

@@ -1,0 +1,704 @@
+{
+  "version": 2,
+  "defaultBoundaryVersion": "my-sarawak-2015-peninsula-2018-sabah-2019",
+  "indexFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/index.json",
+  "federal": {
+    "pru-14": {
+      "boundaryVersion": "my-sarawak-2015-peninsula-2018-sabah-2019",
+      "effectiveFrom": "2015-12-19",
+      "status": "exact",
+      "note": "Sempadan wilayah rasmi yang berkuat kuasa bagi PRU-14.",
+      "stateFiles": {
+        "perlis": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/perlis.json",
+        "kedah": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/kedah.json",
+        "kelantan": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/kelantan.json",
+        "terengganu": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/terengganu.json",
+        "pulau-pinang": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/pulau-pinang.json",
+        "perak": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/perak.json",
+        "pahang": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/pahang.json",
+        "selangor": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/selangor.json",
+        "wp-kuala-lumpur": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/wp-kuala-lumpur.json",
+        "wp-putrajaya": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/wp-putrajaya.json",
+        "negeri-sembilan": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/negeri-sembilan.json",
+        "melaka": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/melaka.json",
+        "johor": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/johor.json",
+        "wp-labuan": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/wp-labuan.json",
+        "sabah": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/sabah.json",
+        "sarawak": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/sarawak.json"
+      },
+      "states": {
+        "perlis": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/perlis.json"
+        },
+        "kedah": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/kedah.json"
+        },
+        "kelantan": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/kelantan.json"
+        },
+        "terengganu": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/terengganu.json"
+        },
+        "pulau-pinang": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/pulau-pinang.json"
+        },
+        "perak": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/perak.json"
+        },
+        "pahang": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/pahang.json"
+        },
+        "selangor": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/selangor.json"
+        },
+        "wp-kuala-lumpur": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/wp-kuala-lumpur.json"
+        },
+        "wp-putrajaya": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/wp-putrajaya.json"
+        },
+        "negeri-sembilan": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/negeri-sembilan.json"
+        },
+        "melaka": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/melaka.json"
+        },
+        "johor": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/johor.json"
+        },
+        "wp-labuan": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/wp-labuan.json"
+        },
+        "sabah": {
+          "boundaryVersion": "my-sabah-2019",
+          "effectiveFrom": "2019-08-22",
+          "orderReference": "P.U.(A) 225/2019",
+          "evidenceUrl": "https://www.spr.gov.my/sites/default/files/Kenyataan%20Media%20UPDM%20Sabah%202019.pdf",
+          "note": "Sempadan 73 DUN Sabah berkuat kuasa mulai 22 Ogos 2019.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/sabah.json"
+        },
+        "sarawak": {
+          "boundaryVersion": "my-sarawak-2015",
+          "effectiveFrom": "2015-12-19",
+          "orderReference": "P.U.(A) 299/2015",
+          "evidenceUrl": "https://www.pmo.gov.my/ucapan/?id=4310&m=p&p=najib",
+          "note": "Sempadan 82 DUN Sarawak berkuat kuasa mulai 19 Disember 2015.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/sarawak.json"
+        }
+      }
+    },
+    "pru-15": {
+      "boundaryVersion": "my-sarawak-2015-peninsula-2018-sabah-2019",
+      "effectiveFrom": "2015-12-19",
+      "status": "exact",
+      "note": "Sempadan wilayah PRU-14 kekal berkuat kuasa bagi PRU-15.",
+      "stateFiles": {
+        "perlis": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/perlis.json",
+        "kedah": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/kedah.json",
+        "kelantan": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/kelantan.json",
+        "terengganu": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/terengganu.json",
+        "pulau-pinang": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/pulau-pinang.json",
+        "perak": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/perak.json",
+        "pahang": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/pahang.json",
+        "selangor": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/selangor.json",
+        "wp-kuala-lumpur": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/wp-kuala-lumpur.json",
+        "wp-putrajaya": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/wp-putrajaya.json",
+        "negeri-sembilan": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/negeri-sembilan.json",
+        "melaka": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/melaka.json",
+        "johor": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/johor.json",
+        "wp-labuan": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/wp-labuan.json",
+        "sabah": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/sabah.json",
+        "sarawak": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/sarawak.json"
+      },
+      "states": {
+        "perlis": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/perlis.json"
+        },
+        "kedah": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/kedah.json"
+        },
+        "kelantan": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/kelantan.json"
+        },
+        "terengganu": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/terengganu.json"
+        },
+        "pulau-pinang": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/pulau-pinang.json"
+        },
+        "perak": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/perak.json"
+        },
+        "pahang": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/pahang.json"
+        },
+        "selangor": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/selangor.json"
+        },
+        "wp-kuala-lumpur": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/wp-kuala-lumpur.json"
+        },
+        "wp-putrajaya": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/wp-putrajaya.json"
+        },
+        "negeri-sembilan": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/negeri-sembilan.json"
+        },
+        "melaka": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/melaka.json"
+        },
+        "johor": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/johor.json"
+        },
+        "wp-labuan": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/wp-labuan.json"
+        },
+        "sabah": {
+          "boundaryVersion": "my-sabah-2019",
+          "effectiveFrom": "2019-08-22",
+          "orderReference": "P.U.(A) 225/2019",
+          "evidenceUrl": "https://www.spr.gov.my/sites/default/files/Kenyataan%20Media%20UPDM%20Sabah%202019.pdf",
+          "note": "Sempadan 73 DUN Sabah berkuat kuasa mulai 22 Ogos 2019.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/sabah.json"
+        },
+        "sarawak": {
+          "boundaryVersion": "my-sarawak-2015",
+          "effectiveFrom": "2015-12-19",
+          "orderReference": "P.U.(A) 299/2015",
+          "evidenceUrl": "https://www.pmo.gov.my/ucapan/?id=4310&m=p&p=najib",
+          "note": "Sempadan 82 DUN Sarawak berkuat kuasa mulai 19 Disember 2015.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/sarawak.json"
+        }
+      }
+    }
+  },
+  "stateAssemblies": {
+    "14": {
+      "boundaryVersion": "my-sarawak-2015-peninsula-2018-sabah-2019",
+      "effectiveFrom": "2015-12-19",
+      "status": "exact",
+      "note": "Sempadan tepat untuk 11 negeri yang diterbitkan bagi PRN-14.",
+      "stateFiles": {
+        "perlis": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/perlis.json",
+        "kedah": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/kedah.json",
+        "kelantan": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/kelantan.json",
+        "terengganu": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/terengganu.json",
+        "pulau-pinang": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/pulau-pinang.json",
+        "perak": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/perak.json",
+        "pahang": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/pahang.json",
+        "selangor": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/selangor.json",
+        "wp-kuala-lumpur": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/wp-kuala-lumpur.json",
+        "wp-putrajaya": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/wp-putrajaya.json",
+        "negeri-sembilan": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/negeri-sembilan.json",
+        "melaka": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/melaka.json",
+        "johor": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/johor.json",
+        "wp-labuan": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/wp-labuan.json",
+        "sabah": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/sabah.json",
+        "sarawak": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/sarawak.json"
+      },
+      "states": {
+        "johor": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/johor.json"
+        },
+        "kedah": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/kedah.json"
+        },
+        "kelantan": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/kelantan.json"
+        },
+        "melaka": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/melaka.json"
+        },
+        "negeri-sembilan": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/negeri-sembilan.json"
+        },
+        "pahang": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/pahang.json"
+        },
+        "perak": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/perak.json"
+        },
+        "perlis": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/perlis.json"
+        },
+        "pulau-pinang": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/pulau-pinang.json"
+        },
+        "selangor": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/selangor.json"
+        },
+        "terengganu": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/terengganu.json"
+        }
+      }
+    },
+    "15": {
+      "boundaryVersion": "my-sarawak-2015-peninsula-2018-sabah-2019",
+      "effectiveFrom": "2015-12-19",
+      "status": "exact",
+      "note": "Sempadan tepat untuk 11 negeri yang diterbitkan bagi PRN-15.",
+      "stateFiles": {
+        "perlis": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/perlis.json",
+        "kedah": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/kedah.json",
+        "kelantan": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/kelantan.json",
+        "terengganu": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/terengganu.json",
+        "pulau-pinang": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/pulau-pinang.json",
+        "perak": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/perak.json",
+        "pahang": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/pahang.json",
+        "selangor": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/selangor.json",
+        "wp-kuala-lumpur": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/wp-kuala-lumpur.json",
+        "wp-putrajaya": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/wp-putrajaya.json",
+        "negeri-sembilan": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/negeri-sembilan.json",
+        "melaka": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/melaka.json",
+        "johor": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/johor.json",
+        "wp-labuan": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/wp-labuan.json",
+        "sabah": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/sabah.json",
+        "sarawak": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/sarawak.json"
+      },
+      "states": {
+        "johor": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/johor.json"
+        },
+        "kedah": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/kedah.json"
+        },
+        "kelantan": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/kelantan.json"
+        },
+        "melaka": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/melaka.json"
+        },
+        "negeri-sembilan": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/negeri-sembilan.json"
+        },
+        "pahang": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/pahang.json"
+        },
+        "perak": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/perak.json"
+        },
+        "perlis": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/perlis.json"
+        },
+        "pulau-pinang": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/pulau-pinang.json"
+        },
+        "selangor": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/selangor.json"
+        },
+        "terengganu": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/terengganu.json"
+        }
+      }
+    },
+    "12": {
+      "boundaryVersion": "my-sarawak-2015-peninsula-2018-sabah-2019",
+      "effectiveFrom": "2015-12-19",
+      "status": "exact",
+      "note": "Sempadan tepat untuk 1 negeri yang diterbitkan bagi PRN-12.",
+      "stateFiles": {
+        "perlis": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/perlis.json",
+        "kedah": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/kedah.json",
+        "kelantan": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/kelantan.json",
+        "terengganu": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/terengganu.json",
+        "pulau-pinang": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/pulau-pinang.json",
+        "perak": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/perak.json",
+        "pahang": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/pahang.json",
+        "selangor": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/selangor.json",
+        "wp-kuala-lumpur": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/wp-kuala-lumpur.json",
+        "wp-putrajaya": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/wp-putrajaya.json",
+        "negeri-sembilan": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/negeri-sembilan.json",
+        "melaka": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/melaka.json",
+        "johor": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/johor.json",
+        "wp-labuan": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/wp-labuan.json",
+        "sabah": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/sabah.json",
+        "sarawak": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/sarawak.json"
+      },
+      "states": {
+        "sarawak": {
+          "boundaryVersion": "my-sarawak-2015",
+          "effectiveFrom": "2015-12-19",
+          "orderReference": "P.U.(A) 299/2015",
+          "evidenceUrl": "https://www.pmo.gov.my/ucapan/?id=4310&m=p&p=najib",
+          "note": "Sempadan 82 DUN Sarawak berkuat kuasa mulai 19 Disember 2015.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/sarawak.json"
+        }
+      }
+    },
+    "16": {
+      "boundaryVersion": "my-sarawak-2015-peninsula-2018-sabah-2019",
+      "effectiveFrom": "2015-12-19",
+      "status": "exact",
+      "note": "Sempadan tepat untuk 1 negeri yang diterbitkan bagi PRN-16.",
+      "stateFiles": {
+        "perlis": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/perlis.json",
+        "kedah": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/kedah.json",
+        "kelantan": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/kelantan.json",
+        "terengganu": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/terengganu.json",
+        "pulau-pinang": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/pulau-pinang.json",
+        "perak": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/perak.json",
+        "pahang": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/pahang.json",
+        "selangor": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/selangor.json",
+        "wp-kuala-lumpur": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/wp-kuala-lumpur.json",
+        "wp-putrajaya": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/wp-putrajaya.json",
+        "negeri-sembilan": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/negeri-sembilan.json",
+        "melaka": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/melaka.json",
+        "johor": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/johor.json",
+        "wp-labuan": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/wp-labuan.json",
+        "sabah": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/sabah.json",
+        "sarawak": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/sarawak.json"
+      },
+      "states": {
+        "johor": {
+          "boundaryVersion": "my-peninsula-2018",
+          "effectiveFrom": "2018-03-29",
+          "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+          "evidenceUrl": "https://spr.gov.my/utama-2/",
+          "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/johor.json"
+        }
+      }
+    },
+    "17": {
+      "boundaryVersion": "my-sarawak-2015-peninsula-2018-sabah-2019",
+      "effectiveFrom": "2015-12-19",
+      "status": "exact",
+      "note": "Sempadan tepat untuk 1 negeri yang diterbitkan bagi PRN-17.",
+      "stateFiles": {
+        "perlis": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/perlis.json",
+        "kedah": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/kedah.json",
+        "kelantan": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/kelantan.json",
+        "terengganu": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/terengganu.json",
+        "pulau-pinang": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/pulau-pinang.json",
+        "perak": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/perak.json",
+        "pahang": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/pahang.json",
+        "selangor": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/selangor.json",
+        "wp-kuala-lumpur": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/wp-kuala-lumpur.json",
+        "wp-putrajaya": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/wp-putrajaya.json",
+        "negeri-sembilan": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/negeri-sembilan.json",
+        "melaka": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/melaka.json",
+        "johor": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/johor.json",
+        "wp-labuan": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/wp-labuan.json",
+        "sabah": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/sabah.json",
+        "sarawak": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/sarawak.json"
+      },
+      "states": {
+        "sabah": {
+          "boundaryVersion": "my-sabah-2019",
+          "effectiveFrom": "2019-08-22",
+          "orderReference": "P.U.(A) 225/2019",
+          "evidenceUrl": "https://www.spr.gov.my/sites/default/files/Kenyataan%20Media%20UPDM%20Sabah%202019.pdf",
+          "note": "Sempadan 73 DUN Sabah berkuat kuasa mulai 22 Ogos 2019.",
+          "status": "exact",
+          "stateFile": "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/sabah.json"
+        }
+      }
+    }
+  }
+}

@@ -1,10 +1,10 @@
 import Ajv2020 from "ajv/dist/2020";
 import { describe, expect, it } from "vitest";
-import kangar from "../public/data/scoresheets/P.002.json";
-import batu from "../public/data/scoresheets/P.115.json";
-import padangBesar from "../public/data/scoresheets/P.001.json";
-import index from "../public/data/scoresheets/index.json";
-import places from "../public/data/polling-places.json";
+import kangar from "../public/data/elections/pru-15/scoresheets/P.002.json";
+import batu from "../public/data/elections/pru-15/scoresheets/P.115.json";
+import padangBesar from "../public/data/elections/pru-15/scoresheets/P.001.json";
+import index from "../public/data/elections/pru-15/scoresheets/index.json";
+import places from "../public/data/elections/pru-15/polling-places.json";
 import schema from "../schemas/scoresheet.schema.json";
 
 describe("scoresheet data", () => {
