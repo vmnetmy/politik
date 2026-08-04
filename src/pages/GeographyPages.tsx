@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router";
 import { Icon } from "../components/ui/Icon";
 import { CoverageStatus } from "../components/ui/CoverageStatus";
 import { NotFound } from "../components/ui/NotFound";

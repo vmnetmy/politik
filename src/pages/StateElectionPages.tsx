@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { motion, MotionConfig } from "motion/react";
-import { Link, Navigate, useParams } from "react-router-dom";
+import { Link, Navigate, useParams } from "react-router";
 import { TicketLogo } from "../components/identity";
 import { Icon } from "../components/ui/Icon";
 import { NotFound } from "../components/ui/NotFound";

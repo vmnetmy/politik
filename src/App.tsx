@@ -5,7 +5,7 @@ import {
   Route,
   Routes,
   useLocation,
-} from "react-router-dom";
+} from "react-router";
 import type { AffiliationEvent, AllianceCatalogItem, CandidateChange, ConstituencyRegistry, DataChange, ElectionData, GeographyData, PartyCatalogItem, PollingPlacesData, ScoresheetIndex, SeatingData } from "./types";
 import { Icon } from "./components/ui/Icon";
 import { AtlasIntro } from "./components/maps/AtlasIntro";

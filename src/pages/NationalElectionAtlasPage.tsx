@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { geoMercator, geoPath } from "d3-geo";
 import { AnimatePresence, motion, MotionConfig } from "motion/react";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router";
 import { ATLAS_COMPARISON_METRICS, ATLAS_METRICS, atlasSearchParams, atlasStateWith, quantileThresholds, readAtlasUrlState, thresholdIndex } from "../atlas";
 import { TicketLogo } from "../components/identity";
 import { AtlasIntro } from "../components/maps/AtlasIntro";

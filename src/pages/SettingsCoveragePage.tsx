@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { PageTitle } from "../components/ui/PageTitle";
 import { CoverageStatus } from "../components/ui/CoverageStatus";
 import { Icon } from "../components/ui/Icon";

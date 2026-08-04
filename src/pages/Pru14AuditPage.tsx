@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { Icon } from "../components/ui/Icon";
 import { PageTitle } from "../components/ui/PageTitle";
 import { TableShell } from "../components/ui/TableShell";

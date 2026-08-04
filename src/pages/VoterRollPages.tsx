@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router";
 import { Icon, type IconName } from "../components/ui/Icon";
 import { AsyncState } from "../components/ui/AsyncState";
 import { PageTitle } from "../components/ui/PageTitle";

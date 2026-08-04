@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { AgeDistributionChart } from "../components/charts/AgeDistributionChart";
 import { Icon } from "../components/ui/Icon";
 import { AsyncState } from "../components/ui/AsyncState";

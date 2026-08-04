@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router";
 import { AllianceLogo, AlliancePill, PartyLogo } from "../components/identity";
 import { Icon } from "../components/ui/Icon";
 import { PageTitle } from "../components/ui/PageTitle";

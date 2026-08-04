@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect, useMemo, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router";
 import { AllianceLogo, AlliancePill, PartyLogo } from "../components/identity";
 import { ParliamentSeatingPlan } from "../components/seating/ParliamentSeatingPlan";
 import { Icon } from "../components/ui/Icon";

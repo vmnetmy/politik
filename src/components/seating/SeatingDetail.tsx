@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { AllianceLogo, PartyLogo } from "../identity";
 import { Icon } from "../ui/Icon";
 import { currentAlliance, currentParty, currentStatus } from "../../dataChanges";

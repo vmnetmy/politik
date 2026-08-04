@@ -1,5 +1,5 @@
 import { Suspense, useEffect, type ReactNode } from "react";
-import { Link, NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
+import { Link, NavLink, Outlet, useLocation, useNavigate } from "react-router";
 import { useElection } from "../../ElectionContext";
 import { formatElectionDate } from "../../elections";
 import { ATLAS_BASE, PRN_BASE, PRU_BASE, PRU_COMPARISON_BASE } from "../../routes";

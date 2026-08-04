@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion, MotionConfig } from "motion/react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router";
 import { StateElectionMap, type StateElectionMapSeat } from "../components/maps/StateElectionMap";
 import { StateElectionViewNav } from "../components/maps/StateElectionViewNav";
 import { TicketLogo } from "../components/identity";
