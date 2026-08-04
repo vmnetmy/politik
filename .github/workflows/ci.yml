@@ -70,6 +70,12 @@ jobs:
       - name: Validate SPR geography extraction
         run: npm run data:geography:check
 
+      - name: Validate archived DPT locality extraction
+        run: npm run data:localities:check
+
+      - name: Validate coverage and boundary governance
+        run: npm run data:coverage:check
+
       - name: Validate official election boundaries
         run: npm run data:boundaries:check
 

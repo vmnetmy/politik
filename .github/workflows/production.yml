@@ -39,6 +39,7 @@ jobs:
       - name: Validate release data and artifact
         run: |
           npm run data:atlas:check
+          npm run data:coverage:check
           npm run data:reconcile:check
           npm run data:manifest:check
           npm run staging:check
