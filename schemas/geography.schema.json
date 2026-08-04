@@ -1,12 +1,12 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
-  "required": ["version", "metadata", "pdms", "localities"],
+  "required": ["version", "metadata", "pdms", "localities", "localityConflicts"],
   "properties": {
     "version": { "const": 1 },
     "metadata": {
       "type": "object",
-      "required": ["snapshotYear", "stateCount", "parliamentCount", "dunCount", "pdmCount", "scoresheetPdmCount", "localityCount", "localityCoverage"],
+      "required": ["snapshotYear", "stateCount", "parliamentCount", "dunCount", "pdmCount", "scoresheetPdmCount", "localityCount", "localityPdmCount", "localityCoveragePct", "localityCoverage", "localitySourceCount", "localitySnapshotRange", "localityConflictCount", "localityCoverageByState"],
       "properties": {
         "snapshotYear": { "const": 2022 },
         "stateCount": { "const": 16 },
@@ -15,7 +15,30 @@
         "pdmCount": { "const": 7748 },
         "scoresheetPdmCount": { "type": "integer", "minimum": 0 },
         "localityCount": { "type": "integer", "minimum": 0 },
-        "localityCoverage": { "enum": ["partial", "complete"] }
+        "localityPdmCount": { "type": "integer", "minimum": 0 },
+        "localityCoveragePct": { "type": "number", "minimum": 0, "maximum": 100 },
+        "localityCoverage": { "enum": ["partial", "complete"] },
+        "localitySourceCount": { "type": "integer", "minimum": 0 },
+        "localitySnapshotRange": {
+          "type": "object",
+          "required": ["from", "to"],
+          "properties": {
+            "from": { "type": ["string", "null"], "format": "date" },
+            "to": { "type": ["string", "null"], "format": "date" }
+          }
+        },
+        "localityConflictCount": { "type": "integer", "minimum": 0 },
+        "localityCoverageByState": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "required": ["pdmCount", "coveredPdmCount"],
+            "properties": {
+              "pdmCount": { "type": "integer", "minimum": 0 },
+              "coveredPdmCount": { "type": "integer", "minimum": 0 }
+            }
+          }
+        }
       }
     },
     "pdms": {
@@ -47,14 +70,30 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["id", "code", "name", "slug", "pdmId", "stateId", "parliamentCode", "dunId", "sourceUrl", "sourceLabel", "publishedAt"],
+        "required": ["id", "code", "name", "slug", "pdmId", "stateId", "parliamentCode", "dunId", "firstSeenAt", "lastSeenAt", "sourceRefs"],
         "properties": {
           "id": { "type": "string" }, "code": { "type": "string" }, "name": { "type": "string", "minLength": 1 }, "slug": { "type": "string", "minLength": 1 },
           "pdmId": { "type": "string" }, "stateId": { "type": "string" }, "parliamentCode": { "type": "string" }, "dunId": { "type": "string" },
-          "sourceUrl": { "type": "string", "pattern": "^https://sprinfo\\.spr\\.gov\\.my/" }, "sourceLabel": { "type": "string" }, "publishedAt": { "type": "string", "format": "date" }
+          "firstSeenAt": { "type": "string", "format": "date" },
+          "lastSeenAt": { "type": "string", "format": "date" },
+          "sourceRefs": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["id", "url", "label", "publishedAt"],
+              "properties": {
+                "id": { "type": "string", "minLength": 1 },
+                "url": { "type": "string", "pattern": "^https://sprinfo\\.spr\\.gov\\.my/" },
+                "label": { "type": "string", "minLength": 1 },
+                "publishedAt": { "type": "string", "format": "date" }
+              }
+            }
+          }
         }
       }
-    }
+    },
+    "localityConflicts": { "type": "array" }
   },
   "$defs": {
     "nonNegativeMap": { "type": "object", "additionalProperties": { "type": "integer", "minimum": 0 } }

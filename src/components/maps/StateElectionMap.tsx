@@ -55,6 +55,7 @@ export function StateElectionMap({
   seats,
   selectedId,
   ticketFilter,
+  visibleSeatIds,
   onSelect,
   fullscreenDetail,
   fullscreenDetailKey,
@@ -64,6 +65,7 @@ export function StateElectionMap({
   seats: StateElectionMapSeat[];
   selectedId: string;
   ticketFilter: string;
+  visibleSeatIds?: ReadonlySet<string>;
   onSelect: (id: string) => void;
   fullscreenDetail?: ReactNode;
   fullscreenDetailKey?: string;
@@ -81,9 +83,14 @@ export function StateElectionMap({
   const gestureRef = useRef<{ lastPoint?: PointerPosition; lastMidpoint?: PointerPosition; lastDistance?: number; moved: boolean }>({ moved: false });
   const lastDragEndedAtRef = useRef(0);
   const seatById = useMemo(() => new Map(seats.map((seat) => [seat.feature.id, seat])), [seats]);
-  const selected = seatById.get(selectedId) ?? seats[0];
-  const hovered = seatById.get(hoveredId);
-  const eligibleSeats = ticketFilter === "SEMUA" ? seats : seats.filter((seat) => contestWinner(seat.contest).shortName === ticketFilter);
+  const eligibleSeats = seats.filter((seat) =>
+    (ticketFilter === "SEMUA" || contestWinner(seat.contest).shortName === ticketFilter)
+    && (!visibleSeatIds || visibleSeatIds.has(seat.feature.id)),
+  );
+  const eligibleSeatIds = new Set(eligibleSeats.map((seat) => seat.feature.id));
+  const selected = eligibleSeatIds.has(selectedId) ? seatById.get(selectedId) : eligibleSeats[0];
+  const hoveredSeat = seatById.get(hoveredId);
+  const hovered = hoveredSeat && eligibleSeatIds.has(hoveredSeat.feature.id) ? hoveredSeat : undefined;
   const width = boundaries.metadata.viewBox.width;
   const height = boundaries.metadata.viewBox.height;
 
@@ -273,6 +280,7 @@ export function StateElectionMap({
     onSelect(seat.feature.id);
     requestAnimationFrame(() => pathRefs.current.get(seat.feature.id)?.focus());
   };
+  const labelledSeat = hovered ?? selected;
 
   return <MotionConfig reducedMotion="user" transition={{ duration: .28, ease: [0.22, 1, 0.36, 1] }}>
     <div
@@ -287,16 +295,16 @@ export function StateElectionMap({
       onKeyDown={onMapKeyDown}
     >
       <AnimatePresence mode="wait" initial={false}>
-        {(hovered ?? selected) && <motion.div
+        {labelledSeat && <motion.div
           className="prn-map-hover-label"
-          key={(hovered ?? selected).feature.id}
+          key={labelledSeat.feature.id}
           initial={{ opacity: 0, y: 7, filter: "blur(4px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           exit={{ opacity: 0, y: -5, filter: "blur(4px)" }}
         >
-          <span>{(hovered ?? selected).feature.code}</span>
-          <strong>{(hovered ?? selected).feature.name}</strong>
-          <b>{contestWinner((hovered ?? selected).contest).shortName}</b>
+          <span>{labelledSeat.feature.code}</span>
+          <strong>{labelledSeat.feature.name}</strong>
+          <b>{contestWinner(labelledSeat.contest).shortName}</b>
         </motion.div>}
       </AnimatePresence>
       <motion.div className="prn-map-tools" aria-label="Kawalan peta" layout>
@@ -354,16 +362,16 @@ export function StateElectionMap({
       <svg
         viewBox={`0 0 ${width} ${height}`}
         preserveAspectRatio="xMidYMid meet"
-        aria-label="Peta keputusan 36 DUN Negeri Sembilan"
+        aria-label={`${boundaries.metadata.title}, ${seats.length} DUN`}
         role="group"
       >
-        <title>Peta keputusan 36 DUN Negeri Sembilan</title>
+        <title>{boundaries.metadata.title}, {seats.length} DUN</title>
         <g transform={`translate(${camera.x} ${camera.y}) scale(${camera.scale})`}>
           <g className="prn-map-features">
             {seats.map((seat) => {
               const winner = contestWinner(seat.contest);
               const selectedSeat = seat.feature.id === selected?.feature.id;
-              const eligible = ticketFilter === "SEMUA" || winner.shortName === ticketFilter;
+              const eligible = eligibleSeatIds.has(seat.feature.id);
               return <motion.path
                 key={seat.feature.id}
                 ref={(element) => {

@@ -59,9 +59,9 @@ describe("multi-election isolation", () => {
     expect(ELECTION_EDITIONS.filter((edition) => edition.isCurrentTerm)).toHaveLength(1);
   });
 
-  it("registers PRU-14 as a historical, core-only edition", () => {
+  it("registers PRU-14 as a historical edition with verified scoresheet coverage", () => {
     const edition = ELECTION_EDITIONS.find((item) => item.number === 14);
     expect(edition).toMatchObject({ id: "pru-14", termId: "dr-14", isCurrentTerm: false });
-    expect(edition?.capabilities).toEqual({ seating: false, scoresheets: false, voterRoll: true, voterAge: false, voterEthnicity: false, geography: false });
+    expect(edition?.capabilities).toEqual({ seating: false, scoresheets: true, voterRoll: true, voterAge: false, voterEthnicity: false, geography: false });
   });
 });

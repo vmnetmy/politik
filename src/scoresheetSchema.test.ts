@@ -5,6 +5,8 @@ import batu from "../public/data/elections/pru-15/scoresheets/P.115.json";
 import padangBesar from "../public/data/elections/pru-15/scoresheets/P.001.json";
 import index from "../public/data/elections/pru-15/scoresheets/index.json";
 import places from "../public/data/elections/pru-15/polling-places.json";
+import alorSetarPru14 from "../public/data/elections/pru-14/scoresheets/P.009.json";
+import pru14Index from "../public/data/elections/pru-14/scoresheets/index.json";
 import schema from "../schemas/scoresheet.schema.json";
 
 describe("scoresheet data", () => {
@@ -33,6 +35,17 @@ describe("scoresheet data", () => {
 
   it("balances every supplementary open-data stream", () => {
     padangBesar.rows.forEach((row) => {
+      expect(Object.values(row.candidateVotes).reduce((sum, value) => sum + value, 0)).toBe(row.validVotes);
+      expect(row.validVotes + row.rejectedVotes + row.unreturnedVotes).toBe(row.ballotsInBox);
+    });
+  });
+
+  it("publishes only reconciled PRU-14 SPR workbooks", () => {
+    const validate = new Ajv2020({ allErrors: true, formats: { date: true, uri: true } }).compile(schema);
+    expect(validate(alorSetarPru14), JSON.stringify(validate.errors, null, 2)).toBe(true);
+    expect(pru14Index.metadata).toMatchObject({ sourceCount: 190, officialScoresheetCount: 180, rejectedSourceCount: 10, coveredSeats: 180, totalSeats: 222, totalRows: 24814 });
+    expect(pru14Index.seats.every((item) => item.sourceType === "spr-scoresheet-xlsx" && item.status === "authoritative")).toBe(true);
+    alorSetarPru14.rows.forEach((row) => {
       expect(Object.values(row.candidateVotes).reduce((sum, value) => sum + value, 0)).toBe(row.validVotes);
       expect(row.validVotes + row.rejectedVotes + row.unreturnedVotes).toBe(row.ballotsInBox);
     });

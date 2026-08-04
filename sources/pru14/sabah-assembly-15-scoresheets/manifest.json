@@ -1,0 +1,612 @@
+{
+  "version": 1,
+  "algorithm": "sha256",
+  "sourceRoot": "sources/pru14/sabah-assembly-15-scoresheets",
+  "provenance": {
+    "publisher": "Suruhanjaya Pilihan Raya Malaysia",
+    "workbookFooter": "© SPR 2018 Versi 1.1.0 - Suruhanjaya Pilihan Raya Malaysia",
+    "officialResultsUrl": "https://mysprsemak.spr.gov.my/semakan/keputusan/pru",
+    "officialOpenDataUrl": "https://opendata.spr.gov.my/",
+    "officialElectoralRollUrl": "https://www.spr.gov.my/sites/default/files/HargaDPIST42017_PRU14.pdf",
+    "scopeNote": "All 60 Sabah Assembly-15 constituencies contested concurrently with PRU-14 using the pre-2019 constituency registry."
+  },
+  "files": [
+    {
+      "path": "sabah/N.01 BANGGI.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.167:N.01",
+      "stateId": "sabah",
+      "dunCode": "N.01",
+      "sha256": "d81cf4a81fd689511c8ed9bec8a1ee69e16b189db017749b3a006856d5b3f109",
+      "bytes": 32320,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 27, 'ballotsInBox': 7151, 'validVotes': 6879, 'rejectedVotes': 244, 'unreturnedVotes': 28} do not match final JUMLAH {'pollingStreams': 30, 'ballotsInBox': 7868, 'validVotes': 7560, 'rejectedVotes': 279, 'unreturnedVotes': 29}."
+    },
+    {
+      "path": "sabah/N.02 TANJONG KAPOR.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.167:N.02",
+      "stateId": "sabah",
+      "dunCode": "N.02",
+      "sha256": "a5fd6b16c45213c02effc28022ac9200b6d6896a4289e3f8e3d18f992bf35fd2",
+      "bytes": 30291,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.03 PITAS.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.167:N.03",
+      "stateId": "sabah",
+      "dunCode": "N.03",
+      "sha256": "93583998936e0c8cba5210c7d9485fd50e4f8199fb84ef28dc6e39b120acc0a0",
+      "bytes": 31121,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 36, 'ballotsInBox': 12645, 'validVotes': 12195, 'rejectedVotes': 400, 'unreturnedVotes': 50} do not match final JUMLAH {'pollingStreams': 38, 'ballotsInBox': 13095, 'validVotes': 12627, 'rejectedVotes': 416, 'unreturnedVotes': 52}."
+    },
+    {
+      "path": "sabah/N.04 MATUNGGONG.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.168:N.04",
+      "stateId": "sabah",
+      "dunCode": "N.04",
+      "sha256": "bbc4e1149e32c486f8a7d98db9279179b1a42b5b8a2b3cc6221e704d82318c50",
+      "bytes": 41140,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.05 TANDEK.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.168:N.05",
+      "stateId": "sabah",
+      "dunCode": "N.05",
+      "sha256": "aae30cf70cb067daeb03e7b6852cc97934970547ba14e33b0f71398980931717",
+      "bytes": 32611,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.06 TEMPASUK.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.169:N.06",
+      "stateId": "sabah",
+      "dunCode": "N.06",
+      "sha256": "3a0cd9034af925e5761e8ae3f355083133d87a27b0fd21dbc272d6403e605c3b",
+      "bytes": 34956,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.07 KADAMAIAN.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.169:N.07",
+      "stateId": "sabah",
+      "dunCode": "N.07",
+      "sha256": "c1fa97de5ab25c281adb989b02ab55057370c25da3c298f521b2f22abd1d937a",
+      "bytes": 38359,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.08 USUKAN.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.169:N.08",
+      "stateId": "sabah",
+      "dunCode": "N.08",
+      "sha256": "0ddfaa628362802fcade5c01c28dd1bf8dd0a6200dca8fc3cddc8ff834b86acb",
+      "bytes": 26929,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.09 TAMPARULI.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.170:N.09",
+      "stateId": "sabah",
+      "dunCode": "N.09",
+      "sha256": "209b80b295f2da800110689de9e95e59f4669917f9869fabda2ce62d1db14fce",
+      "bytes": 36067,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.10 SULAMAN.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.170:N.10",
+      "stateId": "sabah",
+      "dunCode": "N.10",
+      "sha256": "90ddff20ae2717b4cc0253ef4411b67bc082d5fbea7ae58d9bff0821ac5e704e",
+      "bytes": 24809,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.11 KIULU.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.170:N.11",
+      "stateId": "sabah",
+      "dunCode": "N.11",
+      "sha256": "31efc54b9bd593e638061edbd844ef60b97b3ad6641a1e25736c56e03864a4ab",
+      "bytes": 29919,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.12 KARAMBUNAI.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.171:N.12",
+      "stateId": "sabah",
+      "dunCode": "N.12",
+      "sha256": "7ecdf40a4852f020243bb2ae206f95f029e7483e8def214dbb80d2489726b00e",
+      "bytes": 29245,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.13 INANAM.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.171:N.13",
+      "stateId": "sabah",
+      "dunCode": "N.13",
+      "sha256": "d390146d43738f56c20dda2252b9e8b720794886f0b8bf1e7d6c3deb816e11ac",
+      "bytes": 39884,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.14 LIKAS.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.172:N.14",
+      "stateId": "sabah",
+      "dunCode": "N.14",
+      "sha256": "5b83eafc1934a4ce286f94c318dd986ceb56617801aaf64096cb1e47c9667941",
+      "bytes": 25162,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.15 API-API.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.172:N.15",
+      "stateId": "sabah",
+      "dunCode": "N.15",
+      "sha256": "baac97a6b44c70a18c9142e9f92d26426a67cfa353bdf97534e265129b3e8cdf",
+      "bytes": 35787,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.16 LUYANG.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.172:N.16",
+      "stateId": "sabah",
+      "dunCode": "N.16",
+      "sha256": "61ebd668ac92e5fb65644848154c13fcfe08714cf5b0e5f19d30e7de1c4565c8",
+      "bytes": 25739,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.17 TANJONG ARU.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.173:N.17",
+      "stateId": "sabah",
+      "dunCode": "N.17",
+      "sha256": "2421d171b74ce3f104f072c29ba90ad993883e325e385ce4cf01c310c2346dac",
+      "bytes": 29998,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.18 PETAGAS.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.173:N.18",
+      "stateId": "sabah",
+      "dunCode": "N.18",
+      "sha256": "d6caf205c004096684643c0b50f91be30f7b3be2f94849bbe6f87828c937d403",
+      "bytes": 23737,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.19 KAPAYAN.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.174:N.19",
+      "stateId": "sabah",
+      "dunCode": "N.19",
+      "sha256": "01e3ce2e20806ca3be4791c0747ba81f61e8683299d23d7d959ab16b90deab21",
+      "bytes": 27178,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.20 MOYOG.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.174:N.20",
+      "stateId": "sabah",
+      "dunCode": "N.20",
+      "sha256": "edfa7e0df0cc83c5d89cd5e683622a91705e0b43114877d342ec62a6b3ca388e",
+      "bytes": 29874,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.21 KAWANG.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.175:N.21",
+      "stateId": "sabah",
+      "dunCode": "N.21",
+      "sha256": "c7e4fd6c3f6d1d7448bae5d810a2dd4c9683af54d2ac4173650e0a27e7120531",
+      "bytes": 27946,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.22 PANTAI MANIS.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.175:N.22",
+      "stateId": "sabah",
+      "dunCode": "N.22",
+      "sha256": "cd9761151bc3b6c4f691f1333243ca17096a9fc14bb6fe12974c8042b2e3124c",
+      "bytes": 28091,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.23 BONGAWAN.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.176:N.23",
+      "stateId": "sabah",
+      "dunCode": "N.23",
+      "sha256": "73641adb9f85581f9207744b51b2c41e2efbd0f86c32b068fea603887f7c83b7",
+      "bytes": 24049,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.24 MEMBAKUT.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.176:N.24",
+      "stateId": "sabah",
+      "dunCode": "N.24",
+      "sha256": "51ab8a42cf08ad5a4ca718884092d400b9508e7e446edafea4af5c080579baeb",
+      "bytes": 29344,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.25 KLIAS.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.177:N.25",
+      "stateId": "sabah",
+      "dunCode": "N.25",
+      "sha256": "575d158f3e5046ef1918c15df134dac8928cfa7f63eafb385bb21d85aaa29cf1",
+      "bytes": 24698,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.26 KUALA PENYU.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.177:N.26",
+      "stateId": "sabah",
+      "dunCode": "N.26",
+      "sha256": "b8d02507b49b6c5bb355feca52bf44164e141ad3ad87ab5cd9d76e3f2ffa9a6f",
+      "bytes": 34614,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.27 LUMADAN.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.178:N.27",
+      "stateId": "sabah",
+      "dunCode": "N.27",
+      "sha256": "563d6703bf1ca3cc9f8447a0566c8af420fca4f3a441029e134ffa2a028b0824",
+      "bytes": 24140,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.28 SINDUMIN.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.178:N.28",
+      "stateId": "sabah",
+      "dunCode": "N.28",
+      "sha256": "37a553e4ebbd71cbaa5e5b9c944a1ba77dfd224311fb5414c985dc1697f6fbb0",
+      "bytes": 25546,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.29 KUNDASANG.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.179:N.29",
+      "stateId": "sabah",
+      "dunCode": "N.29",
+      "sha256": "85a33c8af48a29eaeb9710768d7e0853f174330d6f91bf6d603b7281b8757684",
+      "bytes": 30071,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.30 KARANAAN.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.179:N.30",
+      "stateId": "sabah",
+      "dunCode": "N.30",
+      "sha256": "19ea866ba91ff78a2bac2fed4f4f04e7db0ae880b0f43f806fe1c706f4ea16ff",
+      "bytes": 34733,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.31 PAGINATAN.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.179:N.31",
+      "stateId": "sabah",
+      "dunCode": "N.31",
+      "sha256": "21a2b7ab24d50c39dd88e34ff4d74aa5dc868b05f6726760a7fe39f8a18ae6f3",
+      "bytes": 32662,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.32 TAMBUNAN.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.180:N.32",
+      "stateId": "sabah",
+      "dunCode": "N.32",
+      "sha256": "963ec4b7aae3041d5df8384c5a5d01127d5a69aea5ee9c6ed8b3acc9f1c0c39b",
+      "bytes": 30091,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.33 BINGKOR.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.180:N.33",
+      "stateId": "sabah",
+      "dunCode": "N.33",
+      "sha256": "2019c0cb9b85230cc06eeae087d9d8f7040375a95309d1c7e2835dc91cf54e6f",
+      "bytes": 32914,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 28, 'ballotsInBox': 11155, 'validVotes': 10913, 'rejectedVotes': 161, 'unreturnedVotes': 81} do not match final JUMLAH {'pollingStreams': 35, 'ballotsInBox': 13984, 'validVotes': 13713, 'rejectedVotes': 190, 'unreturnedVotes': 81}."
+    },
+    {
+      "path": "sabah/N.34 LIAWAN.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.180:N.34",
+      "stateId": "sabah",
+      "dunCode": "N.34",
+      "sha256": "f121a1ee10a2a548dc3de8931d9bb615aa7316232937ded912f04068b55b5c8d",
+      "bytes": 28938,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.35 MELALAP.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.181:N.35",
+      "stateId": "sabah",
+      "dunCode": "N.35",
+      "sha256": "6663655f2d7924e5d18c4d9cf838acadd3e3e79f7594986e6adb02a563ce8058",
+      "bytes": 30496,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.36 KEMABONG.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.181:N.36",
+      "stateId": "sabah",
+      "dunCode": "N.36",
+      "sha256": "f83e56a2de55e7e0097d45a98bffccc5e8048f85510054ff24bc8666d60f8f51",
+      "bytes": 27851,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.37 SOOK.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.182:N.37",
+      "stateId": "sabah",
+      "dunCode": "N.37",
+      "sha256": "ab533ea70906c277882aeb03fd5e48e5c51b41582a4331f89ecbf2e473c7f0dd",
+      "bytes": 29732,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.38 NABAWAN.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.182:N.38",
+      "stateId": "sabah",
+      "dunCode": "N.38",
+      "sha256": "61e0b07b1dd4d18c818e94c774d63c4d9b2d4798236216867a0040cd52a772ed",
+      "bytes": 28413,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.39 SUGUT.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.183:N.39",
+      "stateId": "sabah",
+      "dunCode": "N.39",
+      "sha256": "f78403d67f7090b247641c25cb978d2023da613a4baddc9d1af0391c9206c2f7",
+      "bytes": 26692,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.40 LABUK.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.183:N.40",
+      "stateId": "sabah",
+      "dunCode": "N.40",
+      "sha256": "9b98f0cefbf9b28244f61f0ac979f7db2e62dc77b78647bac8ac3427487df961",
+      "bytes": 31680,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.41 GUM-GUM.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.184:N.41",
+      "stateId": "sabah",
+      "dunCode": "N.41",
+      "sha256": "d0c0713ae723bf7a7f2417ba104d1a8d5d9deba0a42fff51f8ef1673f4f45793",
+      "bytes": 27205,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.42 SUNGAI SIBUGA.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.184:N.42",
+      "stateId": "sabah",
+      "dunCode": "N.42",
+      "sha256": "2881d421264436ddf1b28d8e3a3d7282fc91d794eae031bf213eb0371ba91e51",
+      "bytes": 25638,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.43 SEKONG.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.185:N.43",
+      "stateId": "sabah",
+      "dunCode": "N.43",
+      "sha256": "a2ed766ea4c0d8923f6dd7b849f4dc700b1b53874ca7a4c4412bade2d10ec3a6",
+      "bytes": 28842,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 21, 'ballotsInBox': 8601, 'validVotes': 8325, 'rejectedVotes': 230, 'unreturnedVotes': 46} do not match final JUMLAH {'pollingStreams': 30, 'ballotsInBox': 12304, 'validVotes': 11918, 'rejectedVotes': 337, 'unreturnedVotes': 49}."
+    },
+    {
+      "path": "sabah/N.44 KARAMUNTING.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.185:N.44",
+      "stateId": "sabah",
+      "dunCode": "N.44",
+      "sha256": "85f23c54717071b48939251e1e1e11f97061ed0aae393c9b510c808a1ad10541",
+      "bytes": 25572,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.45 ELOPURA.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.186:N.45",
+      "stateId": "sabah",
+      "dunCode": "N.45",
+      "sha256": "9b26d1f451ba42eea8bf434b39bbdcdaf9004f8c1c763256e34081eb7d1504c7",
+      "bytes": 22987,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.46 TANJONG PAPAT.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.186:N.46",
+      "stateId": "sabah",
+      "dunCode": "N.46",
+      "sha256": "0d78cb52a1fd688baff6ab451a08335a4fb63e2b94222c5d9f3c827e650b8b64",
+      "bytes": 23607,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.47 KUAMUT.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.187:N.47",
+      "stateId": "sabah",
+      "dunCode": "N.47",
+      "sha256": "2440bdb3968c1b7b3ed1e7aedcec140100523c7dbe14f0b17938662f0c6d2864",
+      "bytes": 32323,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.48 SUKAU.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.187:N.48",
+      "stateId": "sabah",
+      "dunCode": "N.48",
+      "sha256": "71f7e25bb33c36005b2cf7050eac361206eb5378ff9419ec18a646d7201eef0b",
+      "bytes": 25224,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.49 TUNGKU.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.188:N.49",
+      "stateId": "sabah",
+      "dunCode": "N.49",
+      "sha256": "0489a078df13c0fc055f6d11d7d56c0e940aaba53b0bcbd7a3516ec1431d189c",
+      "bytes": 26073,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.50 LAHAD DATU.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.188:N.50",
+      "stateId": "sabah",
+      "dunCode": "N.50",
+      "sha256": "afdb66666b0347659eb8ac9ece390eed2217de454fecd797227b43e171b494ef",
+      "bytes": 25466,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.51 KUNAK.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.188:N.51",
+      "stateId": "sabah",
+      "dunCode": "N.51",
+      "sha256": "39874fc492e1f9fd6da8c865af4c8a01ba71cf84c28c46ade16b7cb421943581",
+      "bytes": 25649,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.52 SULABAYAN.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.189:N.52",
+      "stateId": "sabah",
+      "dunCode": "N.52",
+      "sha256": "e388bc036ae0b6f4a2f2c9547fdd9d2169600602e411958805ced3ed5802c4cc",
+      "bytes": 26118,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.53 SENALLANG.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.189:N.53",
+      "stateId": "sabah",
+      "dunCode": "N.53",
+      "sha256": "9bba5edca053cd9f26b0ea5c7923c20ea40312c619d4495d209099ad47778521",
+      "bytes": 21656,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.54 BUGAYA.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.189:N.54",
+      "stateId": "sabah",
+      "dunCode": "N.54",
+      "sha256": "0c6befaf2b41d3a5558f0c969f8b3fff2d04f3d0befded9cd678ababbc94bfc9",
+      "bytes": 29383,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.55 BALUNG.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.190:N.55",
+      "stateId": "sabah",
+      "dunCode": "N.55",
+      "sha256": "6f65bdd423f2ca303241575e115dc03d390c5ebd92efa397b5330d5a64d8f58b",
+      "bytes": 29153,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.56 APAS.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.190:N.56",
+      "stateId": "sabah",
+      "dunCode": "N.56",
+      "sha256": "219f90692376f0d4a99e65443538dff9130294f83acf82553048fda6a09b59f2",
+      "bytes": 25974,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.57 SRI TANJONG.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.190:N.57",
+      "stateId": "sabah",
+      "dunCode": "N.57",
+      "sha256": "f3c20362511f04ff69b92a54687e02ff360c427e9d70abdbf239280f8b1301cf",
+      "bytes": 27179,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.58 MEROTAI.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.191:N.58",
+      "stateId": "sabah",
+      "dunCode": "N.58",
+      "sha256": "4f5cc1b5082363916f389c222a05a5e8f3adf32bacd4d0f951a8872d15e8c853",
+      "bytes": 34490,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 28, 'ballotsInBox': 10946, 'validVotes': 10835, 'rejectedVotes': 111, 'unreturnedVotes': 0} do not match final JUMLAH {'pollingStreams': 38, 'ballotsInBox': 15263, 'validVotes': 14839, 'rejectedVotes': 275, 'unreturnedVotes': 149}."
+    },
+    {
+      "path": "sabah/N.59 TANJONG BATU.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.191:N.59",
+      "stateId": "sabah",
+      "dunCode": "N.59",
+      "sha256": "3b54e0b6745102feac530f84034ec6d3b1749801386c961a6d5787265052dded",
+      "bytes": 25455,
+      "status": "published"
+    },
+    {
+      "path": "sabah/N.60 SEBATIK.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.191:N.60",
+      "stateId": "sabah",
+      "dunCode": "N.60",
+      "sha256": "03465fe6b3a54a1d6675920c7a79b089af65d99ac5b2176b29d596d21ea1a45b",
+      "bytes": 23860,
+      "status": "published"
+    }
+  ],
+  "rejectedSources": [
+    {
+      "path": "sabah/N.01 BANGGI.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.167:N.01",
+      "stateId": "sabah",
+      "dunCode": "N.01",
+      "sha256": "d81cf4a81fd689511c8ed9bec8a1ee69e16b189db017749b3a006856d5b3f109",
+      "bytes": 32320,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 27, 'ballotsInBox': 7151, 'validVotes': 6879, 'rejectedVotes': 244, 'unreturnedVotes': 28} do not match final JUMLAH {'pollingStreams': 30, 'ballotsInBox': 7868, 'validVotes': 7560, 'rejectedVotes': 279, 'unreturnedVotes': 29}."
+    },
+    {
+      "path": "sabah/N.03 PITAS.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.167:N.03",
+      "stateId": "sabah",
+      "dunCode": "N.03",
+      "sha256": "93583998936e0c8cba5210c7d9485fd50e4f8199fb84ef28dc6e39b120acc0a0",
+      "bytes": 31121,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 36, 'ballotsInBox': 12645, 'validVotes': 12195, 'rejectedVotes': 400, 'unreturnedVotes': 50} do not match final JUMLAH {'pollingStreams': 38, 'ballotsInBox': 13095, 'validVotes': 12627, 'rejectedVotes': 416, 'unreturnedVotes': 52}."
+    },
+    {
+      "path": "sabah/N.33 BINGKOR.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.180:N.33",
+      "stateId": "sabah",
+      "dunCode": "N.33",
+      "sha256": "2019c0cb9b85230cc06eeae087d9d8f7040375a95309d1c7e2835dc91cf54e6f",
+      "bytes": 32914,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 28, 'ballotsInBox': 11155, 'validVotes': 10913, 'rejectedVotes': 161, 'unreturnedVotes': 81} do not match final JUMLAH {'pollingStreams': 35, 'ballotsInBox': 13984, 'validVotes': 13713, 'rejectedVotes': 190, 'unreturnedVotes': 81}."
+    },
+    {
+      "path": "sabah/N.43 SEKONG.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.185:N.43",
+      "stateId": "sabah",
+      "dunCode": "N.43",
+      "sha256": "a2ed766ea4c0d8923f6dd7b849f4dc700b1b53874ca7a4c4412bade2d10ec3a6",
+      "bytes": 28842,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 21, 'ballotsInBox': 8601, 'validVotes': 8325, 'rejectedVotes': 230, 'unreturnedVotes': 46} do not match final JUMLAH {'pollingStreams': 30, 'ballotsInBox': 12304, 'validVotes': 11918, 'rejectedVotes': 337, 'unreturnedVotes': 49}."
+    },
+    {
+      "path": "sabah/N.58 MEROTAI.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.191:N.58",
+      "stateId": "sabah",
+      "dunCode": "N.58",
+      "sha256": "4f5cc1b5082363916f389c222a05a5e8f3adf32bacd4d0f951a8872d15e8c853",
+      "bytes": 34490,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 28, 'ballotsInBox': 10946, 'validVotes': 10835, 'rejectedVotes': 111, 'unreturnedVotes': 0} do not match final JUMLAH {'pollingStreams': 38, 'ballotsInBox': 15263, 'validVotes': 14839, 'rejectedVotes': 275, 'unreturnedVotes': 149}."
+    }
+  ]
+}

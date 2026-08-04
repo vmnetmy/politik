@@ -33,6 +33,8 @@ BOUNDARY_DIRECTORY_NAME = "my-sarawak-2015-peninsula-2018-sabah-2019"
 ATLAS_DIRECTORY = ROOT / f"public/data/boundaries/{BOUNDARY_DIRECTORY_NAME}/atlas"
 INDEX_PATH = ATLAS_DIRECTORY / "index.json"
 BOUNDARY_REGISTRY_PATH = ROOT / "public/data/boundaries/registry.json"
+BOUNDARY_SNAPSHOT_DIRECTORY = ROOT / "public/data/boundaries/snapshots"
+SOURCE_METADATA_PATH = ROOT / "sources/spr/boundaries/source.json"
 LEGACY_OUTPUT_PATH = ROOT / "public/data/boundaries/malaysia-2018/election-atlas.json"
 BOUNDARY_VERSION = "my-sarawak-2015-peninsula-2018-sabah-2019"
 SIMPLIFY_TOLERANCE_DEGREES = 0.0007
@@ -78,6 +80,19 @@ BOUNDARY_PROVENANCE = {
         "orderReference": "P.U.(A) 225/2019",
         "evidenceUrl": "https://www.spr.gov.my/sites/default/files/Kenyataan%20Media%20UPDM%20Sabah%202019.pdf",
         "note": "Sempadan 73 DUN Sabah berkuat kuasa mulai 22 Ogos 2019.",
+    },
+}
+
+FEDERAL_ELECTIONS = {
+    "pru-14": {
+        "electionDate": "2018-05-09",
+        "status": "compatible",
+        "note": "Snapshot tepat bagi Semenanjung dan Sarawak; Sabah menggunakan geometri rasmi 2019 sehingga arkib pra-2019 diperoleh.",
+    },
+    "pru-15": {
+        "electionDate": "2022-11-19",
+        "status": "exact",
+        "note": "Sempadan wilayah rasmi yang berkuat kuasa pada tarikh PRU-15.",
     },
 }
 
@@ -176,6 +191,10 @@ def geometry_object(polygons: list[list[list[list[float]]]]) -> dict[str, Any]:
 
 
 def build() -> dict[str, Any]:
+    source_metadata = json.loads(SOURCE_METADATA_PATH.read_text(encoding="utf-8"))
+    source_hash = sha256(SOURCE_PATH)
+    if source_metadata["sourceUrl"] != SOURCE_URL or source_metadata["sourceSha256"] != source_hash:
+        raise BoundaryError("Archived SPR KMZ no longer matches its locked source metadata.")
     registry = json.loads(REGISTRY_PATH.read_text(encoding="utf-8"))
     states = registry["states"]
     state_lookup: dict[str, dict[str, Any]] = {}
@@ -231,8 +250,8 @@ def build() -> dict[str, Any]:
             "boundaryVersion": BOUNDARY_VERSION,
             "coordinateReference": "EPSG:4326",
             "sourceUrl": SOURCE_URL,
-            "sourceSha256": sha256(SOURCE_PATH),
-            "retrievedAt": date.today().isoformat(),
+            "sourceSha256": source_hash,
+            "retrievedAt": source_metadata["retrievedAt"],
             "simplificationToleranceDegrees": SIMPLIFY_TOLERANCE_DEGREES,
             "parliamentFeatureCount": len(layers["parliament"]),
             "dunFeatureCount": len(layers["dun"]),
@@ -305,13 +324,40 @@ def state_boundary_provenance(state_id: str) -> dict[str, str]:
     return BOUNDARY_PROVENANCE[region]
 
 
-def boundary_registry(states: list[dict[str, str]]) -> dict[str, Any]:
-    state_files = {state["id"]: f"{BOUNDARY_DIRECTORY_NAME}/atlas/states/{state['id']}.json" for state in states}
+def regional_state_file(state_id: str) -> str:
+    version = state_boundary_provenance(state_id)["boundaryVersion"]
+    return f"{version}/atlas/states/{state_id}.json"
+
+
+def federal_state_status(election_id: str, state_id: str) -> tuple[str, str]:
+    if election_id == "pru-14" and state_id == "sabah":
+        return (
+            "compatible",
+            "Geometri Parlimen rasmi semasa digunakan sebagai padanan; snapshot SPR pra-P.U.(A) 225/2019 belum diarkibkan.",
+        )
+    return "exact", state_boundary_provenance(state_id)["note"]
+
+
+def historical_sabah_entry() -> dict[str, Any]:
+    return {
+        "boundaryVersion": "my-sabah-pre-2019-60",
+        "effectiveFrom": "2003-03-21",
+        "status": "identity-only",
+        "note": "Identiti rasmi 60 DUN Sabah PRU-14 disahkan; geometri digital pra-P.U.(A) 225/2019 belum ditemui dalam arkib rasmi SPR.",
+        "orderReference": "Daftar Pemilih PRU-14, Sabah",
+        "evidenceUrl": "https://www.spr.gov.my/sites/default/files/HargaDPIST42017_PRU14.pdf",
+        "constituencyCount": 60,
+    }
+
+
+def boundary_registry(states: list[dict[str, str]], state_hashes: dict[str, str]) -> dict[str, Any]:
+    state_files = {state["id"]: regional_state_file(state["id"]) for state in states}
     state_entries = {
         state["id"]: {
             **state_boundary_provenance(state["id"]),
             "status": "exact",
             "stateFile": state_files[state["id"]],
+            "geometrySha256": state_hashes[state["id"]],
         }
         for state in states
     }
@@ -324,65 +370,216 @@ def boundary_registry(states: list[dict[str, str]]) -> dict[str, Any]:
         "states": state_entries,
     }
     event_registry = json.loads(STATE_EVENTS_PATH.read_text(encoding="utf-8"))
-    assembly_states: dict[str, set[str]] = {}
+    assembly_events: dict[str, list[dict[str, Any]]] = {}
     for event in event_registry["events"]:
-        assembly_states.setdefault(str(event["assemblyNumber"]), set()).add(event["stateId"])
+        assembly_events.setdefault(str(event["assemblyNumber"]), []).append(event)
     state_assemblies = {
         assembly_number: {
             **exact,
-            "states": {state_id: state_entries[state_id] for state_id in sorted(event_state_ids)},
-            "note": f"Sempadan tepat untuk {len(event_state_ids)} negeri yang diterbitkan bagi PRN-{assembly_number}.",
+            "status": "compatible" if any(event.get("constituencyVersion") == "sabah-2018-60" for event in events) else "exact",
+            "stateFiles": {
+                event["stateId"]: state_files[event["stateId"]]
+                for event in events
+                if event.get("constituencyVersion") != "sabah-2018-60"
+            },
+            "states": {
+                event["stateId"]: historical_sabah_entry()
+                if event.get("constituencyVersion") == "sabah-2018-60"
+                else state_entries[event["stateId"]]
+                for event in sorted(events, key=lambda item: item["stateId"])
+            },
+            "note": f"Registry sempadan dan identiti untuk {len({event['stateId'] for event in events})} negeri yang diterbitkan bagi PRN-{assembly_number}.",
+            "snapshotFile": f"snapshots/prn-{assembly_number}.json",
         }
-        for assembly_number, event_state_ids in assembly_states.items()
+        for assembly_number, events in assembly_events.items()
     }
     return {
-        "version": 2,
+        "version": 3,
         "defaultBoundaryVersion": BOUNDARY_VERSION,
         "indexFile": f"{BOUNDARY_DIRECTORY_NAME}/atlas/index.json",
         "federal": {
-            "pru-14": {**exact, "note": "Sempadan wilayah rasmi yang berkuat kuasa bagi PRU-14."},
-            "pru-15": {**exact, "note": "Sempadan wilayah PRU-14 kekal berkuat kuasa bagi PRU-15."},
+            election_id: {
+                **exact,
+                "status": metadata["status"],
+                "note": metadata["note"],
+                "snapshotFile": f"snapshots/{election_id}.json",
+                "states": {
+                    state["id"]: {
+                        **state_entries[state["id"]],
+                        "status": federal_state_status(election_id, state["id"])[0],
+                        "note": federal_state_status(election_id, state["id"])[1],
+                    }
+                    for state in states
+                },
+            }
+            for election_id, metadata in FEDERAL_ELECTIONS.items()
         },
         "stateAssemblies": state_assemblies,
     }
 
 
+def state_artifact(
+    artifact: dict[str, Any],
+    state: dict[str, str],
+    parliament_features: list[dict[str, Any]],
+    dun_features: list[dict[str, Any]],
+    *,
+    boundary_version: str,
+) -> dict[str, Any]:
+    state_id = state["id"]
+    return {
+        "version": 1,
+        "metadata": {
+            **artifact["metadata"],
+            "title": f"Sempadan pilihan raya {state['name']}",
+            "boundaryVersion": boundary_version,
+            "stateId": state_id,
+            "parliamentFeatureCount": sum(feature["properties"]["stateId"] == state_id for feature in parliament_features),
+            "dunFeatureCount": sum(feature["properties"]["stateId"] == state_id for feature in dun_features),
+        },
+        "state": state,
+        "layers": {
+            "parliament": {
+                "type": "FeatureCollection",
+                "features": [feature for feature in parliament_features if feature["properties"]["stateId"] == state_id],
+            },
+            "dun": {
+                "type": "FeatureCollection",
+                "features": [feature for feature in dun_features if feature["properties"]["stateId"] == state_id],
+            },
+        },
+    }
+
+
+def snapshot_state_entry(
+    state_id: str,
+    state_file: str,
+    state_hash: str,
+    artifact: dict[str, Any],
+    *,
+    status: str = "exact",
+    note: str | None = None,
+) -> dict[str, Any]:
+    return {
+        **state_boundary_provenance(state_id),
+        "status": status,
+        "note": note or state_boundary_provenance(state_id)["note"],
+        "stateFile": state_file,
+        "geometrySha256": state_hash,
+        "parliamentFeatureCount": artifact["metadata"]["parliamentFeatureCount"],
+        "dunFeatureCount": artifact["metadata"]["dunFeatureCount"],
+    }
+
+
+def publish_snapshots(
+    artifact: dict[str, Any],
+    state_artifacts: dict[str, dict[str, Any]],
+    state_hashes: dict[str, str],
+) -> None:
+    BOUNDARY_SNAPSHOT_DIRECTORY.mkdir(parents=True, exist_ok=True)
+    state_entries = {
+        state_id: snapshot_state_entry(
+            state_id,
+            regional_state_file(state_id),
+            state_hashes[state_id],
+            state_artifacts[state_id],
+        )
+        for state_id in sorted(state_artifacts)
+    }
+    common = {
+        "version": 1,
+        "coordinateReference": artifact["metadata"]["coordinateReference"],
+        "sourceUrl": artifact["metadata"]["sourceUrl"],
+        "sourceSha256": artifact["metadata"]["sourceSha256"],
+        "retrievedAt": artifact["metadata"]["retrievedAt"],
+        "snapshotPolicy": "Exact geometry is pinned by regional boundary version, effective date and SHA-256.",
+    }
+    for election_id, metadata in FEDERAL_ELECTIONS.items():
+        federal_entries = {
+            state_id: snapshot_state_entry(
+                state_id,
+                regional_state_file(state_id),
+                state_hashes[state_id],
+                state_artifacts[state_id],
+                status=federal_state_status(election_id, state_id)[0],
+                note=federal_state_status(election_id, state_id)[1],
+            )
+            for state_id in sorted(state_artifacts)
+        }
+        snapshot = {
+            **common,
+            "id": election_id,
+            "scope": "federal",
+            "electionDate": metadata["electionDate"],
+            "status": metadata["status"],
+            "states": federal_entries,
+        }
+        (BOUNDARY_SNAPSHOT_DIRECTORY / f"{election_id}.json").write_text(
+            json.dumps(snapshot, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
+
+    event_registry = json.loads(STATE_EVENTS_PATH.read_text(encoding="utf-8"))
+    events_by_assembly: dict[str, list[dict[str, Any]]] = {}
+    for event in event_registry["events"]:
+        events_by_assembly.setdefault(str(event["assemblyNumber"]), []).append(event)
+    for assembly_number, events in events_by_assembly.items():
+        snapshot = {
+            **common,
+            "id": f"prn-{assembly_number}",
+            "scope": "state-assembly",
+            "events": [
+                {
+                    "id": event["id"],
+                    "stateId": event["stateId"],
+                    "electionDate": event["electionDate"],
+                }
+                for event in sorted(events, key=lambda item: (item["electionDate"], item["stateId"]))
+            ],
+            "states": {
+                event["stateId"]: historical_sabah_entry()
+                if event.get("constituencyVersion") == "sabah-2018-60"
+                else state_entries[event["stateId"]]
+                for event in sorted(events, key=lambda item: item["stateId"])
+            },
+        }
+        (BOUNDARY_SNAPSHOT_DIRECTORY / f"prn-{assembly_number}.json").write_text(
+            json.dumps(snapshot, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
+
+
 def publish_split(artifact: dict[str, Any]) -> None:
     ATLAS_DIRECTORY.mkdir(parents=True, exist_ok=True)
     states_directory = ATLAS_DIRECTORY / "states"
-    states_directory.mkdir(parents=True, exist_ok=True)
     parliament_features = artifact["layers"]["parliament"]["features"]
     dun_features = artifact["layers"]["dun"]["features"]
     state_files: dict[str, str] = {}
+    regional_artifacts: dict[str, dict[str, Any]] = {}
+    regional_hashes: dict[str, str] = {}
     for state in artifact["states"]:
         state_id = state["id"]
-        relative_file = f"states/{state_id}.json"
-        state_files[state_id] = relative_file
-        state_artifact = {
-            "version": 1,
-            "metadata": {
-                **artifact["metadata"],
-                "title": f"Sempadan pilihan raya {state['name']}",
-                "stateId": state_id,
-                "parliamentFeatureCount": sum(feature["properties"]["stateId"] == state_id for feature in parliament_features),
-                "dunFeatureCount": sum(feature["properties"]["stateId"] == state_id for feature in dun_features),
-            },
-            "state": state,
-            "layers": {
-                "parliament": {
-                    "type": "FeatureCollection",
-                    "features": [feature for feature in parliament_features if feature["properties"]["stateId"] == state_id],
-                },
-                "dun": {
-                    "type": "FeatureCollection",
-                    "features": [feature for feature in dun_features if feature["properties"]["stateId"] == state_id],
-                },
-            },
-        }
-        (states_directory / f"{state_id}.json").write_text(
-            json.dumps(state_artifact, ensure_ascii=False, separators=(",", ":")) + "\n",
+        state_files[state_id] = regional_state_file(state_id)
+        regional_version = state_boundary_provenance(state_id)["boundaryVersion"]
+        regional_artifact = state_artifact(
+            artifact,
+            state,
+            parliament_features,
+            dun_features,
+            boundary_version=regional_version,
+        )
+        regional_path = ROOT / "public/data/boundaries" / regional_state_file(state_id)
+        regional_path.parent.mkdir(parents=True, exist_ok=True)
+        regional_path.write_text(
+            json.dumps(regional_artifact, ensure_ascii=False, separators=(",", ":")) + "\n",
             encoding="utf-8",
         )
+        regional_artifacts[state_id] = regional_artifact
+        regional_hashes[state_id] = sha256(regional_path)
+    if states_directory.exists():
+        for legacy_path in states_directory.glob("*.json"):
+            legacy_path.unlink()
+        states_directory.rmdir()
 
     index = {
         "version": 1,
@@ -404,8 +601,9 @@ def publish_split(artifact: dict[str, Any]) -> None:
         },
     }
     INDEX_PATH.write_text(json.dumps(index, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
+    publish_snapshots(artifact, regional_artifacts, regional_hashes)
     BOUNDARY_REGISTRY_PATH.write_text(
-        json.dumps(boundary_registry(artifact["states"]), ensure_ascii=False, indent=2) + "\n",
+        json.dumps(boundary_registry(artifact["states"], regional_hashes), ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
     LEGACY_OUTPUT_PATH.unlink(missing_ok=True)
@@ -421,24 +619,52 @@ def validate_published() -> None:
     parliament_total = 0
     dun_total = 0
     for state in index.get("states", []):
-        path = ATLAS_DIRECTORY / index["stateFiles"][state["id"]]
+        path = ROOT / "public/data/boundaries" / index["stateFiles"][state["id"]]
         artifact = json.loads(path.read_text(encoding="utf-8"))
         parliament_total += len(artifact["layers"]["parliament"]["features"])
         dun_total += len(artifact["layers"]["dun"]["features"])
         if artifact["metadata"]["stateId"] != state["id"]:
             raise BoundaryError(f"State chunk identity mismatch for {state['id']}.")
+        if artifact["metadata"]["boundaryVersion"] != state_boundary_provenance(state["id"])["boundaryVersion"]:
+            raise BoundaryError(f"State chunk boundary version mismatch for {state['id']}.")
     if parliament_total != EXPECTED_PARLIAMENTS or dun_total != EXPECTED_DUNS:
         raise BoundaryError(f"Split Atlas requires 222 Parliament and 600 DUN geometries, found {parliament_total} and {dun_total}.")
     if set(registry.get("federal", {})) != {"pru-14", "pru-15"}:
         raise BoundaryError("Boundary registry must cover both published federal editions.")
+    if registry.get("version") != 3:
+        raise BoundaryError("Boundary registry must use immutable snapshot schema version 3.")
+    for election_id in FEDERAL_ELECTIONS:
+        snapshot_path = ROOT / "public/data/boundaries" / registry["federal"][election_id]["snapshotFile"]
+        snapshot = json.loads(snapshot_path.read_text(encoding="utf-8"))
+        if snapshot.get("id") != election_id or set(snapshot.get("states", {})) != {state["id"] for state in index["states"]}:
+            raise BoundaryError(f"Federal boundary snapshot is incomplete for {election_id}.")
+        for state_id, entry in snapshot["states"].items():
+            path = ROOT / "public/data/boundaries" / entry["stateFile"]
+            if entry["geometrySha256"] != sha256(path):
+                raise BoundaryError(f"Federal boundary snapshot hash mismatch for {election_id}/{state_id}.")
     event_registry = json.loads(STATE_EVENTS_PATH.read_text(encoding="utf-8"))
     for event in event_registry["events"]:
         assembly = registry.get("stateAssemblies", {}).get(str(event["assemblyNumber"]))
         state = assembly.get("states", {}).get(event["stateId"]) if assembly else None
+        if event.get("constituencyVersion") == "sabah-2018-60":
+            if not state or state.get("status") != "identity-only" or state.get("constituencyCount") != 60:
+                raise BoundaryError(f"Boundary registry does not declare the historical 60-seat identity set for {event['id']}.")
+            snapshot_path = ROOT / "public/data/boundaries" / assembly["snapshotFile"]
+            snapshot = json.loads(snapshot_path.read_text(encoding="utf-8"))
+            if snapshot.get("states", {}).get(event["stateId"], {}).get("status") != "identity-only":
+                raise BoundaryError(f"PRN boundary snapshot does not declare the historical identity-only status for {event['id']}.")
+            continue
         if not state or state.get("status") != "exact":
             raise BoundaryError(f"Boundary registry does not certify {event['id']} with exact state geometry.")
-        if state.get("stateFile") != f"{BOUNDARY_DIRECTORY_NAME}/atlas/states/{event['stateId']}.json":
+        if state.get("stateFile") != regional_state_file(event["stateId"]):
             raise BoundaryError(f"Boundary registry state file mismatch for {event['id']}.")
+        snapshot_path = ROOT / "public/data/boundaries" / assembly["snapshotFile"]
+        snapshot = json.loads(snapshot_path.read_text(encoding="utf-8"))
+        snapshot_state = snapshot.get("states", {}).get(event["stateId"])
+        if not snapshot_state or snapshot_state["geometrySha256"] != sha256(
+            ROOT / "public/data/boundaries" / snapshot_state["stateFile"]
+        ):
+            raise BoundaryError(f"PRN boundary snapshot hash mismatch for {event['id']}.")
 
 
 def main() -> int:
@@ -449,6 +675,20 @@ def main() -> int:
     try:
         if args.refresh or not SOURCE_PATH.is_file():
             fetch_source()
+            SOURCE_METADATA_PATH.write_text(
+                json.dumps(
+                    {
+                        "version": 1,
+                        "retrievedAt": date.today().isoformat(),
+                        "sourceUrl": SOURCE_URL,
+                        "sourceSha256": sha256(SOURCE_PATH),
+                    },
+                    ensure_ascii=False,
+                    indent=2,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
         if args.check:
             validate_published()
             print("Validated split Atlas index, 16 state chunks, 222 Parliament and 600 DUN geometries.")

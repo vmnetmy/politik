@@ -25,6 +25,13 @@ class DataManifestTests(unittest.TestCase):
             self.assertEqual(len(item["sha256"]), 64)
             self.assertGreater(item["bytes"], 0)
 
+    def test_pru14_manifest_governs_sharded_polling_places(self):
+        value = build(ROOT / "public/data/elections/pru-14")
+        shards = list((ROOT / "public/data/elections/pru-14/scoresheets/places").glob("P.*.json"))
+        self.assertEqual(len(shards), 180)
+        self.assertNotIn("polling-places.json", value["files"])
+        self.assertTrue(all(f"scoresheets/places/{path.name}" in value["files"] for path in shards))
+
     def test_shared_reference_manifest_is_current(self):
         directory = ROOT / "public/data/reference"
         generated = render(build_collection_manifest(directory, REFERENCE_FILES))

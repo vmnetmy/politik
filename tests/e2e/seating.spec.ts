@@ -62,12 +62,10 @@ test("desktop keeps the selection panel beside the chamber", async ({ page }, te
 
 test("full-result actions retain the compact type scale", async ({ page }) => {
   await page.goto("/pru/15/negeri/parlimen");
-  const seatingActionSize = await page.locator(".seating-selection-detail > a").evaluate((element) => Number.parseFloat(getComputedStyle(element).fontSize));
-  expect(seatingActionSize).toBe(12);
+  await expect(page.locator(".seating-selection-detail > a")).toHaveCSS("font-size", "12px");
 
   await page.goto("/pru/15/pemenang");
-  const winnerActionSize = await page.locator(".winner-directory-link").first().evaluate((element) => Number.parseFloat(getComputedStyle(element).fontSize));
-  expect(winnerActionSize).toBe(12);
+  await expect(page.locator(".winner-directory-link").first()).toHaveCSS("font-size", "12px");
 });
 
 test("filter comboboxes retain their compact type scale", async ({ page }) => {

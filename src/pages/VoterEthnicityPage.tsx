@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { Icon } from "../components/ui/Icon";
 import { PageTitle } from "../components/ui/PageTitle";
 import { SearchCombobox } from "../components/ui/SearchCombobox";
@@ -7,7 +7,7 @@ import { VoterDimensionNav } from "../components/voters/VoterDimensionNav";
 import type { ConstituencyRegistry, DunReference, ParliamentReference, VoterAgeData } from "../data/types/voterAge";
 import type { VoterEthnicityData } from "../data/types/voterEthnicity";
 import { useElection } from "../ElectionContext";
-import { formatNumber } from "../utils";
+import { formatNumber, formatShortDate } from "../utils";
 
 const ALL_STATES = "SELURUH MALAYSIA";
 const ALL_PARLIAMENTS = "SEMUA PARLIMEN";
@@ -81,7 +81,7 @@ export function VoterEthnicityPage() {
     <PageTitle title={`Bangsa pengundi ${edition.shortTitle}`}/>
     <section className="route-hero age-route-hero ethnicity-route-hero">
       <div className="breadcrumbs"><Link to={paths.election}>{edition.shortTitle}</Link><span>/</span><strong>Pengundi</strong><span>/</span><strong>Kaum</strong></div>
-      <span className="overline">SUMBER RASMI SPR · SEMAKAN 22 JULAI 2026</span>
+      <span className="overline">SUMBER RASMI SPR · SEMAKAN {formatShortDate(ethnicity.metadata.checkedAt)}</span>
       <h1>Bangsa pengundi<br/><em>{edition.shortTitle}</em></h1>
       <p>SPR merekod sembilan kategori Bangsa dalam MySPR. Portal data terbukanya belum menerbitkan bilangan agregat kategori itu mengikut kawasan.</p>
       <div className="route-stat-row"><div><span>KATEGORI RASMI</span><strong>{ethnicity.categories.length}</strong></div><div><span>REKOD AGREGAT</span><strong>0</strong></div><div><span>PARLIMEN</span><strong>{registry.parliaments.length}</strong></div><div><span>STATUS</span><strong>BELUM TERBIT</strong></div></div>
@@ -123,6 +123,6 @@ export function VoterEthnicityPage() {
       </article>
     </section>
 
-    <section className="seating-source-note age-source-note ethnicity-source-note"><Icon name="database" size={17}/><div><strong>Sumber rasmi SPR · disemak {ethnicity.metadata.checkedAt}</strong><span><a href={ethnicity.metadata.sourceCatalogueUrl} target="_blank" rel="noreferrer">Katalog Pendaftaran Pemilih</a> · <a href={ethnicity.metadata.sourceTaxonomyUrl} target="_blank" rel="noreferrer">Manual Pengguna MySPR</a></span></div></section>
+    <section className="seating-source-note age-source-note ethnicity-source-note"><Icon name="database" size={17}/><div><strong>Sumber rasmi SPR · disemak {formatShortDate(ethnicity.metadata.checkedAt)}</strong><span><a href={ethnicity.metadata.sourceCatalogueUrl} target="_blank" rel="noreferrer">Katalog Pendaftaran Pemilih</a> · <a href={ethnicity.metadata.sourceTaxonomyUrl} target="_blank" rel="noreferrer">Manual Pengguna MySPR</a></span></div></section>
   </>;
 }

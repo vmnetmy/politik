@@ -1,3 +1,5 @@
+import { formatShortDate } from "./utils";
+
 export type ElectionEdition = {
   id: string;
   number: number;
@@ -52,7 +54,7 @@ export const ELECTION_EDITIONS: ElectionEdition[] = [
     dataPath: "/data/elections/pru-14",
     capabilities: {
       seating: false,
-      scoresheets: false,
+      scoresheets: true,
       voterRoll: true,
       voterAge: false,
       voterEthnicity: false,
@@ -81,7 +83,5 @@ export function electionNumberForLocation(pathname: string, search: string) {
 }
 
 export function formatElectionDate(value: string) {
-  return new Intl.DateTimeFormat("ms-MY", { day: "2-digit", month: "short", year: "numeric", timeZone: "UTC" })
-    .format(new Date(`${value}T00:00:00Z`))
-    .toUpperCase();
+  return formatShortDate(value);
 }

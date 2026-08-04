@@ -11,7 +11,7 @@
       "required": ["title", "sourceType", "sourceFile", "sourceSha256", "sourcePages", "printDate"],
       "properties": {
         "title": { "type": "string" },
-        "sourceType": { "enum": ["spr-760", "electiondata-my"] },
+        "sourceType": { "enum": ["spr-760", "spr-scoresheet-xlsx", "electiondata-my"] },
         "sourceFile": { "type": "string" },
         "sourceSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
         "sourcePages": { "type": "integer", "minimum": 0 },

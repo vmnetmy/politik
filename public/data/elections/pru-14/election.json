@@ -8,6 +8,12 @@
     "candidateCount": 687,
     "stateCount": 16,
     "issues": [],
+    "officialAudit": {
+      "status": "passed-with-declared-gaps-and-source-precedence",
+      "checkedAt": "2026-08-05",
+      "report": "spr-audit.json",
+      "catalogueUrl": "https://opendata.spr.gov.my/"
+    },
     "electionId": "pru-14",
     "electionNumber": 14,
     "termId": "dr-14",
@@ -46,7 +52,7 @@
       "state": "PERLIS",
       "name": "PADANG BESAR",
       "registered": 46096,
-      "turnout": 36500,
+      "turnout": 37432,
       "turnoutPct": 0.812044,
       "candidateCount": 3,
       "marginVotes": 1438,
@@ -100,14 +106,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.001"
+      "contestId": "pru-14:P.001",
+      "validVotes": 36500,
+      "rejectedVotes": 780,
+      "unreturnedVotes": 152
     },
     {
       "code": "P.002",
       "state": "PERLIS",
       "name": "KANGAR",
       "registered": 55938,
-      "turnout": 44680,
+      "turnout": 45703,
       "turnoutPct": 0.81703,
       "candidateCount": 3,
       "marginVotes": 5603,
@@ -161,14 +170,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.002"
+      "contestId": "pru-14:P.002",
+      "validVotes": 44680,
+      "rejectedVotes": 806,
+      "unreturnedVotes": 217
     },
     {
       "code": "P.003",
       "state": "PERLIS",
       "name": "ARAU",
       "registered": 48187,
-      "turnout": 39600,
+      "turnout": 40433,
       "turnoutPct": 0.839085,
       "candidateCount": 3,
       "marginVotes": 4856,
@@ -222,14 +234,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.003"
+      "contestId": "pru-14:P.003",
+      "validVotes": 39600,
+      "rejectedVotes": 690,
+      "unreturnedVotes": 143
     },
     {
       "code": "P.004",
       "state": "KEDAH",
       "name": "LANGKAWI",
       "registered": 42697,
-      "turnout": 34527,
+      "turnout": 35250,
       "turnoutPct": 0.825585,
       "candidateCount": 3,
       "marginVotes": 8893,
@@ -283,14 +298,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.004"
+      "contestId": "pru-14:P.004",
+      "validVotes": 34527,
+      "rejectedVotes": 604,
+      "unreturnedVotes": 119
     },
     {
       "code": "P.005",
       "state": "KEDAH",
       "name": "JERLUN",
       "registered": 54132,
-      "turnout": 43937,
+      "turnout": 44822,
       "turnoutPct": 0.828013,
       "candidateCount": 3,
       "marginVotes": 5866,
@@ -344,14 +362,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.005"
+      "contestId": "pru-14:P.005",
+      "validVotes": 43937,
+      "rejectedVotes": 723,
+      "unreturnedVotes": 162
     },
     {
       "code": "P.006",
       "state": "KEDAH",
       "name": "KUBANG PASU",
       "registered": 73881,
-      "turnout": 60334,
+      "turnout": 61452,
       "turnoutPct": 0.83177,
       "candidateCount": 3,
       "marginVotes": 13009,
@@ -405,14 +426,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.006"
+      "contestId": "pru-14:P.006",
+      "validVotes": 60334,
+      "rejectedVotes": 770,
+      "unreturnedVotes": 348
     },
     {
       "code": "P.007",
       "state": "KEDAH",
       "name": "PADANG TERAP",
       "registered": 46644,
-      "turnout": 38923,
+      "turnout": 39932,
       "turnoutPct": 0.856102,
       "candidateCount": 3,
       "marginVotes": 1099,
@@ -466,14 +490,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.007"
+      "contestId": "pru-14:P.007",
+      "validVotes": 38923,
+      "rejectedVotes": 854,
+      "unreturnedVotes": 155
     },
     {
       "code": "P.008",
       "state": "KEDAH",
       "name": "POKOK SENA",
       "registered": 86892,
-      "turnout": 70750,
+      "turnout": 71910,
       "turnoutPct": 0.827579,
       "candidateCount": 3,
       "marginVotes": 5558,
@@ -527,14 +554,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.008"
+      "contestId": "pru-14:P.008",
+      "validVotes": 70750,
+      "rejectedVotes": 869,
+      "unreturnedVotes": 291
     },
     {
       "code": "P.009",
       "state": "KEDAH",
       "name": "ALOR SETAR",
       "registered": 80272,
-      "turnout": 63931,
+      "turnout": 65096,
       "turnoutPct": 0.810943,
       "candidateCount": 3,
       "marginVotes": 15200,
@@ -588,14 +618,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.009"
+      "contestId": "pru-14:P.009",
+      "validVotes": 63931,
+      "rejectedVotes": 881,
+      "unreturnedVotes": 284
     },
     {
       "code": "P.010",
       "state": "KEDAH",
       "name": "KUALA KEDAH",
       "registered": 97753,
-      "turnout": 79167,
+      "turnout": 80555,
       "turnoutPct": 0.824067,
       "candidateCount": 3,
       "marginVotes": 13481,
@@ -649,14 +682,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.010"
+      "contestId": "pru-14:P.010",
+      "validVotes": 79167,
+      "rejectedVotes": 1111,
+      "unreturnedVotes": 277
     },
     {
       "code": "P.011",
       "state": "KEDAH",
       "name": "PENDANG",
       "registered": 74867,
-      "turnout": 62246,
+      "turnout": 63371,
       "turnoutPct": 0.846448,
       "candidateCount": 4,
       "marginVotes": 5808,
@@ -721,14 +757,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.011"
+      "contestId": "pru-14:P.011",
+      "validVotes": 62246,
+      "rejectedVotes": 952,
+      "unreturnedVotes": 173
     },
     {
       "code": "P.012",
       "state": "KEDAH",
       "name": "JERAI",
       "registered": 79976,
-      "turnout": 65736,
+      "turnout": 66920,
       "turnoutPct": 0.836751,
       "candidateCount": 3,
       "marginVotes": 539,
@@ -782,14 +821,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.012"
+      "contestId": "pru-14:P.012",
+      "validVotes": 65736,
+      "rejectedVotes": 1012,
+      "unreturnedVotes": 172
     },
     {
       "code": "P.013",
       "state": "KEDAH",
       "name": "SIK",
       "registered": 50385,
-      "turnout": 41928,
+      "turnout": 42772,
       "turnoutPct": 0.848903,
       "candidateCount": 3,
       "marginVotes": 5218,
@@ -843,14 +885,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.013"
+      "contestId": "pru-14:P.013",
+      "validVotes": 41928,
+      "rejectedVotes": 729,
+      "unreturnedVotes": 115
     },
     {
       "code": "P.014",
       "state": "KEDAH",
       "name": "MERBOK",
       "registered": 87782,
-      "turnout": 71350,
+      "turnout": 72708,
       "turnoutPct": 0.828279,
       "candidateCount": 3,
       "marginVotes": 10072,
@@ -904,14 +949,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.014"
+      "contestId": "pru-14:P.014",
+      "validVotes": 71350,
+      "rejectedVotes": 1108,
+      "unreturnedVotes": 250
     },
     {
       "code": "P.015",
       "state": "KEDAH",
       "name": "SUNGAI PETANI",
       "registered": 112577,
-      "turnout": 92534,
+      "turnout": 93847,
       "turnoutPct": 0.833625,
       "candidateCount": 4,
       "marginVotes": 21569,
@@ -976,14 +1024,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.015"
+      "contestId": "pru-14:P.015",
+      "validVotes": 92534,
+      "rejectedVotes": 889,
+      "unreturnedVotes": 424
     },
     {
       "code": "P.016",
       "state": "KEDAH",
       "name": "BALING",
       "registered": 107213,
-      "turnout": 90512,
+      "turnout": 92128,
       "turnoutPct": 0.859299,
       "candidateCount": 3,
       "marginVotes": 1074,
@@ -1037,14 +1088,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.016"
+      "contestId": "pru-14:P.016",
+      "validVotes": 90512,
+      "rejectedVotes": 1388,
+      "unreturnedVotes": 228
     },
     {
       "code": "P.017",
       "state": "KEDAH",
       "name": "PADANG SERAI",
       "registered": 84834,
-      "turnout": 70084,
+      "turnout": 71157,
       "turnoutPct": 0.838779,
       "candidateCount": 3,
       "marginVotes": 8813,
@@ -1098,14 +1152,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.017"
+      "contestId": "pru-14:P.017",
+      "validVotes": 70084,
+      "rejectedVotes": 827,
+      "unreturnedVotes": 246
     },
     {
       "code": "P.018",
       "state": "KEDAH",
       "name": "KULIM-BANDAR BAHARU",
       "registered": 66587,
-      "turnout": 54343,
+      "turnout": 55390,
       "turnoutPct": 0.831844,
       "candidateCount": 3,
       "marginVotes": 4860,
@@ -1159,14 +1216,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.018"
+      "contestId": "pru-14:P.018",
+      "validVotes": 54343,
+      "rejectedVotes": 894,
+      "unreturnedVotes": 153
     },
     {
       "code": "P.019",
       "state": "KELANTAN",
       "name": "TUMPAT",
       "registered": 110924,
-      "turnout": 86585,
+      "turnout": 88733,
       "turnoutPct": 0.799944,
       "candidateCount": 3,
       "marginVotes": 17500,
@@ -1220,14 +1280,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.019"
+      "contestId": "pru-14:P.019",
+      "validVotes": 86585,
+      "rejectedVotes": 1402,
+      "unreturnedVotes": 746
     },
     {
       "code": "P.020",
       "state": "KELANTAN",
       "name": "PENGKALAN CHEPA",
       "registered": 75384,
-      "turnout": 59387,
+      "turnout": 60862,
       "turnoutPct": 0.80736,
       "candidateCount": 3,
       "marginVotes": 13232,
@@ -1281,14 +1344,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.020"
+      "contestId": "pru-14:P.020",
+      "validVotes": 59387,
+      "rejectedVotes": 739,
+      "unreturnedVotes": 736
     },
     {
       "code": "P.021",
       "state": "KELANTAN",
       "name": "KOTA BHARU",
       "registered": 88708,
-      "turnout": 66969,
+      "turnout": 68306,
       "turnoutPct": 0.770009,
       "candidateCount": 3,
       "marginVotes": 5869,
@@ -1342,14 +1408,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.021"
+      "contestId": "pru-14:P.021",
+      "validVotes": 66969,
+      "rejectedVotes": 689,
+      "unreturnedVotes": 648
     },
     {
       "code": "P.022",
       "state": "KELANTAN",
       "name": "PASIR MAS",
       "registered": 71222,
-      "turnout": 53551,
+      "turnout": 55319,
       "turnoutPct": 0.776712,
       "candidateCount": 4,
       "marginVotes": 13075,
@@ -1414,14 +1483,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.022"
+      "contestId": "pru-14:P.022",
+      "validVotes": 53551,
+      "rejectedVotes": 1232,
+      "unreturnedVotes": 536
     },
     {
       "code": "P.023",
       "state": "KELANTAN",
       "name": "RANTAU PANJANG",
       "registered": 66115,
-      "turnout": 48373,
+      "turnout": 49639,
       "turnoutPct": 0.750798,
       "candidateCount": 3,
       "marginVotes": 6150,
@@ -1475,14 +1547,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.023"
+      "contestId": "pru-14:P.023",
+      "validVotes": 48373,
+      "rejectedVotes": 825,
+      "unreturnedVotes": 441
     },
     {
       "code": "P.024",
       "state": "KELANTAN",
       "name": "KUBANG KERIAN",
       "registered": 82018,
-      "turnout": 63428,
+      "turnout": 64867,
       "turnoutPct": 0.790887,
       "candidateCount": 3,
       "marginVotes": 19369,
@@ -1536,14 +1611,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.024"
+      "contestId": "pru-14:P.024",
+      "validVotes": 63428,
+      "rejectedVotes": 735,
+      "unreturnedVotes": 704
     },
     {
       "code": "P.025",
       "state": "KELANTAN",
       "name": "BACHOK",
       "registered": 92606,
-      "turnout": 73964,
+      "turnout": 75945,
       "turnoutPct": 0.820087,
       "candidateCount": 3,
       "marginVotes": 3292,
@@ -1597,14 +1675,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.025"
+      "contestId": "pru-14:P.025",
+      "validVotes": 73964,
+      "rejectedVotes": 1148,
+      "unreturnedVotes": 833
     },
     {
       "code": "P.026",
       "state": "KELANTAN",
       "name": "KETEREH",
       "registered": 65238,
-      "turnout": 53107,
+      "turnout": 54404,
       "turnoutPct": 0.833931,
       "candidateCount": 3,
       "marginVotes": 4626,
@@ -1658,14 +1739,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.026"
+      "contestId": "pru-14:P.026",
+      "validVotes": 53107,
+      "rejectedVotes": 781,
+      "unreturnedVotes": 516
     },
     {
       "code": "P.027",
       "state": "KELANTAN",
       "name": "TANAH MERAH",
       "registered": 73172,
-      "turnout": 58122,
+      "turnout": 59598,
       "turnoutPct": 0.814492,
       "candidateCount": 3,
       "marginVotes": 2929,
@@ -1719,14 +1803,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.027"
+      "contestId": "pru-14:P.027",
+      "validVotes": 58122,
+      "rejectedVotes": 986,
+      "unreturnedVotes": 490
     },
     {
       "code": "P.028",
       "state": "KELANTAN",
       "name": "PASIR PUTEH",
       "registered": 85411,
-      "turnout": 68150,
+      "turnout": 69745,
       "turnoutPct": 0.816581,
       "candidateCount": 3,
       "marginVotes": 1360,
@@ -1780,14 +1867,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.028"
+      "contestId": "pru-14:P.028",
+      "validVotes": 68150,
+      "rejectedVotes": 923,
+      "unreturnedVotes": 672
     },
     {
       "code": "P.029",
       "state": "KELANTAN",
       "name": "MACHANG",
       "registered": 68387,
-      "turnout": 55023,
+      "turnout": 56320,
       "turnoutPct": 0.823548,
       "candidateCount": 3,
       "marginVotes": 2824,
@@ -1841,14 +1931,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.029"
+      "contestId": "pru-14:P.029",
+      "validVotes": 55023,
+      "rejectedVotes": 801,
+      "unreturnedVotes": 496
     },
     {
       "code": "P.030",
       "state": "KELANTAN",
       "name": "JELI",
       "registered": 47470,
-      "turnout": 38761,
+      "turnout": 39627,
       "turnoutPct": 0.83478,
       "candidateCount": 3,
       "marginVotes": 6647,
@@ -1902,14 +1995,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.030"
+      "contestId": "pru-14:P.030",
+      "validVotes": 38761,
+      "rejectedVotes": 400,
+      "unreturnedVotes": 466
     },
     {
       "code": "P.031",
       "state": "KELANTAN",
       "name": "KUALA KRAI",
       "registered": 70348,
-      "turnout": 54987,
+      "turnout": 56278,
       "turnoutPct": 0.799994,
       "candidateCount": 3,
       "marginVotes": 7992,
@@ -1963,14 +2059,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.031"
+      "contestId": "pru-14:P.031",
+      "validVotes": 54987,
+      "rejectedVotes": 861,
+      "unreturnedVotes": 430
     },
     {
       "code": "P.032",
       "state": "KELANTAN",
       "name": "GUA MUSANG",
       "registered": 52524,
-      "turnout": 39936,
+      "turnout": 41206,
       "turnoutPct": 0.784518,
       "candidateCount": 3,
       "marginVotes": 3913,
@@ -2024,14 +2123,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.032"
+      "contestId": "pru-14:P.032",
+      "validVotes": 39936,
+      "rejectedVotes": 948,
+      "unreturnedVotes": 322
     },
     {
       "code": "P.033",
       "state": "TERENGGANU",
       "name": "BESUT",
       "registered": 86627,
-      "turnout": 70935,
+      "turnout": 72323,
       "turnoutPct": 0.834878,
       "candidateCount": 3,
       "marginVotes": 4599,
@@ -2085,14 +2187,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.033"
+      "contestId": "pru-14:P.033",
+      "validVotes": 70935,
+      "rejectedVotes": 903,
+      "unreturnedVotes": 485
     },
     {
       "code": "P.034",
       "state": "TERENGGANU",
       "name": "SETIU",
       "registered": 86247,
-      "turnout": 71978,
+      "turnout": 73673,
       "turnoutPct": 0.854209,
       "candidateCount": 3,
       "marginVotes": 2802,
@@ -2146,14 +2251,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.034"
+      "contestId": "pru-14:P.034",
+      "validVotes": 71978,
+      "rejectedVotes": 1244,
+      "unreturnedVotes": 451
     },
     {
       "code": "P.035",
       "state": "TERENGGANU",
       "name": "KUALA NERUS",
       "registered": 83663,
-      "turnout": 72105,
+      "turnout": 73211,
       "turnoutPct": 0.87507,
       "candidateCount": 3,
       "marginVotes": 8447,
@@ -2207,14 +2315,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.035"
+      "contestId": "pru-14:P.035",
+      "validVotes": 72105,
+      "rejectedVotes": 727,
+      "unreturnedVotes": 379
     },
     {
       "code": "P.036",
       "state": "TERENGGANU",
       "name": "KUALA TERENGGANU",
       "registered": 103611,
-      "turnout": 86583,
+      "turnout": 87786,
       "turnoutPct": 0.847265,
       "candidateCount": 3,
       "marginVotes": 14773,
@@ -2268,14 +2379,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.036"
+      "contestId": "pru-14:P.036",
+      "validVotes": 86583,
+      "rejectedVotes": 767,
+      "unreturnedVotes": 436
     },
     {
       "code": "P.037",
       "state": "TERENGGANU",
       "name": "MARANG",
       "registered": 104898,
-      "turnout": 90682,
+      "turnout": 92046,
       "turnoutPct": 0.877481,
       "candidateCount": 3,
       "marginVotes": 21954,
@@ -2329,14 +2443,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.037"
+      "contestId": "pru-14:P.037",
+      "validVotes": 90682,
+      "rejectedVotes": 1028,
+      "unreturnedVotes": 336
     },
     {
       "code": "P.038",
       "state": "TERENGGANU",
       "name": "HULU TERENGGANU",
       "registered": 73487,
-      "turnout": 62346,
+      "turnout": 63428,
       "turnoutPct": 0.863119,
       "candidateCount": 3,
       "marginVotes": 2868,
@@ -2390,14 +2507,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.038"
+      "contestId": "pru-14:P.038",
+      "validVotes": 62346,
+      "rejectedVotes": 871,
+      "unreturnedVotes": 211
     },
     {
       "code": "P.039",
       "state": "TERENGGANU",
       "name": "DUNGUN",
       "registered": 90506,
-      "turnout": 75414,
+      "turnout": 76706,
       "turnoutPct": 0.847524,
       "candidateCount": 3,
       "marginVotes": 13119,
@@ -2451,14 +2571,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.039"
+      "contestId": "pru-14:P.039",
+      "validVotes": 75414,
+      "rejectedVotes": 886,
+      "unreturnedVotes": 406
     },
     {
       "code": "P.040",
       "state": "TERENGGANU",
       "name": "KEMAMAN",
       "registered": 107593,
-      "turnout": 90504,
+      "turnout": 92007,
       "turnoutPct": 0.855139,
       "candidateCount": 3,
       "marginVotes": 2163,
@@ -2512,14 +2635,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.040"
+      "contestId": "pru-14:P.040",
+      "validVotes": 90504,
+      "rejectedVotes": 1126,
+      "unreturnedVotes": 377
     },
     {
       "code": "P.041",
       "state": "PULAU PINANG",
       "name": "KEPALA BATAS",
       "registered": 60523,
-      "turnout": 52302,
+      "turnout": 53127,
       "turnoutPct": 0.877799,
       "candidateCount": 3,
       "marginVotes": 4736,
@@ -2573,14 +2699,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.041"
+      "contestId": "pru-14:P.041",
+      "validVotes": 52302,
+      "rejectedVotes": 715,
+      "unreturnedVotes": 110
     },
     {
       "code": "P.042",
       "state": "PULAU PINANG",
       "name": "TASEK GELUGOR",
       "registered": 60850,
-      "turnout": 51904,
+      "turnout": 52890,
       "turnoutPct": 0.869187,
       "candidateCount": 3,
       "marginVotes": 81,
@@ -2634,14 +2763,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.042"
+      "contestId": "pru-14:P.042",
+      "validVotes": 51904,
+      "rejectedVotes": 689,
+      "unreturnedVotes": 297
     },
     {
       "code": "P.043",
       "state": "PULAU PINANG",
       "name": "BAGAN",
       "registered": 71583,
-      "turnout": 60087,
+      "turnout": 60642,
       "turnoutPct": 0.847156,
       "candidateCount": 4,
       "marginVotes": 43902,
@@ -2706,14 +2838,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.043"
+      "contestId": "pru-14:P.043",
+      "validVotes": 60087,
+      "rejectedVotes": 463,
+      "unreturnedVotes": 92
     },
     {
       "code": "P.044",
       "state": "PULAU PINANG",
       "name": "PERMATANG PAUH",
       "registered": 81789,
-      "turnout": 69828,
+      "turnout": 70686,
       "turnoutPct": 0.864248,
       "candidateCount": 3,
       "marginVotes": 15668,
@@ -2767,14 +2902,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.044"
+      "contestId": "pru-14:P.044",
+      "validVotes": 69828,
+      "rejectedVotes": 658,
+      "unreturnedVotes": 200
     },
     {
       "code": "P.045",
       "state": "PULAU PINANG",
       "name": "BUKIT MERTAJAM",
       "registered": 88998,
-      "turnout": 74691,
+      "turnout": 75977,
       "turnoutPct": 0.853693,
       "candidateCount": 2,
       "marginVotes": 52877,
@@ -2817,7 +2955,10 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.045"
+      "contestId": "pru-14:P.045",
+      "validVotes": 74691,
+      "rejectedVotes": 1109,
+      "unreturnedVotes": 177
     },
     {
       "code": "P.046",
@@ -2968,7 +3109,7 @@
       "state": "PULAU PINANG",
       "name": "BUKIT BENDERA",
       "registered": 75069,
-      "turnout": 59706,
+      "turnout": 60429,
       "turnoutPct": 0.804979,
       "candidateCount": 3,
       "marginVotes": 40731,
@@ -3022,14 +3163,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.048"
+      "contestId": "pru-14:P.048",
+      "validVotes": 59706,
+      "rejectedVotes": 512,
+      "unreturnedVotes": 211
     },
     {
       "code": "P.049",
       "state": "PULAU PINANG",
       "name": "TANJONG",
       "registered": 49586,
-      "turnout": 39727,
+      "turnout": 40130,
       "turnoutPct": 0.809301,
       "candidateCount": 2,
       "marginVotes": 29599,
@@ -3072,14 +3216,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.049"
+      "contestId": "pru-14:P.049",
+      "validVotes": 39727,
+      "rejectedVotes": 347,
+      "unreturnedVotes": 56
     },
     {
       "code": "P.050",
       "state": "PULAU PINANG",
       "name": "JELUTONG",
       "registered": 76991,
-      "turnout": 63666,
+      "turnout": 64584,
       "turnoutPct": 0.838851,
       "candidateCount": 3,
       "marginVotes": 38171,
@@ -3133,14 +3280,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.050"
+      "contestId": "pru-14:P.050",
+      "validVotes": 63666,
+      "rejectedVotes": 720,
+      "unreturnedVotes": 198
     },
     {
       "code": "P.051",
       "state": "PULAU PINANG",
       "name": "BUKIT GELUGOR",
       "registered": 91595,
-      "turnout": 75705,
+      "turnout": 76489,
       "turnoutPct": 0.835078,
       "candidateCount": 3,
       "marginVotes": 55951,
@@ -3194,14 +3344,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.051"
+      "contestId": "pru-14:P.051",
+      "validVotes": 75705,
+      "rejectedVotes": 528,
+      "unreturnedVotes": 256
     },
     {
       "code": "P.052",
       "state": "PULAU PINANG",
       "name": "BAYAN BARU",
       "registered": 90780,
-      "turnout": 74849,
+      "turnout": 75884,
       "turnoutPct": 0.835911,
       "candidateCount": 4,
       "marginVotes": 37751,
@@ -3266,14 +3419,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.052"
+      "contestId": "pru-14:P.052",
+      "validVotes": 74849,
+      "rejectedVotes": 762,
+      "unreturnedVotes": 273
     },
     {
       "code": "P.053",
       "state": "PULAU PINANG",
       "name": "BALIK PULAU",
       "registered": 59086,
-      "turnout": 49776,
+      "turnout": 50564,
       "turnoutPct": 0.85577,
       "candidateCount": 3,
       "marginVotes": 6464,
@@ -3327,14 +3483,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.053"
+      "contestId": "pru-14:P.053",
+      "validVotes": 49776,
+      "rejectedVotes": 631,
+      "unreturnedVotes": 157
     },
     {
       "code": "P.054",
       "state": "PERAK",
       "name": "GERIK",
       "registered": 35903,
-      "turnout": 27311,
+      "turnout": 28032,
       "turnoutPct": 0.78077,
       "candidateCount": 3,
       "marginVotes": 5528,
@@ -3388,14 +3547,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.054"
+      "contestId": "pru-14:P.054",
+      "validVotes": 27311,
+      "rejectedVotes": 595,
+      "unreturnedVotes": 126
     },
     {
       "code": "P.055",
       "state": "PERAK",
       "name": "LENGGONG",
       "registered": 29752,
-      "turnout": 23205,
+      "turnout": 23719,
       "turnoutPct": 0.797224,
       "candidateCount": 3,
       "marginVotes": 5773,
@@ -3449,14 +3611,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.055"
+      "contestId": "pru-14:P.055",
+      "validVotes": 23205,
+      "rejectedVotes": 405,
+      "unreturnedVotes": 109
     },
     {
       "code": "P.056",
       "state": "PERAK",
       "name": "LARUT",
       "registered": 49453,
-      "turnout": 39620,
+      "turnout": 40470,
       "turnoutPct": 0.818353,
       "candidateCount": 3,
       "marginVotes": 4486,
@@ -3510,14 +3675,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.056"
+      "contestId": "pru-14:P.056",
+      "validVotes": 39620,
+      "rejectedVotes": 722,
+      "unreturnedVotes": 128
     },
     {
       "code": "P.057",
       "state": "PERAK",
       "name": "PARIT BUNTAR",
       "registered": 51860,
-      "turnout": 42720,
+      "turnout": 43347,
       "turnoutPct": 0.835847,
       "candidateCount": 3,
       "marginVotes": 3098,
@@ -3571,14 +3739,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.057"
+      "contestId": "pru-14:P.057",
+      "validVotes": 42720,
+      "rejectedVotes": 536,
+      "unreturnedVotes": 91
     },
     {
       "code": "P.058",
       "state": "PERAK",
       "name": "BAGAN SERAI",
       "registered": 59293,
-      "turnout": 47255,
+      "turnout": 48381,
       "turnoutPct": 0.815965,
       "candidateCount": 3,
       "marginVotes": 172,
@@ -3632,14 +3803,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.058"
+      "contestId": "pru-14:P.058",
+      "validVotes": 47255,
+      "rejectedVotes": 865,
+      "unreturnedVotes": 261
     },
     {
       "code": "P.059",
       "state": "PERAK",
       "name": "BUKIT GANTANG",
       "registered": 69873,
-      "turnout": 56863,
+      "turnout": 57867,
       "turnoutPct": 0.828174,
       "candidateCount": 3,
       "marginVotes": 4089,
@@ -3693,14 +3867,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.059"
+      "contestId": "pru-14:P.059",
+      "validVotes": 56863,
+      "rejectedVotes": 761,
+      "unreturnedVotes": 243
     },
     {
       "code": "P.060",
       "state": "PERAK",
       "name": "TAIPING",
       "registered": 90729,
-      "turnout": 69743,
+      "turnout": 71297,
       "turnoutPct": 0.785824,
       "candidateCount": 3,
       "marginVotes": 27384,
@@ -3754,14 +3931,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.060"
+      "contestId": "pru-14:P.060",
+      "validVotes": 69743,
+      "rejectedVotes": 1092,
+      "unreturnedVotes": 462
     },
     {
       "code": "P.061",
       "state": "PERAK",
       "name": "PADANG RENGAS",
       "registered": 30996,
-      "turnout": 25281,
+      "turnout": 25698,
       "turnoutPct": 0.829075,
       "candidateCount": 3,
       "marginVotes": 2548,
@@ -3815,14 +3995,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.061"
+      "contestId": "pru-14:P.061",
+      "validVotes": 25281,
+      "rejectedVotes": 315,
+      "unreturnedVotes": 102
     },
     {
       "code": "P.062",
       "state": "PERAK",
       "name": "SUNGAI SIPUT",
       "registered": 55002,
-      "turnout": 42726,
+      "turnout": 43662,
       "turnoutPct": 0.793826,
       "candidateCount": 4,
       "marginVotes": 5607,
@@ -3887,7 +4070,10 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.062"
+      "contestId": "pru-14:P.062",
+      "validVotes": 42726,
+      "rejectedVotes": 814,
+      "unreturnedVotes": 122
     },
     {
       "code": "P.063",
@@ -3955,7 +4141,7 @@
       "state": "PERAK",
       "name": "IPOH TIMOR",
       "registered": 91486,
-      "turnout": 70241,
+      "turnout": 71726,
       "turnoutPct": 0.784011,
       "candidateCount": 2,
       "marginVotes": 42797,
@@ -3998,14 +4184,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.064"
+      "contestId": "pru-14:P.064",
+      "validVotes": 70241,
+      "rejectedVotes": 1023,
+      "unreturnedVotes": 462
     },
     {
       "code": "P.065",
       "state": "PERAK",
       "name": "IPOH BARAT",
       "registered": 84874,
-      "turnout": 65502,
+      "turnout": 66852,
       "turnoutPct": 0.787662,
       "candidateCount": 2,
       "marginVotes": 45724,
@@ -4048,14 +4237,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.065"
+      "contestId": "pru-14:P.065",
+      "validVotes": 65502,
+      "rejectedVotes": 878,
+      "unreturnedVotes": 472
     },
     {
       "code": "P.066",
       "state": "PERAK",
       "name": "BATU GAJAH",
       "registered": 81399,
-      "turnout": 62787,
+      "turnout": 63804,
       "turnoutPct": 0.783843,
       "candidateCount": 3,
       "marginVotes": 43868,
@@ -4109,14 +4301,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.066"
+      "contestId": "pru-14:P.066",
+      "validVotes": 62787,
+      "rejectedVotes": 733,
+      "unreturnedVotes": 284
     },
     {
       "code": "P.067",
       "state": "PERAK",
       "name": "KUALA KANGSAR",
       "registered": 36954,
-      "turnout": 30056,
+      "turnout": 30701,
       "turnoutPct": 0.83079,
       "candidateCount": 3,
       "marginVotes": 731,
@@ -4170,14 +4365,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.067"
+      "contestId": "pru-14:P.067",
+      "validVotes": 30056,
+      "rejectedVotes": 511,
+      "unreturnedVotes": 134
     },
     {
       "code": "P.068",
       "state": "PERAK",
       "name": "BERUAS",
       "registered": 79794,
-      "turnout": 60267,
+      "turnout": 61617,
       "turnoutPct": 0.772201,
       "candidateCount": 3,
       "marginVotes": 27954,
@@ -4231,14 +4429,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.068"
+      "contestId": "pru-14:P.068",
+      "validVotes": 60267,
+      "rejectedVotes": 1009,
+      "unreturnedVotes": 341
     },
     {
       "code": "P.069",
       "state": "PERAK",
       "name": "PARIT",
       "registered": 35910,
-      "turnout": 28990,
+      "turnout": 29547,
       "turnoutPct": 0.822807,
       "candidateCount": 3,
       "marginVotes": 6320,
@@ -4292,14 +4493,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.069"
+      "contestId": "pru-14:P.069",
+      "validVotes": 28990,
+      "rejectedVotes": 425,
+      "unreturnedVotes": 132
     },
     {
       "code": "P.070",
       "state": "PERAK",
       "name": "KAMPAR",
       "registered": 69436,
-      "turnout": 52495,
+      "turnout": 53567,
       "turnoutPct": 0.771459,
       "candidateCount": 3,
       "marginVotes": 11801,
@@ -4353,14 +4557,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.070"
+      "contestId": "pru-14:P.070",
+      "validVotes": 52495,
+      "rejectedVotes": 858,
+      "unreturnedVotes": 214
     },
     {
       "code": "P.071",
       "state": "PERAK",
       "name": "GOPENG",
       "registered": 99167,
-      "turnout": 79233,
+      "turnout": 80532,
       "turnoutPct": 0.812085,
       "candidateCount": 3,
       "marginVotes": 29778,
@@ -4414,14 +4621,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.071"
+      "contestId": "pru-14:P.071",
+      "validVotes": 79233,
+      "rejectedVotes": 853,
+      "unreturnedVotes": 446
     },
     {
       "code": "P.072",
       "state": "PERAK",
       "name": "TAPAH",
       "registered": 47128,
-      "turnout": 36174,
+      "turnout": 37113,
       "turnoutPct": 0.787494,
       "candidateCount": 3,
       "marginVotes": 614,
@@ -4475,14 +4685,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.072"
+      "contestId": "pru-14:P.072",
+      "validVotes": 36174,
+      "rejectedVotes": 760,
+      "unreturnedVotes": 179
     },
     {
       "code": "P.073",
       "state": "PERAK",
       "name": "PASIR SALAK",
       "registered": 54671,
-      "turnout": 43445,
+      "turnout": 44508,
       "turnoutPct": 0.814106,
       "candidateCount": 3,
       "marginVotes": 7712,
@@ -4536,14 +4749,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.073"
+      "contestId": "pru-14:P.073",
+      "validVotes": 43445,
+      "rejectedVotes": 895,
+      "unreturnedVotes": 168
     },
     {
       "code": "P.074",
       "state": "PERAK",
       "name": "LUMUT",
       "registered": 67157,
-      "turnout": 53645,
+      "turnout": 55042,
       "turnoutPct": 0.819602,
       "candidateCount": 3,
       "marginVotes": 400,
@@ -4597,25 +4813,28 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.074"
+      "contestId": "pru-14:P.074",
+      "validVotes": 53645,
+      "rejectedVotes": 1081,
+      "unreturnedVotes": 316
     },
     {
       "code": "P.075",
       "state": "PERAK",
       "name": "BAGAN DATUK",
       "registered": 47309,
-      "turnout": 36805,
+      "turnout": 37796,
       "turnoutPct": 0.798918,
       "candidateCount": 3,
-      "marginVotes": 5072,
-      "marginShare": 0.137808,
+      "marginVotes": 5073,
+      "marginShare": 0.137831,
       "winner": {
         "id": "p075:ahmad-zahid-bin-hamidi",
         "name": "AHMAD ZAHID BIN HAMIDI",
         "alliance": "BARISAN NASIONAL (BN)",
         "party": "UNITED MALAY NATIONAL ORGANIZATION (UMNO)",
-        "votes": 18908,
-        "share": 0.513735,
+        "votes": 18909,
+        "share": 0.513748,
         "personId": "person:ahmad-zahid-bin-hamidi",
         "electionId": "pru-14",
         "candidacyId": "pru-14:P.075:01",
@@ -4628,8 +4847,8 @@
           "name": "AHMAD ZAHID BIN HAMIDI",
           "alliance": "BARISAN NASIONAL (BN)",
           "party": "UNITED MALAY NATIONAL ORGANIZATION (UMNO)",
-          "votes": 18908,
-          "share": 0.513735,
+          "votes": 18909,
+          "share": 0.513748,
           "personId": "person:ahmad-zahid-bin-hamidi",
           "electionId": "pru-14",
           "candidacyId": "pru-14:P.075:01"
@@ -4640,7 +4859,7 @@
           "alliance": "PAKATAN HARAPAN (PH)",
           "party": "PARTI KEADILAN RAKYAT (PKR)",
           "votes": 13836,
-          "share": 0.375927,
+          "share": 0.375917,
           "personId": "person:pakhrurrazi-bin-hj-arshad",
           "electionId": "pru-14",
           "candidacyId": "pru-14:P.075:02"
@@ -4651,21 +4870,24 @@
           "alliance": "GAGASAN SEJAHTERA (GS)",
           "party": "PARTI ISLAM SE-MALAYSIA (PAS)",
           "votes": 4061,
-          "share": 0.110338,
+          "share": 0.110335,
           "personId": "person:ata-abdul-muneim-bin-hasan-adli",
           "electionId": "pru-14",
           "candidacyId": "pru-14:P.075:03"
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.075"
+      "contestId": "pru-14:P.075",
+      "validVotes": 36806,
+      "rejectedVotes": 814,
+      "unreturnedVotes": 176
     },
     {
       "code": "P.076",
       "state": "PERAK",
       "name": "TELUK INTAN",
       "registered": 66487,
-      "turnout": 53655,
+      "turnout": 54601,
       "turnoutPct": 0.821228,
       "candidateCount": 3,
       "marginVotes": 11179,
@@ -4719,14 +4941,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.076"
+      "contestId": "pru-14:P.076",
+      "validVotes": 53655,
+      "rejectedVotes": 742,
+      "unreturnedVotes": 204
     },
     {
       "code": "P.077",
       "state": "PERAK",
       "name": "TANJONG MALIM",
       "registered": 68468,
-      "turnout": 54297,
+      "turnout": 55613,
       "turnoutPct": 0.812248,
       "candidateCount": 3,
       "marginVotes": 5358,
@@ -4780,14 +5005,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.077"
+      "contestId": "pru-14:P.077",
+      "validVotes": 54297,
+      "rejectedVotes": 1051,
+      "unreturnedVotes": 265
     },
     {
       "code": "P.078",
       "state": "PAHANG",
       "name": "CAMERON HIGHLANDS",
       "registered": 32048,
-      "turnout": 24365,
+      "turnout": 25326,
       "turnoutPct": 0.790252,
       "candidateCount": 5,
       "marginVotes": 597,
@@ -4863,14 +5091,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.078"
+      "contestId": "pru-14:P.078",
+      "validVotes": 24365,
+      "rejectedVotes": 790,
+      "unreturnedVotes": 171
     },
     {
       "code": "P.079",
       "state": "PAHANG",
       "name": "LIPIS",
       "registered": 35294,
-      "turnout": 28092,
+      "turnout": 28666,
       "turnoutPct": 0.812206,
       "candidateCount": 3,
       "marginVotes": 6569,
@@ -4924,14 +5155,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.079"
+      "contestId": "pru-14:P.079",
+      "validVotes": 28092,
+      "rejectedVotes": 462,
+      "unreturnedVotes": 112
     },
     {
       "code": "P.080",
       "state": "PAHANG",
       "name": "RAUB",
       "registered": 57723,
-      "turnout": 46025,
+      "turnout": 46971,
       "turnoutPct": 0.813731,
       "candidateCount": 3,
       "marginVotes": 3159,
@@ -4985,14 +5219,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.080"
+      "contestId": "pru-14:P.080",
+      "validVotes": 46025,
+      "rejectedVotes": 766,
+      "unreturnedVotes": 180
     },
     {
       "code": "P.081",
       "state": "PAHANG",
       "name": "JERANTUT",
       "registered": 63609,
-      "turnout": 50249,
+      "turnout": 51414,
       "turnoutPct": 0.808282,
       "candidateCount": 3,
       "marginVotes": 5908,
@@ -5046,14 +5283,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.081"
+      "contestId": "pru-14:P.081",
+      "validVotes": 50249,
+      "rejectedVotes": 941,
+      "unreturnedVotes": 224
     },
     {
       "code": "P.082",
       "state": "PAHANG",
       "name": "INDERA MAHKOTA",
       "registered": 77208,
-      "turnout": 63721,
+      "turnout": 64612,
       "turnoutPct": 0.836856,
       "candidateCount": 3,
       "marginVotes": 10950,
@@ -5107,14 +5347,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.082"
+      "contestId": "pru-14:P.082",
+      "validVotes": 63721,
+      "rejectedVotes": 622,
+      "unreturnedVotes": 269
     },
     {
       "code": "P.083",
       "state": "PAHANG",
       "name": "KUANTAN",
       "registered": 62696,
-      "turnout": 51170,
+      "turnout": 52167,
       "turnoutPct": 0.832063,
       "candidateCount": 3,
       "marginVotes": 8111,
@@ -5168,14 +5411,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.083"
+      "contestId": "pru-14:P.083",
+      "validVotes": 51170,
+      "rejectedVotes": 798,
+      "unreturnedVotes": 199
     },
     {
       "code": "P.084",
       "state": "PAHANG",
       "name": "PAYA BESAR",
       "registered": 55135,
-      "turnout": 44100,
+      "turnout": 44942,
       "turnoutPct": 0.815127,
       "candidateCount": 3,
       "marginVotes": 5742,
@@ -5229,14 +5475,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.084"
+      "contestId": "pru-14:P.084",
+      "validVotes": 44100,
+      "rejectedVotes": 671,
+      "unreturnedVotes": 171
     },
     {
       "code": "P.085",
       "state": "PAHANG",
       "name": "PEKAN",
       "registered": 88899,
-      "turnout": 70614,
+      "turnout": 72308,
       "turnoutPct": 0.813372,
       "candidateCount": 4,
       "marginVotes": 24859,
@@ -5301,14 +5550,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.085"
+      "contestId": "pru-14:P.085",
+      "validVotes": 70614,
+      "rejectedVotes": 1393,
+      "unreturnedVotes": 301
     },
     {
       "code": "P.086",
       "state": "PAHANG",
       "name": "MARAN",
       "registered": 41036,
-      "turnout": 32725,
+      "turnout": 33363,
       "turnoutPct": 0.813018,
       "candidateCount": 3,
       "marginVotes": 3763,
@@ -5362,14 +5614,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.086"
+      "contestId": "pru-14:P.086",
+      "validVotes": 32725,
+      "rejectedVotes": 482,
+      "unreturnedVotes": 156
     },
     {
       "code": "P.087",
       "state": "PAHANG",
       "name": "KUALA KRAU",
       "registered": 47264,
-      "turnout": 38311,
+      "turnout": 39102,
       "turnoutPct": 0.82731,
       "candidateCount": 3,
       "marginVotes": 2876,
@@ -5423,14 +5678,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.087"
+      "contestId": "pru-14:P.087",
+      "validVotes": 38311,
+      "rejectedVotes": 613,
+      "unreturnedVotes": 178
     },
     {
       "code": "P.088",
       "state": "PAHANG",
       "name": "TEMERLOH",
       "registered": 75081,
-      "turnout": 61050,
+      "turnout": 62204,
       "turnoutPct": 0.828492,
       "candidateCount": 5,
       "marginVotes": 1904,
@@ -5506,14 +5764,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.088"
+      "contestId": "pru-14:P.088",
+      "validVotes": 61050,
+      "rejectedVotes": 865,
+      "unreturnedVotes": 289
     },
     {
       "code": "P.089",
       "state": "PAHANG",
       "name": "BENTONG",
       "registered": 67359,
-      "turnout": 55106,
+      "turnout": 56173,
       "turnoutPct": 0.833935,
       "candidateCount": 3,
       "marginVotes": 2032,
@@ -5567,14 +5828,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.089"
+      "contestId": "pru-14:P.089",
+      "validVotes": 55106,
+      "rejectedVotes": 783,
+      "unreturnedVotes": 284
     },
     {
       "code": "P.090",
       "state": "PAHANG",
       "name": "BERA",
       "registered": 58711,
-      "turnout": 47305,
+      "turnout": 48339,
       "turnoutPct": 0.823338,
       "candidateCount": 3,
       "marginVotes": 2311,
@@ -5628,14 +5892,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.090"
+      "contestId": "pru-14:P.090",
+      "validVotes": 47305,
+      "rejectedVotes": 767,
+      "unreturnedVotes": 267
     },
     {
       "code": "P.091",
       "state": "PAHANG",
       "name": "ROMPIN",
       "registered": 61918,
-      "turnout": 49737,
+      "turnout": 50905,
       "turnoutPct": 0.822136,
       "candidateCount": 3,
       "marginVotes": 11395,
@@ -5689,14 +5956,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.091"
+      "contestId": "pru-14:P.091",
+      "validVotes": 49737,
+      "rejectedVotes": 917,
+      "unreturnedVotes": 251
     },
     {
       "code": "P.092",
       "state": "SELANGOR",
       "name": "SABAK BERNAM",
       "registered": 40863,
-      "turnout": 33350,
+      "turnout": 34023,
       "turnoutPct": 0.832611,
       "candidateCount": 3,
       "marginVotes": 1674,
@@ -5750,7 +6020,10 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.092"
+      "contestId": "pru-14:P.092",
+      "validVotes": 33350,
+      "rejectedVotes": 565,
+      "unreturnedVotes": 108
     },
     {
       "code": "P.093",
@@ -5890,7 +6163,7 @@
       "state": "SELANGOR",
       "name": "TANJONG KARANG",
       "registered": 47198,
-      "turnout": 40498,
+      "turnout": 41184,
       "turnoutPct": 0.872579,
       "candidateCount": 3,
       "marginVotes": 1970,
@@ -5944,14 +6217,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.095"
+      "contestId": "pru-14:P.095",
+      "validVotes": 40498,
+      "rejectedVotes": 531,
+      "unreturnedVotes": 155
     },
     {
       "code": "P.096",
       "state": "SELANGOR",
       "name": "KUALA SELANGOR",
       "registered": 69397,
-      "turnout": 59721,
+      "turnout": 60843,
       "turnoutPct": 0.876738,
       "candidateCount": 3,
       "marginVotes": 8498,
@@ -6005,14 +6281,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.096"
+      "contestId": "pru-14:P.096",
+      "validVotes": 59721,
+      "rejectedVotes": 996,
+      "unreturnedVotes": 126
     },
     {
       "code": "P.097",
       "state": "SELANGOR",
       "name": "SELAYANG",
       "registered": 116176,
-      "turnout": 98002,
+      "turnout": 99450,
       "turnoutPct": 0.856029,
       "candidateCount": 3,
       "marginVotes": 40657,
@@ -6066,14 +6345,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.097"
+      "contestId": "pru-14:P.097",
+      "validVotes": 98002,
+      "rejectedVotes": 953,
+      "unreturnedVotes": 495
     },
     {
       "code": "P.098",
       "state": "SELANGOR",
       "name": "GOMBAK",
       "registered": 141112,
-      "turnout": 119042,
+      "turnout": 120548,
       "turnoutPct": 0.854272,
       "candidateCount": 3,
       "marginVotes": 48721,
@@ -6127,14 +6409,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.098"
+      "contestId": "pru-14:P.098",
+      "validVotes": 119042,
+      "rejectedVotes": 933,
+      "unreturnedVotes": 573
     },
     {
       "code": "P.099",
       "state": "SELANGOR",
       "name": "AMPANG",
       "registered": 91737,
-      "turnout": 76550,
+      "turnout": 77539,
       "turnoutPct": 0.845231,
       "candidateCount": 4,
       "marginVotes": 41956,
@@ -6199,14 +6484,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.099"
+      "contestId": "pru-14:P.099",
+      "validVotes": 76550,
+      "rejectedVotes": 608,
+      "unreturnedVotes": 381
     },
     {
       "code": "P.100",
       "state": "SELANGOR",
       "name": "PANDAN",
       "registered": 101319,
-      "turnout": 85774,
+      "turnout": 86514,
       "turnoutPct": 0.853877,
       "candidateCount": 5,
       "marginVotes": 52543,
@@ -6282,14 +6570,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.100"
+      "contestId": "pru-14:P.100",
+      "validVotes": 85774,
+      "rejectedVotes": 517,
+      "unreturnedVotes": 223
     },
     {
       "code": "P.101",
       "state": "SELANGOR",
       "name": "HULU LANGAT",
       "registered": 102363,
-      "turnout": 88247,
+      "turnout": 89577,
       "turnoutPct": 0.875092,
       "candidateCount": 3,
       "marginVotes": 25424,
@@ -6343,14 +6634,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.101"
+      "contestId": "pru-14:P.101",
+      "validVotes": 88247,
+      "rejectedVotes": 929,
+      "unreturnedVotes": 401
     },
     {
       "code": "P.102",
       "state": "SELANGOR",
       "name": "BANGI",
       "registered": 178790,
-      "turnout": 156327,
+      "turnout": 157933,
       "turnoutPct": 0.883344,
       "candidateCount": 4,
       "marginVotes": 68768,
@@ -6415,14 +6709,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.102"
+      "contestId": "pru-14:P.102",
+      "validVotes": 156327,
+      "rejectedVotes": 1114,
+      "unreturnedVotes": 492
     },
     {
       "code": "P.103",
       "state": "SELANGOR",
       "name": "PUCHONG",
       "registered": 96437,
-      "turnout": 83478,
+      "turnout": 84357,
       "turnoutPct": 0.874737,
       "candidateCount": 3,
       "marginVotes": 47635,
@@ -6476,14 +6773,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.103"
+      "contestId": "pru-14:P.103",
+      "validVotes": 83478,
+      "rejectedVotes": 667,
+      "unreturnedVotes": 212
     },
     {
       "code": "P.104",
       "state": "SELANGOR",
       "name": "SUBANG",
       "registered": 146422,
-      "turnout": 125705,
+      "turnout": 126883,
       "turnoutPct": 0.866557,
       "candidateCount": 4,
       "marginVotes": 92353,
@@ -6548,14 +6848,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.104"
+      "contestId": "pru-14:P.104",
+      "validVotes": 125705,
+      "rejectedVotes": 610,
+      "unreturnedVotes": 568
     },
     {
       "code": "P.105",
       "state": "SELANGOR",
       "name": "PETALING JAYA",
       "registered": 140920,
-      "turnout": 115279,
+      "turnout": 116597,
       "turnoutPct": 0.827399,
       "candidateCount": 3,
       "marginVotes": 57137,
@@ -6609,14 +6912,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.105"
+      "contestId": "pru-14:P.105",
+      "validVotes": 115279,
+      "rejectedVotes": 968,
+      "unreturnedVotes": 350
     },
     {
       "code": "P.106",
       "state": "SELANGOR",
       "name": "DAMANSARA",
       "registered": 164322,
-      "turnout": 136280,
+      "turnout": 137639,
       "turnoutPct": 0.837618,
       "candidateCount": 3,
       "marginVotes": 106903,
@@ -6670,14 +6976,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.106"
+      "contestId": "pru-14:P.106",
+      "validVotes": 136280,
+      "rejectedVotes": 867,
+      "unreturnedVotes": 492
     },
     {
       "code": "P.107",
       "state": "SELANGOR",
       "name": "SUNGAI BULOH",
       "registered": 90707,
-      "turnout": 77951,
+      "turnout": 78874,
       "turnoutPct": 0.869547,
       "candidateCount": 4,
       "marginVotes": 26634,
@@ -6742,14 +7051,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.107"
+      "contestId": "pru-14:P.107",
+      "validVotes": 77951,
+      "rejectedVotes": 686,
+      "unreturnedVotes": 237
     },
     {
       "code": "P.108",
       "state": "SELANGOR",
       "name": "SHAH ALAM",
       "registered": 107316,
-      "turnout": 93243,
+      "turnout": 94241,
       "turnoutPct": 0.878164,
       "candidateCount": 3,
       "marginVotes": 33849,
@@ -6803,14 +7115,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.108"
+      "contestId": "pru-14:P.108",
+      "validVotes": 93243,
+      "rejectedVotes": 664,
+      "unreturnedVotes": 334
     },
     {
       "code": "P.109",
       "state": "SELANGOR",
       "name": "KAPAR",
       "registered": 124983,
-      "turnout": 106093,
+      "turnout": 107829,
       "turnoutPct": 0.862749,
       "candidateCount": 4,
       "marginVotes": 16306,
@@ -6875,14 +7190,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.109"
+      "contestId": "pru-14:P.109",
+      "validVotes": 106093,
+      "rejectedVotes": 1497,
+      "unreturnedVotes": 239
     },
     {
       "code": "P.110",
       "state": "SELANGOR",
       "name": "KLANG",
       "registered": 149348,
-      "turnout": 127074,
+      "turnout": 128536,
       "turnoutPct": 0.860648,
       "candidateCount": 4,
       "marginVotes": 78773,
@@ -6947,14 +7265,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.110"
+      "contestId": "pru-14:P.110",
+      "validVotes": 127074,
+      "rejectedVotes": 1204,
+      "unreturnedVotes": 258
     },
     {
       "code": "P.111",
       "state": "SELANGOR",
       "name": "KOTA RAJA",
       "registered": 149021,
-      "turnout": 128126,
+      "turnout": 129412,
       "turnoutPct": 0.868415,
       "candidateCount": 3,
       "marginVotes": 71142,
@@ -7008,14 +7329,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.111"
+      "contestId": "pru-14:P.111",
+      "validVotes": 128126,
+      "rejectedVotes": 966,
+      "unreturnedVotes": 320
     },
     {
       "code": "P.112",
       "state": "SELANGOR",
       "name": "KUALA LANGAT",
       "registered": 102406,
-      "turnout": 88097,
+      "turnout": 89437,
       "turnoutPct": 0.873357,
       "candidateCount": 3,
       "marginVotes": 17112,
@@ -7069,14 +7393,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.112"
+      "contestId": "pru-14:P.112",
+      "validVotes": 88097,
+      "rejectedVotes": 1131,
+      "unreturnedVotes": 209
     },
     {
       "code": "P.113",
       "state": "SELANGOR",
       "name": "SEPANG",
       "registered": 104508,
-      "turnout": 90657,
+      "turnout": 92087,
       "turnoutPct": 0.881148,
       "candidateCount": 3,
       "marginVotes": 18705,
@@ -7130,14 +7457,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.113"
+      "contestId": "pru-14:P.113",
+      "validVotes": 90657,
+      "rejectedVotes": 1083,
+      "unreturnedVotes": 347
     },
     {
       "code": "P.114",
       "state": "W.P KUALA LUMPUR",
       "name": "KEPONG",
       "registered": 72696,
-      "turnout": 61404,
+      "turnout": 61812,
       "turnoutPct": 0.850281,
       "candidateCount": 2,
       "marginVotes": 51628,
@@ -7180,14 +7510,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.114"
+      "contestId": "pru-14:P.114",
+      "validVotes": 61404,
+      "rejectedVotes": 323,
+      "unreturnedVotes": 85
     },
     {
       "code": "P.115",
       "state": "W.P KUALA LUMPUR",
       "name": "BATU",
       "registered": 76328,
-      "turnout": 62805,
+      "turnout": 63600,
       "turnoutPct": 0.833246,
       "candidateCount": 4,
       "marginVotes": 24438,
@@ -7252,14 +7585,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.115"
+      "contestId": "pru-14:P.115",
+      "validVotes": 62805,
+      "rejectedVotes": 498,
+      "unreturnedVotes": 297
     },
     {
       "code": "P.116",
       "state": "W.P KUALA LUMPUR",
       "name": "WANGSA MAJU",
       "registered": 88482,
-      "turnout": 73608,
+      "turnout": 74509,
       "turnoutPct": 0.842081,
       "candidateCount": 3,
       "marginVotes": 24238,
@@ -7313,14 +7649,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.116"
+      "contestId": "pru-14:P.116",
+      "validVotes": 73608,
+      "rejectedVotes": 525,
+      "unreturnedVotes": 376
     },
     {
       "code": "P.117",
       "state": "W.P KUALA LUMPUR",
       "name": "SEGAMBUT",
       "registered": 77956,
-      "turnout": 64727,
+      "turnout": 65265,
       "turnoutPct": 0.837203,
       "candidateCount": 3,
       "marginVotes": 45702,
@@ -7374,14 +7713,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.117"
+      "contestId": "pru-14:P.117",
+      "validVotes": 64727,
+      "rejectedVotes": 289,
+      "unreturnedVotes": 249
     },
     {
       "code": "P.118",
       "state": "W.P KUALA LUMPUR",
       "name": "SETIAWANGSA",
       "registered": 72136,
-      "turnout": 60852,
+      "turnout": 61884,
       "turnoutPct": 0.85788,
       "candidateCount": 3,
       "marginVotes": 14372,
@@ -7435,14 +7777,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.118"
+      "contestId": "pru-14:P.118",
+      "validVotes": 60852,
+      "rejectedVotes": 693,
+      "unreturnedVotes": 339
     },
     {
       "code": "P.119",
       "state": "W.P KUALA LUMPUR",
       "name": "TITIWANGSA",
       "registered": 61598,
-      "turnout": 50386,
+      "turnout": 50858,
       "turnoutPct": 0.825644,
       "candidateCount": 3,
       "marginVotes": 4139,
@@ -7496,14 +7841,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.119"
+      "contestId": "pru-14:P.119",
+      "validVotes": 50386,
+      "rejectedVotes": 323,
+      "unreturnedVotes": 149
     },
     {
       "code": "P.120",
       "state": "W.P KUALA LUMPUR",
       "name": "BUKIT BINTANG",
       "registered": 69526,
-      "turnout": 52408,
+      "turnout": 52765,
       "turnoutPct": 0.758925,
       "candidateCount": 3,
       "marginVotes": 37260,
@@ -7557,14 +7905,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.120"
+      "contestId": "pru-14:P.120",
+      "validVotes": 52408,
+      "rejectedVotes": 254,
+      "unreturnedVotes": 103
     },
     {
       "code": "P.121",
       "state": "W.P KUALA LUMPUR",
       "name": "LEMBAH PANTAI",
       "registered": 80346,
-      "turnout": 66305,
+      "turnout": 67059,
       "turnoutPct": 0.834628,
       "candidateCount": 3,
       "marginVotes": 5598,
@@ -7618,14 +7969,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.121"
+      "contestId": "pru-14:P.121",
+      "validVotes": 66305,
+      "rejectedVotes": 538,
+      "unreturnedVotes": 216
     },
     {
       "code": "P.122",
       "state": "W.P KUALA LUMPUR",
       "name": "SEPUTEH",
       "registered": 86256,
-      "turnout": 70129,
+      "turnout": 70583,
       "turnoutPct": 0.818297,
       "candidateCount": 2,
       "marginVotes": 56059,
@@ -7668,14 +8022,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.122"
+      "contestId": "pru-14:P.122",
+      "validVotes": 70129,
+      "rejectedVotes": 294,
+      "unreturnedVotes": 160
     },
     {
       "code": "P.123",
       "state": "W.P KUALA LUMPUR",
       "name": "CHERAS",
       "registered": 78819,
-      "turnout": 63677,
+      "turnout": 64074,
       "turnoutPct": 0.812926,
       "candidateCount": 2,
       "marginVotes": 49665,
@@ -7718,14 +8075,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.123"
+      "contestId": "pru-14:P.123",
+      "validVotes": 63677,
+      "rejectedVotes": 275,
+      "unreturnedVotes": 122
     },
     {
       "code": "P.124",
       "state": "W.P KUALA LUMPUR",
       "name": "BANDAR TUN RAZAK",
       "registered": 83650,
-      "turnout": 70206,
+      "turnout": 71180,
       "turnoutPct": 0.850926,
       "candidateCount": 3,
       "marginVotes": 19930,
@@ -7779,14 +8139,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.124"
+      "contestId": "pru-14:P.124",
+      "validVotes": 70206,
+      "rejectedVotes": 444,
+      "unreturnedVotes": 530
     },
     {
       "code": "P.125",
       "state": "W.P PUTRAJAYA",
       "name": "PUTRAJAYA",
       "registered": 27306,
-      "turnout": 24558,
+      "turnout": 24881,
       "turnoutPct": 0.911192,
       "candidateCount": 3,
       "marginVotes": 3372,
@@ -7840,14 +8203,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.125"
+      "contestId": "pru-14:P.125",
+      "validVotes": 24558,
+      "rejectedVotes": 146,
+      "unreturnedVotes": 177
     },
     {
       "code": "P.126",
       "state": "NEGERI SEMBILAN",
       "name": "JELEBU",
       "registered": 48522,
-      "turnout": 38957,
+      "turnout": 39733,
       "turnoutPct": 0.818866,
       "candidateCount": 3,
       "marginVotes": 2045,
@@ -7901,14 +8267,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.126"
+      "contestId": "pru-14:P.126",
+      "validVotes": 38957,
+      "rejectedVotes": 586,
+      "unreturnedVotes": 190
     },
     {
       "code": "P.127",
       "state": "NEGERI SEMBILAN",
       "name": "JEMPOL",
       "registered": 72122,
-      "turnout": 57274,
+      "turnout": 58523,
       "turnoutPct": 0.811444,
       "candidateCount": 3,
       "marginVotes": 1631,
@@ -7962,14 +8331,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.127"
+      "contestId": "pru-14:P.127",
+      "validVotes": 57274,
+      "rejectedVotes": 1025,
+      "unreturnedVotes": 224
     },
     {
       "code": "P.128",
       "state": "NEGERI SEMBILAN",
       "name": "SEREMBAN",
       "registered": 110168,
-      "turnout": 91818,
+      "turnout": 93254,
       "turnoutPct": 0.846471,
       "candidateCount": 3,
       "marginVotes": 30694,
@@ -8023,14 +8395,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.128"
+      "contestId": "pru-14:P.128",
+      "validVotes": 91818,
+      "rejectedVotes": 1052,
+      "unreturnedVotes": 384
     },
     {
       "code": "P.129",
       "state": "NEGERI SEMBILAN",
       "name": "KUALA PILAH",
       "registered": 49801,
-      "turnout": 40237,
+      "turnout": 41156,
       "turnoutPct": 0.826409,
       "candidateCount": 3,
       "marginVotes": 200,
@@ -8084,14 +8459,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.129"
+      "contestId": "pru-14:P.129",
+      "validVotes": 40237,
+      "rejectedVotes": 769,
+      "unreturnedVotes": 150
     },
     {
       "code": "P.130",
       "state": "NEGERI SEMBILAN",
       "name": "RASAH",
       "registered": 102838,
-      "turnout": 85307,
+      "turnout": 86655,
       "turnoutPct": 0.842636,
       "candidateCount": 4,
       "marginVotes": 46867,
@@ -8156,14 +8534,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.130"
+      "contestId": "pru-14:P.130",
+      "validVotes": 85307,
+      "rejectedVotes": 1045,
+      "unreturnedVotes": 303
     },
     {
       "code": "P.131",
       "state": "NEGERI SEMBILAN",
       "name": "REMBAU",
       "registered": 88365,
-      "turnout": 73856,
+      "turnout": 75315,
       "turnoutPct": 0.852317,
       "candidateCount": 3,
       "marginVotes": 4364,
@@ -8217,14 +8598,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.131"
+      "contestId": "pru-14:P.131",
+      "validVotes": 73856,
+      "rejectedVotes": 1053,
+      "unreturnedVotes": 406
     },
     {
       "code": "P.132",
       "state": "NEGERI SEMBILAN",
       "name": "PORT DICKSON",
       "registered": 75212,
-      "turnout": 61334,
+      "turnout": 62548,
       "turnoutPct": 0.831623,
       "candidateCount": 3,
       "marginVotes": 17710,
@@ -8278,14 +8662,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.132"
+      "contestId": "pru-14:P.132",
+      "validVotes": 61334,
+      "rejectedVotes": 948,
+      "unreturnedVotes": 266
     },
     {
       "code": "P.133",
       "state": "NEGERI SEMBILAN",
       "name": "TAMPIN",
       "registered": 60765,
-      "turnout": 48466,
+      "turnout": 49515,
       "turnoutPct": 0.814861,
       "candidateCount": 3,
       "marginVotes": 1002,
@@ -8339,14 +8726,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.133"
+      "contestId": "pru-14:P.133",
+      "validVotes": 48466,
+      "rejectedVotes": 850,
+      "unreturnedVotes": 199
     },
     {
       "code": "P.134",
       "state": "MELAKA",
       "name": "MASJID TANAH",
       "registered": 51441,
-      "turnout": 42325,
+      "turnout": 43093,
       "turnoutPct": 0.837717,
       "candidateCount": 3,
       "marginVotes": 8159,
@@ -8400,14 +8790,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.134"
+      "contestId": "pru-14:P.134",
+      "validVotes": 42325,
+      "rejectedVotes": 636,
+      "unreturnedVotes": 132
     },
     {
       "code": "P.135",
       "state": "MELAKA",
       "name": "ALOR GAJAH",
       "registered": 70364,
-      "turnout": 57815,
+      "turnout": 59000,
       "turnoutPct": 0.838497,
       "candidateCount": 3,
       "marginVotes": 6980,
@@ -8461,14 +8854,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.135"
+      "contestId": "pru-14:P.135",
+      "validVotes": 57815,
+      "rejectedVotes": 1007,
+      "unreturnedVotes": 178
     },
     {
       "code": "P.136",
       "state": "MELAKA",
       "name": "TANGGA BATU",
       "registered": 83213,
-      "turnout": 69142,
+      "turnout": 70453,
       "turnoutPct": 0.846659,
       "candidateCount": 3,
       "marginVotes": 4659,
@@ -8522,14 +8918,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.136"
+      "contestId": "pru-14:P.136",
+      "validVotes": 69142,
+      "rejectedVotes": 1145,
+      "unreturnedVotes": 166
     },
     {
       "code": "P.137",
       "state": "MELAKA",
       "name": "HANG TUAH JAYA",
       "registered": 89364,
-      "turnout": 76583,
+      "turnout": 77758,
       "turnoutPct": 0.870127,
       "candidateCount": 3,
       "marginVotes": 8640,
@@ -8583,14 +8982,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.137"
+      "contestId": "pru-14:P.137",
+      "validVotes": 76583,
+      "rejectedVotes": 909,
+      "unreturnedVotes": 266
     },
     {
       "code": "P.138",
       "state": "MELAKA",
       "name": "KOTA MELAKA",
       "registered": 126848,
-      "turnout": 105276,
+      "turnout": 107085,
       "turnoutPct": 0.844199,
       "candidateCount": 3,
       "marginVotes": 49175,
@@ -8644,14 +9046,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.138"
+      "contestId": "pru-14:P.138",
+      "validVotes": 105276,
+      "rejectedVotes": 1432,
+      "unreturnedVotes": 377
     },
     {
       "code": "P.139",
       "state": "MELAKA",
       "name": "JASIN",
       "registered": 73432,
-      "turnout": 61761,
+      "turnout": 62912,
       "turnoutPct": 0.856738,
       "candidateCount": 3,
       "marginVotes": 219,
@@ -8705,14 +9110,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.139"
+      "contestId": "pru-14:P.139",
+      "validVotes": 61761,
+      "rejectedVotes": 912,
+      "unreturnedVotes": 239
     },
     {
       "code": "P.140",
       "state": "JOHOR",
       "name": "SEGAMAT",
       "registered": 55350,
-      "turnout": 45320,
+      "turnout": 46170,
       "turnoutPct": 0.834146,
       "candidateCount": 3,
       "marginVotes": 5476,
@@ -8766,14 +9174,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.140"
+      "contestId": "pru-14:P.140",
+      "validVotes": 45320,
+      "rejectedVotes": 726,
+      "unreturnedVotes": 124
     },
     {
       "code": "P.141",
       "state": "JOHOR",
       "name": "SEKIJANG",
       "registered": 45596,
-      "turnout": 37837,
+      "turnout": 38527,
       "turnoutPct": 0.844964,
       "candidateCount": 2,
       "marginVotes": 1281,
@@ -8816,14 +9227,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.141"
+      "contestId": "pru-14:P.141",
+      "validVotes": 37837,
+      "rejectedVotes": 558,
+      "unreturnedVotes": 132
     },
     {
       "code": "P.142",
       "state": "JOHOR",
       "name": "LABIS",
       "registered": 40356,
-      "turnout": 32578,
+      "turnout": 33146,
       "turnoutPct": 0.82134,
       "candidateCount": 3,
       "marginVotes": 3410,
@@ -8877,14 +9291,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.142"
+      "contestId": "pru-14:P.142",
+      "validVotes": 32578,
+      "rejectedVotes": 490,
+      "unreturnedVotes": 78
     },
     {
       "code": "P.143",
       "state": "JOHOR",
       "name": "PAGOH",
       "registered": 51512,
-      "turnout": 42672,
+      "turnout": 43667,
       "turnoutPct": 0.847705,
       "candidateCount": 3,
       "marginVotes": 6927,
@@ -8938,7 +9355,10 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.143"
+      "contestId": "pru-14:P.143",
+      "validVotes": 42672,
+      "rejectedVotes": 693,
+      "unreturnedVotes": 302
     },
     {
       "code": "P.144",
@@ -9006,7 +9426,7 @@
       "state": "JOHOR",
       "name": "BAKRI",
       "registered": 73883,
-      "turnout": 61800,
+      "turnout": 62632,
       "turnoutPct": 0.847719,
       "candidateCount": 3,
       "marginVotes": 23211,
@@ -9060,14 +9480,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.145"
+      "contestId": "pru-14:P.145",
+      "validVotes": 61800,
+      "rejectedVotes": 631,
+      "unreturnedVotes": 201
     },
     {
       "code": "P.146",
       "state": "JOHOR",
       "name": "MUAR",
       "registered": 50843,
-      "turnout": 42083,
+      "turnout": 42868,
       "turnoutPct": 0.843145,
       "candidateCount": 3,
       "marginVotes": 6953,
@@ -9121,14 +9544,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.146"
+      "contestId": "pru-14:P.146",
+      "validVotes": 42083,
+      "rejectedVotes": 636,
+      "unreturnedVotes": 149
     },
     {
       "code": "P.147",
       "state": "JOHOR",
       "name": "PARIT SULONG",
       "registered": 59609,
-      "turnout": 49769,
+      "turnout": 50778,
       "turnoutPct": 0.851851,
       "candidateCount": 3,
       "marginVotes": 6341,
@@ -9182,14 +9608,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.147"
+      "contestId": "pru-14:P.147",
+      "validVotes": 49769,
+      "rejectedVotes": 832,
+      "unreturnedVotes": 177
     },
     {
       "code": "P.148",
       "state": "JOHOR",
       "name": "AYER HITAM",
       "registered": 46157,
-      "turnout": 38824,
+      "turnout": 39474,
       "turnoutPct": 0.855212,
       "candidateCount": 3,
       "marginVotes": 303,
@@ -9243,14 +9672,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.148"
+      "contestId": "pru-14:P.148",
+      "validVotes": 38824,
+      "rejectedVotes": 556,
+      "unreturnedVotes": 94
     },
     {
       "code": "P.149",
       "state": "JOHOR",
       "name": "SRI GADING",
       "registered": 52119,
-      "turnout": 44282,
+      "turnout": 45193,
       "turnoutPct": 0.867112,
       "candidateCount": 3,
       "marginVotes": 3288,
@@ -9304,14 +9736,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.149"
+      "contestId": "pru-14:P.149",
+      "validVotes": 44282,
+      "rejectedVotes": 635,
+      "unreturnedVotes": 276
     },
     {
       "code": "P.150",
       "state": "JOHOR",
       "name": "BATU PAHAT",
       "registered": 98543,
-      "turnout": 82137,
+      "turnout": 83574,
       "turnoutPct": 0.848097,
       "candidateCount": 3,
       "marginVotes": 17894,
@@ -9365,14 +9800,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.150"
+      "contestId": "pru-14:P.150",
+      "validVotes": 82137,
+      "rejectedVotes": 1097,
+      "unreturnedVotes": 340
     },
     {
       "code": "P.151",
       "state": "JOHOR",
       "name": "SIMPANG RENGGAM",
       "registered": 43998,
-      "turnout": 35822,
+      "turnout": 36695,
       "turnoutPct": 0.834015,
       "candidateCount": 3,
       "marginVotes": 3475,
@@ -9426,14 +9864,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.151"
+      "contestId": "pru-14:P.151",
+      "validVotes": 35822,
+      "rejectedVotes": 779,
+      "unreturnedVotes": 94
     },
     {
       "code": "P.152",
       "state": "JOHOR",
       "name": "KLUANG",
       "registered": 96915,
-      "turnout": 80531,
+      "turnout": 81841,
       "turnoutPct": 0.844462,
       "candidateCount": 3,
       "marginVotes": 23053,
@@ -9487,14 +9928,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.152"
+      "contestId": "pru-14:P.152",
+      "validVotes": 80531,
+      "rejectedVotes": 921,
+      "unreturnedVotes": 389
     },
     {
       "code": "P.153",
       "state": "JOHOR",
       "name": "SEMBRONG",
       "registered": 44137,
-      "turnout": 36044,
+      "turnout": 36768,
       "turnoutPct": 0.833043,
       "candidateCount": 2,
       "marginVotes": 6662,
@@ -9537,14 +9981,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.153"
+      "contestId": "pru-14:P.153",
+      "validVotes": 36044,
+      "rejectedVotes": 598,
+      "unreturnedVotes": 126
     },
     {
       "code": "P.154",
       "state": "JOHOR",
       "name": "MERSING",
       "registered": 48176,
-      "turnout": 37368,
+      "turnout": 38306,
       "turnoutPct": 0.795126,
       "candidateCount": 3,
       "marginVotes": 8459,
@@ -9598,14 +10045,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.154"
+      "contestId": "pru-14:P.154",
+      "validVotes": 37368,
+      "rejectedVotes": 796,
+      "unreturnedVotes": 142
     },
     {
       "code": "P.155",
       "state": "JOHOR",
       "name": "TENGGARA",
       "registered": 44749,
-      "turnout": 37034,
+      "turnout": 37818,
       "turnoutPct": 0.845114,
       "candidateCount": 3,
       "marginVotes": 5933,
@@ -9659,14 +10109,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.155"
+      "contestId": "pru-14:P.155",
+      "validVotes": 37034,
+      "rejectedVotes": 664,
+      "unreturnedVotes": 120
     },
     {
       "code": "P.156",
       "state": "JOHOR",
       "name": "KOTA TINGGI",
       "registered": 46677,
-      "turnout": 38193,
+      "turnout": 39418,
       "turnoutPct": 0.844484,
       "candidateCount": 2,
       "marginVotes": 14621,
@@ -9709,14 +10162,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.156"
+      "contestId": "pru-14:P.156",
+      "validVotes": 38193,
+      "rejectedVotes": 802,
+      "unreturnedVotes": 423
     },
     {
       "code": "P.157",
       "state": "JOHOR",
       "name": "PENGERANG",
       "registered": 40479,
-      "turnout": 32241,
+      "turnout": 33580,
       "turnoutPct": 0.829566,
       "candidateCount": 2,
       "marginVotes": 11417,
@@ -9759,14 +10215,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.157"
+      "contestId": "pru-14:P.157",
+      "validVotes": 32241,
+      "rejectedVotes": 557,
+      "unreturnedVotes": 782
     },
     {
       "code": "P.158",
       "state": "JOHOR",
       "name": "TEBRAU",
       "registered": 123033,
-      "turnout": 103943,
+      "turnout": 105420,
       "turnoutPct": 0.856843,
       "candidateCount": 3,
       "marginVotes": 37225,
@@ -9820,14 +10279,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.158"
+      "contestId": "pru-14:P.158",
+      "validVotes": 103943,
+      "rejectedVotes": 1203,
+      "unreturnedVotes": 274
     },
     {
       "code": "P.159",
       "state": "JOHOR",
       "name": "PASIR GUDANG",
       "registered": 124172,
-      "turnout": 105009,
+      "turnout": 106576,
       "turnoutPct": 0.858293,
       "candidateCount": 4,
       "marginVotes": 24726,
@@ -9892,14 +10354,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.159"
+      "contestId": "pru-14:P.159",
+      "validVotes": 105009,
+      "rejectedVotes": 1342,
+      "unreturnedVotes": 225
     },
     {
       "code": "P.160",
       "state": "JOHOR",
       "name": "JOHOR BAHRU",
       "registered": 101409,
-      "turnout": 80322,
+      "turnout": 81645,
       "turnoutPct": 0.805106,
       "candidateCount": 2,
       "marginVotes": 19782,
@@ -9942,14 +10407,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.160"
+      "contestId": "pru-14:P.160",
+      "validVotes": 80322,
+      "rejectedVotes": 1056,
+      "unreturnedVotes": 267
     },
     {
       "code": "P.161",
       "state": "JOHOR",
       "name": "PULAI",
       "registered": 106268,
-      "turnout": 86893,
+      "turnout": 88116,
       "turnoutPct": 0.829187,
       "candidateCount": 4,
       "marginVotes": 28924,
@@ -10014,14 +10482,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.161"
+      "contestId": "pru-14:P.161",
+      "validVotes": 86893,
+      "rejectedVotes": 966,
+      "unreturnedVotes": 257
     },
     {
       "code": "P.162",
       "state": "JOHOR",
       "name": "ISKANDAR PUTERI",
       "registered": 138299,
-      "turnout": 116588,
+      "turnout": 118779,
       "turnoutPct": 0.858857,
       "candidateCount": 2,
       "marginVotes": 44864,
@@ -10064,14 +10535,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.162"
+      "contestId": "pru-14:P.162",
+      "validVotes": 116588,
+      "rejectedVotes": 1987,
+      "unreturnedVotes": 204
     },
     {
       "code": "P.163",
       "state": "JOHOR",
       "name": "KULAI",
       "registered": 99147,
-      "turnout": 84543,
+      "turnout": 85687,
       "turnoutPct": 0.864242,
       "candidateCount": 3,
       "marginVotes": 32748,
@@ -10125,14 +10599,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.163"
+      "contestId": "pru-14:P.163",
+      "validVotes": 84543,
+      "rejectedVotes": 976,
+      "unreturnedVotes": 168
     },
     {
       "code": "P.164",
       "state": "JOHOR",
       "name": "PONTIAN",
       "registered": 55570,
-      "turnout": 45726,
+      "turnout": 46683,
       "turnoutPct": 0.840076,
       "candidateCount": 3,
       "marginVotes": 833,
@@ -10186,14 +10663,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.164"
+      "contestId": "pru-14:P.164",
+      "validVotes": 45726,
+      "rejectedVotes": 738,
+      "unreturnedVotes": 219
     },
     {
       "code": "P.165",
       "state": "JOHOR",
       "name": "TANJUNG PIAI",
       "registered": 53528,
-      "turnout": 44948,
+      "turnout": 45858,
       "turnoutPct": 0.856711,
       "candidateCount": 3,
       "marginVotes": 524,
@@ -10247,7 +10727,10 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.165"
+      "contestId": "pru-14:P.165",
+      "validVotes": 44948,
+      "rejectedVotes": 841,
+      "unreturnedVotes": 69
     },
     {
       "code": "P.166",
@@ -10326,7 +10809,7 @@
       "state": "SABAH",
       "name": "KUDAT",
       "registered": 52251,
-      "turnout": 37079,
+      "turnout": 38205,
       "turnoutPct": 0.731182,
       "candidateCount": 3,
       "marginVotes": 1359,
@@ -10380,14 +10863,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.167"
+      "contestId": "pru-14:P.167",
+      "validVotes": 37079,
+      "rejectedVotes": 955,
+      "unreturnedVotes": 171
     },
     {
       "code": "P.168",
       "state": "SABAH",
       "name": "KOTA MARUDU",
       "registered": 47007,
-      "turnout": 33906,
+      "turnout": 35231,
       "turnoutPct": 0.749484,
       "candidateCount": 4,
       "marginVotes": 1774,
@@ -10452,7 +10938,10 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.168"
+      "contestId": "pru-14:P.168",
+      "validVotes": 33906,
+      "rejectedVotes": 1179,
+      "unreturnedVotes": 146
     },
     {
       "code": "P.169",
@@ -10614,7 +11103,7 @@
       "state": "SABAH",
       "name": "SEPANGGAR",
       "registered": 62415,
-      "turnout": 47785,
+      "turnout": 49012,
       "turnoutPct": 0.78526,
       "candidateCount": 4,
       "marginVotes": 12984,
@@ -10679,14 +11168,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.171"
+      "contestId": "pru-14:P.171",
+      "validVotes": 47785,
+      "rejectedVotes": 913,
+      "unreturnedVotes": 314
     },
     {
       "code": "P.172",
       "state": "SABAH",
       "name": "KOTA KINABALU",
       "registered": 56220,
-      "turnout": 42310,
+      "turnout": 42973,
       "turnoutPct": 0.764372,
       "candidateCount": 3,
       "marginVotes": 24086,
@@ -10740,14 +11232,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.172"
+      "contestId": "pru-14:P.172",
+      "validVotes": 42310,
+      "rejectedVotes": 563,
+      "unreturnedVotes": 100
     },
     {
       "code": "P.173",
       "state": "SABAH",
       "name": "PUTATAN",
       "registered": 41312,
-      "turnout": 30790,
+      "turnout": 31865,
       "turnoutPct": 0.771326,
       "candidateCount": 5,
       "marginVotes": 2339,
@@ -10823,14 +11318,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.173"
+      "contestId": "pru-14:P.173",
+      "validVotes": 30790,
+      "rejectedVotes": 826,
+      "unreturnedVotes": 249
     },
     {
       "code": "P.174",
       "state": "SABAH",
       "name": "PENAMPANG",
       "registered": 53131,
-      "turnout": 43108,
+      "turnout": 43659,
       "turnoutPct": 0.821724,
       "candidateCount": 4,
       "marginVotes": 23473,
@@ -10895,14 +11393,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.174"
+      "contestId": "pru-14:P.174",
+      "validVotes": 43108,
+      "rejectedVotes": 417,
+      "unreturnedVotes": 134
     },
     {
       "code": "P.175",
       "state": "SABAH",
       "name": "PAPAR",
       "registered": 43586,
-      "turnout": 35836,
+      "turnout": 36540,
       "turnoutPct": 0.838343,
       "candidateCount": 4,
       "marginVotes": 325,
@@ -10967,7 +11468,10 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.175"
+      "contestId": "pru-14:P.175",
+      "validVotes": 35836,
+      "rejectedVotes": 543,
+      "unreturnedVotes": 161
     },
     {
       "code": "P.176",
@@ -11035,7 +11539,7 @@
       "state": "SABAH",
       "name": "BEAUFORT",
       "registered": 33342,
-      "turnout": 27212,
+      "turnout": 28154,
       "turnoutPct": 0.8444,
       "candidateCount": 3,
       "marginVotes": 3331,
@@ -11089,14 +11593,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.177"
+      "contestId": "pru-14:P.177",
+      "validVotes": 27212,
+      "rejectedVotes": 799,
+      "unreturnedVotes": 143
     },
     {
       "code": "P.178",
       "state": "SABAH",
       "name": "SIPITANG",
       "registered": 31882,
-      "turnout": 24771,
+      "turnout": 25483,
       "turnoutPct": 0.799291,
       "candidateCount": 3,
       "marginVotes": 852,
@@ -11150,14 +11657,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.178"
+      "contestId": "pru-14:P.178",
+      "validVotes": 24771,
+      "rejectedVotes": 596,
+      "unreturnedVotes": 116
     },
     {
       "code": "P.179",
       "state": "SABAH",
       "name": "RANAU",
       "registered": 43706,
-      "turnout": 32942,
+      "turnout": 33904,
       "turnoutPct": 0.775729,
       "candidateCount": 4,
       "marginVotes": 1076,
@@ -11222,7 +11732,10 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.179"
+      "contestId": "pru-14:P.179",
+      "validVotes": 32942,
+      "rejectedVotes": 769,
+      "unreturnedVotes": 193
     },
     {
       "code": "P.180",
@@ -11323,7 +11836,7 @@
       "state": "SABAH",
       "name": "TENOM",
       "registered": 29182,
-      "turnout": 22238,
+      "turnout": 23027,
       "turnoutPct": 0.789082,
       "candidateCount": 3,
       "marginVotes": 1133,
@@ -11377,14 +11890,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.181"
+      "contestId": "pru-14:P.181",
+      "validVotes": 22238,
+      "rejectedVotes": 661,
+      "unreturnedVotes": 128
     },
     {
       "code": "P.182",
       "state": "SABAH",
       "name": "PENSIANGAN",
       "registered": 31377,
-      "turnout": 24368,
+      "turnout": 24955,
       "turnoutPct": 0.795328,
       "candidateCount": 5,
       "marginVotes": 2314,
@@ -11460,14 +11976,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.182"
+      "contestId": "pru-14:P.182",
+      "validVotes": 24368,
+      "rejectedVotes": 528,
+      "unreturnedVotes": 59
     },
     {
       "code": "P.183",
       "state": "SABAH",
       "name": "BELURAN",
       "registered": 28509,
-      "turnout": 20698,
+      "turnout": 21606,
       "turnoutPct": 0.757866,
       "candidateCount": 6,
       "marginVotes": 7115,
@@ -11554,14 +12073,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.183"
+      "contestId": "pru-14:P.183",
+      "validVotes": 20698,
+      "rejectedVotes": 832,
+      "unreturnedVotes": 76
     },
     {
       "code": "P.184",
       "state": "SABAH",
       "name": "LIBARAN",
       "registered": 47914,
-      "turnout": 36143,
+      "turnout": 37248,
       "turnoutPct": 0.777393,
       "candidateCount": 3,
       "marginVotes": 678,
@@ -11615,14 +12137,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.184"
+      "contestId": "pru-14:P.184",
+      "validVotes": 36143,
+      "rejectedVotes": 948,
+      "unreturnedVotes": 157
     },
     {
       "code": "P.185",
       "state": "SABAH",
       "name": "BATU SAPI",
       "registered": 32574,
-      "turnout": 23261,
+      "turnout": 24029,
       "turnoutPct": 0.737674,
       "candidateCount": 4,
       "marginVotes": 4619,
@@ -11687,14 +12212,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.185"
+      "contestId": "pru-14:P.185",
+      "validVotes": 23261,
+      "rejectedVotes": 655,
+      "unreturnedVotes": 113
     },
     {
       "code": "P.186",
       "state": "SABAH",
       "name": "SANDAKAN",
       "registered": 39777,
-      "turnout": 28090,
+      "turnout": 28668,
       "turnoutPct": 0.720718,
       "candidateCount": 2,
       "marginVotes": 10098,
@@ -11737,14 +12265,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.186"
+      "contestId": "pru-14:P.186",
+      "validVotes": 28090,
+      "rejectedVotes": 502,
+      "unreturnedVotes": 76
     },
     {
       "code": "P.187",
       "state": "SABAH",
       "name": "KINABATANGAN",
       "registered": 28730,
-      "turnout": 21518,
+      "turnout": 22257,
       "turnoutPct": 0.774695,
       "candidateCount": 3,
       "marginVotes": 9478,
@@ -11798,14 +12329,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.187"
+      "contestId": "pru-14:P.187",
+      "validVotes": 21518,
+      "rejectedVotes": 661,
+      "unreturnedVotes": 78
     },
     {
       "code": "P.188",
       "state": "SABAH",
       "name": "SILAM",
       "registered": 60942,
-      "turnout": 43040,
+      "turnout": 44294,
       "turnoutPct": 0.726822,
       "candidateCount": 4,
       "marginVotes": 6401,
@@ -11870,14 +12404,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.188"
+      "contestId": "pru-14:P.188",
+      "validVotes": 43040,
+      "rejectedVotes": 1079,
+      "unreturnedVotes": 175
     },
     {
       "code": "P.189",
       "state": "SABAH",
       "name": "SEMPORNA",
       "registered": 48248,
-      "turnout": 33426,
+      "turnout": 34613,
       "turnoutPct": 0.717398,
       "candidateCount": 4,
       "marginVotes": 20674,
@@ -11942,14 +12479,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.189"
+      "contestId": "pru-14:P.189",
+      "validVotes": 33426,
+      "rejectedVotes": 982,
+      "unreturnedVotes": 205
     },
     {
       "code": "P.190",
       "state": "SABAH",
       "name": "TAWAU",
       "registered": 59919,
-      "turnout": 42753,
+      "turnout": 43861,
       "turnoutPct": 0.732005,
       "candidateCount": 4,
       "marginVotes": 4727,
@@ -12014,14 +12554,17 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.190"
+      "contestId": "pru-14:P.190",
+      "validVotes": 42753,
+      "rejectedVotes": 981,
+      "unreturnedVotes": 127
     },
     {
       "code": "P.191",
       "state": "SABAH",
       "name": "KALABAKAN",
       "registered": 52199,
-      "turnout": 36909,
+      "turnout": 38041,
       "turnoutPct": 0.728769,
       "candidateCount": 4,
       "marginVotes": 3187,
@@ -12086,7 +12629,10 @@
         }
       ],
       "electionId": "pru-14",
-      "contestId": "pru-14:P.191"
+      "contestId": "pru-14:P.191",
+      "validVotes": 36909,
+      "rejectedVotes": 840,
+      "unreturnedVotes": 292
     },
     {
       "code": "P.192",

@@ -42,8 +42,8 @@ class FederalElectionExtractionTests(unittest.TestCase):
 
     def test_official_result_wins_when_supporting_source_differs(self):
         bagan_datuk = next(seat for seat in self.value["seats"] if seat["code"] == "P.075")
-        self.assertEqual(bagan_datuk["winner"]["votes"], 18_908)
-        self.assertEqual(bagan_datuk["marginVotes"], 5_072)
+        self.assertEqual(bagan_datuk["winner"]["votes"], 18_909)
+        self.assertEqual(bagan_datuk["marginVotes"], 5_073)
 
     def test_cross_election_person_identity_is_reused(self):
         larut = next(seat for seat in self.value["seats"] if seat["code"] == "P.056")

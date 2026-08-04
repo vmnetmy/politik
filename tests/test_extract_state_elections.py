@@ -18,15 +18,15 @@ class StateElectionExtractionTests(unittest.TestCase):
         historical_ids = {item["id"] for item in historical_events}
         latest_contests = [item for item in self.value["contests"] if item["eventId"] in latest_ids]
         historical_contests = [item for item in self.value["contests"] if item["eventId"] in historical_ids]
-        self.assertEqual(len(self.value["events"]), 25)
-        self.assertEqual(len(self.value["contests"]), 1101)
+        self.assertEqual(len(self.value["events"]), 27)
+        self.assertEqual(len(self.value["contests"]), 1197)
         self.assertEqual(len(latest_events), 13)
         self.assertEqual(len(latest_contests), 600)
         self.assertEqual(len({item["dunId"] for item in latest_contests}), 600)
-        self.assertEqual(sum(len(item["candidates"]) for item in latest_contests), 2233)
-        self.assertEqual(len(historical_events), 12)
-        self.assertEqual(len(historical_contests), 501)
-        self.assertEqual(sum(len(item["candidates"]) for item in historical_contests), 1633)
+        self.assertEqual(sum(len(item["candidates"]) for item in latest_contests), 2253)
+        self.assertEqual(len(historical_events), 14)
+        self.assertEqual(len(historical_contests), 597)
+        self.assertEqual(sum(len(item["candidates"]) for item in historical_contests), 1968)
         prn14_events = [item for item in historical_events if item["assemblyNumber"] == 14]
         prn14_ids = {item["id"] for item in prn14_events}
         prn14_contests = [item for item in historical_contests if item["eventId"] in prn14_ids]
@@ -39,10 +39,17 @@ class StateElectionExtractionTests(unittest.TestCase):
         self.assertEqual(events["prn-selangor-2023"]["seatCounts"], {"PH": 32, "PN": 22, "BN": 2})
         self.assertEqual(events["prn-sarawak-2021"]["seatCounts"], {"GPS": 76, "PSB": 4, "DAP": 2})
         self.assertEqual(events["prn-sabah-2025"]["contestIds"].__len__(), 73)
+        self.assertEqual(events["prn-sabah-2018"]["contestIds"].__len__(), 60)
+        self.assertEqual(events["prn-sabah-2018"]["registeredVoters"], 1117337)
+        self.assertEqual(events["prn-sabah-2018"]["seatCounts"], {"BN": 29, "WARISAN": 21, "DAP": 6, "PKR": 2, "SOLIDARITI": 2})
         self.assertEqual(events["prn-johor-2026"]["seatCounts"], {"BN": 48, "PH": 8})
         self.assertEqual(events["prn-johor-2026"]["registeredVoters"], 2727926)
         self.assertEqual(events["prn-johor-2026"]["turnoutVotes"], 1897668)
         self.assertAlmostEqual(events["prn-johor-2026"]["turnoutPct"], 0.6956449698415573)
+        self.assertEqual(events["prn-negeri-sembilan-2026"]["seatCounts"], {"BN": 18, "PH": 11, "PN": 7})
+        self.assertEqual(events["prn-negeri-sembilan-2026"]["registeredVoters"], 889490)
+        self.assertIsNone(events["prn-negeri-sembilan-2026"]["turnoutVotes"])
+        self.assertEqual(events["prn-negeri-sembilan-2023"]["coverage"], "historical")
         self.assertEqual(events["prn-johor-2022"]["contestIds"].__len__(), 56)
         self.assertEqual(events["prn-johor-2022"]["registeredVoters"], 2597742)
         self.assertEqual(events["prn-johor-2022"]["turnoutVotes"], 1417115)

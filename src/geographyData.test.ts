@@ -19,7 +19,9 @@ describe("SPR geography hierarchy", () => {
 
   it("keeps locality coverage explicit and source-backed", () => {
     expect(geography.metadata.localityCoverage).toBe("partial");
+    expect(geography.metadata.localityCoveragePct).toBeCloseTo(0.0258, 4);
     expect(geography.localities).toHaveLength(13);
-    expect(geography.localities.every((item) => item.sourceUrl.startsWith("https://sprinfo.spr.gov.my/"))).toBe(true);
+    expect(geography.localities.every((item) => item.sourceRefs.every((source) => source.url.startsWith("https://sprinfo.spr.gov.my/")))).toBe(true);
+    expect(geography.metadata.localityConflictCount).toBe(0);
   });
 });

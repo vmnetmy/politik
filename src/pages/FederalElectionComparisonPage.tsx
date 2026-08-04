@@ -1,5 +1,5 @@
 import { AnimatePresence, motion, MotionConfig } from "motion/react";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router";
 import { ElectionComparisonChart, type ComparisonChartMetric, type ComparisonChartSeries } from "../components/charts/ElectionComparisonChart";
 import { ComparisonEditionPicker, comparisonEditionColor, ComparisonMetricTabs } from "../components/comparison/ComparisonControls";
 import { AllianceLogo } from "../components/identity";

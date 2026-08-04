@@ -1,0 +1,1647 @@
+{
+  "version": 1,
+  "algorithm": "sha256",
+  "sourceRoot": "sources/pru14/scoresheets",
+  "provenance": {
+    "publisher": "Suruhanjaya Pilihan Raya Malaysia",
+    "workbookFooter": "© SPR 2018 Versi 1.1.0 - Suruhanjaya Pilihan Raya Malaysia",
+    "officialResultsUrl": "https://mysprsemak.spr.gov.my/semakan/keputusan/pru",
+    "officialOpenDataUrl": "https://opendata.spr.gov.my/",
+    "officialElectoralRollUrl": "https://www.spr.gov.my/sites/default/files/HargaDPIST42017_PRU14.pdf",
+    "coverageNote": "The supplied archive has no parliamentary scoresheets for Sarawak or W.P. Labuan."
+  },
+  "resolvedConflicts": [
+    {
+      "parliamentCode": "P.075",
+      "candidate": "AHMAD ZAHID BIN HAMIDI",
+      "openDataVotes": 18908,
+      "scoresheetVotes": 18909,
+      "publishedMajority": 5073,
+      "reason": "The SPR open-data candidate row says 18,908, but the official SPR workbook says 18,909 and 18,909 - 13,836 equals SPR's published majority of 5,073."
+    }
+  ],
+  "files": [
+    {
+      "path": "P.001.xlsx",
+      "parliamentCode": "P.001",
+      "sha256": "9b32f018eb9bd233c36627f470b9bac4c091890ec7d227dd07a6a35170ea62c8",
+      "bytes": 31681,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.002.xlsx",
+      "parliamentCode": "P.002",
+      "sha256": "921920f0d40be381fc194b05809ed952e836b4c2b042c661f0f3f66d25e429dc",
+      "bytes": 32649,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.003.xlsx",
+      "parliamentCode": "P.003",
+      "sha256": "741481d883ef1d604de5c1f216be96458ae4d729e4ed325fedcf4901b636d9bc",
+      "bytes": 31949,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.004.xlsx",
+      "parliamentCode": "P.004",
+      "sha256": "b5fb9fe5898141813af2865beb43732037b848dd52bc8f38da2a71fe9faf2811",
+      "bytes": 34132,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.005.xlsx",
+      "parliamentCode": "P.005",
+      "sha256": "9b6b7616844991d777a89a3f929390d9677ad7fe1d5621f3f6f85d122091745e",
+      "bytes": 35996,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.006.xlsx",
+      "parliamentCode": "P.006",
+      "sha256": "6c606bbbbb4a0b3299c6aaf8f19a923c842f2976c16462985e6bdc58612eaab3",
+      "bytes": 38980,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.007.xlsx",
+      "parliamentCode": "P.007",
+      "sha256": "9ebe194e524e31564e08ac34119389140807bb59eb6118323b0ca72a134e63c6",
+      "bytes": 34692,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.008.xlsx",
+      "parliamentCode": "P.008",
+      "sha256": "58b4f0b260b86389ce86dd4ca2a43b487955c125ea9b433c154e263cd60b008f",
+      "bytes": 41309,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.009.xlsx",
+      "parliamentCode": "P.009",
+      "sha256": "44643be48709ea25e7e15882fde2f7e6a919199912d38d930f5c41625b13c9b9",
+      "bytes": 41207,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.010.xlsx",
+      "parliamentCode": "P.010",
+      "sha256": "0a2cfd7b669ecc02ef26ca02f30ea7c8b95c86280697f6e7595f09f7cbd02783",
+      "bytes": 42331,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.011.xlsx",
+      "parliamentCode": "P.011",
+      "sha256": "435af714a7f0edaee9cb4c943565dfebfe109f68e4c8f100eab67e1f29218732",
+      "bytes": 42121,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.012.xlsx",
+      "parliamentCode": "P.012",
+      "sha256": "2ef2aa382819095cd464a007d0ad5e9b3653bf4c0f3222f2d35001ac8bde8237",
+      "bytes": 40900,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.013.xlsx",
+      "parliamentCode": "P.013",
+      "sha256": "86adc1b09ecfb24292817bfe6b4a9c4dab68609d8f87dca1eb351cca2c060a10",
+      "bytes": 34436,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.014.xlsx",
+      "parliamentCode": "P.014",
+      "sha256": "5750811118c1e8bb93c260cad8fb92e2c48edc54848fa20ac290eb3383998a76",
+      "bytes": 39596,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.015.xlsx",
+      "parliamentCode": "P.015",
+      "sha256": "8bbac4377b05d0b05429c25c741a42b306c2bd252e807b4b247bb672517659a0",
+      "bytes": 46851,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.016.xlsx",
+      "parliamentCode": "P.016",
+      "sha256": "76e628643554c7856ad55754640a23b3c95e4e1ba87fc48398fc524bca9b6de8",
+      "bytes": 46370,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.017.xlsx",
+      "parliamentCode": "P.017",
+      "sha256": "ee2ff67df0f245fddef80798f66d7e1f86be2bd86cfc1195ec478cfd163b99c7",
+      "bytes": 39920,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.018.xlsx",
+      "parliamentCode": "P.018",
+      "sha256": "29ce86e4c1d25125f82ebb669600393e76cf4d9f2932a60609103c3e98c5e32a",
+      "bytes": 38001,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.019.xlsx",
+      "parliamentCode": "P.019",
+      "sha256": "cd2426fbd7cbbc24f14b3c0fa604f0b19ab2e366607eadfca59a48efb8ca077f",
+      "bytes": 42689,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.020.xlsx",
+      "parliamentCode": "P.020",
+      "sha256": "3f837d9726f522941616b9380840a184ff102f6ef4e6dc0d91d0ec4ccd3908c7",
+      "bytes": 37566,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.021.xlsx",
+      "parliamentCode": "P.021",
+      "sha256": "e1119c14ca17470f59d3331da7ffc498d7d684eb38699b18a9ac736e0280cae1",
+      "bytes": 38383,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.022.xlsx",
+      "parliamentCode": "P.022",
+      "sha256": "29d03fd6850f752fd4395c08c768c22d01752129dae0b1cdef7268d563aa2650",
+      "bytes": 40395,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.023.xlsx",
+      "parliamentCode": "P.023",
+      "sha256": "1d6e26b0efab34f2da0fff668d565620f489ba5e73f4f51b738a0b10d2370676",
+      "bytes": 37388,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.024.xlsx",
+      "parliamentCode": "P.024",
+      "sha256": "45513ebb9d8c94ec5d73a69a8c6178bc6353b8de64363718638689f88e9d3204",
+      "bytes": 38613,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.025.xlsx",
+      "parliamentCode": "P.025",
+      "sha256": "a0709b8931f2ecb64bb56f3e39e47a87282d37a1fdaaf11351d73b09222a0bcf",
+      "bytes": 40681,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.026.xlsx",
+      "parliamentCode": "P.026",
+      "sha256": "d28e12eb1e14cf521c3372284783b2daf3c29deeefdb7aa3d7c9f903aeed5cfc",
+      "bytes": 35988,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.027.xlsx",
+      "parliamentCode": "P.027",
+      "sha256": "1db2b728391620fa642871ec993c07ebdbf702a2e373c409c5a69bf56d14763f",
+      "bytes": 37211,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.028.xlsx",
+      "parliamentCode": "P.028",
+      "sha256": "195bc98db17df9279e3881623e8902cd7ccea73fbbc477c033406799cf2d69f3",
+      "bytes": 40255,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.029.xlsx",
+      "parliamentCode": "P.029",
+      "sha256": "27e052fff7e774dac3cecc505a3e2eb48bc4d4fd0689a9bd83755ac96218b80f",
+      "bytes": 37112,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.030.xlsx",
+      "parliamentCode": "P.030",
+      "sha256": "426e2443932d90b1bef80acfbbf765ba354f8eaf90f438e12d7efbcabc833910",
+      "bytes": 34475,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.031.xlsx",
+      "parliamentCode": "P.031",
+      "sha256": "beb5a3e8887ff5bf7a9695222a6e244871b4924e64ce4c0cec9f9eea31f6d1d1",
+      "bytes": 38969,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.032.xlsx",
+      "parliamentCode": "P.032",
+      "sha256": "c22280ba1aefd99006328e06081136ec0ec40eb9250773dd1d4bcf6d241fffc1",
+      "bytes": 38475,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.033.xlsx",
+      "parliamentCode": "P.033",
+      "sha256": "4e8da389f3d1d1e6edc59bfe9ab1449292f83634cf55071fddc2cc66d6682a13",
+      "bytes": 39149,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.034.xlsx",
+      "parliamentCode": "P.034",
+      "sha256": "d8871dcae0253e9e47fa6276329b7f430ce97eaa0f3ad393f98dd5c2f690ac49",
+      "bytes": 39457,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.035.xlsx",
+      "parliamentCode": "P.035",
+      "sha256": "558ab9a6913cddfbdbbff9404fe59abe4e4b2be59aedb05c8c7a7c700d6f3862",
+      "bytes": 37750,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.036.xlsx",
+      "parliamentCode": "P.036",
+      "sha256": "657b98fa182b0cc668f16c1e2502d95f099c7aa073fd40fe8e150ed0f28499d4",
+      "bytes": 40027,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.037.xlsx",
+      "parliamentCode": "P.037",
+      "sha256": "99bbf4397daf984106e2807a205077d4a9fa8d403da446b307e40525e55cfeed",
+      "bytes": 40643,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.038.xlsx",
+      "parliamentCode": "P.038",
+      "sha256": "7d0ac1a2169cb27e6fa349f173620a512652d41c84d5960b0951eab8192221ba",
+      "bytes": 39666,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.039.xlsx",
+      "parliamentCode": "P.039",
+      "sha256": "faf4db0db1628c87ce3de549e3a0d78a8d909e1f23f9c4d4b0e209d74b61f13e",
+      "bytes": 40219,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.040.xlsx",
+      "parliamentCode": "P.040",
+      "sha256": "8977c7783fd235d674e143d61ab43b0730b4277bf7347d720a6979113dcc5d0f",
+      "bytes": 42267,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.041.xlsx",
+      "parliamentCode": "P.041",
+      "sha256": "7b4d5d9b203e92d3d79c87dd55e634b913cbb2a8e314920fc351a46353ed2dc9",
+      "bytes": 35394,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.042.xlsx",
+      "parliamentCode": "P.042",
+      "sha256": "e9133c22d163cc3f0f439c74566e476be11ebaf45cdcaefc45b9fbee70a46678",
+      "bytes": 37094,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.043.xlsx",
+      "parliamentCode": "P.043",
+      "sha256": "ffd3508d0e079efa2f2f29fd9805f7cd0f44cfee12fa5ab30c9f8258ef9da157",
+      "bytes": 38979,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.044.xlsx",
+      "parliamentCode": "P.044",
+      "sha256": "5626d22dca28ceab2b2bfdbdb32e8444d054b1109274324a6f8e2357ec552d38",
+      "bytes": 37610,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.045.xlsx",
+      "parliamentCode": "P.045",
+      "sha256": "e104ac9989a9086c8e65bc05938b91cbc1bab48dda3161329369fe120c75c425",
+      "bytes": 36213,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.046.xlsx",
+      "parliamentCode": "P.046",
+      "sha256": "2a7f9ef29f5be1eab2d506333aae29bfbaa95bb949f314619351ea422e9abdb7",
+      "bytes": 36653,
+      "sheets": 1,
+      "status": "rejected",
+      "reason": "Workbook is P.045, expected P.046."
+    },
+    {
+      "path": "P.047.xlsx",
+      "parliamentCode": "P.047",
+      "sha256": "c475bc1868ebb63fda4d81cbbd92e79e1bae882fa6388ba9a4e410538c1aba68",
+      "bytes": 39498,
+      "sheets": 1,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 132, 'ballotsInBox': 63507, 'validVotes': 62482, 'rejectedVotes': 865, 'unreturnedVotes': 160} do not match final JUMLAH {'pollingStreams': 131, 'ballotsInBox': 63199, 'validVotes': 62179, 'rejectedVotes': 860, 'unreturnedVotes': 160}."
+    },
+    {
+      "path": "P.048.xlsx",
+      "parliamentCode": "P.048",
+      "sha256": "e45a9bd37e86a319fd67cff8dbeebf8b1a5a3e389e3b6dd02da0d578fdf11bfa",
+      "bytes": 38572,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.049.xlsx",
+      "parliamentCode": "P.049",
+      "sha256": "c09b43bd6022a4377546cbb4f378349051eb7e7f1f61ce48b9525ddda034bb54",
+      "bytes": 33064,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.050.xlsx",
+      "parliamentCode": "P.050",
+      "sha256": "8be5b37ec9a13d63ad8fd4f132186680c94ee1f658789e4220cf7be4fa1f7675",
+      "bytes": 37796,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.051.xlsx",
+      "parliamentCode": "P.051",
+      "sha256": "babf0dea2dcd1606d8f5ac860fc1edef1ae6f758cf522b5f984c06f7fb86316b",
+      "bytes": 39472,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.052.xlsx",
+      "parliamentCode": "P.052",
+      "sha256": "10520d6a834a89641da20a803b9c576ba429367f0fefee0f1ff927f3795f409a",
+      "bytes": 41953,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.053.xlsx",
+      "parliamentCode": "P.053",
+      "sha256": "ab3c43bd66a8a42b1aef7f67813e507fd71151d7304af76103461850160718cd",
+      "bytes": 33796,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.054.xlsx",
+      "parliamentCode": "P.054",
+      "sha256": "d83c898aaa83fed176a007e309cbd66f05dab30fcbeada3bf308c78c6595b3b7",
+      "bytes": 31859,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.055.xlsx",
+      "parliamentCode": "P.055",
+      "sha256": "bf2344f7c6bd289747ec1f9f34655f24aaede46c147b6be6aa5837ad2ad3ebad",
+      "bytes": 32739,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.056.xlsx",
+      "parliamentCode": "P.056",
+      "sha256": "dbdbebd21d9161de7134d18beeab264fe17a7741bc92c562efcd4753aa7d6d2e",
+      "bytes": 35834,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.057.xlsx",
+      "parliamentCode": "P.057",
+      "sha256": "04bfd2471daf3109c370bba1f6cafae5d0f8debf4a421d36caa4439aa8ced47d",
+      "bytes": 34424,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.058.xlsx",
+      "parliamentCode": "P.058",
+      "sha256": "fff55cda8ed36f13a1d901a91c2cfa510426a109b6d07e5a5a86f11c7c501909",
+      "bytes": 37198,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.059.xlsx",
+      "parliamentCode": "P.059",
+      "sha256": "299d6186bddb4bff1450e872f5d586535d0b96377b26af7e501c679ed3d22159",
+      "bytes": 36481,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.060.xlsx",
+      "parliamentCode": "P.060",
+      "sha256": "51a52c9c4ed1ae7002aae5348c8ffffc93edab979535d5350e662db0d0cd9b8b",
+      "bytes": 39382,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.061.xlsx",
+      "parliamentCode": "P.061",
+      "sha256": "fda1e6f4f41c0fd024cb7fe9b6cc4f7b629e3ceaa9592426a0f9b1ffe6c72fd6",
+      "bytes": 32434,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.062.xlsx",
+      "parliamentCode": "P.062",
+      "sha256": "9e45dec44c3849bd741114d70795a5707cfd60678cce902f6ac94a9b6e26f870",
+      "bytes": 38764,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.063.xlsx",
+      "parliamentCode": "P.063",
+      "sha256": "7f30488f8f638aa2b3f7e70ca96ef1c2aa2d017d13f71356cb2b5822c888d108",
+      "bytes": 81516,
+      "sheets": 1,
+      "status": "rejected",
+      "reason": "Final A total does not equal B + C + D."
+    },
+    {
+      "path": "P.064.xlsx",
+      "parliamentCode": "P.064",
+      "sha256": "70045f1ded43d5150e3b7cb33cf1e0716bafaa99e7d07af5e548ffee711d5bcf",
+      "bytes": 35679,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.065.xlsx",
+      "parliamentCode": "P.065",
+      "sha256": "d9ba3346858eeb2a68fda3e89163cb6b95aa9a71de94a7d4f8d0f3770a97bea6",
+      "bytes": 34419,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.066.xlsx",
+      "parliamentCode": "P.066",
+      "sha256": "e68789f2ba4321618880eb9acbc73f6254c37672ff6231abcfa49e20ce9a45b1",
+      "bytes": 38374,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.067.xlsx",
+      "parliamentCode": "P.067",
+      "sha256": "e743a61f0badf8cd640486b828be25f732725c2cec0cc027838c8db272036d6f",
+      "bytes": 32231,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.068.xlsx",
+      "parliamentCode": "P.068",
+      "sha256": "5acd51b8a7acf7f5d84aff2b8da6b7f3af0b9f931b2200eca863d95aa7c97115",
+      "bytes": 38333,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.069.xlsx",
+      "parliamentCode": "P.069",
+      "sha256": "fe8f74163ef220cb607652be88fa992f5b01cc1b29ddbc1d1e24a2bd79bc7858",
+      "bytes": 33740,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.070.xlsx",
+      "parliamentCode": "P.070",
+      "sha256": "0eeef4c41c4f26f8bc58f8aa74bc92c1ddea48d3b9d552d88cfad740018c3c42",
+      "bytes": 38372,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.071.xlsx",
+      "parliamentCode": "P.071",
+      "sha256": "2ec38e9281f1d8d1827feb189a69890d5925eebc78be9280a7438b767ea62b7c",
+      "bytes": 38739,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.072.xlsx",
+      "parliamentCode": "P.072",
+      "sha256": "3b8f6e8eca3bef8f451597e2305bd57764db62b2774cad97cec77ec4f95374df",
+      "bytes": 34985,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.073.xlsx",
+      "parliamentCode": "P.073",
+      "sha256": "f019a2b535679bcfa93caa411ab633f13f80c449a0ce6e828c42cf785d0d769b",
+      "bytes": 38538,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.074.xlsx",
+      "parliamentCode": "P.074",
+      "sha256": "50f0f948c1ddeafcf087329215b5d07eff0a93cd168cc419a3c1d19dc0ee62c6",
+      "bytes": 34829,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.075.xlsx",
+      "parliamentCode": "P.075",
+      "sha256": "f38435c24f282a0bb788e6d3104c75240380381c0b9582968e87e79e815ba04a",
+      "bytes": 35361,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.076.xlsx",
+      "parliamentCode": "P.076",
+      "sha256": "e69b6dfa1ef5efc8631d6ebab7286626ea942602cd8b77c5a7c440e999538e2a",
+      "bytes": 36880,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.077.xlsx",
+      "parliamentCode": "P.077",
+      "sha256": "1087c593a0fbb384f688389dc3d375d04da6ce3270eac00837c442269a81f095",
+      "bytes": 38357,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.078.xlsx",
+      "parliamentCode": "P.078",
+      "sha256": "91b573c0bbabf2d3464adc0c59ebaa597ccae89463b6e997ecf53e3a840185ae",
+      "bytes": 37958,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.079.xlsx",
+      "parliamentCode": "P.079",
+      "sha256": "91b5c26a121623b647a91a54c19a9061c05672d15a7eae4dbc565271f89e880f",
+      "bytes": 35569,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.080.xlsx",
+      "parliamentCode": "P.080",
+      "sha256": "a722b7f0e6f0b3ea1b04578af9b9c9241c8956a76e8a85eea0341c73b11fd4d5",
+      "bytes": 36882,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.081.xlsx",
+      "parliamentCode": "P.081",
+      "sha256": "f3e85c4a1b0f5fce775752e2cb6fde19da6f35d28e44ea065d43bc4f2eec6415",
+      "bytes": 39811,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.082.xlsx",
+      "parliamentCode": "P.082",
+      "sha256": "f04e89d1396e0e6f3faaf6354a92877f3f9a5cd7b42f6121b9d34914317c6df5",
+      "bytes": 35965,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.083.xlsx",
+      "parliamentCode": "P.083",
+      "sha256": "beb32a3ba400a287f662fdae5ced876e56a68f7319ea6ef62fcc64583916097f",
+      "bytes": 34940,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.084.xlsx",
+      "parliamentCode": "P.084",
+      "sha256": "55d0a51dcf84e3f96e6a0d514810995cf3c6876d91bfdbc477c078d71af198b0",
+      "bytes": 34218,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.085.xlsx",
+      "parliamentCode": "P.085",
+      "sha256": "a81bae2043c5de8f5159fe00ee514b950a1ea887ac1647d2e56f69e464f9bd24",
+      "bytes": 44962,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.086.xlsx",
+      "parliamentCode": "P.086",
+      "sha256": "f272b08d8bf6b428501b930bd37885f6eb7a6c3110293565d9a1cbbc609ee4a2",
+      "bytes": 34262,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.087.xlsx",
+      "parliamentCode": "P.087",
+      "sha256": "69b80017eb8e94ea0ab9dda3fa3462e5215f2db14bc4ea4a3e1b9482eb47911a",
+      "bytes": 35017,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.088.xlsx",
+      "parliamentCode": "P.088",
+      "sha256": "ca9f092ccb5eb22ba0cf7706082b665c3077be4831a0170cce4a1b8fd08b6704",
+      "bytes": 44628,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.089.xlsx",
+      "parliamentCode": "P.089",
+      "sha256": "98538e3cd3bab149f69fa5a3707dca9a3aa12d7280403b217daae798433cb8cb",
+      "bytes": 37778,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.090.xlsx",
+      "parliamentCode": "P.090",
+      "sha256": "b798222e93addceb1785860f2d009b45cac98d7f5a7270095d79a75ff6c4dd65",
+      "bytes": 36422,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.091.xlsx",
+      "parliamentCode": "P.091",
+      "sha256": "03cac40b553b6bff80c8bdc6acd49116f714f48862c059e3e1f77c8088debade",
+      "bytes": 37865,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.092.xlsx",
+      "parliamentCode": "P.092",
+      "sha256": "6965475a05c1e4761be467608ef850598b3b54121b7e2c9f63bd4ba93c5d26d6",
+      "bytes": 33988,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.093.xlsx",
+      "parliamentCode": "P.093",
+      "sha256": "be07e1738e2700feddf9e4d6383528a3b28ee021204a408ca18e1b11c0be8911",
+      "bytes": 35535,
+      "sheets": 1,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 100, 'ballotsInBox': 41410, 'validVotes': 40741, 'rejectedVotes': 561, 'unreturnedVotes': 108} do not match final JUMLAH {'pollingStreams': 101, 'ballotsInBox': 41878, 'validVotes': 41206, 'rejectedVotes': 564, 'unreturnedVotes': 108}."
+    },
+    {
+      "path": "P.094.xlsx",
+      "parliamentCode": "P.094",
+      "sha256": "24cb98961d6e1c6d84d8e4c53a61751c5ad8578a80b2794ea46a96b5f5bb3746",
+      "bytes": 47651,
+      "sheets": 1,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 184, 'ballotsInBox': 86219, 'validVotes': 84656, 'rejectedVotes': 1296, 'unreturnedVotes': 267} do not match final JUMLAH {'pollingStreams': 185, 'ballotsInBox': 86798, 'validVotes': 85221, 'rejectedVotes': 1310, 'unreturnedVotes': 267}."
+    },
+    {
+      "path": "P.095.xlsx",
+      "parliamentCode": "P.095",
+      "sha256": "2db36eed4e7aa0a17e6600e189e9499198cdbf726f032a37c98237c4725bd9f0",
+      "bytes": 38233,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.096.xlsx",
+      "parliamentCode": "P.096",
+      "sha256": "04f52c2320bba79d90d30a99926bfdd3151d6d7c6884d373d91e26ebd8420e67",
+      "bytes": 38185,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.097.xlsx",
+      "parliamentCode": "P.097",
+      "sha256": "4a605f1e18f1f343c3a960149fb90bf904735c7a8a01d6b7f8969231cfbd2b8b",
+      "bytes": 44368,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.098.xlsx",
+      "parliamentCode": "P.098",
+      "sha256": "fbebec52af556d4b7b9f65e08833918f62bb475ccf800b5116164aabd2ba23f6",
+      "bytes": 42662,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.099.xlsx",
+      "parliamentCode": "P.099",
+      "sha256": "f9d785c405c5062cb293001e5197d7a240992d7fb1aba7ceb39b0c8dca518f27",
+      "bytes": 41968,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.100.xlsx",
+      "parliamentCode": "P.100",
+      "sha256": "bb33228ad9dce56c6443c8616266917efdd7c586f751f1c8d2825675793b0b9f",
+      "bytes": 44039,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.101.xlsx",
+      "parliamentCode": "P.101",
+      "sha256": "69be2c532a373a134a6c68580515fae21dd28dfaf4395a36d76aa3774964ff95",
+      "bytes": 40548,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.102.xlsx",
+      "parliamentCode": "P.102",
+      "sha256": "9ca7419a7de37cfa316646d307eed535643e4769a45a2772aeeddb3453f697e2",
+      "bytes": 51132,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.103.xlsx",
+      "parliamentCode": "P.103",
+      "sha256": "7ad395c54d9363d049b135231d3bae8577cd6f83cce40c4214c50b5b4482a61e",
+      "bytes": 38117,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.104.xlsx",
+      "parliamentCode": "P.104",
+      "sha256": "22c022199ef4ac3ee8d2f098d393607f7d71d7e25d64f9ff1ed5c21f3f3460ce",
+      "bytes": 47513,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.105.xlsx",
+      "parliamentCode": "P.105",
+      "sha256": "84b3ebdd02e81e475e21bce803ea98bbad683f4d461c82166a7f16e11a3cee5a",
+      "bytes": 45185,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.106.xlsx",
+      "parliamentCode": "P.106",
+      "sha256": "3b9afad654627076c95cd2185b50e2022027904fc3a5828aef33674ae3bbfddf",
+      "bytes": 49665,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.107.xlsx",
+      "parliamentCode": "P.107",
+      "sha256": "fdc76fdf39acba21e2e270c59473f951701e57fc0ef711c8d76c26db878b01c0",
+      "bytes": 41570,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.108.xlsx",
+      "parliamentCode": "P.108",
+      "sha256": "6366d3d8a959d7f9bd0cf8eefdb2a5468b02014fe1fe48c01d11d994b080d446",
+      "bytes": 40038,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.109.xlsx",
+      "parliamentCode": "P.109",
+      "sha256": "1767dcce9745d8c5e910d63575c1a37b06f40e9c960a37d4aaf2dc1e481c7831",
+      "bytes": 45208,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.110.xlsx",
+      "parliamentCode": "P.110",
+      "sha256": "4def6a258664a63266a84c54c96a8a00f8b8803377aef9777efc31949a4d991b",
+      "bytes": 52913,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.111.xlsx",
+      "parliamentCode": "P.111",
+      "sha256": "3d712a3d73bb08a9a994fe4a73748d8c506741ff38a7a942f724dd3eebb39f83",
+      "bytes": 45385,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.112.xlsx",
+      "parliamentCode": "P.112",
+      "sha256": "5dcd64db579e1f0ce4335147b38974a124e207046cb5e98adddc1ca959319127",
+      "bytes": 40239,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.113.xlsx",
+      "parliamentCode": "P.113",
+      "sha256": "57bd7af17daec794b1122e22b087eee61e6860a8f08749b92495915a01c90a2e",
+      "bytes": 41326,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.114.xlsx",
+      "parliamentCode": "P.114",
+      "sha256": "0ccfa4b99a9cdfe97f01d4ce22425e0f50f38ecd977472992fd2dd38cd4b2ad2",
+      "bytes": 30846,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.115.xlsx",
+      "parliamentCode": "P.115",
+      "sha256": "5e5fdb32d4376318f8397eb81b134bafc59e1f3e3a13e7c14cd6154654fb89ef",
+      "bytes": 29904,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.116.xlsx",
+      "parliamentCode": "P.116",
+      "sha256": "fa6b5472ce07a9bde81acd62d87dea78e1074eed5f985d864100972aca539f70",
+      "bytes": 35326,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.117.xlsx",
+      "parliamentCode": "P.117",
+      "sha256": "526d16ec515d815b2592cb18d2c1861cfc73d2c2c75bc7186af78591ef8d06f0",
+      "bytes": 34644,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.118.xlsx",
+      "parliamentCode": "P.118",
+      "sha256": "a6cd608b8a3bb7daba9e9e4c3776c29073c496f97064da2149c67670e27e7aff",
+      "bytes": 33120,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.119.xlsx",
+      "parliamentCode": "P.119",
+      "sha256": "c656825e029fc6cd1261638318142a13d7effc2647f41a14e10e72036bb2f344",
+      "bytes": 32640,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.120.xlsx",
+      "parliamentCode": "P.120",
+      "sha256": "0fad30723479218ee9bb325d6a2730415b79d5e5289d499c0f7a15e9956cbd21",
+      "bytes": 33608,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.121.xlsx",
+      "parliamentCode": "P.121",
+      "sha256": "58a854ccc855ac36c302d20dfbd8c27e8595f82bfe524bbdfde6a653877ddec3",
+      "bytes": 34112,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.122.xlsx",
+      "parliamentCode": "P.122",
+      "sha256": "5a78fd562c331446d788894284a89dc5c138a09f7d0d4ba8e3985c3fa2080e6f",
+      "bytes": 32124,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.123.xlsx",
+      "parliamentCode": "P.123",
+      "sha256": "290d3ef8555718a9b5b78b4d14e7d1a6857967ed1b48108d6538c728e657d815",
+      "bytes": 32053,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.124.xlsx",
+      "parliamentCode": "P.124",
+      "sha256": "585d1a124845edd514283b5fedf4b2537d9ff9ca381a05d641e195395f2708b3",
+      "bytes": 34489,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.125.xlsx",
+      "parliamentCode": "P.125",
+      "sha256": "9b8edbd75bd751f6bd295b6b1f81ec742cc73e42c3f4a21288263edf2d304254",
+      "bytes": 28058,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.126.xlsx",
+      "parliamentCode": "P.126",
+      "sha256": "2c17f4d97fac6d646f83922c5a2a4d9b2adada4104497757ec956a158bf68559",
+      "bytes": 34140,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.127.xlsx",
+      "parliamentCode": "P.127",
+      "sha256": "39514160592d9a6c1ee3c3965451789cfe666ca0bcbc2c9d276a16416512fed4",
+      "bytes": 37250,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.128.xlsx",
+      "parliamentCode": "P.128",
+      "sha256": "bbfa08f98deb06c452e5106c15725c5d81dda418e683b2c17b196b3425dc7ca2",
+      "bytes": 40244,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.129.xlsx",
+      "parliamentCode": "P.129",
+      "sha256": "253dc714177208ce1022b476b5491fd5527e6c7906919c7c97346c2b9ce19c09",
+      "bytes": 37946,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.130.xlsx",
+      "parliamentCode": "P.130",
+      "sha256": "cd87514c97f2ffef109ab275afd4a285486897194229f8ddb6f93745a56e783e",
+      "bytes": 41703,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.131.xlsx",
+      "parliamentCode": "P.131",
+      "sha256": "31783100e60a98adc7a955087e7757ef2518d93dd9c4d95e1f2e911d0b54cbdf",
+      "bytes": 40096,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.132.xlsx",
+      "parliamentCode": "P.132",
+      "sha256": "fba071710943e6a27884ff5e13109bb6a1903c84af55600d7418b52364cfbc2b",
+      "bytes": 36320,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.133.xlsx",
+      "parliamentCode": "P.133",
+      "sha256": "b870b834d9337e56d6e093e92097246b489b205d84c08dfe09f79174a05827a1",
+      "bytes": 34895,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.134.xlsx",
+      "parliamentCode": "P.134",
+      "sha256": "b051a304d1e1746eb4de0bb4a13faebd9fa1f8fa9e8958291292be0b64a7722d",
+      "bytes": 35223,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.135.xlsx",
+      "parliamentCode": "P.135",
+      "sha256": "b9be4a1cc1f147abf79c17143c9b09bd8367e0e9b0025b103ea37b164bd0185d",
+      "bytes": 38662,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.136.xlsx",
+      "parliamentCode": "P.136",
+      "sha256": "af36eb4778886aa51a8d84b3daa7812cfb17a325e9142e49a1a92d40576e2ab6",
+      "bytes": 37208,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.137.xlsx",
+      "parliamentCode": "P.137",
+      "sha256": "bb4a752c668a2e3228be549645825c2700d066ae9fce064b50bc6e11ee4903d4",
+      "bytes": 38756,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.138.xlsx",
+      "parliamentCode": "P.138",
+      "sha256": "70b75c7437e8782f135af2b7040be90f7624ad4c5820f6dd2f07492920e28d27",
+      "bytes": 43741,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.139.xlsx",
+      "parliamentCode": "P.139",
+      "sha256": "e2a7a09a3c77141330ec0c9ee048b40a1196690c39ec4ef3befb5228f7fbef82",
+      "bytes": 38304,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.140.xlsx",
+      "parliamentCode": "P.140",
+      "sha256": "a6af62cd10cc82528b54b96e060245a1036565b534d209aff468049691d534d4",
+      "bytes": 39057,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.141.xlsx",
+      "parliamentCode": "P.141",
+      "sha256": "17641725018b6b206337a57ae334398557dce9bdedfc7c720066cbe36f82b73f",
+      "bytes": 31842,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.142.xlsx",
+      "parliamentCode": "P.142",
+      "sha256": "4af638326d17f80f73c78dd98b3b55640562c41ff295ac08e7f85767e36c7b27",
+      "bytes": 34818,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.143.xlsx",
+      "parliamentCode": "P.143",
+      "sha256": "11636a149f90c484bfcfdacde0029a09bee14981153a14ed798b3005a0ba4901",
+      "bytes": 37303,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.144.xlsx",
+      "parliamentCode": "P.144",
+      "sha256": "170bb9ea9d2842aff67a2de8ca8b21581f85a3c74936dac39d97ffcd761df091",
+      "bytes": 39642,
+      "sheets": 1,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 155, 'ballotsInBox': 65832, 'validVotes': 64541, 'rejectedVotes': 1045, 'unreturnedVotes': 246} do not match final JUMLAH {'pollingStreams': 157, 'ballotsInBox': 66708, 'validVotes': 65414, 'rejectedVotes': 1048, 'unreturnedVotes': 246}."
+    },
+    {
+      "path": "P.145.xlsx",
+      "parliamentCode": "P.145",
+      "sha256": "ea31e86bd96696f1a2da99b0d113804e3243b56d554ab59a50023b524d5c9055",
+      "bytes": 37414,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.146.xlsx",
+      "parliamentCode": "P.146",
+      "sha256": "d6893b60f7114077c345d30b68498180a1c8a1daa1889b1e10df2452ec84716a",
+      "bytes": 34658,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.147.xlsx",
+      "parliamentCode": "P.147",
+      "sha256": "d2e3eee40cc597b4552e6dae176e9823d4a8bc50eaa34793d8a33c2c1a987329",
+      "bytes": 37330,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.148.xlsx",
+      "parliamentCode": "P.148",
+      "sha256": "45bdc456ce3096116e56acc6bbb32bb75985bed506001e4aafafcd68f9ad3c99",
+      "bytes": 33356,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.149.xlsx",
+      "parliamentCode": "P.149",
+      "sha256": "fca2d586968a5ac344362e9a314c032e8292f4403887ef6788a1b2b4a210d767",
+      "bytes": 35063,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.150.xlsx",
+      "parliamentCode": "P.150",
+      "sha256": "8991a1a4c453f07c329370f21cd59319359a86503b5e70ad3f27c7f6b436e0df",
+      "bytes": 40132,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.151.xlsx",
+      "parliamentCode": "P.151",
+      "sha256": "1fa0af560647d8c0f427a0b0ee8bb8372956ba1294485cb90f916146ad0b2add",
+      "bytes": 33588,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.152.xlsx",
+      "parliamentCode": "P.152",
+      "sha256": "fbf77be325160fa0c415c015fccbef607bfb93a06c37476f890d63cf0d3492cd",
+      "bytes": 39634,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.153.xlsx",
+      "parliamentCode": "P.153",
+      "sha256": "673bac361d28ce8953fb79d360f2583fa1bcf7da02b0a7b10eb4f6e2083cbc25",
+      "bytes": 32074,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.154.xlsx",
+      "parliamentCode": "P.154",
+      "sha256": "c1ae993b048f1444cfca04fa46a6d16d40f7075811d0e59e9d317a740ce22f6b",
+      "bytes": 37280,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.155.xlsx",
+      "parliamentCode": "P.155",
+      "sha256": "a2619e301849a6e4ac4d19cc1d2b1c7e2529f7d6ade01c160edf58a052d874d5",
+      "bytes": 33143,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.156.xlsx",
+      "parliamentCode": "P.156",
+      "sha256": "815bb9f46fd7ff4ca8f336e8944df1203fb55fe2160cbccf68863ca61b7fbb62",
+      "bytes": 31522,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.157.xlsx",
+      "parliamentCode": "P.157",
+      "sha256": "bcf7d7dae4abe14f1a45e213cacdd3d75b159735c0937aaaf967009ba73222c6",
+      "bytes": 30623,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.158.xlsx",
+      "parliamentCode": "P.158",
+      "sha256": "446a699492f0df57aa46f89e8370b67a8d073b2c01c35db6ac0fdbc92bbc0bba",
+      "bytes": 41944,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.159.xlsx",
+      "parliamentCode": "P.159",
+      "sha256": "8a47deba437f8c3673127f7cb23ac55ba49b09c25e786442b37d316f712b8261",
+      "bytes": 44789,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.160.xlsx",
+      "parliamentCode": "P.160",
+      "sha256": "b4c614e8836dbd8993f7cb73921f10b00c188372705d88a510fa149067ecee54",
+      "bytes": 36713,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.161.xlsx",
+      "parliamentCode": "P.161",
+      "sha256": "9a680ace4a3fa6ca43a3957200b297392d9bcfdf9210984272b8c87c22cb343d",
+      "bytes": 43198,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.162.xlsx",
+      "parliamentCode": "P.162",
+      "sha256": "056608c1829c9a6684b04c9b148b8c66d3554539a974475b9cf9d6f06a73b269",
+      "bytes": 41157,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.163.xlsx",
+      "parliamentCode": "P.163",
+      "sha256": "40d2a6de4a26e1e5e0361d47f8aeee3a371527e2febe5eb8424e2217df819326",
+      "bytes": 40240,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.164.xlsx",
+      "parliamentCode": "P.164",
+      "sha256": "64eb8329f58811f170ff854d75e86e45bcdc7d0046c9bdcddc24fbc7d30054b9",
+      "bytes": 35605,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.165.xlsx",
+      "parliamentCode": "P.165",
+      "sha256": "162c777a0a07b4a9ee611bb0ece72865db489b5e9e894c988eecb63e4a335eb8",
+      "bytes": 33982,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.167.xlsx",
+      "parliamentCode": "P.167",
+      "sha256": "54aa2a553bc115e76345bb71fc8cfb8041a2c55bc90f57d8ecf001ca63374184",
+      "bytes": 32281,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.168.xlsx",
+      "parliamentCode": "P.168",
+      "sha256": "842b02d162a6a703ad2ad7d7654493f9a35aa715b22b5ddc35900c4d804a4b77",
+      "bytes": 38285,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.169.xlsx",
+      "parliamentCode": "P.169",
+      "sha256": "78ccc6441872cbc105496a1ae9e86b056e299220dfee789761cc5e1f5751fb39",
+      "bytes": 36125,
+      "sheets": 1,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 124, 'ballotsInBox': 47283, 'validVotes': 45844, 'rejectedVotes': 1145, 'unreturnedVotes': 294} do not match final JUMLAH {'pollingStreams': 125, 'ballotsInBox': 47565, 'validVotes': 46098, 'rejectedVotes': 1173, 'unreturnedVotes': 294}."
+    },
+    {
+      "path": "P.170.xlsx",
+      "parliamentCode": "P.170",
+      "sha256": "6ef3e2f9e4b51ea55ca3d2eac3085c1e90fae9e22f06424ec9e0b970b91c6486",
+      "bytes": 50920,
+      "sheets": 1,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 108, 'ballotsInBox': 45243, 'validVotes': 44047, 'rejectedVotes': 963, 'unreturnedVotes': 233} do not match final JUMLAH {'pollingStreams': 107, 'ballotsInBox': 44834, 'validVotes': 43643, 'rejectedVotes': 958, 'unreturnedVotes': 233}."
+    },
+    {
+      "path": "P.171.xlsx",
+      "parliamentCode": "P.171",
+      "sha256": "1d0d0dce7feb56b1f9eacdb34042c6554bbeee8a8c9281f0432fa3204be065f4",
+      "bytes": 35925,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.172.xlsx",
+      "parliamentCode": "P.172",
+      "sha256": "25df3c7dacede56c9db587fd1cb9e20364cd1045028d0b3de016c9d491f57c8e",
+      "bytes": 31126,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.173.xlsx",
+      "parliamentCode": "P.173",
+      "sha256": "5c2fa075648b338d66b595df1bcf7fc8d41f5f854d571d373049d3ddb926fccf",
+      "bytes": 39803,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.174.xlsx",
+      "parliamentCode": "P.174",
+      "sha256": "2254e69b9e41b4e44d78e0d375a5b5d3a9dc75f7e263174bc801a910a67d5e5b",
+      "bytes": 34426,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.175.xlsx",
+      "parliamentCode": "P.175",
+      "sha256": "161c157c87b1b37823b846952293d4b479d19abab34aca8ba67a0b7516d501d0",
+      "bytes": 32587,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.176.xlsx",
+      "parliamentCode": "P.176",
+      "sha256": "82c9cb34769886051d86d9bf1cb6402501f507f36c01f419206059df89694245",
+      "bytes": 26267,
+      "sheets": 1,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 61, 'ballotsInBox': 25863, 'validVotes': 25370, 'rejectedVotes': 387, 'unreturnedVotes': 106} do not match final JUMLAH {'pollingStreams': 60, 'ballotsInBox': 25519, 'validVotes': 25028, 'rejectedVotes': 385, 'unreturnedVotes': 106}."
+    },
+    {
+      "path": "P.177.xlsx",
+      "parliamentCode": "P.177",
+      "sha256": "4942cde0a0cdb4e9fb3b3d615a6881c2110308f0deb68c5b7616c5bb7177945b",
+      "bytes": 33839,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.178.xlsx",
+      "parliamentCode": "P.178",
+      "sha256": "bd47ac9016e081a48338d4f382769b16f7dfbd946d052f59271347f373e54c54",
+      "bytes": 27779,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.179.xlsx",
+      "parliamentCode": "P.179",
+      "sha256": "b6d7a1761fcf77a41b431d86fe388a836a578cc55d4b800499a950d64e9353f9",
+      "bytes": 43636,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.180.xlsx",
+      "parliamentCode": "P.180",
+      "sha256": "4a530c66f521e7783d9d727229b15d56912ac0fc7abcab8d2b66a54ce6576bb5",
+      "bytes": 40503,
+      "sheets": 1,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 72, 'ballotsInBox': 28685, 'validVotes': 28071, 'rejectedVotes': 377, 'unreturnedVotes': 237} do not match final JUMLAH {'pollingStreams': 105, 'ballotsInBox': 40913, 'validVotes': 40149, 'rejectedVotes': 522, 'unreturnedVotes': 242}."
+    },
+    {
+      "path": "P.181.xlsx",
+      "parliamentCode": "P.181",
+      "sha256": "5c8138eb6f9a8b3d1eb0c7bd4da9f6dafbae7cd2c7c756190ea07422de850841",
+      "bytes": 27115,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.182.xlsx",
+      "parliamentCode": "P.182",
+      "sha256": "861fa5a9ca80dc4182aabd1532ff40b9645d2bb0b67a36cbecb2fd000fb5549b",
+      "bytes": 42976,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.183.xlsx",
+      "parliamentCode": "P.183",
+      "sha256": "f3c2b71e5ece7f538b96c58c2d7d38f6bee5da488473bc82c3837782ed3ecf41",
+      "bytes": 37032,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.184.xlsx",
+      "parliamentCode": "P.184",
+      "sha256": "f4ea141fe74c9aebbdb15ee4b93cc7966b4363c898d7e0b9b91670eb0030272b",
+      "bytes": 29263,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.185.xlsx",
+      "parliamentCode": "P.185",
+      "sha256": "f191ee88d5eec97ac8520f974cae815160826a6f5a67e0a956d1a622fd19f9f1",
+      "bytes": 27925,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.186.xlsx",
+      "parliamentCode": "P.186",
+      "sha256": "cc05653e76dc100741d16b9f1f97799018c0c9e4df571f589c7eb40ba4775483",
+      "bytes": 24948,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.187.xlsx",
+      "parliamentCode": "P.187",
+      "sha256": "e55ecb17abcc6ce49e8718aed66a9c1b98e6b58ca0a72ff96f5d01319c0365ba",
+      "bytes": 27850,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.188.xlsx",
+      "parliamentCode": "P.188",
+      "sha256": "48d0e200d7d51b258ae5c72ed2a16133acda36b94d2cf69077c9754458f30b8d",
+      "bytes": 33545,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.189.xlsx",
+      "parliamentCode": "P.189",
+      "sha256": "a2bdc3fa947d4c196f609b959bc8884cf4cea27f2a6aa6bb20e2a15fea9f0464",
+      "bytes": 32456,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.190.xlsx",
+      "parliamentCode": "P.190",
+      "sha256": "f00ea85563d413f058ec52db70afdb086e7ee3ecdf611b59d248789f85f92d4f",
+      "bytes": 38681,
+      "sheets": 1,
+      "status": "published"
+    },
+    {
+      "path": "P.191.xlsx",
+      "parliamentCode": "P.191",
+      "sha256": "18e3132fc93e26dbb18d31c28889e6041cb4af7d8c85a43605ce368955a119fa",
+      "bytes": 29705,
+      "sheets": 1,
+      "status": "published"
+    }
+  ],
+  "rejectedSources": [
+    {
+      "path": "P.046.xlsx",
+      "parliamentCode": "P.046",
+      "sha256": "2a7f9ef29f5be1eab2d506333aae29bfbaa95bb949f314619351ea422e9abdb7",
+      "bytes": 36653,
+      "sheets": 1,
+      "status": "rejected",
+      "reason": "Workbook is P.045, expected P.046."
+    },
+    {
+      "path": "P.047.xlsx",
+      "parliamentCode": "P.047",
+      "sha256": "c475bc1868ebb63fda4d81cbbd92e79e1bae882fa6388ba9a4e410538c1aba68",
+      "bytes": 39498,
+      "sheets": 1,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 132, 'ballotsInBox': 63507, 'validVotes': 62482, 'rejectedVotes': 865, 'unreturnedVotes': 160} do not match final JUMLAH {'pollingStreams': 131, 'ballotsInBox': 63199, 'validVotes': 62179, 'rejectedVotes': 860, 'unreturnedVotes': 160}."
+    },
+    {
+      "path": "P.063.xlsx",
+      "parliamentCode": "P.063",
+      "sha256": "7f30488f8f638aa2b3f7e70ca96ef1c2aa2d017d13f71356cb2b5822c888d108",
+      "bytes": 81516,
+      "sheets": 1,
+      "status": "rejected",
+      "reason": "Final A total does not equal B + C + D."
+    },
+    {
+      "path": "P.093.xlsx",
+      "parliamentCode": "P.093",
+      "sha256": "be07e1738e2700feddf9e4d6383528a3b28ee021204a408ca18e1b11c0be8911",
+      "bytes": 35535,
+      "sheets": 1,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 100, 'ballotsInBox': 41410, 'validVotes': 40741, 'rejectedVotes': 561, 'unreturnedVotes': 108} do not match final JUMLAH {'pollingStreams': 101, 'ballotsInBox': 41878, 'validVotes': 41206, 'rejectedVotes': 564, 'unreturnedVotes': 108}."
+    },
+    {
+      "path": "P.094.xlsx",
+      "parliamentCode": "P.094",
+      "sha256": "24cb98961d6e1c6d84d8e4c53a61751c5ad8578a80b2794ea46a96b5f5bb3746",
+      "bytes": 47651,
+      "sheets": 1,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 184, 'ballotsInBox': 86219, 'validVotes': 84656, 'rejectedVotes': 1296, 'unreturnedVotes': 267} do not match final JUMLAH {'pollingStreams': 185, 'ballotsInBox': 86798, 'validVotes': 85221, 'rejectedVotes': 1310, 'unreturnedVotes': 267}."
+    },
+    {
+      "path": "P.144.xlsx",
+      "parliamentCode": "P.144",
+      "sha256": "170bb9ea9d2842aff67a2de8ca8b21581f85a3c74936dac39d97ffcd761df091",
+      "bytes": 39642,
+      "sheets": 1,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 155, 'ballotsInBox': 65832, 'validVotes': 64541, 'rejectedVotes': 1045, 'unreturnedVotes': 246} do not match final JUMLAH {'pollingStreams': 157, 'ballotsInBox': 66708, 'validVotes': 65414, 'rejectedVotes': 1048, 'unreturnedVotes': 246}."
+    },
+    {
+      "path": "P.169.xlsx",
+      "parliamentCode": "P.169",
+      "sha256": "78ccc6441872cbc105496a1ae9e86b056e299220dfee789761cc5e1f5751fb39",
+      "bytes": 36125,
+      "sheets": 1,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 124, 'ballotsInBox': 47283, 'validVotes': 45844, 'rejectedVotes': 1145, 'unreturnedVotes': 294} do not match final JUMLAH {'pollingStreams': 125, 'ballotsInBox': 47565, 'validVotes': 46098, 'rejectedVotes': 1173, 'unreturnedVotes': 294}."
+    },
+    {
+      "path": "P.170.xlsx",
+      "parliamentCode": "P.170",
+      "sha256": "6ef3e2f9e4b51ea55ca3d2eac3085c1e90fae9e22f06424ec9e0b970b91c6486",
+      "bytes": 50920,
+      "sheets": 1,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 108, 'ballotsInBox': 45243, 'validVotes': 44047, 'rejectedVotes': 963, 'unreturnedVotes': 233} do not match final JUMLAH {'pollingStreams': 107, 'ballotsInBox': 44834, 'validVotes': 43643, 'rejectedVotes': 958, 'unreturnedVotes': 233}."
+    },
+    {
+      "path": "P.176.xlsx",
+      "parliamentCode": "P.176",
+      "sha256": "82c9cb34769886051d86d9bf1cb6402501f507f36c01f419206059df89694245",
+      "bytes": 26267,
+      "sheets": 1,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 61, 'ballotsInBox': 25863, 'validVotes': 25370, 'rejectedVotes': 387, 'unreturnedVotes': 106} do not match final JUMLAH {'pollingStreams': 60, 'ballotsInBox': 25519, 'validVotes': 25028, 'rejectedVotes': 385, 'unreturnedVotes': 106}."
+    },
+    {
+      "path": "P.180.xlsx",
+      "parliamentCode": "P.180",
+      "sha256": "4a530c66f521e7783d9d727229b15d56912ac0fc7abcab8d2b66a54ce6576bb5",
+      "bytes": 40503,
+      "sheets": 1,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 72, 'ballotsInBox': 28685, 'validVotes': 28071, 'rejectedVotes': 377, 'unreturnedVotes': 237} do not match final JUMLAH {'pollingStreams': 105, 'ballotsInBox': 40913, 'validVotes': 40149, 'rejectedVotes': 522, 'unreturnedVotes': 242}."
+    }
+  ]
+}

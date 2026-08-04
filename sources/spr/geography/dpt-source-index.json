@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "retrievedAt": "2026-07-24",
+  "sources": [
+    {
+      "id": "dpt-2025-06-p028",
+      "url": "https://sprinfo.spr.gov.my/spr/DPT/6Jun/KELANTAN/P028.pdf",
+      "sourceLabel": "DPT Jun 2025",
+      "publishedAt": "2025-07-15",
+      "archivedFile": "2025-06-p028.pdf",
+      "availability": "upstream-temporarily-unavailable"
+    },
+    {
+      "id": "dpt-2025-09-p028",
+      "url": "https://sprinfo.spr.gov.my/spr/DPT/9September/KELANTAN/P028.pdf",
+      "sourceLabel": "DPT September 2025",
+      "publishedAt": "2025-11-03",
+      "archivedFile": "2025-09-p028.pdf",
+      "availability": "upstream-temporarily-unavailable"
+    }
+  ]
+}

@@ -1,23 +1,32 @@
 import { expect, test } from "@playwright/test";
 
+test("PRN-14 DUN page lazily loads reconciled SPR saluran results", async ({ page }) => {
+  await page.goto("/prn/14/johor/dun/buloh-kasap");
+  await expect(page.getByRole("heading", { name: "Keputusan mengikut saluran" })).toBeVisible();
+  await expect(page.getByText("SUMBER RASMI", { exact: true })).toBeVisible();
+  await expect(page.getByRole("columnheader", { name: "ZAHARI SARIP" })).toBeVisible();
+});
+
 test("state-election directory exposes all 13 latest assemblies", async ({ page }) => {
   await page.goto("/prn");
   await expect(page.getByRole("heading", { name: /Mandat negeri/ })).toBeVisible();
   await expect(page.locator(".prn-event-card")).toHaveCount(13);
-  await expect(page.getByRole("link", { name: /SABAH/ })).toContainText("29 November 2025");
+  await expect(page.getByRole("link", { name: /NEGERI SEMBILAN/ })).toContainText("01 Aug 26");
+  await expect(page.getByRole("link", { name: /SABAH/ })).toContainText("29 Nov 25");
   await expect(page.getByRole("link", { name: "PRN-15" })).toHaveAttribute("href", "/prn/15");
 });
 
 test("PRN edition directories isolate assemblies 14, 15 and 16", async ({ page }) => {
   await page.goto("/prn/15");
   await expect(page.getByRole("heading", { name: /PRN ke-15/ })).toBeVisible();
-  await expect(page.locator(".prn-event-card")).toHaveCount(11);
-  await expect(page.getByText("445", { exact: true }).first()).toBeVisible();
+  await expect(page.locator(".prn-event-card")).toHaveCount(12);
+  await expect(page.getByText("505", { exact: true }).first()).toBeVisible();
 
   await page.goto("/prn/16/");
   await expect(page.getByRole("heading", { name: /PRN ke-16/ })).toBeVisible();
-  await expect(page.locator(".prn-event-card")).toHaveCount(1);
-  await expect(page.locator(".prn-event-card")).toContainText("JOHOR");
+  await expect(page.locator(".prn-event-card")).toHaveCount(2);
+  await expect(page.locator(".prn-event-card", { hasText: "JOHOR" })).toHaveCount(1);
+  await expect(page.locator(".prn-event-card", { hasText: "NEGERI SEMBILAN" })).toHaveCount(1);
 
   await page.goto("/prn/14/");
   await expect(page.getByRole("heading", { level: 1, name: /PRN ke-14/ })).toBeVisible();
@@ -25,6 +34,23 @@ test("PRN edition directories isolate assemblies 14, 15 and 16", async ({ page }
   await expect(page.getByText("445", { exact: true }).first()).toBeVisible();
   await expect(page.getByText("1,394", { exact: true }).first()).toBeVisible();
   await expect(page.locator(".prn-edition-empty")).toHaveCount(0);
+});
+
+test("Sabah Assembly-15 uses the historical 60-seat registry and PRU-14 scoresheets", async ({ page }) => {
+  await page.goto("/prn/15/sabah/");
+  await expect(page.getByRole("heading", { name: "SABAH", exact: true })).toBeVisible();
+  await expect(page.getByText("60", { exact: true }).first()).toBeVisible();
+  await expect(page.getByText("1.1J", { exact: true })).toBeVisible();
+
+  await page.goto("/prn/15/sabah/dun/tanjong-kapor");
+  await expect(page.getByRole("heading", { name: "TANJONG KAPOR", exact: true })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Keputusan mengikut saluran" })).toBeVisible();
+  await expect(page.getByText("SUMBER RASMI", { exact: true })).toBeVisible();
+  await expect(page.getByRole("link", { name: /DUN → PDM → lokaliti/ })).toHaveCount(0);
+
+  await page.goto("/prn/15/sabah/peta");
+  await expect(page.getByRole("heading", { name: /sempadan pra-2019/ })).toBeVisible();
+  await expect(page.getByText(/Peta tidak diterbitkan sebagai anggaran/)).toBeVisible();
 });
 
 test("PRN comparison animates selectable metrics without treating absent elections as zero", async ({ page }) => {
@@ -96,10 +122,37 @@ test("Johor uses all gazetted Form 16 totals at its canonical PRN-16 route", asy
   await expect(page.locator(".detail-facts")).toContainText("35");
 });
 
+test("Negeri Sembilan exposes every official MySPR PRN-16 result", async ({ page }) => {
+  await page.goto("/prn/negeri-sembilan/2026");
+  await expect(page).toHaveURL(/\/prn\/16\/negeri-sembilan\/$/);
+  await expect(page.getByRole("heading", { name: "NEGERI SEMBILAN", exact: true })).toBeVisible();
+  await expect(page.getByText("01 Aug 26", { exact: false })).toBeVisible();
+  await expect(page.getByText("36", { exact: true }).first()).toBeVisible();
+  await expect(page.locator(".prn-composition-list")).toContainText("18");
+  await expect(page.locator(".prn-composition-list")).toContainText("11");
+  await expect(page.locator(".prn-composition-list")).toContainText("7");
+  await expect(page.locator(".prn-filter-bar + .prn-results-inline-map")).toBeVisible();
+  await expect(page.locator(".prn-results-inline-map + .prn-dun-grid")).toBeVisible();
+  await expect(page.locator(".prn-results-inline-map .prn-map-features path")).toHaveCount(36);
+
+  await page.getByPlaceholder("DUN atau calon").fill("Chennah");
+  await expect(page.locator(".prn-dun-card")).toHaveCount(1);
+  await expect(page.locator('.prn-results-inline-map .prn-map-features path[aria-hidden="false"]')).toHaveCount(1);
+  await expect(page.locator('.prn-results-inline-map .prn-map-features path[aria-hidden="true"]')).toHaveCount(35);
+  await page.getByRole("button", { name: "Set semula" }).click();
+
+  await page.goto("/prn/16/negeri-sembilan/dun/chennah");
+  await expect(page.getByRole("heading", { name: "CHENNAH", exact: true })).toBeVisible();
+  await expect(page.getByText("SIOW KONG CHOON (JOHN)", { exact: true }).first()).toBeVisible();
+  await expect(page.getByText("5,726", { exact: true }).first()).toBeVisible();
+  await expect(page.getByText("688", { exact: true }).first()).toBeVisible();
+  await expect(page.locator(".detail-facts")).toContainText("—");
+});
+
 test("Johor PRN-15 exposes all official 2022 DUN results", async ({ page }) => {
   await page.goto("/prn/15/johor/");
   await expect(page.getByRole("heading", { name: "JOHOR", exact: true })).toBeVisible();
-  await expect(page.getByText("12 Mac 2022", { exact: false })).toBeVisible();
+  await expect(page.getByText("12 Mar 22", { exact: false })).toBeVisible();
   await expect(page.getByText("56", { exact: true }).first()).toBeVisible();
   await expect(page.getByText("54.6%", { exact: true })).toBeVisible();
 

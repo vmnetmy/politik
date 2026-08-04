@@ -25,6 +25,10 @@ DUN_CODE = re.compile(r"N\.(\d{1,3})")
 ELECTORAL_ROLL_PARLIAMENT = re.compile(r"^P\.(\d{3})\s+(.+?)$")
 ELECTORAL_ROLL_DUN = re.compile(r"^N\.(\d{1,3})\s+(.+?)\s+([\d,]+)\s+RM")
 WINNER_STATUSES = {"MNG", "MENANG", "MTB"}
+DEFAULT_PRU14_DUN_SCORESHEET_DIRECTORIES = (
+    Path("public/data/state-election-scoresheets/prn-14"),
+    Path("public/data/state-election-scoresheets/prn-15"),
+)
 
 
 def sha256(path: Path) -> str:
@@ -171,6 +175,25 @@ def source_value(rows: list[dict[str, Any]], key: str, parser) -> Any:
     return next(iter(values), 0)
 
 
+def apply_published_pru14_dun_scoresheets(value: dict[str, Any], directories: tuple[Path, ...]) -> None:
+    try:
+        from .extract_pru14_dun_scoresheets import apply_authoritative_results
+    except ImportError:
+        from extract_pru14_dun_scoresheets import apply_authoritative_results  # type: ignore[no-redef]
+    results = {}
+    for directory in directories:
+        if not directory.exists():
+            continue
+        results.update(
+            {
+                result["contestId"]: result
+                for path in sorted(directory.glob("*/*.json"))
+                for result in [json.loads(path.read_text(encoding="utf-8"))]
+            }
+        )
+    apply_authoritative_results(value, results)
+
+
 def build(source_directory: Path, constituencies_path: Path) -> dict[str, Any]:
     source_metadata = json.loads((source_directory / "source.json").read_text(encoding="utf-8"))
     event_config = json.loads((source_directory / "events.json").read_text(encoding="utf-8"))["events"]
@@ -191,6 +214,22 @@ def build(source_directory: Path, constituencies_path: Path) -> dict[str, Any]:
     states = {item["id"]: item for item in constituencies["states"]}
     parliaments = {item["code"]: item for item in constituencies["parliaments"]}
     duns_by_code = {(item["parliamentCode"], item["code"]): item for item in constituencies["duns"]}
+    sabah_2018_duns = [
+        {
+            "id": f"sabah-2018:{parliament_code}:{state_dun_code}",
+            "code": state_dun_code,
+            "name": elector["name"],
+            "stateId": "sabah",
+            "parliamentCode": parliament_code,
+            "boundaryVersion": "my-sabah-pre-2019-60",
+        }
+        for (parliament_code, state_dun_code), elector in sorted(pru14_electors.items())
+        if 167 <= int(parliament_code.split(".")[1]) <= 191
+    ]
+    if len(sabah_2018_duns) != 60:
+        raise StateElectionExtractionError(
+            f"Expected 60 Sabah Assembly-15 constituencies in the PRU-14 electoral roll, found {len(sabah_2018_duns)}."
+        )
 
     events: list[dict[str, Any]] = []
     contests: list[dict[str, Any]] = []
@@ -211,6 +250,9 @@ def build(source_directory: Path, constituencies_path: Path) -> dict[str, Any]:
     for configured_event in event_config:
         is_latest = configured_event.get("coverage", "latest") == "latest"
         is_prn14 = configured_event["assemblyNumber"] == 14
+        is_pru14 = configured_event["year"] == 2018 and configured_event["electionDate"] == "2018-05-09"
+        event_duns = sabah_2018_duns if configured_event.get("constituencyVersion") == "sabah-2018-60" else constituencies["duns"]
+        event_duns_by_code = {(item["parliamentCode"], item["code"]): item for item in event_duns}
         state = states.get(configured_event["stateId"])
         if not state or normalise(state["name"]) != normalise(configured_event["stateName"]):
             raise StateElectionExtractionError(f"Unknown state identity for {configured_event['id']}.")
@@ -228,7 +270,7 @@ def build(source_directory: Path, constituencies_path: Path) -> dict[str, Any]:
             if row.get("PARLIMEN"):
                 parliament_code = code(row["PARLIMEN"], PARLIAMENT_CODE, "Parliament")
             else:
-                matches = [item for item in constituencies["duns"] if item["stateId"] == state["id"] and item["code"] == state_dun_code]
+                matches = [item for item in event_duns if item["stateId"] == state["id"] and item["code"] == state_dun_code]
                 if len(matches) != 1:
                     raise StateElectionExtractionError(f"Cannot resolve reusable Parliament identity for {state['id']} {state_dun_code}.")
                 parliament_code = matches[0]["parliamentCode"]
@@ -237,7 +279,7 @@ def build(source_directory: Path, constituencies_path: Path) -> dict[str, Any]:
         event_contests: list[dict[str, Any]] = []
         for (parliament_code, state_dun_code), candidate_rows in sorted(grouped.items()):
             parliament = parliaments.get(parliament_code)
-            dun = duns_by_code.get((parliament_code, state_dun_code))
+            dun = event_duns_by_code.get((parliament_code, state_dun_code))
             if not parliament or parliament["stateId"] != state["id"] or not dun:
                 raise StateElectionExtractionError(f"Unknown constituency {parliament_code} {state_dun_code}.")
             source_dun_name = area_name(candidate_rows[0]["DEWAN UNDANGAN NEGERI"], DUN_CODE)
@@ -289,7 +331,7 @@ def build(source_directory: Path, constituencies_path: Path) -> dict[str, Any]:
                 )
             has_polling_totals = not candidate_rows[0]["_dataset"].startswith("mysemak-")
             registered = source_value(candidate_rows, "JumlahPemilih", integer) if has_polling_totals else None
-            if is_prn14:
+            if is_pru14:
                 electoral_roll = pru14_electors.get((parliament_code, state_dun_code))
                 if not electoral_roll:
                     raise StateElectionExtractionError(f"Missing PRU-14 electoral-roll total for {parliament_code} {state_dun_code}.")
@@ -327,7 +369,7 @@ def build(source_directory: Path, constituencies_path: Path) -> dict[str, Any]:
             )
         expected_event_duns = {
             item["id"]
-            for item in constituencies["duns"]
+            for item in event_duns
             if item["stateId"] == state["id"]
         }
         event_duns = {item["dunId"] for item in event_contests}
@@ -383,7 +425,7 @@ def build(source_directory: Path, constituencies_path: Path) -> dict[str, Any]:
         )
     latest_event_count = sum(item["coverage"] == "latest" for item in events)
     historical_event_count = sum(item["coverage"] == "historical" for item in events)
-    return {
+    value = {
         "version": 1,
         "metadata": {
             "title": "Keputusan pilihan raya negeri semasa dan arkib mengikut nombor Dewan",
@@ -397,13 +439,17 @@ def build(source_directory: Path, constituencies_path: Path) -> dict[str, Any]:
             "stateCount": len({item["stateId"] for item in events}),
             "contestCount": len(contests),
             "historicalContestCount": historical_contest_count,
+            "historicalConstituencyCount": len(sabah_2018_duns),
             "candidateCount": sum(len(item["candidates"]) for item in contests),
             "coverage": "latest-complete-plus-archive",
             "issues": data_issues,
         },
         "events": sorted(events, key=lambda item: (item["electionDate"], item["stateId"]), reverse=True),
         "contests": sorted(contests, key=lambda item: (item["stateId"], item["dunId"])),
+        "historicalConstituencies": sabah_2018_duns,
     }
+    apply_published_pru14_dun_scoresheets(value, DEFAULT_PRU14_DUN_SCORESHEET_DIRECTORIES)
+    return value
 
 
 def main() -> int:

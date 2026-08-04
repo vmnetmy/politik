@@ -1,11 +1,12 @@
-import { lazy, Suspense, useEffect, useMemo, useState } from "react";
+import { lazy, startTransition, Suspense, useEffect, useMemo, useState } from "react";
+import type { ReactNode } from "react";
 import {
   BrowserRouter,
   Navigate,
   Route,
   Routes,
   useLocation,
-} from "react-router-dom";
+} from "react-router";
 import type { AffiliationEvent, AllianceCatalogItem, CandidateChange, ConstituencyRegistry, DataChange, ElectionData, GeographyData, PartyCatalogItem, PollingPlacesData, ScoresheetIndex, SeatingData } from "./types";
 import { Icon } from "./components/ui/Icon";
 import { AtlasIntro } from "./components/maps/AtlasIntro";
@@ -37,18 +38,19 @@ import {
   parsePartyCatalogFile,
 } from "./dataChanges";
 import { normalise } from "./utils";
+import { ParliamentIndexPage } from "./pages/ParliamentDirectoryPage";
+
+const ElectionPage = lazy(() => import("./pages/PublicPages").then((module) => ({ default: module.ElectionPage })));
+const FederalElectionIndexPage = lazy(() => import("./pages/PublicPages").then((module) => ({ default: module.FederalElectionIndexPage })));
+const OverviewPage = lazy(() => import("./pages/PublicPages").then((module) => ({ default: module.OverviewPage })));
+const ParliamentPage = lazy(() => import("./pages/PublicPages").then((module) => ({ default: module.ParliamentPage })));
+const StatePage = lazy(() => import("./pages/PublicPages").then((module) => ({ default: module.StatePage })));
+const WinnersPage = lazy(() => import("./pages/PublicPages").then((module) => ({ default: module.WinnersPage })));
 
 const VoterAgePage = lazy(() => import("./pages/VoterAgePage").then((module) => ({ default: module.VoterAgePage })));
 const VoterEthnicityPage = lazy(() => import("./pages/VoterEthnicityPage").then((module) => ({ default: module.VoterEthnicityPage })));
 const VoterOverviewPage = lazy(() => import("./pages/VoterRollPages").then((module) => ({ default: module.VoterOverviewPage })));
 const VoterAreaPage = lazy(() => import("./pages/VoterRollPages").then((module) => ({ default: module.VoterAreaPage })));
-const ElectionPage = lazy(() => import("./pages/PublicPages").then((module) => ({ default: module.ElectionPage })));
-const FederalElectionIndexPage = lazy(() => import("./pages/PublicPages").then((module) => ({ default: module.FederalElectionIndexPage })));
-const OverviewPage = lazy(() => import("./pages/PublicPages").then((module) => ({ default: module.OverviewPage })));
-const ParliamentIndexPage = lazy(() => import("./pages/PublicPages").then((module) => ({ default: module.ParliamentIndexPage })));
-const ParliamentPage = lazy(() => import("./pages/PublicPages").then((module) => ({ default: module.ParliamentPage })));
-const StatePage = lazy(() => import("./pages/PublicPages").then((module) => ({ default: module.StatePage })));
-const WinnersPage = lazy(() => import("./pages/PublicPages").then((module) => ({ default: module.WinnersPage })));
 const DunPage = lazy(() => import("./pages/GeographyPages").then((module) => ({ default: module.DunPage })));
 const LocalityPage = lazy(() => import("./pages/GeographyPages").then((module) => ({ default: module.LocalityPage })));
 const PdmPage = lazy(() => import("./pages/GeographyPages").then((module) => ({ default: module.PdmPage })));
@@ -58,6 +60,8 @@ const SettingsCandidatePage = lazy(() => import("./pages/SettingsPages").then((m
 const SettingsDataPage = lazy(() => import("./pages/SettingsPages").then((module) => ({ default: module.SettingsDataPage })));
 const SettingsPartyPage = lazy(() => import("./pages/SettingsPages").then((module) => ({ default: module.SettingsPartyPage })));
 const SettingsOperationsPage = lazy(() => import("./pages/SettingsPages").then((module) => ({ default: module.SettingsOperationsPage })));
+const SettingsCoveragePage = lazy(() => import("./pages/SettingsCoveragePage").then((module) => ({ default: module.SettingsCoveragePage })));
+const Pru14AuditPage = lazy(() => import("./pages/Pru14AuditPage").then((module) => ({ default: module.Pru14AuditPage })));
 const FederalElectionComparisonPage = lazy(() => import("./pages/FederalElectionComparisonPage").then((module) => ({ default: module.FederalElectionComparisonPage })));
 const StateElectionIndexPage = lazy(() => import("./pages/StateElectionPages").then((module) => ({ default: module.StateElectionIndexPage })));
 const StateElectionSegmentPage = lazy(() => import("./pages/StateElectionPages").then((module) => ({ default: module.StateElectionSegmentPage })));
@@ -123,9 +127,17 @@ function FeatureUnavailable({ label }: { label: string }) {
   return <AsyncState kind="empty" title={`${label} belum tersedia`} description="Dataset ini tidak diterbitkan untuk edisi pilihan raya yang sedang dibuka."/>;
 }
 
+function DeferredPublicPage({ children }: { children: ReactNode }) {
+  return <Suspense fallback={<div className="route-loading">Memuatkan halaman pilihan raya…</div>}>{children}</Suspense>;
+}
+
 function Dashboard() {
   const location = useLocation();
   const isAtlasRoute = location.pathname === ATLAS_BASE || location.pathname === `${ATLAS_BASE}/`;
+  const requiresFederalGeography = /^\/pru\/\d+\/negeri\/(?:parlimen\/[^/]+|[^/]+\/parlimen\/[^/]+)(?:\/|$)/.test(location.pathname);
+  const isCoverageRoute = location.pathname === "/settings/data/liputan";
+  const requiresFederalScoresheets = requiresFederalGeography || isCoverageRoute;
+  const requiresFederalCoverage = requiresFederalGeography || isCoverageRoute;
   const activeElectionNumber = electionNumberForLocation(location.pathname, location.search);
   const edition = electionEdition(activeElectionNumber);
   const [data, setData] = useState<ElectionData | null>(null);
@@ -155,29 +167,44 @@ function Dashboard() {
     }
     setError("");
     setData(null);
-    setSeating(null);
-    setScoresheetIndex(null);
-    setGeography(null);
-    setConstituencies(null);
-    setPollingPlaces(null);
+    setSeating(emptySeating);
+    setScoresheetIndex(emptyScoresheets);
+    setGeography(emptyGeography);
+    setConstituencies(emptyConstituencies);
+    setPollingPlaces(emptyPollingPlaces);
+    setChanges([]);
+    setAffiliations([]);
+    setCandidateChanges([]);
+    setPartyCatalog([]);
+    setAllianceCatalog([]);
     setChangesLoaded(false);
     setAffiliationsLoaded(false);
     setCandidateChangesLoaded(false);
     setCatalogsLoaded(false);
     if (isAtlasRoute) return;
     const base = edition.dataPath;
+    const electionRequest = fetch(`${base}/election.json`).then((response) => {
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return response.json();
+    });
+    electionRequest.then((election) => {
+      if (election?.metadata?.electionId !== edition.id || election?.metadata?.electionNumber !== edition.number || election?.metadata?.termId !== edition.termId || election?.metadata?.boundaryVersion !== edition.boundaryVersion) {
+        throw new Error(`Metadata dataset tidak sepadan dengan route ${edition.shortTitle}.`);
+      }
+      setData(election);
+    }).catch((reason) => setError(reason instanceof Error ? reason.message : "Ralat tidak diketahui"));
     Promise.all([
-      fetch(`${base}/election.json`).then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); }),
+      electionRequest,
       edition.capabilities.seating && !isAtlasRoute ? fetch(`${base}/seating.json`).then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); }) : Promise.resolve(emptySeating),
       isAtlasRoute ? Promise.resolve({ electionId: edition.id, changes: [] }) : fetch(`${base}/changes.json`).then((response) => response.ok ? response.json() : { electionId: edition.id, changes: [] }),
       isAtlasRoute ? Promise.resolve({ electionId: edition.id, termId: edition.termId, affiliations: [] }) : fetch(`${base}/affiliations.json`).then((response) => response.ok ? response.json() : { electionId: edition.id, termId: edition.termId, affiliations: [] }),
       isAtlasRoute ? Promise.resolve({ electionId: edition.id, candidateChanges: [] }) : fetch(`${base}/candidate-changes.json`).then((response) => response.ok ? response.json() : { electionId: edition.id, candidateChanges: [] }),
       isAtlasRoute ? Promise.resolve({ parties: [] }) : fetch("/data/reference/parties.json").then((response) => response.ok ? response.json() : { parties: [] }),
       isAtlasRoute ? Promise.resolve({ alliances: [] }) : fetch("/data/reference/alliances.json").then((response) => response.ok ? response.json() : { alliances: [] }),
-      edition.capabilities.scoresheets && !isAtlasRoute ? fetch(`${base}/scoresheets/index.json`).then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); }) : Promise.resolve(emptyScoresheets),
-      edition.capabilities.geography && !isAtlasRoute ? fetch(`${base}/geography.json`).then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); }) : Promise.resolve(emptyGeography),
-      !isAtlasRoute && (edition.capabilities.geography || edition.capabilities.voterAge || edition.capabilities.voterEthnicity) ? fetch(`${base}/constituencies.json`).then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); }) : Promise.resolve(emptyConstituencies),
-      !isAtlasRoute && (edition.capabilities.scoresheets || edition.capabilities.geography) ? fetch(`${base}/polling-places.json`).then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); }) : Promise.resolve(emptyPollingPlaces),
+      edition.capabilities.scoresheets && requiresFederalScoresheets ? fetch(`${base}/scoresheets/index.json`).then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); }) : Promise.resolve(emptyScoresheets),
+      edition.capabilities.geography && requiresFederalCoverage ? fetch(`${base}/geography.json`).then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); }) : Promise.resolve(emptyGeography),
+      edition.capabilities.geography && requiresFederalCoverage ? fetch(`${base}/constituencies.json`).then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); }) : Promise.resolve(emptyConstituencies),
+      edition.capabilities.geography && requiresFederalGeography ? fetch(`${base}/polling-places.json`).then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); }) : Promise.resolve(emptyPollingPlaces),
     ]).then(([election, seatingBaseline, baseline, affiliationBaseline, candidateBaseline, partyBaseline, allianceBaseline, scoresheetBaseline, geographyBaseline, constituencyBaseline, pollingPlacesBaseline]) => {
       if (election?.metadata?.electionId !== edition.id || election?.metadata?.electionNumber !== edition.number || election?.metadata?.termId !== edition.termId || election?.metadata?.boundaryVersion !== edition.boundaryVersion) {
         throw new Error(`Metadata dataset tidak sepadan dengan route ${edition.shortTitle}.`);
@@ -189,7 +216,7 @@ function Dashboard() {
         throw new Error(`Fail keahlian tidak sepadan dengan penggal ${edition.termId}.`);
       }
       setData(election);
-      setSeating(seatingBaseline);
+      startTransition(() => setSeating(seatingBaseline));
       setScoresheetIndex(scoresheetBaseline);
       setGeography(geographyBaseline);
       setConstituencies(constituencyBaseline);
@@ -234,14 +261,14 @@ function Dashboard() {
       setCandidateChangesLoaded(true);
       setCatalogsLoaded(true);
     }).catch((reason) => setError(reason instanceof Error ? reason.message : "Ralat tidak diketahui"));
-  }, [activeElectionNumber, edition, isAtlasRoute]);
+  }, [activeElectionNumber, edition, isAtlasRoute, requiresFederalCoverage, requiresFederalGeography, requiresFederalScoresheets]);
   useEffect(() => { if (changesLoaded && edition) localStorage.setItem(scopedChangesKey(edition.id), JSON.stringify({ version: 2, electionId: edition.id, changes })); }, [changes, changesLoaded, edition]);
   useEffect(() => { if (affiliationsLoaded && edition) localStorage.setItem(scopedAffiliationsKey(edition.termId), JSON.stringify({ version: 2, electionId: edition.id, termId: edition.termId, affiliations })); }, [affiliations, affiliationsLoaded, edition]);
   useEffect(() => { if (candidateChangesLoaded && edition) localStorage.setItem(scopedCandidateChangesKey(edition.id), JSON.stringify({ version: 2, electionId: edition.id, candidateChanges })); }, [candidateChanges, candidateChangesLoaded, edition]);
   useEffect(() => { if (catalogsLoaded) localStorage.setItem(LOCAL_PARTY_CATALOG_KEY, JSON.stringify({ version: 1, parties: partyCatalog })); }, [partyCatalog, catalogsLoaded]);
   useEffect(() => { if (catalogsLoaded) localStorage.setItem(LOCAL_ALLIANCE_CATALOG_KEY, JSON.stringify({ version: 1, alliances: allianceCatalog })); }, [allianceCatalog, catalogsLoaded]);
   const managedData = useMemo(() => {
-    if (!data || !changesLoaded || !affiliationsLoaded || !candidateChangesLoaded || !catalogsLoaded) return null;
+    if (!data) return null;
     const alliances = [...data.alliances, ...allianceCatalog.map(({ name, shortName, color }) => ({ name, shortName, color }))]
       .filter((alliance, index, items) => items.findIndex((item) => item.name === alliance.name) === index);
     const seats = applyReferenceCatalog(
@@ -257,7 +284,13 @@ function Dashboard() {
     return { ...data, alliances, seats };
   }, [data, changes, affiliations, candidateChanges, partyCatalog, allianceCatalog, changesLoaded, affiliationsLoaded, candidateChangesLoaded, catalogsLoaded, edition]);
   if (error || !edition) return <ErrorScreen message={error || `PRU-${activeElectionNumber} belum tersedia.`}/>;
-  if (!isAtlasRoute && (!managedData || !seating || !scoresheetIndex || !geography || !constituencies || !pollingPlaces)) return <LoadingScreen/>;
+  const federalScoresheetPending = edition.capabilities.scoresheets && requiresFederalScoresheets && !scoresheetIndex?.version;
+  const federalGeographyPending = edition.capabilities.geography && requiresFederalCoverage && (
+    !geography?.version
+    || !constituencies?.version
+    || (requiresFederalGeography && !pollingPlaces?.version)
+  );
+  if (!isAtlasRoute && (!managedData || !seating || !scoresheetIndex || !geography || !constituencies || !pollingPlaces || federalScoresheetPending || federalGeographyPending)) return <LoadingScreen/>;
   const routeData = isAtlasRoute ? managedData : managedData!;
   const changedSeatCount = routeData?.seats.filter((seat) => seat.current?.isChanged).length ?? 0;
   const todayDate = new Date().toISOString().slice(0, 10);
@@ -268,12 +301,13 @@ function Dashboard() {
       <Routes>
         <Route path="/" element={<Navigate to={electionBase(DEFAULT_ELECTION_NUMBER)} replace/>}/>
         <Route element={<AppShell data={routeData} search={search} setSearch={setSearch} changeCount={changedSeatCount} candidateChangeCount={changedCandidateCount}/> }>
-          <Route path={PRU_BASE} element={<FederalElectionIndexPage/>}/>
+          <Route path={PRU_BASE} element={<DeferredPublicPage><FederalElectionIndexPage/></DeferredPublicPage>}/>
           <Route path={PRU_COMPARISON_BASE} element={<Suspense fallback={<div className="route-loading">Menyusun perbandingan PRU…</div>}><FederalElectionComparisonPage/></Suspense>}/>
           <Route path={ATLAS_BASE} element={<Suspense fallback={<><AtlasIntro/><div className="route-loading atlas-route-loading">Membina atlas pilihan raya Malaysia…</div></>}><NationalElectionAtlasPage currentElectionData={routeData}/></Suspense>}/>
           <Route path={`${ATLAS_BASE}/embed`} element={<Suspense fallback={<><AtlasIntro/><div className="route-loading atlas-route-loading">Membina atlas pilihan raya Malaysia…</div></>}><NationalElectionAtlasPage currentElectionData={routeData} embed/></Suspense>}/>
-          <Route path={electionPattern} element={<ElectionPage data={routeData!}/>}/>
-          <Route path={`${electionPattern}/pemenang`} element={<WinnersPage data={routeData!}/>}/>
+          <Route path={electionPattern} element={<DeferredPublicPage><ElectionPage data={routeData!}/></DeferredPublicPage>}/>
+          <Route path={`${electionPattern}/pemenang`} element={<DeferredPublicPage><WinnersPage data={routeData!}/></DeferredPublicPage>}/>
+          <Route path="/pru/14/audit" element={<Suspense fallback={<div className="route-loading">Memuatkan audit PRU-14…</div>}><Pru14AuditPage/></Suspense>}/>
           <Route path={`${electionPattern}/pengundi`} element={edition.capabilities.voterRoll ? <Suspense fallback={<div className="route-loading">Memuatkan daftar pemilih…</div>}><VoterOverviewPage/></Suspense> : <FeatureUnavailable label="Daftar pemilih"/>}/>
           <Route path={`${electionPattern}/pengundi/kawasan`} element={edition.capabilities.voterRoll ? <Suspense fallback={<div className="route-loading">Memuatkan statistik kawasan…</div>}><VoterAreaPage/></Suspense> : <FeatureUnavailable label="Statistik kawasan pengundi"/>}/>
           <Route path={`${electionPattern}/pengundi/umur`} element={edition.capabilities.voterAge ? <Suspense fallback={<div className="route-loading">Memuatkan statistik umur…</div>}><VoterAgePage/></Suspense> : <FeatureUnavailable label="Statistik umur pengundi"/>}/>
@@ -289,21 +323,22 @@ function Dashboard() {
           <Route path={`${PRN_BASE}/:assemblyNumber/:stateName/peta`} element={<Suspense fallback={<div className="route-loading">Memuatkan peta pilihan raya…</div>}><StateElectionMapPage/></Suspense>}/>
           <Route path={`${PRN_BASE}/:assemblyNumber/:stateName/dun`} element={<Suspense fallback={<div className="route-loading">Memuatkan keputusan DUN…</div>}><StateElectionPage/></Suspense>}/>
           <Route path={`${PRN_BASE}/:assemblyNumber/:stateName/dun/:dunName`} element={<Suspense fallback={<div className="route-loading">Memuatkan keputusan DUN…</div>}><StateDunResultPage/></Suspense>}/>
-          <Route path={`${electionPattern}/negeri`} element={<OverviewPage data={routeData!}/>}/>
+          <Route path={`${electionPattern}/negeri`} element={<DeferredPublicPage><OverviewPage data={routeData!}/></DeferredPublicPage>}/>
           <Route path={`${electionPattern}/negeri/parlimen`} element={<ParliamentIndexPage data={routeData!} seating={seating!} search={search} setSearch={setSearch}/>}/>
-          <Route path={`${electionPattern}/negeri/parlimen/:parliamentName`} element={<ParliamentPage data={routeData!} scoresheetIndex={scoresheetIndex!} geography={geography!} constituencies={constituencies!} pollingPlaces={pollingPlaces!}/>}/>
-          <Route path={`${electionPattern}/negeri/:stateName`} element={<StatePage data={routeData!}/>}/>
-          <Route path={`${electionPattern}/negeri/:stateName/parlimen/:parliamentName`} element={<ParliamentPage data={routeData!} scoresheetIndex={scoresheetIndex!} geography={geography!} constituencies={constituencies!} pollingPlaces={pollingPlaces!}/>}/>
+          <Route path={`${electionPattern}/negeri/parlimen/:parliamentName`} element={<DeferredPublicPage><ParliamentPage data={routeData!} scoresheetIndex={scoresheetIndex!} geography={geography!} constituencies={constituencies!} pollingPlaces={pollingPlaces!}/></DeferredPublicPage>}/>
+          <Route path={`${electionPattern}/negeri/:stateName`} element={<DeferredPublicPage><StatePage data={routeData!}/></DeferredPublicPage>}/>
+          <Route path={`${electionPattern}/negeri/:stateName/parlimen/:parliamentName`} element={<DeferredPublicPage><ParliamentPage data={routeData!} scoresheetIndex={scoresheetIndex!} geography={geography!} constituencies={constituencies!} pollingPlaces={pollingPlaces!}/></DeferredPublicPage>}/>
           <Route path={`${electionPattern}/negeri/:stateName/parlimen/:parliamentName/dun/:dunName`} element={<DunPage data={routeData!} geography={geography!} constituencies={constituencies!} pollingPlaces={pollingPlaces!}/>}/>
           <Route path={`${electionPattern}/negeri/:stateName/parlimen/:parliamentName/dun/:dunName/pdm/:pdmName`} element={<PdmPage data={routeData!} geography={geography!} constituencies={constituencies!} pollingPlaces={pollingPlaces!}/>}/>
           <Route path={`${electionPattern}/negeri/:stateName/parlimen/:parliamentName/dun/:dunName/pdm/:pdmName/lokaliti/:localityName`} element={<LocalityPage data={routeData!} geography={geography!} constituencies={constituencies!} pollingPlaces={pollingPlaces!}/>}/>
           <Route path={`${electionPattern}/negeri/:stateName/parlimen/:parliamentName/pdm/:pdmName`} element={<PdmPage data={routeData!} geography={geography!} constituencies={constituencies!} pollingPlaces={pollingPlaces!}/>}/>
           <Route path={`${electionPattern}/negeri/:stateName/parlimen/:parliamentName/pdm/:pdmName/lokaliti/:localityName`} element={<LocalityPage data={routeData!} geography={geography!} constituencies={constituencies!} pollingPlaces={pollingPlaces!}/>}/>
           <Route path="/settings/data" element={edition.isCurrentTerm ? <SettingsDataPage data={routeData!} changes={changes} setChanges={setChanges}/> : <FeatureUnavailable label="Pengurusan status kerusi semasa"/>}/>
-          <Route path="/settings/data/keahlian" element={edition.isCurrentTerm ? <SettingsAffiliationPage data={routeData!} affiliations={affiliations} setAffiliations={setAffiliations} partyCatalog={partyCatalog} allianceCatalog={allianceCatalog}/> : <FeatureUnavailable label="Pengurusan keahlian semasa"/>}/>
+          <Route path="/settings/data/keahlian" element={<SettingsAffiliationPage data={routeData!} affiliations={affiliations} setAffiliations={setAffiliations} partyCatalog={partyCatalog} allianceCatalog={allianceCatalog}/>}/>
           <Route path="/settings/data/calon" element={<SettingsCandidatePage data={routeData!} candidateChanges={candidateChanges} setCandidateChanges={setCandidateChanges} partyCatalog={partyCatalog} allianceCatalog={allianceCatalog}/>}/>
           <Route path="/settings/data/parti" element={<SettingsPartyPage data={routeData!} partyCatalog={partyCatalog} setPartyCatalog={setPartyCatalog} allianceCatalog={allianceCatalog}/>}/>
           <Route path="/settings/data/gabungan" element={<SettingsAlliancePage data={routeData!} allianceCatalog={allianceCatalog} setAllianceCatalog={setAllianceCatalog}/>}/>
+          <Route path="/settings/data/liputan" element={<SettingsCoveragePage geography={geography!} constituencies={constituencies!} scoresheets={scoresheetIndex!}/>}/>
           <Route path="/settings/data/operasi" element={<SettingsOperationsPage/>}/>
           <Route path="*" element={<NotFound/>}/>
         </Route>

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { motion, MotionConfig } from "motion/react";
 import { stateElectionMapPath, stateElectionPath } from "../../routes";
 import type { StateElectionEvent } from "../../types";

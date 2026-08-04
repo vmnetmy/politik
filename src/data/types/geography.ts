@@ -30,9 +30,14 @@ export type GeographyLocality = {
   stateId: string;
   parliamentCode: string;
   dunId: string;
-  sourceUrl: string;
-  sourceLabel: string;
-  publishedAt: string;
+  firstSeenAt: string;
+  lastSeenAt: string;
+  sourceRefs: Array<{
+    id: string;
+    url: string;
+    label: string;
+    publishedAt: string;
+  }>;
 };
 
 export type GeographyData = {
@@ -50,8 +55,19 @@ export type GeographyData = {
     scoresheetPdmCount: number;
     localityCount: number;
     localityPdmCount: number;
+    localityCoveragePct: number;
     localityCoverage: "partial" | "complete";
+    localitySourceCount: number;
+    localitySnapshotRange: { from: string | null; to: string | null };
+    localityConflictCount: number;
+    localityCoverageByState: Record<string, { pdmCount: number; coveredPdmCount: number }>;
   };
   pdms: GeographyPdm[];
   localities: GeographyLocality[];
+  localityConflicts: Array<{
+    localityId: string;
+    existingName: string;
+    incomingName: string;
+    sourceId: string;
+  }>;
 };

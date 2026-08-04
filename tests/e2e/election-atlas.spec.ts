@@ -35,6 +35,15 @@ test("national atlas stays within a mobile viewport", async ({ page }) => {
   expect(dimensions.scrollWidth).toBeLessThanOrEqual(dimensions.clientWidth);
 });
 
+test("national atlas normalizes a PRN state that has no results in the selected edition", async ({ page }) => {
+  await page.goto("/peta?jenis=prn&edisi=17&mod=pemenang&negeri=selangor");
+  await expect(page).toHaveURL(/jenis=prn&edisi=17&mod=pemenang&negeri=sabah/);
+  await expect(page.locator(".atlas-map-geography path")).toHaveCount(73);
+  await expect(page.locator(".atlas-detail-panel")).toContainText("SABAH");
+  await expect(page.locator(".atlas-detail-panel")).toContainText("73");
+  await expect(page.locator(".atlas-results-table")).toContainText("73 kawasan");
+});
+
 test("national atlas lazy-loads state geometry and exposes comparison and hierarchy state", async ({ page }) => {
   const requested: string[] = [];
   page.on("request", (request) => {

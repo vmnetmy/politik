@@ -1,15 +1,15 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
-  "required": ["version", "metadata", "events", "contests"],
+  "required": ["version", "metadata", "events", "contests", "historicalConstituencies"],
   "properties": {
     "version": { "const": 1 },
     "metadata": {
       "type": "object",
-      "required": ["sourceCitations", "eventCount", "latestEventCount", "historicalEventCount", "stateCount", "contestCount", "historicalContestCount", "candidateCount", "coverage", "issues"],
+      "required": ["sourceCitations", "eventCount", "latestEventCount", "historicalEventCount", "stateCount", "contestCount", "historicalContestCount", "historicalConstituencyCount", "candidateCount", "coverage", "issues"],
       "properties": {
         "eventCount": { "type": "integer", "minimum": 1 }, "latestEventCount": { "type": "integer", "minimum": 1 }, "historicalEventCount": { "type": "integer", "minimum": 0 },
-        "stateCount": { "type": "integer", "minimum": 1 }, "contestCount": { "type": "integer", "minimum": 1 }, "historicalContestCount": { "type": "integer", "minimum": 0 },
+        "stateCount": { "type": "integer", "minimum": 1 }, "contestCount": { "type": "integer", "minimum": 1 }, "historicalContestCount": { "type": "integer", "minimum": 0 }, "historicalConstituencyCount": { "type": "integer", "minimum": 0 },
         "sourceCitations": { "type": "array", "items": { "type": "string", "minLength": 1 } },
         "candidateCount": { "type": "integer", "minimum": 1 }, "coverage": { "const": "latest-complete-plus-archive" },
         "issues": { "type": "array" }
@@ -32,12 +32,12 @@
       "items": {
         "type": "object", "required": ["id", "eventId", "stateId", "dunId", "parliamentCode", "electionDate", "registeredVoters", "turnoutVotes", "turnoutPct", "validVotes", "rejectedVotes", "unreturnedVotes", "majorityVotes", "sourceMajorityVotes", "winnerCandidateId", "sourceDataset", "candidates"],
         "properties": {
-          "id": { "type": "string" }, "eventId": { "type": "string" }, "stateId": { "type": "string" }, "dunId": { "type": "string", "pattern": "^P\\.\\d{3}:N\\.\\d{2}$" },
+          "id": { "type": "string" }, "eventId": { "type": "string" }, "stateId": { "type": "string" }, "dunId": { "type": "string", "pattern": "^(sabah-2018:)?P\\.\\d{3}:N\\.\\d{2}$" },
           "parliamentCode": { "type": "string", "pattern": "^P\\.\\d{3}$" }, "electionDate": { "type": "string", "format": "date" },
           "registeredVoters": { "type": ["integer", "null"], "minimum": 1 }, "turnoutVotes": { "type": ["integer", "null"], "minimum": 0 }, "turnoutPct": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
           "validVotes": { "type": "integer", "minimum": 0 }, "rejectedVotes": { "type": ["integer", "null"], "minimum": 0 }, "unreturnedVotes": { "type": ["integer", "null"], "minimum": 0 },
           "majorityVotes": { "type": "integer", "minimum": 0 }, "sourceMajorityVotes": { "type": "integer", "minimum": 0 }, "winnerCandidateId": { "type": "string" },
-          "sourceDataset": { "enum": ["keputusan-pru-dun", "keputusan-pru", "keputusan-prk", "mysemak-johor-2026", "pub-246-johor-2026"] },
+          "sourceDataset": { "enum": ["keputusan-pru-dun", "keputusan-pru", "keputusan-prk", "mysemak-johor-2026", "mysemak-negeri-sembilan-2026", "pub-246-johor-2026"] },
           "candidates": {
             "type": "array", "minItems": 1,
             "items": {
@@ -48,6 +48,21 @@
               }
             }
           }
+        }
+      }
+    },
+    "historicalConstituencies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "code", "name", "stateId", "parliamentCode", "boundaryVersion"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^sabah-2018:P\\.\\d{3}:N\\.\\d{2}$" },
+          "code": { "type": "string", "pattern": "^N\\.\\d{2}$" },
+          "name": { "type": "string", "minLength": 1 },
+          "stateId": { "const": "sabah" },
+          "parliamentCode": { "type": "string", "pattern": "^P\\.\\d{3}$" },
+          "boundaryVersion": { "const": "my-sabah-pre-2019-60" }
         }
       }
     }

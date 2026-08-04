@@ -19,7 +19,13 @@ export function loadStateElectionData() {
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       return response.json();
     }),
-  ]).then(([results, constituencies]) => ({ results, constituencies }));
+  ]).then(([results, constituencies]) => ({
+    results,
+    constituencies: {
+      ...constituencies,
+      duns: [...constituencies.duns, ...(results.historicalConstituencies ?? [])],
+    },
+  }));
   return dataPromise;
 }
 

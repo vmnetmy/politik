@@ -25,7 +25,7 @@ export type ScoresheetResult = {
   version: number;
   metadata: {
     title: string;
-    sourceType: "spr-760" | "electiondata-my";
+    sourceType: "spr-760" | "spr-scoresheet-xlsx" | "electiondata-my";
     sourceFile: string;
     sourceSha256: string;
     sourcePages: number;
@@ -54,8 +54,9 @@ export type ScoresheetIndexEntry = {
   state: string;
   sourceFile: string;
   sourceSha256: string;
-  sourceType: "spr-760" | "electiondata-my";
+  sourceType: "spr-760" | "spr-scoresheet-xlsx" | "electiondata-my";
   sourceUrl?: string;
+  pollingPlacesFile?: string;
   pages: number;
   rowCount: number;
   pollingDistrictCount: number;
@@ -71,6 +72,8 @@ export type ScoresheetIndex = {
     printDate: string;
     sourceCount: number;
     officialScoresheetCount: number;
+    rejectedSourceCount?: number;
+    missingSourceCount?: number;
     supplementaryDatasetCount: number;
     authoritativeSeats: number;
     supplementarySeats: number;
@@ -89,6 +92,13 @@ export type ScoresheetIndex = {
     unreturnedVotes: number;
   };
   seats: ScoresheetIndexEntry[];
+  unavailableSeats?: Array<{
+    parliamentCode: string;
+    parliamentName: string;
+    state: string;
+    category: "missing-source" | "rejected-source";
+    reason: string;
+  }>;
 };
 
 export type PollingDistrict = {

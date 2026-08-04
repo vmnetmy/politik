@@ -162,6 +162,7 @@ export type { AgeBand, AgeCounts, AgeRecord, ConstituencyRegistry, ConstituencyS
 export type { EthnicityCategory, VoterEthnicityData } from "./data/types/voterEthnicity";
 export type { GeographyData, GeographyLocality, GeographyPdm } from "./data/types/geography";
 export type { DunBoundaryData, DunBoundaryFeature, StateElectionCandidate, StateElectionContest, StateElectionData, StateElectionEvent } from "./data/types/stateElection";
+export type { StateScoresheetIndex, StateScoresheetResult } from "./data/types/stateScoresheet";
 
 export type StateSummary = {
   state: string;

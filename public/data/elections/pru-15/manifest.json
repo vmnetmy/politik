@@ -48,14 +48,19 @@
       "records": 8278
     },
     "geography.json": {
-      "sha256": "c7071c8d92dbee70b95cc855ac93b5a29ef469d9c834d097a678420bbb2cbcd0",
-      "bytes": 3786151,
+      "sha256": "8e66b88cd00b8f3210f94f5cdecb75f96ba3ff1aad26ec6017fc78470725a53d",
+      "bytes": 3788311,
       "records": 7748
     },
     "scoresheets/index.json": {
       "sha256": "01068bdc8cad868bf23a20a58c8665e2342374b29cb0fa18f29faf7e6c68a96f",
       "bytes": 97651,
       "records": 222
+    },
+    "spr-audit.json": {
+      "sha256": "10e074f6150e2e4c0191cc787a42b095171ad350eec7bab4ec741c37d230ba6a",
+      "bytes": 5204,
+      "records": 0
     },
     "scoresheets/P.001.json": {
       "sha256": "9434a2564b96893b1a8ed0a81b35ccbdc44c19811a81b78167553ddb4365938e",

@@ -1,0 +1,4057 @@
+{
+  "version": 1,
+  "algorithm": "sha256",
+  "sourceRoot": "sources/pru14/dun-scoresheets",
+  "provenance": {
+    "publisher": "Suruhanjaya Pilihan Raya Malaysia",
+    "workbookFooter": "© SPR 2018 Versi 1.1.0 - Suruhanjaya Pilihan Raya Malaysia",
+    "officialResultsUrl": "https://mysprsemak.spr.gov.my/semakan/keputusan/pru",
+    "officialOpenDataUrl": "https://opendata.spr.gov.my/",
+    "officialElectoralRollUrl": "https://www.spr.gov.my/sites/default/files/HargaDPIST42017_PRU14.pdf",
+    "scopeNote": "Eleven Assembly-14 state elections held concurrently with PRU-14; Sabah used Assembly 15 and is published separately."
+  },
+  "files": [
+    {
+      "path": "johor/N.01.xlsx",
+      "contestId": "prn-johor-2018:P.140:N.01",
+      "stateId": "johor",
+      "dunCode": "N.01",
+      "sha256": "2b3fee29050dc36789dfb0cd94fef38c755255c4d350c369971b3ff21c74ab95",
+      "bytes": 27745,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.02.xlsx",
+      "contestId": "prn-johor-2018:P.140:N.02",
+      "stateId": "johor",
+      "dunCode": "N.02",
+      "sha256": "1347657236a97cbd3cf881e03def77393246e4ab0cd1fdcf241439fe86059cfb",
+      "bytes": 30606,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.03.xlsx",
+      "contestId": "prn-johor-2018:P.141:N.03",
+      "stateId": "johor",
+      "dunCode": "N.03",
+      "sha256": "b827aa367c957a13126abda42aea53848af2101a70e2ab9d2169445dd6ec2347",
+      "bytes": 28312,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.04.xlsx",
+      "contestId": "prn-johor-2018:P.141:N.04",
+      "stateId": "johor",
+      "dunCode": "N.04",
+      "sha256": "03101a441cb6f30019968b04fcf8d4addaa567d0b7ccf319feda1aa8d112152d",
+      "bytes": 26509,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.05.xlsx",
+      "contestId": "prn-johor-2018:P.142:N.05",
+      "stateId": "johor",
+      "dunCode": "N.05",
+      "sha256": "10005ae85d5f726f90097f1ad7cf47d43b7d1f8593e02522904059d214240576",
+      "bytes": 28311,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.06.xlsx",
+      "contestId": "prn-johor-2018:P.142:N.06",
+      "stateId": "johor",
+      "dunCode": "N.06",
+      "sha256": "7a7b6a02d102933d5d3c4d5a0921e830951ddc31527be44c1f0d7f43c7962c3a",
+      "bytes": 27885,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.07.xlsx",
+      "contestId": "prn-johor-2018:P.143:N.07",
+      "stateId": "johor",
+      "dunCode": "N.07",
+      "sha256": "2beeffd0efb3fbe2490979857ca7cb9b962401ea98e012fd10ebff2242a259bb",
+      "bytes": 30407,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.08.xlsx",
+      "contestId": "prn-johor-2018:P.143:N.08",
+      "stateId": "johor",
+      "dunCode": "N.08",
+      "sha256": "7e1cad90f8b0a69e3678b158381a60204e69107b072834cb541c0961cacf9a86",
+      "bytes": 19977,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.09.xlsx",
+      "contestId": "prn-johor-2018:P.144:N.09",
+      "stateId": "johor",
+      "dunCode": "N.09",
+      "sha256": "f98db83a28360ccc8a6ebeee5f20a12521a851bf12f6735c5087fc2fbece289d",
+      "bytes": 28748,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.10.xlsx",
+      "contestId": "prn-johor-2018:P.144:N.10",
+      "stateId": "johor",
+      "dunCode": "N.10",
+      "sha256": "bc77853ed3512ec8f71fbc0bf4b1c9dd3501d346d72ae5749477443be4dd42fa",
+      "bytes": 26526,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.11.xlsx",
+      "contestId": "prn-johor-2018:P.144:N.11",
+      "stateId": "johor",
+      "dunCode": "N.11",
+      "sha256": "4c5321644708788b029ec79b9ca19213556c03299abeba1162a4b87d4db6b491",
+      "bytes": 29473,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.12.xlsx",
+      "contestId": "prn-johor-2018:P.145:N.12",
+      "stateId": "johor",
+      "dunCode": "N.12",
+      "sha256": "9c7d9aac822d329037588d26b42870ae1d860e5d616d6b06026fa3a093b7a78a",
+      "bytes": 26714,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.13.xlsx",
+      "contestId": "prn-johor-2018:P.145:N.13",
+      "stateId": "johor",
+      "dunCode": "N.13",
+      "sha256": "2c2a1180c006f442fcc9e04558dba4a0a96989438d259d397fb6ec48aa90c674",
+      "bytes": 31066,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.14.xlsx",
+      "contestId": "prn-johor-2018:P.145:N.14",
+      "stateId": "johor",
+      "dunCode": "N.14",
+      "sha256": "1037f77416853e02262be46c4fde2bb9612c5cf8514c02ae4fec546176d9a50f",
+      "bytes": 30212,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.15.xlsx",
+      "contestId": "prn-johor-2018:P.146:N.15",
+      "stateId": "johor",
+      "dunCode": "N.15",
+      "sha256": "81a072768909b7543adc6167984f298dc362593fb36d4c9a3160701baf1e5cdf",
+      "bytes": 28734,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.16.xlsx",
+      "contestId": "prn-johor-2018:P.146:N.16",
+      "stateId": "johor",
+      "dunCode": "N.16",
+      "sha256": "f0f08f5a9b6cf5002365b83a37927530e9c338b38bbbfc0cf156faa28abe4716",
+      "bytes": 29029,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.17.xlsx",
+      "contestId": "prn-johor-2018:P.147:N.17",
+      "stateId": "johor",
+      "dunCode": "N.17",
+      "sha256": "0099f7bcb8487aaf886c3890c9c17171b380fa17c9c06ec04e08fe903c859567",
+      "bytes": 30529,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.18.xlsx",
+      "contestId": "prn-johor-2018:P.147:N.18",
+      "stateId": "johor",
+      "dunCode": "N.18",
+      "sha256": "9629c40dad143f671c7c5ce53a12b60ca2f51305a36d03af86279703d04f6538",
+      "bytes": 28773,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.19.xlsx",
+      "contestId": "prn-johor-2018:P.148:N.19",
+      "stateId": "johor",
+      "dunCode": "N.19",
+      "sha256": "543472f8d919ca6fe29830ea2f2e36762df2a3d143d98a20ce0fa147286bb622",
+      "bytes": 28677,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.20.xlsx",
+      "contestId": "prn-johor-2018:P.148:N.20",
+      "stateId": "johor",
+      "dunCode": "N.20",
+      "sha256": "73e3ed869477e814c9e0b582968b14e32a0b9c30123f2461c9379e42b3ad2da9",
+      "bytes": 28187,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.21.xlsx",
+      "contestId": "prn-johor-2018:P.149:N.21",
+      "stateId": "johor",
+      "dunCode": "N.21",
+      "sha256": "cc47bf5fa6676ff621def3d91f3b1e283d91d022bd157557ee37896edbe4b8a9",
+      "bytes": 30285,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.22.xlsx",
+      "contestId": "prn-johor-2018:P.149:N.22",
+      "stateId": "johor",
+      "dunCode": "N.22",
+      "sha256": "e14137cf847cb2389517de975ca7a5b09ef78d83401b60e35a3b930c1b7ff077",
+      "bytes": 29256,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.23.xlsx",
+      "contestId": "prn-johor-2018:P.150:N.23",
+      "stateId": "johor",
+      "dunCode": "N.23",
+      "sha256": "d42f65207eb6f1ff1d588d7c567615e7549b42a0b98f433382d9d28bfb4673fa",
+      "bytes": 30866,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.24.xlsx",
+      "contestId": "prn-johor-2018:P.150:N.24",
+      "stateId": "johor",
+      "dunCode": "N.24",
+      "sha256": "c6bb15f1c356fde131e4a2efdb5371b3a994e1cdc7220f2902eaabcf249d53e4",
+      "bytes": 28868,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.25.xlsx",
+      "contestId": "prn-johor-2018:P.150:N.25",
+      "stateId": "johor",
+      "dunCode": "N.25",
+      "sha256": "1369d2a947716f24baea382159d7c0873ce7975c0557b476bca0f75386ef8d0d",
+      "bytes": 28041,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.26.xlsx",
+      "contestId": "prn-johor-2018:P.151:N.26",
+      "stateId": "johor",
+      "dunCode": "N.26",
+      "sha256": "33a271ac6d0c54732600deeec551f5835856484eb5e8945ef09489ef96fc16b7",
+      "bytes": 28613,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.27.xlsx",
+      "contestId": "prn-johor-2018:P.151:N.27",
+      "stateId": "johor",
+      "dunCode": "N.27",
+      "sha256": "92aa17c9568fe6e6c3c9715f4390ab6b007e0ea38fccb52d2e7131eeed904787",
+      "bytes": 28407,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.28.xlsx",
+      "contestId": "prn-johor-2018:P.152:N.28",
+      "stateId": "johor",
+      "dunCode": "N.28",
+      "sha256": "ca192867df05a994fb80c803c5889225d6f553a2e022efe8bc4fa60c8dfe5b60",
+      "bytes": 29344,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.29.xlsx",
+      "contestId": "prn-johor-2018:P.152:N.29",
+      "stateId": "johor",
+      "dunCode": "N.29",
+      "sha256": "99afcbcf2babd116c570a99e53e389de3c599608599fc65db45dd68e460c36c8",
+      "bytes": 30993,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.30.xlsx",
+      "contestId": "prn-johor-2018:P.153:N.30",
+      "stateId": "johor",
+      "dunCode": "N.30",
+      "sha256": "9c74205bd73a6ebdb3a91e25ba36ec7be8f5cab293030140f71114c557434462",
+      "bytes": 29302,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.31.xlsx",
+      "contestId": "prn-johor-2018:P.153:N.31",
+      "stateId": "johor",
+      "dunCode": "N.31",
+      "sha256": "a453dbfe737056f1ba3988e07c6f052449fa075886d31445198874b149dc1758",
+      "bytes": 26134,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.32.xlsx",
+      "contestId": "prn-johor-2018:P.154:N.32",
+      "stateId": "johor",
+      "dunCode": "N.32",
+      "sha256": "e73973d6bace80216b470ae0a00169a98cfd472ebdfb805eb81a95234039d7d6",
+      "bytes": 28929,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.33.xlsx",
+      "contestId": "prn-johor-2018:P.154:N.33",
+      "stateId": "johor",
+      "dunCode": "N.33",
+      "sha256": "a03d6c0292c950f46c1ce45621609b2bfaac517ba0cd92e62f52f29ab3b21a5a",
+      "bytes": 30176,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.34.xlsx",
+      "contestId": "prn-johor-2018:P.155:N.34",
+      "stateId": "johor",
+      "dunCode": "N.34",
+      "sha256": "56a182249f1f03c1dba5a7745d019140b9bd6c0fb8c886822841d110992ef246",
+      "bytes": 28787,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.35.xlsx",
+      "contestId": "prn-johor-2018:P.155:N.35",
+      "stateId": "johor",
+      "dunCode": "N.35",
+      "sha256": "8e71aaf0ec5f8d1e10fc849f3509a9536d2f3eeae28a9d149730b7bf30df872b",
+      "bytes": 28169,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.36.xlsx",
+      "contestId": "prn-johor-2018:P.156:N.36",
+      "stateId": "johor",
+      "dunCode": "N.36",
+      "sha256": "280307d6ca2fd7e7e2aebf4c1ea1149ad96dadc65059995b51d9c1f77225975b",
+      "bytes": 26282,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.37.xlsx",
+      "contestId": "prn-johor-2018:P.156:N.37",
+      "stateId": "johor",
+      "dunCode": "N.37",
+      "sha256": "e19c6573f7b96073e61702320843ad0518a8a35f92b093cef27f4f731adffe12",
+      "bytes": 29042,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.38.xlsx",
+      "contestId": "prn-johor-2018:P.157:N.38",
+      "stateId": "johor",
+      "dunCode": "N.38",
+      "sha256": "6114216c876fa73e114b7daffa370256b57b59360b707c8c0444b43d7ab5effc",
+      "bytes": 26030,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.39.xlsx",
+      "contestId": "prn-johor-2018:P.157:N.39",
+      "stateId": "johor",
+      "dunCode": "N.39",
+      "sha256": "818cb7a375972fd70b213e49d1402d9237199785c85826e91067a227860eefc2",
+      "bytes": 26386,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.40.xlsx",
+      "contestId": "prn-johor-2018:P.158:N.40",
+      "stateId": "johor",
+      "dunCode": "N.40",
+      "sha256": "5d5eacbcc146bfd5ecfe31f2c71be5bd79021ac6d2d06147ed8c19b8a694fa45",
+      "bytes": 32733,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.41.xlsx",
+      "contestId": "prn-johor-2018:P.158:N.41",
+      "stateId": "johor",
+      "dunCode": "N.41",
+      "sha256": "74d49e1d274751c618c4d3aa8d115e9c7fb3c2cc58a73f44d062668aebc9bf00",
+      "bytes": 38088,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.42.xlsx",
+      "contestId": "prn-johor-2018:P.159:N.42",
+      "stateId": "johor",
+      "dunCode": "N.42",
+      "sha256": "032aefd7688442eb464df29b8bad1dcb27168ae7722c98ba7dfa97d0b2aa1177",
+      "bytes": 32025,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.43.xlsx",
+      "contestId": "prn-johor-2018:P.159:N.43",
+      "stateId": "johor",
+      "dunCode": "N.43",
+      "sha256": "42c0a773285fe15fd4610ad8f31949e0a06b824cdb8be2b93a4b87107dffb23f",
+      "bytes": 34808,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.44.xlsx",
+      "contestId": "prn-johor-2018:P.160:N.44",
+      "stateId": "johor",
+      "dunCode": "N.44",
+      "sha256": "fdeecbaa352d5da76f723195dcdb47d371fb3b3119b8dbca81046a71cc0a62d8",
+      "bytes": 32089,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.45.xlsx",
+      "contestId": "prn-johor-2018:P.160:N.45",
+      "stateId": "johor",
+      "dunCode": "N.45",
+      "sha256": "cbf81425018c9646d77a956507d8cd670174effc006f8c1d462615566f935bcf",
+      "bytes": 28220,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.46.xlsx",
+      "contestId": "prn-johor-2018:P.161:N.46",
+      "stateId": "johor",
+      "dunCode": "N.46",
+      "sha256": "8a5b804267b28b5835a559b67d9e90802a3215ddfbfab7d5551f11980674cee9",
+      "bytes": 32946,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.47.xlsx",
+      "contestId": "prn-johor-2018:P.161:N.47",
+      "stateId": "johor",
+      "dunCode": "N.47",
+      "sha256": "222e4b621494b9b54b86f5556dc074f33a0270d2ea5d63a66b0a96a033553ab8",
+      "bytes": 30031,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.48.xlsx",
+      "contestId": "prn-johor-2018:P.162:N.48",
+      "stateId": "johor",
+      "dunCode": "N.48",
+      "sha256": "0bab85535a1f5e27471778ad4ca80e277a0b72c4853ca6961423b45d73941d06",
+      "bytes": 30588,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.49.xlsx",
+      "contestId": "prn-johor-2018:P.162:N.49",
+      "stateId": "johor",
+      "dunCode": "N.49",
+      "sha256": "203884b2f866bfdecf84d709bb4a7867d02cc3a8dbdf009d1a0ae644315e1b0c",
+      "bytes": 33253,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.50.xlsx",
+      "contestId": "prn-johor-2018:P.163:N.50",
+      "stateId": "johor",
+      "dunCode": "N.50",
+      "sha256": "f3366e2b96d1782a6959baca90b0e56caea8bdb570b21aaee58937e27668dfdb",
+      "bytes": 28317,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.51.xlsx",
+      "contestId": "prn-johor-2018:P.163:N.51",
+      "stateId": "johor",
+      "dunCode": "N.51",
+      "sha256": "47d1224a97fd1bf1bc8ec4c3431d1a3ed2c91b6ad62ae4e6589af2b3f9af74cc",
+      "bytes": 29133,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.52.xlsx",
+      "contestId": "prn-johor-2018:P.163:N.52",
+      "stateId": "johor",
+      "dunCode": "N.52",
+      "sha256": "5c8794dfdaa0af30a959fa74381f3cde6ef5f668b7a62da83ab7fd92487f5f9a",
+      "bytes": 28276,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.53.xlsx",
+      "contestId": "prn-johor-2018:P.164:N.53",
+      "stateId": "johor",
+      "dunCode": "N.53",
+      "sha256": "7ca7d9bf585ac85c53ba65797784a469fb7d3d150e90b7b1edbd8472c2beeb62",
+      "bytes": 28164,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.54.xlsx",
+      "contestId": "prn-johor-2018:P.164:N.54",
+      "stateId": "johor",
+      "dunCode": "N.54",
+      "sha256": "dba200c2993a48de2fc8988511fceb258734179f3be9f96e599c44da8f4b0929",
+      "bytes": 30061,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.55.xlsx",
+      "contestId": "prn-johor-2018:P.165:N.55",
+      "stateId": "johor",
+      "dunCode": "N.55",
+      "sha256": "e6a8d98252d651367211884e6ecff3ca074da058507c180a0a47f582b43351cc",
+      "bytes": 26301,
+      "status": "published"
+    },
+    {
+      "path": "johor/N.56.xlsx",
+      "contestId": "prn-johor-2018:P.165:N.56",
+      "stateId": "johor",
+      "dunCode": "N.56",
+      "sha256": "c58f3d38af91a6c3c4fe7aa659a1899d3eb1dee2b49559e741a62de059a9c29c",
+      "bytes": 30415,
+      "status": "published"
+    },
+    {
+      "path": "kedah/N.01.xlsx",
+      "contestId": "prn-kedah-2018:P.004:N.01",
+      "stateId": "kedah",
+      "dunCode": "N.01",
+      "sha256": "6559b69b16d3f348a553e2c4b59fd7c24a63e712e6dceca9a99fa96968d48968",
+      "bytes": 30238,
+      "status": "published"
+    },
+    {
+      "path": "kedah/N.02.xlsx",
+      "contestId": "prn-kedah-2018:P.004:N.02",
+      "stateId": "kedah",
+      "dunCode": "N.02",
+      "sha256": "f38a263f9f00294cae1efd52fb0eb79451acaea0c6d160be85be7408a427b582",
+      "bytes": 33234,
+      "status": "published"
+    },
+    {
+      "path": "kedah/N.03.xlsx",
+      "contestId": "prn-kedah-2018:P.005:N.03",
+      "stateId": "kedah",
+      "dunCode": "N.03",
+      "sha256": "f7264efd9a897d9909582c870850509577efccb3bc038960d44e33725fdda9f1",
+      "bytes": 31053,
+      "status": "published"
+    },
+    {
+      "path": "kedah/N.04.xlsx",
+      "contestId": "prn-kedah-2018:P.005:N.04",
+      "stateId": "kedah",
+      "dunCode": "N.04",
+      "sha256": "808d6c4990de26e3916db24c83b8c2f85542428836ce4ee1fcf06ffe37f9c59c",
+      "bytes": 34137,
+      "status": "published"
+    },
+    {
+      "path": "kedah/N.05.xlsx",
+      "contestId": "prn-kedah-2018:P.006:N.05",
+      "stateId": "kedah",
+      "dunCode": "N.05",
+      "sha256": "55cae98741704088a834cb8b71cd3aaa19a72ba6b6c4603f70cce32abecf4f07",
+      "bytes": 32314,
+      "status": "published"
+    },
+    {
+      "path": "kedah/N.06.xlsx",
+      "contestId": "prn-kedah-2018:P.006:N.06",
+      "stateId": "kedah",
+      "dunCode": "N.06",
+      "sha256": "dad5eaee8f029952883d65bf234988d05afea54130f365530999d23ba7c223c0",
+      "bytes": 32806,
+      "status": "published"
+    },
+    {
+      "path": "kedah/N.07.xlsx",
+      "contestId": "prn-kedah-2018:P.007:N.07",
+      "stateId": "kedah",
+      "dunCode": "N.07",
+      "sha256": "81dfc530b18a43cb5e4ff72775a073f70d628aa78665d0f557a7f19a8d1b7f6b",
+      "bytes": 29294,
+      "status": "published"
+    },
+    {
+      "path": "kedah/N.08.xlsx",
+      "contestId": "prn-kedah-2018:P.007:N.08",
+      "stateId": "kedah",
+      "dunCode": "N.08",
+      "sha256": "c655b82e436089129675344ff5c09c319891d85ed82925e8cf8b8fdf10a99989",
+      "bytes": 30612,
+      "status": "published"
+    },
+    {
+      "path": "kedah/N.09.xlsx",
+      "contestId": "prn-kedah-2018:P.008:N.09",
+      "stateId": "kedah",
+      "dunCode": "N.09",
+      "sha256": "3c6c4bfe7cee18bf878381e80151f50ec1f3dc55095c8ea7299adbde6cf5bcad",
+      "bytes": 35242,
+      "status": "published"
+    },
+    {
+      "path": "kedah/N.10.xlsx",
+      "contestId": "prn-kedah-2018:P.008:N.10",
+      "stateId": "kedah",
+      "dunCode": "N.10",
+      "sha256": "7544f1d24b4c3668a67870c47f576bfa7e09ea062e2963c68ca2ad4ee4d29caf",
+      "bytes": 31308,
+      "status": "published"
+    },
+    {
+      "path": "kedah/N.11.xlsx",
+      "contestId": "prn-kedah-2018:P.008:N.11",
+      "stateId": "kedah",
+      "dunCode": "N.11",
+      "sha256": "9b0a94f03543c6912b795bcb7487825533006683c7eed4f9d5b1c5dfb1661c38",
+      "bytes": 30824,
+      "status": "published"
+    },
+    {
+      "path": "kedah/N.12.xlsx",
+      "contestId": "prn-kedah-2018:P.009:N.12",
+      "stateId": "kedah",
+      "dunCode": "N.12",
+      "sha256": "0c33cc7435682016dfa9c01a5f931f1ff1fd9b9e4756dfb6ab77aa33da0ceadc",
+      "bytes": 31080,
+      "status": "published"
+    },
+    {
+      "path": "kedah/N.13.xlsx",
+      "contestId": "prn-kedah-2018:P.009:N.13",
+      "stateId": "kedah",
+      "dunCode": "N.13",
+      "sha256": "ac1948792e2b2785f7bb996ba91bfb8cc515b456ae35e4d6f27feed76e207a0d",
+      "bytes": 34833,
+      "status": "published"
+    },
+    {
+      "path": "kedah/N.14.xlsx",
+      "contestId": "prn-kedah-2018:P.009:N.14",
+      "stateId": "kedah",
+      "dunCode": "N.14",
+      "sha256": "dacc80a773d9996280699b94c82c6a061979a533aa57a7b462358419a923c74b",
+      "bytes": 30996,
+      "status": "published"
+    },
+    {
+      "path": "kedah/N.15.xlsx",
+      "contestId": "prn-kedah-2018:P.010:N.15",
+      "stateId": "kedah",
+      "dunCode": "N.15",
+      "sha256": "6844a561926e47368ed984932864d59ba5008fd63b4575e1a3aec0a72e15354e",
+      "bytes": 31496,
+      "status": "published"
+    },
+    {
+      "path": "kedah/N.16.xlsx",
+      "contestId": "prn-kedah-2018:P.010:N.16",
+      "stateId": "kedah",
+      "dunCode": "N.16",
+      "sha256": "5f9cd6c91a51d9de4fca6b27b32e67cdc1ab27f503b7a59ee6cf51c1c9da1fec",
+      "bytes": 31941,
+      "status": "published"
+    },
+    {
+      "path": "kedah/N.17.xlsx",
+      "contestId": "prn-kedah-2018:P.010:N.17",
+      "stateId": "kedah",
+      "dunCode": "N.17",
+      "sha256": "f45d627f75269d41ae240d98eb4ce8f0e6fc634a7c08c625b5e2fbc76697c16f",
+      "bytes": 31833,
+      "status": "published"
+    },
+    {
+      "path": "kedah/N.18.xlsx",
+      "contestId": "prn-kedah-2018:P.011:N.18",
+      "stateId": "kedah",
+      "dunCode": "N.18",
+      "sha256": "eb6cb292423c37a14ad48be562da498e62246538b3865ccb4f7c1568a1b1ebb7",
+      "bytes": 32780,
+      "status": "published"
+    },
+    {
+      "path": "kedah/N.19.xlsx",
+      "contestId": "prn-kedah-2018:P.011:N.19",
+      "stateId": "kedah",
+      "dunCode": "N.19",
+      "sha256": "a2ee8efccfa47f8f7b456e4c4967a6847a467f70a23ee0710226f3fd376da729",
+      "bytes": 33233,
+      "status": "published"
+    },
+    {
+      "path": "kedah/N.20.xlsx",
+      "contestId": "prn-kedah-2018:P.012:N.20",
+      "stateId": "kedah",
+      "dunCode": "N.20",
+      "sha256": "66cb204b9438b43226c80a5f6978aeb2dce1429d73a6c74cf816bc3087e038c8",
+      "bytes": 31534,
+      "status": "published"
+    },
+    {
+      "path": "kedah/N.21.xlsx",
+      "contestId": "prn-kedah-2018:P.012:N.21",
+      "stateId": "kedah",
+      "dunCode": "N.21",
+      "sha256": "a6778ada11d887aaa6d92e9b16a22b93446c5243b5c25987e8e4ce8881d548ef",
+      "bytes": 30864,
+      "status": "published"
+    },
+    {
+      "path": "kedah/N.22.xlsx",
+      "contestId": "prn-kedah-2018:P.012:N.22",
+      "stateId": "kedah",
+      "dunCode": "N.22",
+      "sha256": "91c723126a2ebd5670989c7fa6bc3ee15e58a0190a800ad60043f850cd4bb76d",
+      "bytes": 34018,
+      "status": "published"
+    },
+    {
+      "path": "kedah/N.23.xlsx",
+      "contestId": "prn-kedah-2018:P.013:N.23",
+      "stateId": "kedah",
+      "dunCode": "N.23",
+      "sha256": "a0299d05bb4af7c29359e65d1caf852c467f056358ade1483d8385c8028c6131",
+      "bytes": 30327,
+      "status": "published"
+    },
+    {
+      "path": "kedah/N.24.xlsx",
+      "contestId": "prn-kedah-2018:P.013:N.24",
+      "stateId": "kedah",
+      "dunCode": "N.24",
+      "sha256": "7f7076248e2744e2ac82ec8a63b873f3d6c2b175eb0c608c3cb0fbf08041fd2f",
+      "bytes": 31308,
+      "status": "published"
+    },
+    {
+      "path": "kedah/N.25.xlsx",
+      "contestId": "prn-kedah-2018:P.014:N.25",
+      "stateId": "kedah",
+      "dunCode": "N.25",
+      "sha256": "2af1581dad603d4ebeab3c5b49d1117e7efb3b791244b89b9c76b80085f4a21c",
+      "bytes": 33753,
+      "status": "published"
+    },
+    {
+      "path": "kedah/N.26.xlsx",
+      "contestId": "prn-kedah-2018:P.014:N.26",
+      "stateId": "kedah",
+      "dunCode": "N.26",
+      "sha256": "34dc78b2781a050e23ac651ed27fccc0117535d17cef163f65c8daf61287648f",
+      "bytes": 32445,
+      "status": "published"
+    },
+    {
+      "path": "kedah/N.27.xlsx",
+      "contestId": "prn-kedah-2018:P.015:N.27",
+      "stateId": "kedah",
+      "dunCode": "N.27",
+      "sha256": "e8aac6d78c9078c48b40a5d8dc43d4b7609a441b2aa843231af8b4a1d0dd1388",
+      "bytes": 32376,
+      "status": "published"
+    },
+    {
+      "path": "kedah/N.28.xlsx",
+      "contestId": "prn-kedah-2018:P.015:N.28",
+      "stateId": "kedah",
+      "dunCode": "N.28",
+      "sha256": "dc8d05b044be6d840dd6fd56c00ac51f972f49c5c871e0714b72d08903e26e51",
+      "bytes": 37832,
+      "status": "published"
+    },
+    {
+      "path": "kedah/N.29.xlsx",
+      "contestId": "prn-kedah-2018:P.015:N.29",
+      "stateId": "kedah",
+      "dunCode": "N.29",
+      "sha256": "948febb31b92230a3ea9b218b317d54b6050878f6953a22401d9291b5dc891c7",
+      "bytes": 34235,
+      "status": "published"
+    },
+    {
+      "path": "kedah/N.30.xlsx",
+      "contestId": "prn-kedah-2018:P.016:N.30",
+      "stateId": "kedah",
+      "dunCode": "N.30",
+      "sha256": "1370b9db6b832a2d1a256f2a40f94eaa958584d77663432d7b104f1d5361abf5",
+      "bytes": 33728,
+      "status": "published"
+    },
+    {
+      "path": "kedah/N.31.xlsx",
+      "contestId": "prn-kedah-2018:P.016:N.31",
+      "stateId": "kedah",
+      "dunCode": "N.31",
+      "sha256": "cb211d445b5474995d33e8c8a3699e0f79ab74f31e6b8b18d49917293583f85b",
+      "bytes": 33190,
+      "status": "published"
+    },
+    {
+      "path": "kedah/N.32.xlsx",
+      "contestId": "prn-kedah-2018:P.016:N.32",
+      "stateId": "kedah",
+      "dunCode": "N.32",
+      "sha256": "586559ed54695f5f47f5f14de839fe3f7724b6b283262fd2f04fd5aa7f060b9c",
+      "bytes": 32560,
+      "status": "published"
+    },
+    {
+      "path": "kedah/N.33.xlsx",
+      "contestId": "prn-kedah-2018:P.017:N.33",
+      "stateId": "kedah",
+      "dunCode": "N.33",
+      "sha256": "a65cb6e2fe5e6f3b573a3a720cc2eaa038f73d496d21c8d6525ea3ffe7cac504",
+      "bytes": 32696,
+      "status": "published"
+    },
+    {
+      "path": "kedah/N.34.xlsx",
+      "contestId": "prn-kedah-2018:P.017:N.34",
+      "stateId": "kedah",
+      "dunCode": "N.34",
+      "sha256": "5e268303dfcee8336d6375f4d836c97b0cb60abcda211da521a2b190104522e8",
+      "bytes": 33592,
+      "status": "published"
+    },
+    {
+      "path": "kedah/N.35.xlsx",
+      "contestId": "prn-kedah-2018:P.018:N.35",
+      "stateId": "kedah",
+      "dunCode": "N.35",
+      "sha256": "643986f7b8e6850075c2f2f00fadc69058b2f7b141b4c10583caba4b0a4a8c98",
+      "bytes": 35853,
+      "status": "published"
+    },
+    {
+      "path": "kedah/N.36.xlsx",
+      "contestId": "prn-kedah-2018:P.018:N.36",
+      "stateId": "kedah",
+      "dunCode": "N.36",
+      "sha256": "59820960bc170cb9850ea58897a03f64f59e9e455f4fa08f6c4bb2f80c766cac",
+      "bytes": 31398,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.01.xlsx",
+      "contestId": "prn-kelantan-2018:P.019:N.01",
+      "stateId": "kelantan",
+      "dunCode": "N.01",
+      "sha256": "506cf7ea885e5ddd73e48a7f1d89791cfa0be52e563f47de5001bafe398a0231",
+      "bytes": 30290,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.02.xlsx",
+      "contestId": "prn-kelantan-2018:P.019:N.02",
+      "stateId": "kelantan",
+      "dunCode": "N.02",
+      "sha256": "3fd40fd89f019a4aa92a850406a88277e231e777d499baa5b87cb555f6228dae",
+      "bytes": 30582,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.03.xlsx",
+      "contestId": "prn-kelantan-2018:P.019:N.03",
+      "stateId": "kelantan",
+      "dunCode": "N.03",
+      "sha256": "0efba41f260bdbeeb633ad74e962e564e2e8b5c714e5563107b50e7ac6b23c29",
+      "bytes": 30355,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.04.xlsx",
+      "contestId": "prn-kelantan-2018:P.019:N.04",
+      "stateId": "kelantan",
+      "dunCode": "N.04",
+      "sha256": "cd8a06f0d6825cba8a4dd66877918d77cd57e82d249e0620bed481ece8001652",
+      "bytes": 30609,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.05.xlsx",
+      "contestId": "prn-kelantan-2018:P.020:N.05",
+      "stateId": "kelantan",
+      "dunCode": "N.05",
+      "sha256": "74fbb13f8d9899e5fadde8c62f959593a7a9f3dbbc54a1e6fd1a16e733161170",
+      "bytes": 29429,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.06.xlsx",
+      "contestId": "prn-kelantan-2018:P.020:N.06",
+      "stateId": "kelantan",
+      "dunCode": "N.06",
+      "sha256": "08414af64ff5eed6b35de93d722fe973489e37ad19d4a5041fcf15c4cfac2c3f",
+      "bytes": 29913,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.07.xlsx",
+      "contestId": "prn-kelantan-2018:P.020:N.07",
+      "stateId": "kelantan",
+      "dunCode": "N.07",
+      "sha256": "2d72b52ee0d66038e4a492c1476e422f91941db8fe052bf7ba0984cf788e4969",
+      "bytes": 30389,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.08.xlsx",
+      "contestId": "prn-kelantan-2018:P.021:N.08",
+      "stateId": "kelantan",
+      "dunCode": "N.08",
+      "sha256": "a9fba928bc49f3752eda41b332bfe21a6fd3a42453db28364b0197bae5fe1d62",
+      "bytes": 30116,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.09.xlsx",
+      "contestId": "prn-kelantan-2018:P.021:N.09",
+      "stateId": "kelantan",
+      "dunCode": "N.09",
+      "sha256": "2a80c485b22986fe596b422751c31eee2a7ae619b814a39033967e34a7efcaa9",
+      "bytes": 35388,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.10.xlsx",
+      "contestId": "prn-kelantan-2018:P.021:N.10",
+      "stateId": "kelantan",
+      "dunCode": "N.10",
+      "sha256": "71043c003e23ec8e0d4bddca31ba3b541a0d85581b117447d22039a32a99925c",
+      "bytes": 29986,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.11.xlsx",
+      "contestId": "prn-kelantan-2018:P.022:N.11",
+      "stateId": "kelantan",
+      "dunCode": "N.11",
+      "sha256": "c312ff2333c951fb8a4f7d5aa28c979116aa3619eb45c3cc36057139f594417a",
+      "bytes": 32531,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.12.xlsx",
+      "contestId": "prn-kelantan-2018:P.022:N.12",
+      "stateId": "kelantan",
+      "dunCode": "N.12",
+      "sha256": "de1abd44339b7d42f144f6493e9a9bf95195179f1a926aad880a8590c8acd0a7",
+      "bytes": 31933,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.13.xlsx",
+      "contestId": "prn-kelantan-2018:P.022:N.13",
+      "stateId": "kelantan",
+      "dunCode": "N.13",
+      "sha256": "a19058df8de0e2a4b86074b9297b281ea7c131d7ee638e88e65db765ba24d979",
+      "bytes": 31962,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.14.xlsx",
+      "contestId": "prn-kelantan-2018:P.023:N.14",
+      "stateId": "kelantan",
+      "dunCode": "N.14",
+      "sha256": "9edcfb2a581f9ab2074fd5cfb4933ef477c94c7bfcef6dc34d9f7b18fb80e2c5",
+      "bytes": 31894,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.15.xlsx",
+      "contestId": "prn-kelantan-2018:P.023:N.15",
+      "stateId": "kelantan",
+      "dunCode": "N.15",
+      "sha256": "9ebb03833326781a7e59f25fd3310579e58fff5ce325916cd70aa27c73f10403",
+      "bytes": 30016,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.16.xlsx",
+      "contestId": "prn-kelantan-2018:P.023:N.16",
+      "stateId": "kelantan",
+      "dunCode": "N.16",
+      "sha256": "f5b554899979dec4d44e514be5daf7d0b441063e4a91eb5a81b4a63add18ff3b",
+      "bytes": 29981,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.17.xlsx",
+      "contestId": "prn-kelantan-2018:P.024:N.17",
+      "stateId": "kelantan",
+      "dunCode": "N.17",
+      "sha256": "9b506c346c0c121b71a7748ad71ca3f4ee46646f8bde902e7207ae94824b4586",
+      "bytes": 30547,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.18.xlsx",
+      "contestId": "prn-kelantan-2018:P.024:N.18",
+      "stateId": "kelantan",
+      "dunCode": "N.18",
+      "sha256": "af76b7c409a57b3178d1c31e2c272e38ffaf586606372cd10ab52526c6fda4fe",
+      "bytes": 30154,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.19.xlsx",
+      "contestId": "prn-kelantan-2018:P.024:N.19",
+      "stateId": "kelantan",
+      "dunCode": "N.19",
+      "sha256": "87a1a304d00934a5f682761cebfa65a0141502045e556704a9705ad6e9dfeeec",
+      "bytes": 30276,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.20.xlsx",
+      "contestId": "prn-kelantan-2018:P.025:N.20",
+      "stateId": "kelantan",
+      "dunCode": "N.20",
+      "sha256": "29c26dbbf5229c87d0b3c3dca8bb97d84f9029ddd0087175be1bb9e03195112d",
+      "bytes": 21828,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.21.xlsx",
+      "contestId": "prn-kelantan-2018:P.025:N.21",
+      "stateId": "kelantan",
+      "dunCode": "N.21",
+      "sha256": "c6f36f95c487527320d9af485f4712fdd9b216d02676122ced3b25a1f1ee9bb9",
+      "bytes": 31056,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.22.xlsx",
+      "contestId": "prn-kelantan-2018:P.025:N.22",
+      "stateId": "kelantan",
+      "dunCode": "N.22",
+      "sha256": "19956abd50302cbb0278debd11c9a92d8a84abcda6990604b3f29424ac119ef6",
+      "bytes": 31276,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.23.xlsx",
+      "contestId": "prn-kelantan-2018:P.026:N.23",
+      "stateId": "kelantan",
+      "dunCode": "N.23",
+      "sha256": "6eafb45fdf0d229f83a86480bcbe08aec14803742d4cfeb9ff911d9ae6a3830b",
+      "bytes": 29365,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.24.xlsx",
+      "contestId": "prn-kelantan-2018:P.026:N.24",
+      "stateId": "kelantan",
+      "dunCode": "N.24",
+      "sha256": "cfff1abc77ae7224465a389ee5cead332f9bc14cdb270fda21c3d593265545a4",
+      "bytes": 28829,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.25.xlsx",
+      "contestId": "prn-kelantan-2018:P.026:N.25",
+      "stateId": "kelantan",
+      "dunCode": "N.25",
+      "sha256": "4ad6ed5970706e6020c8878efa3da937a8fc0244390d185e5b591f272de8bc2d",
+      "bytes": 30059,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.26.xlsx",
+      "contestId": "prn-kelantan-2018:P.027:N.26",
+      "stateId": "kelantan",
+      "dunCode": "N.26",
+      "sha256": "686c6a8f17a7435171970d479104e13b290fe5b1292722a41a73cb472d881da3",
+      "bytes": 31061,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.27.xlsx",
+      "contestId": "prn-kelantan-2018:P.027:N.27",
+      "stateId": "kelantan",
+      "dunCode": "N.27",
+      "sha256": "a5e3ad071c54bd9f471d3db1dd285408916c7dc11c290c2f905b5bb4ded66e94",
+      "bytes": 29855,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.28.xlsx",
+      "contestId": "prn-kelantan-2018:P.027:N.28",
+      "stateId": "kelantan",
+      "dunCode": "N.28",
+      "sha256": "f4cc5f2d22bf9f8f0b7557d98406e3fd478732219ad654a2a77fff322bb9f49d",
+      "bytes": 28884,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.29.xlsx",
+      "contestId": "prn-kelantan-2018:P.028:N.29",
+      "stateId": "kelantan",
+      "dunCode": "N.29",
+      "sha256": "a34011bf6ae2c6470fcc723c917303893dc81700e3287d7bd0e67b5400f25093",
+      "bytes": 29895,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.30.xlsx",
+      "contestId": "prn-kelantan-2018:P.028:N.30",
+      "stateId": "kelantan",
+      "dunCode": "N.30",
+      "sha256": "5fa1dde806ebf278a70dc24805c10d5387cd61aed29409ab27fa06099d8d28ae",
+      "bytes": 30205,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.31.xlsx",
+      "contestId": "prn-kelantan-2018:P.028:N.31",
+      "stateId": "kelantan",
+      "dunCode": "N.31",
+      "sha256": "8e458e7b0a2de5a5f51770b1361f6ff1b741ade5e50c4a5af40e999048997b35",
+      "bytes": 29422,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.32.xlsx",
+      "contestId": "prn-kelantan-2018:P.028:N.32",
+      "stateId": "kelantan",
+      "dunCode": "N.32",
+      "sha256": "1773c984dbee98ae1f199b71f3a44b83f332a44ed8933bcc6109d580724b20fb",
+      "bytes": 29545,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.33.xlsx",
+      "contestId": "prn-kelantan-2018:P.029:N.33",
+      "stateId": "kelantan",
+      "dunCode": "N.33",
+      "sha256": "e1ade14f80e1d677c0b6a7a5b8d8a0ee28a4ead8de8f0701e5c30a10155b0341",
+      "bytes": 29842,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.34.xlsx",
+      "contestId": "prn-kelantan-2018:P.029:N.34",
+      "stateId": "kelantan",
+      "dunCode": "N.34",
+      "sha256": "675e0730f580e55f1e87930b532b4f6424cdff097fb658e1c7e994e2eb91f20f",
+      "bytes": 29529,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.35.xlsx",
+      "contestId": "prn-kelantan-2018:P.029:N.35",
+      "stateId": "kelantan",
+      "dunCode": "N.35",
+      "sha256": "35737f562a6fd24830f86091bb5678890834b4fe49e8a4ffe92ef73aa111f542",
+      "bytes": 30278,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.36.xlsx",
+      "contestId": "prn-kelantan-2018:P.030:N.36",
+      "stateId": "kelantan",
+      "dunCode": "N.36",
+      "sha256": "537f95b8b9972bf7590c6d59904557cdd4cca55bf07fae4ba3d2e4d137aab0c2",
+      "bytes": 29205,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.37.xlsx",
+      "contestId": "prn-kelantan-2018:P.030:N.37",
+      "stateId": "kelantan",
+      "dunCode": "N.37",
+      "sha256": "f45a13ed2dd5a478e743cc22b85e781b54ba7c85934f39b9cf62a6cab50d494d",
+      "bytes": 29266,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.38.xlsx",
+      "contestId": "prn-kelantan-2018:P.030:N.38",
+      "stateId": "kelantan",
+      "dunCode": "N.38",
+      "sha256": "c0e44ed10556257254d5549aeed1e171dc09eafe0f4522c6860d4d7310fc0618",
+      "bytes": 19488,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.39.xlsx",
+      "contestId": "prn-kelantan-2018:P.031:N.39",
+      "stateId": "kelantan",
+      "dunCode": "N.39",
+      "sha256": "f16f5c7fda1c07a248d5cf20bf9e493451c7357ec524a9d22612af4c579bcc65",
+      "bytes": 29690,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.40.xlsx",
+      "contestId": "prn-kelantan-2018:P.031:N.40",
+      "stateId": "kelantan",
+      "dunCode": "N.40",
+      "sha256": "1b9d43e34ed6bc5cd3b72a8955e713b61863e22f61c805a01568e8f62bea7629",
+      "bytes": 31799,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.41.xlsx",
+      "contestId": "prn-kelantan-2018:P.031:N.41",
+      "stateId": "kelantan",
+      "dunCode": "N.41",
+      "sha256": "0de7ebf2bccc575ea148f843f47627b020c7c998990f2b3faaa4f80361bc297e",
+      "bytes": 31785,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.42.xlsx",
+      "contestId": "prn-kelantan-2018:P.031:N.42",
+      "stateId": "kelantan",
+      "dunCode": "N.42",
+      "sha256": "6ef7436defbc50fd96e0e7380925c648021609b72b3bf2f451beef2469255af6",
+      "bytes": 29231,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.43.xlsx",
+      "contestId": "prn-kelantan-2018:P.032:N.43",
+      "stateId": "kelantan",
+      "dunCode": "N.43",
+      "sha256": "238c29dcfb165ccccb4ae0c2d8d1a2d66388648ec619b716692a091ef94d747f",
+      "bytes": 30530,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.44.xlsx",
+      "contestId": "prn-kelantan-2018:P.032:N.44",
+      "stateId": "kelantan",
+      "dunCode": "N.44",
+      "sha256": "2f16515144cdc9a7556c4444c6eb4de3d960a82de4a11170ac6d2fa6bb96581b",
+      "bytes": 29333,
+      "status": "published"
+    },
+    {
+      "path": "kelantan/N.45.xlsx",
+      "contestId": "prn-kelantan-2018:P.032:N.45",
+      "stateId": "kelantan",
+      "dunCode": "N.45",
+      "sha256": "e272d14150383a400eaabb69770b9efd5e34644a055f5fbb4a22af71e4f2f443",
+      "bytes": 30207,
+      "status": "published"
+    },
+    {
+      "path": "melaka/N.01.xlsx",
+      "contestId": "prn-melaka-2018:P.134:N.01",
+      "stateId": "melaka",
+      "dunCode": "N.01",
+      "sha256": "3c2df29eda2ae95c1d544581fafbed250e75760cc2e13ed1de09703e51c1a069",
+      "bytes": 28474,
+      "status": "published"
+    },
+    {
+      "path": "melaka/N.02.xlsx",
+      "contestId": "prn-melaka-2018:P.134:N.02",
+      "stateId": "melaka",
+      "dunCode": "N.02",
+      "sha256": "b47dbd748359f3f76a7ec756bb433d4c137be8abb6f37799aa02b5a423d709b2",
+      "bytes": 27995,
+      "status": "published"
+    },
+    {
+      "path": "melaka/N.03.xlsx",
+      "contestId": "prn-melaka-2018:P.134:N.03",
+      "stateId": "melaka",
+      "dunCode": "N.03",
+      "sha256": "83939469cd072b209a80a02245f87e30bdf9699774aa05c84fc82c8f516fee68",
+      "bytes": 28385,
+      "status": "published"
+    },
+    {
+      "path": "melaka/N.04.xlsx",
+      "contestId": "prn-melaka-2018:P.134:N.04",
+      "stateId": "melaka",
+      "dunCode": "N.04",
+      "sha256": "f6c745fc4544bcaaa14254c897979587a38adae656484e6932c3a5edbef0b8b1",
+      "bytes": 27768,
+      "status": "published"
+    },
+    {
+      "path": "melaka/N.05.xlsx",
+      "contestId": "prn-melaka-2018:P.134:N.05",
+      "stateId": "melaka",
+      "dunCode": "N.05",
+      "sha256": "d52059de4c17f4da6c145e20571af902903472bd9602a2e18f589acf7d608bde",
+      "bytes": 28155,
+      "status": "published"
+    },
+    {
+      "path": "melaka/N.06.xlsx",
+      "contestId": "prn-melaka-2018:P.135:N.06",
+      "stateId": "melaka",
+      "dunCode": "N.06",
+      "sha256": "7ab38aa49de28912fbd63a9dea130405088e027139c31273bb99ca71afe1eb46",
+      "bytes": 28709,
+      "status": "published"
+    },
+    {
+      "path": "melaka/N.07.xlsx",
+      "contestId": "prn-melaka-2018:P.135:N.07",
+      "stateId": "melaka",
+      "dunCode": "N.07",
+      "sha256": "27e310e9a0d97d7e4051b820d2fcf33de45926c23791266cbb4033862b3f5338",
+      "bytes": 28911,
+      "status": "published"
+    },
+    {
+      "path": "melaka/N.08.xlsx",
+      "contestId": "prn-melaka-2018:P.135:N.08",
+      "stateId": "melaka",
+      "dunCode": "N.08",
+      "sha256": "1ff392df5a76d25cec75c14c1e175dfa679c77e335186e4edfd7d2b545b360b0",
+      "bytes": 28678,
+      "status": "published"
+    },
+    {
+      "path": "melaka/N.09.xlsx",
+      "contestId": "prn-melaka-2018:P.135:N.09",
+      "stateId": "melaka",
+      "dunCode": "N.09",
+      "sha256": "e620025b51c5b6b5995cc913a81a167e5aa6bf9c574ef0fb573ffc919611901e",
+      "bytes": 28231,
+      "status": "published"
+    },
+    {
+      "path": "melaka/N.10.xlsx",
+      "contestId": "prn-melaka-2018:P.135:N.10",
+      "stateId": "melaka",
+      "dunCode": "N.10",
+      "sha256": "6bcd92c7794e9e9e9116471c342fd26c1f26a27ab3645ecfae1381ed06c9dac7",
+      "bytes": 29320,
+      "status": "published"
+    },
+    {
+      "path": "melaka/N.11.xlsx",
+      "contestId": "prn-melaka-2018:P.136:N.11",
+      "stateId": "melaka",
+      "dunCode": "N.11",
+      "sha256": "cda90545143e3a692c3cb913d3d05482ccb7ea01ec33777f020f80bf72d2e6a9",
+      "bytes": 26957,
+      "status": "published"
+    },
+    {
+      "path": "melaka/N.12.xlsx",
+      "contestId": "prn-melaka-2018:P.136:N.12",
+      "stateId": "melaka",
+      "dunCode": "N.12",
+      "sha256": "8c2882a52f83fb1cd38dbe399c3f49e64160997757553cfdc9be616f8e6a7ac4",
+      "bytes": 28822,
+      "status": "published"
+    },
+    {
+      "path": "melaka/N.13.xlsx",
+      "contestId": "prn-melaka-2018:P.136:N.13",
+      "stateId": "melaka",
+      "dunCode": "N.13",
+      "sha256": "29009caf24a700009d45a88358c823d99d4321ff40caab8a5c3d395243fc5bdb",
+      "bytes": 29260,
+      "status": "published"
+    },
+    {
+      "path": "melaka/N.14.xlsx",
+      "contestId": "prn-melaka-2018:P.136:N.14",
+      "stateId": "melaka",
+      "dunCode": "N.14",
+      "sha256": "4017740ebc9f30e0acadf54dfac40597bbca6341dc0447ced24128ae30145241",
+      "bytes": 29198,
+      "status": "published"
+    },
+    {
+      "path": "melaka/N.15.xlsx",
+      "contestId": "prn-melaka-2018:P.137:N.15",
+      "stateId": "melaka",
+      "dunCode": "N.15",
+      "sha256": "711d1b4754deb1054c4e4599aa707f492711b8410ca54ba2f8570c44cf765897",
+      "bytes": 29395,
+      "status": "published"
+    },
+    {
+      "path": "melaka/N.16.xlsx",
+      "contestId": "prn-melaka-2018:P.137:N.16",
+      "stateId": "melaka",
+      "dunCode": "N.16",
+      "sha256": "3b97d7d8e1bc7f2b8e4bff4bb82f215a569c8b91d2457dcf0b585aba005616e7",
+      "bytes": 29579,
+      "status": "published"
+    },
+    {
+      "path": "melaka/N.17.xlsx",
+      "contestId": "prn-melaka-2018:P.137:N.17",
+      "stateId": "melaka",
+      "dunCode": "N.17",
+      "sha256": "335870bcb8e052eaa4eda2ad8caa75adf2405120692d40652be1c5d3995f1304",
+      "bytes": 29777,
+      "status": "published"
+    },
+    {
+      "path": "melaka/N.18.xlsx",
+      "contestId": "prn-melaka-2018:P.137:N.18",
+      "stateId": "melaka",
+      "dunCode": "N.18",
+      "sha256": "28d30c2019c0e02f89a844e2a86d3e0cff9780cde7fa16dc1a593f4de241f895",
+      "bytes": 31293,
+      "status": "published"
+    },
+    {
+      "path": "melaka/N.19.xlsx",
+      "contestId": "prn-melaka-2018:P.138:N.19",
+      "stateId": "melaka",
+      "dunCode": "N.19",
+      "sha256": "b790ad3c0837565175835f24547b8d111e0c7fec6c8eb965e611efd2321d6570",
+      "bytes": 30707,
+      "status": "published"
+    },
+    {
+      "path": "melaka/N.20.xlsx",
+      "contestId": "prn-melaka-2018:P.138:N.20",
+      "stateId": "melaka",
+      "dunCode": "N.20",
+      "sha256": "a659e59e6f938318bb83b37e496f94537332fac6cb11260aa951ecdb6242d4ee",
+      "bytes": 30986,
+      "status": "published"
+    },
+    {
+      "path": "melaka/N.21.xlsx",
+      "contestId": "prn-melaka-2018:P.138:N.21",
+      "stateId": "melaka",
+      "dunCode": "N.21",
+      "sha256": "b67cd84968dc0aa04589014566d7cd00f553323ab5d4e9aed10a8278f6a91fce",
+      "bytes": 30486,
+      "status": "published"
+    },
+    {
+      "path": "melaka/N.22.xlsx",
+      "contestId": "prn-melaka-2018:P.138:N.22",
+      "stateId": "melaka",
+      "dunCode": "N.22",
+      "sha256": "df3efa1d7d087e0001e5916fedcb510abe518cc30979c335b0fc0b9327348a6b",
+      "bytes": 29636,
+      "status": "published"
+    },
+    {
+      "path": "melaka/N.23.xlsx",
+      "contestId": "prn-melaka-2018:P.138:N.23",
+      "stateId": "melaka",
+      "dunCode": "N.23",
+      "sha256": "28ab4b1cb2c6978ec2564a8c6b1ef6725d5229ca43394735f0278b5f9fc9b3c3",
+      "bytes": 28934,
+      "status": "published"
+    },
+    {
+      "path": "melaka/N.24.xlsx",
+      "contestId": "prn-melaka-2018:P.139:N.24",
+      "stateId": "melaka",
+      "dunCode": "N.24",
+      "sha256": "9afd4854263fc0c3ad58413d79de412cba434ae74e85721b6fcacf0b270d91b5",
+      "bytes": 29194,
+      "status": "published"
+    },
+    {
+      "path": "melaka/N.25.xlsx",
+      "contestId": "prn-melaka-2018:P.139:N.25",
+      "stateId": "melaka",
+      "dunCode": "N.25",
+      "sha256": "db9f2daa205d431ad29029612a42c2dc6f7b5fec05d37807b1eaec3ff9ca210a",
+      "bytes": 29053,
+      "status": "published"
+    },
+    {
+      "path": "melaka/N.26.xlsx",
+      "contestId": "prn-melaka-2018:P.139:N.26",
+      "stateId": "melaka",
+      "dunCode": "N.26",
+      "sha256": "bffbf6c80faa60d35d5456b8e3182137e45676d0b5330a72f67b51c445167c3c",
+      "bytes": 28371,
+      "status": "published"
+    },
+    {
+      "path": "melaka/N.27.xlsx",
+      "contestId": "prn-melaka-2018:P.139:N.27",
+      "stateId": "melaka",
+      "dunCode": "N.27",
+      "sha256": "55a72c41b9063fcf67e95e21ab1111217fd6c5db082c79ed032371492200fbca",
+      "bytes": 28586,
+      "status": "published"
+    },
+    {
+      "path": "melaka/N.28.xlsx",
+      "contestId": "prn-melaka-2018:P.139:N.28",
+      "stateId": "melaka",
+      "dunCode": "N.28",
+      "sha256": "175f34b160f86bac41633ffb7bbaa152dda25d41e855808bfe12ece1f757f8a8",
+      "bytes": 28162,
+      "status": "published"
+    },
+    {
+      "path": "negeri-sembilan/N.01.xlsx",
+      "contestId": "prn-negeri-sembilan-2018:P.126:N.01",
+      "stateId": "negeri-sembilan",
+      "dunCode": "N.01",
+      "sha256": "7cb5d5af47acdf0b842928b7dffaaf2686c5ce36ad8701cfbcac5bb2e7fe5778",
+      "bytes": 28022,
+      "status": "published"
+    },
+    {
+      "path": "negeri-sembilan/N.02.xlsx",
+      "contestId": "prn-negeri-sembilan-2018:P.126:N.02",
+      "stateId": "negeri-sembilan",
+      "dunCode": "N.02",
+      "sha256": "07705005595c2d7551101dc7806e9e146246a53c414780d15a4c38a56b93374c",
+      "bytes": 27030,
+      "status": "published"
+    },
+    {
+      "path": "negeri-sembilan/N.03.xlsx",
+      "contestId": "prn-negeri-sembilan-2018:P.126:N.03",
+      "stateId": "negeri-sembilan",
+      "dunCode": "N.03",
+      "sha256": "4c1d6bc2b38bd0163caa49c7243b163665252962aae2207cab4bdc2b058b4e84",
+      "bytes": 27786,
+      "status": "published"
+    },
+    {
+      "path": "negeri-sembilan/N.04.xlsx",
+      "contestId": "prn-negeri-sembilan-2018:P.126:N.04",
+      "stateId": "negeri-sembilan",
+      "dunCode": "N.04",
+      "sha256": "a262880dd648e32a9c414b605c97666d47994031a1771f94c497dd9b9278b1e6",
+      "bytes": 26769,
+      "status": "published"
+    },
+    {
+      "path": "negeri-sembilan/N.05.xlsx",
+      "contestId": "prn-negeri-sembilan-2018:P.127:N.05",
+      "stateId": "negeri-sembilan",
+      "dunCode": "N.05",
+      "sha256": "5626e45db3526abf25efdcbca979c0910cac82778ed184cdeca9bf3c17af5114",
+      "bytes": 28669,
+      "status": "published"
+    },
+    {
+      "path": "negeri-sembilan/N.06.xlsx",
+      "contestId": "prn-negeri-sembilan-2018:P.127:N.06",
+      "stateId": "negeri-sembilan",
+      "dunCode": "N.06",
+      "sha256": "996656567cd8cb08230ea33fa154ccd1ce56ed13d70f6d00028a538af68a76f6",
+      "bytes": 27561,
+      "status": "published"
+    },
+    {
+      "path": "negeri-sembilan/N.07.xlsx",
+      "contestId": "prn-negeri-sembilan-2018:P.127:N.07",
+      "stateId": "negeri-sembilan",
+      "dunCode": "N.07",
+      "sha256": "910d213c6f7f7465469f34d5ad0591369b9fe64f2498d86502461601f88ca7e3",
+      "bytes": 30278,
+      "status": "published"
+    },
+    {
+      "path": "negeri-sembilan/N.08.xlsx",
+      "contestId": "prn-negeri-sembilan-2018:P.127:N.08",
+      "stateId": "negeri-sembilan",
+      "dunCode": "N.08",
+      "sha256": "75948f4743b294e7c178ec98247c16a9da1e78d0f72d56c7f02d58fcf93a86a0",
+      "bytes": 28178,
+      "status": "published"
+    },
+    {
+      "path": "negeri-sembilan/N.09.xlsx",
+      "contestId": "prn-negeri-sembilan-2018:P.128:N.09",
+      "stateId": "negeri-sembilan",
+      "dunCode": "N.09",
+      "sha256": "3895128065ff76205302c5ca5e6c25db3b8053e5e520e61a9c6e3959b4fefd42",
+      "bytes": 27914,
+      "status": "published"
+    },
+    {
+      "path": "negeri-sembilan/N.10.xlsx",
+      "contestId": "prn-negeri-sembilan-2018:P.128:N.10",
+      "stateId": "negeri-sembilan",
+      "dunCode": "N.10",
+      "sha256": "8fef56e9571c2b989f7f9d9d0c1e622a071af54e4c022870140acfb95babc3cd",
+      "bytes": 28294,
+      "status": "published"
+    },
+    {
+      "path": "negeri-sembilan/N.11.xlsx",
+      "contestId": "prn-negeri-sembilan-2018:P.128:N.11",
+      "stateId": "negeri-sembilan",
+      "dunCode": "N.11",
+      "sha256": "42fa188f0b43208d427663e475535fec6034f194b628cb19784762cd4c44cc36",
+      "bytes": 27345,
+      "status": "published"
+    },
+    {
+      "path": "negeri-sembilan/N.12.xlsx",
+      "contestId": "prn-negeri-sembilan-2018:P.128:N.12",
+      "stateId": "negeri-sembilan",
+      "dunCode": "N.12",
+      "sha256": "457d8c04d9a122e2f5024fdb124ae54dc0180409a166ac8c28d70382deaebfed",
+      "bytes": 26589,
+      "status": "published"
+    },
+    {
+      "path": "negeri-sembilan/N.13.xlsx",
+      "contestId": "prn-negeri-sembilan-2018:P.128:N.13",
+      "stateId": "negeri-sembilan",
+      "dunCode": "N.13",
+      "sha256": "fd70e0893cb67a88706f22a882e6600e98b3a8e47a85df9b053e97e687093535",
+      "bytes": 29361,
+      "status": "published"
+    },
+    {
+      "path": "negeri-sembilan/N.14.xlsx",
+      "contestId": "prn-negeri-sembilan-2018:P.128:N.14",
+      "stateId": "negeri-sembilan",
+      "dunCode": "N.14",
+      "sha256": "7426a1c9fdbf96fe64630eaaa6fb6f7bba0cd6fe1cc73d370c3f392082f1fb94",
+      "bytes": 26962,
+      "status": "published"
+    },
+    {
+      "path": "negeri-sembilan/N.15.xlsx",
+      "contestId": "prn-negeri-sembilan-2018:P.129:N.15",
+      "stateId": "negeri-sembilan",
+      "dunCode": "N.15",
+      "sha256": "7a9f4865c06ffe1c0f91fef5fe64a7ead352ae91c7c57b29e0db92a72065d995",
+      "bytes": 27347,
+      "status": "published"
+    },
+    {
+      "path": "negeri-sembilan/N.16.xlsx",
+      "contestId": "prn-negeri-sembilan-2018:P.129:N.16",
+      "stateId": "negeri-sembilan",
+      "dunCode": "N.16",
+      "sha256": "a6b32ce66ac0550f8b8f2780540ad33d140b1e695e27fcefd3d12df7ace6179e",
+      "bytes": 27789,
+      "status": "published"
+    },
+    {
+      "path": "negeri-sembilan/N.17.xlsx",
+      "contestId": "prn-negeri-sembilan-2018:P.129:N.17",
+      "stateId": "negeri-sembilan",
+      "dunCode": "N.17",
+      "sha256": "956ca4396a9db3bb460c97a9998e53e8814b7f44b2c249ce56eae2fa4270a7b8",
+      "bytes": 26916,
+      "status": "published"
+    },
+    {
+      "path": "negeri-sembilan/N.18.xlsx",
+      "contestId": "prn-negeri-sembilan-2018:P.129:N.18",
+      "stateId": "negeri-sembilan",
+      "dunCode": "N.18",
+      "sha256": "d19eaee6bcb7c8b183b349c78aa91364d320880e3e71ad622775af4944608421",
+      "bytes": 28039,
+      "status": "published"
+    },
+    {
+      "path": "negeri-sembilan/N.19.xlsx",
+      "contestId": "prn-negeri-sembilan-2018:P.129:N.19",
+      "stateId": "negeri-sembilan",
+      "dunCode": "N.19",
+      "sha256": "ca5aca1355e58d32f486c96ed1e16acd648549d2080ae52d6b9394b60765fd3a",
+      "bytes": 27354,
+      "status": "published"
+    },
+    {
+      "path": "negeri-sembilan/N.20.xlsx",
+      "contestId": "prn-negeri-sembilan-2018:P.130:N.20",
+      "stateId": "negeri-sembilan",
+      "dunCode": "N.20",
+      "sha256": "ab1776b18a039a656dd35e5bd755301516db03b5889b89a87420018576ed3fa2",
+      "bytes": 29416,
+      "status": "published"
+    },
+    {
+      "path": "negeri-sembilan/N.21.xlsx",
+      "contestId": "prn-negeri-sembilan-2018:P.130:N.21",
+      "stateId": "negeri-sembilan",
+      "dunCode": "N.21",
+      "sha256": "ced7deed07aaeb1c730ae379ddc93cc9a0c6ef133615b45ec9b54cf4c56e0592",
+      "bytes": 26648,
+      "status": "published"
+    },
+    {
+      "path": "negeri-sembilan/N.22.xlsx",
+      "contestId": "prn-negeri-sembilan-2018:P.130:N.22",
+      "stateId": "negeri-sembilan",
+      "dunCode": "N.22",
+      "sha256": "a5da763fb3b045b88a3aeff1f9cfb89f3a21270aa4f15d47e0a22a4e1d018b86",
+      "bytes": 27856,
+      "status": "published"
+    },
+    {
+      "path": "negeri-sembilan/N.23.xlsx",
+      "contestId": "prn-negeri-sembilan-2018:P.130:N.23",
+      "stateId": "negeri-sembilan",
+      "dunCode": "N.23",
+      "sha256": "c91888735fc6b2430a6e781534ac5b2a7cb8f516b7d34cc16eccf3285f16cab0",
+      "bytes": 27485,
+      "status": "published"
+    },
+    {
+      "path": "negeri-sembilan/N.24.xlsx",
+      "contestId": "prn-negeri-sembilan-2018:P.130:N.24",
+      "stateId": "negeri-sembilan",
+      "dunCode": "N.24",
+      "sha256": "33916c96c4d818b6670acbe874427396e20dfce4325ffc002f6090288a0e80f5",
+      "bytes": 27242,
+      "status": "published"
+    },
+    {
+      "path": "negeri-sembilan/N.25.xlsx",
+      "contestId": "prn-negeri-sembilan-2018:P.131:N.25",
+      "stateId": "negeri-sembilan",
+      "dunCode": "N.25",
+      "sha256": "6eb53838c317dc0adebdd29da05db3d2e72cee0eece34590bd8f28d93155bced",
+      "bytes": 29181,
+      "status": "published"
+    },
+    {
+      "path": "negeri-sembilan/N.26.xlsx",
+      "contestId": "prn-negeri-sembilan-2018:P.131:N.26",
+      "stateId": "negeri-sembilan",
+      "dunCode": "N.26",
+      "sha256": "1929034f1817e9342f9b072cbf6ba274ca15845f86dd0f6c112365302622971e",
+      "bytes": 28108,
+      "status": "published"
+    },
+    {
+      "path": "negeri-sembilan/N.28.xlsx",
+      "contestId": "prn-negeri-sembilan-2018:P.131:N.28",
+      "stateId": "negeri-sembilan",
+      "dunCode": "N.28",
+      "sha256": "c0e52f305ea079ce048695c7b5e2da87ffc4f8baa77803b8819159d8aee651c4",
+      "bytes": 28496,
+      "status": "published"
+    },
+    {
+      "path": "negeri-sembilan/N.29.xlsx",
+      "contestId": "prn-negeri-sembilan-2018:P.132:N.29",
+      "stateId": "negeri-sembilan",
+      "dunCode": "N.29",
+      "sha256": "7f0391056b6caa012c6a2a067fac048aa6630cc3c1df327a3d994155b8c61484",
+      "bytes": 24728,
+      "status": "published"
+    },
+    {
+      "path": "negeri-sembilan/N.30.xlsx",
+      "contestId": "prn-negeri-sembilan-2018:P.132:N.30",
+      "stateId": "negeri-sembilan",
+      "dunCode": "N.30",
+      "sha256": "4c5cc74ca0733ba85a8f1c9687d65fc11e079c098702e744f5a312e559f685af",
+      "bytes": 25456,
+      "status": "published"
+    },
+    {
+      "path": "negeri-sembilan/N.31.xlsx",
+      "contestId": "prn-negeri-sembilan-2018:P.132:N.31",
+      "stateId": "negeri-sembilan",
+      "dunCode": "N.31",
+      "sha256": "4f58b96794c0250d506530f8e6ec1ea6a4d74d84e2c7bf8941b5469034a33cdf",
+      "bytes": 25654,
+      "status": "published"
+    },
+    {
+      "path": "negeri-sembilan/N.32.xlsx",
+      "contestId": "prn-negeri-sembilan-2018:P.132:N.32",
+      "stateId": "negeri-sembilan",
+      "dunCode": "N.32",
+      "sha256": "81c0f97fe1ff9d5b622d49d6a96ce524d3e4084bc5165f5f2321a04ee99862a9",
+      "bytes": 27457,
+      "status": "published"
+    },
+    {
+      "path": "negeri-sembilan/N.33.xlsx",
+      "contestId": "prn-negeri-sembilan-2018:P.132:N.33",
+      "stateId": "negeri-sembilan",
+      "dunCode": "N.33",
+      "sha256": "f36e4ff10fe66b677611410f03d238c9cfb1a50a4482c2974c16b26d1ddb2207",
+      "bytes": 26793,
+      "status": "published"
+    },
+    {
+      "path": "negeri-sembilan/N.34.xlsx",
+      "contestId": "prn-negeri-sembilan-2018:P.133:N.34",
+      "stateId": "negeri-sembilan",
+      "dunCode": "N.34",
+      "sha256": "3fb669b374fd968aabe0b0fdde2cef5ee193cfb4d12564859ece1f137b7fe15b",
+      "bytes": 27823,
+      "status": "published"
+    },
+    {
+      "path": "negeri-sembilan/N.35.xlsx",
+      "contestId": "prn-negeri-sembilan-2018:P.133:N.35",
+      "stateId": "negeri-sembilan",
+      "dunCode": "N.35",
+      "sha256": "b17e94e36978bea1fa27654691d26123b62683d0fe2b52b4d461f4ce318b8dcb",
+      "bytes": 28940,
+      "status": "published"
+    },
+    {
+      "path": "negeri-sembilan/N.36.xlsx",
+      "contestId": "prn-negeri-sembilan-2018:P.133:N.36",
+      "stateId": "negeri-sembilan",
+      "dunCode": "N.36",
+      "sha256": "5cea66a279edd26a4765c2833cefe95175ca817b33cce9d3fb2cacf0b8279936",
+      "bytes": 27789,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.01.xlsx",
+      "contestId": "prn-pahang-2018:P.078:N.01",
+      "stateId": "pahang",
+      "dunCode": "N.01",
+      "sha256": "78a018507ea6f524619f775bd1b6f065ed1a25fe8f20a6d827b038f9f0648876",
+      "bytes": 30668,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.02.xlsx",
+      "contestId": "prn-pahang-2018:P.078:N.02",
+      "stateId": "pahang",
+      "dunCode": "N.02",
+      "sha256": "8e5c4e5d9a2d2b11377f428230929545cdd53d87fda603d572e18d503c7eecba",
+      "bytes": 31561,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.03.xlsx",
+      "contestId": "prn-pahang-2018:P.079:N.03",
+      "stateId": "pahang",
+      "dunCode": "N.03",
+      "sha256": "314b855c2a94f3e1dad58ea99c13190a4a6f0fb158c33e0de5f7fc120cd4d40b",
+      "bytes": 29886,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.04.xlsx",
+      "contestId": "prn-pahang-2018:P.079:N.04",
+      "stateId": "pahang",
+      "dunCode": "N.04",
+      "sha256": "78b1eff688919bbcd6dc91c33927b9938d635ee84a731e7591b8add849faf33d",
+      "bytes": 28800,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.05.xlsx",
+      "contestId": "prn-pahang-2018:P.079:N.05",
+      "stateId": "pahang",
+      "dunCode": "N.05",
+      "sha256": "96eb4657009f4ac4b3b8667100ccb6e29b6697e4f994fe3431342ec9c554daec",
+      "bytes": 28353,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.06.xlsx",
+      "contestId": "prn-pahang-2018:P.080:N.06",
+      "stateId": "pahang",
+      "dunCode": "N.06",
+      "sha256": "b6542a3e710050e4665e72f312e74dcc287814465c4f2b37ac6108b1c698d7c2",
+      "bytes": 28761,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.07.xlsx",
+      "contestId": "prn-pahang-2018:P.080:N.07",
+      "stateId": "pahang",
+      "dunCode": "N.07",
+      "sha256": "42b954b37e4f1c25e185cc1073858fe6fa9e6122a7a366dd0d949866309fe9ad",
+      "bytes": 30784,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.08.xlsx",
+      "contestId": "prn-pahang-2018:P.080:N.08",
+      "stateId": "pahang",
+      "dunCode": "N.08",
+      "sha256": "71eed5b08e0b4b61cbc2f4ec6dc75224a3481117b83fe4930eb75b3b373bfef8",
+      "bytes": 28539,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.09.xlsx",
+      "contestId": "prn-pahang-2018:P.081:N.09",
+      "stateId": "pahang",
+      "dunCode": "N.09",
+      "sha256": "a4b877937a8a514a08947959adb3918a4bdb4788b51f11b80dd9bcf83de8bfbc",
+      "bytes": 30013,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.10.xlsx",
+      "contestId": "prn-pahang-2018:P.081:N.10",
+      "stateId": "pahang",
+      "dunCode": "N.10",
+      "sha256": "5b7e10d5c3773d3d62dd1a3581373831303d6538c8d88454feb63a06adaea325",
+      "bytes": 31043,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.11.xlsx",
+      "contestId": "prn-pahang-2018:P.081:N.11",
+      "stateId": "pahang",
+      "dunCode": "N.11",
+      "sha256": "5ec2a141e98d7963efdd67c1d43c42393e015028eae9e72921c85dc473d3627f",
+      "bytes": 30357,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.12.xlsx",
+      "contestId": "prn-pahang-2018:P.082:N.12",
+      "stateId": "pahang",
+      "dunCode": "N.12",
+      "sha256": "32310e1e322fc3479a867c53fb56b9c38f389f02628e8284d8ffe07a13a83535",
+      "bytes": 30943,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.13.xlsx",
+      "contestId": "prn-pahang-2018:P.082:N.13",
+      "stateId": "pahang",
+      "dunCode": "N.13",
+      "sha256": "5b404eeee814460bbbb738c7e7411ff6a2048e7891afd95b7cdc076c25546a9d",
+      "bytes": 30462,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.14.xlsx",
+      "contestId": "prn-pahang-2018:P.083:N.14",
+      "stateId": "pahang",
+      "dunCode": "N.14",
+      "sha256": "3c008d4f3de236697dfb265a0e560d5db08ba6d3bdec89e79f00669e84d8ce8c",
+      "bytes": 29665,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.15.xlsx",
+      "contestId": "prn-pahang-2018:P.083:N.15",
+      "stateId": "pahang",
+      "dunCode": "N.15",
+      "sha256": "d63dfafba303f30af9fdc3d00b8abdcd0c949d14e7da846ce853a0a64539e770",
+      "bytes": 29118,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.16.xlsx",
+      "contestId": "prn-pahang-2018:P.083:N.16",
+      "stateId": "pahang",
+      "dunCode": "N.16",
+      "sha256": "e82dfcec6616abe69518020038ccc3991fdf20c57298b3f649b7d3f0d7a93eb7",
+      "bytes": 27666,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.17.xlsx",
+      "contestId": "prn-pahang-2018:P.084:N.17",
+      "stateId": "pahang",
+      "dunCode": "N.17",
+      "sha256": "7dc5261aac793e0c08da9a09bc14449ea1c416ab15fb9b3609c61e8f8dbcd768",
+      "bytes": 28812,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.18.xlsx",
+      "contestId": "prn-pahang-2018:P.084:N.18",
+      "stateId": "pahang",
+      "dunCode": "N.18",
+      "sha256": "d5d877d9f0cb5fcde415a0eca4125ad359bb38d76dffc611054848e76b8903a3",
+      "bytes": 28675,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.19.xlsx",
+      "contestId": "prn-pahang-2018:P.084:N.19",
+      "stateId": "pahang",
+      "dunCode": "N.19",
+      "sha256": "dec77ac8b6dc938f5fbcdb867be9a28333de3c7ba80e888f1e1e9e69261e3640",
+      "bytes": 31233,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.20.xlsx",
+      "contestId": "prn-pahang-2018:P.085:N.20",
+      "stateId": "pahang",
+      "dunCode": "N.20",
+      "sha256": "ddb45c51c547a6e1c423582c34b7b46c629c39afd87576ac1cfbe5ad96f34365",
+      "bytes": 29195,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.21.xlsx",
+      "contestId": "prn-pahang-2018:P.085:N.21",
+      "stateId": "pahang",
+      "dunCode": "N.21",
+      "sha256": "78f8ba414cbf7c051733842a99fdaa286aa8339532f234c08d4f20178a455d1e",
+      "bytes": 30952,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.22.xlsx",
+      "contestId": "prn-pahang-2018:P.085:N.22",
+      "stateId": "pahang",
+      "dunCode": "N.22",
+      "sha256": "9bb26b8f4172c162d8bef43dd11fcfb8c58969a6133326ef6f7b1cbd09b54fea",
+      "bytes": 29623,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.23.xlsx",
+      "contestId": "prn-pahang-2018:P.085:N.23",
+      "stateId": "pahang",
+      "dunCode": "N.23",
+      "sha256": "6deb318b7334363bc8ea0d0065ea8460db6182684508d005f35b83573f049ef0",
+      "bytes": 29795,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.24.xlsx",
+      "contestId": "prn-pahang-2018:P.086:N.24",
+      "stateId": "pahang",
+      "dunCode": "N.24",
+      "sha256": "1adee6d16dc519886b552b65d5e07de12391faae2b3c567370a033ef3221a310",
+      "bytes": 28724,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.25.xlsx",
+      "contestId": "prn-pahang-2018:P.086:N.25",
+      "stateId": "pahang",
+      "dunCode": "N.25",
+      "sha256": "6d9f2066656516b29893bda78f2c8e37ec39b720733caa39d509edbc8bd3b689",
+      "bytes": 28400,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.26.xlsx",
+      "contestId": "prn-pahang-2018:P.086:N.26",
+      "stateId": "pahang",
+      "dunCode": "N.26",
+      "sha256": "a8d5a2e2a1230b27958a2babd861174a49badf3e0dafae1a564a3e6932ce0938",
+      "bytes": 29198,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.27.xlsx",
+      "contestId": "prn-pahang-2018:P.087:N.27",
+      "stateId": "pahang",
+      "dunCode": "N.27",
+      "sha256": "a96fd341db5d978bdf4dcf53e775d779a7228842ee595d5568f484c2ca238219",
+      "bytes": 28474,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.28.xlsx",
+      "contestId": "prn-pahang-2018:P.087:N.28",
+      "stateId": "pahang",
+      "dunCode": "N.28",
+      "sha256": "b973d1f03de7c0b8011789f547724b1bd920ec0660d62f75c920f543f2ffd93b",
+      "bytes": 28729,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.29.xlsx",
+      "contestId": "prn-pahang-2018:P.087:N.29",
+      "stateId": "pahang",
+      "dunCode": "N.29",
+      "sha256": "1f7515f45f9062fdbda17278ba3a67487964d44da7197d444c5f6b71bfc70c0d",
+      "bytes": 29356,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.30.xlsx",
+      "contestId": "prn-pahang-2018:P.088:N.30",
+      "stateId": "pahang",
+      "dunCode": "N.30",
+      "sha256": "3866569274b2da3565f52198ec6a98c2cd333d6887bacf7aaf4f61b296b1e539",
+      "bytes": 31995,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.31.xlsx",
+      "contestId": "prn-pahang-2018:P.088:N.31",
+      "stateId": "pahang",
+      "dunCode": "N.31",
+      "sha256": "ee98b896668bd76aa0e6e897bc656acf861b80911a6e240d15fb9e04605990bc",
+      "bytes": 32475,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.32.xlsx",
+      "contestId": "prn-pahang-2018:P.088:N.32",
+      "stateId": "pahang",
+      "dunCode": "N.32",
+      "sha256": "336d043ed7b9fe6d9b4f0e68d8210fb4693e601033b1dee8153cf13250cf1f7b",
+      "bytes": 30165,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.33.xlsx",
+      "contestId": "prn-pahang-2018:P.089:N.33",
+      "stateId": "pahang",
+      "dunCode": "N.33",
+      "sha256": "fc2c1a852d7d925d85725d54c482025b53b603ad3b1c434972ea1818bedd9658",
+      "bytes": 28862,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.34.xlsx",
+      "contestId": "prn-pahang-2018:P.089:N.34",
+      "stateId": "pahang",
+      "dunCode": "N.34",
+      "sha256": "a6e3351d85f25ae8e5448f8a91b140f2fe010c3e144fa3799f106e428a3823b5",
+      "bytes": 30106,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.35.xlsx",
+      "contestId": "prn-pahang-2018:P.089:N.35",
+      "stateId": "pahang",
+      "dunCode": "N.35",
+      "sha256": "7d6b3837f73332f30af0e9bc9d6cc72b75d8acd492da9edfdbbc1ddef7fbfea2",
+      "bytes": 29903,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.36.xlsx",
+      "contestId": "prn-pahang-2018:P.089:N.36",
+      "stateId": "pahang",
+      "dunCode": "N.36",
+      "sha256": "61b512a107ed2ae20aa7cde3e1f2589c0dc519efcae1d9aaf9928d34b5b1eac5",
+      "bytes": 28245,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.37.xlsx",
+      "contestId": "prn-pahang-2018:P.090:N.37",
+      "stateId": "pahang",
+      "dunCode": "N.37",
+      "sha256": "4d1c56f1d1ebea933d9436125f4529dfe797f2f7ef4597e6638844fdad05a144",
+      "bytes": 29978,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.38.xlsx",
+      "contestId": "prn-pahang-2018:P.090:N.38",
+      "stateId": "pahang",
+      "dunCode": "N.38",
+      "sha256": "36bf5e33da1bdb4b9d13e45fb03b59297568310f04e7cff63fb11fa36ae10c35",
+      "bytes": 26955,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.39.xlsx",
+      "contestId": "prn-pahang-2018:P.090:N.39",
+      "stateId": "pahang",
+      "dunCode": "N.39",
+      "sha256": "db26f75ab7b2faa8620b8159a486e7c72cb48ec13b1291f687235d24106d5896",
+      "bytes": 29472,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.40.xlsx",
+      "contestId": "prn-pahang-2018:P.091:N.40",
+      "stateId": "pahang",
+      "dunCode": "N.40",
+      "sha256": "d2463454d6e0ae406255080042dbb70ac26970551153b140bb278db565554eaf",
+      "bytes": 29913,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.41.xlsx",
+      "contestId": "prn-pahang-2018:P.091:N.41",
+      "stateId": "pahang",
+      "dunCode": "N.41",
+      "sha256": "806aed7e0d62777e11b045dfd87e90618d2a1c015e121e46fba655819355b74d",
+      "bytes": 29725,
+      "status": "published"
+    },
+    {
+      "path": "pahang/N.42.xlsx",
+      "contestId": "prn-pahang-2018:P.091:N.42",
+      "stateId": "pahang",
+      "dunCode": "N.42",
+      "sha256": "0884d15d1f150c939b6ef5242fb7e41404cdf9faedf83c2839f2b4f12c170273",
+      "bytes": 31955,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.01.xlsx",
+      "contestId": "prn-perak-2018:P.054:N.01",
+      "stateId": "perak",
+      "dunCode": "N.01",
+      "sha256": "510039c84579975feb712ddfd95d265b302e99fc94afa4e32eba90a74d8cef47",
+      "bytes": 29084,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.02.xlsx",
+      "contestId": "prn-perak-2018:P.054:N.02",
+      "stateId": "perak",
+      "dunCode": "N.02",
+      "sha256": "f7873139ab936e607fca1df6d951459fe6ccb8cb7255443fcf691f536ec91bd5",
+      "bytes": 30128,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.03.xlsx",
+      "contestId": "prn-perak-2018:P.055:N.03",
+      "stateId": "perak",
+      "dunCode": "N.03",
+      "sha256": "6d48980ba560888673c6d095161a6d561ad0134093d82d00896b04da66fe659d",
+      "bytes": 30506,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.04.xlsx",
+      "contestId": "prn-perak-2018:P.055:N.04",
+      "stateId": "perak",
+      "dunCode": "N.04",
+      "sha256": "8711fd1d10e34d87ba8e2f0b598c0c1a1b3cd158fe6845a2944582fa4eef7d67",
+      "bytes": 29761,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.05.xlsx",
+      "contestId": "prn-perak-2018:P.056:N.05",
+      "stateId": "perak",
+      "dunCode": "N.05",
+      "sha256": "c40eea94cb20a90020147b80e41a7f848e36741dd6e967e7762236e8f3e4265a",
+      "bytes": 29183,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.06.xlsx",
+      "contestId": "prn-perak-2018:P.056:N.06",
+      "stateId": "perak",
+      "dunCode": "N.06",
+      "sha256": "01a3248b7c90530219df2b0d91f656f5512338b16fb959601986953374add3d0",
+      "bytes": 29433,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.07.xlsx",
+      "contestId": "prn-perak-2018:P.056:N.07",
+      "stateId": "perak",
+      "dunCode": "N.07",
+      "sha256": "c4783260b0b32268f6803e9bfb90653055bfa98e74ab570f02bbc0192ce19aa6",
+      "bytes": 30417,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.08.xlsx",
+      "contestId": "prn-perak-2018:P.057:N.08",
+      "stateId": "perak",
+      "dunCode": "N.08",
+      "sha256": "644ff3c64a6a89ac6666f6d2e223cc70db997241f167df6e336b0354c117d064",
+      "bytes": 29812,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.09.xlsx",
+      "contestId": "prn-perak-2018:P.057:N.09",
+      "stateId": "perak",
+      "dunCode": "N.09",
+      "sha256": "719df24c9703cd195da79b67ea9f20dbff3cd19c08b76536a518b550b7d0d312",
+      "bytes": 30037,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.10.xlsx",
+      "contestId": "prn-perak-2018:P.058:N.10",
+      "stateId": "perak",
+      "dunCode": "N.10",
+      "sha256": "54a01c3fcc71cf4daed1a62cbb6461b484933e18064d368ca01a059b8504f30a",
+      "bytes": 29303,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.11.xlsx",
+      "contestId": "prn-perak-2018:P.058:N.11",
+      "stateId": "perak",
+      "dunCode": "N.11",
+      "sha256": "666b1bbf29c02697d80fd0481375ef0c50ff2d053812992229a2ee5d3ba82213",
+      "bytes": 29497,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.12.xlsx",
+      "contestId": "prn-perak-2018:P.058:N.12",
+      "stateId": "perak",
+      "dunCode": "N.12",
+      "sha256": "8fe46040d0e401bc9df6b6f19425a512910bd185c8919947155b33eda4ccfc86",
+      "bytes": 29295,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.13.xlsx",
+      "contestId": "prn-perak-2018:P.059:N.13",
+      "stateId": "perak",
+      "dunCode": "N.13",
+      "sha256": "d86f23578486bd078b582f91539897dca73eeeed775c56864cf844e13b31400f",
+      "bytes": 29627,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.14.xlsx",
+      "contestId": "prn-perak-2018:P.059:N.14",
+      "stateId": "perak",
+      "dunCode": "N.14",
+      "sha256": "bacf98f5da86d8fce08afce99ac1a156231aee134dc56409181033809f95a4ff",
+      "bytes": 31795,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.15.xlsx",
+      "contestId": "prn-perak-2018:P.059:N.15",
+      "stateId": "perak",
+      "dunCode": "N.15",
+      "sha256": "fed89483fa1f48cd5e761590144dd170c6db9f02241fc72e550ec5ed660e27d6",
+      "bytes": 28804,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.16.xlsx",
+      "contestId": "prn-perak-2018:P.060:N.16",
+      "stateId": "perak",
+      "dunCode": "N.16",
+      "sha256": "e1547eaa62912dccb1b00bf9cfee0a7e99ec2cd09d8119bdcc1ca3546c24c6a6",
+      "bytes": 29587,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.17.xlsx",
+      "contestId": "prn-perak-2018:P.060:N.17",
+      "stateId": "perak",
+      "dunCode": "N.17",
+      "sha256": "ba8ccc8e928b33e4882844aa1ba64132164d21caba9774407ea7b8fccb1e03e7",
+      "bytes": 28423,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.18.xlsx",
+      "contestId": "prn-perak-2018:P.060:N.18",
+      "stateId": "perak",
+      "dunCode": "N.18",
+      "sha256": "461080c5f940e4feedc67bf6a941204d6e9b8a97a838deff5ab5bc3e67500063",
+      "bytes": 29100,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.19.xlsx",
+      "contestId": "prn-perak-2018:P.061:N.19",
+      "stateId": "perak",
+      "dunCode": "N.19",
+      "sha256": "5a6b0bb204aad5bc4295cb6053406d25deab4947a2b30ed97b639421957a6158",
+      "bytes": 29957,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.20.xlsx",
+      "contestId": "prn-perak-2018:P.061:N.20",
+      "stateId": "perak",
+      "dunCode": "N.20",
+      "sha256": "dd448f51b89aa9052ff29991306d78dc4c04ded7e2df3d8a60b79964470d2114",
+      "bytes": 29715,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.21.xlsx",
+      "contestId": "prn-perak-2018:P.062:N.21",
+      "stateId": "perak",
+      "dunCode": "N.21",
+      "sha256": "3ec421f5425e32989d4a52eb8c907c4f0502e6b4d9c50859895075742f2f6491",
+      "bytes": 32135,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.22.xlsx",
+      "contestId": "prn-perak-2018:P.062:N.22",
+      "stateId": "perak",
+      "dunCode": "N.22",
+      "sha256": "2507ef5e92bd513a651751c0e0feec5af3aedeaf9752380382bae89ebcd703c3",
+      "bytes": 28364,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.23.xlsx",
+      "contestId": "prn-perak-2018:P.063:N.23",
+      "stateId": "perak",
+      "dunCode": "N.23",
+      "sha256": "5aea5ba259da7be783ac58eb8974dd446dad8ae3ded6fa9587fdbd5cbfa2da9e",
+      "bytes": 33626,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.24.xlsx",
+      "contestId": "prn-perak-2018:P.063:N.24",
+      "stateId": "perak",
+      "dunCode": "N.24",
+      "sha256": "060e426a670209a444133174224503d8cb2fe063b67072675badfe9f71a90ec0",
+      "bytes": 35180,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.25.xlsx",
+      "contestId": "prn-perak-2018:P.064:N.25",
+      "stateId": "perak",
+      "dunCode": "N.25",
+      "sha256": "3649c24458dc63fcbfbb83b580cd00a32abc973e71e847acee99b60e39a5bcfb",
+      "bytes": 28520,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.26.xlsx",
+      "contestId": "prn-perak-2018:P.064:N.26",
+      "stateId": "perak",
+      "dunCode": "N.26",
+      "sha256": "8e3ec5f402ee9333f63d579f1c92a3fdcaea8d16722141bcee222e1d89d48374",
+      "bytes": 29971,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.27.xlsx",
+      "contestId": "prn-perak-2018:P.064:N.27",
+      "stateId": "perak",
+      "dunCode": "N.27",
+      "sha256": "5d995e1dc09bcd5e9dfa43818e60930dadf7cf2bf3b9cecafa75d5a8ad6204fe",
+      "bytes": 28668,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.28.xlsx",
+      "contestId": "prn-perak-2018:P.065:N.28",
+      "stateId": "perak",
+      "dunCode": "N.28",
+      "sha256": "a5f1fc772edb26ca72f933312d42a2486fd6f2eced1f80fa063245665295fac4",
+      "bytes": 28167,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.29.xlsx",
+      "contestId": "prn-perak-2018:P.065:N.29",
+      "stateId": "perak",
+      "dunCode": "N.29",
+      "sha256": "a2d0f1a00244ccce907acad1d7c73a1e8c685f247d21cc717c978fdda26a19b2",
+      "bytes": 27864,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.30.xlsx",
+      "contestId": "prn-perak-2018:P.065:N.30",
+      "stateId": "perak",
+      "dunCode": "N.30",
+      "sha256": "5c8e8c18f1bbecfccffffac40ecd92ebd0025c502def9d05b2a2afdf409e244a",
+      "bytes": 31263,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.31.xlsx",
+      "contestId": "prn-perak-2018:P.066:N.31",
+      "stateId": "perak",
+      "dunCode": "N.31",
+      "sha256": "0a946a66eb2188fdd93d16c2a69a4b7d8b7bbf12250b3937a6245a3945868377",
+      "bytes": 31155,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.32.xlsx",
+      "contestId": "prn-perak-2018:P.066:N.32",
+      "stateId": "perak",
+      "dunCode": "N.32",
+      "sha256": "18a507d590dea6c0798d7d3ae2303e045687fb3c11a01f272ab7fdc3c20f712a",
+      "bytes": 31540,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.33.xlsx",
+      "contestId": "prn-perak-2018:P.066:N.33",
+      "stateId": "perak",
+      "dunCode": "N.33",
+      "sha256": "45765ac7561dfe0923639697331a966102c9222bb7deca814909e95e524cefe2",
+      "bytes": 30994,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.34.xlsx",
+      "contestId": "prn-perak-2018:P.067:N.34",
+      "stateId": "perak",
+      "dunCode": "N.34",
+      "sha256": "867ea8b018082b8f239788dc58aa544aacb8d4d791cc30ba8c53ca569b2ff9a2",
+      "bytes": 29906,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.35.xlsx",
+      "contestId": "prn-perak-2018:P.067:N.35",
+      "stateId": "perak",
+      "dunCode": "N.35",
+      "sha256": "d09020131c830c9b1c171408fe1687462a4801293060b1380363346c367b3bc0",
+      "bytes": 30051,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.36.xlsx",
+      "contestId": "prn-perak-2018:P.068:N.36",
+      "stateId": "perak",
+      "dunCode": "N.36",
+      "sha256": "306905365fe24c5631dd3724d296672d564d0fd1c34bbe7e77742815c44f48f4",
+      "bytes": 30996,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.37.xlsx",
+      "contestId": "prn-perak-2018:P.068:N.37",
+      "stateId": "perak",
+      "dunCode": "N.37",
+      "sha256": "782765512cc80b044ae27a65fc1c774f42e60a2e840c8f374a5081bf3fcba181",
+      "bytes": 29108,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.38.xlsx",
+      "contestId": "prn-perak-2018:P.068:N.38",
+      "stateId": "perak",
+      "dunCode": "N.38",
+      "sha256": "14fb4b38779f328fa5b02de4ebcb5cbb0f753945c61311c560980da03909a932",
+      "bytes": 28419,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.39.xlsx",
+      "contestId": "prn-perak-2018:P.069:N.39",
+      "stateId": "perak",
+      "dunCode": "N.39",
+      "sha256": "3e09769c728016cd83f818460652f930a51251554e93dcdfe72965e9c73b5680",
+      "bytes": 30505,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.40.xlsx",
+      "contestId": "prn-perak-2018:P.069:N.40",
+      "stateId": "perak",
+      "dunCode": "N.40",
+      "sha256": "8e7736f02b1b127a73b4b79338372a209fd84588191dbf5c294cc8aea10c401c",
+      "bytes": 30562,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.41.xlsx",
+      "contestId": "prn-perak-2018:P.070:N.41",
+      "stateId": "perak",
+      "dunCode": "N.41",
+      "sha256": "234c1ef379de4880dbf0d9435680aace53d328f27c41b5d202a9a923d935c5c9",
+      "bytes": 32217,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.42.xlsx",
+      "contestId": "prn-perak-2018:P.070:N.42",
+      "stateId": "perak",
+      "dunCode": "N.42",
+      "sha256": "42ada47be0a3eda9b851e5f2556729d2c73fb24910f852ec49cdbd09cdfc3386",
+      "bytes": 28286,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.43.xlsx",
+      "contestId": "prn-perak-2018:P.070:N.43",
+      "stateId": "perak",
+      "dunCode": "N.43",
+      "sha256": "1100cdf7322ead5469a992af0b49436643580eaa406384c2e03e20df2218ad49",
+      "bytes": 31572,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.44.xlsx",
+      "contestId": "prn-perak-2018:P.071:N.44",
+      "stateId": "perak",
+      "dunCode": "N.44",
+      "sha256": "86cd1b59649ef1ce93e0ada201768e88cb25acb17cec47d39c529e83a83ec511",
+      "bytes": 30789,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.45.xlsx",
+      "contestId": "prn-perak-2018:P.071:N.45",
+      "stateId": "perak",
+      "dunCode": "N.45",
+      "sha256": "bc54abaab510ca4ac8a1e012a706ab074e56da8bb3e30992ee851a8d09f96432",
+      "bytes": 31735,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.46.xlsx",
+      "contestId": "prn-perak-2018:P.071:N.46",
+      "stateId": "perak",
+      "dunCode": "N.46",
+      "sha256": "1c74f96021667aff9967e6bca12ef951fd670ce054ed80634e74aa57e6be6d09",
+      "bytes": 30056,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.47.xlsx",
+      "contestId": "prn-perak-2018:P.072:N.47",
+      "stateId": "perak",
+      "dunCode": "N.47",
+      "sha256": "8e87e571e9766323a53847816fc6313761d01210a4577b8bfeb82234fe898335",
+      "bytes": 30711,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.48.xlsx",
+      "contestId": "prn-perak-2018:P.072:N.48",
+      "stateId": "perak",
+      "dunCode": "N.48",
+      "sha256": "2928c2832f9b93e8744724b1e083da055da97aa1231126be5217c5df0b64f664",
+      "bytes": 31223,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.49.xlsx",
+      "contestId": "prn-perak-2018:P.073:N.49",
+      "stateId": "perak",
+      "dunCode": "N.49",
+      "sha256": "40f15dc38c0200e56853f86994a5b80249fadc2007d3315f4e0d56d52d8c7624",
+      "bytes": 32874,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.50.xlsx",
+      "contestId": "prn-perak-2018:P.073:N.50",
+      "stateId": "perak",
+      "dunCode": "N.50",
+      "sha256": "7868ac8962ff9cad33a0cfb91b4f696d15769c43e3e2f4ff6175aa6f6cfc293b",
+      "bytes": 34210,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.51.xlsx",
+      "contestId": "prn-perak-2018:P.074:N.51",
+      "stateId": "perak",
+      "dunCode": "N.51",
+      "sha256": "f589bad4bfc718ab3664deb299992d6ffb4192d4b2d9a75b70836265099bd8f0",
+      "bytes": 32321,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.52.xlsx",
+      "contestId": "prn-perak-2018:P.074:N.52",
+      "stateId": "perak",
+      "dunCode": "N.52",
+      "sha256": "63968fc7bfec968e5e54975e09a90697ca74851399d5502c98dbd3ab53c82d11",
+      "bytes": 30181,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.53.xlsx",
+      "contestId": "prn-perak-2018:P.075:N.53",
+      "stateId": "perak",
+      "dunCode": "N.53",
+      "sha256": "0f59970d995fa9d09c18c594367f7eb04a16c129bdcad11d93ae26918c8aa1a4",
+      "bytes": 30527,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.54.xlsx",
+      "contestId": "prn-perak-2018:P.075:N.54",
+      "stateId": "perak",
+      "dunCode": "N.54",
+      "sha256": "4ab2cff1a90a37d8912da4125bfe3bdbaa4e08777067bb52f30843bfc9d61d75",
+      "bytes": 32002,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.55.xlsx",
+      "contestId": "prn-perak-2018:P.076:N.55",
+      "stateId": "perak",
+      "dunCode": "N.55",
+      "sha256": "ce88b76738c8460ba16593d09b9f3b5b6838647932c7168065955bc4542ac58d",
+      "bytes": 31752,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.56.xlsx",
+      "contestId": "prn-perak-2018:P.076:N.56",
+      "stateId": "perak",
+      "dunCode": "N.56",
+      "sha256": "82dbfd0cfabcef4cc39aaf2d4c84044f5990d9f77cd1e8cf6048a3e7556cc41d",
+      "bytes": 31927,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.57.xlsx",
+      "contestId": "prn-perak-2018:P.077:N.57",
+      "stateId": "perak",
+      "dunCode": "N.57",
+      "sha256": "a2ef15c15e7873de551abb7af3d01608519ac07274909a5e4c90b0b908bc5de1",
+      "bytes": 29845,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.58.xlsx",
+      "contestId": "prn-perak-2018:P.077:N.58",
+      "stateId": "perak",
+      "dunCode": "N.58",
+      "sha256": "9f21c3326c91936e3b104752ad1f7db48dd8273ff8dc5ac9bf5463078f029112",
+      "bytes": 30318,
+      "status": "published"
+    },
+    {
+      "path": "perak/N.59.xlsx",
+      "contestId": "prn-perak-2018:P.077:N.59",
+      "stateId": "perak",
+      "dunCode": "N.59",
+      "sha256": "854f99568c928c887fcfc3ff2d855a20efc21f9ac1ac982adca7d9d329670908",
+      "bytes": 32056,
+      "status": "published"
+    },
+    {
+      "path": "perlis/N.01.xlsx",
+      "contestId": "prn-perlis-2018:P.001:N.01",
+      "stateId": "perlis",
+      "dunCode": "N.01",
+      "sha256": "660488edba3990c01bfcbd8bd5857a9d3ee0734afcfed009b7d9232cd863290c",
+      "bytes": 28502,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 21, 'ballotsInBox': 7497, 'validVotes': 7286, 'rejectedVotes': 180, 'unreturnedVotes': 31} do not match final JUMLAH {'pollingStreams': 22, 'ballotsInBox': 8018, 'validVotes': 7805, 'rejectedVotes': 182, 'unreturnedVotes': 31}."
+    },
+    {
+      "path": "perlis/N.02.xlsx",
+      "contestId": "prn-perlis-2018:P.001:N.02",
+      "stateId": "perlis",
+      "dunCode": "N.02",
+      "sha256": "c75a6601762c1da9cc438c5db203a1f89f4a4c4daff9982850457760a26d9d38",
+      "bytes": 26187,
+      "status": "published"
+    },
+    {
+      "path": "perlis/N.03.xlsx",
+      "contestId": "prn-perlis-2018:P.001:N.03",
+      "stateId": "perlis",
+      "dunCode": "N.03",
+      "sha256": "bc6f2fe2aa8030067a081f814b22b9f6f3a12d26c03f2b881dbb731010320ba0",
+      "bytes": 26300,
+      "status": "published"
+    },
+    {
+      "path": "perlis/N.04.xlsx",
+      "contestId": "prn-perlis-2018:P.001:N.04",
+      "stateId": "perlis",
+      "dunCode": "N.04",
+      "sha256": "20ec5ff95eb08947ad22ac23234de09ad329d201ee245e648038f92c8126bb83",
+      "bytes": 25849,
+      "status": "published"
+    },
+    {
+      "path": "perlis/N.05.xlsx",
+      "contestId": "prn-perlis-2018:P.001:N.05",
+      "stateId": "perlis",
+      "dunCode": "N.05",
+      "sha256": "95bf3f21034c4a3579e37256f51f22d8f2ca6041852a0645aa269605b560c004",
+      "bytes": 26118,
+      "status": "published"
+    },
+    {
+      "path": "perlis/N.06.xlsx",
+      "contestId": "prn-perlis-2018:P.002:N.06",
+      "stateId": "perlis",
+      "dunCode": "N.06",
+      "sha256": "3b642f1ab10283f62da5c7dae12ffec97cec3b2646f0d531473bf87f3373e4fe",
+      "bytes": 26323,
+      "status": "published"
+    },
+    {
+      "path": "perlis/N.07.xlsx",
+      "contestId": "prn-perlis-2018:P.002:N.07",
+      "stateId": "perlis",
+      "dunCode": "N.07",
+      "sha256": "4afb75540b4d62bc41f76881c7fb275a9c9d4495e13f70f38d0ee1363cd5bf7b",
+      "bytes": 26695,
+      "status": "published"
+    },
+    {
+      "path": "perlis/N.08.xlsx",
+      "contestId": "prn-perlis-2018:P.002:N.08",
+      "stateId": "perlis",
+      "dunCode": "N.08",
+      "sha256": "a9d08831ff34a54e7123edb4b6d2152d2443fe6a416b53d6e1a60f7539f9c247",
+      "bytes": 26422,
+      "status": "published"
+    },
+    {
+      "path": "perlis/N.09.xlsx",
+      "contestId": "prn-perlis-2018:P.002:N.09",
+      "stateId": "perlis",
+      "dunCode": "N.09",
+      "sha256": "dc248e6e47eb85839040f602f824fbf519d4bd4d7935ccbd3636825c8cc6e1ab",
+      "bytes": 26383,
+      "status": "published"
+    },
+    {
+      "path": "perlis/N.10.xlsx",
+      "contestId": "prn-perlis-2018:P.002:N.10",
+      "stateId": "perlis",
+      "dunCode": "N.10",
+      "sha256": "164f3f13a280c4157fc11d30cbb7bea4102fcaa297bdc1688d4d94b0a59f90a8",
+      "bytes": 26204,
+      "status": "published"
+    },
+    {
+      "path": "perlis/N.11.xlsx",
+      "contestId": "prn-perlis-2018:P.003:N.11",
+      "stateId": "perlis",
+      "dunCode": "N.11",
+      "sha256": "850e8422acc41d80ddcebb0b307f9d21c70c3b45579e2265ddf464aef478dea4",
+      "bytes": 26394,
+      "status": "published"
+    },
+    {
+      "path": "perlis/N.12.xlsx",
+      "contestId": "prn-perlis-2018:P.003:N.12",
+      "stateId": "perlis",
+      "dunCode": "N.12",
+      "sha256": "d0209220187a68079f20905f12fdfa0222fe13e9ee724782b9dcfec24a17793b",
+      "bytes": 26877,
+      "status": "published"
+    },
+    {
+      "path": "perlis/N.13.xlsx",
+      "contestId": "prn-perlis-2018:P.003:N.13",
+      "stateId": "perlis",
+      "dunCode": "N.13",
+      "sha256": "a5abceee6e500a7ff62cbf22642052ac5b960e3bd4eabdb8e18b6089907082f7",
+      "bytes": 26196,
+      "status": "published"
+    },
+    {
+      "path": "perlis/N.14.xlsx",
+      "contestId": "prn-perlis-2018:P.003:N.14",
+      "stateId": "perlis",
+      "dunCode": "N.14",
+      "sha256": "cbc7cf0c0393f2eea3a7264d2ab1d5c0504d80296f2beef3be66558580485449",
+      "bytes": 26149,
+      "status": "published"
+    },
+    {
+      "path": "perlis/N.15.xlsx",
+      "contestId": "prn-perlis-2018:P.003:N.15",
+      "stateId": "perlis",
+      "dunCode": "N.15",
+      "sha256": "821c7f62ec2e9ecafd078c834bc29e3866b0c5fe8781819fd32fb9b0e87f632e",
+      "bytes": 26097,
+      "status": "published"
+    },
+    {
+      "path": "pulau-pinang/N.01.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.041:N.01",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.01",
+      "sha256": "55a77484979becb80bbeb3afddee0809222161e7f3a6929a8b1ece1405ef10d9",
+      "bytes": 19844,
+      "status": "published"
+    },
+    {
+      "path": "pulau-pinang/N.02.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.041:N.02",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.02",
+      "sha256": "06e889c41e1adf61caa87545aead7d0825dd5241a75bd217e40015080b30d2f3",
+      "bytes": 29190,
+      "status": "published"
+    },
+    {
+      "path": "pulau-pinang/N.03.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.041:N.03",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.03",
+      "sha256": "98550a3bdf4dd2f0659fc66cbe2883a0b2053e909dbb7ee6a783cb429763fc94",
+      "bytes": 29942,
+      "status": "published"
+    },
+    {
+      "path": "pulau-pinang/N.04.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.042:N.04",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.04",
+      "sha256": "211df1aff302fa0d3390dfe7304db5f97cc4924989e64e125b90c1ac94f91fe0",
+      "bytes": 32850,
+      "status": "published"
+    },
+    {
+      "path": "pulau-pinang/N.05.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.042:N.05",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.05",
+      "sha256": "8be53fcec328c287309db1fb1962c2d2521d2e0c7d26719a4b5722dcdd42ae01",
+      "bytes": 29720,
+      "status": "published"
+    },
+    {
+      "path": "pulau-pinang/N.06.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.042:N.06",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.06",
+      "sha256": "80de9c5617e1cc509d13ff9e8624e1ad5535927658a68940fa4eb573c244f2fd",
+      "bytes": 32057,
+      "status": "published"
+    },
+    {
+      "path": "pulau-pinang/N.07.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.043:N.07",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.07",
+      "sha256": "d01a46649466175a1fe633b6dd285aca179168f62789aeb608dc92ad92a7d876",
+      "bytes": 35158,
+      "status": "published"
+    },
+    {
+      "path": "pulau-pinang/N.08.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.043:N.08",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.08",
+      "sha256": "ba9f80b278306a90e1535bd4dba9d821025e8296c8af764857681d72b458b698",
+      "bytes": 35296,
+      "status": "published"
+    },
+    {
+      "path": "pulau-pinang/N.09.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.043:N.09",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.09",
+      "sha256": "51960ae71590546e03739f1bfd50c174c91358d8fe5521fc4e0771d4f8ac5d1a",
+      "bytes": 34508,
+      "status": "published"
+    },
+    {
+      "path": "pulau-pinang/N.10.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.044:N.10",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.10",
+      "sha256": "a123126ca57a1c99a887d2fbe4d54c96cfd15ef1f0147324dad33141c56c2f45",
+      "bytes": 30713,
+      "status": "published"
+    },
+    {
+      "path": "pulau-pinang/N.11.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.044:N.11",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.11",
+      "sha256": "a1c9182e85826d0ea43789bb1c57f7944875647449fa5b008c0b603ee4811174",
+      "bytes": 29934,
+      "status": "published"
+    },
+    {
+      "path": "pulau-pinang/N.12.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.044:N.12",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.12",
+      "sha256": "ee465e00eab70abcc87575bad50bfc389b6ca7c2845155a7050dd54318f14bfe",
+      "bytes": 29969,
+      "status": "published"
+    },
+    {
+      "path": "pulau-pinang/N.13.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.045:N.13",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.13",
+      "sha256": "e65201731f88507d5c9e40168da817174c7bc2a4cf962ffcb45f4fbb41c07fff",
+      "bytes": 31891,
+      "status": "published"
+    },
+    {
+      "path": "pulau-pinang/N.14.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.045:N.14",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.14",
+      "sha256": "d42958a3a8e1763c913d524a2ca7ba0d729f134eff7071108fde79acc80ab384",
+      "bytes": 37710,
+      "status": "published"
+    },
+    {
+      "path": "pulau-pinang/N.15.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.045:N.15",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.15",
+      "sha256": "8da00c87eefaddbc4ac8276c40cf6d22888082057d933408a0eb65a1ad6a2ad8",
+      "bytes": 31579,
+      "status": "published"
+    },
+    {
+      "path": "pulau-pinang/N.16.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.046:N.16",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.16",
+      "sha256": "fc59c845a3b0aa8c930cad1e7fe798ec91c9e077c5fd4754f8eb98310e73f8b0",
+      "bytes": 35156,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 20, 'ballotsInBox': 10095, 'validVotes': 10004, 'rejectedVotes': 90, 'unreturnedVotes': 1} do not match final JUMLAH {'pollingStreams': 31, 'ballotsInBox': 13819, 'validVotes': 13634, 'rejectedVotes': 168, 'unreturnedVotes': 17}."
+    },
+    {
+      "path": "pulau-pinang/N.17.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.046:N.17",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.17",
+      "sha256": "ecd233e9c6c000e18b68cb37e92e09e5b19052d03bf6ef213053f11c6cae64af",
+      "bytes": 33845,
+      "status": "published"
+    },
+    {
+      "path": "pulau-pinang/N.18.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.046:N.18",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.18",
+      "sha256": "1a99905927c349adf7dca032f3283678417b7b77f276208ff471d38c9438ec75",
+      "bytes": 34017,
+      "status": "published"
+    },
+    {
+      "path": "pulau-pinang/N.19.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.047:N.19",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.19",
+      "sha256": "37fd15bc8afb51154e396089c80646cccf1fd250d4679f971e3982c750dec2c9",
+      "bytes": 37648,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 33, 'ballotsInBox': 15481, 'validVotes': 15159, 'rejectedVotes': 271, 'unreturnedVotes': 51} do not match final JUMLAH {'pollingStreams': 49, 'ballotsInBox': 22778, 'validVotes': 22345, 'rejectedVotes': 377, 'unreturnedVotes': 56}."
+    },
+    {
+      "path": "pulau-pinang/N.20.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.047:N.20",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.20",
+      "sha256": "e6b30f636bbb9a9097b996e0ae4956a4c1a0005752e948851539b21a4d2fa068",
+      "bytes": 33000,
+      "status": "published"
+    },
+    {
+      "path": "pulau-pinang/N.21.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.047:N.21",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.21",
+      "sha256": "9fd2ef0c482b56bc17990306c2c9abc8594eba67b4644361a151cba06995d7ee",
+      "bytes": 29106,
+      "status": "published"
+    },
+    {
+      "path": "pulau-pinang/N.22.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.048:N.22",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.22",
+      "sha256": "84ecfdadeb4ce6359e415248671440652ebf00a953d020566e57430f765eb9be",
+      "bytes": 33748,
+      "status": "published"
+    },
+    {
+      "path": "pulau-pinang/N.23.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.048:N.23",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.23",
+      "sha256": "21a0828af2d8913137c00a61c10156fa9a0488f84fb3019403ad95e853a989f3",
+      "bytes": 32170,
+      "status": "published"
+    },
+    {
+      "path": "pulau-pinang/N.24.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.048:N.24",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.24",
+      "sha256": "162d66a42ab8e80e43e1706d35193f828cca76e60e7b213ec306f55f3fe261e6",
+      "bytes": 30738,
+      "status": "published"
+    },
+    {
+      "path": "pulau-pinang/N.25.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.048:N.25",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.25",
+      "sha256": "7ad53177157bf785633ec52edef7134bcda7daaada40b98e66abbfbd0fcaad28",
+      "bytes": 30616,
+      "status": "published"
+    },
+    {
+      "path": "pulau-pinang/N.26.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.049:N.26",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.26",
+      "sha256": "5e138511fe375a41b0bb8960811dac04b04e2b716ced4a8109e67ba7c58f848c",
+      "bytes": 31110,
+      "status": "published"
+    },
+    {
+      "path": "pulau-pinang/N.27.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.049:N.27",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.27",
+      "sha256": "88fc08a3fec44f373428c9e0341f1cc4ab0d5208b7d3300ed299c36528da9dd3",
+      "bytes": 35659,
+      "status": "published"
+    },
+    {
+      "path": "pulau-pinang/N.28.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.049:N.28",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.28",
+      "sha256": "4548dc664a25f6c1255ee40cde9994c29be2520cae15b0741422c47f4ffeecf3",
+      "bytes": 31034,
+      "status": "published"
+    },
+    {
+      "path": "pulau-pinang/N.29.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.050:N.29",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.29",
+      "sha256": "dd10d11c325414b85b7f9cb257c8393c68e67e0688945df95f4146f1db12a5bd",
+      "bytes": 34088,
+      "status": "published"
+    },
+    {
+      "path": "pulau-pinang/N.30.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.050:N.30",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.30",
+      "sha256": "9c56c53df334889b6659ddadace8dc45ff46cd7edb2fd1ba583e4b076ed4feee",
+      "bytes": 38389,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 34, 'ballotsInBox': 16112, 'validVotes': 15815, 'rejectedVotes': 218, 'unreturnedVotes': 79} do not match final JUMLAH {'pollingStreams': 46, 'ballotsInBox': 22704, 'validVotes': 22332, 'rejectedVotes': 291, 'unreturnedVotes': 81}."
+    },
+    {
+      "path": "pulau-pinang/N.31.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.050:N.31",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.31",
+      "sha256": "775c6efc13a40a6becad42a7295cd039bac1887d737fd8169459bd96f03cdefc",
+      "bytes": 31719,
+      "status": "published"
+    },
+    {
+      "path": "pulau-pinang/N.32.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.051:N.32",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.32",
+      "sha256": "aaae04e52c44583e2f81be53a5c3c554098b6cc0d8b075b0b3f2366be272ddb7",
+      "bytes": 31209,
+      "status": "published"
+    },
+    {
+      "path": "pulau-pinang/N.33.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.051:N.33",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.33",
+      "sha256": "2842773e2f99d5169147c9156520ba8cad20afdd2f2fb61a14d70bb82dbb0c10",
+      "bytes": 30898,
+      "status": "published"
+    },
+    {
+      "path": "pulau-pinang/N.34.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.051:N.34",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.34",
+      "sha256": "4597145a31e91d4a8c9a768e2ce7460b16df45ce4fc97d28d82518a3b2dd6285",
+      "bytes": 33376,
+      "status": "published"
+    },
+    {
+      "path": "pulau-pinang/N.35.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.052:N.35",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.35",
+      "sha256": "6249caafbde7f354dc93fc55cf82eaeb9834758387edb58f831f7bb7c74c76c6",
+      "bytes": 35226,
+      "status": "published"
+    },
+    {
+      "path": "pulau-pinang/N.36.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.052:N.36",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.36",
+      "sha256": "eaa58b904cdb9140dd00659d57f66781ef4f9dc48ea444189123a76da5637218",
+      "bytes": 33116,
+      "status": "published"
+    },
+    {
+      "path": "pulau-pinang/N.37.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.052:N.37",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.37",
+      "sha256": "780cc242c6e652da5db0e5373ad964c7637044f33b9eb2a6d505d8699c944209",
+      "bytes": 30880,
+      "status": "published"
+    },
+    {
+      "path": "pulau-pinang/N.38.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.053:N.38",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.38",
+      "sha256": "c1dc8ed2d59d94e0d9262dd0dd8ae30c7ccca41c441946add4b50142751e5374",
+      "bytes": 29857,
+      "status": "published"
+    },
+    {
+      "path": "pulau-pinang/N.39.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.053:N.39",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.39",
+      "sha256": "b43d165c6aa4192e4897e83b80b7674df8e989aec3676582d4ea59ceed35efbb",
+      "bytes": 31982,
+      "status": "published"
+    },
+    {
+      "path": "pulau-pinang/N.40.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.053:N.40",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.40",
+      "sha256": "9b25239a5d7eebf5662834ed16e5d0ef7b7252ec9f53c5703da576588e23b851",
+      "bytes": 28788,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.01.xlsx",
+      "contestId": "prn-selangor-2018:P.092:N.01",
+      "stateId": "selangor",
+      "dunCode": "N.01",
+      "sha256": "ec9eb2f1bef38e1b1c2ac21eed13b862821a337bad3e8ae2f1d2af5c7bd08ea1",
+      "bytes": 28829,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.02.xlsx",
+      "contestId": "prn-selangor-2018:P.092:N.02",
+      "stateId": "selangor",
+      "dunCode": "N.02",
+      "sha256": "72cf2278541093ba31c762f08544171434365d051787e75480911f43e2618815",
+      "bytes": 29955,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.03.xlsx",
+      "contestId": "prn-selangor-2018:P.093:N.03",
+      "stateId": "selangor",
+      "dunCode": "N.03",
+      "sha256": "5bc9da6f483cc7795a51ccce7cb677a6cb5bbd640e2fae0b447e2bc48bc0d761",
+      "bytes": 31068,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.04.xlsx",
+      "contestId": "prn-selangor-2018:P.093:N.04",
+      "stateId": "selangor",
+      "dunCode": "N.04",
+      "sha256": "1e01ebfb79f7c3a9d09da8b49fa77906e2ca4702b0352d8b39de0926c71a4dc8",
+      "bytes": 29285,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.05.xlsx",
+      "contestId": "prn-selangor-2018:P.094:N.05",
+      "stateId": "selangor",
+      "dunCode": "N.05",
+      "sha256": "9d1a93b49f0d0babffb5e41d6eba303e89ad1122cd7e7052e10f12f00cd61acf",
+      "bytes": 29516,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.06.xlsx",
+      "contestId": "prn-selangor-2018:P.094:N.06",
+      "stateId": "selangor",
+      "dunCode": "N.06",
+      "sha256": "e1323f845fed0129eba3485676d1382b6bb3c2aedf550144786bf3b8aeea1a01",
+      "bytes": 28721,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.07.xlsx",
+      "contestId": "prn-selangor-2018:P.094:N.07",
+      "stateId": "selangor",
+      "dunCode": "N.07",
+      "sha256": "bc58b92014cd984ff7d66c962d0e162dc6b324d6590bf1ab8883b22a5943b288",
+      "bytes": 31577,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.08.xlsx",
+      "contestId": "prn-selangor-2018:P.095:N.08",
+      "stateId": "selangor",
+      "dunCode": "N.08",
+      "sha256": "c1071ec5fd62c753341ce3d9dcfd6210c516566bf264bf1f555234cba4d277ba",
+      "bytes": 29433,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.09.xlsx",
+      "contestId": "prn-selangor-2018:P.095:N.09",
+      "stateId": "selangor",
+      "dunCode": "N.09",
+      "sha256": "96b461958a789851d6bee9c3c37766eb962f22823159579f15973efc4427ec90",
+      "bytes": 29452,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.10.xlsx",
+      "contestId": "prn-selangor-2018:P.096:N.10",
+      "stateId": "selangor",
+      "dunCode": "N.10",
+      "sha256": "a3a5e1b29e33499dfdc09075b6ce97637b4bdf956e649151b9eeddf7b87456f0",
+      "bytes": 29853,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.11.xlsx",
+      "contestId": "prn-selangor-2018:P.096:N.11",
+      "stateId": "selangor",
+      "dunCode": "N.11",
+      "sha256": "0a7da7a0450a4e5455952083f1f5f8a24141ad77845aa7f13d5e5464a8ac3f8e",
+      "bytes": 31666,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.12.xlsx",
+      "contestId": "prn-selangor-2018:P.096:N.12",
+      "stateId": "selangor",
+      "dunCode": "N.12",
+      "sha256": "0bef15f7d0ddce0afcd222d3ebe31f6c72d32b5f650dace034b1811282f94011",
+      "bytes": 32340,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.13.xlsx",
+      "contestId": "prn-selangor-2018:P.097:N.13",
+      "stateId": "selangor",
+      "dunCode": "N.13",
+      "sha256": "f1c3dfecea99bff984b5a9c06510f454e8c828b915e94a9261a9fb4c8df95072",
+      "bytes": 30759,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.14.xlsx",
+      "contestId": "prn-selangor-2018:P.097:N.14",
+      "stateId": "selangor",
+      "dunCode": "N.14",
+      "sha256": "6066e005803e6c319cc3bd87d9606f85ac8aa5e8b1d1b9af2059ed333ec4890a",
+      "bytes": 34310,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.15.xlsx",
+      "contestId": "prn-selangor-2018:P.097:N.15",
+      "stateId": "selangor",
+      "dunCode": "N.15",
+      "sha256": "4daab661baa25867405dcb542805c8dde1320d92606d2f666453725bf0bae4aa",
+      "bytes": 36603,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.16.xlsx",
+      "contestId": "prn-selangor-2018:P.098:N.16",
+      "stateId": "selangor",
+      "dunCode": "N.16",
+      "sha256": "16b4f5741464874776a678378ad63408481636d0fd1c34355166aa6210dc3409",
+      "bytes": 32106,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.17.xlsx",
+      "contestId": "prn-selangor-2018:P.098:N.17",
+      "stateId": "selangor",
+      "dunCode": "N.17",
+      "sha256": "e2475a99503aa9d14bc63ad86d17652e42fead4dbca25b7c3f143f3453df4901",
+      "bytes": 31974,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.18.xlsx",
+      "contestId": "prn-selangor-2018:P.098:N.18",
+      "stateId": "selangor",
+      "dunCode": "N.18",
+      "sha256": "0461030cba7608dd8829d30f43e1f4bdab1d4421f001d33be9f6188cd6530796",
+      "bytes": 32328,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.19.xlsx",
+      "contestId": "prn-selangor-2018:P.099:N.19",
+      "stateId": "selangor",
+      "dunCode": "N.19",
+      "sha256": "fad37044ebf23344591af2e03a673eb6b6b90195e569b032497968a9cb102982",
+      "bytes": 36330,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.20.xlsx",
+      "contestId": "prn-selangor-2018:P.099:N.20",
+      "stateId": "selangor",
+      "dunCode": "N.20",
+      "sha256": "5b255c5656a8bef969c4c068e39c8dcea0f442968d2714277392ad951e531f0c",
+      "bytes": 34170,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.21.xlsx",
+      "contestId": "prn-selangor-2018:P.100:N.21",
+      "stateId": "selangor",
+      "dunCode": "N.21",
+      "sha256": "7f7ce7893ff5c029100200bec0f8d7e5cf4bce1ba2a1767a6cc924b39975cfa2",
+      "bytes": 31447,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.22.xlsx",
+      "contestId": "prn-selangor-2018:P.100:N.22",
+      "stateId": "selangor",
+      "dunCode": "N.22",
+      "sha256": "c5f6660245c80faeec24315f32a951006a5832ce7b36cc29bac35888ded44348",
+      "bytes": 33914,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.23.xlsx",
+      "contestId": "prn-selangor-2018:P.101:N.23",
+      "stateId": "selangor",
+      "dunCode": "N.23",
+      "sha256": "5eaf00f904859f7ff34c018e294b92936542abf2fbb03b6dd6c6c70ffbd027f4",
+      "bytes": 31861,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.24.xlsx",
+      "contestId": "prn-selangor-2018:P.101:N.24",
+      "stateId": "selangor",
+      "dunCode": "N.24",
+      "sha256": "9670d58179c147dcca40b9ee2dcd2cddca634738aae288d850fd14d60e30e5ac",
+      "bytes": 36451,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.25.xlsx",
+      "contestId": "prn-selangor-2018:P.102:N.25",
+      "stateId": "selangor",
+      "dunCode": "N.25",
+      "sha256": "2142422069f9595248ccc0aaec4785447d3957c5bdcdd59393d6e59ec924ba89",
+      "bytes": 36694,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.26.xlsx",
+      "contestId": "prn-selangor-2018:P.102:N.26",
+      "stateId": "selangor",
+      "dunCode": "N.26",
+      "sha256": "f1ffd0e93171990cbd71d5b558c543ab7672d229f6a6face2c7c5d9ac70ae5c4",
+      "bytes": 32619,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.27.xlsx",
+      "contestId": "prn-selangor-2018:P.102:N.27",
+      "stateId": "selangor",
+      "dunCode": "N.27",
+      "sha256": "41960f38ac7240b00dcc516e65c398cea3c70c115cff15c95eff1deb57f950c9",
+      "bytes": 32784,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.28.xlsx",
+      "contestId": "prn-selangor-2018:P.103:N.28",
+      "stateId": "selangor",
+      "dunCode": "N.28",
+      "sha256": "80e4fa6c2ee7fccefa02b85942a73238ec30a3e3316eabd3a9d6bddebc09d8bd",
+      "bytes": 29764,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.29.xlsx",
+      "contestId": "prn-selangor-2018:P.103:N.29",
+      "stateId": "selangor",
+      "dunCode": "N.29",
+      "sha256": "48a60dc1a6d3f7e7d303d94d953d69e5685e930d38658fe648424ad511df5938",
+      "bytes": 32032,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.30.xlsx",
+      "contestId": "prn-selangor-2018:P.104:N.30",
+      "stateId": "selangor",
+      "dunCode": "N.30",
+      "sha256": "2776d54c8fb14808910dc1c7f7a04a45d06e9448676ce7a00beb8dd9619f98c1",
+      "bytes": 34542,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.31.xlsx",
+      "contestId": "prn-selangor-2018:P.104:N.31",
+      "stateId": "selangor",
+      "dunCode": "N.31",
+      "sha256": "f3e24a0bff015313a87964b72b8f9dea7cdcd1404f8f62fe154f4731bf4724b4",
+      "bytes": 34766,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.32.xlsx",
+      "contestId": "prn-selangor-2018:P.105:N.32",
+      "stateId": "selangor",
+      "dunCode": "N.32",
+      "sha256": "2cf34eb1ec94def3cec0d863d47aba035efbef07357c00e4c1065ef4131acd74",
+      "bytes": 35265,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.33.xlsx",
+      "contestId": "prn-selangor-2018:P.105:N.33",
+      "stateId": "selangor",
+      "dunCode": "N.33",
+      "sha256": "52f585acc78b66592e8f34744b533fe87acfa3959943f991fce397e00337adb7",
+      "bytes": 31652,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.34.xlsx",
+      "contestId": "prn-selangor-2018:P.105:N.34",
+      "stateId": "selangor",
+      "dunCode": "N.34",
+      "sha256": "f90c186c5668e8b221090112c0380d4a6c84cf664dcdab6c3ff3dd98bdfdffe9",
+      "bytes": 32388,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.35.xlsx",
+      "contestId": "prn-selangor-2018:P.106:N.35",
+      "stateId": "selangor",
+      "dunCode": "N.35",
+      "sha256": "3820b7637435bfc5aa777a21566793bcc908a96eed0e3347075f171ff9fe4860",
+      "bytes": 30142,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.36.xlsx",
+      "contestId": "prn-selangor-2018:P.106:N.36",
+      "stateId": "selangor",
+      "dunCode": "N.36",
+      "sha256": "e2d25141cdb45dd24297da1168de8ca9b86ec62713cd863a147627cb5433798f",
+      "bytes": 32498,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.37.xlsx",
+      "contestId": "prn-selangor-2018:P.106:N.37",
+      "stateId": "selangor",
+      "dunCode": "N.37",
+      "sha256": "86acdbfc4178b43c6b8e5dbc70462730789ab0330363817001511b4cc9b2154f",
+      "bytes": 31531,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.38.xlsx",
+      "contestId": "prn-selangor-2018:P.107:N.38",
+      "stateId": "selangor",
+      "dunCode": "N.38",
+      "sha256": "d94dd142e5df534c1df3bfe6068b6e171bc04b32cadd9782b8749a72b0cfa86d",
+      "bytes": 30564,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.39.xlsx",
+      "contestId": "prn-selangor-2018:P.107:N.39",
+      "stateId": "selangor",
+      "dunCode": "N.39",
+      "sha256": "726734bf826e719cabfcbf17cf0a60cbb2e5fff2ecd49e0526e809de55c8aecb",
+      "bytes": 35078,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.40.xlsx",
+      "contestId": "prn-selangor-2018:P.108:N.40",
+      "stateId": "selangor",
+      "dunCode": "N.40",
+      "sha256": "736f414e64b17015d044ac9ede7ce8822482805c000bcba12d57d2b2becc344b",
+      "bytes": 32834,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.41.xlsx",
+      "contestId": "prn-selangor-2018:P.108:N.41",
+      "stateId": "selangor",
+      "dunCode": "N.41",
+      "sha256": "d6bbbcb911105bf64e8332a6057811874761c552b207289b74355a8ed305f675",
+      "bytes": 32992,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.42.xlsx",
+      "contestId": "prn-selangor-2018:P.109:N.42",
+      "stateId": "selangor",
+      "dunCode": "N.42",
+      "sha256": "bf5dcaee6b391e997e704d6264b805e8f67097f35db50a844d3e2cae5f6b2b30",
+      "bytes": 36656,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.43.xlsx",
+      "contestId": "prn-selangor-2018:P.109:N.43",
+      "stateId": "selangor",
+      "dunCode": "N.43",
+      "sha256": "b57684175e60fd5e40a521f1c418a1059255f88606f308f59e32cad6793b180e",
+      "bytes": 34271,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.44.xlsx",
+      "contestId": "prn-selangor-2018:P.109:N.44",
+      "stateId": "selangor",
+      "dunCode": "N.44",
+      "sha256": "72368199e934d63d1ecf010f6ff5a02ace7d8680de68968b9a638b0ec6bbbb80",
+      "bytes": 36623,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.45.xlsx",
+      "contestId": "prn-selangor-2018:P.110:N.45",
+      "stateId": "selangor",
+      "dunCode": "N.45",
+      "sha256": "b99afe4e211fb2102c527531de3a21c6fd5847e56c0d139fea04dbf101332c10",
+      "bytes": 30853,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.46.xlsx",
+      "contestId": "prn-selangor-2018:P.110:N.46",
+      "stateId": "selangor",
+      "dunCode": "N.46",
+      "sha256": "86a019c32ff9f32665c248fd5865608878dd030a325733beb2736a410b50a110",
+      "bytes": 33584,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.47.xlsx",
+      "contestId": "prn-selangor-2018:P.110:N.47",
+      "stateId": "selangor",
+      "dunCode": "N.47",
+      "sha256": "335991f4eff99a00b3a1dee6c4e57885f29d311a8fa650e91adad5a6d72c28eb",
+      "bytes": 33888,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.48.xlsx",
+      "contestId": "prn-selangor-2018:P.111:N.48",
+      "stateId": "selangor",
+      "dunCode": "N.48",
+      "sha256": "0c435c367e427c0f533c3c60c5e59a5347e64ff1feafeb264be167bac420f0b4",
+      "bytes": 40029,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.49.xlsx",
+      "contestId": "prn-selangor-2018:P.111:N.49",
+      "stateId": "selangor",
+      "dunCode": "N.49",
+      "sha256": "d14ac3924981cf9a116167a0e132ab57057270971970122d3d4cf7abc75f5d2b",
+      "bytes": 36412,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.50.xlsx",
+      "contestId": "prn-selangor-2018:P.111:N.50",
+      "stateId": "selangor",
+      "dunCode": "N.50",
+      "sha256": "9f7fd7bed3d8fd06be230dc2e6cc45b48cdd7648a02409c71cf30ad4ed973157",
+      "bytes": 40460,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.51.xlsx",
+      "contestId": "prn-selangor-2018:P.112:N.51",
+      "stateId": "selangor",
+      "dunCode": "N.51",
+      "sha256": "71d1945923125f2653b67ae1c27df6f25e2206a62601674bd96988481de4abd9",
+      "bytes": 32807,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.52.xlsx",
+      "contestId": "prn-selangor-2018:P.112:N.52",
+      "stateId": "selangor",
+      "dunCode": "N.52",
+      "sha256": "8880eeb9ccc766196941a3da5f2df5242da6bf1de210b20094b15b47802ee912",
+      "bytes": 31959,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.53.xlsx",
+      "contestId": "prn-selangor-2018:P.112:N.53",
+      "stateId": "selangor",
+      "dunCode": "N.53",
+      "sha256": "ad1b776b7e2b684aa91ed4ec10acea7db35d70e3719ba48e890bd49a96f2d101",
+      "bytes": 31160,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.54.xlsx",
+      "contestId": "prn-selangor-2018:P.113:N.54",
+      "stateId": "selangor",
+      "dunCode": "N.54",
+      "sha256": "61945a230987657033ab191f18b86e61468ae75b577bf7c4653c259e7d667cb2",
+      "bytes": 30939,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.55.xlsx",
+      "contestId": "prn-selangor-2018:P.113:N.55",
+      "stateId": "selangor",
+      "dunCode": "N.55",
+      "sha256": "9d394a74a34459463aeaf4eb51d2ff25bcedc1772807be1224d54f58ab5a612b",
+      "bytes": 34083,
+      "status": "published"
+    },
+    {
+      "path": "selangor/N.56.xlsx",
+      "contestId": "prn-selangor-2018:P.113:N.56",
+      "stateId": "selangor",
+      "dunCode": "N.56",
+      "sha256": "51ad6ed21e266c1a85486e353f4f7f216144f5321fb4d6a7c9c2ccf7a10a8dd4",
+      "bytes": 33575,
+      "status": "published"
+    },
+    {
+      "path": "terengganu/N.01.xlsx",
+      "contestId": "prn-terengganu-2018:P.033:N.01",
+      "stateId": "terengganu",
+      "dunCode": "N.01",
+      "sha256": "f3411cde374b9144a94b015f73060f6ef2b96e135bb52362b30510fa553f1dfb",
+      "bytes": 28824,
+      "status": "published"
+    },
+    {
+      "path": "terengganu/N.02.xlsx",
+      "contestId": "prn-terengganu-2018:P.033:N.02",
+      "stateId": "terengganu",
+      "dunCode": "N.02",
+      "sha256": "0ad1960e61bc06d94d75a40b6ba9e77d3446843a4e5fea6241ffa727be82750f",
+      "bytes": 29555,
+      "status": "published"
+    },
+    {
+      "path": "terengganu/N.03.xlsx",
+      "contestId": "prn-terengganu-2018:P.033:N.03",
+      "stateId": "terengganu",
+      "dunCode": "N.03",
+      "sha256": "101897cacd98ee3fc45cd6dce4f44047f5e39b3244188889df7a04c26ffe7e54",
+      "bytes": 29517,
+      "status": "published"
+    },
+    {
+      "path": "terengganu/N.04.xlsx",
+      "contestId": "prn-terengganu-2018:P.033:N.04",
+      "stateId": "terengganu",
+      "dunCode": "N.04",
+      "sha256": "3aa93efbe354365f54b24334bd73d8b68a109d74d6baf7bc9593ffa09b625ce9",
+      "bytes": 28960,
+      "status": "published"
+    },
+    {
+      "path": "terengganu/N.05.xlsx",
+      "contestId": "prn-terengganu-2018:P.034:N.05",
+      "stateId": "terengganu",
+      "dunCode": "N.05",
+      "sha256": "5a35c9115c2d5d19061d1d41a91d3ae15c840bd28f4fec35c74b1408b1e1b695",
+      "bytes": 28507,
+      "status": "published"
+    },
+    {
+      "path": "terengganu/N.06.xlsx",
+      "contestId": "prn-terengganu-2018:P.034:N.06",
+      "stateId": "terengganu",
+      "dunCode": "N.06",
+      "sha256": "3c9440656daef5970a80bb862322e48563217dbad64f744a78003fcae790bd9a",
+      "bytes": 29885,
+      "status": "published"
+    },
+    {
+      "path": "terengganu/N.07.xlsx",
+      "contestId": "prn-terengganu-2018:P.034:N.07",
+      "stateId": "terengganu",
+      "dunCode": "N.07",
+      "sha256": "0c15721a75e51b4e89428dc7cbab0f0fcf9ac05ec9f920d7316dfe06dbae8c52",
+      "bytes": 29252,
+      "status": "published"
+    },
+    {
+      "path": "terengganu/N.08.xlsx",
+      "contestId": "prn-terengganu-2018:P.034:N.08",
+      "stateId": "terengganu",
+      "dunCode": "N.08",
+      "sha256": "a416ab2c65c4f580faf1175d649eca6924ddbac0d159bcaeb5162a2c6bcb8c95",
+      "bytes": 29312,
+      "status": "published"
+    },
+    {
+      "path": "terengganu/N.09.xlsx",
+      "contestId": "prn-terengganu-2018:P.035:N.09",
+      "stateId": "terengganu",
+      "dunCode": "N.09",
+      "sha256": "cce158821afca5884b3bafdf87f8fdb99057fff78eaa24b43baeadf0c733a6ba",
+      "bytes": 29847,
+      "status": "published"
+    },
+    {
+      "path": "terengganu/N.10.xlsx",
+      "contestId": "prn-terengganu-2018:P.035:N.10",
+      "stateId": "terengganu",
+      "dunCode": "N.10",
+      "sha256": "476387d250d35b7ceba9dda56f7b61cb318f4497253004bda744595a283f8ee5",
+      "bytes": 28923,
+      "status": "published"
+    },
+    {
+      "path": "terengganu/N.11.xlsx",
+      "contestId": "prn-terengganu-2018:P.035:N.11",
+      "stateId": "terengganu",
+      "dunCode": "N.11",
+      "sha256": "5ebed75673a1ee8638f9a87762fb320549b5400eed66a4ddab3de857a2eba51a",
+      "bytes": 28847,
+      "status": "published"
+    },
+    {
+      "path": "terengganu/N.12.xlsx",
+      "contestId": "prn-terengganu-2018:P.035:N.12",
+      "stateId": "terengganu",
+      "dunCode": "N.12",
+      "sha256": "c79085957b4f02ba5eaedbbd0d557a2ce7f9c8d3b2f08d6f65dbde85fe5477db",
+      "bytes": 28281,
+      "status": "published"
+    },
+    {
+      "path": "terengganu/N.13.xlsx",
+      "contestId": "prn-terengganu-2018:P.036:N.13",
+      "stateId": "terengganu",
+      "dunCode": "N.13",
+      "sha256": "778c6123b0c43408f7402c0c165fbba0c4ae0e65cacb2cc7c785d0ba0b8711e0",
+      "bytes": 29671,
+      "status": "published"
+    },
+    {
+      "path": "terengganu/N.14.xlsx",
+      "contestId": "prn-terengganu-2018:P.036:N.14",
+      "stateId": "terengganu",
+      "dunCode": "N.14",
+      "sha256": "b2cfd8b89870cf02dc6b41e6c5240c24b0f669f67b214c31b2b8e1f4eb526abf",
+      "bytes": 28994,
+      "status": "published"
+    },
+    {
+      "path": "terengganu/N.15.xlsx",
+      "contestId": "prn-terengganu-2018:P.036:N.15",
+      "stateId": "terengganu",
+      "dunCode": "N.15",
+      "sha256": "ee9fadff558b49eb62b4b5840e90d68d706a8f53e8a64590528d38c7e2de0577",
+      "bytes": 28884,
+      "status": "published"
+    },
+    {
+      "path": "terengganu/N.16.xlsx",
+      "contestId": "prn-terengganu-2018:P.036:N.16",
+      "stateId": "terengganu",
+      "dunCode": "N.16",
+      "sha256": "90e6a5e47b8786469c0ec231295871f321dd7ddae73c1ad186967c042776f981",
+      "bytes": 30307,
+      "status": "published"
+    },
+    {
+      "path": "terengganu/N.17.xlsx",
+      "contestId": "prn-terengganu-2018:P.037:N.17",
+      "stateId": "terengganu",
+      "dunCode": "N.17",
+      "sha256": "71477f9f06977e1a420876e8e8adfb7ff54579c9342db09014e6de1baf079b8a",
+      "bytes": 29575,
+      "status": "published"
+    },
+    {
+      "path": "terengganu/N.18.xlsx",
+      "contestId": "prn-terengganu-2018:P.037:N.18",
+      "stateId": "terengganu",
+      "dunCode": "N.18",
+      "sha256": "6933ab3f1509fca39267201ca5f8f7940f454a82bc5c75e1090b41e02fbe7f5d",
+      "bytes": 29225,
+      "status": "published"
+    },
+    {
+      "path": "terengganu/N.19.xlsx",
+      "contestId": "prn-terengganu-2018:P.037:N.19",
+      "stateId": "terengganu",
+      "dunCode": "N.19",
+      "sha256": "40d50a8d3a084661a6a4ed226ef7dc5b9c718013c2bfcc47e3da7aad5d352ffe",
+      "bytes": 29622,
+      "status": "published"
+    },
+    {
+      "path": "terengganu/N.20.xlsx",
+      "contestId": "prn-terengganu-2018:P.037:N.20",
+      "stateId": "terengganu",
+      "dunCode": "N.20",
+      "sha256": "28b516c10c0f37082939a23d919b57222b69c9b85cc6c2fb88d48dfd40fc7126",
+      "bytes": 30260,
+      "status": "published"
+    },
+    {
+      "path": "terengganu/N.21.xlsx",
+      "contestId": "prn-terengganu-2018:P.038:N.21",
+      "stateId": "terengganu",
+      "dunCode": "N.21",
+      "sha256": "12a090c46fd34c587c9614b9e3642fa013afaf8eafa1a45db703addf11f9a6a5",
+      "bytes": 29612,
+      "status": "published"
+    },
+    {
+      "path": "terengganu/N.22.xlsx",
+      "contestId": "prn-terengganu-2018:P.038:N.22",
+      "stateId": "terengganu",
+      "dunCode": "N.22",
+      "sha256": "40d8b61205968cf6e8708214c6d55f9cf36584ee5341e84e8d21d0ff3ef417e3",
+      "bytes": 28291,
+      "status": "published"
+    },
+    {
+      "path": "terengganu/N.23.xlsx",
+      "contestId": "prn-terengganu-2018:P.038:N.23",
+      "stateId": "terengganu",
+      "dunCode": "N.23",
+      "sha256": "9bfd517d1a6257212b9ff2007c1fb2b2ec00b0573c43a98ca7b9c519c37793c3",
+      "bytes": 29192,
+      "status": "published"
+    },
+    {
+      "path": "terengganu/N.24.xlsx",
+      "contestId": "prn-terengganu-2018:P.038:N.24",
+      "stateId": "terengganu",
+      "dunCode": "N.24",
+      "sha256": "cf109778d4469ca05c8a8e72ecec2f534a18dc09c922743882dd4358d396ce87",
+      "bytes": 29940,
+      "status": "published"
+    },
+    {
+      "path": "terengganu/N.25.xlsx",
+      "contestId": "prn-terengganu-2018:P.039:N.25",
+      "stateId": "terengganu",
+      "dunCode": "N.25",
+      "sha256": "56ab6cb925c654e3a451d30e99bfe71dcaa4ba2852a22e803bb0bb5dd037433b",
+      "bytes": 29502,
+      "status": "published"
+    },
+    {
+      "path": "terengganu/N.26.xlsx",
+      "contestId": "prn-terengganu-2018:P.039:N.26",
+      "stateId": "terengganu",
+      "dunCode": "N.26",
+      "sha256": "c26d22aef0b8d21da32b1533c74ee2a0dbc05e28a7bb23e64c50f00bfc07bdb5",
+      "bytes": 30082,
+      "status": "published"
+    },
+    {
+      "path": "terengganu/N.27.xlsx",
+      "contestId": "prn-terengganu-2018:P.039:N.27",
+      "stateId": "terengganu",
+      "dunCode": "N.27",
+      "sha256": "123a05a2e3dd9155449f8328f8eea94d2004c63e93a25a35dd1201b2d2753ff3",
+      "bytes": 30230,
+      "status": "published"
+    },
+    {
+      "path": "terengganu/N.28.xlsx",
+      "contestId": "prn-terengganu-2018:P.039:N.28",
+      "stateId": "terengganu",
+      "dunCode": "N.28",
+      "sha256": "c9bb9381593e9c61a901feabd572dc0c1c2db88438994f5dd486b7cd333e5e6d",
+      "bytes": 30355,
+      "status": "published"
+    },
+    {
+      "path": "terengganu/N.29.xlsx",
+      "contestId": "prn-terengganu-2018:P.040:N.29",
+      "stateId": "terengganu",
+      "dunCode": "N.29",
+      "sha256": "38e45d6ff19b8c28544670cf84c40d262110d901a17970c455d3a954d9253861",
+      "bytes": 29853,
+      "status": "published"
+    },
+    {
+      "path": "terengganu/N.30.xlsx",
+      "contestId": "prn-terengganu-2018:P.040:N.30",
+      "stateId": "terengganu",
+      "dunCode": "N.30",
+      "sha256": "ca41ce8647ae9a141652e7a5d35614d9391aaeeeb4d440b849f07aee39c4c052",
+      "bytes": 29711,
+      "status": "published"
+    },
+    {
+      "path": "terengganu/N.31.xlsx",
+      "contestId": "prn-terengganu-2018:P.040:N.31",
+      "stateId": "terengganu",
+      "dunCode": "N.31",
+      "sha256": "d30a04c13e6467d23f19eaedfa6ea92d73741ef945c91f0c31ad8578b470e1e6",
+      "bytes": 31460,
+      "status": "published"
+    },
+    {
+      "path": "terengganu/N.32.xlsx",
+      "contestId": "prn-terengganu-2018:P.040:N.32",
+      "stateId": "terengganu",
+      "dunCode": "N.32",
+      "sha256": "8c21d88c3f26d88e931e19b06582ffa648ce8e630af2e72254e0a449c116eaf8",
+      "bytes": 31360,
+      "status": "published"
+    }
+  ],
+  "rejectedSources": [
+    {
+      "path": "perlis/N.01.xlsx",
+      "contestId": "prn-perlis-2018:P.001:N.01",
+      "stateId": "perlis",
+      "dunCode": "N.01",
+      "sha256": "660488edba3990c01bfcbd8bd5857a9d3ee0734afcfed009b7d9232cd863290c",
+      "bytes": 28502,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 21, 'ballotsInBox': 7497, 'validVotes': 7286, 'rejectedVotes': 180, 'unreturnedVotes': 31} do not match final JUMLAH {'pollingStreams': 22, 'ballotsInBox': 8018, 'validVotes': 7805, 'rejectedVotes': 182, 'unreturnedVotes': 31}."
+    },
+    {
+      "path": "pulau-pinang/N.16.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.046:N.16",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.16",
+      "sha256": "fc59c845a3b0aa8c930cad1e7fe798ec91c9e077c5fd4754f8eb98310e73f8b0",
+      "bytes": 35156,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 20, 'ballotsInBox': 10095, 'validVotes': 10004, 'rejectedVotes': 90, 'unreturnedVotes': 1} do not match final JUMLAH {'pollingStreams': 31, 'ballotsInBox': 13819, 'validVotes': 13634, 'rejectedVotes': 168, 'unreturnedVotes': 17}."
+    },
+    {
+      "path": "pulau-pinang/N.19.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.047:N.19",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.19",
+      "sha256": "37fd15bc8afb51154e396089c80646cccf1fd250d4679f971e3982c750dec2c9",
+      "bytes": 37648,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 33, 'ballotsInBox': 15481, 'validVotes': 15159, 'rejectedVotes': 271, 'unreturnedVotes': 51} do not match final JUMLAH {'pollingStreams': 49, 'ballotsInBox': 22778, 'validVotes': 22345, 'rejectedVotes': 377, 'unreturnedVotes': 56}."
+    },
+    {
+      "path": "pulau-pinang/N.30.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.050:N.30",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.30",
+      "sha256": "9c56c53df334889b6659ddadace8dc45ff46cd7edb2fd1ba583e4b076ed4feee",
+      "bytes": 38389,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 34, 'ballotsInBox': 16112, 'validVotes': 15815, 'rejectedVotes': 218, 'unreturnedVotes': 79} do not match final JUMLAH {'pollingStreams': 46, 'ballotsInBox': 22704, 'validVotes': 22332, 'rejectedVotes': 291, 'unreturnedVotes': 81}."
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion, MotionConfig } from "motion/react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router";
 import { StateElectionMap, type StateElectionMapSeat } from "../components/maps/StateElectionMap";
 import { StateElectionViewNav } from "../components/maps/StateElectionViewNav";
 import { TicketLogo } from "../components/identity";
@@ -8,15 +8,13 @@ import { Icon } from "../components/ui/Icon";
 import { NotFound } from "../components/ui/NotFound";
 import { PageTitle } from "../components/ui/PageTitle";
 import { SearchCombobox } from "../components/ui/SearchCombobox";
+import { useAtlasBoundaryRegistry, useAtlasStateBoundaries } from "../data/hooks/useElectionAtlas";
 import { useStateElectionData } from "../data/hooks/useStateElectionData";
+import { projectAtlasStateBoundaries } from "../data/stateElectionBoundaryUtils";
 import { contestWinner, ticketColor } from "../data/stateElectionUtils";
-import type { DunBoundaryData, StateElectionEvent } from "../data/types/stateElection";
+import type { StateElectionEvent } from "../data/types/stateElection";
 import { PRN_BASE, stateDunResultPath, stateElectionEditionPath } from "../routes";
-import { formatNumber, formatPct, toSlug } from "../utils";
-
-function formatDate(value: string) {
-  return new Intl.DateTimeFormat("ms-MY", { day: "numeric", month: "long", year: "numeric" }).format(new Date(`${value}T00:00:00`));
-}
+import { formatDatesInText, formatNumber, formatPct, formatShortDate, toSlug } from "../utils";
 
 function BoundaryLoading({ error }: { error?: string }) {
   return <section className={`route-loading ${error ? "age-error" : ""}`}>{error ? `Peta tidak dapat dimuatkan: ${error}` : "Memuatkan sempadan rasmi SPR…"}</section>;
@@ -45,23 +43,14 @@ function SelectedAreaDetail({ selected, event }: { selected: StateElectionMapSea
 export function StateElectionMapPage() {
   const { assemblyNumber, stateName } = useParams();
   const { value, error } = useStateElectionData();
-  const [boundaries, setBoundaries] = useState<DunBoundaryData | null>(null);
-  const [boundaryError, setBoundaryError] = useState("");
+  const { value: boundaryRegistry, error: registryError } = useAtlasBoundaryRegistry();
+  const registryEntry = assemblyNumber ? boundaryRegistry?.stateAssemblies[String(Number(assemblyNumber))] : undefined;
+  const boundaryContext = stateName ? registryEntry?.states?.[stateName] : undefined;
+  const boundaryFile = stateName ? boundaryContext?.stateFile ?? registryEntry?.stateFiles[stateName] : undefined;
+  const { value: atlasBoundaries, error: boundaryError } = useAtlasStateBoundaries(stateName ?? "", boundaryFile);
+  const boundaries = useMemo(() => atlasBoundaries ? projectAtlasStateBoundaries(atlasBoundaries) : null, [atlasBoundaries]);
   const [selectedId, setSelectedId] = useState("");
   const [ticketFilter, setTicketFilter] = useState("SEMUA");
-
-  useEffect(() => {
-    if (stateName !== "negeri-sembilan" || Number(assemblyNumber) !== 15) return;
-    let active = true;
-    fetch("/data/boundaries/semenanjung-2018/negeri-sembilan-dun.json")
-      .then((response) => {
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-        return response.json();
-      })
-      .then((data) => active && setBoundaries(data))
-      .catch((reason) => active && setBoundaryError(reason instanceof Error ? reason.message : "Ralat tidak diketahui"));
-    return () => { active = false; };
-  }, [assemblyNumber, stateName]);
 
   const event = value?.results.events.find((item) => item.stateId === stateName && item.assemblyNumber === Number(assemblyNumber));
   const state = value?.constituencies.states.find((item) => item.id === stateName);
@@ -82,9 +71,16 @@ export function StateElectionMapPage() {
     if (seats.length && !seats.some((seat) => seat.feature.id === selectedId)) setSelectedId(seats[0].feature.id);
   }, [seats, selectedId]);
 
-  if (error) return <BoundaryLoading error={error}/>;
-  if (!value) return <BoundaryLoading/>;
-  if (!event || !state || stateName !== "negeri-sembilan" || Number(assemblyNumber) !== 15) return <NotFound label="Peta pilihan raya negeri"/>;
+  if (error || registryError) return <BoundaryLoading error={error || registryError}/>;
+  if (!value || !boundaryRegistry) return <BoundaryLoading/>;
+  if (!event || !state) return <NotFound label="Peta pilihan raya negeri"/>;
+  if (boundaryContext?.status === "identity-only") return <>
+    <PageTitle title={`Peta ${state.name} PRN-${event.assemblyNumber}`}/>
+    <section className="route-hero prn-map-hero"><div className="breadcrumbs"><Link to={PRN_BASE}>PRN</Link><span>/</span><Link to={stateElectionEditionPath(event.assemblyNumber)}>PRN-{event.assemblyNumber}</Link><span>/</span><Link to={`/prn/${event.assemblyNumber}/${event.stateId}/`}>{state.name}</Link><span>/</span><strong>Peta</strong></div><span className="overline">REGISTRY SEJARAH · {boundaryContext.constituencyCount} DUN</span><h1>{state.name}<br/><em>sempadan pra-2019.</em></h1><p>{formatShortDate(event.electionDate)} · Identiti semua kawasan telah disahkan, tetapi geometri digital rasmi bagi sempadan 60 DUN belum ditemui.</p></section>
+    <aside className="atlas-boundary-warning"><Icon name="info" size={17}/><span><strong>Peta tidak diterbitkan sebagai anggaran.</strong> {formatDatesInText(boundaryContext.note)}</span></aside>
+    <StateElectionViewNav event={event} mode="map"/>
+  </>;
+  if (!boundaryFile) return <NotFound label="Peta pilihan raya negeri"/>;
   if (boundaryError) return <BoundaryLoading error={boundaryError}/>;
   if (!boundaries || !seats.length) return <BoundaryLoading/>;
 
@@ -105,10 +101,12 @@ export function StateElectionMapPage() {
     <section className="route-hero prn-map-hero">
       <div className="breadcrumbs"><Link to={PRN_BASE}>PRN</Link><span>/</span><Link to={stateElectionEditionPath(event.assemblyNumber)}>PRN-{event.assemblyNumber}</Link><span>/</span><Link to={`/prn/${event.assemblyNumber}/${event.stateId}/`}>{state.name}</Link><span>/</span><strong>Peta</strong></div>
       <span className="overline">PETA MANDAT · PRN KE-{event.assemblyNumber}</span>
-      <h1>{state.name}<br/><em>dalam 36 kawasan.</em></h1>
-      <p>{formatDate(event.electionDate)} · Sempadan DUN rasmi dipadankan terus dengan keputusan pilihan raya.</p>
+      <h1>{state.name}<br/><em>dalam {event.contestIds.length} kawasan.</em></h1>
+      <p>{formatShortDate(event.electionDate)} · Sempadan DUN rasmi dipadankan terus dengan keputusan pilihan raya.</p>
       <div className="route-stat-row"><div><span>DUN</span><strong>{event.contestIds.length}</strong></div>{Object.entries(event.seatCounts).map(([ticket, count]) => <div key={ticket}><span>{ticket}</span><strong>{count}</strong></div>)}</div>
     </section>
+
+    {boundaryContext?.status !== "exact" && <aside className="atlas-boundary-warning"><Icon name="info" size={17}/><span><strong>Sempadan serasi, bukan snapshot warta khusus edisi.</strong> {formatDatesInText(boundaryContext?.note ?? registryEntry?.note ?? "")}</span></aside>}
 
     <StateElectionViewNav event={event} mode="map"/>
 

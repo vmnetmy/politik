@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "checkedAt": "2026-08-05",
+  "publisher": "Suruhanjaya Pilihan Raya Malaysia",
+  "scope": "Replacement PRU-14 federal and DUN scoresheets",
+  "officialLocationsChecked": [
+    {
+      "url": "https://opendata.spr.gov.my/data/keputusan-pru.json",
+      "result": "Aggregate candidate results only; no polling-stream scoresheet files."
+    },
+    {
+      "url": "https://mysprsemak.spr.gov.my/semakan/keputusan/pru/",
+      "result": "Aggregate constituency results only; no downloadable scoresheet archive."
+    },
+    {
+      "url": "https://www.spr.gov.my/sites/default/files/HargaDPIST42017_PRU14.pdf",
+      "result": "Official constituency identities and registered-voter totals; no polling-stream results."
+    },
+    {
+      "url": "https://ppn.spr.gov.my/sabah/wp-content/uploads/2018/04/INFO-PRU-141.pdf",
+      "result": "Official Sabah PRU-14 schedule and electorate summary; no scoresheet archive."
+    },
+    {
+      "url": "https://www.spr.gov.my/sites/default/files/senarai-bahagian-pilihanraya-persekutuan-dan-negeri.pdf",
+      "result": "Official pre-2019 Sabah 60-seat identity list; no digital boundary geometry or scoresheets."
+    }
+  ],
+  "searchOutcome": "No official replacement scoresheet files were discoverable for the declared missing or internally incomplete workbooks.",
+  "publicationPolicy": "Keep aggregate SPR results available, publish saluran detail only when every workbook row balances to its own final JUMLAH, and expose every gap in the audit interface."
+}

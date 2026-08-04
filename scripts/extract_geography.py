@@ -161,9 +161,13 @@ def build(
         )
 
     pdm_by_id = {item["id"]: item for item in pdms}
-    localities: list[dict[str, Any]] = []
-    locality_ids: set[str] = set()
-    for source in locality_source["sources"]:
+    localities_by_id: dict[str, dict[str, Any]] = {}
+    locality_conflicts: list[dict[str, Any]] = []
+    locality_sources = locality_source["sources"]
+    source_ids = [source["id"] for source in locality_sources]
+    if len(source_ids) != len(set(source_ids)):
+        raise GeographyExtractionError("Locality source IDs must be unique.")
+    for source in sorted(locality_sources, key=lambda item: (item["publishedAt"], item["id"])):
         parliament_code = source["parliamentCode"]
         pdm_id = f"{parliament_code}:{source['pdmCode']}"
         pdm = pdm_by_id.get(pdm_id)
@@ -172,17 +176,36 @@ def build(
         expected_dun_id = f"{parliament_code}:{source['dunCode']}"
         if pdm["dunId"] != expected_dun_id:
             raise GeographyExtractionError(f"Locality source DUN mismatch for {pdm_id}.")
-        source_locality_slugs: set[str] = set()
+        source_locality_ids: set[str] = set()
         for item in source["localities"]:
             locality_id = f"{pdm_id}:{item['code']}"
             locality_slug = slug(item["name"])
-            if locality_id in locality_ids or locality_slug in source_locality_slugs:
+            if locality_id in source_locality_ids:
                 raise GeographyExtractionError(f"Duplicate locality {locality_id}.")
-            locality_ids.add(locality_id)
-            source_locality_slugs.add(locality_slug)
+            source_locality_ids.add(locality_id)
+            source_ref = {
+                "id": source["id"],
+                "url": source["url"],
+                "label": source["sourceLabel"],
+                "publishedAt": source["publishedAt"],
+            }
+            existing = localities_by_id.get(locality_id)
+            if existing:
+                if normalise(existing["name"]) != normalise(item["name"]):
+                    locality_conflicts.append(
+                        {
+                            "localityId": locality_id,
+                            "existingName": existing["name"],
+                            "incomingName": item["name"],
+                            "sourceId": source["id"],
+                        }
+                    )
+                    continue
+                existing["lastSeenAt"] = max(existing["lastSeenAt"], source["publishedAt"])
+                existing["sourceRefs"].append(source_ref)
+                continue
             pdm["localityIds"].append(locality_id)
-            localities.append(
-                {
+            localities_by_id[locality_id] = {
                     "id": locality_id,
                     "code": item["code"],
                     "name": item["name"],
@@ -191,11 +214,20 @@ def build(
                     "stateId": pdm["stateId"],
                     "parliamentCode": parliament_code,
                     "dunId": pdm["dunId"],
-                    "sourceUrl": source["url"],
-                    "sourceLabel": source["sourceLabel"],
-                    "publishedAt": source["publishedAt"],
+                    "firstSeenAt": source["publishedAt"],
+                    "lastSeenAt": source["publishedAt"],
+                    "sourceRefs": [source_ref],
                 }
-            )
+
+    localities = list(localities_by_id.values())
+    covered_pdm_count = sum(bool(item["localityIds"]) for item in pdms)
+    coverage_by_state = {
+        state_id: {
+            "pdmCount": sum(item["stateId"] == state_id for item in pdms),
+            "coveredPdmCount": sum(item["stateId"] == state_id and bool(item["localityIds"]) for item in pdms),
+        }
+        for state_id in sorted(states)
+    }
 
     represented_parliaments = {item["parliamentCode"] for item in pdms}
     represented_duns = {item["dunId"] for item in pdms if item["dunId"]}
@@ -221,11 +253,20 @@ def build(
             "pdmCount": len(pdms),
             "scoresheetPdmCount": sum(item["hasScoresheet"] for item in pdms),
             "localityCount": len(localities),
-            "localityPdmCount": sum(bool(item["localityIds"]) for item in pdms),
-            "localityCoverage": "partial",
+            "localityPdmCount": covered_pdm_count,
+            "localityCoveragePct": round(covered_pdm_count / len(pdms) * 100, 4),
+            "localityCoverage": "complete" if covered_pdm_count == len(pdms) else "partial",
+            "localitySourceCount": len(locality_sources),
+            "localitySnapshotRange": {
+                "from": min(source["publishedAt"] for source in locality_sources) if locality_sources else None,
+                "to": max(source["publishedAt"] for source in locality_sources) if locality_sources else None,
+            },
+            "localityConflictCount": len(locality_conflicts),
+            "localityCoverageByState": coverage_by_state,
         },
         "pdms": sorted(pdms, key=lambda item: item["code"]),
         "localities": sorted(localities, key=lambda item: item["id"]),
+        "localityConflicts": locality_conflicts,
     }
 
 

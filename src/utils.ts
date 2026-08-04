@@ -10,6 +10,44 @@ export const formatCompact = new Intl.NumberFormat("ms-MY", {
 export const formatPct = (value: number, digits = 1) =>
   `${(value * 100).toFixed(digits)}%`;
 
+const shortDateFormatter = new Intl.DateTimeFormat("en-GB", {
+  day: "2-digit",
+  month: "short",
+  year: "2-digit",
+  timeZone: "UTC",
+});
+
+export function formatShortDate(value: string | Date | null | undefined) {
+  if (!value) return "—";
+  const isoDate = typeof value === "string" ? value.match(/^(\d{4}-\d{2}-\d{2})/)?.[1] : undefined;
+  const date = value instanceof Date ? value : new Date(isoDate ? `${isoDate}T00:00:00Z` : value);
+  return Number.isNaN(date.getTime()) ? String(value) : shortDateFormatter.format(date);
+}
+
+const malayMonthAbbreviations: Record<string, string> = {
+  Januari: "Jan",
+  Februari: "Feb",
+  Mac: "Mar",
+  April: "Apr",
+  Mei: "May",
+  Jun: "Jun",
+  Julai: "Jul",
+  Ogos: "Aug",
+  September: "Sep",
+  Oktober: "Oct",
+  November: "Nov",
+  Disember: "Dec",
+};
+
+export function formatDatesInText(value: string) {
+  return value
+    .replace(/\b(\d{4}-\d{2}-\d{2})\b/g, (date) => formatShortDate(date))
+    .replace(
+      /\b(\d{1,2}) (Januari|Februari|Mac|April|Mei|Jun|Julai|Ogos|September|Oktober|November|Disember) (\d{4})\b/g,
+      (_, day: string, month: string, year: string) => `${day.padStart(2, "0")} ${malayMonthAbbreviations[month]} ${year.slice(-2)}`,
+    );
+}
+
 export const normalise = (value: string) =>
   value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 

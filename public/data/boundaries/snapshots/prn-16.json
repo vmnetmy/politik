@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "coordinateReference": "EPSG:4326",
+  "sourceUrl": "https://opendata.spr.gov.my/api/proxy-file?dataset_id=11",
+  "sourceSha256": "1f4084554214c1ffe7fd5f20096ca049dafcb0a58facabde8bb10ff87cc78ffc",
+  "retrievedAt": "2026-07-23",
+  "snapshotPolicy": "Exact geometry is pinned by regional boundary version, effective date and SHA-256.",
+  "id": "prn-16",
+  "scope": "state-assembly",
+  "events": [
+    {
+      "id": "prn-johor-2026",
+      "stateId": "johor",
+      "electionDate": "2026-07-11"
+    },
+    {
+      "id": "prn-negeri-sembilan-2026",
+      "stateId": "negeri-sembilan",
+      "electionDate": "2026-08-01"
+    }
+  ],
+  "states": {
+    "johor": {
+      "boundaryVersion": "my-peninsula-2018",
+      "effectiveFrom": "2018-03-29",
+      "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+      "evidenceUrl": "https://spr.gov.my/utama-2/",
+      "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+      "status": "exact",
+      "stateFile": "my-peninsula-2018/atlas/states/johor.json",
+      "geometrySha256": "9510c42d363524e24c76bb77d0e74d2dd37b193ab4905e43852ed82b8e18a8e9",
+      "parliamentFeatureCount": 26,
+      "dunFeatureCount": 56
+    },
+    "negeri-sembilan": {
+      "boundaryVersion": "my-peninsula-2018",
+      "effectiveFrom": "2018-03-29",
+      "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+      "evidenceUrl": "https://spr.gov.my/utama-2/",
+      "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+      "status": "exact",
+      "stateFile": "my-peninsula-2018/atlas/states/negeri-sembilan.json",
+      "geometrySha256": "8a40689d46c0ac1a61d6f601e6917cad8c18175461021d545718d33fe07cd898",
+      "parliamentFeatureCount": 8,
+      "dunFeatureCount": 36
+    }
+  }
+}

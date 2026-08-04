@@ -44,8 +44,9 @@ export type ElectionAtlasStateBoundaries = Omit<ElectionAtlasBoundaries, "states
 export type BoundaryRegistryEntry = {
   boundaryVersion: string;
   effectiveFrom: string;
-  status: "exact" | "compatible" | "approximate";
+  status: "exact" | "compatible" | "approximate" | "identity-only";
   note: string;
+  snapshotFile: string;
   stateFiles: Record<string, string>;
   states?: Record<string, BoundaryRegistryStateEntry>;
 };
@@ -53,11 +54,13 @@ export type BoundaryRegistryEntry = {
 export type BoundaryRegistryStateEntry = {
   boundaryVersion: string;
   effectiveFrom: string;
-  status: "exact" | "compatible" | "approximate";
+  status: "exact" | "compatible" | "approximate" | "identity-only";
   note: string;
   orderReference: string;
   evidenceUrl: string;
-  stateFile: string;
+  stateFile?: string;
+  geometrySha256?: string;
+  constituencyCount?: number;
 };
 
 export type ElectionBoundaryRegistry = {

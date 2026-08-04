@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "coordinateReference": "EPSG:4326",
+  "sourceUrl": "https://opendata.spr.gov.my/api/proxy-file?dataset_id=11",
+  "sourceSha256": "1f4084554214c1ffe7fd5f20096ca049dafcb0a58facabde8bb10ff87cc78ffc",
+  "retrievedAt": "2026-07-23",
+  "snapshotPolicy": "Exact geometry is pinned by regional boundary version, effective date and SHA-256.",
+  "id": "prn-17",
+  "scope": "state-assembly",
+  "events": [
+    {
+      "id": "prn-sabah-2025",
+      "stateId": "sabah",
+      "electionDate": "2025-11-29"
+    }
+  ],
+  "states": {
+    "sabah": {
+      "boundaryVersion": "my-sabah-2019",
+      "effectiveFrom": "2019-08-22",
+      "orderReference": "P.U.(A) 225/2019",
+      "evidenceUrl": "https://www.spr.gov.my/sites/default/files/Kenyataan%20Media%20UPDM%20Sabah%202019.pdf",
+      "note": "Sempadan 73 DUN Sabah berkuat kuasa mulai 22 Ogos 2019.",
+      "status": "exact",
+      "stateFile": "my-sabah-2019/atlas/states/sabah.json",
+      "geometrySha256": "e818b549c0129932bf5cdcdce14854a4704a72f01f54f3a44cd5736ffdc9c4a6",
+      "parliamentFeatureCount": 25,
+      "dunFeatureCount": 73
+    }
+  }
+}

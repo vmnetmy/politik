@@ -25,7 +25,7 @@ export type StateElectionContest = {
   majorityVotes: number;
   sourceMajorityVotes: number;
   winnerCandidateId: string;
-  sourceDataset: "keputusan-pru-dun" | "keputusan-pru" | "keputusan-prk" | "mysemak-johor-2026" | "pub-246-johor-2026";
+  sourceDataset: "keputusan-pru-dun" | "keputusan-pru" | "keputusan-prk" | "mysemak-johor-2026" | "mysemak-negeri-sembilan-2026" | "pub-246-johor-2026";
   candidates: StateElectionCandidate[];
 };
 
@@ -59,12 +59,21 @@ export type StateElectionData = {
     stateCount: number;
     contestCount: number;
     historicalContestCount: number;
+    historicalConstituencyCount: number;
     candidateCount: number;
     coverage: "latest-complete-plus-archive";
     issues: Array<{ contestId: string; field: string; sourceValue: number; computedValue: number; message: string }>;
   };
   events: StateElectionEvent[];
   contests: StateElectionContest[];
+  historicalConstituencies: Array<{
+    id: string;
+    code: string;
+    name: string;
+    stateId: string;
+    parliamentCode: string;
+    boundaryVersion: string;
+  }>;
 };
 
 export type DunBoundaryFeature = {

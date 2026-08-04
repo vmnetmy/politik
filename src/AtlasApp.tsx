@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router";
 import { AppShell } from "./components/layout/AppShell";
 import { ElectionProvider } from "./ElectionContext";
 import { DEFAULT_ELECTION_NUMBER, electionEdition } from "./elections";

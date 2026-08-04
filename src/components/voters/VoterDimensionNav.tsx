@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router";
 import { useElection } from "../../ElectionContext";
 
 export function VoterDimensionNav() {

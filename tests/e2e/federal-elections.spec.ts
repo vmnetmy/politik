@@ -17,7 +17,21 @@ test("PRU-14 constituency retains election-time party without current-term overl
   await expect(page.getByRole("heading", { name: "PADANG BESAR", exact: true })).toBeVisible();
   await expect(page.getByText("PARTI KETIKA PRU-14", { exact: true })).toBeVisible();
   await expect(page.getByText("KEDUDUKAN SEMASA", { exact: true })).toHaveCount(0);
-  await expect(page.getByRole("heading", { name: "Keputusan mengikut saluran" })).toHaveCount(0);
+  await expect(page.getByRole("heading", { name: "Keputusan mengikut saluran" })).toBeVisible();
+  await expect(page.getByText("SUMBER RASMI", { exact: true })).toBeVisible();
+});
+
+test("PRU-14 affiliation history exposes the PKR departure and Bersatu membership phases", async ({ page }) => {
+  await page.goto("/settings/data/keahlian?election=14");
+  await expect(page.getByRole("heading", { name: "Urus keahlian semasa." })).toBeVisible();
+  await expect(page.locator(".settings-kpis")).toContainText("11");
+  await expect(page.locator(".change-history tbody tr")).toHaveCount(21);
+  await expect(page.locator(".change-history")).toContainText("DATO' SERI AZMIN ALI");
+  await expect(page.locator(".change-history")).toContainText("ZURAIDA KAMARUDDIN");
+  await expect(page.locator(".change-history tbody tr").first()).toContainText("11 Mar 20");
+  await expect(page.locator(".change-history tbody tr").first().locator("td").first()).toHaveCSS("white-space", "nowrap");
+  await expect(page.locator(".change-history tbody tr").first().getByRole("link", { name: "Sumber ↗" })).toHaveAttribute("href", /sinarharian\.com\.my\/article\/73396/);
+  await expect(page.locator(".change-history")).toContainText("ahli bersekutu Bersatu");
 });
 
 test("federal comparison derives editions, metrics and historical deltas from the catalogue", async ({ page }) => {
