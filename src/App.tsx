@@ -1,4 +1,5 @@
-import { lazy, Suspense, useEffect, useMemo, useState } from "react";
+import { lazy, startTransition, Suspense, useEffect, useMemo, useState } from "react";
+import type { ReactNode } from "react";
 import {
   BrowserRouter,
   Navigate,
@@ -37,15 +38,14 @@ import {
   parsePartyCatalogFile,
 } from "./dataChanges";
 import { normalise } from "./utils";
-import {
-  ElectionPage,
-  FederalElectionIndexPage,
-  OverviewPage,
-  ParliamentIndexPage,
-  ParliamentPage,
-  StatePage,
-  WinnersPage,
-} from "./pages/PublicPages";
+import { ParliamentIndexPage } from "./pages/ParliamentDirectoryPage";
+
+const ElectionPage = lazy(() => import("./pages/PublicPages").then((module) => ({ default: module.ElectionPage })));
+const FederalElectionIndexPage = lazy(() => import("./pages/PublicPages").then((module) => ({ default: module.FederalElectionIndexPage })));
+const OverviewPage = lazy(() => import("./pages/PublicPages").then((module) => ({ default: module.OverviewPage })));
+const ParliamentPage = lazy(() => import("./pages/PublicPages").then((module) => ({ default: module.ParliamentPage })));
+const StatePage = lazy(() => import("./pages/PublicPages").then((module) => ({ default: module.StatePage })));
+const WinnersPage = lazy(() => import("./pages/PublicPages").then((module) => ({ default: module.WinnersPage })));
 
 const VoterAgePage = lazy(() => import("./pages/VoterAgePage").then((module) => ({ default: module.VoterAgePage })));
 const VoterEthnicityPage = lazy(() => import("./pages/VoterEthnicityPage").then((module) => ({ default: module.VoterEthnicityPage })));
@@ -125,6 +125,10 @@ function ErrorScreen({ message }: { message: string }) {
 
 function FeatureUnavailable({ label }: { label: string }) {
   return <AsyncState kind="empty" title={`${label} belum tersedia`} description="Dataset ini tidak diterbitkan untuk edisi pilihan raya yang sedang dibuka."/>;
+}
+
+function DeferredPublicPage({ children }: { children: ReactNode }) {
+  return <Suspense fallback={<div className="route-loading">Memuatkan halaman pilihan raya…</div>}>{children}</Suspense>;
 }
 
 function Dashboard() {
@@ -212,7 +216,7 @@ function Dashboard() {
         throw new Error(`Fail keahlian tidak sepadan dengan penggal ${edition.termId}.`);
       }
       setData(election);
-      setSeating(seatingBaseline);
+      startTransition(() => setSeating(seatingBaseline));
       setScoresheetIndex(scoresheetBaseline);
       setGeography(geographyBaseline);
       setConstituencies(constituencyBaseline);
@@ -297,12 +301,12 @@ function Dashboard() {
       <Routes>
         <Route path="/" element={<Navigate to={electionBase(DEFAULT_ELECTION_NUMBER)} replace/>}/>
         <Route element={<AppShell data={routeData} search={search} setSearch={setSearch} changeCount={changedSeatCount} candidateChangeCount={changedCandidateCount}/> }>
-          <Route path={PRU_BASE} element={<FederalElectionIndexPage/>}/>
+          <Route path={PRU_BASE} element={<DeferredPublicPage><FederalElectionIndexPage/></DeferredPublicPage>}/>
           <Route path={PRU_COMPARISON_BASE} element={<Suspense fallback={<div className="route-loading">Menyusun perbandingan PRU…</div>}><FederalElectionComparisonPage/></Suspense>}/>
           <Route path={ATLAS_BASE} element={<Suspense fallback={<><AtlasIntro/><div className="route-loading atlas-route-loading">Membina atlas pilihan raya Malaysia…</div></>}><NationalElectionAtlasPage currentElectionData={routeData}/></Suspense>}/>
           <Route path={`${ATLAS_BASE}/embed`} element={<Suspense fallback={<><AtlasIntro/><div className="route-loading atlas-route-loading">Membina atlas pilihan raya Malaysia…</div></>}><NationalElectionAtlasPage currentElectionData={routeData} embed/></Suspense>}/>
-          <Route path={electionPattern} element={<ElectionPage data={routeData!}/>}/>
-          <Route path={`${electionPattern}/pemenang`} element={<WinnersPage data={routeData!}/>}/>
+          <Route path={electionPattern} element={<DeferredPublicPage><ElectionPage data={routeData!}/></DeferredPublicPage>}/>
+          <Route path={`${electionPattern}/pemenang`} element={<DeferredPublicPage><WinnersPage data={routeData!}/></DeferredPublicPage>}/>
           <Route path="/pru/14/audit" element={<Suspense fallback={<div className="route-loading">Memuatkan audit PRU-14…</div>}><Pru14AuditPage/></Suspense>}/>
           <Route path={`${electionPattern}/pengundi`} element={edition.capabilities.voterRoll ? <Suspense fallback={<div className="route-loading">Memuatkan daftar pemilih…</div>}><VoterOverviewPage/></Suspense> : <FeatureUnavailable label="Daftar pemilih"/>}/>
           <Route path={`${electionPattern}/pengundi/kawasan`} element={edition.capabilities.voterRoll ? <Suspense fallback={<div className="route-loading">Memuatkan statistik kawasan…</div>}><VoterAreaPage/></Suspense> : <FeatureUnavailable label="Statistik kawasan pengundi"/>}/>
@@ -319,11 +323,11 @@ function Dashboard() {
           <Route path={`${PRN_BASE}/:assemblyNumber/:stateName/peta`} element={<Suspense fallback={<div className="route-loading">Memuatkan peta pilihan raya…</div>}><StateElectionMapPage/></Suspense>}/>
           <Route path={`${PRN_BASE}/:assemblyNumber/:stateName/dun`} element={<Suspense fallback={<div className="route-loading">Memuatkan keputusan DUN…</div>}><StateElectionPage/></Suspense>}/>
           <Route path={`${PRN_BASE}/:assemblyNumber/:stateName/dun/:dunName`} element={<Suspense fallback={<div className="route-loading">Memuatkan keputusan DUN…</div>}><StateDunResultPage/></Suspense>}/>
-          <Route path={`${electionPattern}/negeri`} element={<OverviewPage data={routeData!}/>}/>
+          <Route path={`${electionPattern}/negeri`} element={<DeferredPublicPage><OverviewPage data={routeData!}/></DeferredPublicPage>}/>
           <Route path={`${electionPattern}/negeri/parlimen`} element={<ParliamentIndexPage data={routeData!} seating={seating!} search={search} setSearch={setSearch}/>}/>
-          <Route path={`${electionPattern}/negeri/parlimen/:parliamentName`} element={<ParliamentPage data={routeData!} scoresheetIndex={scoresheetIndex!} geography={geography!} constituencies={constituencies!} pollingPlaces={pollingPlaces!}/>}/>
-          <Route path={`${electionPattern}/negeri/:stateName`} element={<StatePage data={routeData!}/>}/>
-          <Route path={`${electionPattern}/negeri/:stateName/parlimen/:parliamentName`} element={<ParliamentPage data={routeData!} scoresheetIndex={scoresheetIndex!} geography={geography!} constituencies={constituencies!} pollingPlaces={pollingPlaces!}/>}/>
+          <Route path={`${electionPattern}/negeri/parlimen/:parliamentName`} element={<DeferredPublicPage><ParliamentPage data={routeData!} scoresheetIndex={scoresheetIndex!} geography={geography!} constituencies={constituencies!} pollingPlaces={pollingPlaces!}/></DeferredPublicPage>}/>
+          <Route path={`${electionPattern}/negeri/:stateName`} element={<DeferredPublicPage><StatePage data={routeData!}/></DeferredPublicPage>}/>
+          <Route path={`${electionPattern}/negeri/:stateName/parlimen/:parliamentName`} element={<DeferredPublicPage><ParliamentPage data={routeData!} scoresheetIndex={scoresheetIndex!} geography={geography!} constituencies={constituencies!} pollingPlaces={pollingPlaces!}/></DeferredPublicPage>}/>
           <Route path={`${electionPattern}/negeri/:stateName/parlimen/:parliamentName/dun/:dunName`} element={<DunPage data={routeData!} geography={geography!} constituencies={constituencies!} pollingPlaces={pollingPlaces!}/>}/>
           <Route path={`${electionPattern}/negeri/:stateName/parlimen/:parliamentName/dun/:dunName/pdm/:pdmName`} element={<PdmPage data={routeData!} geography={geography!} constituencies={constituencies!} pollingPlaces={pollingPlaces!}/>}/>
           <Route path={`${electionPattern}/negeri/:stateName/parlimen/:parliamentName/dun/:dunName/pdm/:pdmName/lokaliti/:localityName`} element={<LocalityPage data={routeData!} geography={geography!} constituencies={constituencies!} pollingPlaces={pollingPlaces!}/>}/>

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { currentAlliance, currentParty } from "../../dataChanges";
 import { useElection } from "../../ElectionContext";
 import type { ElectionData, Seat } from "../../types";
@@ -18,14 +18,12 @@ export function useParliament({ data, seating, search, stateFilter, allianceFilt
   const [view, setView] = useState<SeatingView>(edition.isCurrentTerm ? "current" : "election");
   const [selectedCode, setSelectedCode] = useState(seating.positions[0]?.seatCode ?? "");
   const [hoveredCode, setHoveredCode] = useState<string | null>(null);
-  useEffect(() => {
-    if (seating.positions.length && !seating.positions.some((position) => position.seatCode === selectedCode)) {
-      setSelectedCode(seating.positions[0].seatCode);
-    }
-  }, [seating.positions, selectedCode]);
+  const activeSelectedCode = seating.positions.some((position) => position.seatCode === selectedCode)
+    ? selectedCode
+    : seating.positions[0]?.seatCode ?? "";
   const seatByCode = useMemo(() => new Map(data.seats.map((seat) => [seat.code, seat])), [data]);
   const positionByCode = useMemo(() => new Map(seating.positions.map((position) => [position.seatCode, position])), [seating]);
-  const selectedSeat = seatByCode.get(selectedCode) ?? data.seats[0];
+  const selectedSeat = seatByCode.get(activeSelectedCode) ?? data.seats[0];
   const hoveredSeat = hoveredCode ? seatByCode.get(hoveredCode) : undefined;
   const hoveredPosition = hoveredCode ? positionByCode.get(hoveredCode) : undefined;
   const identityAlliance = (seat: Seat) => view === "current" ? currentAlliance(seat) : seat.winner.alliance;
@@ -57,7 +55,7 @@ export function useParliament({ data, seating, search, stateFilter, allianceFilt
   return {
     view,
     setView,
-    selectedCode,
+    selectedCode: activeSelectedCode,
     setSelectedCode,
     hoveredCode,
     setHoveredCode,
