@@ -327,7 +327,9 @@ button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-
 .seating-chamber { position: absolute; inset: 0; width: 100%; height: 100%; }
 .seating-chamber path, .seating-chamber rect { fill: none; stroke: #c7cbc3; stroke-width: 1.4; vector-effect: non-scaling-stroke; }
 .seating-chamber text { fill: #98a19c; font: 700 var(--text-xs) sans-serif; text-anchor: middle; letter-spacing: .08em; }
-.seating-dot { position: absolute; z-index: 2; width: clamp(24px, 2.52cqw, 30px); height: 24px; padding: 0; translate: -50% -50%; color: var(--ink); background: transparent; border: 0; border-radius: 4px; touch-action: manipulation; }
+.seating-dot { position: absolute; z-index: 2; width: clamp(24px, 2.52cqw, 30px); height: 24px; padding: 0; translate: -50% -50%; color: var(--ink); background: transparent; border: 0; border-radius: 4px; touch-action: manipulation; transition: opacity .16s ease, scale .16s ease; }
+.seating-dot.is-selected { scale: 1.2; }
+.seating-dot:hover, .seating-dot:focus { scale: 1.35; }
 .seating-code { position: absolute; left: 50%; top: 50%; width: clamp(22px, 2.52cqw, 30px); height: clamp(18px, 2.02cqw, 24px); display: grid; place-items: center; translate: -50% -50%; color: #1f3029; background: color-mix(in srgb, var(--seat-color) 12%, #fbfaf6); border: 1.5px solid var(--seat-color); border-radius: 3px; box-shadow: inset 0 -3px var(--seat-color), 0 1px 3px rgba(16,44,35,.16); font: 800 clamp(6px, .59cqw, 7px)/1 var(--sans); letter-spacing: -.02em; pointer-events: none; }
 .seating-empty-position { position: absolute; z-index: 1; width: clamp(22px, 2.52cqw, 30px); height: clamp(18px, 2.02cqw, 24px); translate: -50% -50%; pointer-events: none; }
 .seating-empty-position > span { position: absolute; inset: 0; display: grid; place-items: center; color: #828c87; background: rgba(255,255,255,.48); border: 1px dashed #9da7a1; border-radius: 3px; font: 750 clamp(6px, .59cqw, 7px)/1 var(--sans); }
