@@ -30,6 +30,13 @@ class GeographyExtractionTests(unittest.TestCase):
         self.assertTrue(by_id["P.028:028/30/04"]["hasScoresheet"])
         self.assertEqual(len(by_id["P.028:028/30/04"]["localityIds"]), 7)
         self.assertEqual(len(by_id["P.028:028/30/09"]["localityIds"]), 6)
+        self.assertEqual(self.value["metadata"]["localitySourceCount"], 2)
+        self.assertEqual(self.value["metadata"]["localityConflictCount"], 0)
+        self.assertEqual(self.value["metadata"]["localitySnapshotRange"]["from"], "2025-07-15")
+        self.assertEqual(self.value["metadata"]["localitySnapshotRange"]["to"], "2025-11-03")
+        self.assertAlmostEqual(self.value["metadata"]["localityCoveragePct"], 0.0258, places=4)
+        locality = next(item for item in self.value["localities"] if item["id"].endswith(":001"))
+        self.assertEqual(len(locality["sourceRefs"]), 1)
 
     def test_published_file_is_reproducible(self):
         published = (ROOT / "public/data/elections/pru-15/geography.json").read_text(encoding="utf-8")

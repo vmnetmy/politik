@@ -1,11 +1,12 @@
 {
-  "version": 1,
+  "version": 2,
   "metadata": {
     "description": "Transkripsi lokaliti daripada dokumen DPT awam SPR. Setiap kumpulan mengekalkan URL dan tarikh sumbernya; liputan adalah separa dan tidak dianggarkan.",
     "retrievedAt": "2026-07-22"
   },
   "sources": [
     {
+      "id": "dpt-2025-06-p028-028-30-09",
       "url": "https://sprinfo.spr.gov.my/spr/DPT/6Jun/KELANTAN/P028.pdf",
       "sourceLabel": "DPT Jun 2025",
       "publishedAt": "2025-07-15",
@@ -22,6 +23,7 @@
       ]
     },
     {
+      "id": "dpt-2025-09-p028-028-30-04",
       "url": "https://sprinfo.spr.gov.my/spr/DPT/9September/KELANTAN/P028.pdf",
       "sourceLabel": "DPT September 2025",
       "publishedAt": "2025-11-03",

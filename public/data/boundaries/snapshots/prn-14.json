@@ -1,0 +1,201 @@
+{
+  "version": 1,
+  "coordinateReference": "EPSG:4326",
+  "sourceUrl": "https://opendata.spr.gov.my/api/proxy-file?dataset_id=11",
+  "sourceSha256": "1f4084554214c1ffe7fd5f20096ca049dafcb0a58facabde8bb10ff87cc78ffc",
+  "retrievedAt": "2026-07-23",
+  "snapshotPolicy": "Exact geometry is pinned by regional boundary version, effective date and SHA-256.",
+  "id": "prn-14",
+  "scope": "state-assembly",
+  "events": [
+    {
+      "id": "prn-johor-2018",
+      "stateId": "johor",
+      "electionDate": "2018-05-09"
+    },
+    {
+      "id": "prn-kedah-2018",
+      "stateId": "kedah",
+      "electionDate": "2018-05-09"
+    },
+    {
+      "id": "prn-kelantan-2018",
+      "stateId": "kelantan",
+      "electionDate": "2018-05-09"
+    },
+    {
+      "id": "prn-melaka-2018",
+      "stateId": "melaka",
+      "electionDate": "2018-05-09"
+    },
+    {
+      "id": "prn-negeri-sembilan-2018",
+      "stateId": "negeri-sembilan",
+      "electionDate": "2018-05-09"
+    },
+    {
+      "id": "prn-pahang-2018",
+      "stateId": "pahang",
+      "electionDate": "2018-05-09"
+    },
+    {
+      "id": "prn-perak-2018",
+      "stateId": "perak",
+      "electionDate": "2018-05-09"
+    },
+    {
+      "id": "prn-perlis-2018",
+      "stateId": "perlis",
+      "electionDate": "2018-05-09"
+    },
+    {
+      "id": "prn-pulau-pinang-2018",
+      "stateId": "pulau-pinang",
+      "electionDate": "2018-05-09"
+    },
+    {
+      "id": "prn-selangor-2018",
+      "stateId": "selangor",
+      "electionDate": "2018-05-09"
+    },
+    {
+      "id": "prn-terengganu-2018",
+      "stateId": "terengganu",
+      "electionDate": "2018-05-09"
+    }
+  ],
+  "states": {
+    "johor": {
+      "boundaryVersion": "my-peninsula-2018",
+      "effectiveFrom": "2018-03-29",
+      "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+      "evidenceUrl": "https://spr.gov.my/utama-2/",
+      "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+      "status": "exact",
+      "stateFile": "my-peninsula-2018/atlas/states/johor.json",
+      "geometrySha256": "9510c42d363524e24c76bb77d0e74d2dd37b193ab4905e43852ed82b8e18a8e9",
+      "parliamentFeatureCount": 26,
+      "dunFeatureCount": 56
+    },
+    "kedah": {
+      "boundaryVersion": "my-peninsula-2018",
+      "effectiveFrom": "2018-03-29",
+      "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+      "evidenceUrl": "https://spr.gov.my/utama-2/",
+      "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+      "status": "exact",
+      "stateFile": "my-peninsula-2018/atlas/states/kedah.json",
+      "geometrySha256": "3dd239c2ea7cb49774eb66b5652e6ab3f972057a01c7b66e0b4b57163c639a24",
+      "parliamentFeatureCount": 15,
+      "dunFeatureCount": 36
+    },
+    "kelantan": {
+      "boundaryVersion": "my-peninsula-2018",
+      "effectiveFrom": "2018-03-29",
+      "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+      "evidenceUrl": "https://spr.gov.my/utama-2/",
+      "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+      "status": "exact",
+      "stateFile": "my-peninsula-2018/atlas/states/kelantan.json",
+      "geometrySha256": "cd3eae019d3101a823acdf4a6ac325ef7caa4a58ecc5860be621a69538b57683",
+      "parliamentFeatureCount": 14,
+      "dunFeatureCount": 45
+    },
+    "melaka": {
+      "boundaryVersion": "my-peninsula-2018",
+      "effectiveFrom": "2018-03-29",
+      "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+      "evidenceUrl": "https://spr.gov.my/utama-2/",
+      "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+      "status": "exact",
+      "stateFile": "my-peninsula-2018/atlas/states/melaka.json",
+      "geometrySha256": "ff56158151e640f43db9fdead3f12fbb2b9776084c75fd501e3dbe0d1edab959",
+      "parliamentFeatureCount": 6,
+      "dunFeatureCount": 28
+    },
+    "negeri-sembilan": {
+      "boundaryVersion": "my-peninsula-2018",
+      "effectiveFrom": "2018-03-29",
+      "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+      "evidenceUrl": "https://spr.gov.my/utama-2/",
+      "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+      "status": "exact",
+      "stateFile": "my-peninsula-2018/atlas/states/negeri-sembilan.json",
+      "geometrySha256": "8a40689d46c0ac1a61d6f601e6917cad8c18175461021d545718d33fe07cd898",
+      "parliamentFeatureCount": 8,
+      "dunFeatureCount": 36
+    },
+    "pahang": {
+      "boundaryVersion": "my-peninsula-2018",
+      "effectiveFrom": "2018-03-29",
+      "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+      "evidenceUrl": "https://spr.gov.my/utama-2/",
+      "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+      "status": "exact",
+      "stateFile": "my-peninsula-2018/atlas/states/pahang.json",
+      "geometrySha256": "5ec0719dd7e97174f31407d8af13bb86fbb71894b73ca2e49d787b2c99825044",
+      "parliamentFeatureCount": 14,
+      "dunFeatureCount": 42
+    },
+    "perak": {
+      "boundaryVersion": "my-peninsula-2018",
+      "effectiveFrom": "2018-03-29",
+      "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+      "evidenceUrl": "https://spr.gov.my/utama-2/",
+      "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+      "status": "exact",
+      "stateFile": "my-peninsula-2018/atlas/states/perak.json",
+      "geometrySha256": "78016689e83dbbb965580b5c9cba5c7a54f8f7b79432ac1d6831a9de3f488ed0",
+      "parliamentFeatureCount": 24,
+      "dunFeatureCount": 59
+    },
+    "perlis": {
+      "boundaryVersion": "my-peninsula-2018",
+      "effectiveFrom": "2018-03-29",
+      "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+      "evidenceUrl": "https://spr.gov.my/utama-2/",
+      "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+      "status": "exact",
+      "stateFile": "my-peninsula-2018/atlas/states/perlis.json",
+      "geometrySha256": "83e1810ff39056a8492bfcb7029d2ff44080e8253e8626270c8742ca0a9df356",
+      "parliamentFeatureCount": 3,
+      "dunFeatureCount": 15
+    },
+    "pulau-pinang": {
+      "boundaryVersion": "my-peninsula-2018",
+      "effectiveFrom": "2018-03-29",
+      "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+      "evidenceUrl": "https://spr.gov.my/utama-2/",
+      "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+      "status": "exact",
+      "stateFile": "my-peninsula-2018/atlas/states/pulau-pinang.json",
+      "geometrySha256": "5fba90a56a1c4a9217d5c0c3c78e4f2609de63b4a6fb13fa511029be65123aca",
+      "parliamentFeatureCount": 13,
+      "dunFeatureCount": 40
+    },
+    "selangor": {
+      "boundaryVersion": "my-peninsula-2018",
+      "effectiveFrom": "2018-03-29",
+      "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+      "evidenceUrl": "https://spr.gov.my/utama-2/",
+      "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+      "status": "exact",
+      "stateFile": "my-peninsula-2018/atlas/states/selangor.json",
+      "geometrySha256": "64e8ff16932f25974d911e376264a9f00babe4d28fc5cb89ad60c4c607c81671",
+      "parliamentFeatureCount": 22,
+      "dunFeatureCount": 56
+    },
+    "terengganu": {
+      "boundaryVersion": "my-peninsula-2018",
+      "effectiveFrom": "2018-03-29",
+      "orderReference": "Kajian Semula Persempadanan Negeri-Negeri Tanah Melayu 2018",
+      "evidenceUrl": "https://spr.gov.my/utama-2/",
+      "note": "Sempadan Negeri-Negeri Tanah Melayu yang berkuat kuasa sejak 29 Mac 2018.",
+      "status": "exact",
+      "stateFile": "my-peninsula-2018/atlas/states/terengganu.json",
+      "geometrySha256": "0fd26b3e122a3cd10302f74ed40de15613a12a43fce2337ca56c684cc0e1132a",
+      "parliamentFeatureCount": 8,
+      "dunFeatureCount": 32
+    }
+  }
+}

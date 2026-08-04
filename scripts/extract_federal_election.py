@@ -21,6 +21,7 @@ DEFAULT_STATS = ROOT / "sources/meco/headline-stats-federal.csv"
 DEFAULT_BALLOTS = ROOT / "sources/meco/headline-ballots-federal.csv"
 DEFAULT_PERSONS = ROOT / "public/data/reference/persons.json"
 DEFAULT_MATCHES = ROOT / "public/data/reference/person-matches.json"
+DEFAULT_PRU14_SCORESHEETS = ROOT / "sources/pru14/scoresheets"
 
 ELECTIONS = {
     14: {
@@ -154,6 +155,33 @@ def match_supporting_ballot(result: dict[str, Any], candidates: list[dict[str, s
     if not ranked:
         raise ValueError(f"No supporting ballot for {result['PARLIMEN']} / {result['NAMA ATAS KERTAS UNDI']}")
     return ranked[0]
+
+
+def apply_archived_pru14_scoresheets(election: dict[str, Any], source_root: Path) -> None:
+    """Apply only internally balanced SPR workbooks to the published aggregate."""
+    if not source_root.exists():
+        return
+    try:
+        from .extract_pru14_scoresheets import PARLIAMENT_CODE, extract_workbook
+        from .extract_scoresheets import ScoresheetExtractionError, apply_authoritative_results
+    except ImportError:
+        from extract_pru14_scoresheets import PARLIAMENT_CODE, extract_workbook  # type: ignore[no-redef]
+        from extract_scoresheets import ScoresheetExtractionError, apply_authoritative_results  # type: ignore[no-redef]
+
+    seats = {seat["code"]: seat for seat in election["seats"]}
+    extracted: dict[str, dict[str, Any]] = {}
+    for path in sorted(source_root.glob("*.xlsx")):
+        match = PARLIAMENT_CODE.search(path.stem)
+        if not match:
+            continue
+        code = f"P.{int(match.group(1)):03d}"
+        if code not in seats:
+            continue
+        try:
+            extracted[code] = extract_workbook(path, seats[code], source_root)
+        except ScoresheetExtractionError:
+            continue
+    apply_authoritative_results(election, extracted)
 
 
 def build(
@@ -308,7 +336,7 @@ def build(
         {"name": name, "shortName": short_name, "color": color}
         for name, short_name, color in ALLIANCES.values()
     ]
-    return {
+    value = {
         "metadata": {
             "title": config["title"],
             "shortTitle": f"PRU-{election_number}",
@@ -318,6 +346,12 @@ def build(
             "candidateCount": sum(seat["candidateCount"] for seat in seats),
             "stateCount": len({seat["state"] for seat in seats}),
             "issues": [],
+            "officialAudit": {
+                "status": "passed-with-declared-gaps-and-source-precedence",
+                "checkedAt": "2026-08-05",
+                "report": "spr-audit.json",
+                "catalogueUrl": "https://opendata.spr.gov.my/",
+            },
             "electionId": election_id,
             "electionNumber": election_number,
             "termId": f"dr-{election_number}",
@@ -326,6 +360,9 @@ def build(
         "alliances": alliances,
         "seats": seats,
     }
+    if election_number == 14:
+        apply_archived_pru14_scoresheets(value, DEFAULT_PRU14_SCORESHEETS)
+    return value
 
 
 def render(value: dict[str, Any]) -> str:

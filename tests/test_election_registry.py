@@ -57,7 +57,7 @@ class ElectionRegistryTests(unittest.TestCase):
 
             capability_files = {
                 "seating": ["seating.json"],
-                "scoresheets": ["scoresheets/index.json", "polling-places.json"],
+                "scoresheets": ["scoresheets/index.json", "spr-audit.json"],
                 "voterRoll": ["voter-roll.json"],
                 "voterAge": ["voter-age.json", "constituencies.json"],
                 "voterEthnicity": ["voter-ethnicity.json", "voter-age.json", "constituencies.json"],

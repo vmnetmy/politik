@@ -1,0 +1,576 @@
+{
+  "version": 1,
+  "electionId": "pru-14",
+  "status": "passed-with-declared-gaps-and-source-precedence",
+  "checkedAt": "2026-08-05",
+  "sources": {
+    "openData": "https://opendata.spr.gov.my/",
+    "results": "https://mysprsemak.spr.gov.my/semakan/keputusan/pru",
+    "electoralRoll": "https://www.spr.gov.my/sites/default/files/HargaDPIST42017_PRU14.pdf",
+    "scoresheetManifest": "sources/pru14/scoresheets/manifest.json",
+    "dunScoresheetManifest": "sources/pru14/dun-scoresheets/manifest.json",
+    "sabahDunScoresheetManifest": "sources/pru14/sabah-assembly-15-scoresheets/manifest.json",
+    "officialSourceSearch": "sources/pru14/official-source-search.json"
+  },
+  "coverage": {
+    "totalSeats": 222,
+    "archivedSources": 190,
+    "publishedSeats": 180,
+    "rejectedSources": 10,
+    "missingSources": 32,
+    "coveragePct": 0.8108108108108109,
+    "dun": {
+      "totalContests": 505,
+      "archivedSources": 504,
+      "publishedContests": 495,
+      "rejectedSources": 9,
+      "uncontested": 1,
+      "coveragePct": 0.9801980198019802,
+      "assembly14": {
+        "totalContests": 445,
+        "publishedContests": 440,
+        "rejectedSources": 4,
+        "uncontested": 1
+      },
+      "sabahAssembly15": {
+        "totalContests": 60,
+        "publishedContests": 55,
+        "rejectedSources": 5
+      }
+    }
+  },
+  "checks": [
+    {
+      "id": "seat-count",
+      "status": "passed",
+      "message": "Official aggregate contains all 222 parliamentary seats.",
+      "actual": 222
+    },
+    {
+      "id": "registered-voters",
+      "status": "passed",
+      "message": "Registered voters reconcile to the official PRU-14 electoral roll.",
+      "actual": 14940624,
+      "expected": 14940624
+    },
+    {
+      "id": "archive-accounting",
+      "status": "passed",
+      "message": "The supplied archive is completely classified as published or rejected.",
+      "archived": 190,
+      "published": 180,
+      "rejected": 10
+    },
+    {
+      "id": "declared-gaps",
+      "status": "passed",
+      "message": "Every unpublished seat has a declared source-gap category and reason.",
+      "unavailable": 42,
+      "missingSources": 32,
+      "rejectedSources": 10
+    },
+    {
+      "id": "stream-accounting",
+      "status": "passed",
+      "message": "Every published polling stream passes candidate and ballot accounting.",
+      "streams": 24814
+    },
+    {
+      "id": "dun-archive-accounting",
+      "status": "passed",
+      "message": "The PRN-14 DUN archive is completely classified, including uncontested Rantau.",
+      "archived": 444,
+      "published": 440,
+      "rejected": 4,
+      "uncontested": 1
+    },
+    {
+      "id": "dun-stream-accounting",
+      "status": "passed",
+      "message": "Every published PRN-14 DUN polling stream passes candidate and ballot accounting.",
+      "streams": 22449
+    },
+    {
+      "id": "sabah-assembly-15-archive-accounting",
+      "status": "passed",
+      "message": "All 60 Sabah Assembly-15 workbooks are classified against the historical PRU-14 registry.",
+      "archived": 60,
+      "published": 55,
+      "rejected": 5
+    },
+    {
+      "id": "sabah-assembly-15-stream-accounting",
+      "status": "passed",
+      "message": "Every published Sabah Assembly-15 polling stream passes candidate and ballot accounting.",
+      "streams": 2100
+    },
+    {
+      "id": "official-source-recovery",
+      "status": "passed",
+      "message": "Official SPR locations were checked and unresolved source gaps remain explicitly declared.",
+      "checkedAt": "2026-08-05",
+      "locationsChecked": 5
+    },
+    {
+      "id": "p075-source-precedence",
+      "status": "passed",
+      "message": "P.075 uses the SPR scoresheet value that reproduces SPR's published majority.",
+      "openDataVotes": 18908,
+      "scoresheetVotes": 18909,
+      "runnerUpVotes": 13836,
+      "publishedMajority": 5073
+    }
+  ],
+  "rejectedSources": [
+    {
+      "path": "P.046.xlsx",
+      "parliamentCode": "P.046",
+      "sha256": "2a7f9ef29f5be1eab2d506333aae29bfbaa95bb949f314619351ea422e9abdb7",
+      "bytes": 36653,
+      "sheets": 1,
+      "status": "rejected",
+      "reason": "Workbook is P.045, expected P.046."
+    },
+    {
+      "path": "P.047.xlsx",
+      "parliamentCode": "P.047",
+      "sha256": "c475bc1868ebb63fda4d81cbbd92e79e1bae882fa6388ba9a4e410538c1aba68",
+      "bytes": 39498,
+      "sheets": 1,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 132, 'ballotsInBox': 63507, 'validVotes': 62482, 'rejectedVotes': 865, 'unreturnedVotes': 160} do not match final JUMLAH {'pollingStreams': 131, 'ballotsInBox': 63199, 'validVotes': 62179, 'rejectedVotes': 860, 'unreturnedVotes': 160}."
+    },
+    {
+      "path": "P.063.xlsx",
+      "parliamentCode": "P.063",
+      "sha256": "7f30488f8f638aa2b3f7e70ca96ef1c2aa2d017d13f71356cb2b5822c888d108",
+      "bytes": 81516,
+      "sheets": 1,
+      "status": "rejected",
+      "reason": "Final A total does not equal B + C + D."
+    },
+    {
+      "path": "P.093.xlsx",
+      "parliamentCode": "P.093",
+      "sha256": "be07e1738e2700feddf9e4d6383528a3b28ee021204a408ca18e1b11c0be8911",
+      "bytes": 35535,
+      "sheets": 1,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 100, 'ballotsInBox': 41410, 'validVotes': 40741, 'rejectedVotes': 561, 'unreturnedVotes': 108} do not match final JUMLAH {'pollingStreams': 101, 'ballotsInBox': 41878, 'validVotes': 41206, 'rejectedVotes': 564, 'unreturnedVotes': 108}."
+    },
+    {
+      "path": "P.094.xlsx",
+      "parliamentCode": "P.094",
+      "sha256": "24cb98961d6e1c6d84d8e4c53a61751c5ad8578a80b2794ea46a96b5f5bb3746",
+      "bytes": 47651,
+      "sheets": 1,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 184, 'ballotsInBox': 86219, 'validVotes': 84656, 'rejectedVotes': 1296, 'unreturnedVotes': 267} do not match final JUMLAH {'pollingStreams': 185, 'ballotsInBox': 86798, 'validVotes': 85221, 'rejectedVotes': 1310, 'unreturnedVotes': 267}."
+    },
+    {
+      "path": "P.144.xlsx",
+      "parliamentCode": "P.144",
+      "sha256": "170bb9ea9d2842aff67a2de8ca8b21581f85a3c74936dac39d97ffcd761df091",
+      "bytes": 39642,
+      "sheets": 1,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 155, 'ballotsInBox': 65832, 'validVotes': 64541, 'rejectedVotes': 1045, 'unreturnedVotes': 246} do not match final JUMLAH {'pollingStreams': 157, 'ballotsInBox': 66708, 'validVotes': 65414, 'rejectedVotes': 1048, 'unreturnedVotes': 246}."
+    },
+    {
+      "path": "P.169.xlsx",
+      "parliamentCode": "P.169",
+      "sha256": "78ccc6441872cbc105496a1ae9e86b056e299220dfee789761cc5e1f5751fb39",
+      "bytes": 36125,
+      "sheets": 1,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 124, 'ballotsInBox': 47283, 'validVotes': 45844, 'rejectedVotes': 1145, 'unreturnedVotes': 294} do not match final JUMLAH {'pollingStreams': 125, 'ballotsInBox': 47565, 'validVotes': 46098, 'rejectedVotes': 1173, 'unreturnedVotes': 294}."
+    },
+    {
+      "path": "P.170.xlsx",
+      "parliamentCode": "P.170",
+      "sha256": "6ef3e2f9e4b51ea55ca3d2eac3085c1e90fae9e22f06424ec9e0b970b91c6486",
+      "bytes": 50920,
+      "sheets": 1,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 108, 'ballotsInBox': 45243, 'validVotes': 44047, 'rejectedVotes': 963, 'unreturnedVotes': 233} do not match final JUMLAH {'pollingStreams': 107, 'ballotsInBox': 44834, 'validVotes': 43643, 'rejectedVotes': 958, 'unreturnedVotes': 233}."
+    },
+    {
+      "path": "P.176.xlsx",
+      "parliamentCode": "P.176",
+      "sha256": "82c9cb34769886051d86d9bf1cb6402501f507f36c01f419206059df89694245",
+      "bytes": 26267,
+      "sheets": 1,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 61, 'ballotsInBox': 25863, 'validVotes': 25370, 'rejectedVotes': 387, 'unreturnedVotes': 106} do not match final JUMLAH {'pollingStreams': 60, 'ballotsInBox': 25519, 'validVotes': 25028, 'rejectedVotes': 385, 'unreturnedVotes': 106}."
+    },
+    {
+      "path": "P.180.xlsx",
+      "parliamentCode": "P.180",
+      "sha256": "4a530c66f521e7783d9d727229b15d56912ac0fc7abcab8d2b66a54ce6576bb5",
+      "bytes": 40503,
+      "sheets": 1,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 72, 'ballotsInBox': 28685, 'validVotes': 28071, 'rejectedVotes': 377, 'unreturnedVotes': 237} do not match final JUMLAH {'pollingStreams': 105, 'ballotsInBox': 40913, 'validVotes': 40149, 'rejectedVotes': 522, 'unreturnedVotes': 242}."
+    }
+  ],
+  "missingSources": [
+    {
+      "parliamentCode": "P.166",
+      "parliamentName": "LABUAN",
+      "state": "W.P LABUAN",
+      "category": "missing-source",
+      "reason": "Tiada workbook Parlimen dalam arkib sumber yang dibekalkan."
+    },
+    {
+      "parliamentCode": "P.192",
+      "parliamentName": "MAS GADING",
+      "state": "SARAWAK",
+      "category": "missing-source",
+      "reason": "Tiada workbook Parlimen dalam arkib sumber yang dibekalkan."
+    },
+    {
+      "parliamentCode": "P.193",
+      "parliamentName": "SANTUBONG",
+      "state": "SARAWAK",
+      "category": "missing-source",
+      "reason": "Tiada workbook Parlimen dalam arkib sumber yang dibekalkan."
+    },
+    {
+      "parliamentCode": "P.194",
+      "parliamentName": "PETRA JAYA",
+      "state": "SARAWAK",
+      "category": "missing-source",
+      "reason": "Tiada workbook Parlimen dalam arkib sumber yang dibekalkan."
+    },
+    {
+      "parliamentCode": "P.195",
+      "parliamentName": "BANDAR KUCHING",
+      "state": "SARAWAK",
+      "category": "missing-source",
+      "reason": "Tiada workbook Parlimen dalam arkib sumber yang dibekalkan."
+    },
+    {
+      "parliamentCode": "P.196",
+      "parliamentName": "STAMPIN",
+      "state": "SARAWAK",
+      "category": "missing-source",
+      "reason": "Tiada workbook Parlimen dalam arkib sumber yang dibekalkan."
+    },
+    {
+      "parliamentCode": "P.197",
+      "parliamentName": "KOTA SAMARAHAN",
+      "state": "SARAWAK",
+      "category": "missing-source",
+      "reason": "Tiada workbook Parlimen dalam arkib sumber yang dibekalkan."
+    },
+    {
+      "parliamentCode": "P.198",
+      "parliamentName": "PUNCAK BORNEO",
+      "state": "SARAWAK",
+      "category": "missing-source",
+      "reason": "Tiada workbook Parlimen dalam arkib sumber yang dibekalkan."
+    },
+    {
+      "parliamentCode": "P.199",
+      "parliamentName": "SERIAN",
+      "state": "SARAWAK",
+      "category": "missing-source",
+      "reason": "Tiada workbook Parlimen dalam arkib sumber yang dibekalkan."
+    },
+    {
+      "parliamentCode": "P.200",
+      "parliamentName": "BATANG SADONG",
+      "state": "SARAWAK",
+      "category": "missing-source",
+      "reason": "Tiada workbook Parlimen dalam arkib sumber yang dibekalkan."
+    },
+    {
+      "parliamentCode": "P.201",
+      "parliamentName": "BATANG LUPAR",
+      "state": "SARAWAK",
+      "category": "missing-source",
+      "reason": "Tiada workbook Parlimen dalam arkib sumber yang dibekalkan."
+    },
+    {
+      "parliamentCode": "P.202",
+      "parliamentName": "SRI AMAN",
+      "state": "SARAWAK",
+      "category": "missing-source",
+      "reason": "Tiada workbook Parlimen dalam arkib sumber yang dibekalkan."
+    },
+    {
+      "parliamentCode": "P.203",
+      "parliamentName": "LUBOK ANTU",
+      "state": "SARAWAK",
+      "category": "missing-source",
+      "reason": "Tiada workbook Parlimen dalam arkib sumber yang dibekalkan."
+    },
+    {
+      "parliamentCode": "P.204",
+      "parliamentName": "BETONG",
+      "state": "SARAWAK",
+      "category": "missing-source",
+      "reason": "Tiada workbook Parlimen dalam arkib sumber yang dibekalkan."
+    },
+    {
+      "parliamentCode": "P.205",
+      "parliamentName": "SARATOK",
+      "state": "SARAWAK",
+      "category": "missing-source",
+      "reason": "Tiada workbook Parlimen dalam arkib sumber yang dibekalkan."
+    },
+    {
+      "parliamentCode": "P.206",
+      "parliamentName": "TANJONG MANIS",
+      "state": "SARAWAK",
+      "category": "missing-source",
+      "reason": "Tiada workbook Parlimen dalam arkib sumber yang dibekalkan."
+    },
+    {
+      "parliamentCode": "P.207",
+      "parliamentName": "IGAN",
+      "state": "SARAWAK",
+      "category": "missing-source",
+      "reason": "Tiada workbook Parlimen dalam arkib sumber yang dibekalkan."
+    },
+    {
+      "parliamentCode": "P.208",
+      "parliamentName": "SARIKEI",
+      "state": "SARAWAK",
+      "category": "missing-source",
+      "reason": "Tiada workbook Parlimen dalam arkib sumber yang dibekalkan."
+    },
+    {
+      "parliamentCode": "P.209",
+      "parliamentName": "JULAU",
+      "state": "SARAWAK",
+      "category": "missing-source",
+      "reason": "Tiada workbook Parlimen dalam arkib sumber yang dibekalkan."
+    },
+    {
+      "parliamentCode": "P.210",
+      "parliamentName": "KANOWIT",
+      "state": "SARAWAK",
+      "category": "missing-source",
+      "reason": "Tiada workbook Parlimen dalam arkib sumber yang dibekalkan."
+    },
+    {
+      "parliamentCode": "P.211",
+      "parliamentName": "LANANG",
+      "state": "SARAWAK",
+      "category": "missing-source",
+      "reason": "Tiada workbook Parlimen dalam arkib sumber yang dibekalkan."
+    },
+    {
+      "parliamentCode": "P.212",
+      "parliamentName": "SIBU",
+      "state": "SARAWAK",
+      "category": "missing-source",
+      "reason": "Tiada workbook Parlimen dalam arkib sumber yang dibekalkan."
+    },
+    {
+      "parliamentCode": "P.213",
+      "parliamentName": "MUKAH",
+      "state": "SARAWAK",
+      "category": "missing-source",
+      "reason": "Tiada workbook Parlimen dalam arkib sumber yang dibekalkan."
+    },
+    {
+      "parliamentCode": "P.214",
+      "parliamentName": "SELANGAU",
+      "state": "SARAWAK",
+      "category": "missing-source",
+      "reason": "Tiada workbook Parlimen dalam arkib sumber yang dibekalkan."
+    },
+    {
+      "parliamentCode": "P.215",
+      "parliamentName": "KAPIT",
+      "state": "SARAWAK",
+      "category": "missing-source",
+      "reason": "Tiada workbook Parlimen dalam arkib sumber yang dibekalkan."
+    },
+    {
+      "parliamentCode": "P.216",
+      "parliamentName": "HULU RAJANG",
+      "state": "SARAWAK",
+      "category": "missing-source",
+      "reason": "Tiada workbook Parlimen dalam arkib sumber yang dibekalkan."
+    },
+    {
+      "parliamentCode": "P.217",
+      "parliamentName": "BINTULU",
+      "state": "SARAWAK",
+      "category": "missing-source",
+      "reason": "Tiada workbook Parlimen dalam arkib sumber yang dibekalkan."
+    },
+    {
+      "parliamentCode": "P.218",
+      "parliamentName": "SIBUTI",
+      "state": "SARAWAK",
+      "category": "missing-source",
+      "reason": "Tiada workbook Parlimen dalam arkib sumber yang dibekalkan."
+    },
+    {
+      "parliamentCode": "P.219",
+      "parliamentName": "MIRI",
+      "state": "SARAWAK",
+      "category": "missing-source",
+      "reason": "Tiada workbook Parlimen dalam arkib sumber yang dibekalkan."
+    },
+    {
+      "parliamentCode": "P.220",
+      "parliamentName": "BARAM",
+      "state": "SARAWAK",
+      "category": "missing-source",
+      "reason": "Tiada workbook Parlimen dalam arkib sumber yang dibekalkan."
+    },
+    {
+      "parliamentCode": "P.221",
+      "parliamentName": "LIMBANG",
+      "state": "SARAWAK",
+      "category": "missing-source",
+      "reason": "Tiada workbook Parlimen dalam arkib sumber yang dibekalkan."
+    },
+    {
+      "parliamentCode": "P.222",
+      "parliamentName": "LAWAS",
+      "state": "SARAWAK",
+      "category": "missing-source",
+      "reason": "Tiada workbook Parlimen dalam arkib sumber yang dibekalkan."
+    }
+  ],
+  "resolvedConflicts": [
+    {
+      "parliamentCode": "P.075",
+      "candidate": "AHMAD ZAHID BIN HAMIDI",
+      "openDataVotes": 18908,
+      "scoresheetVotes": 18909,
+      "publishedMajority": 5073,
+      "reason": "The SPR open-data candidate row says 18,908, but the official SPR workbook says 18,909 and 18,909 - 13,836 equals SPR's published majority of 5,073."
+    }
+  ],
+  "dunRejectedSources": [
+    {
+      "path": "perlis/N.01.xlsx",
+      "contestId": "prn-perlis-2018:P.001:N.01",
+      "stateId": "perlis",
+      "dunCode": "N.01",
+      "sha256": "660488edba3990c01bfcbd8bd5857a9d3ee0734afcfed009b7d9232cd863290c",
+      "bytes": 28502,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 21, 'ballotsInBox': 7497, 'validVotes': 7286, 'rejectedVotes': 180, 'unreturnedVotes': 31} do not match final JUMLAH {'pollingStreams': 22, 'ballotsInBox': 8018, 'validVotes': 7805, 'rejectedVotes': 182, 'unreturnedVotes': 31}."
+    },
+    {
+      "path": "pulau-pinang/N.16.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.046:N.16",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.16",
+      "sha256": "fc59c845a3b0aa8c930cad1e7fe798ec91c9e077c5fd4754f8eb98310e73f8b0",
+      "bytes": 35156,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 20, 'ballotsInBox': 10095, 'validVotes': 10004, 'rejectedVotes': 90, 'unreturnedVotes': 1} do not match final JUMLAH {'pollingStreams': 31, 'ballotsInBox': 13819, 'validVotes': 13634, 'rejectedVotes': 168, 'unreturnedVotes': 17}."
+    },
+    {
+      "path": "pulau-pinang/N.19.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.047:N.19",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.19",
+      "sha256": "37fd15bc8afb51154e396089c80646cccf1fd250d4679f971e3982c750dec2c9",
+      "bytes": 37648,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 33, 'ballotsInBox': 15481, 'validVotes': 15159, 'rejectedVotes': 271, 'unreturnedVotes': 51} do not match final JUMLAH {'pollingStreams': 49, 'ballotsInBox': 22778, 'validVotes': 22345, 'rejectedVotes': 377, 'unreturnedVotes': 56}."
+    },
+    {
+      "path": "pulau-pinang/N.30.xlsx",
+      "contestId": "prn-pulau-pinang-2018:P.050:N.30",
+      "stateId": "pulau-pinang",
+      "dunCode": "N.30",
+      "sha256": "9c56c53df334889b6659ddadace8dc45ff46cd7edb2fd1ba583e4b076ed4feee",
+      "bytes": 38389,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 34, 'ballotsInBox': 16112, 'validVotes': 15815, 'rejectedVotes': 218, 'unreturnedVotes': 79} do not match final JUMLAH {'pollingStreams': 46, 'ballotsInBox': 22704, 'validVotes': 22332, 'rejectedVotes': 291, 'unreturnedVotes': 81}."
+    }
+  ],
+  "sabahDunRejectedSources": [
+    {
+      "path": "sabah/N.01 BANGGI.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.167:N.01",
+      "stateId": "sabah",
+      "dunCode": "N.01",
+      "sha256": "d81cf4a81fd689511c8ed9bec8a1ee69e16b189db017749b3a006856d5b3f109",
+      "bytes": 32320,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 27, 'ballotsInBox': 7151, 'validVotes': 6879, 'rejectedVotes': 244, 'unreturnedVotes': 28} do not match final JUMLAH {'pollingStreams': 30, 'ballotsInBox': 7868, 'validVotes': 7560, 'rejectedVotes': 279, 'unreturnedVotes': 29}."
+    },
+    {
+      "path": "sabah/N.03 PITAS.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.167:N.03",
+      "stateId": "sabah",
+      "dunCode": "N.03",
+      "sha256": "93583998936e0c8cba5210c7d9485fd50e4f8199fb84ef28dc6e39b120acc0a0",
+      "bytes": 31121,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 36, 'ballotsInBox': 12645, 'validVotes': 12195, 'rejectedVotes': 400, 'unreturnedVotes': 50} do not match final JUMLAH {'pollingStreams': 38, 'ballotsInBox': 13095, 'validVotes': 12627, 'rejectedVotes': 416, 'unreturnedVotes': 52}."
+    },
+    {
+      "path": "sabah/N.33 BINGKOR.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.180:N.33",
+      "stateId": "sabah",
+      "dunCode": "N.33",
+      "sha256": "2019c0cb9b85230cc06eeae087d9d8f7040375a95309d1c7e2835dc91cf54e6f",
+      "bytes": 32914,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 28, 'ballotsInBox': 11155, 'validVotes': 10913, 'rejectedVotes': 161, 'unreturnedVotes': 81} do not match final JUMLAH {'pollingStreams': 35, 'ballotsInBox': 13984, 'validVotes': 13713, 'rejectedVotes': 190, 'unreturnedVotes': 81}."
+    },
+    {
+      "path": "sabah/N.43 SEKONG.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.185:N.43",
+      "stateId": "sabah",
+      "dunCode": "N.43",
+      "sha256": "a2ed766ea4c0d8923f6dd7b849f4dc700b1b53874ca7a4c4412bade2d10ec3a6",
+      "bytes": 28842,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 21, 'ballotsInBox': 8601, 'validVotes': 8325, 'rejectedVotes': 230, 'unreturnedVotes': 46} do not match final JUMLAH {'pollingStreams': 30, 'ballotsInBox': 12304, 'validVotes': 11918, 'rejectedVotes': 337, 'unreturnedVotes': 49}."
+    },
+    {
+      "path": "sabah/N.58 MEROTAI.xlsx",
+      "contestId": "prn-sabah-2018:sabah-2018:P.191:N.58",
+      "stateId": "sabah",
+      "dunCode": "N.58",
+      "sha256": "4f5cc1b5082363916f389c222a05a5e8f3adf32bacd4d0f951a8872d15e8c853",
+      "bytes": 34490,
+      "status": "rejected",
+      "reason": "Stream totals {'pollingStreams': 28, 'ballotsInBox': 10946, 'validVotes': 10835, 'rejectedVotes': 111, 'unreturnedVotes': 0} do not match final JUMLAH {'pollingStreams': 38, 'ballotsInBox': 15263, 'validVotes': 14839, 'rejectedVotes': 275, 'unreturnedVotes': 149}."
+    }
+  ],
+  "officialSourceSearch": {
+    "version": 1,
+    "checkedAt": "2026-08-05",
+    "publisher": "Suruhanjaya Pilihan Raya Malaysia",
+    "scope": "Replacement PRU-14 federal and DUN scoresheets",
+    "officialLocationsChecked": [
+      {
+        "url": "https://opendata.spr.gov.my/data/keputusan-pru.json",
+        "result": "Aggregate candidate results only; no polling-stream scoresheet files."
+      },
+      {
+        "url": "https://mysprsemak.spr.gov.my/semakan/keputusan/pru/",
+        "result": "Aggregate constituency results only; no downloadable scoresheet archive."
+      },
+      {
+        "url": "https://www.spr.gov.my/sites/default/files/HargaDPIST42017_PRU14.pdf",
+        "result": "Official constituency identities and registered-voter totals; no polling-stream results."
+      },
+      {
+        "url": "https://ppn.spr.gov.my/sabah/wp-content/uploads/2018/04/INFO-PRU-141.pdf",
+        "result": "Official Sabah PRU-14 schedule and electorate summary; no scoresheet archive."
+      },
+      {
+        "url": "https://www.spr.gov.my/sites/default/files/senarai-bahagian-pilihanraya-persekutuan-dan-negeri.pdf",
+        "result": "Official pre-2019 Sabah 60-seat identity list; no digital boundary geometry or scoresheets."
+      }
+    ],
+    "searchOutcome": "No official replacement scoresheet files were discoverable for the declared missing or internally incomplete workbooks.",
+    "publicationPolicy": "Keep aggregate SPR results available, publish saluran detail only when every workbook row balances to its own final JUMLAH, and expose every gap in the audit interface."
+  }
+}

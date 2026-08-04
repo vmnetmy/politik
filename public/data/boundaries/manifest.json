@@ -8,94 +8,129 @@
       "records": 36
     },
     "registry.json": {
-      "sha256": "5409f7ec76af481d683d9e016b7b9f10417162a04afbcebba67fe647eb32778a",
-      "bytes": 40341,
+      "sha256": "7356201ff851d1b684373b8378b2784a8de8499ec4227ed2902167c2c444ae17",
+      "bytes": 39595,
       "records": 7
     },
     "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/index.json": {
-      "sha256": "1ffb0da9a66730ba3ad4dc98d72fd3a84c7daa55ffe3093240df3e01e930551b",
-      "bytes": 211561,
+      "sha256": "9d9494d898e55d440e18dccc019f8d30d0a21af18c22cd5a90d1467addc7a3f0",
+      "bytes": 211939,
       "records": 222
     },
-    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/perlis.json": {
-      "sha256": "85c025733bf6d9e7a59fcc88566c9c4b8d18bc2f52f02584874bfa13bfd4ad25",
-      "bytes": 33910,
+    "my-peninsula-2018/atlas/states/perlis.json": {
+      "sha256": "83e1810ff39056a8492bfcb7029d2ff44080e8253e8626270c8742ca0a9df356",
+      "bytes": 33886,
       "records": 18
     },
-    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/kedah.json": {
-      "sha256": "4bfaad6a2e61dc5a434f1d2afc0f82ca2f2a7e442d363074858f0daf415862ed",
-      "bytes": 241111,
+    "my-peninsula-2018/atlas/states/kedah.json": {
+      "sha256": "3dd239c2ea7cb49774eb66b5652e6ab3f972057a01c7b66e0b4b57163c639a24",
+      "bytes": 241087,
       "records": 51
     },
-    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/kelantan.json": {
-      "sha256": "1eb66de1b579ed90eaee23dce6a58c9a3742c88ea04f55cf9a6e5afb42d36a79",
-      "bytes": 199901,
+    "my-peninsula-2018/atlas/states/kelantan.json": {
+      "sha256": "cd3eae019d3101a823acdf4a6ac325ef7caa4a58ecc5860be621a69538b57683",
+      "bytes": 199877,
       "records": 59
     },
-    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/terengganu.json": {
-      "sha256": "6f6d3cd61b25d6c2f0b4e807a731acca83beb4988c887b780f2607fb86d77dae",
-      "bytes": 176414,
+    "my-peninsula-2018/atlas/states/terengganu.json": {
+      "sha256": "0fd26b3e122a3cd10302f74ed40de15613a12a43fce2337ca56c684cc0e1132a",
+      "bytes": 176390,
       "records": 40
     },
-    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/pulau-pinang.json": {
-      "sha256": "21417fa78fcbfa75e1c0d76886a6b930090629f07bfd72193b9937be8ec893ef",
-      "bytes": 82378,
+    "my-peninsula-2018/atlas/states/pulau-pinang.json": {
+      "sha256": "5fba90a56a1c4a9217d5c0c3c78e4f2609de63b4a6fb13fa511029be65123aca",
+      "bytes": 82354,
       "records": 53
     },
-    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/perak.json": {
-      "sha256": "1543b0f04f6be8351c799779ccaf597c118c184e7992b51437a1b83c112ed0ad",
-      "bytes": 313955,
+    "my-peninsula-2018/atlas/states/perak.json": {
+      "sha256": "78016689e83dbbb965580b5c9cba5c7a54f8f7b79432ac1d6831a9de3f488ed0",
+      "bytes": 313931,
       "records": 83
     },
-    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/pahang.json": {
-      "sha256": "04a8d58af77cdab1c92a11e94a946b6a224ba7de4353eadb773835461302fabc",
-      "bytes": 361919,
+    "my-peninsula-2018/atlas/states/pahang.json": {
+      "sha256": "5ec0719dd7e97174f31407d8af13bb86fbb71894b73ca2e49d787b2c99825044",
+      "bytes": 361895,
       "records": 56
     },
-    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/selangor.json": {
-      "sha256": "b60afd322eb2ef8228785cf7027fe5c36d622ff981b32ee0b771fc448bcf8aa6",
-      "bytes": 197046,
+    "my-peninsula-2018/atlas/states/selangor.json": {
+      "sha256": "64e8ff16932f25974d911e376264a9f00babe4d28fc5cb89ad60c4c607c81671",
+      "bytes": 197022,
       "records": 78
     },
-    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/wp-kuala-lumpur.json": {
-      "sha256": "bec56b1cac013506cc4394638e3cc68a86f1fed07f7053b679248e82d924414d",
-      "bytes": 15538,
+    "my-peninsula-2018/atlas/states/wp-kuala-lumpur.json": {
+      "sha256": "edcb0b4580c8149944f2230ddf4853dfa149e80bf8952634f2418de5f232af13",
+      "bytes": 15514,
       "records": 11
     },
-    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/wp-putrajaya.json": {
-      "sha256": "7394d8cd49e2dcb7dce73d8ae15ce32dcf736880d30a9a80fd2719ee118ab642",
-      "bytes": 2312,
+    "my-peninsula-2018/atlas/states/wp-putrajaya.json": {
+      "sha256": "b33e186b3afc3e57bfa3b04b85689b7cc15c8ff9b8273b6ce2d490a51d058a9c",
+      "bytes": 2288,
       "records": 1
     },
-    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/negeri-sembilan.json": {
-      "sha256": "3c601a2c0c4c4155302f310dd94df118bdd925560aa2e4ef32cf26f47ce711bc",
-      "bytes": 122893,
+    "my-peninsula-2018/atlas/states/negeri-sembilan.json": {
+      "sha256": "8a40689d46c0ac1a61d6f601e6917cad8c18175461021d545718d33fe07cd898",
+      "bytes": 122869,
       "records": 44
     },
-    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/melaka.json": {
-      "sha256": "cd799039a8f3cceeab1181c2c289d7e8aee39bc65f676c286ac17fc243fc29a1",
-      "bytes": 77040,
+    "my-peninsula-2018/atlas/states/melaka.json": {
+      "sha256": "ff56158151e640f43db9fdead3f12fbb2b9776084c75fd501e3dbe0d1edab959",
+      "bytes": 77016,
       "records": 34
     },
-    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/johor.json": {
-      "sha256": "0759ac4bf7805c7b0a7cdbe05f728080b8c7df561d498f2eb1a065119a051edf",
-      "bytes": 239198,
+    "my-peninsula-2018/atlas/states/johor.json": {
+      "sha256": "9510c42d363524e24c76bb77d0e74d2dd37b193ab4905e43852ed82b8e18a8e9",
+      "bytes": 239174,
       "records": 82
     },
-    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/wp-labuan.json": {
-      "sha256": "1702f1d4ea757cad0df9f9fb8bbd4cbaa7aa5d0f83996d841f9ac04456661b65",
-      "bytes": 4289,
+    "my-peninsula-2018/atlas/states/wp-labuan.json": {
+      "sha256": "f580318790855a1c4fe99dacf8b28609e501773233559fbfc4faed93e94efdad",
+      "bytes": 4265,
       "records": 1
     },
-    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/sabah.json": {
-      "sha256": "7756e275249c2c5c311148f08e44c74c9b62801d9a7060b0f585674fe31733d9",
-      "bytes": 791657,
+    "my-sabah-2019/atlas/states/sabah.json": {
+      "sha256": "e818b549c0129932bf5cdcdce14854a4704a72f01f54f3a44cd5736ffdc9c4a6",
+      "bytes": 791629,
       "records": 98
     },
-    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/sarawak.json": {
-      "sha256": "d1f5f093e184746aecce9dd1aa7fd67d423eaa861acd2b3f882724c39d923611",
-      "bytes": 970466,
+    "my-sarawak-2015/atlas/states/sarawak.json": {
+      "sha256": "1eba75a30eae2810877136095d5e52fcd36c0f6a0e9a53e025236b4c59596e50",
+      "bytes": 970440,
       "records": 113
+    },
+    "snapshots/pru-14.json": {
+      "sha256": "dfee70b9af27025c7873cbe292959870fcf48d8abf7482e7401f189cfbfe8f6f",
+      "bytes": 9863,
+      "records": 16
+    },
+    "snapshots/pru-15.json": {
+      "sha256": "815f58dfb4c0495b2b4315b161f825fefc07aafc8713f21e205dca0971a00e7f",
+      "bytes": 9799,
+      "records": 16
+    },
+    "snapshots/prn-12.json": {
+      "sha256": "64cd1727ccca887cd498bb0237ce7241d07fbf5f8b5b37edea47aec6962e99ba",
+      "bytes": 1094,
+      "records": 1
+    },
+    "snapshots/prn-14.json": {
+      "sha256": "7fa2167aaceffd51b163272ce4842089797f54a07dcf3630d5725314e735412b",
+      "bytes": 8082,
+      "records": 11
+    },
+    "snapshots/prn-15.json": {
+      "sha256": "c0860fbd3aa48807f06619f9fcbb49dcba4c1222a031ad7c21d405c0fafad204",
+      "bytes": 8643,
+      "records": 12
+    },
+    "snapshots/prn-16.json": {
+      "sha256": "8efbda83317bb0501da52faba54e0da23fbe228546228e27435571e85db661f2",
+      "bytes": 1845,
+      "records": 2
+    },
+    "snapshots/prn-17.json": {
+      "sha256": "8c687b449503af8b248c313cf3002259927a04b2de47eea35519d0f04350218f",
+      "bytes": 1112,
+      "records": 1
     }
   }
 }

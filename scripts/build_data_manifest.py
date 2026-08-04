@@ -23,7 +23,7 @@ CAPABILITY_DATA_FILES = {
     "voterAge": {"constituencies.json": "duns", "voter-age.json": "dunRecords"},
     "voterEthnicity": {"constituencies.json": "duns", "voter-age.json": "dunRecords", "voter-ethnicity.json": "records"},
     "geography": {"constituencies.json": "duns", "polling-places.json": "pollingDistricts", "geography.json": "pdms"},
-    "scoresheets": {"polling-places.json": "pollingDistricts", "scoresheets/index.json": "seats"},
+    "scoresheets": {"scoresheets/index.json": "seats", "spr-audit.json": "checks"},
 }
 
 ALL_DATA_FILES = {
@@ -38,6 +38,7 @@ ALL_DATA_FILES = {
     "polling-places.json": "pollingDistricts",
     "geography.json": "pdms",
     "scoresheets/index.json": "seats",
+    "spr-audit.json": "checks",
 }
 
 REFERENCE_FILES = {
@@ -51,22 +52,17 @@ BOUNDARY_FILES = {
     "semenanjung-2018/negeri-sembilan-dun.json": "features",
     "registry.json": "registryEntries",
     "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/index.json": "atlasIndexFeatures",
-    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/perlis.json": "atlasFeatures",
-    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/kedah.json": "atlasFeatures",
-    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/kelantan.json": "atlasFeatures",
-    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/terengganu.json": "atlasFeatures",
-    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/pulau-pinang.json": "atlasFeatures",
-    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/perak.json": "atlasFeatures",
-    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/pahang.json": "atlasFeatures",
-    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/selangor.json": "atlasFeatures",
-    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/wp-kuala-lumpur.json": "atlasFeatures",
-    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/wp-putrajaya.json": "atlasFeatures",
-    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/negeri-sembilan.json": "atlasFeatures",
-    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/melaka.json": "atlasFeatures",
-    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/johor.json": "atlasFeatures",
-    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/wp-labuan.json": "atlasFeatures",
-    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/sabah.json": "atlasFeatures",
-    "my-sarawak-2015-peninsula-2018-sabah-2019/atlas/states/sarawak.json": "atlasFeatures",
+    **{
+        f"my-peninsula-2018/atlas/states/{state_id}.json": "atlasFeatures"
+        for state_id in (
+            "perlis", "kedah", "kelantan", "terengganu", "pulau-pinang", "perak",
+            "pahang", "selangor", "wp-kuala-lumpur", "wp-putrajaya",
+            "negeri-sembilan", "melaka", "johor", "wp-labuan",
+        )
+    },
+    "my-sabah-2019/atlas/states/sabah.json": "atlasFeatures",
+    "my-sarawak-2015/atlas/states/sarawak.json": "atlasFeatures",
+    **{f"snapshots/{snapshot}.json": "snapshotStates" for snapshot in ("pru-14", "pru-15", "prn-12", "prn-14", "prn-15", "prn-16", "prn-17")},
 }
 
 
@@ -88,6 +84,8 @@ def build_collection_manifest(directory: Path, data_files: dict[str, str]) -> di
                 *value.get("federal", {}).values(),
                 *value.get("stateAssemblies", {}).values(),
             ]
+        elif collection_key == "snapshotStates":
+            collection = list(value.get("states", {}).values())
         else:
             collection = value.get(collection_key, [])
         if not isinstance(collection, list):
@@ -135,6 +133,20 @@ def build(data_directory: Path, capabilities: dict[str, bool] | None = None) -> 
             "sha256": hashlib.sha256(raw).hexdigest(),
             "bytes": len(raw),
             "records": len(collection),
+        }
+    places_directory = scoresheet_directory / "places"
+    for path in sorted(places_directory.glob("P.*.json")) if scoresheets_enabled else []:
+        relative = path.relative_to(data_directory).as_posix()
+        raw = path.read_bytes()
+        value = json.loads(raw)
+        districts = value.get("pollingDistricts", [])
+        centres = value.get("pollingCentres", [])
+        if not isinstance(districts, list) or not isinstance(centres, list):
+            raise ValueError(f"{relative} must contain pollingDistricts and pollingCentres arrays.")
+        files[relative] = {
+            "sha256": hashlib.sha256(raw).hexdigest(),
+            "bytes": len(raw),
+            "records": len(districts) + len(centres),
         }
     return {"version": 1, "algorithm": "sha256", "files": files}
 

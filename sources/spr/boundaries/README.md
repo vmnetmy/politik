@@ -23,3 +23,15 @@ Every published PRU/PRN event occurs after the applicable regional effective
 date. `scripts/extract_atlas_boundaries.py` therefore certifies event-by-state
 coverage as `exact`; it rejects a state-election event that has no explicit
 state boundary entry.
+
+The browser artifacts are now separated into immutable regional snapshots:
+
+- `my-peninsula-2018/atlas/states/*.json`
+- `my-sarawak-2015/atlas/states/sarawak.json`
+- `my-sabah-2019/atlas/states/sabah.json`
+
+Edition manifests in `public/data/boundaries/snapshots/` bind each PRU or PRN
+edition to the applicable regional file, effective date, order reference and
+SHA-256. Geometry may legitimately be shared between elections held under the
+same delimitation order; the manifest makes that reuse explicit instead of
+pretending a newer shape exists.

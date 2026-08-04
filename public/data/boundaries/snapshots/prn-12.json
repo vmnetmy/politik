@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "coordinateReference": "EPSG:4326",
+  "sourceUrl": "https://opendata.spr.gov.my/api/proxy-file?dataset_id=11",
+  "sourceSha256": "1f4084554214c1ffe7fd5f20096ca049dafcb0a58facabde8bb10ff87cc78ffc",
+  "retrievedAt": "2026-07-23",
+  "snapshotPolicy": "Exact geometry is pinned by regional boundary version, effective date and SHA-256.",
+  "id": "prn-12",
+  "scope": "state-assembly",
+  "events": [
+    {
+      "id": "prn-sarawak-2021",
+      "stateId": "sarawak",
+      "electionDate": "2021-12-18"
+    }
+  ],
+  "states": {
+    "sarawak": {
+      "boundaryVersion": "my-sarawak-2015",
+      "effectiveFrom": "2015-12-19",
+      "orderReference": "P.U.(A) 299/2015",
+      "evidenceUrl": "https://www.pmo.gov.my/ucapan/?id=4310&m=p&p=najib",
+      "note": "Sempadan 82 DUN Sarawak berkuat kuasa mulai 19 Disember 2015.",
+      "status": "exact",
+      "stateFile": "my-sarawak-2015/atlas/states/sarawak.json",
+      "geometrySha256": "1eba75a30eae2810877136095d5e52fcd36c0f6a0e9a53e025236b4c59596e50",
+      "parliamentFeatureCount": 31,
+      "dunFeatureCount": 82
+    }
+  }
+}
