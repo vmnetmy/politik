@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 import election from "../public/data/elections/pru-15/election.json";
 import affiliationFile from "../public/data/elections/pru-15/affiliations.json";
+import election14 from "../public/data/elections/pru-14/election.json";
+import affiliationFile14 from "../public/data/elections/pru-14/affiliations.json";
 import {
   applyAffiliationEvents,
   buildDefaultAllianceCatalog,
@@ -42,6 +44,38 @@ describe("effective-dated affiliations", () => {
     expect(currentAlliance(seat!)).toBe(alliance);
     expect(seat!.winner.party).toBe("PARTI KEADILAN RAKYAT (PKR)");
     expect(seat!.winner.alliance).toBe("PAKATAN HARAPAN (PH)");
+  });
+});
+
+describe("PRU-14 affiliation backfill", () => {
+  const historicalData = election14 as ElectionData;
+  const historicalEvents = parseAffiliationFile(affiliationFile14);
+  const historicalParties = buildDefaultPartyCatalog(historicalData);
+  const historicalAlliances = buildDefaultAllianceCatalog(historicalData);
+  const sheratonSeats = ["P.047", "P.082", "P.098", "P.099", "P.124", "P.140", "P.150", "P.179", "P.198", "P.205", "P.214"];
+  const bersatuSeats = sheratonSeats.filter((seatCode) => seatCode !== "P.214");
+
+  it("records all 11 PKR MPs as independent from 24 February 2020", () => {
+    const departureEvents = historicalEvents.filter((event) => event.effectiveDate === "2020-02-24");
+    expect(departureEvents).toHaveLength(11);
+    expect(new Set(departureEvents.map((event) => event.seatCode))).toEqual(new Set(sheratonSeats));
+
+    const before = applyAffiliationEvents(historicalData.seats, historicalEvents, historicalParties, historicalAlliances, "2020-02-23");
+    const after = applyAffiliationEvents(historicalData.seats, historicalEvents, historicalParties, historicalAlliances, "2020-02-24");
+    expect(before.filter((seat) => sheratonSeats.includes(seat.code)).every((seat) => currentParty(seat) === "PARTI KEADILAN RAKYAT (PKR)")).toBe(true);
+    expect(after.filter((seat) => sheratonSeats.includes(seat.code)).every((seat) => currentParty(seat) === "BEBAS" && currentAlliance(seat) === "LAIN-LAIN / BEBAS")).toBe(true);
+    expect(after.filter((seat) => sheratonSeats.includes(seat.code)).every((seat) => seat.winner.party === "PARTI KEADILAN RAKYAT (PKR)")).toBe(true);
+  });
+
+  it("moves the 10 named members to Bersatu on 11 March while Baru Bian remains independent", () => {
+    const membershipEvents = historicalEvents.filter((event) => event.effectiveDate === "2020-03-11");
+    expect(membershipEvents).toHaveLength(10);
+    expect(new Set(membershipEvents.map((event) => event.seatCode))).toEqual(new Set(bersatuSeats));
+
+    const after = applyAffiliationEvents(historicalData.seats, historicalEvents, historicalParties, historicalAlliances, "2020-03-11");
+    expect(after.filter((seat) => bersatuSeats.includes(seat.code)).every((seat) => currentParty(seat) === "PARTI PRIBUMI BERSATU MALAYSIA (BERSATU)" && currentAlliance(seat) === "PERIKATAN NASIONAL (PN)")).toBe(true);
+    expect(currentParty(after.find((seat) => seat.code === "P.214")!)).toBe("BEBAS");
+    expect(after.filter((seat) => sheratonSeats.includes(seat.code)).every((seat) => seat.winner.party === "PARTI KEADILAN RAKYAT (PKR)")).toBe(true);
   });
 });
 

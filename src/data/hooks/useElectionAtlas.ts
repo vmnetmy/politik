@@ -98,7 +98,7 @@ export function useAtlasStateBoundaries(stateId: string, filename?: string) {
   const [value, setValue] = useState<ElectionAtlasStateBoundaries | null>(null);
   const [error, setError] = useState("");
   useEffect(() => {
-    if (!stateId) {
+    if (!stateId || !filename) {
       setValue(null);
       setError("");
       return;

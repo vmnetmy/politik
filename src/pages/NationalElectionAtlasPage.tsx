@@ -9,6 +9,8 @@ import { AtlasMapViewport } from "../components/maps/AtlasMapViewport";
 import { Icon } from "../components/ui/Icon";
 import { PageTitle } from "../components/ui/PageTitle";
 import { SearchCombobox } from "../components/ui/SearchCombobox";
+import { CoverageStatus } from "../components/ui/CoverageStatus";
+import { coverageStatus } from "../data/coverage";
 import { ELECTION_EDITIONS } from "../elections";
 import { useAtlasBoundaries, useAtlasBoundaryRegistry, useAtlasHierarchy, useAtlasStateBoundaries, useFederalAtlasEdition } from "../data/hooks/useElectionAtlas";
 import { useFederalElectionComparisonData } from "../data/hooks/useFederalElectionComparisonData";
@@ -18,7 +20,7 @@ import type { AtlasBoundaryCollection, AtlasBoundaryFeature, AtlasElectionType, 
 import { stateDunResultPath, stateParliamentPath } from "../routes";
 import { recordInteraction } from "../telemetry";
 import type { ElectionData } from "../types";
-import { allianceColor, formatNumber, formatPct, shortAlliance, toSlug } from "../utils";
+import { allianceColor, formatDatesInText, formatNumber, formatPct, shortAlliance, toSlug } from "../utils";
 
 const MAP_WIDTH = 1200;
 const MAP_HEIGHT = 700;
@@ -272,7 +274,7 @@ function HierarchyExplorer({ urlState, commit, result, hierarchy }: { urlState: 
     }}/>
     {urlState.electionType === "pru" && <div><span>DUN</span><div>{childDuns.map((dun) => <button type="button" className={urlState.dunId === dun.id ? "is-active" : ""} key={dun.id} onClick={() => commit(atlasStateWith(urlState, { dunId: dun.id }))}>{dun.code} {dun.name}</button>)}</div></div>}
     <div><span>PDM</span><div>{pdms.slice(0, 80).map((pdm) => <button type="button" className={urlState.pdmId === pdm.id ? "is-active" : ""} key={pdm.id} onClick={() => commit(atlasStateWith(urlState, { pdmId: pdm.id }))}>{pdm.code} {pdm.name}</button>)}</div></div>
-    {selectedPdm && <div><span>Lokaliti</span><div>{localities.length ? localities.map((locality) => <button type="button" className={urlState.localityId === locality.id ? "is-active" : ""} key={locality.id} onClick={() => commit(atlasStateWith(urlState, { localityId: locality.id }))}>{locality.name}</button>) : <small>Tiada lokaliti rasmi diterbitkan untuk PDM ini.</small>}</div></div>}
+    {selectedPdm && <div><span>Lokaliti</span><CoverageStatus covered={localities.length ? 1 : 0} total={1} label="Sumber PDM" status={coverageStatus(localities.length ? 1 : 0, 1)} dark/><div>{localities.length ? localities.map((locality) => <button type="button" className={urlState.localityId === locality.id ? "is-active" : ""} key={locality.id} onClick={() => commit(atlasStateWith(urlState, { localityId: locality.id }))}>{locality.name}</button>) : <small>Liputan lokaliti SPR masih separa; tiada rekod sumber yang disahkan untuk PDM ini.</small>}</div></div>}
   </details>;
 }
 
@@ -331,12 +333,22 @@ export function NationalElectionAtlasPage({ currentElectionData, embed = false }
     localityId: "",
     compareEdition: null,
   } : readAtlasUrlState(searchParams, editions);
+  const editionStateIds = useMemo(() => new Set(
+    urlState.electionType === "prn" && stateElectionValue
+      ? stateElectionValue.results.events
+        .filter((event) => event.assemblyNumber === urlState.edition)
+        .map((event) => event.stateId)
+      : [],
+  ), [stateElectionValue, urlState.edition, urlState.electionType]);
   const federal = useFederalAtlasEdition(
     urlState.edition,
     currentElectionData,
     urlState.electionType === "pru",
   );
-  const validStateId = boundaries?.states.some((state) => state.id === urlState.stateId) ? urlState.stateId : "";
+  const validStateId = boundaries?.states.some((state) => state.id === urlState.stateId)
+    && (urlState.electionType === "pru" || editionStateIds.has(urlState.stateId))
+    ? urlState.stateId
+    : "";
   const registryEntry: BoundaryRegistryEntry | undefined = boundaryRegistry
     ? (urlState.electionType === "pru" ? boundaryRegistry.federal[`pru-${urlState.edition}`] : boundaryRegistry.stateAssemblies[String(urlState.edition)])
     : undefined;
@@ -410,12 +422,17 @@ export function NationalElectionAtlasPage({ currentElectionData, embed = false }
 
   useEffect(() => {
     if (!boundaries || !stateElectionValue || !prnEditions.length) return;
-    const stateId = boundaries.states.some((state) => state.id === urlState.stateId) ? urlState.stateId : "";
+    const requestedStateIsValid = boundaries.states.some((state) => state.id === urlState.stateId)
+      && (urlState.electionType === "pru" || editionStateIds.has(urlState.stateId));
+    const onlyAvailableState = urlState.electionType === "prn" && editionStateIds.size === 1
+      ? [...editionStateIds][0]
+      : "";
+    const stateId = requestedStateIsValid ? urlState.stateId : urlState.stateId ? onlyAvailableState : "";
     const seat = results.find((result) => result.featureId === urlState.seatId && result.stateId === stateId);
     const next = { ...urlState, stateId, seatId: seat?.featureId ?? "", dunId: seat ? urlState.dunId : "", pdmId: seat ? urlState.pdmId : "", localityId: seat ? urlState.localityId : "" };
     const canonical = atlasSearchParams(next).toString();
     if (canonical !== searchParams.toString()) setSearchParams(canonical, { replace: true });
-  }, [boundaries, prnEditions.length, results, searchParams, setSearchParams, stateElectionValue, urlState]);
+  }, [boundaries, editionStateIds, prnEditions.length, results, searchParams, setSearchParams, stateElectionValue, urlState]);
 
   useEffect(() => {
     if (stateBoundaries.value) recordInteraction("atlas-state-geometry-ready", stateBoundaries.value.metadata.parliamentFeatureCount + stateBoundaries.value.metadata.dunFeatureCount);
@@ -468,13 +485,15 @@ export function NationalElectionAtlasPage({ currentElectionData, embed = false }
 
   const searchEntries = useMemo<SearchEntry[]>(() => {
     const entries: SearchEntry[] = [];
-    boundaries?.states.forEach((state) => entries.push({ label: `NEGERI · ${state.name}`, stateId: state.id, seatId: "" }));
+    boundaries?.states
+      .filter((state) => urlState.electionType === "pru" || editionStateIds.has(state.id))
+      .forEach((state) => entries.push({ label: `NEGERI · ${state.name}`, stateId: state.id, seatId: "" }));
     results.forEach((result) => {
       entries.push({ label: `${result.code} ${result.name} · ${result.winnerLabel}`, stateId: result.stateId, seatId: result.featureId });
       [...new Set(result.searchTerms)].forEach((term) => entries.push({ label: `${term} · ${result.code} ${result.name}`, stateId: result.stateId, seatId: result.featureId }));
     });
     return [...new Map(entries.map((entry) => [entry.label, entry])).values()];
-  }, [boundaries?.states, results]);
+  }, [boundaries?.states, editionStateIds, results, urlState.electionType]);
   const searchByLabel = new Map(searchEntries.map((entry) => [entry.label, entry]));
 
   const scopedResults = validStateId ? stateResults : results;
@@ -511,15 +530,16 @@ export function NationalElectionAtlasPage({ currentElectionData, embed = false }
     if (validStateId) return displayLayer.features.filter((feature) => resultById.has(feature.properties.id));
     const seen = new Set<string>();
     return displayLayer.features.filter((feature) => {
+      if (!stateAggregates.has(feature.properties.stateId)) return false;
       if (seen.has(feature.properties.stateId)) return false;
       seen.add(feature.properties.stateId);
       return true;
     });
-  }, [displayLayer, geometry, resultById, validStateId]);
+  }, [displayLayer, geometry, resultById, stateAggregates, validStateId]);
   const selectedKeyboardId = validStateId ? selectedResult?.featureId ?? keyboardFeatures[0]?.properties.id : keyboardFeatures.find((feature) => feature.properties.stateId === validStateId)?.properties.id ?? keyboardFeatures[0]?.properties.id;
 
   const selectFeature = (feature: AtlasBoundaryFeature) => {
-    if (!validStateId) commit(atlasStateWith(urlState, { stateId: feature.properties.stateId }), false, "atlas-drill-state");
+    if (!validStateId && stateAggregates.has(feature.properties.stateId)) commit(atlasStateWith(urlState, { stateId: feature.properties.stateId }), false, "atlas-drill-state");
     else if (resultById.has(feature.properties.id)) commit(atlasStateWith(urlState, { seatId: feature.properties.id }), false, "atlas-drill-seat");
   };
   const moveSpatially = (feature: AtlasBoundaryFeature, key: string) => {
@@ -615,7 +635,7 @@ export function NationalElectionAtlasPage({ currentElectionData, embed = false }
       {urlState.pdmId && <><span>/</span><strong>{hierarchy.value?.geography.pdms.find((pdm) => pdm.id === urlState.pdmId)?.name}</strong></>}
     </nav>
 
-    {boundaryContext?.status !== "exact" && <aside className="atlas-boundary-warning"><Icon name="info" size={17}/><span><strong>Sempadan serasi, bukan snapshot warta khusus edisi.</strong> {boundaryContext?.note}</span></aside>}
+    {boundaryContext?.status !== "exact" && <aside className="atlas-boundary-warning"><Icon name="info" size={17}/><span><strong>Sempadan serasi, bukan snapshot warta khusus edisi.</strong> {formatDatesInText(boundaryContext?.note ?? "")}</span></aside>}
 
     <section className="atlas-workspace">
       <article className="panel atlas-map-panel">
@@ -665,6 +685,6 @@ export function NationalElectionAtlasPage({ currentElectionData, embed = false }
     </section>
 
     <ResultsTable results={effectiveResults} onSelect={selectResult}/>
-    <aside className="storage-note atlas-source-note"><Icon name="database" size={18}/><div><strong>Sempadan rasmi SPR · {boundaryContext?.boundaryVersion ?? boundaries.metadata.boundaryVersion}</strong><p>{boundaryContext?.status === "exact" ? "Snapshot sempadan tepat bagi edisi dipilih" : "Snapshot sempadan serasi"} · indeks nasional {Math.round(JSON.stringify(boundaries).length / 1024)} KB · geometri negeri dimuatkan apabila dipilih · URL menyimpan edisi, mod dan hierarki.</p></div></aside>
+    <aside className="storage-note atlas-source-note"><Icon name="database" size={18}/><div><strong>Sempadan rasmi SPR · {boundaryContext?.boundaryVersion ?? boundaries.metadata.boundaryVersion}</strong><p>{boundaryContext?.status === "exact" ? "Snapshot sempadan tepat dan dikunci SHA-256 bagi edisi dipilih" : "Snapshot sempadan serasi"} · {registryEntry?.snapshotFile ?? "manifest belum tersedia"} · indeks nasional {Math.round(JSON.stringify(boundaries).length / 1024)} KB · geometri negeri dimuatkan apabila dipilih.</p></div></aside>
   </>;
 }

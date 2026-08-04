@@ -6,6 +6,7 @@ import type { ElectionData } from "../../types";
 import type { SeatingData } from "../../data/types/seating";
 import { ChamberMap } from "./ChamberMap";
 import { SeatingDetail } from "./SeatingDetail";
+import { formatShortDate } from "../../utils";
 
 export function ParliamentSeatingPlan({ data, seating, search, stateFilter, allianceFilter }: {
   data: ElectionData;
@@ -20,7 +21,7 @@ export function ParliamentSeatingPlan({ data, seating, search, stateFilter, alli
 
   return <MotionConfig reducedMotion="user" transition={{ type: "spring", stiffness: 380, damping: 32 }}>
     <section className="panel seating-plan-panel" aria-labelledby="seating-plan-title">
-      <div className="seating-plan-heading"><div><span className="eyebrow">PELAN TEMPAT DUDUK DEWAN RAKYAT</span><h2 id="seating-plan-title">Kedudukan dalam dewan</h2><p>Disusun semula daripada pelan rasmi bertarikh 13 Julai 2026. Pilih satu tempat duduk untuk melihat wakil dan keputusan {data.metadata.shortTitle}.</p></div>{edition.isCurrentTerm && <div className="seating-plan-controls" aria-label="Lapisan identiti"><button className={parliament.view === "current" ? "is-active" : ""} aria-pressed={parliament.view === "current"} onClick={() => parliament.setView("current")}>Semasa</button><button className={parliament.view === "election" ? "is-active" : ""} aria-pressed={parliament.view === "election"} onClick={() => parliament.setView("election")}>{data.metadata.shortTitle}</button></div>}</div>
+      <div className="seating-plan-heading"><div><span className="eyebrow">PELAN TEMPAT DUDUK DEWAN RAKYAT</span><h2 id="seating-plan-title">Kedudukan dalam dewan</h2><p>Disusun semula daripada pelan rasmi bertarikh {formatShortDate("2026-07-13")}. Pilih satu tempat duduk untuk melihat wakil dan keputusan {data.metadata.shortTitle}.</p></div>{edition.isCurrentTerm && <div className="seating-plan-controls" aria-label="Lapisan identiti"><button className={parliament.view === "current" ? "is-active" : ""} aria-pressed={parliament.view === "current"} onClick={() => parliament.setView("current")}>Semasa</button><button className={parliament.view === "election" ? "is-active" : ""} aria-pressed={parliament.view === "election"} onClick={() => parliament.setView("election")}>{data.metadata.shortTitle}</button></div>}</div>
       <div className="seating-plan-layout">
         <ChamberMap
           data={data}

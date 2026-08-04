@@ -9,7 +9,7 @@ import { TableShell } from "../components/ui/TableShell";
 import { VoterDimensionNav } from "../components/voters/VoterDimensionNav";
 import type { AgeBand, AgeRecord, ConstituencyRegistry, DunReference, ParliamentReference, VoterAgeData } from "../data/types/voterAge";
 import { useElection } from "../ElectionContext";
-import { formatCompact, formatNumber, formatPct } from "../utils";
+import { formatCompact, formatNumber, formatPct, formatShortDate } from "../utils";
 
 const ALL_STATES = "SELURUH MALAYSIA";
 const ALL_PARLIAMENTS = "SEMUA PARLIMEN";
@@ -116,9 +116,9 @@ export function VoterAgePage() {
     <PageTitle title={`Umur pengundi ${edition.shortTitle}`}/>
     <section className="route-hero age-route-hero">
       <div className="breadcrumbs"><Link to={paths.election}>{edition.shortTitle}</Link><span>/</span><strong>Pengundi</strong><span>/</span><strong>Umur</strong></div>
-      <span className="overline">DAFTAR PEMILIH · OGOS 2022</span>
+      <span className="overline">DAFTAR PEMILIH · Aug 22</span>
       <h1>Siapa pengundi<br/><em>{edition.shortTitle}?</em></h1>
-      <p>Taburan umur pemilih berdaftar mengikut negeri, Parlimen dan DUN, dikemaskini SPR sehingga 9 Oktober 2022.</p>
+      <p>Taburan umur pemilih berdaftar mengikut negeri, Parlimen dan DUN, dikemaskini SPR sehingga {formatShortDate("2022-10-09")}.</p>
       <div className="route-stat-row"><div><span>PEMILIH BERDAFTAR</span><strong>{formatCompact(age.national.total)}</strong></div><div><span>PARLIMEN</span><strong>{registry.parliaments.length}</strong></div><div><span>DUN</span><strong>{registry.duns.length}</strong></div><div><span>KUMPULAN UMUR</span><strong>{age.metadata.ageBands.length}</strong></div></div>
     </section>
 
@@ -147,6 +147,6 @@ export function VoterAgePage() {
 
     <section className="panel age-comparison-panel"><div className="section-heading"><div><span className="eyebrow">PERBANDINGAN KAWASAN</span><h2>{model.comparisonTitle}</h2></div><span className="route-count">{model.comparisons.length} rekod</span></div>{model.comparisons.length ? <TableShell label="Perbandingan umur pengundi mengikut kawasan" className="age-comparison-table-wrap"><table className="age-comparison-table"><thead><tr><th>KAWASAN</th><th>PEMILIH</th><th>BAWAH 30</th><th>30-59</th><th>60+</th><th>KUMPULAN TERBESAR</th></tr></thead><tbody>{model.comparisons.map((item) => { const younger = sumBands(item.record, ["18-20", "21-29"]); const middle = sumBands(item.record, ["30-39", "40-49", "50-59"]); const older = sumBands(item.record, ["60-69", "70-79", "80-89", "90+"]); const largest = age.metadata.ageBands.reduce((current, band) => item.record.counts[band] > item.record.counts[current] ? band : current, age.metadata.ageBands[0]); return <tr key={item.id}><td><span>{item.code}</span><strong>{item.name}</strong></td><td><strong>{formatNumber(item.record.total)}</strong></td><td>{formatPct(younger / item.record.total)}</td><td>{formatPct(middle / item.record.total)}</td><td>{formatPct(older / item.record.total)}</td><td><span className="age-band-badge">{largest}</span></td></tr>; })}</tbody></table></TableShell> : <div className="age-no-dun"><Icon name="info"/><div><strong>Tiada kawasan DUN</strong><p>Wilayah Persekutuan ini direkodkan pada peringkat Parlimen melalui baris N.00 dalam sumber SPR. Tiada nama DUN direka untuk paparan ini.</p></div></div>}</section>
 
-    <section className="seating-source-note age-source-note"><Icon name="database" size={17}/><div><strong>Sumber: {age.metadata.sourceFile}</strong><span>Daftar pemilih sehingga Ogos 2022 · Statistik dikemaskini 9 Oktober 2022 · SHA-256 {age.metadata.sourceSha256.slice(0, 12)}…</span></div></section>
+    <section className="seating-source-note age-source-note"><Icon name="database" size={17}/><div><strong>Sumber: {age.metadata.sourceFile}</strong><span>Daftar pemilih sehingga Aug 22 · Statistik dikemaskini {formatShortDate("2022-10-09")} · SHA-256 {age.metadata.sourceSha256.slice(0, 12)}…</span></div></section>
   </>;
 }

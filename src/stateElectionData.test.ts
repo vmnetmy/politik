@@ -64,6 +64,40 @@ describe("official state-election data", () => {
     });
   });
 
+  it("publishes the final official Negeri Sembilan 2026 assembly result", () => {
+    const negeriSembilan = results.events.find((item) => item.id === "prn-negeri-sembilan-2026");
+    expect(negeriSembilan).toMatchObject({
+      electionDate: "2026-08-01",
+      assemblyNumber: 16,
+      coverage: "latest",
+      registeredVoters: 889490,
+      turnoutVotes: null,
+      turnoutPct: null,
+      seatCounts: { BN: 18, PH: 11, PN: 7 },
+    });
+    expect(negeriSembilan?.contestIds).toHaveLength(36);
+    expect(results.metadata.sourceCitations).toContain(
+      "Kenyataan Media SPR Bil. 18/2026, Urusan PRU Dewan Negeri Johor Ke-16 dan Dewan Negeri Negeri Sembilan Ke-16, 12 Jun 2026",
+    );
+    expect(results.metadata.sourceCitations).toContain(
+      "MySPR Semak, keputusan rasmi PRU Dewan Negeri Negeri Sembilan Ke-16, dicapai 5 Ogos 2026",
+    );
+    const contests = results.contests.filter((item) => item.eventId === negeriSembilan?.id);
+    expect(contests.flatMap((item) => item.candidates)).toHaveLength(103);
+    expect(contests.find((item) => item.dunId.endsWith(":N.01"))).toMatchObject({
+      sourceDataset: "mysemak-negeri-sembilan-2026",
+      registeredVoters: null,
+      turnoutVotes: null,
+      majorityVotes: 688,
+      sourceMajorityVotes: 688,
+      candidates: [
+        expect.objectContaining({ name: "SIOW KONG CHOON (JOHN)", shortName: "BN", votes: 5726, status: "winner" }),
+        expect.objectContaining({ name: "LOKE SIEW FOOK", shortName: "PH", votes: 5038 }),
+      ],
+    });
+    expect(results.events.find((item) => item.id === "prn-negeri-sembilan-2023")?.coverage).toBe("historical");
+  });
+
   it("publishes the complete Johor PRN-15 result from SPR Open Data", () => {
     const johor = results.events.find((item) => item.id === "prn-johor-2022");
     expect(johor).toMatchObject({

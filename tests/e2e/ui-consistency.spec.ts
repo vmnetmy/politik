@@ -10,6 +10,7 @@ const representativeRoutes = [
   "/peta?jenis=pru&edisi=15&mod=pemenang",
   "/pru/15/pengundi/umur",
   "/settings/data/calon",
+  "/settings/data/liputan",
 ];
 
 test("representative routes remain contained within the viewport", async ({ page }) => {

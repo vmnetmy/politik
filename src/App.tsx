@@ -58,6 +58,8 @@ const SettingsCandidatePage = lazy(() => import("./pages/SettingsPages").then((m
 const SettingsDataPage = lazy(() => import("./pages/SettingsPages").then((module) => ({ default: module.SettingsDataPage })));
 const SettingsPartyPage = lazy(() => import("./pages/SettingsPages").then((module) => ({ default: module.SettingsPartyPage })));
 const SettingsOperationsPage = lazy(() => import("./pages/SettingsPages").then((module) => ({ default: module.SettingsOperationsPage })));
+const SettingsCoveragePage = lazy(() => import("./pages/SettingsCoveragePage").then((module) => ({ default: module.SettingsCoveragePage })));
+const Pru14AuditPage = lazy(() => import("./pages/Pru14AuditPage").then((module) => ({ default: module.Pru14AuditPage })));
 const FederalElectionComparisonPage = lazy(() => import("./pages/FederalElectionComparisonPage").then((module) => ({ default: module.FederalElectionComparisonPage })));
 const StateElectionIndexPage = lazy(() => import("./pages/StateElectionPages").then((module) => ({ default: module.StateElectionIndexPage })));
 const StateElectionSegmentPage = lazy(() => import("./pages/StateElectionPages").then((module) => ({ default: module.StateElectionSegmentPage })));
@@ -177,7 +179,7 @@ function Dashboard() {
       edition.capabilities.scoresheets && !isAtlasRoute ? fetch(`${base}/scoresheets/index.json`).then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); }) : Promise.resolve(emptyScoresheets),
       edition.capabilities.geography && !isAtlasRoute ? fetch(`${base}/geography.json`).then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); }) : Promise.resolve(emptyGeography),
       !isAtlasRoute && (edition.capabilities.geography || edition.capabilities.voterAge || edition.capabilities.voterEthnicity) ? fetch(`${base}/constituencies.json`).then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); }) : Promise.resolve(emptyConstituencies),
-      !isAtlasRoute && (edition.capabilities.scoresheets || edition.capabilities.geography) ? fetch(`${base}/polling-places.json`).then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); }) : Promise.resolve(emptyPollingPlaces),
+      !isAtlasRoute && edition.capabilities.geography ? fetch(`${base}/polling-places.json`).then((response) => { if (!response.ok) throw new Error(`HTTP ${response.status}`); return response.json(); }) : Promise.resolve(emptyPollingPlaces),
     ]).then(([election, seatingBaseline, baseline, affiliationBaseline, candidateBaseline, partyBaseline, allianceBaseline, scoresheetBaseline, geographyBaseline, constituencyBaseline, pollingPlacesBaseline]) => {
       if (election?.metadata?.electionId !== edition.id || election?.metadata?.electionNumber !== edition.number || election?.metadata?.termId !== edition.termId || election?.metadata?.boundaryVersion !== edition.boundaryVersion) {
         throw new Error(`Metadata dataset tidak sepadan dengan route ${edition.shortTitle}.`);
@@ -274,6 +276,7 @@ function Dashboard() {
           <Route path={`${ATLAS_BASE}/embed`} element={<Suspense fallback={<><AtlasIntro/><div className="route-loading atlas-route-loading">Membina atlas pilihan raya Malaysia…</div></>}><NationalElectionAtlasPage currentElectionData={routeData} embed/></Suspense>}/>
           <Route path={electionPattern} element={<ElectionPage data={routeData!}/>}/>
           <Route path={`${electionPattern}/pemenang`} element={<WinnersPage data={routeData!}/>}/>
+          <Route path="/pru/14/audit" element={<Suspense fallback={<div className="route-loading">Memuatkan audit PRU-14…</div>}><Pru14AuditPage/></Suspense>}/>
           <Route path={`${electionPattern}/pengundi`} element={edition.capabilities.voterRoll ? <Suspense fallback={<div className="route-loading">Memuatkan daftar pemilih…</div>}><VoterOverviewPage/></Suspense> : <FeatureUnavailable label="Daftar pemilih"/>}/>
           <Route path={`${electionPattern}/pengundi/kawasan`} element={edition.capabilities.voterRoll ? <Suspense fallback={<div className="route-loading">Memuatkan statistik kawasan…</div>}><VoterAreaPage/></Suspense> : <FeatureUnavailable label="Statistik kawasan pengundi"/>}/>
           <Route path={`${electionPattern}/pengundi/umur`} element={edition.capabilities.voterAge ? <Suspense fallback={<div className="route-loading">Memuatkan statistik umur…</div>}><VoterAgePage/></Suspense> : <FeatureUnavailable label="Statistik umur pengundi"/>}/>
@@ -300,10 +303,11 @@ function Dashboard() {
           <Route path={`${electionPattern}/negeri/:stateName/parlimen/:parliamentName/pdm/:pdmName`} element={<PdmPage data={routeData!} geography={geography!} constituencies={constituencies!} pollingPlaces={pollingPlaces!}/>}/>
           <Route path={`${electionPattern}/negeri/:stateName/parlimen/:parliamentName/pdm/:pdmName/lokaliti/:localityName`} element={<LocalityPage data={routeData!} geography={geography!} constituencies={constituencies!} pollingPlaces={pollingPlaces!}/>}/>
           <Route path="/settings/data" element={edition.isCurrentTerm ? <SettingsDataPage data={routeData!} changes={changes} setChanges={setChanges}/> : <FeatureUnavailable label="Pengurusan status kerusi semasa"/>}/>
-          <Route path="/settings/data/keahlian" element={edition.isCurrentTerm ? <SettingsAffiliationPage data={routeData!} affiliations={affiliations} setAffiliations={setAffiliations} partyCatalog={partyCatalog} allianceCatalog={allianceCatalog}/> : <FeatureUnavailable label="Pengurusan keahlian semasa"/>}/>
+          <Route path="/settings/data/keahlian" element={<SettingsAffiliationPage data={routeData!} affiliations={affiliations} setAffiliations={setAffiliations} partyCatalog={partyCatalog} allianceCatalog={allianceCatalog}/>}/>
           <Route path="/settings/data/calon" element={<SettingsCandidatePage data={routeData!} candidateChanges={candidateChanges} setCandidateChanges={setCandidateChanges} partyCatalog={partyCatalog} allianceCatalog={allianceCatalog}/>}/>
           <Route path="/settings/data/parti" element={<SettingsPartyPage data={routeData!} partyCatalog={partyCatalog} setPartyCatalog={setPartyCatalog} allianceCatalog={allianceCatalog}/>}/>
           <Route path="/settings/data/gabungan" element={<SettingsAlliancePage data={routeData!} allianceCatalog={allianceCatalog} setAllianceCatalog={setAllianceCatalog}/>}/>
+          <Route path="/settings/data/liputan" element={<SettingsCoveragePage geography={geography!} constituencies={constituencies!} scoresheets={scoresheetIndex!}/>}/>
           <Route path="/settings/data/operasi" element={<SettingsOperationsPage/>}/>
           <Route path="*" element={<NotFound/>}/>
         </Route>
