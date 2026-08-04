@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "releaseId": "data-2026-07-23",
+  "releaseId": "data-2026-08-04",
   "status": "passed",
-  "startedAt": "2026-07-23T19:06:15.360507Z",
-  "completedAt": "2026-07-23T19:06:15.437201Z",
+  "startedAt": "2026-08-04T18:58:58.338106Z",
+  "completedAt": "2026-08-04T18:58:58.490460Z",
   "summary": {
     "federal": [
       {
@@ -21,15 +21,15 @@
         "seats": 222,
         "candidates": 687,
         "registered": 14940624,
-        "turnout": 12082978,
-        "validVotes": 12082978,
-        "scoresheetMatches": 0,
-        "ballotComponentSeats": 0
+        "turnout": 12274589,
+        "validVotes": 12082979,
+        "scoresheetMatches": 180,
+        "ballotComponentSeats": 180
       }
     ],
     "state": {
-      "events": 25,
-      "contests": 1101
+      "events": 27,
+      "contests": 1197
     },
     "issueCounts": {
       "error": 0,
