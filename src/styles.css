@@ -1065,7 +1065,7 @@ footer { position: relative; display: flex; align-items: center; gap: 28px; marg
 .ethnicity-taxonomy-panel li span { color: #87918c; font: 700 var(--text-2xs)/1 monospace; }
 .ethnicity-taxonomy-panel li strong { font-size: var(--text-sm); line-height: 1.25; }
 .ethnicity-source-note a { color: inherit; font-weight: 750; text-underline-offset: 3px; }
-.route-loading { min-height: 320px; display: grid; place-items: center; color: #69766f; background: var(--paper); border: 1px solid var(--line); font-size: var(--text-md); font-weight: 700; letter-spacing: .04em; }
+.route-loading { min-height: max(600px, calc(100vh - 180px)); display: grid; place-items: center; color: #69766f; background: var(--paper); border: 1px solid var(--line); font-size: var(--text-md); font-weight: 700; letter-spacing: .04em; }
 
 @media (max-width: 1120px) {
   .sidebar { width: 84px; padding-inline: 13px; }
